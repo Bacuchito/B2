@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>B2 Beruf — Test de Lesen y Hören</title>
+<title>B2 Beruf — Test de Lesen, Hören y Schreiben</title>
 <style>
   :root{
     --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
@@ -30,7 +30,7 @@
   nav button.active{background:var(--acc);color:#fff;font-weight:600}
   nav button .pill{float:right;font-size:11px;color:var(--dim);font-weight:400}
   nav button.active .pill{color:#dce7ff}
-  main{flex:1;padding:22px 26px 80px;max-width:900px}
+  main{flex:1;padding:22px 26px 80px;max-width:920px}
   h2{font-size:20px;margin:0 0 4px}
   h2 + .sub{color:var(--dim);font-size:13.5px;margin-bottom:18px}
   .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
@@ -84,13 +84,66 @@
   .badge.tag{background:var(--panel2);color:var(--dim);border:1px solid var(--line)}
   .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
   .btn{background:var(--acc);color:#fff;border:0;border-radius:8px;padding:9px 15px;
-       cursor:pointer;font-size:14px;font-weight:600}
+       cursor:pointer;font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
   .btn:hover{filter:brightness(1.1)}
   .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+  .btn.danger{background:#3a1416;border:1px solid #6b2b31;color:#f08a92}
+  .btn.success{background:#123a2a;border:1px solid #1f5c45;color:#5fd6a3}
   .note{background:#2a2312;border:1px solid #6b5a1f;color:#e8c46a;padding:9px 12px;
         border-radius:8px;font-size:13.5px;margin-bottom:14px}
   .empty{color:var(--dim);padding:40px 0;text-align:center}
   code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:13px}
+
+  /* Schreiben UI & Editor */
+  .schreiben-layout{display:flex;flex-direction:column;gap:16px}
+  .memo-card{background:#2a2412;border-left:4px solid var(--warn);padding:12px 14px;border-radius:6px;margin:12px 0;font-size:14px;line-height:1.55}
+  .memo-card b{color:var(--warn)}
+  .letter-card{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--acc);padding:14px 16px;border-radius:6px;margin:12px 0;white-space:pre-wrap;font-size:14px;line-height:1.6;color:#d7dbe4}
+  .lp-list{list-style:none;padding:0;margin:10px 0;display:flex;flex-direction:column;gap:8px}
+  .lp-item{display:flex;align-items:flex-start;gap:10px;background:var(--panel2);padding:10px 12px;border-radius:8px;font-size:14px;border:1px solid var(--line)}
+  .lp-item input[type="checkbox"]{margin-top:3px;cursor:pointer;accent-color:var(--acc)}
+  .lp-item .lp-num{min-width:22px;height:22px;background:var(--acc);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700}
+  
+  .editor-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px}
+  .editor-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+  .editor-textarea{width:100%;min-height:280px;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:14px 16px;color:var(--txt);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;resize:vertical;outline:none;box-sizing:border-box}
+  .editor-textarea:focus{border-color:var(--acc)}
+  .timer-box{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--dim)}
+  .timer-display{font-size:15px;font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
+  .timer-display.warn{color:var(--bad)}
+
+  /* Evaluación de Schreiben */
+  .eval-banner{padding:14px 18px;border-radius:8px;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:space-between;margin:16px 0;flex-wrap:wrap;gap:10px}
+  .eval-banner.pass{background:#14261f;border:1px solid #1f5c45;color:#5fd6a3}
+  .eval-banner.fail{background:#261618;border:1px solid #6b2b31;color:#f08a92}
+  .crit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;margin:16px 0}
+  .crit-box{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px}
+  .crit-box .ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:600;font-size:13.5px}
+  .crit-box .c-body{font-size:13px;color:#cfd4de;line-height:1.5}
+  .err-card{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:6px;padding:10px 14px;margin-bottom:10px}
+  .err-card .orig{color:#f08a92;text-decoration:line-through;margin-bottom:4px;font-size:13.5px}
+  .err-card .corr{color:#5fd6a3;font-weight:600;margin-bottom:4px;font-size:14px}
+  .err-card .rule{font-size:13px;color:#cfd4de;line-height:1.45}
+  .model-text{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:14px 16px;font-size:14.5px;line-height:1.65;white-space:pre-wrap;color:#e8eaf0}
+  .copy-btn{font-size:12px;padding:4px 10px;border-radius:6px;cursor:pointer;background:var(--panel);border:1px solid var(--line);color:var(--txt)}
+  .copy-btn:hover{background:var(--panel2)}
+
+  /* Modal de Configuración de IA */
+  .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,0.72);backdrop-filter:blur(4px);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px}
+  .modal{background:var(--panel);border:1px solid var(--line);border-radius:12px;width:100%;max-width:540px;box-shadow:0 12px 36px rgba(0,0,0,0.6);overflow:hidden;animation:pop .15s ease-out}
+  @keyframes pop{from{transform:scale(0.96);opacity:0}to{transform:scale(1);opacity:1}}
+  .modal-head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+  .modal-head h3{margin:0;font-size:16px;font-weight:600}
+  .modal-close{background:none;border:none;color:var(--dim);font-size:18px;cursor:pointer}
+  .modal-close:hover{color:var(--txt)}
+  .modal-body{padding:18px;max-height:75vh;overflow-y:auto}
+  .modal-foot{padding:12px 18px;border-top:1px solid var(--line);display:flex;justify-content:flex-end;gap:10px;background:var(--panel2)}
+  .form-group{margin-bottom:14px}
+  .form-group label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--txt)}
+  .form-group small{display:block;font-size:12px;color:var(--dim);margin-top:4px;line-height:1.4}
+  .input, .select{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:9px 12px;color:var(--txt);font-size:13.5px;outline:none;box-sizing:border-box}
+  .input:focus, .select:focus{border-color:var(--acc)}
+
   @media(max-width:860px){nav{position:static;height:auto;width:100%;flex:1 1 auto}
     .layout{flex-direction:column}main{padding:16px}}
 </style>
@@ -101,6 +154,7 @@
   <div class="spacer"></div>
   <div class="stat" id="stats"></div>
   <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
+  <button class="btn ghost" id="btn-ai-config" title="Configurar claves de API para evaluación de redacción">⚙ Configurar IA</button>
   <button class="btn ghost" id="reset">Reiniciar</button>
 </header>
 
@@ -108,17 +162,58 @@
   <nav id="nav"></nav>
   <main id="main"><div class="empty">Cargando…</div></main>
 </div>
+<div id="modal-container"></div>
 
 <script>
 const DATA = /*__DATA__*/;
 const LS = "b2quiz.v1";
+const LS_AI = "b2quiz.ai_config";
 
 function loadState(){
-  try { return JSON.parse(localStorage.getItem(LS)) || {answers:{}}; }
-  catch(e){ return {answers:{}}; }
+  try {
+    const s = JSON.parse(localStorage.getItem(LS)) || {};
+    if (!s.answers) s.answers = {};
+    if (!s.schreiben_drafts) s.schreiben_drafts = {};
+    if (!s.schreiben_evals) s.schreiben_evals = {};
+    if (!s.schreiben_lps) s.schreiben_lps = {};
+    return s;
+  }
+  catch(e){ return {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}}; }
 }
 function saveState(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
 let state = loadState();
+window.quizState = state;
+
+/* ---------- Configuración de IA ---------- */
+function getAIConfig(){
+  try {
+    const c = JSON.parse(localStorage.getItem(LS_AI)) || {};
+    return {
+      provider: c.provider || "gemini",
+      geminiKey: c.geminiKey || "",
+      geminiModel: c.geminiModel || "gemini-2.5-flash",
+      customEndpoint: c.customEndpoint || "https://api.deepseek.com",
+      customKey: c.customKey || "",
+      customModel: c.customModel || "deepseek-chat",
+      ollamaEndpoint: c.ollamaEndpoint || "http://localhost:11434",
+      ollamaModel: c.ollamaModel || "llama3.1"
+    };
+  } catch(e) {
+    return {
+      provider: "gemini",
+      geminiKey: "",
+      geminiModel: "gemini-2.5-flash",
+      customEndpoint: "https://api.deepseek.com",
+      customKey: "",
+      customModel: "deepseek-chat",
+      ollamaEndpoint: "http://localhost:11434",
+      ollamaModel: "llama3.1"
+    };
+  }
+}
+function saveAIConfig(cfg){
+  try { localStorage.setItem(LS_AI, JSON.stringify(cfg)); } catch(e){}
+}
 
 /* ---------- índices ---------- */
 const allVariants = [];
@@ -126,12 +221,7 @@ DATA.sections.forEach(sec=>{
   sec.variants.forEach(v=>{
     v._section = sec.id; v._sectionTitle = sec.title;
     if(!v.items) v.items = [];
-    /* Índice posicional: hay variantes con dos ítems del mismo número
-       (p. ej. dos formulaciones del ítem 6), así que la clave de respuesta
-       NO puede basarse en `n`. */
     v.items.forEach((it,i)=>{ it._idx = i; });
-    /* Si una variante trae dos formulaciones del mismo número de ítem,
-       se etiquetan como 6a / 6b para que no parezcan un duplicado. */
     const byN = {};
     v.items.forEach(it => { byN[it.n] = (byN[it.n]||0) + 1; });
     const seenN = {};
@@ -148,15 +238,8 @@ DATA.sections.forEach(sec=>{
 });
 
 function ansKey(v, item){ return v.id + "#" + item._idx; }
-
-function itemAnswerLetter(it){
-  return String(it.answer).toLowerCase();
-}
-
-/* Una respuesta es "dudosa" si su confianza no es alta. */
-function isDoubtful(it){
-  return String(it.confidence||"mittel").toLowerCase() !== "hoch";
-}
+function itemAnswerLetter(it){ return String(it.answer).toLowerCase(); }
+function isDoubtful(it){ return String(it.confidence||"mittel").toLowerCase() !== "hoch"; }
 function doubtfulCount(v){ return (v.items || []).filter(isDoubtful).length; }
 
 let onlyDoubtful = false;
@@ -174,7 +257,9 @@ function updateStats(){
       }
     });
   });
-  document.getElementById("stats").innerHTML =
+  const el = document.getElementById("stats");
+  if(!el) return;
+  el.innerHTML =
     done + "/" + total + " respondidas · <b>" + ok + "</b> correctas" +
     (done ? " (" + Math.round(ok/done*100) + "%)" : "") +
     (doubt ? ' · <span style="color:#e8c46a">' + doubt + " dudosas</span>" : "");
@@ -185,6 +270,7 @@ let current = allVariants.length ? allVariants[0].id : null;
 
 function renderNav(){
   const nav = document.getElementById("nav");
+  if(!nav) return;
   nav.innerHTML = "";
   DATA.sections.forEach(sec=>{
     const h = document.createElement("div");
@@ -198,12 +284,16 @@ function renderNav(){
       const n = (v.items || []).length;
       const done = (v.items || []).filter(it => state.answers[ansKey(v,it)] !== undefined).length;
       const ok = (v.items || []).filter(it => state.answers[ansKey(v,it)] === itemAnswerLetter(it)).length;
-      const pill = v.kind === "schreiben"
-        ? (v.category === "beschwerde" ? "E-Mail" : "Beitrag")
-        : (onlyDoubtful
+      let pill = "";
+      if(v.kind === "schreiben"){
+        const hasEval = state.schreiben_evals && state.schreiben_evals[v.id];
+        pill = hasEval ? (hasEval.verdict === "BESTANDEN" ? "✓ Aprobado" : "✗ Suspenso") : (v.category === "beschwerde" ? "E-Mail" : "Beitrag");
+      } else {
+        pill = onlyDoubtful
           ? nd + (nd === 1 ? " dudosa" : " dudosas")
-          : (done ? ok + "/" + n : n + " ítems"));
-      b.innerHTML = v.label + '<span class="pill">' + pill + '</span>';
+          : (done ? ok + "/" + n : n + " ítems");
+      }
+      b.innerHTML = esc(v.label) + '<span class="pill">' + esc(pill) + '</span>';
       if(v.id === current) b.className = "active";
       b.onclick = ()=>{ current = v.id; render(); window.scrollTo(0,0); };
       nav.appendChild(b);
@@ -211,25 +301,44 @@ function renderNav(){
   });
 }
 
+/* ---------- temporizador de examen (45 min) ---------- */
+let examTimer = null;
+let examTimerSeconds = 45 * 60;
+let examTimerRunning = false;
+
+function formatTimer(sec){
+  const m = Math.floor(sec / 60);
+  const s = sec % 60;
+  return String(m).padStart(2,"0") + ":" + String(s).padStart(2,"0");
+}
+
 /* ---------- render principal ---------- */
 function render(){
   renderNav();
   updateStats();
   const main = document.getElementById("main");
+  if(!main) return;
   const v = allVariants.find(x=>x.id===current);
   if(!v){ main.innerHTML = '<div class="empty">No hay datos todavía.</div>'; return; }
   main.innerHTML = "";
 
+  /* Encabezado */
   const h2 = document.createElement("h2");
   h2.textContent = v._sectionTitle + " · " + v.label;
   main.appendChild(h2);
   const sub = document.createElement("div");
   sub.className = "sub";
   sub.innerHTML = 'Página ' + v.page + ' del PDF' +
-    (v.topic ? ' · <b>' + v.topic + '</b>' : '') +
-    (v.kind === "schreiben" ? ' · <b>Schreiben (150+ Wörter)</b>' : ' · ' + (v.items || []).length + ' ítems');
+    (v.topic ? ' · <b>' + esc(v.topic) + '</b>' : '') +
+    (v.kind === "schreiben" ? ' · <b>Schreiben (150+ Wörter · 45 Min.)</b>' : ' · ' + (v.items || []).length + ' ítems');
   main.appendChild(sub);
 
+  if(v.kind === "schreiben"){
+    renderSchreiben(v, main);
+    return;
+  }
+
+  /* Vista habitual para preguntas de Lesen / Hören */
   if(v.note){
     const n = document.createElement("div");
     n.className = "note";
@@ -243,20 +352,17 @@ function render(){
     main.appendChild(p);
   }
 
-  /* texto de lectura (Teil 2) */
   if(v.passage){
     main.appendChild(detailsPanel("Texto de lectura", v.passage));
   }
 
-  /* opciones compartidas: anuncios (Teil 1) o comentarios de foro (Teil 3) */
   if(v.options && v.options.length){
     const used = new Set(v.items.map(i=>itemAnswerLetter(i)));
     const d = document.createElement("details");
     d.className = "panel passage";
     d.open = true;
     const s = document.createElement("summary");
-    const label = v.optionsLabel ||
-      (v._section === "lesen-t3" ? "Kommentare" : "Anzeigen");
+    const label = v.optionsLabel || (v._section === "lesen-t3" ? "Kommentare" : "Anzeigen");
     const ks = v.options.map(o=>String(o.key));
     s.textContent = label + " " + ks[0] + "–" + ks[ks.length-1] +
                     " (" + v.options.length + " opciones, " +
@@ -276,7 +382,6 @@ function render(){
     main.appendChild(d);
   }
 
-  /* ítems */
   const shown = onlyDoubtful ? v.items.filter(isDoubtful) : v.items;
   if(onlyDoubtful){
     const info = document.createElement("div");
@@ -308,6 +413,736 @@ function render(){
   main.appendChild(row);
 }
 
+/* ---------- Renderizador del módulo de Schreiben ---------- */
+function countWords(str){
+  const m = (str || "").trim().match(/[\p{L}\p{N}_\-]+/gu);
+  return m ? m.length : 0;
+}
+
+function renderSchreiben(v, main){
+  const layout = document.createElement("div");
+  layout.className = "schreiben-layout";
+
+  /* 1. Panel de Contexto y Enunciado */
+  const taskPanel = document.createElement("div");
+  taskPanel.className = "panel";
+  taskPanel.innerHTML = '<h3>Situación laboral y tarea oficial telc B2</h3>';
+
+  if(v.scenario){
+    const sc = document.createElement("div");
+    sc.style.marginBottom = "12px";
+    sc.innerHTML = '<b>Situación previa:</b> ' + esc(v.scenario);
+    taskPanel.appendChild(sc);
+  }
+
+  if(v.source_letter){
+    const sl = document.createElement("div");
+    sl.innerHTML = '<div style="font-weight:600;font-size:13px;color:var(--acc);margin-bottom:4px">✉ Carta / Correo del cliente:</div>' +
+                   '<div class="letter-card">' + esc(v.source_letter) + '</div>';
+    taskPanel.appendChild(sl);
+  }
+
+  if(v.colleague_post){
+    const cp = document.createElement("div");
+    cp.innerHTML = '<div style="font-weight:600;font-size:13px;color:var(--acc);margin-bottom:4px">💬 Publicación en el Intranet:</div>' +
+                   '<div class="letter-card">' + esc(v.colleague_post) + '</div>';
+    taskPanel.appendChild(cp);
+  }
+
+  if(v.boss_instructions){
+    const bi = document.createElement("div");
+    bi.className = "memo-card";
+    bi.innerHTML = '<b>📌 Instrucciones internas de la jefa/jefe:</b><br>' + esc(v.boss_instructions);
+    taskPanel.appendChild(bi);
+  }
+
+  if(v.prompt){
+    const pr = document.createElement("div");
+    pr.style.marginTop = "12px";
+    pr.innerHTML = '<b>Tu misión:</b> ' + esc(v.prompt);
+    taskPanel.appendChild(pr);
+  }
+
+  /* 4 Leitpunkte obligatorios */
+  if(v.leitpunkte && v.leitpunkte.length){
+    const lpH = document.createElement("div");
+    lpH.style.marginTop = "14px";
+    lpH.innerHTML = '<div style="font-weight:700;font-size:14px;margin-bottom:6px">Puntos guía obligatorios (4 Leitpunkte):</div>';
+    const ul = document.createElement("ul");
+    ul.className = "lp-list";
+    const savedLps = state.schreiben_lps?.[v.id] || {};
+    v.leitpunkte.forEach((lp, idx)=>{
+      const li = document.createElement("li");
+      li.className = "lp-item";
+      const isChecked = !!savedLps[idx];
+      li.innerHTML = '<span class="lp-num">' + (idx+1) + '</span>' +
+                     '<label style="flex:1;cursor:pointer;display:flex;align-items:center;gap:8px">' +
+                     '<input type="checkbox" ' + (isChecked ? 'checked' : '') + ' data-lp="' + idx + '"> ' +
+                     '<span>' + esc(lp) + '</span>' +
+                     '</label>';
+      const cb = li.querySelector('input');
+      cb.onchange = (e)=>{
+        if(!state.schreiben_lps) state.schreiben_lps = {};
+        if(!state.schreiben_lps[v.id]) state.schreiben_lps[v.id] = {};
+        state.schreiben_lps[v.id][idx] = e.target.checked;
+        saveState();
+      };
+      ul.appendChild(li);
+    });
+    lpH.appendChild(ul);
+    taskPanel.appendChild(lpH);
+  }
+
+  /* Redemittel B2 desplegables */
+  if(v.redemittel && v.redemittel.length){
+    const d = document.createElement("details");
+    d.className = "panel passage";
+    d.style.marginTop = "14px";
+    const s = document.createElement("summary");
+    s.textContent = "💡 Redemittel B2 útiles (frases modelo para esta redacción)";
+    d.appendChild(s);
+    const b = document.createElement("div");
+    b.className = "passage-body";
+    b.innerHTML = '<ul style="margin:6px 0;padding-left:20px;line-height:1.7">' +
+      v.redemittel.map(r=>'<li>' + esc(r) + '</li>').join('') +
+      '</ul>';
+    d.appendChild(b);
+    taskPanel.appendChild(d);
+  }
+
+  layout.appendChild(taskPanel);
+
+  /* 2. Panel del Editor de Redacción */
+  const editorCard = document.createElement("div");
+  editorCard.className = "editor-card";
+
+  const toolbar = document.createElement("div");
+  toolbar.className = "editor-toolbar";
+
+  /* Contador dinámico de palabras */
+  const draftText = (state.schreiben_drafts && state.schreiben_drafts[v.id]) || "";
+  const initialWords = countWords(draftText);
+  const wordBadge = document.createElement("span");
+  wordBadge.id = "word-badge";
+  updateWordBadge(wordBadge, initialWords);
+
+  /* Temporizador 45 min */
+  const timerBox = document.createElement("div");
+  timerBox.className = "timer-box";
+  timerBox.innerHTML = '<span class="timer-display" id="timer-display">' + formatTimer(examTimerSeconds) + '</span>' +
+                       '<button class="btn ghost" id="timer-btn" style="padding:4px 8px;font-size:12px">Iniciar</button>' +
+                       '<button class="btn ghost" id="timer-rst" style="padding:4px 8px;font-size:12px">Reiniciar</button>';
+
+  toolbar.appendChild(wordBadge);
+  toolbar.appendChild(timerBox);
+  editorCard.appendChild(toolbar);
+
+  const textarea = document.createElement("textarea");
+  textarea.className = "editor-textarea";
+  textarea.placeholder = v.category === "beschwerde"
+    ? "Sehr geehrte(r) Frau/Herr [Name],\\n\\nvielen Dank für Ihre Nachricht..."
+    : "Liebe Kolleginnen und Kollegen,\\n\\nich möchte mich gerne an der Diskussion beteiligen...";
+  textarea.value = draftText;
+
+  textarea.oninput = (e)=>{
+    const val = e.target.value;
+    if(!state.schreiben_drafts) state.schreiben_drafts = {};
+    state.schreiben_drafts[v.id] = val;
+    saveState();
+    const words = countWords(val);
+    updateWordBadge(document.getElementById("word-badge"), words);
+  };
+  editorCard.appendChild(textarea);
+
+  /* Fila de Acciones */
+  const actRow = document.createElement("div");
+  actRow.className = "row";
+  actRow.style.marginTop = "14px";
+
+  const bEval = document.createElement("button");
+  bEval.className = "btn";
+  bEval.id = "btn-evaluate";
+  bEval.innerHTML = "✨ Evaluar con Examinador telc B2";
+
+  const bClearDraft = document.createElement("button");
+  bClearDraft.className = "btn ghost";
+  bClearDraft.textContent = "Limpiar texto";
+  bClearDraft.onclick = ()=>{
+    if(confirm("¿Seguro que deseas borrar el borrador de esta tarea?")){
+      textarea.value = "";
+      if(state.schreiben_drafts) delete state.schreiben_drafts[v.id];
+      saveState();
+      updateWordBadge(document.getElementById("word-badge"), 0);
+    }
+  };
+
+  const statusMsg = document.createElement("div");
+  statusMsg.id = "eval-status";
+  statusMsg.style.fontSize = "13.5px";
+  statusMsg.style.color = "var(--dim)";
+
+  actRow.appendChild(bEval);
+  actRow.appendChild(bClearDraft);
+  actRow.appendChild(statusMsg);
+  editorCard.appendChild(actRow);
+
+  layout.appendChild(editorCard);
+
+  /* 3. Panel de Resultados (si ya fue evaluado) */
+  const existingEval = state.schreiben_evals && state.schreiben_evals[v.id];
+  if(existingEval){
+    layout.appendChild(renderEvaluationResult(v, existingEval));
+  }
+
+  main.appendChild(layout);
+
+  /* Conectar eventos del temporizador */
+  const tBtn = document.getElementById("timer-btn");
+  const tRst = document.getElementById("timer-rst");
+  const tDisp = document.getElementById("timer-display");
+  if(tBtn && tRst && tDisp){
+    tBtn.textContent = examTimerRunning ? "Pausar" : "Iniciar";
+    tBtn.onclick = ()=>{
+      if(examTimerRunning){
+        clearInterval(examTimer);
+        examTimerRunning = false;
+        tBtn.textContent = "Reanudar";
+      } else {
+        examTimerRunning = true;
+        tBtn.textContent = "Pausar";
+        examTimer = setInterval(()=>{
+          if(examTimerSeconds > 0){
+            examTimerSeconds--;
+            tDisp.textContent = formatTimer(examTimerSeconds);
+            if(examTimerSeconds <= 300) tDisp.className = "timer-display warn";
+          } else {
+            clearInterval(examTimer);
+            examTimerRunning = false;
+            tBtn.textContent = "Finalizado";
+            alert("⏰ ¡Tiempo terminado! Han transcurrido los 45 minutos del examen.");
+          }
+        }, 1000);
+      }
+    };
+    tRst.onclick = ()=>{
+      clearInterval(examTimer);
+      examTimerRunning = false;
+      examTimerSeconds = 45 * 60;
+      tDisp.textContent = formatTimer(examTimerSeconds);
+      tDisp.className = "timer-display";
+      tBtn.textContent = "Iniciar";
+    };
+  }
+
+  /* Conectar evento de evaluación */
+  bEval.onclick = async ()=>{
+    const textToEval = textarea.value.trim();
+    const words = countWords(textToEval);
+    if(words < 30){
+      alert("Tu texto es demasiado corto (" + words + " palabras). Escribe un intento más desarrollado (mínimo 150 palabras para B2) antes de solicitar evaluación.");
+      return;
+    }
+    const cfg = getAIConfig();
+    if(cfg.provider === "gemini" && !cfg.geminiKey){
+      openAIConfigModal("Para evaluar con Google Gemini, necesitas configurar tu API Key.");
+      return;
+    }
+    if(cfg.provider === "openai_compatible" && !cfg.customKey){
+      openAIConfigModal("Para evaluar con DeepSeek / OpenAI, necesitas ingresar tu API Key.");
+      return;
+    }
+
+    bEval.disabled = true;
+    bEval.innerHTML = "⏳ Evaluando con examinador telc...";
+    statusMsg.textContent = "Conectando con el LLM examinador...";
+
+    try {
+      const result = await evaluateWithLLM(v, textToEval, (msg)=>{ statusMsg.textContent = msg; });
+      if(!state.schreiben_evals) state.schreiben_evals = {};
+      state.schreiben_evals[v.id] = result;
+      saveState();
+      statusMsg.textContent = "¡Evaluación completada con éxito!";
+      render();
+    } catch(err) {
+      statusMsg.innerHTML = '<span style="color:var(--bad)">Error al evaluar: ' + esc(err.message) + '</span>';
+      alert("Error en la evaluación: " + err.message + "\\n\\nVerifica tu clave o configuración en el botón '⚙ Configurar IA'.");
+    } finally {
+      bEval.disabled = false;
+      bEval.innerHTML = "✨ Evaluar con Examinador telc B2";
+    }
+  };
+}
+
+function updateWordBadge(badge, words){
+  if(!badge) return;
+  if(words < 100){
+    badge.className = "badge niedrig";
+    badge.textContent = words + " palabras (mínimo 150)";
+  } else if(words < 150){
+    badge.className = "badge mittel";
+    badge.textContent = words + " palabras (cerca del mínimo de 150)";
+  } else {
+    badge.className = "badge hoch";
+    badge.textContent = "✓ " + words + " palabras (longitud B2 adecuada)";
+  }
+}
+
+/* ---------- Renderizador del resultado de evaluación telc B2 ---------- */
+function renderEvaluationResult(v, res){
+  const card = document.createElement("div");
+  card.className = "panel";
+  card.style.marginTop = "18px";
+  card.style.border = "1px solid var(--line)";
+
+  const isPass = res.verdict === "BESTANDEN";
+  const banner = document.createElement("div");
+  banner.className = "eval-banner " + (isPass ? "pass" : "fail");
+  banner.innerHTML = '<div>' + (isPass ? '✓ BESTANDEN (APROBADO)' : '✗ NICHT BESTANDEN (NO APROBADO)') + '</div>' +
+                     '<div>Puntuación total: <b>' + (res.score_total != null ? res.score_total : '-') + ' / 100</b></div>';
+  card.appendChild(banner);
+
+  /* 4 Criterios */
+  const cGrid = document.createElement("div");
+  cGrid.className = "crit-grid";
+  const critNames = [
+    { key: "aufgabenbewaeltigung", title: "I. Aufgabenbewältigung" },
+    { key: "angemessenheit", title: "II. Kommunikative Angemessenheit" },
+    { key: "korrektheit", title: "III. Formale Richtigkeit" },
+    { key: "repertoire", title: "IV. Sprachliche Mittel / Repertoire" }
+  ];
+
+  critNames.forEach(cn=>{
+    const cData = (res.criteria && res.criteria[cn.key]) || {};
+    const box = document.createElement("div");
+    box.className = "crit-box";
+    const gradeColor = cData.grade === "A" ? "hoch" : (cData.grade === "B" ? "ok" : (cData.grade === "C" ? "mittel" : "niedrig"));
+    box.innerHTML = '<div class="ch">' +
+                    '<span>' + esc(cn.title) + '</span>' +
+                    '<span class="badge ' + gradeColor + '">Nota: ' + esc(cData.grade || "-") + ' (' + (cData.score != null ? cData.score : '-') + '/25)</span>' +
+                    '</div>' +
+                    '<div class="c-body">' + esc(cData.feedback || "") + '</div>';
+
+    if(cData.leitpunkte_check && cData.leitpunkte_check.length){
+      const lCheck = document.createElement("div");
+      lCheck.style.marginTop = "8px";
+      lCheck.style.fontSize = "12px";
+      lCheck.innerHTML = '<b>Tratamiento de Leitpunkte:</b>' +
+        '<ul style="margin:4px 0;padding-left:16px">' +
+        cData.leitpunkte_check.map(lp =>
+          '<li>' + (lp.covered ? '<span style="color:var(--ok)">✓</span> ' : '<span style="color:var(--bad)">✗</span> ') +
+          '<b>' + esc(lp.point) + ':</b> ' + esc(lp.comment) + '</li>'
+        ).join('') +
+        '</ul>';
+      box.appendChild(lCheck);
+    }
+    cGrid.appendChild(box);
+  });
+  card.appendChild(cGrid);
+
+  /* Errores críticos detectados */
+  if(res.critical_errors && res.critical_errors.length){
+    const errSec = document.createElement("div");
+    errSec.style.marginTop = "16px";
+    errSec.innerHTML = '<h4 style="margin:0 0 10px;font-size:14.5px;color:var(--bad)">⚠ Correcciones gramaticales y de estilo (' + res.critical_errors.length + '):</h4>';
+    res.critical_errors.forEach(err=>{
+      const eb = document.createElement("div");
+      eb.className = "err-card";
+      eb.innerHTML = '<div style="display:flex;justify-content:space-between;margin-bottom:4px">' +
+                     '<span class="badge tag">' + esc(err.type || "Grammatik") + '</span>' +
+                     '</div>' +
+                     '<div class="orig">„' + esc(err.original) + '“</div>' +
+                     '<div class="corr">➔ ' + esc(err.correction) + '</div>' +
+                     '<div class="rule">💡 ' + esc(err.rule_es) + '</div>';
+      errSec.appendChild(eb);
+    });
+    card.appendChild(errSec);
+  }
+
+  /* Puntos fuertes y Áreas de mejora */
+  const fbRow = document.createElement("div");
+  fbRow.className = "crit-grid";
+  fbRow.style.marginTop = "14px";
+
+  if(res.strengths && res.strengths.length){
+    const stBox = document.createElement("div");
+    stBox.className = "crit-box";
+    stBox.style.borderLeft = "4px solid var(--ok)";
+    stBox.innerHTML = '<b style="color:var(--ok)">Puntos Fuertes (Stärken):</b>' +
+      '<ul style="margin:6px 0;padding-left:18px;font-size:13px;line-height:1.5">' +
+      res.strengths.map(s => '<li>' + esc(s) + '</li>').join('') +
+      '</ul>';
+    fbRow.appendChild(stBox);
+  }
+
+  if(res.areas_for_improvement && res.areas_for_improvement.length){
+    const impBox = document.createElement("div");
+    impBox.className = "crit-box";
+    impBox.style.borderLeft = "4px solid var(--warn)";
+    impBox.innerHTML = '<b style="color:var(--warn)">Aspectos a Mejorar (Verbesserung):</b>' +
+      '<ul style="margin:6px 0;padding-left:18px;font-size:13px;line-height:1.5">' +
+      res.areas_for_improvement.map(i => '<li>' + esc(i) + '</li>').join('') +
+      '</ul>';
+    fbRow.appendChild(impBox);
+  }
+  card.appendChild(fbRow);
+
+  /* Versión corregida B2 oficial */
+  if(res.corrected_version){
+    const cvSec = document.createElement("div");
+    cvSec.style.marginTop = "18px";
+    cvSec.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">' +
+                      '<h4 style="margin:0;font-size:14.5px;color:var(--acc)">⭐ Versión Profesional sugerida nivel B2:</h4>' +
+                      '<button class="copy-btn" id="btn-copy-model">Copiar texto</button>' +
+                      '</div>' +
+                      '<div class="model-text" id="model-text-content">' + esc(res.corrected_version) + '</div>';
+    card.appendChild(cvSec);
+
+    setTimeout(()=>{
+      const cpBtn = document.getElementById("btn-copy-model");
+      if(cpBtn){
+        cpBtn.onclick = ()=>{
+          navigator.clipboard.writeText(res.corrected_version).then(()=>{
+            cpBtn.textContent = "¡Copiado!";
+            setTimeout(()=>{ cpBtn.textContent = "Copiar texto"; }, 2000);
+          }).catch(()=>{});
+        };
+      }
+    }, 10);
+  }
+
+  /* Botón para borrar evaluación */
+  const bDelEval = document.createElement("button");
+  bDelEval.className = "btn ghost";
+  bDelEval.style.marginTop = "16px";
+  bDelEval.textContent = "Eliminar esta evaluación para volver a intentar";
+  bDelEval.onclick = ()=>{
+    if(confirm("¿Deseas eliminar los resultados de esta evaluación?")){
+      delete state.schreiben_evals[v.id];
+      saveState();
+      render();
+    }
+  };
+  card.appendChild(bDelEval);
+
+  return card;
+}
+
+/* ---------- Clientes de API para los LLMs (Fase 3) ---------- */
+function buildUserPromptClient(task, studentText){
+  const parts = [
+    "### AUFGABENSTELLUNG (TELC DEUTSCH B2 BERUF):",
+    "Kategorie: " + (task.category || 'Allgemein'),
+    "Titel: " + (task.label || task.title || '')
+  ];
+  if(task.topic) parts.push("Thema: " + task.topic);
+  parts.push("Situation: " + (task.scenario || ''));
+
+  if(task.source_letter){
+    parts.push("\nEingehende Kundenbeschwerde / E-Mail:\n\"\"\"\n" + task.source_letter + "\n\"\"\"");
+  }
+  if(task.colleague_post){
+    parts.push("\nBeitrag des Kollegen im Firmen-Intranet:\n\"\"\"\n" + task.colleague_post + "\n\"\"\"");
+  }
+  if(task.boss_instructions){
+    parts.push("\nInterne Anweisung der Geschäftsleitung:\n\"\"\"\n" + task.boss_instructions + "\n\"\"\"");
+  }
+
+  const lps = (task.leitpunkte || []).map((lp, i) => "   " + (i+1) + ". " + lp).join('\n');
+  parts.push("\nArbeitsauftrag: " + (task.prompt || ''));
+  parts.push("Zu behandelnde 4 Leitpunkte:\n" + lps);
+  parts.push("Geforderte Mindestlänge: " + (task.min_words || 150) + " Wörter.");
+  parts.push("\n=======================================================");
+  parts.push("### TEXT DES PRÜFUNGSTEILNEHMERS (ZUR BEWERTUNG):");
+  parts.push("\"\"\"\n" + studentText + "\n\"\"\"");
+  parts.push("=======================================================");
+  parts.push("\nAnalysiere nun den Text und gib das strukturierte JSON-Ergebnis gemäß der Schema-Definition zurück.");
+
+  return parts.join('\n');
+}
+
+function parseEvaluationJson(rawText){
+  let cleaned = (rawText || "").trim();
+  if(cleaned.startsWith("```")){
+    cleaned = cleaned.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "");
+  }
+  try {
+    return JSON.parse(cleaned.trim());
+  } catch(e) {
+    throw new Error("La respuesta recibida no es un JSON válido:\n" + cleaned.slice(0, 260));
+  }
+}
+
+async function evaluateWithLLM(task, studentText, onProgress){
+  const config = getAIConfig();
+  const systemPrompt = DATA.prompt_schreiben?.system_prompt || "";
+  const userPrompt = buildUserPromptClient(task, studentText);
+
+  if(config.provider === "gemini"){
+    if(onProgress) onProgress("Consultando a Google Gemini (" + config.geminiModel + ")...");
+    const model = config.geminiModel || "gemini-2.5-flash";
+    const url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + encodeURIComponent(config.geminiKey);
+    const body = {
+      system_instruction: { parts: [{ text: systemPrompt }] },
+      contents: [{ parts: [{ text: userPrompt }] }],
+      generationConfig: {
+        response_mime_type: "application/json",
+        temperature: 0.2
+      }
+    };
+    const resp = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body)
+    });
+    if(!resp.ok){
+      const errText = await resp.text();
+      let msg = "Error " + resp.status + " de Gemini API";
+      try {
+        const j = JSON.parse(errText);
+        if(j.error && j.error.message) msg += ": " + j.error.message;
+      } catch(e){ msg += ": " + errText; }
+      throw new Error(msg);
+    }
+    const data = await resp.json();
+    const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    if(!raw) throw new Error("Gemini no devolvió texto de respuesta.");
+    return parseEvaluationJson(raw);
+
+  } else if(config.provider === "openai_compatible"){
+    if(onProgress) onProgress("Consultando a " + config.customModel + " en " + config.customEndpoint + "...");
+    let url = (config.customEndpoint || "https://api.deepseek.com").replace(/\/+$/, "");
+    if(!url.endsWith("/chat/completions")) url += "/chat/completions";
+    const body = {
+      model: config.customModel || "deepseek-chat",
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt }
+      ],
+      response_format: { type: "json_object" },
+      temperature: 0.2
+    };
+    const resp = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + config.customKey
+      },
+      body: JSON.stringify(body)
+    });
+    if(!resp.ok){
+      const errText = await resp.text();
+      let msg = "Error " + resp.status + " de API";
+      try {
+        const j = JSON.parse(errText);
+        if(j.error && j.error.message) msg += ": " + j.error.message;
+      } catch(e){ msg += ": " + errText; }
+      throw new Error(msg);
+    }
+    const data = await resp.json();
+    const raw = data?.choices?.[0]?.message?.content;
+    if(!raw) throw new Error("La API no devolvió contenido.");
+    return parseEvaluationJson(raw);
+
+  } else if(config.provider === "ollama"){
+    if(onProgress) onProgress("Consultando a Ollama Local (" + config.ollamaModel + ")...");
+    let url = (config.ollamaEndpoint || "http://localhost:11434").replace(/\/+$/, "");
+    if(!url.endsWith("/api/chat")) url += "/api/chat";
+    const body = {
+      model: config.ollamaModel || "llama3.1",
+      messages: [
+        { role: "system", content: systemPrompt },
+        { role: "user", content: userPrompt }
+      ],
+      format: "json",
+      stream: false,
+      options: { temperature: 0.2 }
+    };
+    let resp;
+    try {
+      resp = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+    } catch(e){
+      throw new Error("No se pudo conectar a Ollama en " + url + ". ¿Está el servidor iniciado? Si falla por CORS, inicia Ollama con OLLAMA_ORIGINS=*.");
+    }
+    if(!resp.ok){
+      const errText = await resp.text();
+      throw new Error("Error " + resp.status + " de Ollama: " + errText);
+    }
+    const data = await resp.json();
+    const raw = data?.message?.content;
+    if(!raw) throw new Error("Ollama no devolvió texto.");
+    return parseEvaluationJson(raw);
+  } else {
+    throw new Error("Proveedor de IA no reconocido: " + config.provider);
+  }
+}
+
+/* ---------- Modal de Configuración de IA ---------- */
+function openAIConfigModal(alertNotice){
+  const mc = document.getElementById("modal-container");
+  if(!mc) return;
+  const cfg = getAIConfig();
+
+  mc.innerHTML =
+    '<div class="modal-backdrop" id="ai-modal-backdrop">' +
+      '<div class="modal">' +
+        '<div class="modal-head">' +
+          '<h3>Configuración de Inteligencia Artificial</h3>' +
+          '<button class="modal-close" id="modal-close-btn">&times;</button>' +
+        '</div>' +
+        '<div class="modal-body">' +
+          (alertNotice ? '<div class="note" style="margin-bottom:14px">ℹ ' + esc(alertNotice) + '</div>' : '') +
+          '<div class="form-group">' +
+            '<label>Proveedor de IA:</label>' +
+            '<select class="select" id="cfg-provider">' +
+              '<option value="gemini"' + (cfg.provider==='gemini'?' selected':'') + '>Google Gemini (Recomendado - API Key de Google)</option>' +
+              '<option value="openai_compatible"' + (cfg.provider==='openai_compatible'?' selected':'') + '>DeepSeek / OpenAI / OpenRouter</option>' +
+              '<option value="ollama"' + (cfg.provider==='ollama'?' selected':'') + '>Ollama (100% Local y Offline)</option>' +
+            '</select>' +
+          '</div>' +
+
+          /* Sección Gemini */
+          '<div id="sec-gemini" style="display:' + (cfg.provider==='gemini'?'block':'none') + '">' +
+            '<div class="form-group">' +
+              '<label>Gemini API Key:</label>' +
+              '<input class="input" type="password" id="cfg-gemini-key" value="' + esc(cfg.geminiKey) + '" placeholder="AIzaSy...">' +
+              '<small>Se almacena exclusivamente en tu navegador (localStorage). Consigue una gratis en <a href="https://aistudio.google.com" target="_blank" style="color:var(--acc)">aistudio.google.com</a>.</small>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Modelo:</label>' +
+              '<select class="select" id="cfg-gemini-model">' +
+                '<option value="gemini-2.5-flash"' + (cfg.geminiModel==='gemini-2.5-flash'?' selected':'') + '>gemini-2.5-flash (Ultrarrápido y preciso)</option>' +
+                '<option value="gemini-1.5-flash"' + (cfg.geminiModel==='gemini-1.5-flash'?' selected':'') + '>gemini-1.5-flash</option>' +
+                '<option value="gemini-2.5-pro"' + (cfg.geminiModel==='gemini-2.5-pro'?' selected':'') + '>gemini-2.5-pro (Máxima capacidad de razonamiento)</option>' +
+              '</select>' +
+            '</div>' +
+          '</div>' +
+
+          /* Sección OpenAI/DeepSeek */
+          '<div id="sec-custom" style="display:' + (cfg.provider==='openai_compatible'?'block':'none') + '">' +
+            '<div class="form-group">' +
+              '<label>Endpoint Base:</label>' +
+              '<input class="input" type="text" id="cfg-custom-endpoint" value="' + esc(cfg.customEndpoint) + '" placeholder="https://api.deepseek.com">' +
+              '<small>DeepSeek: <code>https://api.deepseek.com</code> | OpenAI: <code>https://api.openai.com/v1</code></small>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>API Key:</label>' +
+              '<input class="input" type="password" id="cfg-custom-key" value="' + esc(cfg.customKey) + '" placeholder="sk-...">' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Nombre del Modelo:</label>' +
+              '<input class="input" type="text" id="cfg-custom-model" value="' + esc(cfg.customModel) + '" placeholder="deepseek-chat">' +
+            '</div>' +
+          '</div>' +
+
+          /* Sección Ollama */
+          '<div id="sec-ollama" style="display:' + (cfg.provider==='ollama'?'block':'none') + '">' +
+            '<div class="form-group">' +
+              '<label>Ollama Endpoint:</label>' +
+              '<input class="input" type="text" id="cfg-ollama-endpoint" value="' + esc(cfg.ollamaEndpoint) + '" placeholder="http://localhost:11434">' +
+              '<small>Si Ollama está en este equipo, usa <code>http://localhost:11434</code>. Asegúrate de tener CORS habilitado (<code>OLLAMA_ORIGINS=*</code>).</small>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>Modelo descargado en Ollama:</label>' +
+              '<input class="input" type="text" id="cfg-ollama-model" value="' + esc(cfg.ollamaModel) + '" placeholder="llama3.1">' +
+            '</div>' +
+          '</div>' +
+
+          '<div id="test-result" style="margin-top:12px;font-size:13px"></div>' +
+        '</div>' +
+        '<div class="modal-foot">' +
+          '<button class="btn ghost" id="btn-test-connection">Probar Conexión</button>' +
+          '<button class="btn" id="btn-save-ai">Guardar Cambios</button>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+
+  const prov = document.getElementById("cfg-provider");
+  prov.onchange = ()=>{
+    const p = prov.value;
+    document.getElementById("sec-gemini").style.display = p === "gemini" ? "block" : "none";
+    document.getElementById("sec-custom").style.display = p === "openai_compatible" ? "block" : "none";
+    document.getElementById("sec-ollama").style.display = p === "ollama" ? "block" : "none";
+  };
+
+  document.getElementById("modal-close-btn").onclick = closeModal;
+  document.getElementById("ai-modal-backdrop").onclick = (e)=>{
+    if(e.target.id === "ai-modal-backdrop") closeModal();
+  };
+
+  document.getElementById("btn-save-ai").onclick = ()=>{
+    const newCfg = {
+      provider: document.getElementById("cfg-provider").value,
+      geminiKey: document.getElementById("cfg-gemini-key")?.value.trim() || "",
+      geminiModel: document.getElementById("cfg-gemini-model")?.value || "gemini-2.5-flash",
+      customEndpoint: document.getElementById("cfg-custom-endpoint")?.value.trim() || "https://api.deepseek.com",
+      customKey: document.getElementById("cfg-custom-key")?.value.trim() || "",
+      customModel: document.getElementById("cfg-custom-model")?.value.trim() || "deepseek-chat",
+      ollamaEndpoint: document.getElementById("cfg-ollama-endpoint")?.value.trim() || "http://localhost:11434",
+      ollamaModel: document.getElementById("cfg-ollama-model")?.value.trim() || "llama3.1"
+    };
+    saveAIConfig(newCfg);
+    closeModal();
+    alert("Configuración de IA guardada.");
+  };
+
+  document.getElementById("btn-test-connection").onclick = async ()=>{
+    const testRes = document.getElementById("test-result");
+    testRes.innerHTML = '<span style="color:var(--dim)">Probando conexión...</span>';
+    const tempCfg = {
+      provider: document.getElementById("cfg-provider").value,
+      geminiKey: document.getElementById("cfg-gemini-key")?.value.trim() || "",
+      geminiModel: document.getElementById("cfg-gemini-model")?.value || "gemini-2.5-flash",
+      customEndpoint: document.getElementById("cfg-custom-endpoint")?.value.trim() || "https://api.deepseek.com",
+      customKey: document.getElementById("cfg-custom-key")?.value.trim() || "",
+      customModel: document.getElementById("cfg-custom-model")?.value.trim() || "deepseek-chat",
+      ollamaEndpoint: document.getElementById("cfg-ollama-endpoint")?.value.trim() || "http://localhost:11434",
+      ollamaModel: document.getElementById("cfg-ollama-model")?.value.trim() || "llama3.1"
+    };
+    try {
+      if(tempCfg.provider === "gemini"){
+        if(!tempCfg.geminiKey) throw new Error("Ingresa la API Key de Gemini.");
+        const u = "https://generativelanguage.googleapis.com/v1beta/models/" + tempCfg.geminiModel + ":generateContent?key=" + encodeURIComponent(tempCfg.geminiKey);
+        const r = await fetch(u, {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({ contents: [{ parts: [{ text: "Antworte kurz mit OK." }] }] })
+        });
+        if(!r.ok) throw new Error("HTTP " + r.status + ": " + (await r.text()).slice(0, 100));
+      } else if(tempCfg.provider === "openai_compatible"){
+        if(!tempCfg.customKey) throw new Error("Ingresa la API Key.");
+        let u = tempCfg.customEndpoint.replace(/\/+$/, "");
+        if(!u.endsWith("/chat/completions")) u += "/chat/completions";
+        const r = await fetch(u, {
+          method: "POST",
+          headers: {"Content-Type": "application/json", "Authorization": "Bearer " + tempCfg.customKey},
+          body: JSON.stringify({ model: tempCfg.customModel, messages: [{role: "user", content: "Ping"}] })
+        });
+        if(!r.ok) throw new Error("HTTP " + r.status + ": " + (await r.text()).slice(0, 100));
+      } else if(tempCfg.provider === "ollama"){
+        let u = tempCfg.ollamaEndpoint.replace(/\/+$/, "") + "/api/tags";
+        const r = await fetch(u);
+        if(!r.ok) throw new Error("HTTP " + r.status);
+      }
+      testRes.innerHTML = '<span style="color:var(--ok)">✓ ¡Conexión establecida exitosamente!</span>';
+    } catch(e) {
+      testRes.innerHTML = '<span style="color:var(--bad)">✗ Fallo de conexión: ' + esc(e.message) + '</span>';
+    }
+  };
+}
+
+function closeModal(){
+  const mc = document.getElementById("modal-container");
+  if(mc) mc.innerHTML = "";
+}
+
+const aiBtn = document.getElementById("btn-ai-config");
+if(aiBtn) aiBtn.onclick = ()=> openAIConfigModal();
+
+/* ---------- Renderizador de ítems de preguntas ---------- */
 function detailsPanel(summary, text){
   const d = document.createElement("details");
   d.className = "panel passage";
@@ -388,7 +1223,6 @@ function renderItem(v, it){
     else if(good) verdict = "✓ Correcto";
     else verdict = "✗ Incorrecto — la correcta es <b>" + correctLetter + "</b>";
     const conf = (it.confidence||"mittel").toLowerCase();
-    /* en las tablas de emparejar, decir a qué anuncio/comentario corresponde cada letra */
     let traduccion = "";
     if(isMatching && v.options){
       const t = k => {
@@ -417,24 +1251,30 @@ function esc(s){
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
 }
 
-document.getElementById("reset").onclick = ()=>{
-  if(confirm("¿Borrar todas tus respuestas?")){
-    state = {answers:{}}; saveState(); render();
-  }
-};
+const resetBtn = document.getElementById("reset");
+if(resetBtn){
+  resetBtn.onclick = ()=>{
+    if(confirm("¿Borrar todas tus respuestas y borradores?")){
+      state = {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}};
+      saveState(); render();
+    }
+  };
+}
 
-document.getElementById("doubt").onclick = ()=>{
-  onlyDoubtful = !onlyDoubtful;
-  const b = document.getElementById("doubt");
-  b.textContent = onlyDoubtful ? "Ver todas" : "Solo dudosas";
-  b.className = onlyDoubtful ? "btn" : "btn ghost";
-  if(onlyDoubtful){
-    const firstDoubt = allVariants.find(v=>doubtfulCount(v) > 0);
-    if(firstDoubt) current = firstDoubt.id;
-  }
-  render();
-  window.scrollTo(0,0);
-};
+const doubtBtn = document.getElementById("doubt");
+if(doubtBtn){
+  doubtBtn.onclick = ()=>{
+    onlyDoubtful = !onlyDoubtful;
+    doubtBtn.textContent = onlyDoubtful ? "Ver todas" : "Solo dudosas";
+    doubtBtn.className = onlyDoubtful ? "btn" : "btn ghost";
+    if(onlyDoubtful){
+      const firstDoubt = allVariants.find(v=>doubtfulCount(v) > 0);
+      if(firstDoubt) current = firstDoubt.id;
+    }
+    render();
+    window.scrollTo(0,0);
+  };
+}
 
 render();
 </script>

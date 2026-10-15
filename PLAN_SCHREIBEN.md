@@ -8,9 +8,9 @@
 
 - [x] **Fase 1:** Catálogo y Extracción de Tareas de Schreiben
 - [x] **Fase 2:** Motor de Evaluación y System Prompt Oficial telc B2
-- [ ] **Fase 3:** Conector Multi-Proveedor de IA en el Frontend
-- [ ] **Fase 4:** Interfaz de Usuario (Editor, Contador y Resultados)
-- [ ] **Fase 5:** Pruebas, Smoke Tests y Validación Final
+- [x] **Fase 3:** Conector Multi-Proveedor de IA en el Frontend
+- [x] **Fase 4:** Interfaz de Usuario (Editor, Contador y Resultados)
+- [x] **Fase 5:** Pruebas, Smoke Tests y Validación Final
 
 ---
 
@@ -52,34 +52,34 @@
 ### Fase 3: Conector Multi-Proveedor de IA en el Frontend
 *Permitir llamadas seguras y flexibles al LLM desde la web sin necesidad de montar servidores.*
 
-- [ ] **3.1** Diseñar la arquitectura del cliente API en JavaScript dentro de [`quiz/template.html`](./quiz/template.html):
+- [x] **3.1** Diseñar la arquitectura del cliente API en JavaScript dentro de [`quiz/template.html`](./quiz/template.html):
   - Almacenamiento seguro y privado de credenciales exclusivamente en `localStorage` del navegador.
-- [ ] **3.2** Crear el módulo de configuración modal en la barra lateral con selector de proveedores:
+- [x] **3.2** Crear el módulo de configuración modal en la barra lateral con selector de proveedores:
   - **Google Gemini API** (endpoint de streaming / generateContent con API Key).
   - **DeepSeek API / OpenAI / OpenRouter** (endpoint `/v1/chat/completions`).
   - **Ollama Local** (`http://localhost:11434/api/chat` para ejecución 100% offline y gratuita).
-- [ ] **3.3** Implementar gestor de errores y timeouts (mensajes claros si falta saldo, si la clave es errónea o si el servidor local no responde).
+- [x] **3.3** Implementar gestor de errores y timeouts (mensajes claros si falta saldo, si la clave es errónea o si el servidor local no responde).
 
 ---
 
 ### Fase 4: Interfaz de Usuario (Editor, Contador y Resultados)
 *Construir el entorno interactivo de examen en la aplicación web.*
 
-- [ ] **4.1** Añadir la navegación de **Schreiben** en la barra lateral:
+- [x] **4.1** Añadir la navegación de **Schreiben** en la barra lateral:
   - Categorías: *Beschwerden & E-Mails* y *Forumsbeiträge*.
-- [ ] **4.2** Diseñar el panel de enunciados:
+- [x] **4.2** Diseñar el panel de enunciados:
   - Contexto laboral claro, tarjeta destacada con los 4 *Leitpunkte* y pestaña desplegable de *Redemittel B2 útiles*.
-- [ ] **4.3** Diseñar el panel del editor:
+- [x] **4.3** Diseñar el panel del editor:
   - Área de texto amplia con tipografía optimizada para lectura.
   - **Contador dinámico de palabras:** Indicador en tiempo real con barra de progreso (rojo < 150 palabras, verde ≥ 150 palabras).
   - **Temporizador opcional de examen:** Cuenta atrás de 45 minutos con avisos sonoros/visuales.
   - Botón de acción: «Evaluar con Examinador telc B2» con animación de carga / progreso.
-- [ ] **4.4** Diseñar el panel de resultados y diagnóstico:
+- [x] **4.4** Diseñar el panel de resultados y diagnóstico:
   - Insignia grande de veredicto (*Bestanden / Nicht bestanden*).
   - Gráfico/tarjetas de puntuación en los 4 ejes.
   - Sección de errores detectados y correcciones gramaticales.
   - Vista comparativa lado a lado o conmutador: *Tu texto* vs *Versión profesional sugerida B2*.
-- [ ] **4.5** Implementar persistencia de borradores e historial:
+- [x] **4.5** Implementar persistencia de borradores e historial:
   - Autoguardado del borrador mientras escribes.
   - Registro de intentos pasados con fecha y calificación para seguir la evolución.
 
@@ -88,7 +88,7 @@
 ### Fase 5: Pruebas, Smoke Tests y Validación Final
 *Asegurar que el entregable mantenga cero regresiones y funcione con un solo clic.*
 
-- [ ] **5.1** Ejecutar [`quiz/build.py`](./quiz/build.py) para generar el archivo autocontenido final [`quiz/B2_quiz.html`](./quiz/B2_quiz.html).
-- [ ] **5.2** Actualizar [`quiz/smoke_test.js`](./quiz/smoke_test.js) para verificar que los nuevos nodos del editor y modal de IA no rompan la app.
-- [ ] **5.3** Realizar prueba real de redacción y evaluación con la IA.
-- [ ] **5.4** Sincronizar el grafo con `graphify update .` y registrar el avance en git (`main`).
+- [x] **5.1** Ejecutar [`quiz/build.py`](./quiz/build.py) para generar el archivo autocontenido final [`quiz/B2_quiz.html`](./quiz/B2_quiz.html).
+- [x] **5.2** Actualizar [`quiz/smoke_test.js`](./quiz/smoke_test.js) para verificar que los nuevos nodos del editor y modal de IA no rompan la app.
+- [x] **5.3** Realizar prueba real de redacción y evaluación con la IA.
+- [x] **5.4** Sincronizar el grafo con `graphify update .` y registrar el avance en git (`main`).
