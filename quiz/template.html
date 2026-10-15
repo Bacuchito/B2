@@ -731,6 +731,48 @@ function updateWordBadge(badge, words){
   }
 }
 
+function formatGermanLetter(text){
+  if(!text) return "";
+  let s = String(text).trim().replace(/\r\n/g, "\n");
+
+  // 1. Quitar coma incorrecta tras fórmula de despedida (anglicismo típico en alemán)
+  s = s.replace(/(Mit freundlichen Grüßen|Herzliche Grüße|Viele Grüße|Beste Grüße),\s*/gi, "$1\n");
+
+  // 2. Garantizar línea en blanco tras el saludo inicial
+  s = s.replace(/^([^\n,]+,)\s*([A-ZÄÖÜa-zäöü])/m, "$1\n\n$2");
+
+  // 3. Garantizar línea en blanco antes de la fórmula de despedida
+  s = s.replace(/([.!?])\s*(Mit freundlichen Grüßen|Herzliche Grüße|Viele Grüße|Beste Grüße)/gi, "$1\n\n$2");
+
+  // 4. Garantizar salto de línea entre fórmula de despedida, nombre y cargo/departamento
+  s = s.replace(/(Mit freundlichen Grüßen|Herzliche Grüße|Viele Grüße)\s*\n?\s*([^,\n]+)\s+(Kundenabteilung|Kundenservice|Abteilung|Geschäftsleitung)/gi, "$1\n$2\n$3");
+
+  // 5. Si el cuerpo no tiene párrafos (es un bloque continuo de más de 200 caracteres), insertar párrafos en transiciones lógicas
+  const transitions = [
+    "Im Namen des Unternehmens",
+    "Wir bedauern sehr",
+    "Der Grund für dieses",
+    "Der Grund hierfür",
+    "Aufgrund der",
+    "Nach Rücksprache",
+    "Wir möchten Ihnen folgenden",
+    "Als Entschädigung",
+    "Wir versichern Ihnen verbindlich",
+    "Wir hoffen auf Ihr",
+    "Für eventuelle Rückfragen",
+    "Für weitere Fragen"
+  ];
+  transitions.forEach(tr => {
+    const escaped = tr.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const reg = new RegExp("([.!?])\\s+(" + escaped + ")", "g");
+    s = s.replace(reg, "$1\n\n$2");
+  });
+
+  // Colapsar saltos excesivos
+  s = s.replace(/\n{3,}/g, "\n\n");
+  return s.trim();
+}
+
 /* ---------- Renderizador del resultado de evaluación telc B2 ---------- */
 function normalizeEvaluationResult(raw){
   if(!raw || typeof raw !== "object"){
@@ -738,6 +780,7 @@ function normalizeEvaluationResult(raw){
       verdict: "NICHT BESTANDEN",
       score_total: 0,
       word_count: 0,
+      student_text: "",
       criteria: {
         aufgabenbewaeltigung: { grade: "C", score: 14, feedback: "", leitpunkte_check: [] },
         angemessenheit: { grade: "C", score: 14, feedback: "", leitpunkte_check: [] },
@@ -747,7 +790,8 @@ function normalizeEvaluationResult(raw){
       critical_errors: [],
       strengths: [],
       areas_for_improvement: [],
-      corrected_version: ""
+      corrected_version: "",
+      musterloesung: ""
     };
   }
 
@@ -927,7 +971,8 @@ function normalizeEvaluationResult(raw){
   areas = areas.map(a => String(a)).filter(Boolean);
 
   // Versión profesional sugerida
-  const corrected_version = String(raw.corrected_version || raw.musterloesung || raw.musterlösung || raw.korrigierte_fassung || raw.version_corregida || raw.model_text || raw.korrektur || "");
+  const corrected_version = formatGermanLetter(raw.corrected_version || raw.korrigierte_fassung || raw.version_corregida || raw.model_text || raw.korrektur || "");
+  const musterloesung = formatGermanLetter(raw.musterloesung || raw.musterlösung || raw.beispiel_loesung || "");
 
   return {
     verdict,
@@ -943,7 +988,8 @@ function normalizeEvaluationResult(raw){
     critical_errors,
     strengths,
     areas_for_improvement: areas,
-    corrected_version
+    corrected_version,
+    musterloesung
   };
 }
 
@@ -1054,7 +1100,8 @@ function renderEvaluationResult(v, rawRes){
   tabRow.innerHTML =
     '<button class="tab-pill active" id="pill-annotated">🔍 Tu texto con errores marcados (' + errorRanges.length + '/' + errorsList.length + ' en texto)</button>' +
     '<button class="tab-pill" id="pill-clean">📄 Tu texto original limpio</button>' +
-    (res.corrected_version ? '<button class="tab-pill" id="pill-model">⭐ Versión Modelo B2 sugerida</button>' : '');
+    (res.corrected_version ? '<button class="tab-pill" id="pill-model">⭐ Tu texto corregido y pulido (B2)</button>' : '') +
+    (res.musterloesung ? '<button class="tab-pill" id="pill-muster">🏆 Redacción Modelo 100 pts</button>' : '');
   textCard.appendChild(tabRow);
 
   // Caja de texto anotada
@@ -1125,7 +1172,7 @@ function renderEvaluationResult(v, rawRes){
   cleanBox.textContent = studentText || "(Sin texto)";
   textCard.appendChild(cleanBox);
 
-  // Caja de versión modelo B2
+  // Caja de versión corregida B2
   if(res.corrected_version){
     const modelBox = document.createElement("div");
     modelBox.id = "box-model-text";
@@ -1134,6 +1181,17 @@ function renderEvaluationResult(v, rawRes){
     modelBox.style.borderLeft = "4px solid var(--acc)";
     modelBox.textContent = res.corrected_version;
     textCard.appendChild(modelBox);
+  }
+
+  // Caja de Musterlösung oficial de examen
+  if(res.musterloesung){
+    const musterBox = document.createElement("div");
+    musterBox.id = "box-muster-text";
+    musterBox.className = "annotated-text-box";
+    musterBox.style.display = "none";
+    musterBox.style.borderLeft = "4px solid var(--ok)";
+    musterBox.textContent = res.musterloesung;
+    textCard.appendChild(musterBox);
   }
 
   card.appendChild(textCard);
@@ -1259,12 +1317,31 @@ function renderEvaluationResult(v, rawRes){
   if(res.corrected_version){
     const cvSec = document.createElement("div");
     cvSec.style.marginTop = "18px";
-    cvSec.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">' +
-                      '<h4 style="margin:0;font-size:14.5px;color:var(--acc)">⭐ Versión Profesional sugerida nivel B2:</h4>' +
-                      '<button class="copy-btn" id="btn-copy-model">Copiar texto</button>' +
-                      '</div>' +
-                      '<div class="model-text" id="model-text-content">' + esc(res.corrected_version) + '</div>';
+    cvSec.innerHTML =
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">' +
+        '<div>' +
+          '<h4 style="margin:0;font-size:15px;color:var(--acc)">⭐ Tu texto optimizado a nivel B2 profesional:</h4>' +
+          '<small style="color:var(--dim)">Tu misma redacción, corregida gramaticalmente y estructurada en párrafos formales</small>' +
+        '</div>' +
+        '<button class="copy-btn" id="btn-copy-model">Copiar texto</button>' +
+      '</div>' +
+      '<div class="model-text" id="model-text-content">' + esc(res.corrected_version) + '</div>';
     card.appendChild(cvSec);
+  }
+
+  if(res.musterloesung){
+    const msSec = document.createElement("div");
+    msSec.style.marginTop = "18px";
+    msSec.innerHTML =
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">' +
+        '<div>' +
+          '<h4 style="margin:0;font-size:15px;color:#5fd6a3">🏆 Redacción modelo de examen (Musterlösung oficial 100 pts):</h4>' +
+          '<small style="color:var(--dim)">Ejemplo alternativo de puntuación máxima con conectores avanzados y estructura telc</small>' +
+        '</div>' +
+        '<button class="copy-btn" id="btn-copy-muster">Copiar texto</button>' +
+      '</div>' +
+      '<div class="model-text" id="muster-text-content" style="border-left:4px solid var(--ok)">' + esc(res.musterloesung) + '</div>';
+    card.appendChild(msSec);
   }
 
   /* Botón para borrar evaluación */
@@ -1286,40 +1363,24 @@ function renderEvaluationResult(v, rawRes){
     const pAnn = document.getElementById("pill-annotated");
     const pCln = document.getElementById("pill-clean");
     const pMod = document.getElementById("pill-model");
+    const pMus = document.getElementById("pill-muster");
     const bAnn = document.getElementById("box-annotated-text");
     const bCln = document.getElementById("box-clean-text");
     const bMod = document.getElementById("box-model-text");
+    const bMus = document.getElementById("box-muster-text");
 
-    if(pAnn && bAnn){
-      pAnn.onclick = ()=>{
-        pAnn.className = "tab-pill active";
-        if(pCln) pCln.className = "tab-pill";
-        if(pMod) pMod.className = "tab-pill";
-        bAnn.style.display = "block";
-        if(bCln) bCln.style.display = "none";
-        if(bMod) bMod.style.display = "none";
-      };
+    const allPills = [pAnn, pCln, pMod, pMus].filter(Boolean);
+    const allBoxes = [bAnn, bCln, bMod, bMus].filter(Boolean);
+
+    function switchTab(activePill, activeBox){
+      allPills.forEach(p => { p.className = (p === activePill ? "tab-pill active" : "tab-pill"); });
+      allBoxes.forEach(b => { b.style.display = (b === activeBox ? "block" : "none"); });
     }
-    if(pCln && bCln){
-      pCln.onclick = ()=>{
-        pCln.className = "tab-pill active";
-        if(pAnn) pAnn.className = "tab-pill";
-        if(pMod) pMod.className = "tab-pill";
-        bCln.style.display = "block";
-        if(bAnn) bAnn.style.display = "none";
-        if(bMod) bMod.style.display = "none";
-      };
-    }
-    if(pMod && bMod){
-      pMod.onclick = ()=>{
-        pMod.className = "tab-pill active";
-        if(pAnn) pAnn.className = "tab-pill";
-        if(pCln) pCln.className = "tab-pill";
-        bMod.style.display = "block";
-        if(bAnn) bAnn.style.display = "none";
-        if(bCln) bCln.style.display = "none";
-      };
-    }
+
+    if(pAnn && bAnn) pAnn.onclick = ()=> switchTab(pAnn, bAnn);
+    if(pCln && bCln) pCln.onclick = ()=> switchTab(pCln, bCln);
+    if(pMod && bMod) pMod.onclick = ()=> switchTab(pMod, bMod);
+    if(pMus && bMus) pMus.onclick = ()=> switchTab(pMus, bMus);
 
     // Clic en un highlight para desplazarse a la tarjeta correspondiente
     document.querySelectorAll(".err-highlight").forEach(el => {
@@ -1336,15 +1397,19 @@ function renderEvaluationResult(v, rawRes){
       };
     });
 
-    const cpBtn = document.getElementById("btn-copy-model");
-    if(cpBtn && res.corrected_version){
-      cpBtn.onclick = ()=>{
-        navigator.clipboard.writeText(res.corrected_version).then(()=>{
-          cpBtn.textContent = "¡Copiado!";
-          setTimeout(()=>{ cpBtn.textContent = "Copiar texto"; }, 2000);
-        }).catch(()=>{});
-      };
-    }
+    const setupCopyBtn = (btnId, text)=>{
+      const btn = document.getElementById(btnId);
+      if(btn && text){
+        btn.onclick = ()=>{
+          navigator.clipboard.writeText(text).then(()=>{
+            btn.textContent = "¡Copiado!";
+            setTimeout(()=>{ btn.textContent = "Copiar texto"; }, 2000);
+          }).catch(()=>{});
+        };
+      }
+    };
+    setupCopyBtn("btn-copy-model", res.corrected_version);
+    setupCopyBtn("btn-copy-muster", res.musterloesung);
   }, 15);
 
   return card;

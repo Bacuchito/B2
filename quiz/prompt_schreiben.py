@@ -96,7 +96,8 @@ Verwende EXAKT folgende Schlüssel (Keys) und Struktur:
     "Área de mejora 1 en español",
     "Área de mejora 2 en español"
   ],
-  "corrected_version": "Sehr geehrte(r)... [Texto modelo completo en alemán con nivel B2 nativo impecable]"
+  "corrected_version": "Sehr geehrte(r) Frau/Herr [Name],\n\nvielen Dank für Ihre Nachricht bezüglich...\n\n[Texto completo corregido y pulido del alumno, estructurado en párrafos claros con saltos de línea (\n\n)]\n\nMit freundlichen Grüßen\n[Vorname Nachname]\n[Abteilung]",
+  "musterloesung": "Sehr geehrte(r) Frau/Herr [Name],\n\n[Musterlösung alternativa de 100 puntos según estándares telc B2 con conectores variados y párrafos claros]\n\nMit freundlichen Grüßen\n[Vorname Nachname]"
 }
 
 WICHTIGE VORGABEN:
@@ -107,8 +108,14 @@ WICHTIGE VORGABEN:
   * `correction`: Die korrigierte Version der Passage auf Deutsch (B2-Niveau).
   * `rule_es`: Präzise, verständliche und lehrreiche Erklärung der Grammatik- oder Ausdrucksregel auf SPANISCH.
   * `type`: "Grammatik", "Wortschatz", "Zeichensetzung", "Stil" oder "Satzbau".
+- QUALITÄT UND FORMATIERUNG VON `corrected_version` UND `musterloesung`:
+  * KEIN unleserlicher Textblock! Du MUSST den Text mit echten Leerzeilen (`\n\n`) optisch in 3 bis 4 übersichtliche Absätze gliedern (Anrede, Einleitung/Dank, Behandlung der Leitpunkte, Lösung/Schluss, Grußformel, Name).
+  * Anrede (z. B. `Sehr geehrte(r) Frau/Herr [Name],` oder `Liebe Kolleginnen und Kollegen,`) steht zwingend auf einer EIGENEN Zeile, gefolgt von einer Leerzeile (`\n\n`).
+  * Grußformel (z. B. `Mit freundlichen Grüßen` oder `Herzliche Grüße`) steht auf einer EIGENEN Zeile nach einer Leerzeile (`\n\n`).
+  * WICHTIGE FORMALIE: Im Deutschen steht nach `Mit freundlichen Grüßen` NIEMALS ein Komma! Danach folgt ein Zeilenumbruch mit Vor- und Nachname.
+  * Sprachliches Niveau: Nutze anspruchsvolles, flüssiges und natürliches Berufsdeutsch B2 (abwechslungsreiche Konnektoren wie `darüber hinaus`, `des Weiteren`, `infolgedessen`, `demnach`; Nomen-Verb-Verbindungen wie `eine Vereinbarung treffen`, `zur Verfügung stehen`, `Kenntnis nehmen`).
 - Erklärungen der Fehler (`rule_es`), Stärken (`strengths`), Schwächen (`areas_for_improvement`) und `feedback` MÜSSEN auf SPANISCH sein.
-- `corrected_version` MUSS auf DEUTSCH sein.
+- `corrected_version` und `musterloesung` MÜSSEN auf DEUTSCH sein.
 """
 
 JSON_SCHEMA: Dict[str, Any] = {
@@ -135,6 +142,9 @@ JSON_SCHEMA: Dict[str, Any] = {
         },
         "word_count": {
             "type": "integer"
+        },
+        "musterloesung": {
+            "type": "string"
         },
         "criteria": {
             "type": "object",
