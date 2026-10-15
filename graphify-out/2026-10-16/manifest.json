@@ -1,0 +1,980 @@
+{
+  ".agents/skills/impeccable/scripts/command-metadata.json": {
+    "mtime": 1791138565.6823292,
+    "seen": 1792092454.4270506,
+    "ast_hash": "533063bcdd4e150bf9037bbb1f00402a",
+    "semantic_hash": "533063bcdd4e150bf9037bbb1f00402a"
+  },
+  ".agents/skills/impeccable/scripts/data/font-index-failures.json": {
+    "mtime": 1791138565.6833277,
+    "seen": 1792092454.4270506,
+    "ast_hash": "c14048ea4e2b4a062933664822bc0399",
+    "semantic_hash": "c14048ea4e2b4a062933664822bc0399"
+  },
+  ".agents/skills/impeccable/scripts/impeccable": {
+    "mtime": 1791138565.685329,
+    "seen": 1792092454.4270506,
+    "ast_hash": "955cbafd2f055911adc7f56cab0efc47",
+    "semantic_hash": "955cbafd2f055911adc7f56cab0efc47"
+  },
+  ".agents/skills/impeccable/scripts/live-browser-dom.js": {
+    "mtime": 1791138565.7963274,
+    "seen": 1792092454.4270506,
+    "ast_hash": "c5da6b95a6184ec6f76d5acbaea98c50",
+    "semantic_hash": "c5da6b95a6184ec6f76d5acbaea98c50"
+  },
+  ".agents/skills/impeccable/scripts/live-browser-ignores.js": {
+    "mtime": 1791138565.7973282,
+    "seen": 1792092454.4270506,
+    "ast_hash": "dd05503f92e1cf9b3feedbb19070f59e",
+    "semantic_hash": "dd05503f92e1cf9b3feedbb19070f59e"
+  },
+  ".agents/skills/impeccable/scripts/live-browser-session.js": {
+    "mtime": 1791138565.8033278,
+    "seen": 1792092454.4270506,
+    "ast_hash": "a24c3e240af5d533f8bdc1daf364aa65",
+    "semantic_hash": "a24c3e240af5d533f8bdc1daf364aa65"
+  },
+  ".agents/skills/impeccable/scripts/live-browser.js": {
+    "mtime": 1791138565.8043277,
+    "seen": 1792092454.4270506,
+    "ast_hash": "480de927201708f5bc41bbba5970efb5",
+    "semantic_hash": "480de927201708f5bc41bbba5970efb5"
+  },
+  ".agents/skills/impeccable/scripts/modern-screenshot.umd.js": {
+    "mtime": 1791138565.805327,
+    "seen": 1792092454.4270506,
+    "ast_hash": "4fe5f9e490ab4f107afc707d7eafc819",
+    "semantic_hash": "4fe5f9e490ab4f107afc707d7eafc819"
+  },
+  "quiz/_validate_ls_c.py": {
+    "mtime": 1792089856.7890587,
+    "seen": 1792092454.4270506,
+    "ast_hash": "8bd25f1a6f279449821c55e26a507ad4",
+    "semantic_hash": "8bd25f1a6f279449821c55e26a507ad4"
+  },
+  "quiz/build.py": {
+    "mtime": 1792097919.382453,
+    "seen": 1792097945.2853966,
+    "ast_hash": "a91268549c889c4d498d106ff9e3719b",
+    "semantic_hash": ""
+  },
+  "quiz/data/ls_a.json": {
+    "mtime": 1792089900.0013032,
+    "seen": 1792092454.4270506,
+    "ast_hash": "ea5573e498d442ef1cb867d8a5bbb363",
+    "semantic_hash": "ea5573e498d442ef1cb867d8a5bbb363"
+  },
+  "quiz/data/ls_c.json": {
+    "mtime": 1792089850.0706725,
+    "seen": 1792092454.4270506,
+    "ast_hash": "8861bc3c45cee0c216bb0d4be533b5c0",
+    "semantic_hash": "8861bc3c45cee0c216bb0d4be533b5c0"
+  },
+  "quiz/data/t1_a.json": {
+    "mtime": 1792089030.5355756,
+    "seen": 1792092454.4270506,
+    "ast_hash": "e1279257b993d19e0c289cb48c5c0675",
+    "semantic_hash": "e1279257b993d19e0c289cb48c5c0675"
+  },
+  "quiz/data/t1_a2.json": {
+    "mtime": 1792089116.8651593,
+    "seen": 1792092454.4270506,
+    "ast_hash": "da306f6a225b9f05363d8fffbd85db48",
+    "semantic_hash": "da306f6a225b9f05363d8fffbd85db48"
+  },
+  "quiz/data/t1_b.json": {
+    "mtime": 1792089197.30045,
+    "seen": 1792092454.4270506,
+    "ast_hash": "a8451e3dfb91649b9fbccffab22c7ec1",
+    "semantic_hash": "a8451e3dfb91649b9fbccffab22c7ec1"
+  },
+  "quiz/data/t1_c.json": {
+    "mtime": 1792089232.107387,
+    "seen": 1792092454.4270506,
+    "ast_hash": "c81bc84c22d1ea558206db9f4d2e4b3a",
+    "semantic_hash": "c81bc84c22d1ea558206db9f4d2e4b3a"
+  },
+  "quiz/data/t1_d.json": {
+    "mtime": 1792089403.971489,
+    "seen": 1792092454.4270506,
+    "ast_hash": "ac3f61845c1d3aa3c16a0daf7dc23a1c",
+    "semantic_hash": "ac3f61845c1d3aa3c16a0daf7dc23a1c"
+  },
+  "quiz/data/t2_a.json": {
+    "mtime": 1792089359.906212,
+    "seen": 1792092454.4270506,
+    "ast_hash": "eb40ef539e92e0cd2609938b5a643d63",
+    "semantic_hash": "eb40ef539e92e0cd2609938b5a643d63"
+  },
+  "quiz/data/t2_b.json": {
+    "mtime": 1792089359.9092133,
+    "seen": 1792092454.4270506,
+    "ast_hash": "970f277d73bb3d652f4ce3d1f0e76801",
+    "semantic_hash": "970f277d73bb3d652f4ce3d1f0e76801"
+  },
+  "quiz/data/t2_c.json": {
+    "mtime": 1792089177.2934005,
+    "seen": 1792092454.4270506,
+    "ast_hash": "0fc2a9f4fdde69b52306c0a9e4f3a041",
+    "semantic_hash": "0fc2a9f4fdde69b52306c0a9e4f3a041"
+  },
+  "quiz/data/t2_d.json": {
+    "mtime": 1792089152.1366162,
+    "seen": 1792092454.4270506,
+    "ast_hash": "ad91896c84bb2a3738943f8f94805241",
+    "semantic_hash": "ad91896c84bb2a3738943f8f94805241"
+  },
+  "quiz/data/t3_a.json": {
+    "mtime": 1792089694.1702926,
+    "seen": 1792092454.4270506,
+    "ast_hash": "b06d9a12a0da6bd1e77c393e6b6efbab",
+    "semantic_hash": "b06d9a12a0da6bd1e77c393e6b6efbab"
+  },
+  "quiz/data/t3_c.json": {
+    "mtime": 1792089696.6622336,
+    "seen": 1792092454.4270506,
+    "ast_hash": "3a0b1f76cdd7f131fa0cc2a9ad16410a",
+    "semantic_hash": "3a0b1f76cdd7f131fa0cc2a9ad16410a"
+  },
+  "quiz/data/t4_a.json": {
+    "mtime": 1792089702.4500768,
+    "seen": 1792092454.4270506,
+    "ast_hash": "5f3ced8e07b280eb6c139a772ec187d5",
+    "semantic_hash": "5f3ced8e07b280eb6c139a772ec187d5"
+  },
+  "quiz/data/t4_b.json": {
+    "mtime": 1792089683.8856723,
+    "seen": 1792092454.4270506,
+    "ast_hash": "16c05c1e5b1bd15ed94e664f643afd38",
+    "semantic_hash": "16c05c1e5b1bd15ed94e664f643afd38"
+  },
+  "quiz/data/t4_c.json": {
+    "mtime": 1792089740.1685247,
+    "seen": 1792092454.4270506,
+    "ast_hash": "ce375745e743d79405ed516b7d0d16fd",
+    "semantic_hash": "ce375745e743d79405ed516b7d0d16fd"
+  },
+  "quiz/data/t4_d.json": {
+    "mtime": 1792093074.9189484,
+    "seen": 1792093394.571942,
+    "ast_hash": "c8154a31c6dfcb7b005fda839c68620d",
+    "semantic_hash": ""
+  },
+  "quiz/fix_review.py": {
+    "mtime": 1792089356.3714297,
+    "seen": 1792092454.4270506,
+    "ast_hash": "8651e6464ffc10fb00ee785f098d26e0",
+    "semantic_hash": "8651e6464ffc10fb00ee785f098d26e0"
+  },
+  "quiz/fix_review2.py": {
+    "mtime": 1792089396.3664298,
+    "seen": 1792092454.4270506,
+    "ast_hash": "e2c207d2e19795b44a027933b74dbb24",
+    "semantic_hash": "e2c207d2e19795b44a027933b74dbb24"
+  },
+  "quiz/fix_review3.py": {
+    "mtime": 1792089736.390941,
+    "seen": 1792092454.4270506,
+    "ast_hash": "8c61565eb7a857ce14471a1d15fd6a95",
+    "semantic_hash": "8c61565eb7a857ce14471a1d15fd6a95"
+  },
+  "quiz/make_quiz_sources.py": {
+    "mtime": 1792089319.0179973,
+    "seen": 1792092454.4270506,
+    "ast_hash": "780231e910ca9ffd4ff8b0c6f6c33619",
+    "semantic_hash": "780231e910ca9ffd4ff8b0c6f6c33619"
+  },
+  "quiz/smoke_test.js": {
+    "mtime": 1792098667.5013185,
+    "seen": 1792098688.68204,
+    "ast_hash": "bc2806fd816e2983b66138ef7fd42e2f",
+    "semantic_hash": ""
+  },
+  "quiz/src/manifest.json": {
+    "mtime": 1792089322.853147,
+    "seen": 1792092454.4270506,
+    "ast_hash": "ed719fbcac421285d929a83f772ddaa8",
+    "semantic_hash": "ed719fbcac421285d929a83f772ddaa8"
+  },
+  "quiz/verified.json": {
+    "mtime": 1792089558.4352229,
+    "seen": 1792092454.4270506,
+    "ast_hash": "90420210e21537e7dff14b8ef3600828",
+    "semantic_hash": "90420210e21537e7dff14b8ef3600828"
+  },
+  "tools/analyze_gaps.py": {
+    "mtime": 1792087825.8383708,
+    "seen": 1792092454.4270506,
+    "ast_hash": "c9b7117e93ab584603232a51a90d40c5",
+    "semantic_hash": "c9b7117e93ab584603232a51a90d40c5"
+  },
+  "tools/inspect_pdf.py": {
+    "mtime": 1792087592.9195578,
+    "seen": 1792092454.4270506,
+    "ast_hash": "98cee6ec64cb24a014089957fe403d8f",
+    "semantic_hash": "98cee6ec64cb24a014089957fe403d8f"
+  },
+  "tools/make_index.py": {
+    "mtime": 1792087756.1230495,
+    "seen": 1792092454.4270506,
+    "ast_hash": "40f75668cd4fbf62aed53a18cadbe699",
+    "semantic_hash": "40f75668cd4fbf62aed53a18cadbe699"
+  },
+  "tools/pdf2md.py": {
+    "mtime": 1792087728.3772306,
+    "seen": 1792092454.4270506,
+    "ast_hash": "9af903d1bfc15ace5deee7f8d454b998",
+    "semantic_hash": "9af903d1bfc15ace5deee7f8d454b998"
+  },
+  "quiz/data/ls_b.json": {
+    "mtime": 1792093178.7854311,
+    "seen": 1792093394.5689304,
+    "ast_hash": "d2b60988235d52a1d78545320e33729e",
+    "semantic_hash": ""
+  },
+  "quiz/data/t3_b.json": {
+    "mtime": 1792093289.3382368,
+    "seen": 1792093394.5709426,
+    "ast_hash": "57592c626aab937a1331d74bb9fff58f",
+    "semantic_hash": ""
+  },
+  "quiz/data/t3_d.json": {
+    "mtime": 1792093325.2444377,
+    "seen": 1792093394.5709426,
+    "ast_hash": "a7c6e7136a9e8977b5bdbe9bc207d721",
+    "semantic_hash": ""
+  },
+  "quiz/data/t4_e.json": {
+    "mtime": 1792093373.8515933,
+    "seen": 1792093394.571942,
+    "ast_hash": "48960437620e872c8b0d9b1c03d075e6",
+    "semantic_hash": ""
+  },
+  "quiz/make_ls_b.py": {
+    "mtime": 1792093175.4239511,
+    "seen": 1792093394.571942,
+    "ast_hash": "f284273f19e7903807d67b8a18ff9fea",
+    "semantic_hash": ""
+  },
+  "quiz/make_t3_b.py": {
+    "mtime": 1792093285.8881016,
+    "seen": 1792093394.5729418,
+    "ast_hash": "9c5b0d88431b0c1d557e0ab32cc2d1e4",
+    "semantic_hash": ""
+  },
+  "quiz/make_t3_d.py": {
+    "mtime": 1792093321.6410425,
+    "seen": 1792093394.5729418,
+    "ast_hash": "aa16f1d6c91198734dc87492c9ffaeba",
+    "semantic_hash": ""
+  },
+  "quiz/make_t4_e.py": {
+    "mtime": 1792093368.4173577,
+    "seen": 1792093394.5729418,
+    "ast_hash": "3478486bafec27a1955939dc2888383e",
+    "semantic_hash": ""
+  },
+  ".agents/rules/comunicacion_clara.md": {
+    "mtime": 1791316770.755477,
+    "seen": 1792093394.5739422,
+    "ast_hash": "0b601663619a14ec02f33efd9eb7c7df",
+    "semantic_hash": ""
+  },
+  ".agents/rules/graphify.md": {
+    "mtime": 1792092442.9738643,
+    "seen": 1792093394.5739422,
+    "ast_hash": "a0e4d192b9e2e17256124dbfc8e24e6a",
+    "semantic_hash": ""
+  },
+  ".agents/skills/apple-design/SKILL.md": {
+    "mtime": 1791318232.6271653,
+    "seen": 1792093394.5739422,
+    "ast_hash": "1ba22cafbfe4c0e58154c7f3392a6384",
+    "semantic_hash": ""
+  },
+  ".agents/skills/depuracion-y-recuperacion/SKILL.md": {
+    "mtime": 1791925005.9888875,
+    "seen": 1792093394.5739422,
+    "ast_hash": "81d7c083dac80e8861825500b1da5100",
+    "semantic_hash": ""
+  },
+  ".agents/skills/desarrollo-guiado-por-pruebas/SKILL.md": {
+    "mtime": 1791925023.9006085,
+    "seen": 1792093394.5739422,
+    "ast_hash": "d327cfbe82c582aff2698f6c707f02ca",
+    "semantic_hash": ""
+  },
+  ".agents/skills/entrevistame/SKILL.md": {
+    "mtime": 1791924988.2787554,
+    "seen": 1792093394.5739422,
+    "ast_hash": "6ed3640d10e6ad5f0d629670758cc6a0",
+    "semantic_hash": ""
+  },
+  ".agents/skills/espanol-tecnico/SKILL.md": {
+    "mtime": 1791316783.007429,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9e49e9b75f0af7d4ecabac8ed0fc4d99",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/SKILL.md": {
+    "mtime": 1788863248.9918067,
+    "seen": 1792093394.5739422,
+    "ast_hash": "2e223eed9c5bb9ec3999615806cf0681",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/add-watch.md": {
+    "mtime": 1788863228.3502226,
+    "seen": 1792093394.5739422,
+    "ast_hash": "d59d027fe449f06aa03905a01184e779",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/exports.md": {
+    "mtime": 1788863228.3512154,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9da2a2152e60a22f07f05fed5158f287",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/extraction-spec.md": {
+    "mtime": 1788863228.3512154,
+    "seen": 1792093394.5739422,
+    "ast_hash": "42fef56a01698118f7fd722acdadea34",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/github-and-merge.md": {
+    "mtime": 1788863228.352217,
+    "seen": 1792093394.5739422,
+    "ast_hash": "cde13df085e4c492aeb7ba298a996d0d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/hooks.md": {
+    "mtime": 1788863228.3532152,
+    "seen": 1792093394.5739422,
+    "ast_hash": "3f545db6ce646650bb9de588f5512a27",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/query.md": {
+    "mtime": 1788863228.3532152,
+    "seen": 1792093394.5739422,
+    "ast_hash": "3c46f8ad006874260614ed8657d02307",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/transcribe.md": {
+    "mtime": 1788863228.3542147,
+    "seen": 1792093394.5739422,
+    "ast_hash": "67b6a5fa6c0974e18f60db9f8932fbd8",
+    "semantic_hash": ""
+  },
+  ".agents/skills/graphify/references/update.md": {
+    "mtime": 1788863228.3552153,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9378bd03d56baaf78bd738ab3848f142",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/SKILL.md": {
+    "mtime": 1791138565.5371475,
+    "seen": 1792093394.5739422,
+    "ast_hash": "1902e3c7abaa88a05ed16cc92ecffb0e",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/agents/openai.yaml": {
+    "mtime": 1791138565.633304,
+    "seen": 1792093394.5739422,
+    "ast_hash": "f6a36117ebc5ff8f67efb518ad1fe775",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/adapt.md": {
+    "mtime": 1791138565.6353047,
+    "seen": 1792093394.5739422,
+    "ast_hash": "c5515c569e368512b400926114861543",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/adapt.native.md": {
+    "mtime": 1791138565.6353047,
+    "seen": 1792093394.5739422,
+    "ast_hash": "d45a12935db7bf28b64dfeb46fca6ab6",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/android.md": {
+    "mtime": 1791138565.6363041,
+    "seen": 1792093394.5739422,
+    "ast_hash": "18f5d94b2c51ac3bfede3b209660bbb5",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/animate.md": {
+    "mtime": 1791138565.637304,
+    "seen": 1792093394.5739422,
+    "ast_hash": "610f85bc3d6d370810836681204b015d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/audit.md": {
+    "mtime": 1791138565.638304,
+    "seen": 1792093394.5739422,
+    "ast_hash": "7d77d13e7e8c632d292edb345e2fbc03",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/audit.native.md": {
+    "mtime": 1791138565.638304,
+    "seen": 1792093394.5739422,
+    "ast_hash": "62ebbd0cb9c871be414c90bf82410131",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/bolder.md": {
+    "mtime": 1791138565.6403046,
+    "seen": 1792093394.5739422,
+    "ast_hash": "a084531985d83e34538727961ed51470",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/clarify.md": {
+    "mtime": 1791138565.6403046,
+    "seen": 1792093394.5739422,
+    "ast_hash": "413da6eb075a6c3ed05de43f760f3be8",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/colorize.md": {
+    "mtime": 1791138565.6413035,
+    "seen": 1792093394.5739422,
+    "ast_hash": "0bf2887698d75473acd5a5b0ccbe1d3e",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/component-review.md": {
+    "mtime": 1791138565.6413035,
+    "seen": 1792093394.5739422,
+    "ast_hash": "5f7dc06c0f96c6c8286460db16b85851",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/craft-floor.md": {
+    "mtime": 1791138565.6433043,
+    "seen": 1792093394.5739422,
+    "ast_hash": "2c497f436c7dbf35b008b174161b861a",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/craft.md": {
+    "mtime": 1791138565.6453042,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9075911f45c58c15a720f8188b2738f4",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/critique.md": {
+    "mtime": 1791138565.6503036,
+    "seen": 1792093394.5739422,
+    "ast_hash": "994e5b43a304843939443e48d11ef318",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/degraded/asset-producer.md": {
+    "mtime": 1791138565.6513035,
+    "seen": 1792093394.5739422,
+    "ast_hash": "be054ab582ecd532dab8f6b8db2fe08e",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/degraded/documenter.md": {
+    "mtime": 1791138565.6523037,
+    "seen": 1792093394.5739422,
+    "ast_hash": "a38215374db267ad2be047a2a58cc816",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/degraded/finish-reviewer.md": {
+    "mtime": 1791138565.6523037,
+    "seen": 1792093394.5739422,
+    "ast_hash": "8bf8914a9b4ab0ccfac44ebf3ae4444d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/degraded/manual-edit-applier.md": {
+    "mtime": 1791138565.6533039,
+    "seen": 1792093394.5739422,
+    "ast_hash": "1652cf7a403f11f4d57382e5ccec6999",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/delight.md": {
+    "mtime": 1791138565.654304,
+    "seen": 1792093394.5739422,
+    "ast_hash": "4a4fb8494ddda3d2b4687b938209eb32",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/distill.md": {
+    "mtime": 1791138565.6553042,
+    "seen": 1792093394.5739422,
+    "ast_hash": "551d826d1e8082ec799f575a40967b41",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/doctor.md": {
+    "mtime": 1791138565.6553042,
+    "seen": 1792093394.5739422,
+    "ast_hash": "e7e21152b25551bf9d2a6dc2c27d7f6b",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/document.md": {
+    "mtime": 1791138565.6563022,
+    "seen": 1792093394.5739422,
+    "ast_hash": "4f2674bdf49244e30841448f9d934c40",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/extract.md": {
+    "mtime": 1791138565.6573029,
+    "seen": 1792093394.5739422,
+    "ast_hash": "e51e09c25d06f05b6efabb1fc9228d90",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/generate.md": {
+    "mtime": 1791138565.6573029,
+    "seen": 1792093394.5739422,
+    "ast_hash": "716b9a6bae884956989bbb813fd06521",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/harden.md": {
+    "mtime": 1791138565.6583023,
+    "seen": 1792093394.5739422,
+    "ast_hash": "db619bb13c088dae2dd47bc57506cc70",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/hooks.md": {
+    "mtime": 1791138565.6583023,
+    "seen": 1792093394.5739422,
+    "ast_hash": "aa625a7e68af557c9932991369da2b5a",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/init.md": {
+    "mtime": 1791138565.6593018,
+    "seen": 1792093394.5739422,
+    "ast_hash": "a536a753154b82dfb51edb7aecdd4b1b",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/ios.md": {
+    "mtime": 1791138565.6603034,
+    "seen": 1792093394.5739422,
+    "ast_hash": "a8f56b5c246ad44e142853ef59a19039",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/layout.md": {
+    "mtime": 1791138565.6613045,
+    "seen": 1792093394.5739422,
+    "ast_hash": "d4db3672050d72bd68949ef6ca614569",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/live-setup.md": {
+    "mtime": 1791138565.6623046,
+    "seen": 1792093394.5739422,
+    "ast_hash": "e870461022ffc424f05fdfdd38ad0367",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/live.md": {
+    "mtime": 1791138565.6623046,
+    "seen": 1792093394.5739422,
+    "ast_hash": "93dde462352552bd4e88fea81d82be5b",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/mode-operate.md": {
+    "mtime": 1791138565.6633043,
+    "seen": 1792093394.5739422,
+    "ast_hash": "770cdd4b8eb6a9e3ea3e0414fdf9ac2a",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/mode-persuade.md": {
+    "mtime": 1791138565.6643033,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9536e656c3fab5a8d85f1dcde6df45aa",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/mode-read.md": {
+    "mtime": 1791138565.6643033,
+    "seen": 1792093394.5739422,
+    "ast_hash": "09353e7df8b71096238a1d18c6fbfe44",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/new-work.md": {
+    "mtime": 1791138565.6663299,
+    "seen": 1792093394.5739422,
+    "ast_hash": "d131e3094b154fcbdb44537e36f8c657",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/onboard.md": {
+    "mtime": 1791138565.6663299,
+    "seen": 1792093394.5739422,
+    "ast_hash": "e1439e7cb4d19ea29a8990f008aa60f2",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/operate.md": {
+    "mtime": 1791138565.6673286,
+    "seen": 1792093394.5739422,
+    "ast_hash": "53a569b985749058f7b178a32e0a157f",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/optimize.md": {
+    "mtime": 1791138565.6673286,
+    "seen": 1792093394.5739422,
+    "ast_hash": "69031dca2a97d199862bc514c68c115d",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/overdrive.md": {
+    "mtime": 1791138565.6683278,
+    "seen": 1792093394.5739422,
+    "ast_hash": "a48f82a5a3dc3cfe974228f8240477ed",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/polish.md": {
+    "mtime": 1791138565.669328,
+    "seen": 1792093394.5739422,
+    "ast_hash": "36ed382b9f9692d0545b34dfd643670b",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/quieter.md": {
+    "mtime": 1791138565.669328,
+    "seen": 1792093394.5739422,
+    "ast_hash": "74730b891cd7fa09bc88831c8371d50e",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/region-map.md": {
+    "mtime": 1791138565.6713283,
+    "seen": 1792093394.5739422,
+    "ast_hash": "fbedb05ecee2abb30af4c473de67c343",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/routing.md": {
+    "mtime": 1791138565.6723282,
+    "seen": 1792093394.5739422,
+    "ast_hash": "16cfad4cde91da597491055320b2c3ba",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/shape.md": {
+    "mtime": 1791138565.6793282,
+    "seen": 1792093394.5739422,
+    "ast_hash": "ecf5345d56452d10cd2c9203a7512704",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/typeset.md": {
+    "mtime": 1791138565.6803288,
+    "seen": 1792093394.5739422,
+    "ast_hash": "740584b4340794757ebabbd44383fcda",
+    "semantic_hash": ""
+  },
+  ".agents/skills/impeccable/reference/visualize.md": {
+    "mtime": 1791138565.6803288,
+    "seen": 1792093394.5739422,
+    "ast_hash": "22547e92d76af8eecbea216df6cab8a7",
+    "semantic_hash": ""
+  },
+  ".agents/skills/planificacion-de-tareas/SKILL.md": {
+    "mtime": 1791925014.9419155,
+    "seen": 1792093394.5739422,
+    "ast_hash": "49dd1670d488be23acb2f2b550bdba3e",
+    "semantic_hash": ""
+  },
+  ".agents/skills/ponytail/SKILL.md": {
+    "mtime": 1791315597.321419,
+    "seen": 1792093394.5739422,
+    "ast_hash": "a929dca1f307552a3027610f0d49c334",
+    "semantic_hash": ""
+  },
+  ".agents/skills/revision-de-codigo/SKILL.md": {
+    "mtime": 1791924998.0155911,
+    "seen": 1792093394.5739422,
+    "ast_hash": "71566d44e8c54d5242b7e6d38b446dcd",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/apple-design.md": {
+    "mtime": 1791318241.2330372,
+    "seen": 1792093394.5739422,
+    "ast_hash": "760147bbc2310fede400007c097374a9",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/ets.md": {
+    "mtime": 1791316811.0203807,
+    "seen": 1792093394.5739422,
+    "ast_hash": "563701da25e4d8f2b76f1d1a3e5989e7",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/graphify.md": {
+    "mtime": 1789301547.267831,
+    "seen": 1792093394.5739422,
+    "ast_hash": "a831cf3669f1e6ab85d8a80ebe655f99",
+    "semantic_hash": ""
+  },
+  ".agents/workflows/ponytail.md": {
+    "mtime": 1791315604.323768,
+    "seen": 1792093394.5739422,
+    "ast_hash": "1b000f98de3398dffeb2723c581af25e",
+    "semantic_hash": ""
+  },
+  "quiz/B2_quiz.html": {
+    "mtime": 1792100754.5499508,
+    "seen": 1792100766.9936278,
+    "ast_hash": "56e7f711a947b232a43aabb7c3f4f821",
+    "semantic_hash": ""
+  },
+  "quiz/README.md": {
+    "mtime": 1792089681.4300034,
+    "seen": 1792093394.5739422,
+    "ast_hash": "fdfb68239e54339dbc12ffb6f4538dcc",
+    "semantic_hash": ""
+  },
+  "quiz/SPEC.md": {
+    "mtime": 1792097117.717717,
+    "seen": 1792097388.6607153,
+    "ast_hash": "d3cccf84ce15eef7d0f1939e1ccb24c6",
+    "semantic_hash": ""
+  },
+  "quiz/src/h1_a.md": {
+    "mtime": 1792089322.844153,
+    "seen": 1792093394.5739422,
+    "ast_hash": "156c81259b307b4c677c2971feaa4e13",
+    "semantic_hash": ""
+  },
+  "quiz/src/h1_b.md": {
+    "mtime": 1792089322.8451471,
+    "seen": 1792093394.5739422,
+    "ast_hash": "1cdcc60257a89cfe455170d78e41c3a4",
+    "semantic_hash": ""
+  },
+  "quiz/src/h1_c.md": {
+    "mtime": 1792089322.8451471,
+    "seen": 1792093394.5739422,
+    "ast_hash": "521ea5a0aa0ea2e775bda6f84f20ce19",
+    "semantic_hash": ""
+  },
+  "quiz/src/h1_d.md": {
+    "mtime": 1792089322.8461473,
+    "seen": 1792093394.5739422,
+    "ast_hash": "29931c9f89926df7bc907361d7204c4d",
+    "semantic_hash": ""
+  },
+  "quiz/src/h2_a.md": {
+    "mtime": 1792089322.8461473,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9c75b704ea4f8c19a88270db4b647995",
+    "semantic_hash": ""
+  },
+  "quiz/src/h2_b.md": {
+    "mtime": 1792089322.8471484,
+    "seen": 1792093394.5739422,
+    "ast_hash": "2ec8f3e23fecb279f93ebbaa2e069d26",
+    "semantic_hash": ""
+  },
+  "quiz/src/h2_c.md": {
+    "mtime": 1792089322.8471484,
+    "seen": 1792093394.5739422,
+    "ast_hash": "22261d0d2576a202259bc3f96c3bca4f",
+    "semantic_hash": ""
+  },
+  "quiz/src/h3_a.md": {
+    "mtime": 1792089322.8481479,
+    "seen": 1792093394.5739422,
+    "ast_hash": "987c42a72943e723cd0453fe82dccd57",
+    "semantic_hash": ""
+  },
+  "quiz/src/h3_b.md": {
+    "mtime": 1792089322.8481479,
+    "seen": 1792093394.5739422,
+    "ast_hash": "23f13d2813c8a58e460a48ec6170a7a4",
+    "semantic_hash": ""
+  },
+  "quiz/src/h3_c.md": {
+    "mtime": 1792089322.8491478,
+    "seen": 1792093394.5739422,
+    "ast_hash": "21867a82e3d1214b9d1a682908ac1984",
+    "semantic_hash": ""
+  },
+  "quiz/src/h3_d.md": {
+    "mtime": 1792089322.8491478,
+    "seen": 1792093394.5739422,
+    "ast_hash": "eb751a1634342c36c28e9b13c146b31b",
+    "semantic_hash": ""
+  },
+  "quiz/src/h4_a.md": {
+    "mtime": 1792089322.8501475,
+    "seen": 1792093394.5739422,
+    "ast_hash": "b5099bf7ceff88ee4215e6a2f34e949b",
+    "semantic_hash": ""
+  },
+  "quiz/src/h4_b.md": {
+    "mtime": 1792089322.8511498,
+    "seen": 1792093394.5739422,
+    "ast_hash": "e7bbfbec060b312735676f772d5a8dcb",
+    "semantic_hash": ""
+  },
+  "quiz/src/h4_c.md": {
+    "mtime": 1792089322.8521473,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9ec7f631136a39957ca0149f9c337691",
+    "semantic_hash": ""
+  },
+  "quiz/src/h4_d.md": {
+    "mtime": 1792089322.8521473,
+    "seen": 1792093394.5739422,
+    "ast_hash": "cfd2b5552ab0983252db3a709dfac13b",
+    "semantic_hash": ""
+  },
+  "quiz/src/ls_a.md": {
+    "mtime": 1792089322.8431537,
+    "seen": 1792093394.5739422,
+    "ast_hash": "82715ac77ff9ab4e517bbbe160e1eefa",
+    "semantic_hash": ""
+  },
+  "quiz/src/ls_b.md": {
+    "mtime": 1792089322.844153,
+    "seen": 1792093394.5739422,
+    "ast_hash": "0832c2a95ef343a8e823e45c1802035e",
+    "semantic_hash": ""
+  },
+  "quiz/src/ls_c.md": {
+    "mtime": 1792089322.844153,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9d60b9e49092000054609df072e2e34c",
+    "semantic_hash": ""
+  },
+  "quiz/src/t1_a.md": {
+    "mtime": 1792089017.8090718,
+    "seen": 1792093394.5739422,
+    "ast_hash": "f9edaddb8b6b9a4cbdbb11f8dab3ae2f",
+    "semantic_hash": ""
+  },
+  "quiz/src/t1_a2.md": {
+    "mtime": 1792089017.8100734,
+    "seen": 1792093394.5739422,
+    "ast_hash": "ae4164e60fdfdd660a9f6700f0030f3c",
+    "semantic_hash": ""
+  },
+  "quiz/src/t1_b.md": {
+    "mtime": 1792089017.8110745,
+    "seen": 1792093394.5739422,
+    "ast_hash": "0d66594e7954cd96dc8129e93a364931",
+    "semantic_hash": ""
+  },
+  "quiz/src/t1_c.md": {
+    "mtime": 1792089017.8110745,
+    "seen": 1792093394.5739422,
+    "ast_hash": "d6ddc2edcb87030018f0f0ae2b299ae3",
+    "semantic_hash": ""
+  },
+  "quiz/src/t1_d.md": {
+    "mtime": 1792089017.8120737,
+    "seen": 1792093394.5739422,
+    "ast_hash": "111470ca2efe05a8e97470049936666e",
+    "semantic_hash": ""
+  },
+  "quiz/src/t2_a.md": {
+    "mtime": 1792089017.8120737,
+    "seen": 1792093394.5739422,
+    "ast_hash": "28f600ff76994ee0e71bbd610fdd6a87",
+    "semantic_hash": ""
+  },
+  "quiz/src/t2_b.md": {
+    "mtime": 1792089017.8120737,
+    "seen": 1792093394.5739422,
+    "ast_hash": "137ea5f2bb46625706340caecce84cbe",
+    "semantic_hash": ""
+  },
+  "quiz/src/t2_c.md": {
+    "mtime": 1792089017.8130734,
+    "seen": 1792093394.5739422,
+    "ast_hash": "7f218ea0e56f0de8bc7fbea24d6fc48d",
+    "semantic_hash": ""
+  },
+  "quiz/src/t2_d.md": {
+    "mtime": 1792089017.8130734,
+    "seen": 1792093394.5739422,
+    "ast_hash": "9b2688cf2ba0ed31fa9dc6b22a798b4f",
+    "semantic_hash": ""
+  },
+  "quiz/src/t3_a.md": {
+    "mtime": 1792089322.8361464,
+    "seen": 1792093394.5739422,
+    "ast_hash": "76d415bf848c899b5a482b47056a6e9d",
+    "semantic_hash": ""
+  },
+  "quiz/src/t3_b.md": {
+    "mtime": 1792089322.8371544,
+    "seen": 1792093394.5739422,
+    "ast_hash": "44ad6d4c51c2ee2eb473872c82fd2dca",
+    "semantic_hash": ""
+  },
+  "quiz/src/t3_c.md": {
+    "mtime": 1792089322.8391523,
+    "seen": 1792093394.5739422,
+    "ast_hash": "064aa733340b8c34013b111629498673",
+    "semantic_hash": ""
+  },
+  "quiz/src/t3_d.md": {
+    "mtime": 1792089322.841156,
+    "seen": 1792093394.5739422,
+    "ast_hash": "600c5a2ae394b865ad91a6458966f16c",
+    "semantic_hash": ""
+  },
+  "quiz/src/t4_a.md": {
+    "mtime": 1792089322.841156,
+    "seen": 1792093394.5739422,
+    "ast_hash": "f216041fa2fae7989114133f88c8211e",
+    "semantic_hash": ""
+  },
+  "quiz/src/t4_b.md": {
+    "mtime": 1792089322.841156,
+    "seen": 1792093394.5739422,
+    "ast_hash": "c3e9b443b25230c8362f59abe4fba26c",
+    "semantic_hash": ""
+  },
+  "quiz/src/t4_c.md": {
+    "mtime": 1792089322.8421547,
+    "seen": 1792093394.5739422,
+    "ast_hash": "8b0dda7f459d883fd77c4468bee5c86f",
+    "semantic_hash": ""
+  },
+  "quiz/src/t4_d.md": {
+    "mtime": 1792089322.8421547,
+    "seen": 1792093394.5739422,
+    "ast_hash": "6537bf115a6cbade682090f5afd0b091",
+    "semantic_hash": ""
+  },
+  "quiz/src/t4_e.md": {
+    "mtime": 1792089322.8431537,
+    "seen": 1792093394.5739422,
+    "ast_hash": "ac1ac54bc0c5a4003610297a46a76c4e",
+    "semantic_hash": ""
+  },
+  "quiz/template.html": {
+    "mtime": 1792100743.6770618,
+    "seen": 1792100767.0009403,
+    "ast_hash": "6cca1acbc8190402005e1bcb85f9aaa8",
+    "semantic_hash": ""
+  },
+  "tools/README.md": {
+    "mtime": 1792087851.008556,
+    "seen": 1792093394.5739422,
+    "ast_hash": "f903f5763f7648673cb626e847f35f88",
+    "semantic_hash": ""
+  },
+  "quiz/data/schreiben_beschwerde.json": {
+    "mtime": 1792097260.7233407,
+    "seen": 1792097388.633098,
+    "ast_hash": "a3743deba65d172f81bb25c8f6181863",
+    "semantic_hash": ""
+  },
+  "quiz/data/schreiben_forum.json": {
+    "mtime": 1792097260.724341,
+    "seen": 1792097388.633098,
+    "ast_hash": "282ac516a765758e4c5ea5e27e39d8eb",
+    "semantic_hash": ""
+  },
+  "quiz/make_schreiben.py": {
+    "mtime": 1792097256.821051,
+    "seen": 1792097388.6380916,
+    "ast_hash": "ed7fdacec36cb4e4d4bd2bf4cc931cfb",
+    "semantic_hash": ""
+  },
+  "PLAN_SCHREIBEN.md": {
+    "mtime": 1792098715.5877142,
+    "seen": 1792100766.9936278,
+    "ast_hash": "0a86a1cc97e7918d6f9f134ea171ec0e",
+    "semantic_hash": ""
+  },
+  "quiz/prompt_schreiben.py": {
+    "mtime": 1792097892.8800077,
+    "seen": 1792097945.293014,
+    "ast_hash": "df72b9c6c04eaf902aca03ecbd16bbfc",
+    "semantic_hash": ""
+  },
+  "quiz/test_prompt.py": {
+    "mtime": 1792100750.6849818,
+    "seen": 1792100766.9783576,
+    "ast_hash": "5dc5e86d2b886e6253e07e66a4f16423",
+    "semantic_hash": ""
+  }
+}

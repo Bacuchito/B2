@@ -696,9 +696,9 @@
     "semantic_hash": ""
   },
   "quiz/B2_quiz.html": {
-    "mtime": 1792100754.5499508,
-    "seen": 1792100766.9936278,
-    "ast_hash": "56e7f711a947b232a43aabb7c3f4f821",
+    "mtime": 1792102112.6486561,
+    "seen": 1792102127.4358547,
+    "ast_hash": "e842fe694753cfe088233bac31e6dced",
     "semantic_hash": ""
   },
   "quiz/README.md": {
@@ -948,9 +948,9 @@
     "semantic_hash": ""
   },
   "quiz/data/schreiben_forum.json": {
-    "mtime": 1792097260.724341,
-    "seen": 1792097388.633098,
-    "ast_hash": "282ac516a765758e4c5ea5e27e39d8eb",
+    "mtime": 1792102095.9548984,
+    "seen": 1792102127.411856,
+    "ast_hash": "4a534401639ae9f7a0ace0fc83e29e98",
     "semantic_hash": ""
   },
   "quiz/make_schreiben.py": {
@@ -975,6 +975,18 @@
     "mtime": 1792100750.6849818,
     "seen": 1792100766.9783576,
     "ast_hash": "5dc5e86d2b886e6253e07e66a4f16423",
+    "semantic_hash": ""
+  },
+  "quiz/extract_all_forums.py": {
+    "mtime": 1792101905.4305472,
+    "seen": 1792102127.4158535,
+    "ast_hash": "5e8232d1549567fd179f5da3caca22ec",
+    "semantic_hash": ""
+  },
+  "quiz/make_full_forums.py": {
+    "mtime": 1792102091.418002,
+    "seen": 1792102127.4158535,
+    "ast_hash": "533dedf551202b3ceb8c9093a88d94d7",
     "semantic_hash": ""
   }
 }
