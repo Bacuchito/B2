@@ -270,7 +270,7 @@ def call_live_gemini(api_key: str, model_name: str, task: Dict[str, Any], text: 
 def main():
     parser = argparse.ArgumentParser(description="Test y calibración del evaluador telc B2")
     parser.add_argument("--gemini-key", type=str, help="API Key de Google Gemini para prueba en vivo")
-    parser.add_argument("--gemini-model", type=str, default="gemini-2.5-flash", help="Modelo de Gemini")
+    parser.add_argument("--gemini-model", type=str, default="gemini-3.5-flash-lite", help="Modelo de Gemini")
     args = parser.parse_args()
 
     # Si se pasa clave de Gemini, realizar prueba en vivo
