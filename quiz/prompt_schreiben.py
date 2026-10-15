@@ -46,9 +46,64 @@ Deine Aufgabe ist es, einen vom Prüfungsteilnehmer verfassten Text (Beschwerde-
 - NICHT BESTANDEN: Unter 60 Punkte ODER ein beliebiges Kriterium mit Stufe D.
 
 ### AUSGABEFORMAT:
-Du MUSST deine Antwort AUSSCHLIESSLICH als valides JSON-Objekt formatieren (ohne einleitende Begrüßung, ohne Floskeln).
-Die Erklärungen der Fehler (`rule_es`), die Stärken (`strengths`), die Schwächen (`areas_for_improvement`) und das Feedback müssen auf SPANISCH formuliert sein, damit der spanischsprachige Deutschlerner den didaktischen Grund sofort versteht.
-Die korrigierte Modellversion (`corrected_version`) muss auf DEUTSCH sein und ein makelloses, authentisches B2-Niveau demonstrieren.
+Du MUSST deine Antwort AUSSCHLIESSLICH als valides JSON-Objekt formatieren (ohne Markdown-Backticks ```json, ohne einleitenden Text, ohne Grußformel).
+Verwende EXAKT folgende Schlüssel (Keys) und Struktur:
+{
+  "verdict": "BESTANDEN" oder "NICHT BESTANDEN",
+  "score_total": 85,
+  "word_count": 168,
+  "criteria": {
+    "aufgabenbewaeltigung": {
+      "grade": "A",
+      "score": 23,
+      "leitpunkte_check": [
+        {"point": "Leitpunkt 1", "covered": true, "comment": "Ausführlich und überzeugend behandelt."},
+        {"point": "Leitpunkt 2", "covered": true, "comment": "Angemessen ausgeführt."},
+        {"point": "Leitpunkt 3", "covered": true, "comment": "Eigene Erfahrung plausibel geschildert."},
+        {"point": "Leitpunkt 4", "covered": true, "comment": "Konkreter Vorschlag unterbreitet."}
+      ],
+      "feedback": "Explicación detallada en español sobre el cumplimiento de la tarea y puntos guía."
+    },
+    "angemessenheit": {
+      "grade": "B",
+      "score": 21,
+      "feedback": "Explicación detallada en español sobre registro formal, saludo, despedida y tono."
+    },
+    "korrektheit": {
+      "grade": "B",
+      "score": 20,
+      "feedback": "Explicación detallada en español sobre sintaxis, posición del verbo, casos y ortografía."
+    },
+    "repertoire": {
+      "grade": "B",
+      "score": 21,
+      "feedback": "Explicación detallada en español sobre vocabulario profesional B2 y conectores."
+    }
+  },
+  "critical_errors": [
+    {
+      "original": "Frase errónea del alumno",
+      "correction": "Versión corregida en alemán B2",
+      "rule_es": "Regla gramatical clara explicada en español",
+      "type": "Grammatik"
+    }
+  ],
+  "strengths": [
+    "Punto fuerte 1 en español",
+    "Punto fuerte 2 en español"
+  ],
+  "areas_for_improvement": [
+    "Área de mejora 1 en español",
+    "Área de mejora 2 en español"
+  ],
+  "corrected_version": "Sehr geehrte(r)... [Texto modelo completo en alemán con nivel B2 nativo impecable]"
+}
+
+WICHTIGE VORGABEN:
+- `score_total` MUSS eine Ganzzahl (0-100) sein und der Summe der 4 Kriterien (`score`) entsprechen.
+- Jedes Kriterium in `criteria` MUSS die Felder `grade` (A, B, C oder D), `score` (Zahl von 0 bis 25) und `feedback` enthalten.
+- Erklärungen der Fehler (`rule_es`), Stärken (`strengths`), Schwächen (`areas_for_improvement`) und `feedback` MÜSSEN auf SPANISCH sein.
+- `corrected_version` MUSS auf DEUTSCH sein.
 """
 
 JSON_SCHEMA: Dict[str, Any] = {

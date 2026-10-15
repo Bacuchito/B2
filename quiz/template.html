@@ -688,7 +688,222 @@ function updateWordBadge(badge, words){
 }
 
 /* ---------- Renderizador del resultado de evaluación telc B2 ---------- */
-function renderEvaluationResult(v, res){
+function normalizeEvaluationResult(raw){
+  if(!raw || typeof raw !== "object"){
+    return {
+      verdict: "NICHT BESTANDEN",
+      score_total: 0,
+      word_count: 0,
+      criteria: {
+        aufgabenbewaeltigung: { grade: "C", score: 14, feedback: "", leitpunkte_check: [] },
+        angemessenheit: { grade: "C", score: 14, feedback: "", leitpunkte_check: [] },
+        korrektheit: { grade: "C", score: 14, feedback: "", leitpunkte_check: [] },
+        repertoire: { grade: "C", score: 14, feedback: "", leitpunkte_check: [] }
+      },
+      critical_errors: [],
+      strengths: [],
+      areas_for_improvement: [],
+      corrected_version: ""
+    };
+  }
+
+  const normStr = s => String(s || "")
+    .toLowerCase()
+    .replace(/ä/g, "ae")
+    .replace(/ö/g, "oe")
+    .replace(/ü/g, "ue")
+    .replace(/ß/g, "ss")
+    .replace(/[^a-z0-9]/g, "");
+
+  // Detectar contenedor de criterios
+  const critContainer = raw.criteria || raw.kriterien || raw.criterios || raw.bewertung || raw.evaluation || raw.kriterien_bewertung;
+  let critList = [];
+  if(Array.isArray(critContainer)){
+    critList = critContainer;
+  } else if(critContainer && typeof critContainer === "object"){
+    critList = Object.entries(critContainer).map(([k, v]) => {
+      if(v && typeof v === "object") return Object.assign({ _k: k }, v);
+      return { _k: k, feedback: String(v) };
+    });
+  } else {
+    critList = Object.entries(raw).map(([k, v]) => {
+      if(v && typeof v === "object") return Object.assign({ _k: k }, v);
+      return { _k: k, feedback: String(v) };
+    });
+  }
+
+  function extractCriterion(patterns){
+    for(const p of patterns){
+      const isShort = /^(i{1,3}|iv|[1-4])$/i.test(p);
+      for(const item of critList){
+        const rawK = String(item._k || item.name || item.kriterium || item.criterion || item.title || item.id || "");
+        const normK = normStr(rawK);
+        if(isShort){
+          const reg = new RegExp('^(?:kriterium\\s*)?' + p + '(?:[^a-z]|$)', 'i');
+          if(reg.test(rawK) || normK === p) return item;
+        } else {
+          const normP = normStr(p);
+          if(normK.includes(normP)) return item;
+        }
+      }
+      const obj = (critContainer && typeof critContainer === "object") ? critContainer : raw;
+      for(const k of Object.keys(obj)){
+        const normK = normStr(k);
+        if(isShort){
+          const reg = new RegExp('^(?:kriterium\\s*)?' + p + '(?:[^a-z]|$)', 'i');
+          if(reg.test(k) || normK === p){
+            const v = obj[k];
+            return (v && typeof v === "object") ? v : { feedback: String(v) };
+          }
+        } else {
+          const normP = normStr(p);
+          if(normK.includes(normP)){
+            const v = obj[k];
+            return (v && typeof v === "object") ? v : { feedback: String(v) };
+          }
+        }
+      }
+    }
+    return {};
+  }
+
+  function normalizeCrit(c, defaultGrade, defaultScore, critTitle){
+    let grade = c.grade || c.note || c.stufe || c.level || c.calificacion || c.bewertung;
+    if(grade != null){
+      const m = String(grade).toUpperCase().match(/[ABCD]/);
+      grade = m ? m[0] : String(grade).trim().toUpperCase();
+    }
+    let score = c.score != null ? c.score : (c.punkte != null ? c.punkte : (c.points != null ? c.points : (c.punktzahl != null ? c.punktzahl : (c.puntos != null ? c.puntos : null))));
+    if(score != null) score = Math.round(Number(score));
+    if(isNaN(score)) score = null;
+
+    if(score == null && grade){
+      const map = { "A": 24, "B": 20, "C": 14, "D": 6 };
+      if(map[grade] !== undefined) score = map[grade];
+    }
+    if(!grade && score != null){
+      if(score >= 23) grade = "A";
+      else if(score >= 18) grade = "B";
+      else if(score >= 12) grade = "C";
+      else grade = "D";
+    }
+    if(!grade) grade = defaultGrade;
+    if(score == null) score = defaultScore;
+
+    let feedback = c.feedback || c.kommentar || c.comment || c.beschreibung || c.begruendung || c.text || c.observaciones || "";
+    if(!feedback){
+      feedback = "Evaluación de " + critTitle + " con calificación " + grade + " (" + score + "/25 puntos).";
+    }
+
+    let leitpunkte_check = c.leitpunkte_check || c.leitpunkte || c.leitpunkteCheck || c.points_check || [];
+    if(Array.isArray(leitpunkte_check)){
+      leitpunkte_check = leitpunkte_check.map(lp => {
+        if(typeof lp === "string") return { point: lp, covered: true, comment: "" };
+        const pt = lp.point || lp.leitpunkt || lp.thema || lp.titel || "";
+        const cov = lp.covered != null ? Boolean(lp.covered) : (lp.abgedeckt != null ? Boolean(lp.abgedeckt) : true);
+        const cm = lp.comment || lp.kommentar || lp.feedback || "";
+        return { point: String(pt), covered: cov, comment: String(cm) };
+      });
+    } else {
+      leitpunkte_check = [];
+    }
+
+    return { grade, score, feedback: String(feedback), leitpunkte_check };
+  }
+
+  // Pre-verificación para derivar valores coherentes
+  let rawVerdict = raw.verdict || raw.ergebnis || raw.resultado || raw.status;
+  const passedHint = (typeof rawVerdict === "string" && rawVerdict.toUpperCase().includes("BESTANDEN") && !rawVerdict.toUpperCase().includes("NICHT"));
+  const defGrade = passedHint ? "B" : "C";
+  const defScore = passedHint ? 19 : 14;
+
+  const c1 = normalizeCrit(extractCriterion(["aufgabenbewaeltigung", "aufgabenbewältigung", "aufgaben", "leitpunkte", "task", "i", "1"]), defGrade, defScore, "Aufgabenbewältigung");
+  const c2 = normalizeCrit(extractCriterion(["angemessenheit", "kommunikative_angemessenheit", "angemessen", "register", "stil", "ii", "2"]), defGrade, defScore, "Kommunikative Angemessenheit");
+  const c3 = normalizeCrit(extractCriterion(["korrektheit", "formale_richtigkeit", "richtigkeit", "grammatik", "orthographie", "iii", "3"]), defGrade, defScore, "Formale Richtigkeit");
+  const c4 = normalizeCrit(extractCriterion(["repertoire", "sprachliche_mittel", "wortschatz", "varianz", "iv", "4"]), defGrade, defScore, "Sprachliche Mittel");
+
+  if((!c1.leitpunkte_check || !c1.leitpunkte_check.length) && (raw.leitpunkte_check || raw.leitpunkte)){
+    const rootLp = raw.leitpunkte_check || raw.leitpunkte;
+    if(Array.isArray(rootLp)){
+      c1.leitpunkte_check = rootLp.map(lp => {
+        if(typeof lp === "string") return { point: lp, covered: true, comment: "" };
+        const pt = lp.point || lp.leitpunkt || lp.thema || "";
+        const cov = lp.covered != null ? Boolean(lp.covered) : true;
+        const cm = lp.comment || lp.kommentar || lp.feedback || "";
+        return { point: String(pt), covered: cov, comment: String(cm) };
+      });
+    }
+  }
+
+  // Puntuación total (calculada automáticamente si falta)
+  let scoreTotal = raw.score_total != null ? raw.score_total : (raw.total_score != null ? raw.total_score : (raw.gesamtpunktzahl != null ? raw.gesamtpunktzahl : (raw.gesamtpunkte != null ? raw.gesamtpunkte : (raw.score != null ? raw.score : (raw.points != null ? raw.points : null)))));
+  if(scoreTotal != null) scoreTotal = Math.round(Number(scoreTotal));
+  if(scoreTotal == null || isNaN(scoreTotal)){
+    scoreTotal = (c1.score || 0) + (c2.score || 0) + (c3.score || 0) + (c4.score || 0);
+  }
+  scoreTotal = Math.max(0, Math.min(100, scoreTotal));
+
+  // Veredicto
+  let verdict = rawVerdict;
+  if(typeof verdict === "string"){
+    const uv = verdict.toUpperCase();
+    if(uv.includes("NICHT") || uv.includes("FAIL")) verdict = "NICHT BESTANDEN";
+    else if(uv.includes("BESTANDEN") || uv.includes("PASS")) verdict = "BESTANDEN";
+  }
+  if(verdict !== "BESTANDEN" && verdict !== "NICHT BESTANDEN"){
+    const hasD = (c1.grade === "D" || c2.grade === "D" || c3.grade === "D" || c4.grade === "D");
+    verdict = (scoreTotal >= 60 && !hasD) ? "BESTANDEN" : "NICHT BESTANDEN";
+  }
+
+  // Errores críticos
+  let critical_errors = raw.critical_errors || raw.errors || raw.fehler || raw.correcciones || [];
+  if(!Array.isArray(critical_errors)) critical_errors = [];
+  critical_errors = critical_errors.map(e => {
+    if(typeof e === "string") return { original: e, correction: "", rule_es: "", type: "Hinweis" };
+    return {
+      original: String(e.original || e.falsch || e.text || e.fehler || ""),
+      correction: String(e.correction || e.korrektur || e.richtig || e.besser || ""),
+      rule_es: String(e.rule_es || e.rule || e.regla || e.erklaerung || e.explicacion || e.grund || ""),
+      type: String(e.type || e.kategorie || e.art || "Grammatik")
+    };
+  }).filter(e => e.original || e.correction);
+
+  // Puntos fuertes
+  let strengths = raw.strengths || raw.staerken || raw.stärken || raw.puntos_fuertes || raw.positiv || [];
+  if(!Array.isArray(strengths)){
+    strengths = typeof strengths === "string" ? [strengths] : [];
+  }
+  strengths = strengths.map(s => String(s)).filter(Boolean);
+
+  // Áreas de mejora
+  let areas = raw.areas_for_improvement || raw.verbesserung || raw.verbesserungsbereich || raw.aspectos_a_mejorar || raw.schwaechen || raw.schwächen || [];
+  if(!Array.isArray(areas)){
+    areas = typeof areas === "string" ? [areas] : [];
+  }
+  areas = areas.map(a => String(a)).filter(Boolean);
+
+  // Versión profesional sugerida
+  const corrected_version = String(raw.corrected_version || raw.musterloesung || raw.musterlösung || raw.korrigierte_fassung || raw.version_corregida || raw.model_text || raw.korrektur || "");
+
+  return {
+    verdict,
+    score_total: scoreTotal,
+    word_count: raw.word_count || 0,
+    criteria: {
+      aufgabenbewaeltigung: c1,
+      angemessenheit: c2,
+      korrektheit: c3,
+      repertoire: c4
+    },
+    critical_errors,
+    strengths,
+    areas_for_improvement: areas,
+    corrected_version
+  };
+}
+
+function renderEvaluationResult(v, rawRes){
+  const res = normalizeEvaluationResult(rawRes);
   const card = document.createElement("div");
   card.className = "panel";
   card.style.marginTop = "18px";
@@ -861,14 +1076,26 @@ function buildUserPromptClient(task, studentText){
 }
 
 function parseEvaluationJson(rawText){
-  let cleaned = (rawText || "").trim();
-  if(cleaned.startsWith("```")){
-    cleaned = cleaned.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "");
+  let str = (rawText || "").trim();
+  const codeBlockMatch = str.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
+  if(codeBlockMatch && codeBlockMatch[1]){
+    str = codeBlockMatch[1].trim();
+  } else {
+    const firstBrace = str.indexOf('{');
+    const lastBrace = str.lastIndexOf('}');
+    if(firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace){
+      str = str.slice(firstBrace, lastBrace + 1).trim();
+    }
   }
   try {
-    return JSON.parse(cleaned.trim());
+    return JSON.parse(str);
   } catch(e) {
-    throw new Error("La respuesta recibida no es un JSON válido:\n" + cleaned.slice(0, 260));
+    try {
+      const sanitized = str.replace(/,\s*([\]}])/g, '$1');
+      return JSON.parse(sanitized);
+    } catch(e2){
+      throw new Error("La respuesta recibida no es un JSON válido:\n" + str.slice(0, 260));
+    }
   }
 }
 
@@ -881,19 +1108,32 @@ async function evaluateWithLLM(task, studentText, onProgress){
     if(onProgress) onProgress("Consultando a Google Gemini (" + config.geminiModel + ")...");
     const model = config.geminiModel || "gemini-3.5-flash-lite";
     const url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + encodeURIComponent(config.geminiKey);
+    const genConfig = {
+      response_mime_type: "application/json",
+      temperature: 0.2
+    };
+    if(DATA.prompt_schreiben && DATA.prompt_schreiben.json_schema){
+      genConfig.response_schema = DATA.prompt_schreiben.json_schema;
+    }
     const body = {
       system_instruction: { parts: [{ text: systemPrompt }] },
       contents: [{ parts: [{ text: userPrompt }] }],
-      generationConfig: {
-        response_mime_type: "application/json",
-        temperature: 0.2
-      }
+      generationConfig: genConfig
     };
-    const resp = await fetch(url, {
+    let resp = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body)
     });
+    // Fallback de reintento si el endpoint rechaza el schema estricto
+    if(!resp.ok && resp.status === 400 && genConfig.response_schema){
+      delete genConfig.response_schema;
+      resp = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body)
+      });
+    }
     if(!resp.ok){
       const errText = await resp.text();
       let msg = "Error " + resp.status + " de Gemini API";
@@ -906,7 +1146,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if(!raw) throw new Error("Gemini no devolvió texto de respuesta.");
-    return parseEvaluationJson(raw);
+    return normalizeEvaluationResult(parseEvaluationJson(raw));
 
   } else if(config.provider === "openai_compatible"){
     if(onProgress) onProgress("Consultando a " + config.customModel + " en " + config.customEndpoint + "...");
@@ -941,7 +1181,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.choices?.[0]?.message?.content;
     if(!raw) throw new Error("La API no devolvió contenido.");
-    return parseEvaluationJson(raw);
+    return normalizeEvaluationResult(parseEvaluationJson(raw));
 
   } else if(config.provider === "ollama"){
     if(onProgress) onProgress("Consultando a Ollama Local (" + config.ollamaModel + ")...");
@@ -974,7 +1214,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.message?.content;
     if(!raw) throw new Error("Ollama no devolvió texto.");
-    return parseEvaluationJson(raw);
+    return normalizeEvaluationResult(parseEvaluationJson(raw));
   } else {
     throw new Error("Proveedor de IA no reconocido: " + config.provider);
   }
