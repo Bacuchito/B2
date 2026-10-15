@@ -7,7 +7,7 @@
 ## Estado Global del Proyecto
 
 - [x] **Fase 1:** Catálogo y Extracción de Tareas de Schreiben
-- [ ] **Fase 2:** Motor de Evaluación y System Prompt Oficial telc B2
+- [x] **Fase 2:** Motor de Evaluación y System Prompt Oficial telc B2
 - [ ] **Fase 3:** Conector Multi-Proveedor de IA en el Frontend
 - [ ] **Fase 4:** Interfaz de Usuario (Editor, Contador y Resultados)
 - [ ] **Fase 5:** Pruebas, Smoke Tests y Validación Final
@@ -32,18 +32,18 @@
 ### Fase 2: Motor de Evaluación y System Prompt Oficial telc B2
 *Calibrar el rol y los criterios del LLM como examinador oficial de telc.*
 
-- [ ] **2.1** Redactar el System Prompt del examinador basándose en la matriz de evaluación oficial de telc Deutsch B2 Beruf:
+- [x] **2.1** Redactar el System Prompt del examinador basándose en la matriz de evaluación oficial de telc Deutsch B2 Beruf:
   - **I. Aufgabenbewältigung:** Cobertura de los 4 *Leitpunkte* y volumen de palabras (mínimo 150).
   - **II. Angemessenheit:** Saludo/despedida formal, registro profesional y adecuación sociolingüística.
   - **III. Korrektheit:** Morfosintaxis (*Nebensätze, Akkusativ/Dativ/Genitiv, Passiv, Konjunktiv II*) y ortografía.
   - **IV. Repertoire:** Vocabulario laboral B2 (*Nomen-Verb-Verbindungen*), conectores variados y cohesión.
-- [ ] **2.2** Definir el contrato de salida estructurado en JSON de la IA:
+- [x] **2.2** Definir el contrato de salida estructurado en JSON de la IA:
   - `score_total` (puntuación estimada sobre 100 o escala telc).
   - `verdict` (`BESTANDEN` o `NICHT BESTANDEN`).
   - `criteria_breakdown`: Evaluación cualitativa y cuantitativa de los 4 criterios.
   - `critical_errors`: Lista de errores encontrados con extracto del texto original y explicación gramatical en español.
   - `corrected_version`: Texto completo reescrito con estilo profesional B2 nativo impecable.
-- [ ] **2.3** Crear script de calibración local en `quiz/test_prompt.py` para probar la respuesta del prompt frente a dos casos de control:
+- [x] **2.3** Crear script de calibración local en `quiz/test_prompt.py` para probar la respuesta del prompt frente a dos casos de control:
   - Caso A: Texto deficiente de nivel A2/B1 (debe suspender con diagnóstico certero).
   - Caso B: Texto correcto de nivel B2 (debe aprobar y sugerir mejoras de estilo).
 

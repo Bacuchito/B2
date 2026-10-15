@@ -20,6 +20,11 @@ if sys.stderr and hasattr(sys.stderr, "reconfigure"):
     except Exception:
         pass
 
+try:
+    from prompt_schreiben import SYSTEM_PROMPT, JSON_SCHEMA
+except ImportError:
+    from quiz.prompt_schreiben import SYSTEM_PROMPT, JSON_SCHEMA
+
 CONF = {"hoch", "mittel", "niedrig"}
 SECTIONS = {
     "lesen-t1": "Lesen Teil 1",
@@ -295,7 +300,14 @@ def main():
                     nver += 1
         sections.append({"id": sid, "title": SECTIONS[sid], "variants": vs})
 
-    payload = {"generated": True, "sections": sections}
+    payload = {
+        "generated": True,
+        "sections": sections,
+        "prompt_schreiben": {
+            "system_prompt": SYSTEM_PROMPT,
+            "json_schema": JSON_SCHEMA
+        }
+    }
     tpl = open(template, encoding="utf-8").read()
     html = tpl.replace("/*__DATA__*/", json.dumps(payload, ensure_ascii=False))
     with open(out, "w", encoding="utf-8") as fh:

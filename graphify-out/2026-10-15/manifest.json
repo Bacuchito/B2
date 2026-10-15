@@ -54,9 +54,9 @@
     "semantic_hash": "8bd25f1a6f279449821c55e26a507ad4"
   },
   "quiz/build.py": {
-    "mtime": 1792093037.9230342,
-    "seen": 1792093394.5689304,
-    "ast_hash": "d427665cd0fb6a7e2b190b53168b56cc",
+    "mtime": 1792097217.6322353,
+    "seen": 1792097388.6320937,
+    "ast_hash": "d614982ebd7f89e59ba894faffb37bc4",
     "semantic_hash": ""
   },
   "quiz/data/ls_a.json": {
@@ -696,9 +696,9 @@
     "semantic_hash": ""
   },
   "quiz/B2_quiz.html": {
-    "mtime": 1792093377.2836583,
-    "seen": 1792093394.5739422,
-    "ast_hash": "a433620a7d404c7b91472611a2390fad",
+    "mtime": 1792097371.6431928,
+    "seen": 1792097388.6597128,
+    "ast_hash": "8c5201ff7d28919eabc2bfd3682cb4c0",
     "semantic_hash": ""
   },
   "quiz/README.md": {
@@ -708,9 +708,9 @@
     "semantic_hash": ""
   },
   "quiz/SPEC.md": {
-    "mtime": 1792089632.3758967,
-    "seen": 1792093394.5739422,
-    "ast_hash": "e4ae64841b69f121966bfd703395cb89",
+    "mtime": 1792097117.717717,
+    "seen": 1792097388.6607153,
+    "ast_hash": "d3cccf84ce15eef7d0f1939e1ccb24c6",
     "semantic_hash": ""
   },
   "quiz/src/h1_a.md": {
@@ -930,15 +930,39 @@
     "semantic_hash": ""
   },
   "quiz/template.html": {
-    "mtime": 1792089656.2805579,
-    "seen": 1792093394.5739422,
-    "ast_hash": "54be3af24676f1528158254be52844f7",
+    "mtime": 1792097326.784574,
+    "seen": 1792097388.672657,
+    "ast_hash": "e3ca10f7199ac71084200131ff123b88",
     "semantic_hash": ""
   },
   "tools/README.md": {
     "mtime": 1792087851.008556,
     "seen": 1792093394.5739422,
     "ast_hash": "f903f5763f7648673cb626e847f35f88",
+    "semantic_hash": ""
+  },
+  "quiz/data/schreiben_beschwerde.json": {
+    "mtime": 1792097260.7233407,
+    "seen": 1792097388.633098,
+    "ast_hash": "a3743deba65d172f81bb25c8f6181863",
+    "semantic_hash": ""
+  },
+  "quiz/data/schreiben_forum.json": {
+    "mtime": 1792097260.724341,
+    "seen": 1792097388.633098,
+    "ast_hash": "282ac516a765758e4c5ea5e27e39d8eb",
+    "semantic_hash": ""
+  },
+  "quiz/make_schreiben.py": {
+    "mtime": 1792097256.821051,
+    "seen": 1792097388.6380916,
+    "ast_hash": "ed7fdacec36cb4e4d4bd2bf4cc931cfb",
+    "semantic_hash": ""
+  },
+  "PLAN_SCHREIBEN.md": {
+    "mtime": 1792096503.5234249,
+    "seen": 1792097388.6597128,
+    "ast_hash": "be094157431a3acde9b2bc2efafae901",
     "semantic_hash": ""
   }
 }
