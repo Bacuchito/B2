@@ -5385,7 +5385,7 @@
       "file_type": "code",
       "norm_label": "build_user_prompt()",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L164"
+      "source_location": "L219"
     },
     {
       "id": "quiz_prompt_schreiben_validate_evaluation_json",
@@ -5397,7 +5397,7 @@
       "file_type": "code",
       "norm_label": "validate_evaluation_json()",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L202"
+      "source_location": "L257"
     },
     {
       "id": "quiz_test_prompt_call_live_gemini",
@@ -10451,17 +10451,6 @@
       "source_location": "L46"
     },
     {
-      "id": "quiz_prompt_schreiben_rationale_165",
-      "label": "Construye el prompt de entrada para el modelo combinando la tarea oficial y el\u2026",
-      "_origin": "ast",
-      "community": 26,
-      "community_name": "test_prompt.py",
-      "file_type": "rationale",
-      "norm_label": "construye el prompt de entrada para el modelo combinando la tarea oficial y el...",
-      "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L165"
-    },
-    {
       "id": "quiz_prompt_schreiben_rationale_2",
       "label": "prompt_schreiben.py - Definici\u00f3n oficial del System Prompt y Contrato JSON para\u2026",
       "_origin": "ast",
@@ -10473,7 +10462,18 @@
       "source_location": "L2"
     },
     {
-      "id": "quiz_prompt_schreiben_rationale_203",
+      "id": "quiz_prompt_schreiben_rationale_220",
+      "label": "Construye el prompt de entrada para el modelo combinando la tarea oficial y el\u2026",
+      "_origin": "ast",
+      "community": 26,
+      "community_name": "test_prompt.py",
+      "file_type": "rationale",
+      "norm_label": "construye el prompt de entrada para el modelo combinando la tarea oficial y el...",
+      "source_file": "quiz/prompt_schreiben.py",
+      "source_location": "L220"
+    },
+    {
+      "id": "quiz_prompt_schreiben_rationale_258",
       "label": "Valida que un diccionario cumpla el contrato de evaluaci\u00f3n telc B2. Devuelve\u2026",
       "_origin": "ast",
       "community": 26,
@@ -10481,7 +10481,7 @@
       "file_type": "rationale",
       "norm_label": "valida que un diccionario cumpla el contrato de evaluacion telc b2. devuelve...",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L203"
+      "source_location": "L258"
     },
     {
       "id": "quiz_test_prompt_rationale_187",
@@ -37486,7 +37486,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L164",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -37498,7 +37498,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L202",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -51464,7 +51464,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L164",
+      "source_location": "L219",
       "weight": 1.0
     },
     {
@@ -51475,7 +51475,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L202",
+      "source_location": "L257",
       "weight": 1.0
     },
     {
@@ -52854,17 +52854,6 @@
       "weight": 1.0
     },
     {
-      "source": "quiz_prompt_schreiben_rationale_165",
-      "target": "quiz_prompt_schreiben_build_user_prompt",
-      "relation": "rationale_for",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L165",
-      "weight": 1.0
-    },
-    {
       "source": "quiz_prompt_schreiben_rationale_2",
       "target": "quiz_prompt_schreiben",
       "relation": "rationale_for",
@@ -52876,14 +52865,25 @@
       "weight": 1.0
     },
     {
-      "source": "quiz_prompt_schreiben_rationale_203",
+      "source": "quiz_prompt_schreiben_rationale_220",
+      "target": "quiz_prompt_schreiben_build_user_prompt",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "quiz/prompt_schreiben.py",
+      "source_location": "L220",
+      "weight": 1.0
+    },
+    {
+      "source": "quiz_prompt_schreiben_rationale_258",
       "target": "quiz_prompt_schreiben_validate_evaluation_json",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L203",
+      "source_location": "L258",
       "weight": 1.0
     },
     {
@@ -54644,5 +54644,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "30b138c72102667eff59fae556dba19d05b34cf5"
+  "built_at_commit": "2bfe500fb5fd2158b5e6a4e95e2ffef4e54c6ae6"
 }

@@ -5385,7 +5385,7 @@
       "file_type": "code",
       "norm_label": "build_user_prompt()",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L219"
+      "source_location": "L224"
     },
     {
       "id": "quiz_prompt_schreiben_validate_evaluation_json",
@@ -5397,7 +5397,7 @@
       "file_type": "code",
       "norm_label": "validate_evaluation_json()",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L257"
+      "source_location": "L262"
     },
     {
       "id": "quiz_test_prompt_call_live_gemini",
@@ -9332,7 +9332,7 @@
       "file_type": "code",
       "norm_label": "evaltext",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L171"
+      "source_location": "L172"
     },
     {
       "id": "quiz_smoke_test_fs",
@@ -10462,7 +10462,7 @@
       "source_location": "L2"
     },
     {
-      "id": "quiz_prompt_schreiben_rationale_220",
+      "id": "quiz_prompt_schreiben_rationale_225",
       "label": "Construye el prompt de entrada para el modelo combinando la tarea oficial y el\u2026",
       "_origin": "ast",
       "community": 26,
@@ -10470,10 +10470,10 @@
       "file_type": "rationale",
       "norm_label": "construye el prompt de entrada para el modelo combinando la tarea oficial y el...",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L220"
+      "source_location": "L225"
     },
     {
-      "id": "quiz_prompt_schreiben_rationale_258",
+      "id": "quiz_prompt_schreiben_rationale_263",
       "label": "Valida que un diccionario cumpla el contrato de evaluaci\u00f3n telc B2. Devuelve\u2026",
       "_origin": "ast",
       "community": 26,
@@ -10481,7 +10481,7 @@
       "file_type": "rationale",
       "norm_label": "valida que un diccionario cumpla el contrato de evaluacion telc b2. devuelve...",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L258"
+      "source_location": "L263"
     },
     {
       "id": "quiz_test_prompt_rationale_187",
@@ -37486,7 +37486,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L219",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -37498,7 +37498,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L257",
+      "source_location": "L262",
       "weight": 1.0
     },
     {
@@ -51464,7 +51464,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L219",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -51475,7 +51475,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L257",
+      "source_location": "L262",
       "weight": 1.0
     },
     {
@@ -51618,7 +51618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L171",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -52865,25 +52865,25 @@
       "weight": 1.0
     },
     {
-      "source": "quiz_prompt_schreiben_rationale_220",
+      "source": "quiz_prompt_schreiben_rationale_225",
       "target": "quiz_prompt_schreiben_build_user_prompt",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L220",
+      "source_location": "L225",
       "weight": 1.0
     },
     {
-      "source": "quiz_prompt_schreiben_rationale_258",
+      "source": "quiz_prompt_schreiben_rationale_263",
       "target": "quiz_prompt_schreiben_validate_evaluation_json",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L258",
+      "source_location": "L263",
       "weight": 1.0
     },
     {
@@ -54644,5 +54644,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2bfe500fb5fd2158b5e6a4e95e2ffef4e54c6ae6"
+  "built_at_commit": "56a46aee7928ca9ca1c220cfa678122f00436468"
 }

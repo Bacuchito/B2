@@ -120,7 +120,50 @@
   .crit-box{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px}
   .crit-box .ch{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-weight:600;font-size:13.5px}
   .crit-box .c-body{font-size:13px;color:#cfd4de;line-height:1.5}
-  .err-card{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:6px;padding:10px 14px;margin-bottom:10px}
+  /* Texto anotado e interactivo con errores en colores */
+  .annotated-card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin:16px 0}
+  .annotated-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:10px}
+  .annotated-text-box{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:18px 20px;font-size:15px;line-height:1.9;white-space:pre-wrap;color:#e6e9f0;word-break:break-word}
+  
+  .err-highlight{position:relative;border-radius:4px;padding:2px 6px;margin:0 1px;cursor:pointer;display:inline;transition:all .18s ease;font-weight:500}
+  .err-highlight.err-grammatik{background:rgba(240,138,146,0.18);border-bottom:2.5px solid #f08a92;color:#ffcdd2}
+  .err-highlight.err-grammatik:hover, .err-highlight.err-grammatik.active{background:rgba(240,138,146,0.36);box-shadow:0 0 0 2px #f08a92}
+  
+  .err-highlight.err-wortschatz{background:rgba(232,196,106,0.18);border-bottom:2.5px solid #e8c46a;color:#ffe082}
+  .err-highlight.err-wortschatz:hover, .err-highlight.err-wortschatz.active{background:rgba(232,196,106,0.36);box-shadow:0 0 0 2px #e8c46a}
+  
+  .err-highlight.err-zeichensetzung{background:rgba(127,182,255,0.18);border-bottom:2.5px solid #7fb6ff;color:#bbdefb}
+  .err-highlight.err-zeichensetzung:hover, .err-highlight.err-zeichensetzung.active{background:rgba(127,182,255,0.36);box-shadow:0 0 0 2px #7fb6ff}
+  
+  .err-highlight.err-stil{background:rgba(211,164,255,0.18);border-bottom:2.5px solid #d3a4ff;color:#e1bee7}
+  .err-highlight.err-stil:hover, .err-highlight.err-stil.active{background:rgba(211,164,255,0.36);box-shadow:0 0 0 2px #d3a4ff}
+
+  .err-badge-num{font-size:11px;font-weight:700;vertical-align:super;padding:1px 5px;border-radius:99px;margin-left:4px;background:rgba(0,0,0,0.65);border:1px solid currentColor;opacity:0.9}
+
+  .err-popover{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#181d28;border:1px solid var(--line);box-shadow:0 12px 32px rgba(0,0,0,0.7);border-radius:8px;padding:10px 14px;min-width:250px;max-width:340px;z-index:40;display:none;font-size:13px;line-height:1.5;pointer-events:auto;text-align:left;animation:pop .12s ease-out}
+  .err-popover::after{content:"";position:absolute;top:100%;left:50%;transform:translateX(-50%);border-width:6px;border-style:solid;border-color:#181d28 transparent transparent transparent}
+  .err-highlight:hover .err-popover, .err-highlight.active .err-popover{display:block}
+  .err-popover-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+  .err-popover-orig{color:#f08a92;font-size:12.5px;margin-bottom:3px;display:block}
+  .err-popover-corr{color:#5fd6a3;font-weight:600;font-size:13px;margin-bottom:5px;display:block}
+  .err-popover-rule{color:#cfd4de;font-size:12.5px;display:block;line-height:1.45}
+
+  .err-legend{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:12px}
+  .legend-chip{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:6px;background:var(--panel2);border:1px solid var(--line);color:var(--dim)}
+  .legend-chip .dot{width:8px;height:8px;border-radius:50%}
+  .legend-chip.gram .dot{background:#f08a92}
+  .legend-chip.wort .dot{background:#e8c46a}
+  .legend-chip.zeichen .dot{background:#7fb6ff}
+  .legend-chip.stil .dot{background:#d3a4ff}
+
+  .tab-pills{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+  .tab-pill{background:var(--panel2);border:1px solid var(--line);color:var(--dim);padding:6px 14px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s ease}
+  .tab-pill:hover{color:var(--txt);background:var(--panel)}
+  .tab-pill.active{background:var(--acc);color:#fff;border-color:var(--acc)}
+
+  .err-card{background:var(--panel2);border:1px solid var(--line);border-left:4px solid var(--bad);border-radius:6px;padding:12px 14px;margin-bottom:10px;transition:box-shadow .2s ease, transform .15s ease;cursor:pointer}
+  .err-card:hover{transform:translateY(-1px);border-color:var(--acc)}
+  .err-card.pulse{box-shadow:0 0 0 3px var(--acc);border-left-color:var(--acc)}
   .err-card .orig{color:#f08a92;text-decoration:line-through;margin-bottom:4px;font-size:13.5px}
   .err-card .corr{color:#5fd6a3;font-weight:600;margin-bottom:4px;font-size:14px}
   .err-card .rule{font-size:13px;color:#cfd4de;line-height:1.45}
@@ -658,6 +701,7 @@ function renderSchreiben(v, main){
 
     try {
       const result = await evaluateWithLLM(v, textToEval, (msg)=>{ statusMsg.textContent = msg; });
+      result.student_text = textToEval;
       if(!state.schreiben_evals) state.schreiben_evals = {};
       state.schreiben_evals[v.id] = result;
       saveState();
@@ -889,6 +933,7 @@ function normalizeEvaluationResult(raw){
     verdict,
     score_total: scoreTotal,
     word_count: raw.word_count || 0,
+    student_text: raw.student_text || "",
     criteria: {
       aufgabenbewaeltigung: c1,
       angemessenheit: c2,
@@ -900,6 +945,58 @@ function normalizeEvaluationResult(raw){
     areas_for_improvement: areas,
     corrected_version
   };
+}
+
+function cleanQuotes(s){
+  return String(s || "").replace(/^[«»"„“”'’`\s]+|[«»"„“”'’`\s]+$/g, "").trim();
+}
+
+function findErrorRanges(studentText, errors){
+  if(!studentText || !errors || !errors.length) return [];
+  const ranges = [];
+  errors.forEach((err, errIdx) => {
+    let orig = cleanQuotes(err.original);
+    if(!orig) return;
+    let start = studentText.indexOf(orig);
+    if(start === -1) start = studentText.toLowerCase().indexOf(orig.toLowerCase());
+    if(start === -1){
+      const escaped = orig.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+      try {
+        const regex = new RegExp(escaped, "i");
+        const match = studentText.match(regex);
+        if(match && match.index !== undefined){
+          start = match.index;
+          orig = match[0];
+        }
+      } catch(e){}
+    }
+    if(start === -1){
+      const trimmed = orig.replace(/[.,;:!?]+$/, "").trim();
+      if(trimmed.length > 3){
+        start = studentText.toLowerCase().indexOf(trimmed.toLowerCase());
+        if(start !== -1) orig = studentText.slice(start, start + trimmed.length);
+      }
+    }
+    if(start !== -1){
+      ranges.push({
+        start: start,
+        end: start + orig.length,
+        err: err,
+        errIdx: errIdx,
+        text: studentText.slice(start, start + orig.length)
+      });
+    }
+  });
+  ranges.sort((a, b) => a.start - b.start || (b.end - b.start) - (a.end - a.start));
+  const clean = [];
+  let lastEnd = 0;
+  for(const r of ranges){
+    if(r.start >= lastEnd){
+      clean.push(r);
+      lastEnd = r.end;
+    }
+  }
+  return clean;
 }
 
 function renderEvaluationResult(v, rawRes){
@@ -916,7 +1013,132 @@ function renderEvaluationResult(v, rawRes){
                      '<div>Puntuación total: <b>' + (res.score_total != null ? res.score_total : '-') + ' / 100</b></div>';
   card.appendChild(banner);
 
-  /* 4 Criterios */
+  /* Texto del alumno analizado con errores en colores e interactivos */
+  const studentText = res.student_text || (state.schreiben_drafts && state.schreiben_drafts[v.id]) || "";
+  const errorsList = res.critical_errors || [];
+  const errorRanges = findErrorRanges(studentText, errorsList);
+
+  const textCard = document.createElement("div");
+  textCard.className = "annotated-card";
+
+  // Conteo de errores por categoría
+  let numGram = 0, numWort = 0, numZeich = 0, numStil = 0;
+  errorsList.forEach(e => {
+    const t = String(e.type || "").toLowerCase();
+    if(t.includes("wort")) numWort++;
+    else if(t.includes("zeich") || t.includes("punkt") || t.includes("ortho") || t.includes("rechtschreib")) numZeich++;
+    else if(t.includes("stil") || t.includes("reg")) numStil++;
+    else numGram++;
+  });
+
+  const head = document.createElement("div");
+  head.className = "annotated-head";
+  head.innerHTML =
+    '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">' +
+      '<h3 style="margin:0;font-size:15.5px">📝 Tu texto con análisis y corrección interactiva</h3>' +
+      (errorsList.length === 0
+        ? '<span class="badge hoch">✓ 0 errores detectados</span>'
+        : '<span class="badge ' + (errorsList.length > 3 ? 'niedrig' : 'mittel') + '">⚠ ' + errorsList.length + ' corrección' + (errorsList.length>1?'es':'') + '</span>') +
+    '</div>' +
+    '<div class="err-legend">' +
+      (numGram > 0 ? '<span class="legend-chip gram"><span class="dot"></span>Gramática / Sintaxis (' + numGram + ')</span>' : '') +
+      (numWort > 0 ? '<span class="legend-chip wort"><span class="dot"></span>Vocabulario (' + numWort + ')</span>' : '') +
+      (numZeich > 0 ? '<span class="legend-chip zeichen"><span class="dot"></span>Puntuación / Ortografía (' + numZeich + ')</span>' : '') +
+      (numStil > 0 ? '<span class="legend-chip stil"><span class="dot"></span>Estilo (' + numStil + ')</span>' : '') +
+    '</div>';
+  textCard.appendChild(head);
+
+  // Selector de pestañas para el texto
+  const tabRow = document.createElement("div");
+  tabRow.className = "tab-pills";
+  tabRow.innerHTML =
+    '<button class="tab-pill active" id="pill-annotated">🔍 Tu texto con errores marcados (' + errorRanges.length + '/' + errorsList.length + ' en texto)</button>' +
+    '<button class="tab-pill" id="pill-clean">📄 Tu texto original limpio</button>' +
+    (res.corrected_version ? '<button class="tab-pill" id="pill-model">⭐ Versión Modelo B2 sugerida</button>' : '');
+  textCard.appendChild(tabRow);
+
+  // Caja de texto anotada
+  const annotatedBox = document.createElement("div");
+  annotatedBox.id = "box-annotated-text";
+  annotatedBox.className = "annotated-text-box";
+
+  if(!studentText){
+    annotatedBox.innerHTML = '<span style="color:var(--dim);font-style:italic">No hay texto registrado para esta evaluación. Escribe tu texto en el editor y presiona "Evaluar con Examinador telc B2".</span>';
+  } else if(errorRanges.length === 0){
+    if(errorsList.length === 0){
+      annotatedBox.innerHTML = '<div style="color:var(--ok);margin-bottom:8px"><b>✓ ¡Texto impecable!</b> No se detectaron errores gramaticales ni ortográficos.</div>' + esc(studentText);
+    } else {
+      annotatedBox.innerHTML = esc(studentText);
+    }
+  } else {
+    let htmlPieces = [];
+    let lastEnd = 0;
+    errorRanges.forEach((range) => {
+      if(range.start > lastEnd){
+        htmlPieces.push(esc(studentText.slice(lastEnd, range.start)));
+      }
+      const err = range.err;
+      const typeStr = String(err.type || "Grammatik").toLowerCase();
+      let typeClass = "err-grammatik";
+      let badgeClass = "niedrig";
+      if(typeStr.includes("wort")){
+        typeClass = "err-wortschatz";
+        badgeClass = "mittel";
+      } else if(typeStr.includes("zeich") || typeStr.includes("punkt") || typeStr.includes("ortho") || typeStr.includes("rechtschreib")){
+        typeClass = "err-zeichensetzung";
+        badgeClass = "ok";
+      } else if(typeStr.includes("stil") || typeStr.includes("reg")){
+        typeClass = "err-stil";
+        badgeClass = "tag";
+      }
+
+      const errNumber = range.errIdx + 1;
+      const pieceHtml =
+        '<mark class="err-highlight ' + typeClass + '" data-err-target="err-card-' + range.errIdx + '" title="Clic para ver explicación detallada">' +
+          esc(range.text) +
+          '<span class="err-badge-num">' + errNumber + '</span>' +
+          '<span class="err-popover">' +
+            '<span class="err-popover-head">' +
+              '<span class="badge ' + badgeClass + '">' + esc(err.type || "Grammatik") + '</span>' +
+              '<span style="font-size:11px;color:var(--dim)">Corrección #' + errNumber + '</span>' +
+            '</span>' +
+            '<span class="err-popover-orig"><s>' + esc(err.original) + '</s></span>' +
+            '<span class="err-popover-corr">➔ ' + esc(err.correction) + '</span>' +
+            '<span class="err-popover-rule">💡 ' + esc(err.rule_es) + '</span>' +
+          '</span>' +
+        '</mark>';
+      htmlPieces.push(pieceHtml);
+      lastEnd = range.end;
+    });
+    if(lastEnd < studentText.length){
+      htmlPieces.push(esc(studentText.slice(lastEnd)));
+    }
+    annotatedBox.innerHTML = htmlPieces.join("");
+  }
+  textCard.appendChild(annotatedBox);
+
+  // Caja de texto limpia
+  const cleanBox = document.createElement("div");
+  cleanBox.id = "box-clean-text";
+  cleanBox.className = "annotated-text-box";
+  cleanBox.style.display = "none";
+  cleanBox.textContent = studentText || "(Sin texto)";
+  textCard.appendChild(cleanBox);
+
+  // Caja de versión modelo B2
+  if(res.corrected_version){
+    const modelBox = document.createElement("div");
+    modelBox.id = "box-model-text";
+    modelBox.className = "annotated-text-box";
+    modelBox.style.display = "none";
+    modelBox.style.borderLeft = "4px solid var(--acc)";
+    modelBox.textContent = res.corrected_version;
+    textCard.appendChild(modelBox);
+  }
+
+  card.appendChild(textCard);
+
+  /* 4 Criterios Oficiales telc B2 */
   const cGrid = document.createElement("div");
   cGrid.className = "crit-grid";
   const critNames = [
@@ -954,20 +1176,52 @@ function renderEvaluationResult(v, rawRes){
   });
   card.appendChild(cGrid);
 
-  /* Errores críticos detectados */
+  /* Errores detallados con sincronización bidireccional */
   if(res.critical_errors && res.critical_errors.length){
     const errSec = document.createElement("div");
-    errSec.style.marginTop = "16px";
-    errSec.innerHTML = '<h4 style="margin:0 0 10px;font-size:14.5px;color:var(--bad)">⚠ Correcciones gramaticales y de estilo (' + res.critical_errors.length + '):</h4>';
-    res.critical_errors.forEach(err=>{
+    errSec.style.marginTop = "18px";
+    errSec.innerHTML = '<h4 style="margin:0 0 10px;font-size:15px;color:var(--bad)">⚠ Desglose detallado de errores y reglas gramaticales (' + res.critical_errors.length + '):</h4>';
+    
+    res.critical_errors.forEach((err, errIdx)=>{
+      const typeStr = String(err.type || "Grammatik").toLowerCase();
+      let badgeClass = "niedrig";
+      let borderCol = "#f08a92";
+      if(typeStr.includes("wort")){
+        badgeClass = "mittel";
+        borderCol = "#e8c46a";
+      } else if(typeStr.includes("zeich") || typeStr.includes("punkt") || typeStr.includes("ortho") || typeStr.includes("rechtschreib")){
+        badgeClass = "ok";
+        borderCol = "#7fb6ff";
+      } else if(typeStr.includes("stil") || typeStr.includes("reg")){
+        badgeClass = "tag";
+        borderCol = "#d3a4ff";
+      }
+
       const eb = document.createElement("div");
       eb.className = "err-card";
-      eb.innerHTML = '<div style="display:flex;justify-content:space-between;margin-bottom:4px">' +
-                     '<span class="badge tag">' + esc(err.type || "Grammatik") + '</span>' +
-                     '</div>' +
-                     '<div class="orig">„' + esc(err.original) + '“</div>' +
-                     '<div class="corr">➔ ' + esc(err.correction) + '</div>' +
-                     '<div class="rule">💡 ' + esc(err.rule_es) + '</div>';
+      eb.id = "err-card-" + errIdx;
+      eb.style.borderLeftColor = borderCol;
+      eb.innerHTML =
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">' +
+          '<div style="display:flex;align-items:center;gap:8px">' +
+            '<span style="font-weight:700;font-size:13px;color:' + borderCol + '">#' + (errIdx + 1) + '</span>' +
+            '<span class="badge ' + badgeClass + '">' + esc(err.type || "Grammatik") + '</span>' +
+          '</div>' +
+          '<span style="font-size:11.5px;color:var(--dim)" title="Clic para localizar en el texto">🔍 Ubicar en el texto</span>' +
+        '</div>' +
+        '<div class="orig">„' + esc(err.original) + '“</div>' +
+        '<div class="corr">➔ ' + esc(err.correction) + '</div>' +
+        '<div class="rule">💡 ' + esc(err.rule_es) + '</div>';
+
+      eb.onclick = ()=>{
+        const highlightEl = document.querySelector('.err-highlight[data-err-target="err-card-' + errIdx + '"]');
+        if(highlightEl){
+          highlightEl.scrollIntoView({ behavior: "smooth", block: "center" });
+          highlightEl.classList.add("active");
+          setTimeout(()=>{ highlightEl.classList.remove("active"); }, 2000);
+        }
+      };
+
       errSec.appendChild(eb);
     });
     card.appendChild(errSec);
@@ -1011,18 +1265,6 @@ function renderEvaluationResult(v, rawRes){
                       '</div>' +
                       '<div class="model-text" id="model-text-content">' + esc(res.corrected_version) + '</div>';
     card.appendChild(cvSec);
-
-    setTimeout(()=>{
-      const cpBtn = document.getElementById("btn-copy-model");
-      if(cpBtn){
-        cpBtn.onclick = ()=>{
-          navigator.clipboard.writeText(res.corrected_version).then(()=>{
-            cpBtn.textContent = "¡Copiado!";
-            setTimeout(()=>{ cpBtn.textContent = "Copiar texto"; }, 2000);
-          }).catch(()=>{});
-        };
-      }
-    }, 10);
   }
 
   /* Botón para borrar evaluación */
@@ -1038,6 +1280,72 @@ function renderEvaluationResult(v, rawRes){
     }
   };
   card.appendChild(bDelEval);
+
+  // Conectar eventos interactivos tras montar el DOM
+  setTimeout(()=>{
+    const pAnn = document.getElementById("pill-annotated");
+    const pCln = document.getElementById("pill-clean");
+    const pMod = document.getElementById("pill-model");
+    const bAnn = document.getElementById("box-annotated-text");
+    const bCln = document.getElementById("box-clean-text");
+    const bMod = document.getElementById("box-model-text");
+
+    if(pAnn && bAnn){
+      pAnn.onclick = ()=>{
+        pAnn.className = "tab-pill active";
+        if(pCln) pCln.className = "tab-pill";
+        if(pMod) pMod.className = "tab-pill";
+        bAnn.style.display = "block";
+        if(bCln) bCln.style.display = "none";
+        if(bMod) bMod.style.display = "none";
+      };
+    }
+    if(pCln && bCln){
+      pCln.onclick = ()=>{
+        pCln.className = "tab-pill active";
+        if(pAnn) pAnn.className = "tab-pill";
+        if(pMod) pMod.className = "tab-pill";
+        bCln.style.display = "block";
+        if(bAnn) bAnn.style.display = "none";
+        if(bMod) bMod.style.display = "none";
+      };
+    }
+    if(pMod && bMod){
+      pMod.onclick = ()=>{
+        pMod.className = "tab-pill active";
+        if(pAnn) pAnn.className = "tab-pill";
+        if(pCln) pCln.className = "tab-pill";
+        bMod.style.display = "block";
+        if(bAnn) bAnn.style.display = "none";
+        if(bCln) bCln.style.display = "none";
+      };
+    }
+
+    // Clic en un highlight para desplazarse a la tarjeta correspondiente
+    document.querySelectorAll(".err-highlight").forEach(el => {
+      el.onclick = (e)=>{
+        e.stopPropagation();
+        const targetId = el.getAttribute("data-err-target");
+        if(!targetId) return;
+        const targetCard = document.getElementById(targetId);
+        if(targetCard){
+          targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+          targetCard.classList.add("pulse");
+          setTimeout(()=>{ targetCard.classList.remove("pulse"); }, 1800);
+        }
+      };
+    });
+
+    const cpBtn = document.getElementById("btn-copy-model");
+    if(cpBtn && res.corrected_version){
+      cpBtn.onclick = ()=>{
+        navigator.clipboard.writeText(res.corrected_version).then(()=>{
+          cpBtn.textContent = "¡Copiado!";
+          setTimeout(()=>{ cpBtn.textContent = "Copiar texto"; }, 2000);
+        }).catch(()=>{});
+      };
+    }
+  }, 15);
 
   return card;
 }

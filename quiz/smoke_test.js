@@ -147,6 +147,7 @@ try {
       verdict: "BESTANDEN",
       score_total: 88,
       word_count: 172,
+      student_text: "Sehr geehrte Damen und Herren,\nIch danke Sie für Ihren Hinweis und möchte mich entschuldigen.",
       criteria: {
         aufgabenbewaeltigung: { grade: "A", score: 23, feedback: "Todos los puntos tratados", leitpunkte_check: [{point: "Dank", covered: true, comment: "OK"}] },
         angemessenheit: { grade: "B", score: 21, feedback: "Registro formal adecuado" },
@@ -169,7 +170,9 @@ try {
   errors.push("excepción al pintar resultados de evaluación: " + e.message);
 }
 const evalText = ids.main.collectText();
-check("los resultados de evaluación se pintan correctamente", /BESTANDEN|Aufgabenbewältigung|Correcciones gramaticales/i.test(evalText), evalText.match(/BESTANDEN[^<]*/i) ? "insignia BESTANDEN presente" : "");
+check("los resultados de evaluación se pintan correctamente", /BESTANDEN|Aufgabenbewältigung/i.test(evalText), evalText.match(/BESTANDEN[^<]*/i) ? "insignia BESTANDEN presente" : "");
+check("el texto del alumno anotado con errores está presente", /Tu texto con análisis|Ich danke Sie/i.test(evalText));
+check("la regla gramatical y corrección interactiva se muestran", /Danken rige dativo|Ich danke Ihnen/i.test(evalText));
 
 /* ---------- informe ---------- */
 let bad = 0;

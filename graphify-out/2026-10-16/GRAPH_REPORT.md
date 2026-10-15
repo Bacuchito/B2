@@ -1,7 +1,7 @@
 # Graph Report - B2  (2026-10-16)
 
 ## Corpus Check
-- 163 files · ~401,523 words
+- 163 files · ~404,455 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `30b138c7`
+- Built from commit: `2bfe500f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -265,7 +265,7 @@ Nodes (13): actionLabel(), bindConfigureInlineControlHover(), bindConfigureModif
 
 ### Community 26 - "test_prompt.py"
 Cohesion: 0.15
-Nodes (18): main(), norm_ws(), Valida los JSON de preguntas y construye el HTML autocontenido. Uso: python…, Normaliza espacios para comparar citas con el texto del que salen., validate(), build_user_prompt(), Any, Construye el prompt de entrada para el modelo combinando la tarea oficial y el… (+10 more)
+Nodes (18): main(), norm_ws(), Valida los JSON de preguntas y construye el HTML autocontenido. Uso: python…, Normaliza espacios para comparar citas con el texto del que salen., validate(), build_user_prompt(), Any, prompt_schreiben.py - Definición oficial del System Prompt y Contrato JSON para… (+10 more)
 
 ### Community 27 - "live-browser-ignores.js"
 Cohesion: 0.52

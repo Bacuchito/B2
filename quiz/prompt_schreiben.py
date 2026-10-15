@@ -102,6 +102,11 @@ Verwende EXAKT folgende Schlüssel (Keys) und Struktur:
 WICHTIGE VORGABEN:
 - `score_total` MUSS eine Ganzzahl (0-100) sein und der Summe der 4 Kriterien (`score`) entsprechen.
 - Jedes Kriterium in `criteria` MUSS die Felder `grade` (A, B, C oder D), `score` (Zahl von 0 bis 25) und `feedback` enthalten.
+- In `critical_errors`: Analysiere den Text gründlich und liste ALLE konkreten Fehler auf (Grammatik, Verbposition/Satzbau, Deklination/Kasus, Präpositionen, unpassende Wortwahl, Rechtschreibung, Zeichensetzung).
+  * `original`: MUSS ein EXAKTES, wörtliches Zitat (Substring) aus dem Text des Teilnehmers sein (ohne Anführungszeichen drumherum), damit der Fehler exakt an dieser Stelle im Text farbig markiert werden kann!
+  * `correction`: Die korrigierte Version der Passage auf Deutsch (B2-Niveau).
+  * `rule_es`: Präzise, verständliche und lehrreiche Erklärung der Grammatik- oder Ausdrucksregel auf SPANISCH.
+  * `type`: "Grammatik", "Wortschatz", "Zeichensetzung", "Stil" oder "Satzbau".
 - Erklärungen der Fehler (`rule_es`), Stärken (`strengths`), Schwächen (`areas_for_improvement`) und `feedback` MÜSSEN auf SPANISCH sein.
 - `corrected_version` MUSS auf DEUTSCH sein.
 """
@@ -196,7 +201,7 @@ JSON_SCHEMA: Dict[str, Any] = {
                     "rule_es": {"type": "string"},
                     "type": {
                         "type": "string",
-                        "enum": ["Grammatik", "Wortschatz", "Zeichensetzung", "Stil"]
+                        "enum": ["Grammatik", "Wortschatz", "Zeichensetzung", "Stil", "Satzbau"]
                     }
                 }
             }
