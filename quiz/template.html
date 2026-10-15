@@ -125,6 +125,7 @@ const allVariants = [];
 DATA.sections.forEach(sec=>{
   sec.variants.forEach(v=>{
     v._section = sec.id; v._sectionTitle = sec.title;
+    if(!v.items) v.items = [];
     /* Índice posicional: hay variantes con dos ítems del mismo número
        (p. ej. dos formulaciones del ítem 6), así que la clave de respuesta
        NO puede basarse en `n`. */
@@ -156,7 +157,7 @@ function itemAnswerLetter(it){
 function isDoubtful(it){
   return String(it.confidence||"mittel").toLowerCase() !== "hoch";
 }
-function doubtfulCount(v){ return v.items.filter(isDoubtful).length; }
+function doubtfulCount(v){ return (v.items || []).filter(isDoubtful).length; }
 
 let onlyDoubtful = false;
 
@@ -164,7 +165,7 @@ let onlyDoubtful = false;
 function updateStats(){
   let total = 0, done = 0, ok = 0, doubt = 0;
   allVariants.forEach(v=>{
-    v.items.forEach(it=>{
+    (v.items || []).forEach(it=>{
       total++;
       if(isDoubtful(it)) doubt++;
       const a = state.answers[ansKey(v,it)];
@@ -194,12 +195,14 @@ function renderNav(){
       const nd = doubtfulCount(v);
       if(onlyDoubtful && nd === 0 && v.id !== current) return;
       const b = document.createElement("button");
-      const n = v.items.length;
-      const done = v.items.filter(it => state.answers[ansKey(v,it)] !== undefined).length;
-      const ok = v.items.filter(it => state.answers[ansKey(v,it)] === itemAnswerLetter(it)).length;
-      const pill = onlyDoubtful
-        ? nd + (nd === 1 ? " dudosa" : " dudosas")
-        : (done ? ok + "/" + n : n + " ítems");
+      const n = (v.items || []).length;
+      const done = (v.items || []).filter(it => state.answers[ansKey(v,it)] !== undefined).length;
+      const ok = (v.items || []).filter(it => state.answers[ansKey(v,it)] === itemAnswerLetter(it)).length;
+      const pill = v.kind === "schreiben"
+        ? (v.category === "beschwerde" ? "E-Mail" : "Beitrag")
+        : (onlyDoubtful
+          ? nd + (nd === 1 ? " dudosa" : " dudosas")
+          : (done ? ok + "/" + n : n + " ítems"));
       b.innerHTML = v.label + '<span class="pill">' + pill + '</span>';
       if(v.id === current) b.className = "active";
       b.onclick = ()=>{ current = v.id; render(); window.scrollTo(0,0); };
@@ -224,7 +227,7 @@ function render(){
   sub.className = "sub";
   sub.innerHTML = 'Página ' + v.page + ' del PDF' +
     (v.topic ? ' · <b>' + v.topic + '</b>' : '') +
-    ' · ' + v.items.length + ' ítems';
+    (v.kind === "schreiben" ? ' · <b>Schreiben (150+ Wörter)</b>' : ' · ' + (v.items || []).length + ' ítems');
   main.appendChild(sub);
 
   if(v.note){

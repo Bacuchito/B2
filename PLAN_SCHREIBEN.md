@@ -6,7 +6,7 @@
 
 ## Estado Global del Proyecto
 
-- [ ] **Fase 1:** Catálogo y Extracción de Tareas de Schreiben
+- [x] **Fase 1:** Catálogo y Extracción de Tareas de Schreiben
 - [ ] **Fase 2:** Motor de Evaluación y System Prompt Oficial telc B2
 - [ ] **Fase 3:** Conector Multi-Proveedor de IA en el Frontend
 - [ ] **Fase 4:** Interfaz de Usuario (Editor, Contador y Resultados)
@@ -19,13 +19,13 @@
 ### Fase 1: Catálogo y Extracción de Tareas de Schreiben
 *Extraer las consignas de redacción del PDF y estructurarlas como fuente de verdad en el proyecto.*
 
-- [ ] **1.1** Localizar e indexar todas las tareas de redacción presentes en [`out/B2_ohne_antworten.md`](./out/B2_ohne_antworten.md):
+- [x] **1.1** Localizar e indexar todas las tareas de redacción presentes en [`out/B2_ohne_antworten.md`](./out/B2_ohne_antworten.md):
   - Tareas de correo formal / reclamación (*Beschwerde / Stellungnahme an Kunden oder Lieferanten*, ejercicios 21 de las pp. 66–77).
   - Tareas de foro profesional (*Forumsbeitrag / Diskussion im Intranet*).
-- [ ] **1.2** Definir el esquema JSON formal en [`quiz/SPEC.md`](./quiz/SPEC.md) para el bloque `kind: "schreiben"`:
+- [x] **1.2** Definir el esquema JSON formal en [`quiz/SPEC.md`](./quiz/SPEC.md) para el bloque `kind: "schreiben"`:
   - Campos requeridos: `id`, `title`, `type` (*email* o *forum*), `page`, `scenario` (situación previa), `leitpunkte` (los 4 puntos guía obligatorios) y `redemittel` (frases útiles sugeridas de apoyo).
-- [ ] **1.3** Crear el extractor y generar [`quiz/data/schreiben.json`](./quiz/data/schreiben.json) con todas las tareas catalogadas.
-- [ ] **1.4** Actualizar [`quiz/build.py`](./quiz/build.py) para validar la estructura del nuevo bloque y enlazar la sección `schreiben` en la generación del HTML.
+- [x] **1.3** Crear el extractor y generar [`quiz/data/schreiben_beschwerde.json`](./quiz/data/schreiben_beschwerde.json) y [`quiz/data/schreiben_forum.json`](./quiz/data/schreiben_forum.json) con todas las tareas catalogadas.
+- [x] **1.4** Actualizar [`quiz/build.py`](./quiz/build.py) para validar la estructura del nuevo bloque y enlazar las secciones `schreiben-beschwerde` y `schreiben-forum` en la generación del HTML.
 
 ---
 

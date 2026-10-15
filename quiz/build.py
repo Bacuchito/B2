@@ -27,6 +27,8 @@ SECTIONS = {
     "lesen-t3": "Lesen Teil 3",
     "lesen-t4": "Lesen Teil 4",
     "lesen-us": "Lesen und Schreiben (Lesen)",
+    "schreiben-beschwerde": "Schreiben: Beschwerde-E-Mail",
+    "schreiben-forum": "Schreiben: Forumsbeitrag",
     "hoeren-t1": "Hören Teil 1",
     "hoeren-t2": "Hören Teil 2",
     "hoeren-t3": "Hören Teil 3",
@@ -49,12 +51,31 @@ def validate(variant, errors, warns, infos):
     def warn(m):
         warns.append(f"[{vid}] {m}")
 
+    kind = variant.get("kind")
+    if kind not in ("zuordnung", "text", "schreiben"):
+        err(f"kind inválido: {kind!r}")
+        return
+
+    if kind == "schreiben":
+        for f in ("id", "label", "page", "kind", "category", "topic", "prompt", "leitpunkte"):
+            if f not in variant:
+                err(f"falta el campo obligatorio «{f}» para kind=schreiben")
+        cat = variant.get("category")
+        if cat not in ("beschwerde", "forum"):
+            err(f"category inválida en schreiben: {cat!r}")
+        lps = variant.get("leitpunkte") or []
+        if len(lps) < 4:
+            warn(f"tiene menos de 4 Leitpunkte: {len(lps)}")
+        if cat == "beschwerde":
+            if not variant.get("source_letter"):
+                warn("beschwerde sin source_letter")
+            if not variant.get("boss_instructions"):
+                warn("beschwerde sin boss_instructions")
+        return
+
     for f in ("id", "label", "page", "kind", "intro", "items"):
         if f not in variant:
             err(f"falta el campo obligatorio «{f}»")
-    kind = variant.get("kind")
-    if kind not in ("zuordnung", "text"):
-        err(f"kind inválido: {kind!r}")
 
     items = variant.get("items") or []
     if not items:

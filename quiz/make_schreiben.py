@@ -1,0 +1,335 @@
+import json
+
+redemittel_beschwerde = [
+    "Sehr geehrte(r) Frau/Herr [Name], / Sehr geehrte Damen und Herren,",
+    "vielen Dank für Ihre E-Mail, in der Sie uns auf die Unstimmigkeiten bei ... hinweisen.",
+    "Wir bedauern sehr, dass Sie mit unserem Service / unserer Lieferung nicht zufrieden waren.",
+    "Bitte entschuldigen Sie die entstandenen Unannehmlichkeiten.",
+    "Der Grund für dieses Problem war, dass...",
+    "Nach Rücksprache mit unserer zuständigen Abteilung können wir Ihnen mitteilen, dass...",
+    "Wir möchten Ihnen folgenden Lösungsvorschlag unterbreiten: ...",
+    "Gern schicken wir Ihnen umgehend einen Techniker vorbei / liefern wir die Ware erneut.",
+    "Als kleine Entschädigung und Wiedergutmachung bieten wir Ihnen einen Rabatt von ... % an.",
+    "Selbstverständlich übernehmen wir die anfallenden Kosten.",
+    "Wir versichern Ihnen, dass wir alles tun werden, damit sich ein solcher Vorfall nicht wiederholt.",
+    "Wir hoffen auf Ihr Verständnis und freuen uns weiterhin auf eine gute Zusammenarbeit.",
+    "Mit freundlichen Grüßen"
+]
+
+redemittel_forum = [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+]
+
+beschwerden = [
+    {
+        "id": "schr-b-p66",
+        "category": "beschwerde",
+        "kind": "schreiben",
+        "label": "Beschwerde 1: Putzdienst und unvollständige Arbeitszeit",
+        "topic": "Putzdienst / Büroreinigung",
+        "page": 66,
+        "scenario": "Die Huber GmbH hat einen Vertrag über täglich 3 Stunden Büroreinigung (6:00 bis 9:00 Uhr). Herr Lassner beschwert sich, dass die Reinigungskräfte in den letzten zwei Wochen mehrfach vor 9:00 Uhr nicht mehr da waren. Er verlangt eine Anpassung der Rechnung.",
+        "source_letter": "Sehr geehrte Frau Woller,\n\nleider muss ich mich heute mit einer Beschwerde an Sie wenden. Wir haben einen Vertrag mit Ihrer Firma für die Reinigung unserer Büroräume. In diesem Vertrag sind täglich 3 Stunden Arbeit bei uns festgelegt, und zwar von 6.00 Uhr bis 9.00 Uhr morgens.\n\nIn den letzten zwei Wochen war unsere Sekretärin einige Male bereits vor 9 Uhr im Büro, von Ihrem Putzdienst war aber niemand zu sehen. Wie kann das sein?\n\nWenn wir 3 Stunden bezahlen, erwarten wir auch, dass Ihr Personal drei Stunden bei uns arbeitet. Wenn Sie für die Reinigung unserer Räume weniger als die vereinbarte Zeit benötigen, sollten Sie uns darüber informieren, damit wir den Vertrag ändern.\n\nIch bitte um umgehende Stellungnahme und natürlich die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden.\n\nMit freundlichen Grüßen\nTheo Lassner",
+        "boss_instructions": "Hallo Friederike, ich verstehe den Ärger von Herrn Lassner. Bitte kläre mit unseren Leuten, was da los ist, und antworte Herrn Lassner. Sage ihm zu, dass so etwas nie wieder vorkommt, und gib ihm 20 % Rabatt auf die nächste Rechnung. Wir dürfen den Kunden keinesfalls verlieren! Gruß Heike",
+        "prompt": "Sie sind Mitarbeiter(in) bei der Reinigungsfirma. Ihr(e) Vorgesetzte(r) hat Sie gebeten, dem Kunden zu antworten. Schreiben Sie eine E-Mail an Herrn Lassner. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Bezugnahme auf die Beschwerde und Dank für den Hinweis",
+            "Förmliche Entschuldigung und Erklärung der Ursache des Problems",
+            "Zusicherung, dass die vertragliche Arbeitszeit künftig strikt eingehalten wird",
+            "Angebot eines 20 %-igen Rabatts auf die nächste Monatsrechnung als Wiedergutmachung"
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_beschwerde
+    },
+    {
+        "id": "schr-b-p67",
+        "category": "beschwerde",
+        "kind": "schreiben",
+        "label": "Beschwerde 2: Lieferverzögerung Tischlampen",
+        "topic": "Lieferverzögerung Büromöbel",
+        "page": 67,
+        "scenario": "Frau Berger hat 25 Tischlampen für neu renovierte Büros bestellt. Die Lieferung wurde für diese Woche zugesagt, ist aber am Freitagnachmittag noch nicht eingetroffen. Am Montag soll der Betrieb starten. Wenn die Lampen bis Montagmittag nicht da sind, wird sie stornieren.",
+        "source_letter": "Sehr geehrter Herr Richter,\n\nvergangene Woche habe ich bei Ihnen 25 Tischlampen Modell TS 13 150 07 für unsere neuen Büroräume bestellt. Mir wurde telefonisch zugesagt, dass die Lampen noch diese Woche geliefert werden, aber jetzt ist schon Freitagnachmittag und sie sind leider noch immer nicht eingetroffen.\n\nDas ist ärgerlich, da wir am Wochenende unsere Renovierungsarbeiten beenden und die Büros dann vollständig neu einrichten werden. Dazu würden natürlich auch die Lampen gehören, da wir am Montag unseren Bürobetrieb in funktionstüchtigen Räumen wieder aufnehmen wollen. Ich habe bereits mehrfach versucht, Sie telefonisch zu erreichen, und habe Nachrichten auf Ihrem Anrufbeantworter hinterlassen, aber ich wurde leider nicht zurückgerufen.\n\nWenn Ihre Lampen also bis Montagmittag, 13:00 Uhr, nicht bei uns eingetroffen sind, werde ich die Bestellung bei Ihnen stornieren. Ich bitte um eine schnelle Antwort!\n\nMit freundlichen Grüßen\nEvelyn Berger",
+        "boss_instructions": "Bitte antworten Sie Frau Berger sofort. Entschuldigen Sie sich für die Verzögerung beim Zulieferer. Versichern Sie ihr, dass die Lampen per Expresskurier am Montagmorgen vor 10:00 Uhr eintreffen und wir die Expresskosten sowie einen Preisnachlass übernehmen.",
+        "prompt": "Schreiben Sie eine E-Mail an Frau Berger. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Bezug auf die Bestellung und Entschuldigung für die Nicht-Erreichbarkeit",
+            "Erklärung der Ursache des Lieferverzugs beim Hersteller",
+            "Verbindliche Zusage der Expresslieferung am Montag vor 10:00 Uhr",
+            "Angebot einer kostenlosen Montage und eines Preisnachlasses als Ausgleich"
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_beschwerde
+    },
+    {
+        "id": "schr-b-p70",
+        "category": "beschwerde",
+        "kind": "schreiben",
+        "label": "Beschwerde 3: Defekte Spülmaschine und Wasserschaden",
+        "topic": "Gerätedefekt und Folgeschaden",
+        "page": 70,
+        "scenario": "Herr Krüger kaufte eine Spülmaschine für die Teeküche. Beim ersten Spülgang lief Wasser aus und beschädigte das Parkett. In zwei Tagen findet ein wichtiges Meeting statt. Er verlangt sofortige Reparatur und Kostenübernahme für den Parkettaustausch.",
+        "source_letter": "Sehr geehrte Frau Sturm,\n\nvor einer Woche haben wir bei Ihnen eine Spülmaschine für unsere Teeküche gekauft. Sie wurde sehr schnell geliefert und auch gleich eingebaut. Leider muss ich Ihnen heute aber mitteilen, dass sie bereits defekt ist. Beim Spülen ist Wasser ausgelaufen und nun ist unser Parkett beschädigt.\n\nIch bitte Sie, uns umgehend einen Techniker zu schicken, der das Gerät repariert. Wir brauchen die Spülmaschine spätestens übermorgen, da wir ein großes Meeting unserer Außendienstmitarbeiter haben und viele Personen bewirten müssen.\n\nAußerdem müssen wir einen Teil des Parketts austauschen. Die Kosten dafür werden wir Ihnen in Rechnung stellen.\n\nBitte schicken Sie mir so schnell wie möglich einen Terminvorschlag für die Reparatur und eine Bestätigung der Kostenübernahme. Vielen Dank!\n\nMit freundlichen Grüßen\nClaudio Krüger",
+        "boss_instructions": "Hallo Frau Retterstein, organisieren Sie bitte sofort einen Techniker für Herrn Krüger. Entschuldigen Sie sich für die Unannehmlichkeiten und sagen Sie zu, dass wir die Reparatur und die Forderungen prüfen. Weisen Sie aber vorsorglich darauf hin, dass die Reparatur eventuell Ersatzteile erfordert. Danke!",
+        "prompt": "Schreiben Sie eine E-Mail an Herrn Krüger. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Bezugnahme auf die E-Mail von Herrn Krüger und Bedauern über den Wasserschaden",
+            "Förmliche Entschuldigung für die Unannehmlichkeiten mit dem Neugerät",
+            "Terminvereinbarung für den Technikerbesuch am Folgetag zur Fehlerbehebung",
+            "Zusage zur unbürokratischen Prüfung der Kostenübernahme für das Parkett"
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_beschwerde
+    },
+    {
+        "id": "schr-b-p71",
+        "category": "beschwerde",
+        "kind": "schreiben",
+        "label": "Beschwerde 4: Probleme beim Firmenumzug",
+        "topic": "Umzugsdienstleistung und Transportschäden",
+        "page": 71,
+        "scenario": "Beim Büroumzug von Hanau nach Frankfurt kamen die Möbelpacker 30 Minuten zu spät und nur zu dritt statt zu viert. Die Möbel sind noch nicht fertig aufgebaut, Glasplatten sind zerbrochen und Schränke verkratzt. Herr Zaun fordert Nachbesserung am Mittwoch und Schadensersatz.",
+        "source_letter": "Sehr geehrte Frau Börne,\n\nam Wochenende ist unser Büro mit Hilfe Ihres Unternehmens von Hanau nach Frankfurt umgezogen. Leider waren wir mit Ihrem Service überhaupt nicht zufrieden.\n\nIhre Mitarbeiter kamen eine halbe Stunde zu spät und nur zu dritt statt wie vereinbart zu viert. Deshalb dauerte der ganze Umzug natürlich länger als geplant und einige Arbeiten sind auch noch nicht abgeschlossen: Es sind noch nicht alle Möbel aufgebaut, deshalb konnten wir noch nicht unsere Sachen einräumen.\n\nBitte schicken Sie uns deshalb am Mittwochmorgen noch zwei Personen, die den Möbelaufbau erledigen. Des Weiteren sind Glasplatten zu Bruch gegangen und einige Schränke sind verkratzt. Ich gehe davon aus, dass Ihre Firma die Kosten dafür übernimmt.\n\nMit freundlichen Grüßen\nThomas Zaun",
+        "boss_instructions": "Hallo Frau Kühne, da ist wohl was schiefgegangen. Bitte schreiben Sie Herrn Zaun und erklären Sie die Fehler. Sagen Sie zu, dass am Mittwochmorgen pünktlich zwei Monteure kommen und alles fertig aufbauen. Natürlich übernehmen wir die Verantwortung für die Schäden. Die Firma hat das erste Mal bei uns gebucht!",
+        "prompt": "Schreiben Sie eine E-Mail an Herrn Zaun. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Bezug auf den Umzug und aufrichtige Entschuldigung für die Verzögerung",
+            "Erklärung der Ursachen (plötzlicher Personalausfall und Verkehrsbehinderung)",
+            "Bestätigung des Termins am Mittwochmorgen mit zwei erfahrenen Monteuren",
+            "Zusage der Schadensregulierung über die Betriebshaftpflichtversicherung"
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_beschwerde
+    },
+    {
+        "id": "schr-b-p72",
+        "category": "beschwerde",
+        "kind": "schreiben",
+        "label": "Beschwerde 5: Kopiergerät defekt und Streit über Rechnungen",
+        "topic": "Bürogeräte und Kundendienst",
+        "page": 72,
+        "scenario": "Herr Schmidt (Mova GmbH) beschwert sich über wiederholte Papierstaus an einem fast neuen Druckgerät. Trotz dreier Technikereinsätze trat wieder ein Fehler auf, wodurch eine Ausschreibung verpasst wurde. Er fordert ein Ersatzgerät und weigert sich, die Rechnungen der Techniker zu bezahlen.",
+        "source_letter": "Sehr geehrte Frau Aichele,\n\nvorgestern wurde von einem Ihrer Mitarbeiter unser fast neues Druck- und Kopiergerät der Marke Lexios zum dritten Mal innerhalb von zwei Wochen geprüft, da bei diesem immer wieder Papierstaus aufgetreten sind. Gestern kam es schon wieder zu einer Fehlermeldung, was zur Folge hatte, dass wir Unterlagen nicht fristgerecht einreichen konnten. Aus diesem Grund haben wir eine für uns sehr wichtige Ausschreibung verpasst. Von einer Schadensersatzforderung sehen wir vorerst ab, wir fordern Sie aber auf, uns umgehend auf Ihre Kosten ein anderes Gerät zu liefern. Es handelt sich hier nämlich eindeutig um einen technischen Fehler, den wir nicht zu verantworten haben. Die Rechnungen für die drei vorangegangenen Technikereinsätze werden wir natürlich nicht bezahlen.\n\nIch erwarte Ihre umgehende Rückmeldung.\n\nMit freundlichen Grüßen\nBenno Schmidt",
+        "boss_instructions": "Hallo, laut Techniker lag der Fehler erneut an falscher Bedienung. Antworte Herrn Schmidt bitte und weise ihn höflich darauf hin, dass die Verantwortung nicht bei uns liegt. Gerne kommt noch einmal ein Techniker kostenfrei zur Mitarbeitereinweisung vorbei. Die Kosten für die Geräteüberprüfungen bleiben aber bei Mova.",
+        "prompt": "Schreiben Sie eine E-Mail an Herrn Schmidt. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Dank für die Rückmeldung und Bedauern über die verpasste Ausschreibung",
+            "Höfliche Erläuterung des Technikerbefunds (Bedienerfehler / Papierspezifikation)",
+            "Angebot einer kostenlosen Schulung der Mitarbeitenden vor Ort",
+            "Stellungnahme und Begründung bezüglich der bestehenden Prüfungsrechnungen"
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_beschwerde
+    },
+    {
+        "id": "schr-b-p74",
+        "category": "beschwerde",
+        "kind": "schreiben",
+        "label": "Beschwerde 6: Falsche Rechnung und fehlender Rabatt",
+        "topic": "Rechnungsstellung und Konditionen",
+        "page": 74,
+        "scenario": "Ein langjähriger Stammkunde stellt Unstimmigkeiten in der Rechnung fest: 200 statt 100 Pinsel berechnet, teurere rote statt grüner Farbe aufgeführt und der vereinbarte Stammkundenrabatt von 10 % fehlt.",
+        "source_letter": "Sehr geehrte Frau Hoffner,\n\nwir haben Ihre Lieferung erhalten und sind mit allen Artikeln absolut zufrieden. Leider muss ich Sie darauf hinweisen, dass die Rechnung einige Unstimmigkeiten beinhaltet: Zunächst wurden statt 100 Stück Pinsel Größe M 200 Stück berechnet. Außerdem wurden 20 Töpfe roter Farbe berechnet. Wir hatten aber grüne Farbe bestellt und geliefert bekommen, die preislich niedriger liegt. Wir bitten Sie, dies zu korrigieren. Des Weiteren waren wir überrascht, dass unser üblicher Rabatt von 10 % in dieser Rechnung nicht gewährt wurde. Das ist wahrscheinlich ein Versehen.\n\nWir bitten um Berichtigung der Rechnung und erneute Zusendung.\n\nMit freundlichen Grüßen\nKarl Schmidt",
+        "boss_instructions": "Hallo, Herr Schmidt ist ein wichtiger Stammkunde. Bitte entschuldige dich bei ihm. Der Fehler lag an der Umstellung unserer Buchhaltungssoftware. Schicke ihm sofort eine korrigierte Rechnung mit den 10 % Rabatt und lege als Entschuldigung einen Gutschein über 50 Euro bei.",
+        "prompt": "Schreiben Sie eine E-Mail an Herrn Schmidt. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Dank für den freundlichen Hinweis und Bedauern über die Fehler in der Rechnung",
+            "Erklärung der Ursache (technische Umstellung der Abrechnungssoftware)",
+            "Zusicherung der sofortigen Rechnungskorrektur (100 Pinsel, grüne Farbe, 10 % Rabatt)",
+            "Beigabe eines Einkaufsgutscheins als Zeichen der Wertschätzung für die Treue"
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_beschwerde
+    }
+]
+
+foren = [
+    {
+        "id": "schr-f-homeoffice",
+        "category": "forum",
+        "kind": "schreiben",
+        "label": "Forum 1: Homeoffice und mobiles Arbeiten",
+        "topic": "Homeoffice vs. Präsenzpflicht",
+        "page": 102,
+        "scenario": "In Ihrem Unternehmen plant die Geschäftsleitung, die bestehende Homeoffice-Regelung einzuschränken. Mitarbeiter sollen künftig wieder mindestens vier Tage pro Woche im Büro anwesend sein, um Teamgeist und Kommunikation zu stärken. Im Intranet-Forum diskutieren die Beschäftigten darüber.",
+        "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Äußern Sie Ihre persönliche Meinung zu der geplanten Präsenzpflicht.",
+            "Nennen Sie je zwei Vor- und Nachteile von Homeoffice für Arbeitnehmer und Betrieb.",
+            "Beschreiben Sie Ihre eigenen Arbeitsgewohnheiten und Erfahrungen.",
+            "Machen Sie konkrete Vorschläge für ein flexibles und faires Hybridmodell."
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_forum
+    },
+    {
+        "id": "schr-f-weiterbildung",
+        "category": "forum",
+        "kind": "schreiben",
+        "label": "Forum 2: Weiterbildung am Wochenende",
+        "topic": "Betriebliche Fortbildung",
+        "page": 99,
+        "scenario": "Die Geschäftsführung möchte Fortbildungen und Seminare künftig ausschließlich an Samstagen oder außerhalb der regulären Arbeitszeit anbieten, damit keine Arbeitszeit verloren geht. Die Kursgebühren übernimmt die Firma, die Freizeit müssen die Mitarbeiter investieren.",
+        "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Nehmen Sie Stellung zum Vorschlag von Schulungen in der Freizeit.",
+            "Erläutern Sie Vor- und Nachteile dieser Regelung für Mitarbeiter und Unternehmen.",
+            "Berichten Sie über Erfahrungen mit Fortbildungen in Ihrem bisherigen Berufsleben.",
+            "Schlagen Sie alternative Arbeitszeit- oder Vergütungsmodelle für Weiterbildungen vor."
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_forum
+    },
+    {
+        "id": "schr-f-jobticket",
+        "category": "forum",
+        "kind": "schreiben",
+        "label": "Forum 3: Kostenloses Jobticket gegen Parkplatzgebühr",
+        "topic": "Betriebliche Mobilität und Umwelt",
+        "page": 99,
+        "scenario": "Das Unternehmen plant, allen Beschäftigten ein kostenloses Jobticket für den öffentlichen Nahverkehr zur Verfügung zu stellen. Zur Finanzierung und aus Umweltschutzgründen soll das Parken auf dem firmeneigenen Parkplatz künftig 50 Euro monatlich kosten.",
+        "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Beziehen Sie Stellung zu der Einführung von Parkplatzgebühren für Mitarbeiter.",
+            "Wägen Sie Vor- und Nachteile von Jobtickets und PKW-Nutzung ab.",
+            "Schildern Sie Ihre eigene Pendelsituation und Mobilitätserfahrungen.",
+            "Formulieren Sie Kompromissvorschläge für Kolleginnen und Kollegen im ländlichen Raum."
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_forum
+    },
+    {
+        "id": "schr-f-krankmeldung",
+        "category": "forum",
+        "kind": "schreiben",
+        "label": "Forum 4: Ärztliche Krankmeldung ab Tag 1",
+        "topic": "Krankmeldung und Fehlzeiten",
+        "page": 98,
+        "scenario": "Aufgrund hoher Fehlzeiten an Freitagen und Montagen plant das Management, dass alle Mitarbeiterinnen und Mitarbeiter im Krankheitsfall bereits ab dem ersten Tag ein ärztliches Attest (AU-Bescheinigung) vorlegen müssen.",
+        "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Geben Sie Ihre Meinung zur Pflicht der Krankschreibung ab dem ersten Krankheitstag ab.",
+            "Stellen Sie Vor- und Nachteile für die Firma, die Beschäftigten und Arztpraxen dar.",
+            "Erzählen Sie von Regelungen an früheren Arbeitsplätzen oder in Ihrem Heimatland.",
+            "Schlagen Sie Maßnahmen vor, um Vertrauen und Gesundheit am Arbeitsplatz zu fördern."
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_forum
+    },
+    {
+        "id": "schr-f-4tage-woche",
+        "category": "forum",
+        "kind": "schreiben",
+        "label": "Forum 5: Einführung einer 4-Tage-Woche (10 Std./Tag)",
+        "topic": "Flexible Arbeitszeitmodelle",
+        "page": 104,
+        "scenario": "Die Personalabteilung regt an, ein Modell der 4-Tage-Woche zu testen: 40 Wochenstunden verteilt auf 4 Tage zu je 10 Stunden Arbeitszeit, mit einem zusätzlichen freien Wochentag. Es wird diskutiert, ob dieses Modell verpflichtend oder freiwillig sein soll.",
+        "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Bewerten Sie das Konzept einer 4-Tage-Woche mit 10-Stunden-Arbeitstagen.",
+            "Diskutieren Sie Vor- und Nachteile hinsichtlich Konzentration, Erholung und Familie.",
+            "Berichten Sie, wie sich dieses Modell auf Ihren persönlichen Arbeitsalltag auswirken würde.",
+            "Schlagen Sie praxistaugliche Rahmenbedingungen (z. B. Kernzeiten, Freiwilligkeit) vor."
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_forum
+    },
+    {
+        "id": "schr-f-privattelefonate",
+        "category": "forum",
+        "kind": "schreiben",
+        "label": "Forum 6: Smartphone-Nutzung am Arbeitsplatz",
+        "topic": "Handynutzung während der Arbeitszeit",
+        "page": 98,
+        "scenario": "Die Geschäftsführung möchte private Mobiltelefone während der Arbeitszeit komplett verbieten. Handys sollen während der Schicht im Spind des Aufenthaltsraums bleiben und dürfen nur in den Pausen benutzt werden.",
+        "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Nehmen Sie Stellung zum generellen Smartphone-Verbot am Arbeitsplatz.",
+            "Wägen Sie Vor- und Nachteile (Ablenkung vs. familiäre Notfälle/Erreichbarkeit) ab.",
+            "Schildern Sie Ihre eigenen Erfahrungen mit Smartphone-Nutzung im Berufsleben.",
+            "Machen Sie Vorschläge für eine angemessene und vertrauensvolle Betriebsvereinbarung."
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_forum
+    },
+    {
+        "id": "schr-f-hunde-buero",
+        "category": "forum",
+        "kind": "schreiben",
+        "label": "Forum 7: Hunde im Büro erlauben",
+        "topic": "Tiere am Arbeitsplatz",
+        "page": 105,
+        "scenario": "Mehrere Kolleginnen und Kollegen haben beantragt, ihre Hunde mit ins Büro bringen zu dürfen. In der Belegschaft gibt es dazu sowohl große Zustimmung als auch erhebliche Bedenken wegen Allergien und Hygiene.",
+        "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Beziehen Sie klar Position zum Thema «Bürohunde».",
+            "Nennen Sie Vor- und Nachteile für das Arbeitsklima, die Gesundheit und Tierhalter.",
+            "Beschreiben Sie Ihre eigenen Erfahrungen oder die Haltung zu Haustieren in Ihrem Heimatland.",
+            "Formulieren Sie konkrete Regeln und Voraussetzungen für eine eventuelle Genehmigung."
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_forum
+    },
+    {
+        "id": "schr-f-kantine",
+        "category": "forum",
+        "kind": "schreiben",
+        "label": "Forum 8: Nur noch vegetarisches/veganes Essen in der Kantine",
+        "topic": "Ernährung und Nachhaltigkeit im Betrieb",
+        "page": 100,
+        "scenario": "Die Betriebsleitung schlägt vor, aus Gründen des Klimaschutzes und der Mitarbeitergesundheit den Speiseplan der Firmenkantine komplett auf fleischlose (vegetarische und vegane) Kost umzustellen.",
+        "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+        "leitpunkte": [
+            "Äußern Sie Ihre Meinung zu einer rein vegetarischen/veganen Betriebskantine.",
+            "Stellen Sie Vor- und Nachteile für Gesundheit, Umwelt und persönliche Wahlfreiheit dar.",
+            "Erzählen Sie von Ihren eigenen Verpflegungsgewohnheiten während des Arbeitstages.",
+            "Schlagen Sie ausgewogene Kompromisse vor (z. B. Veggie-Tage, Kennzeichnung von Fleischqualität)."
+        ],
+        "min_words": 150,
+        "time_minutes": 45,
+        "redemittel": redemittel_forum
+    }
+]
+
+data_beschwerde = {
+    "block": "schreiben_beschwerde",
+    "section": "schreiben-beschwerde",
+    "variants": beschwerden
+}
+
+data_forum = {
+    "block": "schreiben_forum",
+    "section": "schreiben-forum",
+    "variants": foren
+}
+
+with open(r"quiz\data\schreiben_beschwerde.json", "w", encoding="utf-8") as f:
+    json.dump(data_beschwerde, f, ensure_ascii=False, indent=1)
+
+with open(r"quiz\data\schreiben_forum.json", "w", encoding="utf-8") as f:
+    json.dump(data_forum, f, ensure_ascii=False, indent=1)
+
+print(f"Archivos de Schreiben creados con éxito: {len(beschwerden)} Beschwerden y {len(foren)} Foren.")

@@ -1,0 +1,254 @@
+{
+ "block": "schreiben_forum",
+ "section": "schreiben-forum",
+ "variants": [
+  {
+   "id": "schr-f-homeoffice",
+   "category": "forum",
+   "kind": "schreiben",
+   "label": "Forum 1: Homeoffice und mobiles Arbeiten",
+   "topic": "Homeoffice vs. Präsenzpflicht",
+   "page": 102,
+   "scenario": "In Ihrem Unternehmen plant die Geschäftsleitung, die bestehende Homeoffice-Regelung einzuschränken. Mitarbeiter sollen künftig wieder mindestens vier Tage pro Woche im Büro anwesend sein, um Teamgeist und Kommunikation zu stärken. Im Intranet-Forum diskutieren die Beschäftigten darüber.",
+   "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+   "leitpunkte": [
+    "Äußern Sie Ihre persönliche Meinung zu der geplanten Präsenzpflicht.",
+    "Nennen Sie je zwei Vor- und Nachteile von Homeoffice für Arbeitnehmer und Betrieb.",
+    "Beschreiben Sie Ihre eigenen Arbeitsgewohnheiten und Erfahrungen.",
+    "Machen Sie konkrete Vorschläge für ein flexibles und faires Hybridmodell."
+   ],
+   "min_words": 150,
+   "time_minutes": 45,
+   "redemittel": [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+   ]
+  },
+  {
+   "id": "schr-f-weiterbildung",
+   "category": "forum",
+   "kind": "schreiben",
+   "label": "Forum 2: Weiterbildung am Wochenende",
+   "topic": "Betriebliche Fortbildung",
+   "page": 99,
+   "scenario": "Die Geschäftsführung möchte Fortbildungen und Seminare künftig ausschließlich an Samstagen oder außerhalb der regulären Arbeitszeit anbieten, damit keine Arbeitszeit verloren geht. Die Kursgebühren übernimmt die Firma, die Freizeit müssen die Mitarbeiter investieren.",
+   "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+   "leitpunkte": [
+    "Nehmen Sie Stellung zum Vorschlag von Schulungen in der Freizeit.",
+    "Erläutern Sie Vor- und Nachteile dieser Regelung für Mitarbeiter und Unternehmen.",
+    "Berichten Sie über Erfahrungen mit Fortbildungen in Ihrem bisherigen Berufsleben.",
+    "Schlagen Sie alternative Arbeitszeit- oder Vergütungsmodelle für Weiterbildungen vor."
+   ],
+   "min_words": 150,
+   "time_minutes": 45,
+   "redemittel": [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+   ]
+  },
+  {
+   "id": "schr-f-jobticket",
+   "category": "forum",
+   "kind": "schreiben",
+   "label": "Forum 3: Kostenloses Jobticket gegen Parkplatzgebühr",
+   "topic": "Betriebliche Mobilität und Umwelt",
+   "page": 99,
+   "scenario": "Das Unternehmen plant, allen Beschäftigten ein kostenloses Jobticket für den öffentlichen Nahverkehr zur Verfügung zu stellen. Zur Finanzierung und aus Umweltschutzgründen soll das Parken auf dem firmeneigenen Parkplatz künftig 50 Euro monatlich kosten.",
+   "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+   "leitpunkte": [
+    "Beziehen Sie Stellung zu der Einführung von Parkplatzgebühren für Mitarbeiter.",
+    "Wägen Sie Vor- und Nachteile von Jobtickets und PKW-Nutzung ab.",
+    "Schildern Sie Ihre eigene Pendelsituation und Mobilitätserfahrungen.",
+    "Formulieren Sie Kompromissvorschläge für Kolleginnen und Kollegen im ländlichen Raum."
+   ],
+   "min_words": 150,
+   "time_minutes": 45,
+   "redemittel": [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+   ]
+  },
+  {
+   "id": "schr-f-krankmeldung",
+   "category": "forum",
+   "kind": "schreiben",
+   "label": "Forum 4: Ärztliche Krankmeldung ab Tag 1",
+   "topic": "Krankmeldung und Fehlzeiten",
+   "page": 98,
+   "scenario": "Aufgrund hoher Fehlzeiten an Freitagen und Montagen plant das Management, dass alle Mitarbeiterinnen und Mitarbeiter im Krankheitsfall bereits ab dem ersten Tag ein ärztliches Attest (AU-Bescheinigung) vorlegen müssen.",
+   "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+   "leitpunkte": [
+    "Geben Sie Ihre Meinung zur Pflicht der Krankschreibung ab dem ersten Krankheitstag ab.",
+    "Stellen Sie Vor- und Nachteile für die Firma, die Beschäftigten und Arztpraxen dar.",
+    "Erzählen Sie von Regelungen an früheren Arbeitsplätzen oder in Ihrem Heimatland.",
+    "Schlagen Sie Maßnahmen vor, um Vertrauen und Gesundheit am Arbeitsplatz zu fördern."
+   ],
+   "min_words": 150,
+   "time_minutes": 45,
+   "redemittel": [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+   ]
+  },
+  {
+   "id": "schr-f-4tage-woche",
+   "category": "forum",
+   "kind": "schreiben",
+   "label": "Forum 5: Einführung einer 4-Tage-Woche (10 Std./Tag)",
+   "topic": "Flexible Arbeitszeitmodelle",
+   "page": 104,
+   "scenario": "Die Personalabteilung regt an, ein Modell der 4-Tage-Woche zu testen: 40 Wochenstunden verteilt auf 4 Tage zu je 10 Stunden Arbeitszeit, mit einem zusätzlichen freien Wochentag. Es wird diskutiert, ob dieses Modell verpflichtend oder freiwillig sein soll.",
+   "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+   "leitpunkte": [
+    "Bewerten Sie das Konzept einer 4-Tage-Woche mit 10-Stunden-Arbeitstagen.",
+    "Diskutieren Sie Vor- und Nachteile hinsichtlich Konzentration, Erholung und Familie.",
+    "Berichten Sie, wie sich dieses Modell auf Ihren persönlichen Arbeitsalltag auswirken würde.",
+    "Schlagen Sie praxistaugliche Rahmenbedingungen (z. B. Kernzeiten, Freiwilligkeit) vor."
+   ],
+   "min_words": 150,
+   "time_minutes": 45,
+   "redemittel": [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+   ]
+  },
+  {
+   "id": "schr-f-privattelefonate",
+   "category": "forum",
+   "kind": "schreiben",
+   "label": "Forum 6: Smartphone-Nutzung am Arbeitsplatz",
+   "topic": "Handynutzung während der Arbeitszeit",
+   "page": 98,
+   "scenario": "Die Geschäftsführung möchte private Mobiltelefone während der Arbeitszeit komplett verbieten. Handys sollen während der Schicht im Spind des Aufenthaltsraums bleiben und dürfen nur in den Pausen benutzt werden.",
+   "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+   "leitpunkte": [
+    "Nehmen Sie Stellung zum generellen Smartphone-Verbot am Arbeitsplatz.",
+    "Wägen Sie Vor- und Nachteile (Ablenkung vs. familiäre Notfälle/Erreichbarkeit) ab.",
+    "Schildern Sie Ihre eigenen Erfahrungen mit Smartphone-Nutzung im Berufsleben.",
+    "Machen Sie Vorschläge für eine angemessene und vertrauensvolle Betriebsvereinbarung."
+   ],
+   "min_words": 150,
+   "time_minutes": 45,
+   "redemittel": [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+   ]
+  },
+  {
+   "id": "schr-f-hunde-buero",
+   "category": "forum",
+   "kind": "schreiben",
+   "label": "Forum 7: Hunde im Büro erlauben",
+   "topic": "Tiere am Arbeitsplatz",
+   "page": 105,
+   "scenario": "Mehrere Kolleginnen und Kollegen haben beantragt, ihre Hunde mit ins Büro bringen zu dürfen. In der Belegschaft gibt es dazu sowohl große Zustimmung als auch erhebliche Bedenken wegen Allergien und Hygiene.",
+   "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+   "leitpunkte": [
+    "Beziehen Sie klar Position zum Thema «Bürohunde».",
+    "Nennen Sie Vor- und Nachteile für das Arbeitsklima, die Gesundheit und Tierhalter.",
+    "Beschreiben Sie Ihre eigenen Erfahrungen oder die Haltung zu Haustieren in Ihrem Heimatland.",
+    "Formulieren Sie konkrete Regeln und Voraussetzungen für eine eventuelle Genehmigung."
+   ],
+   "min_words": 150,
+   "time_minutes": 45,
+   "redemittel": [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+   ]
+  },
+  {
+   "id": "schr-f-kantine",
+   "category": "forum",
+   "kind": "schreiben",
+   "label": "Forum 8: Nur noch vegetarisches/veganes Essen in der Kantine",
+   "topic": "Ernährung und Nachhaltigkeit im Betrieb",
+   "page": 100,
+   "scenario": "Die Betriebsleitung schlägt vor, aus Gründen des Klimaschutzes und der Mitarbeitergesundheit den Speiseplan der Firmenkantine komplett auf fleischlose (vegetarische und vegane) Kost umzustellen.",
+   "prompt": "Schreiben Sie einen Beitrag für das Diskussionsforum Ihrer Firma. Behandeln Sie dabei die folgenden vier Punkte:",
+   "leitpunkte": [
+    "Äußern Sie Ihre Meinung zu einer rein vegetarischen/veganen Betriebskantine.",
+    "Stellen Sie Vor- und Nachteile für Gesundheit, Umwelt und persönliche Wahlfreiheit dar.",
+    "Erzählen Sie von Ihren eigenen Verpflegungsgewohnheiten während des Arbeitstages.",
+    "Schlagen Sie ausgewogene Kompromisse vor (z. B. Veggie-Tage, Kennzeichnung von Fleischqualität)."
+   ],
+   "min_words": 150,
+   "time_minutes": 45,
+   "redemittel": [
+    "Ich möchte mich an der aktuellen Diskussion zum Thema «...» beteiligen.",
+    "In unserem Unternehmen wird zurzeit viel über die Frage diskutiert, ob...",
+    "Meiner Ansicht / Meinung nach ist diese Maßnahme ein wichtiger Schritt, weil...",
+    "Einerseits bietet dieses Modell entscheidende Vorteile, wie zum Beispiel...",
+    "Andererseits darf man jedoch nicht übersehen, dass damit auch Nachteile verbunden sind, etwa...",
+    "Ein weiterer Aspekt, der bedacht werden sollte, ist...",
+    "Aus meiner persönlichen Erfahrung kann ich berichten, dass...",
+    "In meinem Heimatland ist es in vielen Betrieben üblich, dass...",
+    "Um eine für alle Beteiligten faire Lösung zu finden, schlage ich vor, dass...",
+    "Zusammenfassend lässt sich sagen, dass ein ausgewogener Kompromiss notwendig ist.",
+    "Ich bin gespannt auf die Meinungen der anderen Kolleginnen und Kollegen."
+   ]
+  }
+ ]
+}

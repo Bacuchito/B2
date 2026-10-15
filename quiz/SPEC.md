@@ -172,3 +172,31 @@ Cada variante es una entrada independiente.
 
 Sé **honesto** con esto: es lo que permite al usuario distinguir tus aciertos de
 tus dudas en lugar de fiarse a ciegas.
+
+---
+
+## 5. Formato de tarea: `schreiben` (Produktion)
+
+Tareas abiertas de expresión escrita del examen telc Deutsch-Test für den Beruf B2, evaluadas interactivamente por un LLM integrado.
+
+### Categorías
+1. `beschwerde`: Respuesta formal por correo electrónico a una reclamación o queja de un cliente o proveedor (ejercicios de *Lesen und Schreiben*, ítem 21).
+2. `forum`: Publicación argumentativa formal (*Stellungnahme*) para el foro o intranet de la empresa.
+
+### Esquema de Variant para `kind: "schreiben"`
+| Campo | Obligatorio | Tipo / Descripción |
+|---|---|---|
+| `id` | sí | Identificador único (ej. `schr-b-p66`, `schr-f-homeoffice`) |
+| `label` | sí | Título visual de la tarea |
+| `page` | sí | Página de referencia en el PDF |
+| `kind` | sí | `"schreiben"` |
+| `category` | sí | `"beschwerde"` o `"forum"` |
+| `topic` | sí | Tema profesional (ej. `"Putzdienst / Reinigung"`, `"Homeoffice"`) |
+| `scenario` | sí | Contexto laboral o situación que motiva el texto |
+| `source_letter` | solo `beschwerde` | Carta de queja completa recibida del cliente/proveedor |
+| `boss_instructions`| solo `beschwerde` | Indicaciones o notas internas del superior |
+| `prompt` | sí | Enunciado formal del examen en alemán |
+| `leitpunkte` | sí | Array de **4 puntos guía obligatorios** (*Leitpunkte*) que deben desarrollarse |
+| `min_words` | sí | Longitud mínima requerida (150 palabras) |
+| `time_minutes` | sí | Tiempo oficial asignado (45 minutos) |
+| `redemittel` | opcional | Array de expresiones modelo B2 recomendadas para este tipo de texto |
