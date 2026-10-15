@@ -1,0 +1,264 @@
+{
+ "block": "t3_d",
+ "section": "lesen-t3",
+ "variants": [
+  {
+   "id": "t3_d-p40",
+   "label": "Variante 6 (Arbeitszeit, Kleidung und Reise)",
+   "page": 40,
+   "note": "Foro sobre tiempo de cambio de vestimenta (Umkleidezeit), viajes de trabajo en tren y asistencia a cursos de formación voluntaria.",
+   "kind": "zuordnung",
+   "optionsLabel": "Kommentare",
+   "intro": "Lesen Sie die vier Aufgaben (10–13) und die sechs Kommentare (a–f). Welcher Kommentar passt zu welcher Aufgabe? Zwei Kommentare bleiben übrig.",
+   "passage": "",
+   "options": [
+    {
+     "key": "a",
+     "title": "Andres, vor 8 Minuten",
+     "text": "Wenn du in Sportkleidung in die Firma kommst und dich dort noch umziehst, ist das Privatsache. Du musst dafür sorgen, dass du pünktlich mit deiner Arbeit beginnen kannst. In diesem Fall ist die Umkleidezeit keine Arbeitszeit.",
+     "distractor": ""
+    },
+    {
+     "key": "b",
+     "title": "Paula, vor 3 Stunden",
+     "text": "Der Weg zur Arbeit ist private Zeit. Du trägst die Verantwortung dafür, pünktlich vor Ort zu sein, egal wie weit dein Weg ist. Wenn du z.B. im Stau stehst oder die- S-Bahn streikt und du deshalb zu spät kommst, musst du die Zeit nacharbeiten.",
+     "distractor": "Trata sobre atascos y retrasos en el trayecto de casa al trabajo (Wegezeit), pero no sobre si el tiempo de viaje a un cliente cuenta como horas extra ni sobre ropa de trabajo."
+    },
+    {
+     "key": "c",
+     "title": "Raimund, vor 6 Stunden",
+     "text": "Arbeitnehmer/innen haben in der Regel alle zwei Jahre Anspruch auf fünf Tage Bildungsurlaub. Die Gesetze sind aber nicht in jedem Bundesland gleich. So variiert zum Beispiel die Anzahl der Tage für Bildungsurlaub je nachdem, ob du Voll- oder Teilzeit tätig bist.",
+     "distractor": "Explica la regulación del permiso de formación remunerado (Bildungsurlaub) por comunidades autónomas, pero Cristof acudió en fin de semana sin solicitarlo previamente."
+    },
+    {
+     "key": "d",
+     "title": "Hubert, vor 38 Minuten",
+     "text": "Ich finde das Tragen von Dienstkleidung absolut veraltet. Warum müssen alle im Unternehmen gleich gekleidet sein? Jeder Mensch hat doch seinen eigenen Stil, mit dem er sich wohlfühlt. Ich kann verstehen, dass du die Uniform nicht auch noch im Zug tragen möchtest.",
+     "distractor": ""
+    },
+    {
+     "key": "e",
+     "title": "Yvonne, vor 7 Stunden",
+     "text": "Wenn du selbst entscheidest, eine Fortbildung zu besuchen, und das vorher nicht mit deinem Arbeitgeber absprichst, ist das reines Privatvergnügen. Schickt dein Chef dich allerdings seinerseits auf ein Seminar , handelt es sich um Arbeitszeit.",
+     "distractor": ""
+    },
+    {
+     "key": "f",
+     "title": "Winfried, vor 25 Minuten",
+     "text": "Das ist ein schwieriges Thema. Wenn du während der Reise zum Beispiel deinen Termin vorbereitest oder mit dem Laptop ein Protokoll schreibst, ist das Arbeitszeit. Wenn du dich aber mit privaten Dingen wie einem Roman oder einem privaten Telefonat beschäftigst, gilt das als Freizeit.",
+     "distractor": ""
+    }
+   ],
+   "items": [
+    {
+     "n": 10,
+     "type": "choice",
+     "prompt": "Claudia: Ich muss während der Arbeit eine Uniform tragen. Mir ist es unangenehm, die schon morgens in der Bahn anzuhaben, und ich möchte mich lieber im Hotel umziehen. Muss ich dafür früher kommen oder gilt die Umkleidezeit als Arbeitszeit?",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Ich kann verstehen, dass du die Uniform nicht auch noch im Zug tragen möchtest.",
+     "explain": "Claudia debe llevar uniforme de trabajo pero le incomoda ponérselo en el tren («in der Bahn anzuhaben») y prefiere cambiarse en el hotel. Hubert (d) responde directamente a su situación empatizando con su rechazo a lucir el uniforme en el transporte público («dass du die Uniform nicht auch noch im Zug tragen möchtest»)."
+    },
+    {
+     "n": 11,
+     "type": "choice",
+     "prompt": "Maisel: Gestern war ich für einen Tag bei einem Kunden in Norddeutschland. Ich bin mit dem Zug gefahren und habe während der Fahrt gelesen. Insgesamt war ich elf Stunden unterwegs und habe Überstunden geltend gemacht. Die will mein Arbeitgeber nicht anerkennen.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Wenn du dich aber mit privaten Dingen wie einem Roman oder einem privaten Telefonat beschäftigst, gilt das als Freizeit.",
+     "explain": "Maisel viajó 11 horas en tren a ver a un cliente y estuvo leyendo por placer durante el trayecto, reclamando horas extras. Winfried (f) explica que si durante el viaje en tren realizas actividades privadas (como leer una novela), ese tiempo computa como tiempo libre y no como jornada laboral."
+    },
+    {
+     "n": 12,
+     "type": "choice",
+     "prompt": "Cristof: Ich war am Wochenende auf einer Fortbildung, die für meine Arbeit relevant war. Ich wollte mir jetzt einen Urlaubstag gutschreiben lassen, aber meine Chefin sagt, das sei meine private Angelegenheit, da sie die Fortbildung nicht angeordnet hat. Stimmt das?",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Wenn du selbst entscheidest, eine Fortbildung zu besuchen, und das vorher nicht mit deinem Arbeitgeber absprichst, ist das reines Privatvergnügen.",
+     "explain": "Cristof asistió por propia iniciativa en fin de semana a una formación y pretende compensarla con un día libre. Yvonne (e) confirma la postura de la jefa: los cursos decididos unilateralmente por el trabajador sin orden ni acuerdo previo con la empresa son de índole puramente privada."
+    },
+    {
+     "n": 13,
+     "type": "choice",
+     "prompt": "Samira: Ich fahre morgens mit dem Fahrrad in die Firma, bin immer pünktlich um 9.00 Uhr da und mache mich dann fertig. Ab sofort soll ich früher kommen und darf mich nicht mehr während der Arbeitszeit umziehen. Ist das korrekt?",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "In diesem Fall ist die Umkleidezeit keine Arbeitszeit.",
+     "explain": "Samira llega en bicicleta y se cambia tras fichar a las 9:00. Andres (a) aclara que cambiarse de ropa deportiva por elección personal de transporte no computa como tiempo de trabajo («die Umkleidezeit keine Arbeitszeit»), por lo que debe llegar cambiada antes del inicio de su turno."
+    }
+   ]
+  },
+  {
+   "id": "t3_d-p41",
+   "label": "Variante 7 (Rente und Altersvorsorge)",
+   "page": 41,
+   "note": "Foro sobre edad de jubilación (67 vs 65 años), coeficientes reductores por jubilación anticipada, lagunas por crianza de hijos y planes de pensiones de empresa.",
+   "kind": "zuordnung",
+   "optionsLabel": "Kommentare",
+   "intro": "Lesen Sie die vier Aufgaben (10–13) und die sechs Kommentare (a–f). Welcher Kommentar passt zu welcher Aufgabe? Zwei Kommentare bleiben übrig.",
+   "passage": "",
+   "options": [
+    {
+     "key": "a",
+     "title": "Stefan, vor 4 Stunden",
+     "text": "Kaum jemandem gelingt es, 45 Jahre durchgehend so ein hohes Gehalt zu verdienen, dass er später die Höchstrente bekommt Das liegt schon allein daran, dass man während der Ausbildung und in den ersten Berufsjahren weniger verdient.",
+     "distractor": "Comenta la dificultad de alcanzar la pensión máxima por cotizaciones salariales en los primeros años laborales; no responde a dudas de jubilación anticipada ni previsión juvenil."
+    },
+    {
+     "key": "b",
+     "title": "Jana, vor 34 Minuten",
+     "text": "Auch Firmen helfen, für die Zukunft vorzusorgen, denn man kann gar nicht früh genug damit anfangen. Erkundige dich bei deinem Arbeitgeber, ob eine betriebliche Altersvorsorge angeboten wird. Wenn man dann später Rentner ist, bekommt man eine zusätzliche Rente.",
+     "distractor": ""
+    },
+    {
+     "key": "c",
+     "title": "Antje, vor 7 Stunden",
+     "text": "Wenn man mindestens fünf Jahre versicherungspflichtig beschäftigt war, hat man Anspruch auf die gesetzliche Rente. Dabei spielt es keine Rolle, ob man Teilzeit oder Vollzeit gearbeitet hat. Es gibt aber noch Unterschiede zwischen Ost und West.",
+     "distractor": ""
+    },
+    {
+     "key": "d",
+     "title": "Jonas, vor 2 Stunden",
+     "text": "Man hat das Recht, früher als mit 67 Jahren in Rente zu gehen, aber man muss Abschläge in Kauf nehmen. Im Moment sind das für jeden Monat, den man weniger arbeitet, 0,3 Prozent weniger. Man muss sich das genau ausrechnen, ob man sich das leisten kann.",
+     "distractor": ""
+    },
+    {
+     "key": "e",
+     "title": "Jörg, vor 5 Stunden",
+     "text": "Für alle, die nach 1964 geboren sind, gilt dass sie bis 67 Jahre arbeiten müssen. Außer, wenn man mit 65 schon 45 Beitragsjahre nachweisen kann, also Jahre, in denen man in die Rentenversicherung eingezahlt hat.",
+     "distractor": ""
+    },
+    {
+     "key": "f",
+     "title": "Lia, vor 12 Stunden",
+     "text": "Wenn man jung ist, sollte man sein Leben doch erst einmal genießen. Über Alter und Krankheit kann man sich immer noch Gedanken machen. Wer weiß, ob es später, wenn wir so weit sind, überhaupt noch eine Rente geben wird.",
+     "distractor": "Recomienda no pensar en la pensión de joven y vivir el presente; es una postura vital sin carácter de asesoramiento concreto."
+    }
+   ],
+   "items": [
+    {
+     "n": 10,
+     "type": "choice",
+     "prompt": "Torsten: Wir hatten neulich im Büro eine Diskussion darüber, ab wann man in Rente gehen kann. Ich dachte immer, man muss bis 67 arbeiten. Aber meine Kollegin meinte, dass sie zwei Jahre früher in Rente gehen wird. Geht das überhaupt?",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Für alle, die nach 1964 geboren sind, gilt dass sie bis 67 Jahre arbeiten müssen. Außer, wenn man mit 65 schon 45 Beitragsjahre nachweisen kann",
+     "explain": "Torsten pregunta si es posible jubilarse dos años antes de la edad ordinaria de 67 (a los 65). Jörg (e) confirma la excepción legal para quienes acrediten 45 años cotizados."
+    },
+    {
+     "n": 11,
+     "type": "choice",
+     "prompt": "Hella: Meine Rente wird ja nicht so berauschend sein, vor allem, weil ich wegen meiner zwei Kinder einige Jahre nicht oder nur Teilzeit gearbeitet habe. Es ist ja wohl schon so, dass ich dafür jetzt irgendwie bestraft werde, oder?",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Dabei spielt es keine Rolle, ob man Teilzeit oder Vollzeit gearbeitet hat.",
+     "explain": "Hella teme verse penalizada por haber trabajado a tiempo parcial por el cuidado de sus hijos. Antje (c) le aclara los requisitos básicos de acceso a la pensión pública y señala que el derecho existe independientemente de si se ha trabajado a jornada completa o parcial."
+    },
+    {
+     "n": 12,
+     "type": "choice",
+     "prompt": "Petra: Mein Mann geht in zwei Jahren in Rente. Ich müsste noch vier Jahre arbeiten. Wir haben uns überlegt, dass wir zusammen in Rente gehen und noch viele gemeinsame Jahre mit verschiedenen Aktivitäten erleben wollen. Welche Folgen hätte das?",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Man hat das Recht, früher als mit 67 Jahren in Rente zu gehen, aber man muss Abschläge in Kauf nehmen. Im Moment sind das für jeden Monat, den man weniger arbeitet, 0,3 Prozent weniger.",
+     "explain": "Petra pregunta qué consecuencias tendría adelantar su jubilación dos años para retirarse a la vez que su marido. Jonas (d) responde detallando las penalizaciones económicas (Abschläge): una reducción del 0,3 % por cada mes de adelanto."
+    },
+    {
+     "n": 13,
+     "type": "choice",
+     "prompt": "Leni: Ich bin ja noch jung und denke überhaupt noch nicht an die Rente. Aber es wird ja immer wieder gesagt, dass die normale Rente irgendwann nicht mehr ausreichen wird. Was kann ich denn jetzt schon für später tun?",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Erkundige dich bei deinem Arbeitgeber, ob eine betriebliche Altersvorsorge angeboten wird. Wenn man dann später Rentner ist, bekommt man eine zusätzliche Rente.",
+     "explain": "Leni es joven y quiere saber qué pasos dar ya para complementar su pensión futura. Jana (b) le aconseja interesarse por los planes de pensiones de empresa (betriebliche Altersvorsorge) para obtener ingresos adicionales al jubilarse."
+    }
+   ]
+  },
+  {
+   "id": "t3_d-p42",
+   "label": "Variante 8 (Elternzeit und Schwangerschaft)",
+   "page": 42,
+   "note": "Foro sobre duración del permiso parental (Elternzeit: 14 meses de Elterngeld vs 3 años de excedencia), trabajo nocturno en embarazadas, retraso del permiso tras la formación y compatibilidad con trabajo a tiempo parcial.",
+   "kind": "zuordnung",
+   "optionsLabel": "Kommentare",
+   "intro": "Lesen Sie die vier Aufgaben (10–13) und die sechs Kommentare (a–f). Welcher Kommentar passt zu welcher Aufgabe? Zwei Kommentare bleiben übrig.",
+   "passage": "",
+   "options": [
+    {
+     "key": "a",
+     "title": "Mario, vor 10 Stunden",
+     "text": "Warte erst einmal ab, wie sich alles mit dem Kind entwickelt. Ich würde die Zeit nach der Geburt nicht mit Arbeit verplanen. Es ist nämlich eine große Umstellung. Wenn du dann später „Langeweile“ haben solltest, kannst du immer noch überlegen, arbeiten zu gehen.",
+     "distractor": "Aconseja no planificar trabajo de antemano tras el parto; no resuelve las dudas sobre límites legales de jornada ni compatibilidades."
+    },
+    {
+     "key": "b",
+     "title": "Johann, vor 20 Minuten",
+     "text": "Beides ist nicht ganz falsch - nach der Geburt des Kindes hat man bis zu drei Jahre Anspruch auf Freistellung von der Arbeit. 14 Monate erhält das Paar Elterngeld. Sowohl die bezahlte als auch die nicht bezahlte Zeit der Betreuung können die Eltern frei untereinander aufteilen.",
+     "distractor": ""
+    },
+    {
+     "key": "c",
+     "title": "Hanna, vor 30 Minuten",
+     "text": "Elterngeld erhält man von der Elterngeldstelle. Die Höhe hängt davon ab, wie viel man vorher verdient hat. Vater und Mutter können die bezahlte Elternzeit von 14 Monaten untereinander aufteilen, wie es ihnen am besten passt. Allerdings ist die Frau die ersten acht Wochen im Mutterschutz.",
+     "distractor": ""
+    },
+    {
+     "key": "d",
+     "title": "Angela, vor 8 Stunden",
+     "text": "Wenn du schon länger als sechs Monate bei einer Firma beschäftigt bist, kannst du beantragen, auch während der Elternzeit ein bisschen zu arbeiten. Du darfst dann allerdings nicht mehr als 30 Stunden pro Woche tätig sein. Der Betrieb kann den Antrag aber auch ablehnen.",
+     "distractor": ""
+    },
+    {
+     "key": "e",
+     "title": "Lars, vor 3 Stunden",
+     "text": "Wenn eine Frau schwanger ist, kann sie, soweit es der Gesundheitszustand zulässt, bis sechs Wochen vor der Geburt arbeiten. Dann beginnt der Mutterschutz. Dieser gilt auch noch für acht Wochen nach der Geburt. Im Anschluss folgt die Elternzeit. Aber dafür gibt es wieder andere Regelungen.",
+     "distractor": "Trata sobre los plazos del Mutterschutz antes y después del parto (6 y 8 semanas); es distractor de la consulta de Katrin sobre turnos de tarde."
+    },
+    {
+     "key": "f",
+     "title": "Petra, vor 5 Stunden",
+     "text": "Während der Schwangerschaft darf ein Arbeitgeber die Mitarbeiterin nicht nach 22 Uhr beschäftigen. Zwischen 20 und 22 Uhr kann man als Schwangere nur auf eigenen Wunsch arbeiten, der Arbeitgeber darf das nicht anordnen. Insgesamt darf eine Schwangere aber eine tägliche Arbeitszeit von 8,5 Stunden nicht überschreiten.",
+     "distractor": ""
+    }
+   ],
+   "items": [
+    {
+     "n": 10,
+     "type": "choice",
+     "prompt": "Natalja: Wir werden Eltern und wollen beide die bezahlte Elternzeit nehmen. Eine Freundin meinte, dass wir insgesamt ein Jahr zu Hause bleiben können. Ein anderer Bekannter sagte, man könne sein Kind bis zu drei Jahre zu Hause betreuen. Was stimmt?",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Beides ist nicht ganz falsch - nach der Geburt des Kindes hat man bis zu drei Jahre Anspruch auf Freistellung von der Arbeit. 14 Monate erhält das Paar Elterngeld.",
+     "explain": "Natalja duda entre las dos versiones que ha escuchado (1 año pagado vs 3 años en casa). Johann (b) responde expresamente que ambas afirmaciones son ciertas: existe derecho a excedencia por cuidado (Freistellung) de hasta tres años, pero la prestación económica (Elterngeld) cubre un máximo de 14 meses remunerados."
+    },
+    {
+     "n": 11,
+     "type": "choice",
+     "prompt": "Katrin: Ich bin im vierten Monat schwanger. Mein Chef will, dass ich notfalls auch mal eine Spätschicht übernehme. Die geht bis 21:00 Uhr. Soviel ich weiß, ist das gar nicht erlaubt, oder? Außerdem bin ich abends immer sehr müde.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Zwischen 20 und 22 Uhr kann man als Schwangere nur auf eigenen Wunsch arbeiten, der Arbeitgeber darf das nicht anordnen.",
+     "explain": "Katrin está embarazada y su jefe quiere obligarla a hacer turnos de tarde hasta las 21:00. Petra (f) aclara la normativa de protección de la maternidad (Mutterschutzgesetz): entre las 20:00 y las 22:00 la trabajadora solo puede laborar voluntariamente si ella lo solicita, pero el empresario no puede imponérselo."
+    },
+    {
+     "n": 12,
+     "type": "choice",
+     "prompt": "Giovanni: Wir sind Auszubildende und bekommen bald ein Kind. Erst nach der Ausbildung wollen wir in Elternzeit gehen. Bis dahin könnte die Oma auf unser Kind aufpassen. Unser Betrieb wäre einverstanden. Weiß jemand, ob man die Elternzeit später beginnen darf?",
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Vater und Mutter können die bezahlte Elternzeit von 14 Monaten untereinander aufteilen, wie es ihnen am besten passt.",
+     "explain": "Giovanni y su pareja son aprendices y quieren diferir el permiso parental hasta completar la formación. Hanna (c) señala que los padres pueden distribuir los periodos de baja parental como mejor les convenga. Se califica con confianza media porque ningún comentario aborda expresamente la postergación hasta después del examen de formación profesional."
+    },
+    {
+     "n": 13,
+     "type": "choice",
+     "prompt": "Sandra: Nach der Geburt bekomme ich Elterngeld. Finanziell mache ich mir keine Sorgen. Aber ich will beruflich den Anschluss nicht verlieren. Nur mit dem Kind zu Hause zu bleiben, ist nicht mein Ding. Kann man Elterngeld bekommen und gleichzeitig arbeiten?",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "kannst du beantragen, auch während der Elternzeit ein bisschen zu arbeiten. Du darfst dann allerdings nicht mehr als 30 Stunden pro Woche tätig sein.",
+     "explain": "Sandra pregunta si es compatible cobrar la ayuda parental y seguir trabajando parcialmente para no perder ritmo profesional. Angela (d) confirma que es legal solicitar trabajar durante el permiso parental con un tope de 30 horas semanales."
+    }
+   ]
+  }
+ ]
+}

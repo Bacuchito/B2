@@ -1,0 +1,328 @@
+{
+ "block": "t2_a",
+ "section": "lesen-t2",
+ "variants": [
+  {
+   "id": "t2_a-p19a",
+   "label": "Text 1 – Variante 1",
+   "page": 19,
+   "note": "La p. 19 trae dos versiones de los ítems 6 y 7 sobre el mismo texto de la Willkommensmappe (Zugangskontrolle): esta primera y la marcada «Новый вариант» (→ t2_a-p19b). Se han separado en dos variantes para que cada ítem conserve su propia clave de respuesta («id#n»).",
+   "kind": "text",
+   "intro": "Lesen Sie den Text und lösen Sie die Aufgaben 6 und 7: Entscheiden Sie bei Aufgabe 6, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 7 die richtige Lösung (a, b oder c).",
+   "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nZugangskontrolle und Zeiterfassung\n\nAls Mitarbeiterinnen und Mitarbeiter erhalten Sie zu Beginn Ihres Arbeitsverhältnisses einen Firmenausweis mit Chip-Karte. Dieser berechtigt zum Zugang in das Unternehmensgebäude und dient gleichzeitig zur Erfassung der Arbeitszeit. Außerdem können Sie mit Ihrem Firmenausweis in der Kantine und am Getränkeautomaten bezahlen und das hauseigene Fitnessstudio benutzen. Neben den Aufzügen im Erdgeschoss finden Sie ein digitales Zeiterfassungsgerät. Bitte halten Sie beim Betreten und Verlassen des Gebäudes Ihren Firmenausweis an die blau markierte Fläche und vergewissern Sie sich, dass die Zeit des Arbeitsbeginns und Arbeitsendes richtig erfasst wurde. Dies erkennen Sie anhand der Anzeige des Geräts, die Ihnen Ihre monatliche Arbeitszeit anzeigt.\n\nDie Zeiterfassung berechnet automatisch die reguläre Arbeitszeit sowie eventuelle Über- als auch Minusstunden. Die Personalabteilung richtet Ihnen einen Zugang zu unserem Arbeitskonten-System PersoTime ein. Damit können Sie im Intranet Ihr Arbeitszeitkonto jederzeit einsehen.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Der Firmenausweis hat neben der Arbeitszeiterfassung auch andere Funktionen.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "Außerdem können Sie mit Ihrem Firmenausweis in der Kantine und am Getränkeautomaten bezahlen und das hauseigene Fitnessstudio benutzen.",
+     "explain": "«Richtig»: el texto atribuye al carné, además de registrar la jornada, otras funciones (pagar en la cantina y en las máquinas expendedoras y usar el gimnasio de la empresa). «Falsch» no se sostiene, porque esas funciones se enumeran expresamente en el pasaje citado."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Überstunden",
+     "options": [
+      {
+       "key": "a",
+       "text": "können online eingesehen werden."
+      },
+      {
+       "key": "b",
+       "text": "sind in der Firma grundsätzlich nicht erlaubt."
+      },
+      {
+       "key": "c",
+       "text": "werden von der Zeiterfassung nicht registriert."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Die Zeiterfassung berechnet automatisch die reguläre Arbeitszeit sowie eventuelle Über- als auch Minusstunden. Die Personalabteilung richtet Ihnen einen Zugang zu unserem Arbeitskonten-System PersoTime ein. Damit können Sie im Intranet Ihr Arbeitszeitkonto jederzeit einsehen.",
+     "explain": "Correcto a: la Zeiterfassung calcula automáticamente las horas extraordinarias y la cuenta horaria que las recoge se puede consultar en cualquier momento en la intranet, es decir, en línea. b es falso porque el texto da por hechas las horas extraordinarias (las calcula y prevé su compensación), no las prohíbe; c es falso porque son precisamente la Zeiterfassung y el sistema PersoTime quienes las registran."
+    }
+   ]
+  },
+  {
+   "id": "t2_a-p19b",
+   "label": "Text 1 – Variante 1 (Новый вариант)",
+   "page": 19,
+   "note": "Fassung «Новый вариант» de los ítems 6 y 7 sobre el mismo texto de la p. 19 (el original no repite el texto): el ítem 6 es una reformulación del anterior y el 7 plantea ahora la cuenta horaria personal en lugar de las horas extraordinarias. Donde el enunciado o una opción aparecían con dos formulaciones separadas por «/», se ha conservado la última.",
+   "kind": "text",
+   "intro": "Lesen Sie den Text und lösen Sie die Aufgaben 6 und 7: Entscheiden Sie bei Aufgabe 6, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 7 die richtige Lösung (a, b oder c).",
+   "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nZugangskontrolle und Zeiterfassung\n\nAls Mitarbeiterinnen und Mitarbeiter erhalten Sie zu Beginn Ihres Arbeitsverhältnisses einen Firmenausweis mit Chip-Karte. Dieser berechtigt zum Zugang in das Unternehmensgebäude und dient gleichzeitig zur Erfassung der Arbeitszeit. Außerdem können Sie mit Ihrem Firmenausweis in der Kantine und am Getränkeautomaten bezahlen und das hauseigene Fitnessstudio benutzen. Neben den Aufzügen im Erdgeschoss finden Sie ein digitales Zeiterfassungsgerät. Bitte halten Sie beim Betreten und Verlassen des Gebäudes Ihren Firmenausweis an die blau markierte Fläche und vergewissern Sie sich, dass die Zeit des Arbeitsbeginns und Arbeitsendes richtig erfasst wurde. Dies erkennen Sie anhand der Anzeige des Geräts, die Ihnen Ihre monatliche Arbeitszeit anzeigt.\n\nDie Zeiterfassung berechnet automatisch die reguläre Arbeitszeit sowie eventuelle Über- als auch Minusstunden. Die Personalabteilung richtet Ihnen einen Zugang zu unserem Arbeitskonten-System PersoTime ein. Damit können Sie im Intranet Ihr Arbeitszeitkonto jederzeit einsehen.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Der Firmenausweis dient als firmeninternes Zahlungsmittel.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "Außerdem können Sie mit Ihrem Firmenausweis in der Kantine und am Getränkeautomaten bezahlen und das hauseigene Fitnessstudio benutzen.",
+     "explain": "«Richtig»: el carné sirve para pagar dentro de la empresa, en la cantina y en las máquinas expendedoras de bebidas, que forman parte del recinto. «Falsch» queda descartado por esa misma frase, que describe el carné como medio de pago interno."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Das persönliche Arbeitszeitkonto",
+     "options": [
+      {
+       "key": "a",
+       "text": "ist nur über die Personalabteilung einsehbar. / kann in der Personalabteilung eingesehen werden."
+      },
+      {
+       "key": "b",
+       "text": "müssen die Mitarbeiter selbst anlegen."
+      },
+      {
+       "key": "c",
+       "text": "wird täglich aktualisiert."
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Bitte halten Sie beim Betreten und Verlassen des Gebäudes Ihren Firmenausweis an die blau markierte Fläche und vergewissern Sie sich, dass die Zeit des Arbeitsbeginns und Arbeitsendes richtig erfasst wurde.",
+     "explain": "La c es la única que queda en pie, por eliminación. a) dice que la cuenta solo se ve a través de la oficina de personal, y el texto lo contradice de forma directa: «Die Personalabteilung richtet Ihnen einen Zugang … ein. Damit können Sie im Intranet Ihr Arbeitszeitkonto jederzeit einsehen.» Es la propia oficina de personal la que le habilita el acceso, pero usted lo consulta por su cuenta en la intranet, no en ventanilla. b) es falsa porque las horas no las apunta el trabajador: «Die Zeiterfassung berechnet automatisch die reguläre Arbeitszeit sowie eventuelle Über- als auch Minusstunden.» c) no aparece literalmente en el texto —de ahí la confianza media—, pero el fichaje de entrada y salida es diario y el saldo se calcula de forma automática, así que es la lectura razonable una vez descartadas a y b."
+    }
+   ]
+  },
+  {
+   "id": "t2_a-p20a",
+   "label": "Text 1 – Variante 2",
+   "page": 20,
+   "note": "La p. 20 trae el apartado «Arbeitszeit» dos veces: esta primera versión (Gleitzeitsystem, Kernarbeitszeit 9.00–15.30) y la marcada «Новый вариант» (→ t2_a-p20b), con otro texto y nuevos ítems.",
+   "kind": "text",
+   "intro": "Lesen Sie den Text und lösen Sie die Aufgaben 6 und 7: Entscheiden Sie bei Aufgabe 6, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 7 die richtige Lösung (a, b oder c).",
+   "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nArbeitszeit\n\nIn unserem Unternehmen arbeiten wir nach dem Gleitzeitsystem. Die Kernarbeitszeit ist Montag bis Freitag zwischen 9.00 Uhr und 15.30 Uhr. In dieser Zeit müssen alle Mitarbeitenden anwesend sein. Jede Abwesenheit während dieser Zeit muss genehmigt sein.\n\nDie tägliche Rahmenarbeitszeit ist von 6.00 Uhr bis 19.30 Uhr. Bitte beachten Sie, dass innerhalb dieses Zeitrahmens maximal acht, in Ausnahmefällen zehn, Stunden täglich gearbeitet werden darf.\n\nAlle Mitarbeitenden müssen beim Betreten und Verlassen des Gebäudes mit der Zeiterfassungskarte am Lesegerät ein- und ausstechen. So wird die tägliche Arbeitszeit auf dem Zeitkonto festgehalten. Dieses kann jederzeit am Lesegerät eingesehen werden.\n\nBei entsprechendem Guthaben kann einmal pro Monat ein ganzer Arbeitstag (acht Stunden) als Gleitzeittag genommen werden. Zu berücksichtigen ist, dass ein Minuskontostand im Folgemonat auszugleichen ist. Zusätzlich können im Monat Dezember bis zu vier Arbeitstage als Gleitzeittage genommen werden, um sie zwischen Weihnachten und Neujahr zu nutzen, wenn das Arbeitszeitkonto ein ausreichendes Guthaben aufweist.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Bei Gleitzeit können Mitarbeitende täglich beliebig viele Stunden arbeiten.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "hoch",
+     "quote": "Bitte beachten Sie, dass innerhalb dieses Zeitrahmens maximal acht, in Ausnahmefällen zehn, Stunden täglich gearbeitet werden darf.",
+     "explain": "«Falsch»: el texto limita la jornada a un máximo de ocho horas diarias, diez solo en casos excepcionales, dentro del marco horario de 6.00 a 19.30. «Richtig» sería insostenible porque ninguna frase permite trabajar «beliebig viele Stunden»."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Durch Gleitzeit ist es den Mitarbeitenden möglich,",
+     "options": [
+      {
+       "key": "a",
+       "text": "ein Stundenguthaben aufzubauen."
+      },
+      {
+       "key": "b",
+       "text": "jeden Monat einige Tage freizunehmen."
+      },
+      {
+       "key": "c",
+       "text": "täglich mehr als acht Stunden zu arbeiten."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Bei entsprechendem Guthaben kann einmal pro Monat ein ganzer Arbeitstag (acht Stunden) als Gleitzeittag genommen werden.",
+     "explain": "Correcto a: el sistema de horario flexible permite acumular horas en la cuenta («Bei entsprechendem Guthaben», «ein Minuskontostand im Folgemonat auszugleichen»), es decir, formar un saldo de horas. b es falso porque con saldo suficiente se toma un día completo al mes (y hasta cuatro en diciembre), no «einige Tage» todos los meses; c es falso porque el máximo es de ocho horas diarias, diez solo en casos excepcionales."
+    }
+   ]
+  },
+  {
+   "id": "t2_a-p20b",
+   "label": "Text 1 – Variante 2 (Новый вариант)",
+   "page": 20,
+   "note": "Fassung «Новый вариант» (p. 20): el apartado «Arbeitszeit» aparece reescrito por completo (jornada semanal de 40 horas, Kernzeit de 10 a 15 Uhr, Gleitzeiten 8–10 y 15–17) con nuevos ítems 6 y 7. El original no repite el título «Willkommensmappe».",
+   "kind": "text",
+   "intro": "Lesen Sie den Text und lösen Sie die Aufgaben 6 und 7: Entscheiden Sie bei Aufgabe 6, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 7 die richtige Lösung (a, b oder c).",
+   "passage": "Arbeitszeit\n\nDie wöchentliche Arbeitszeit beträgt 40 Stunden - bei einem Arbeitstag von acht Stunden, wobei die Pausen nicht mitgerechnet werden. Es gilt die Fünf-Tage-Woche. Betriebsbedingt ist es möglich, dass Sie bis zu zehn Stunden pro Tag arbeiten. Diese Mehrarbeit ist aber nur in Ausnahmefällen erlaubt und muss innerhalb von sechs Monaten durch entsprechend kürzerer Arbeitstage ausgeglichen werden.\n\nWir haben flexible Arbeitszeiten. Sie können selbst bestimmen, wann Sie morgens anfangen zu arbeiten und wann Sie aufhören. Zwischen 10 und 15 Uhr, in der sogenannten Kernzeit, müssen Sie jedoch anwesend sein. Gleitzeiten sind zwischen 8 und 10 Uhr und 15 und 17 Uhr. Innerhalb dieser Zeiten können Sie anfangen bzw. aufhören zu arbeiten. Aus betrieblichen Gründen kann der Arbeitgeber die Gleitzeit für eine gewisse Zeit aussetzen.\n\nUnser elektronisches Zeiterfassungssystem registriert täglich die Zahl der von Ihnen geleisteten Arbeitsstunden auf Ihrem persönlichen Arbeitszeitkonto. Haben Sie in einer Woche mehr als 40 Stunden gearbeitet, sollten Ihre Überstunden bereits vor Monatsende durch weniger Arbeit abgebaut werden. Wenn ein Abbau nicht möglich ist, wird mit der Geschäftsführung eine rasche Lösung besprochen.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Die Beschäftigten dürfen mit der Arbeit anfangen, wann sie wollen.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "mittel",
+     "quote": "Zwischen 10 und 15 Uhr, in der sogenannten Kernzeit, müssen Sie jedoch anwesend sein. Gleitzeiten sind zwischen 8 und 10 Uhr und 15 und 17 Uhr.",
+     "explain": "«Falsch»: aunque el texto dice que uno mismo determina cuándo empieza, añade inmediatamente la restricción de que solo puede hacerlo dentro de las franjas de horario flexible (8-10 y 15-17) y que entre las 10 y las 15 horas hay que estar presente; la empresa puede incluso suspender la Gleitzeit. La primera frase de la sección («Sie können selbst bestimmen, wann Sie morgens anfangen») induce a error y por eso la confianza es media, pero la restricción explícita decide el ítem."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Ergibt sich auf einem Arbeitszeitkonto ein Plus,",
+     "options": [
+      {
+       "key": "a",
+       "text": "kann der Betrieb den Acht-Stunden-Tag verlängern oder verkürzen."
+      },
+      {
+       "key": "b",
+       "text": "ist schnellstmöglich ein Ausgleich zu finden."
+      },
+      {
+       "key": "c",
+       "text": "kann der Betrieb die Gleitzeitregelungen ändern."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Haben Sie in einer Woche mehr als 40 Stunden gearbeitet, sollten Ihre Überstunden bereits vor Monatsende durch weniger Arbeit abgebaut werden. Wenn ein Abbau nicht möglich ist, wird mit der Geschäftsführung eine rasche Lösung besprochen.",
+     "explain": "Correcto b: si se acumula un saldo positivo (más de 40 horas semanales), hay que compensar las horas extras con menos trabajo antes de fin de mes y, si no es posible, buscar rápidamente una solución con la dirección. a es falso porque el texto no permite alargar ni acortar el día de ocho horas en función del saldo; c también es falso porque la empresa puede suspender temporalmente la Gleitzeit por motivos operativos, pero eso no es consecuencia de un saldo positivo."
+    }
+   ]
+  },
+  {
+   "id": "t2_a-p21a",
+   "label": "Text 1 – Variante 3",
+   "page": 21,
+   "note": "",
+   "kind": "text",
+   "intro": "Lesen Sie den Text und lösen Sie die Aufgaben 6 und 7: Entscheiden Sie bei Aufgabe 6, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 7 die richtige Lösung (a, b oder c).",
+   "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nUrlaub\n\nJedem Mitarbeiter und jeder Mitarbeiterin in unserem Unternehmen stehen je nach Betriebszugehörigkeit bis zu 26 Tage Urlaub zu. Der Urlaub sollte nach Möglichkeit innerhalb des laufenden Kalenderjahres genommen werden. In Ausnahmefällen kann diese Frist bis zum 31.3. des Folgejahres verlängert werden.\n\nGrundsätzlich besteht der volle Urlaubsanspruch erst nach Ablauf der sechsmonatigen Probezeit. Ein anteiliger Urlaub ist jedoch nach Rücksprache auch bereits während dieser Zeit möglich.\n\nUrlaubsanträge für das folgende Kalenderjahr sind spätestens bis zum 15.11. mittels des dafür vorgesehenen Formulars beim Abteilungsleiter bzw. seiner Vertretung einzureichen. Den Urlaubswünschen der einzelnen Mitarbeiter wird entsprochen, sofern diese mit den Betriebsabläufen vereinbar sind. Sollten sich die beantragten Urlaubszeiten einzelner Kollegen und Kolleginnen überschneiden, wird nach sozialen Aspekten entschieden.\n\nDer Abteilungsleiter prüft alle Urlaubsanträge unverzüglich. Sollten die Wünsche der Mitarbeiter unvereinbar sein, wird der Betriebsrat mit dem Ziel der Einigung hinzugezogen.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Im ersten halben Jahr nach Neueinstellung ist kein Urlaub möglich.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "hoch",
+     "quote": "Ein anteiliger Urlaub ist jedoch nach Rücksprache auch bereits während dieser Zeit möglich.",
+     "explain": "«Falsch»: es cierto que el derecho completo a vacaciones solo nace tras los seis meses de prueba, pero el texto permite expresamente vacaciones parciales ya durante ese periodo previa consulta. Por eso la afirmación de que no es posible ningún tipo de vacaciones es incorrecta."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Urlaubsanträge müssen",
+     "options": [
+      {
+       "key": "a",
+       "text": "durch den Betriebsrat genehmigt werden."
+      },
+      {
+       "key": "b",
+       "text": "in jedem Fall bewilligt werden."
+      },
+      {
+       "key": "c",
+       "text": "rechtzeitig im Vorjahr gestellt werden."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Urlaubsanträge für das folgende Kalenderjahr sind spätestens bis zum 15.11. mittels des dafür vorgesehenen Formulars beim Abteilungsleiter bzw. seiner Vertretung einzureichen.",
+     "explain": "Correcto c: las solicitudes para el año siguiente deben presentarse a más tardar el 15.11., es decir, con antelación y todavía en el año anterior. a es falso porque el Betriebsrat solo interviene si los deseos de los empleados son incompatibles entre sí; b es falso porque solo se conceden si son compatibles con los procesos de la empresa («sofern diese mit den Betriebsabläufen vereinbar sind»)."
+    }
+   ]
+  },
+  {
+   "id": "t2_a-p21b",
+   "label": "Text 1 – Variante 4",
+   "page": 21,
+   "note": "",
+   "kind": "text",
+   "intro": "Lesen Sie den Text und lösen Sie die Aufgaben 6 und 7: Entscheiden Sie bei Aufgabe 6, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 7 die richtige Lösung (a, b oder c).",
+   "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nRegelungen am Arbeitsplatz\n\nEs ist wichtig, dass auf dem Betriebsgelände der AKO.KG alle Maßnahmen eingehalten werden, damit Sie sich selbst und andere nicht gefährden. Bei der Bedienung der Maschinen sind die jeweiligen Sicherheitsbestimmungen zu befolgen, angepasst an die neuen Richtlinien laut Arbeitsschutzgesetz vom Januar dieses Jahres. Die Sicherheitsbestimmungen finden Sie in der Anlage zu dieser Willkommensmappe und zusammengefasst auch auf Informationsblättern an den Maschinen.\n\nSollten Sie hierzu Fragen haben, setzen Sie sich bitte mit unserer Sicherheitsbeauftragten Frau Scholz, Zimmer 122, Durchwahl - 308, in Verbindung. Dies ist auch die Kontaktstelle für alle Störungen, Unfälle, Brand oder bei für Sie unklaren Situationen. In diesen Fällen kontaktieren Sie bitte auch immer den Empfang, Durchwahl -100.\n\nNach Verlassen der Werkstätten sind diese immer ordnungsgemäß abzuschließen, damit sich kein Unbefugter den Anlagen und Maschinen nähern kann. Der Arbeitsplatz muss sauber gehalten werden, damit umherliegender Unrat nicht zu einer Gefahrenquelle werden kann. Achten Sie dabei bitte auch auf die vorgeschriebene Trennung der Abfälle in die hierfür vorgesehenen Container im Hof.\n\nAuf dem gesamten Betriebsgelände ist Filmen und Fotografieren sowie der Konsum von Alkohol und Zigarettenkonsum nicht gestattet.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Die Regelungen am Arbeitsplatz wurden aktualisiert.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "Bei der Bedienung der Maschinen sind die jeweiligen Sicherheitsbestimmungen zu befolgen, angepasst an die neuen Richtlinien laut Arbeitsschutzgesetz vom Januar dieses Jahres.",
+     "explain": "«Richtig»: el texto dice que las normas de seguridad se han adaptado («angepasst») a las nuevas directrices de la ley de seguridad laboral de enero de este año, luego las reglas del puesto de trabajo están actualizadas. «Falsch» chocaría con ese «neuen Richtlinien … vom Januar dieses Jahres»."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Auf dem Firmengelände",
+     "options": [
+      {
+       "key": "a",
+       "text": "darf kein Abfall entsorgt werden."
+      },
+      {
+       "key": "b",
+       "text": "ist bei Gefahr Frau Scholz zu informieren."
+      },
+      {
+       "key": "c",
+       "text": "ist es nicht erlaubt, Nahrungsmittel zu sich zu nehmen."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Sollten Sie hierzu Fragen haben, setzen Sie sich bitte mit unserer Sicherheitsbeauftragten Frau Scholz, Zimmer 122, Durchwahl - 308, in Verbindung. Dies ist auch die Kontaktstelle für alle Störungen, Unfälle, Brand oder bei für Sie unklaren Situationen.",
+     "explain": "Correcto b: la Sra. Scholz es el punto de contacto para averías, accidentes, incendios y situaciones poco claras, es decir, hay que avisarla en caso de peligro (y también a recepción). a es falso porque el texto no prohíbe los residuos, sino que obliga a separarlos en los contenedores del patio; c es falso porque solo se prohíben filmar, fotografiar, el alcohol y el tabaco, no comer."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.19-21: se han unido los saltos de línea del PDF dentro de cada párrafo (solo se conservan los saltos de párrafo); se han eliminado los encabezados repetidos «Lesen Teil 2», las etiquetas «Text 1 (вариант №N)» y «Новый вариант», y los números de página.",
+  "pp.19-21: se han unido las palabras partidas por guion de final de línea del PDF («Fir-menausweis» → «Firmenausweis», «Arbeitskonten-Sys-tem» → «Arbeitskonten-System», «Frei-tag» → «Freitag», «Ab-wesenheit» → «Abwesenheit», «Gleitzeit-tag» → «Gleitzeittag», «Gut-haben» → «Guthaben», «Sicherheits-bestimmungen» → «Sicherheitsbestimmungen», «Informati-onsblättern» → «Informationsblättern», «Ab-fälle» → «Abfälle», «Zigaretten-konsum» → «Zigarettenkonsum»)."
+ ]
+}

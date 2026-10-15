@@ -1,0 +1,317 @@
+{
+  "block": "t2_c",
+  "section": "lesen-t2",
+  "variants": [
+    {
+      "id": "t2_c-p25a",
+      "label": "Text 2 – Variante 1 (alte Antwortversion bis 08.2024)",
+      "page": 25,
+      "note": "Mismo texto de la Willkommensmappe (Arbeitsunfälle); esta es la versión antigua de los ítems 8 y 9, anterior a 08.2024.",
+      "kind": "text",
+      "intro": "Lesen Sie den Text und die Aufgaben 8 und 9. Entscheiden Sie bei Aufgabe 8, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 9 die richtige Lösung a, b oder c.",
+      "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nArbeitsunfälle\nArbeitsunfälle sind Unfälle, die Beschäftigte bei der Ausübung ihrer Arbeit oder einer Dienstreise erleiden. Es muss also ein ursächlicher Zusammenhang mit der beruflichen Tätigkeit bestehen. Nach einem Arbeitsunfall müssen Beschäftigte ihren Arbeitgeber umgehend über den Unfall in Kenntnis setzen und sich ggf. in Behandlung begeben. Außerdem ist, sobald es der Gesundheitszustand des Geschädigten zulässt, ein detaillierter Unfallbericht zu verfassen und der Personalabteilung vorzulegen.\n\nIm Falle einer Arbeitsunfähigkeit nach einem Arbeitsunfall erhalten Arbeitnehmende für sechs Wochen eine Lohnfortzahlung vom Arbeitgeber, danach übernimmt die Berufsgenossenschaft (BG), zahlt u. a. Verletztengeld in Höhe von 80 Prozent des Bruttogehalts und kommt ggf. auch für weitere Kosten auf.\n\nZu Arbeitsunfällen zählen auch Wegeunfälle, also Unfälle, die sich auf dem direkten Weg zwischen dem Wohngebäude und der Arbeitsstätte ereignen. Dieser Weg beginnt vor der eigenen Haustür und endet, sobald die Arbeitnehmenden das Unternehmen erreicht haben. Dabei sind bestimmte notwendige Umwege mitversichert, wie etwa der Weg zur Kita, Umleitungen oder im Falle von Fahrgemeinschaften, unabhängig davon, mit welchen Verkehrsmitteln man sich fortbewegt.\n\nDer Versicherungsschutz umfasst ausschließlich Personenschäden; Sachschäden, wie z. B. Schäden am Fahrzeug, sind hierbei nicht mitversichert. Die BG übernimmt in diesem Fall z. B. die Behandlungskosten sowie ggf. Krankenpflege oder medizinische Rehabilitation.",
+      "items": [
+        {
+          "n": 8,
+          "type": "truefalse",
+          "prompt": "Ein Fahrradunfall auf dem Weg zur Arbeit zählt nicht als Arbeitsunfall.",
+          "options": [
+            { "key": "Richtig", "text": "Richtig" },
+            { "key": "Falsch", "text": "Falsch" }
+          ],
+          "answer": "Falsch",
+          "confidence": "hoch",
+          "quote": "Zu Arbeitsunfällen zählen auch Wegeunfälle, also Unfälle, die sich auf dem direkten Weg zwischen dem Wohngebäude und der Arbeitsstätte ereignen.",
+          "explain": "El texto incluye expresamente los «Wegeunfälle» (accidentes in itinere) en el trayecto directo entre la vivienda y el lugar de trabajo, e incluso cubre desvíos necesarios como el camino a la guardería. El medio de transporte es irrelevante («unabhängig davon, mit welchen Verkehrsmitteln man sich fortbewegt»), así que un accidente de bicicleta de camino al trabajo sí cuenta como accidente laboral y la afirmación es falsa."
+        },
+        {
+          "n": 9,
+          "type": "choice",
+          "prompt": "Nach einem Arbeitsunfall",
+          "options": [
+            { "key": "a", "text": "bezahlt die Berufsgenossenschaft sofort Verletztengeld." },
+            { "key": "b", "text": "erhalten Arbeitnehmer sechs Wochen volles Gehalt." },
+            { "key": "c", "text": "muss ein Bericht vom Arzt beim Arbeitgeber abgegeben werden." }
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Im Falle einer Arbeitsunfähigkeit nach einem Arbeitsunfall erhalten Arbeitnehmende für sechs Wochen eine Lohnfortzahlung vom Arbeitgeber, danach übernimmt die Berufsgenossenschaft (BG), zahlt u. a. Verletztengeld in Höhe von 80 Prozent des Bruttogehalts",
+          "explain": "b es correcta: durante seis semanas el empresario sigue pagando el salario íntegro («Lohnfortzahlung»), y solo «danach» entra la Berufsgenossenschaft. a es falsa porque el Verletztengeld no se paga «sofort», sino tras esas seis semanas (y además es el 80 % del bruto, no el salario completo). c es falsa porque el informe de accidente lo redacta el propio trabajador accidentado («ist ein detaillierter Unfallbericht zu verfassen») y se entrega a Recursos Humanos, no lo emite el médico."
+        }
+      ]
+    },
+    {
+      "id": "t2_c-p25b",
+      "label": "Text 2 – Variante 1 (neue Antwortversion №160201, 160221)",
+      "page": 25,
+      "note": "Mismo texto que la variante anterior; ítems nuevos (№160201, 160221). El enunciado del ítem 8 cambia por completo (ahora se refiere al informe del accidente).",
+      "kind": "text",
+      "intro": "Lesen Sie den Text und die Aufgaben 8 und 9. Entscheiden Sie bei Aufgabe 8, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 9 die richtige Lösung a, b oder c.",
+      "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nArbeitsunfälle\nArbeitsunfälle sind Unfälle, die Beschäftigte bei der Ausübung ihrer Arbeit oder einer Dienstreise erleiden. Es muss also ein ursächlicher Zusammenhang mit der beruflichen Tätigkeit bestehen. Nach einem Arbeitsunfall müssen Beschäftigte ihren Arbeitgeber umgehend über den Unfall in Kenntnis setzen und sich ggf. in Behandlung begeben. Außerdem ist, sobald es der Gesundheitszustand des Geschädigten zulässt, ein detaillierter Unfallbericht zu verfassen und der Personalabteilung vorzulegen.\n\nIm Falle einer Arbeitsunfähigkeit nach einem Arbeitsunfall erhalten Arbeitnehmende für sechs Wochen eine Lohnfortzahlung vom Arbeitgeber, danach übernimmt die Berufsgenossenschaft (BG), zahlt u. a. Verletztengeld in Höhe von 80 Prozent des Bruttogehalts und kommt ggf. auch für weitere Kosten auf.\n\nZu Arbeitsunfällen zählen auch Wegeunfälle, also Unfälle, die sich auf dem direkten Weg zwischen dem Wohngebäude und der Arbeitsstätte ereignen. Dieser Weg beginnt vor der eigenen Haustür und endet, sobald die Arbeitnehmenden das Unternehmen erreicht haben. Dabei sind bestimmte notwendige Umwege mitversichert, wie etwa der Weg zur Kita, Umleitungen oder im Falle von Fahrgemeinschaften, unabhängig davon, mit welchen Verkehrsmitteln man sich fortbewegt.\n\nDer Versicherungsschutz umfasst ausschließlich Personenschäden; Sachschäden, wie z. B. Schäden am Fahrzeug, sind hierbei nicht mitversichert. Die BG übernimmt in diesem Fall z. B. die Behandlungskosten sowie ggf. Krankenpflege oder medizinische Rehabilitation.",
+      "items": [
+        {
+          "n": 8,
+          "type": "truefalse",
+          "prompt": "Im Falle eines Arbeitsunfalls muss man sofort einen Bericht beim Arbeitgeber einreichen.",
+          "options": [
+            { "key": "Richtig", "text": "Richtig" },
+            { "key": "Falsch", "text": "Falsch" }
+          ],
+          "answer": "Falsch",
+          "confidence": "hoch",
+          "quote": "Außerdem ist, sobald es der Gesundheitszustand des Geschädigten zulässt, ein detaillierter Unfallbericht zu verfassen und der Personalabteilung vorzulegen.",
+          "explain": "Lo inmediato («umgehend») es informar al empresario del accidente, no presentar un informe; el informe detallado solo hay que redactarlo cuando el estado de salud del accidentado lo permita («sobald es der Gesundheitszustand des Geschädigten zulässt»). Por eso la afirmación «sofort» es falsa. Además el informe va a la Personalabteilung, no se «presenta» sin más al empresario."
+        },
+        {
+          "n": 9,
+          "type": "choice",
+          "prompt": "Nach einem Arbeitsunfall",
+          "options": [
+            { "key": "a", "text": "bezahlt die Berufsgenossenschaft sofort Verletztengeld." },
+            { "key": "b", "text": "erhalten Arbeitnehmer sechs Wochen volles Gehalt." },
+            { "key": "c", "text": "trägt der Arbeitgeber die Kosten für die medizinische Versorgung." }
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Im Falle einer Arbeitsunfähigkeit nach einem Arbeitsunfall erhalten Arbeitnehmende für sechs Wochen eine Lohnfortzahlung vom Arbeitgeber, danach übernimmt die Berufsgenossenschaft (BG), zahlt u. a. Verletztengeld in Höhe von 80 Prozent des Bruttogehalts",
+          "explain": "b es correcta: el empresario mantiene el salario durante seis semanas («Lohnfortzahlung»). a es falsa: la Berufsgenossenschaft actúa solo «danach», es decir, después de las seis semanas. c es falsa porque los costes médicos no los asume el empresario, sino la BG («Die BG übernimmt in diesem Fall z. B. die Behandlungskosten sowie ggf. Krankenpflege oder medizinische Rehabilitation»)."
+        }
+      ]
+    },
+    {
+      "id": "t2_c-p26a",
+      "label": "Text 2 – Variante 2 (alte Fassung)",
+      "page": 26,
+      "note": "Primera fassung del texto de Datenschutz: la formación obligatoria debe repetirse «spätestens alle drei Jahre».",
+      "kind": "text",
+      "intro": "Lesen Sie den Text und die Aufgaben 8 und 9. Entscheiden Sie bei Aufgabe 8, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 9 die richtige Lösung a, b oder c.",
+      "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nWichtige Hinweise zum Datenschutz\nUnser Unternehmen ist dem Datenschutz gemäß der EU-Datenschutz-Grundverordnung (DSGVO) verpflichtet. Grundsätzlich dürfen die Daten unserer Mitarbeiterinnen und Mitarbeiter nur dann erhoben werden, wenn diese vorher ausdrücklich zugestimmt haben. Mit Ihrem Arbeitsvertrag haben Sie bereits ein Formular erhalten, mit dessen Unterschrift Sie bestätigt haben, dass Sie mit der Speicherung Ihrer personenbezogenen Daten einverstanden sind. Sollten Sie zukünftig Fragen zum Datenschutz haben, können Sie sich an unseren internen Datenschutzbeauftragten Herrn Koljak (Durchwahl-814) oder seine Stellvertreterin Frau Dombrovski (Durchwahl -485) wenden. Wir erwarten von unseren Mitarbeiterinnen und Mitarbeitern, sich beim Thema Datenschutzverordnung immer auf dem neuesten Stand zu halten und bieten daher jedes Jahr Schulungen zu diesem Zweck an. Diese werden von unserem externen Schulungspartner WissMax durchgeführt und finden zu unterschiedlichen Terminen, jeweils am Wochenende, bei uns im Haus statt. Der Besuch des Seminars wird als Arbeitszeit angerechnet und ist für unsere Mitarbeiter kostenfrei. Eine Teilnahme an einem solchen Training muss spätestens alle drei Jahre erfolgen und durch ein Zertifikat nachgewiesen werden. Reichen Sie dieses bitte unaufgefordert bei der Personalabteilung ein. Alternativ können Sie auch eine vergleichbare Schulung bei einem anderen Anbieter besuchen. In diesem Fall bitten wir Sie jedoch, eine solche Teilnahme im Vorfeld mit unserer Personalabteilung abzusprechen, sodass Ihnen das Seminar genehmigt und eine Kostenübernahme garantiert werden kann.",
+      "items": [
+        {
+          "n": 8,
+          "type": "truefalse",
+          "prompt": "Die Mitarbeiter müssen einmal pro Jahr ein Seminar zum Datenschutz belegen.",
+          "options": [
+            { "key": "Richtig", "text": "Richtig" },
+            { "key": "Falsch", "text": "Falsch" }
+          ],
+          "answer": "Falsch",
+          "confidence": "hoch",
+          "quote": "Eine Teilnahme an einem solchen Training muss spätestens alle drei Jahre erfolgen und durch ein Zertifikat nachgewiesen werden.",
+          "explain": "En esta fassung del texto la formación es obligatoria como muy tarde cada tres años («spätestens alle drei Jahre»). Que la empresa «ofrezca» cursos cada año («bieten daher jedes Jahr Schulungen … an») no significa que el empleado deba hacer uno anual: la obligación es trienal, así que la afirmación es falsa."
+        },
+        {
+          "n": 9,
+          "type": "choice",
+          "prompt": "Die Teilnahme am Seminar",
+          "options": [
+            { "key": "a", "text": "gilt als Arbeitszeit." },
+            { "key": "b", "text": "ist kostenpflichtig." },
+            { "key": "c", "text": "muss bei WissMax erfolgen." }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Der Besuch des Seminars wird als Arbeitszeit angerechnet und ist für unsere Mitarbeiter kostenfrei.",
+          "explain": "a es correcta: la asistencia se computa como tiempo de trabajo. b es falsa porque el seminario es «kostenfrei» para los empleados. c es falsa porque el texto permite otra vía: «Alternativ können Sie auch eine vergleichbare Schulung bei einem anderen Anbieter besuchen», previa autorización de Recursos Humanos."
+        }
+      ]
+    },
+    {
+      "id": "t2_c-p26b",
+      "label": "Text 2 – Variante 2 (neue Fassung)",
+      "page": 26,
+      "note": "Segunda fassung del mismo texto de Datenschutz: cambia un solo dato, la formación pasa a ser «jedes Jahr». Los ítems 8 y 9 se mantienen literalmente, pero la respuesta del ítem 8 se invierte.",
+      "kind": "text",
+      "intro": "Lesen Sie den Text und die Aufgaben 8 und 9. Entscheiden Sie bei Aufgabe 8, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 9 die richtige Lösung a, b oder c.",
+      "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nWichtige Hinweise zum Datenschutz\nUnser Unternehmen ist dem Datenschutz gemäß der EU-Datenschutz-Grundverordnung (DSGVO) verpflichtet. Grundsätzlich dürfen die Daten unserer Mitarbeiterinnen und Mitarbeiter nur dann erhoben werden, wenn diese vorher ausdrücklich zugestimmt haben.\nMit Ihrem Arbeitsvertrag haben Sie bereits ein Formular erhalten, mit dessen Unterschrift Sie bestätigt haben, dass Sie mit der Speicherung Ihrer personenbezogenen Daten einverstanden sind. Sollten Sie zukünftig Fragen zum Datenschutz haben, können Sie sich an unseren internen Datenschutzbeauftragten Herrn Koljak (Durchwahl-814) oder seine Stellvertreterin Frau Dombrovski (Durchwahl -485) wenden.\nWir erwarten von unseren Mitarbeiterinnen und Mitarbeitern, sich beim Thema Datenschutzverordnung immer auf dem neuesten Stand zu halten und bieten daher jedes Jahr Schulungen zu diesem Zweck an. Diese werden von unserem externen Schulungspartner WissMax durchgeführt und finden zu unterschiedlichen Terminen, jeweils am Wochenende, bei uns im Haus statt. Der Besuch des Seminars wird als Arbeitszeit angerechnet und ist für unsere Mitarbeiter kostenfrei.\nEine Teilnahme an einem solchen Training muss jedes Jahr erfolgen und durch ein Zertifikat nachgewiesen werden. Reichen Sie dieses bitte unaufgefordert bei der Personalabteilung ein.\nAlternativ können Sie auch eine vergleichbare Schulung bei einem anderen Anbieter besuchen. In diesem Fall bitten wir Sie jedoch, eine solche Teilnahme im Vorfeld mit unserer Personalabteilung abzusprechen, sodass Ihnen das Seminar genehmigt und eine Kostenübernahme garantiert werden kann.",
+      "items": [
+        {
+          "n": 8,
+          "type": "truefalse",
+          "prompt": "Die Mitarbeiter müssen einmal pro Jahr ein Seminar zum Datenschutz belegen.",
+          "options": [
+            { "key": "Richtig", "text": "Richtig" },
+            { "key": "Falsch", "text": "Falsch" }
+          ],
+          "answer": "Richtig",
+          "confidence": "hoch",
+          "quote": "Eine Teilnahme an einem solchen Training muss jedes Jahr erfolgen und durch ein Zertifikat nachgewiesen werden.",
+          "explain": "En esta versión nueva del texto la frase clave cambia: la participación en la formación «muss jedes Jahr erfolgen» (antes: «spätestens alle drei Jahre»). Como el enunciado dice exactamente eso —una vez al año—, es correcto. Es el caso típico de la inversión de la respuesta entre versiones del mismo texto."
+        },
+        {
+          "n": 9,
+          "type": "choice",
+          "prompt": "Die Teilnahme am Seminar",
+          "options": [
+            { "key": "a", "text": "gilt als Arbeitszeit." },
+            { "key": "b", "text": "ist kostenpflichtig." },
+            { "key": "c", "text": "muss bei WissMax erfolgen." }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Der Besuch des Seminars wird als Arbeitszeit angerechnet und ist für unsere Mitarbeiter kostenfrei.",
+          "explain": "a es correcta: la asistencia cuenta como tiempo de trabajo, igual que en la versión anterior (este ítem no cambia entre versiones). b es falsa porque es gratuita («kostenfrei»). c es falsa porque se admite una formación equivalente en otro proveedor previa consulta con Recursos Humanos."
+        }
+      ]
+    },
+    {
+      "id": "t2_c-p27a",
+      "label": "Text 2 – Variante 3 (alte Fassung bis 07.2024)",
+      "page": 27,
+      "note": "Primera de las tres versiones del texto sobre el tabaco. El ítem 8 dice «schließt E-Zigaretten aus».",
+      "kind": "text",
+      "intro": "Lesen Sie den Text und die Aufgaben 8 und 9. Entscheiden Sie bei Aufgabe 8, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 9 die richtige Lösung a, b oder c.",
+      "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nRauchen\nIm gesamten Betrieb gilt striktes Rauchverbot. Auf dem Betriebsgelände befinden sich vier durch Hinweisschilder gekennzeichnete Raucherzonen. Bitte benutzen Sie für Ihre Zigarettenreste die Standaschenbecher. Allerdings ist im Umkreis von mindestens 50 Metern rund um die Produktionshallen das Rauchen auch im Freien untersagt. Eine Missachtung dieser Regel zieht eine Abmahnung nach sich. Im Wiederholungsfall droht eine fristlose Kündigung. Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein. Bei Veranstaltungen ist das Rauchen auch auf der Dachterrasse des Gebäudes A zulässig. Beschäftigte, die dort rauchen, sind dazu angehalten, die Terrassentür geschlossen zu halten. Zigarettenpausen während der Arbeitszeit sind grundsätzlich zulässig, dabei sind folgende Regelungen zu beachten. Raucherpausen sind nicht Bestandteil der Arbeitszeit, deshalb müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden.\n\nDa die Raucherpause nicht zur Arbeitszeit gehört, greift währenddessen nach dem Arbeitsrecht die Unfallversicherung nicht.\nDaher ist ein Arbeitsunfall während der Raucherpausen, z. B. ein Treppensturz, nicht über die Unfallversicherung abgedeckt.\n\nDie Gesundheit unserer MitarbeiterInnen liegt uns am Herzen. Aus diesem Grund übernehmen wir in Kooperation mit unserer betrieblichen Krankenkasse die Kosten für einen Raucherentwöhnungskurs.\nFür weitere Informationen wenden Sie sich bitte vertrauensvoll an unsere Personalabteilung.",
+      "items": [
+        {
+          "n": 8,
+          "type": "truefalse",
+          "prompt": "Das Rauchverbot auf dem Firmengelände schließt E-Zigaretten aus.",
+          "options": [
+            { "key": "Richtig", "text": "Richtig" },
+            { "key": "Falsch", "text": "Falsch" }
+          ],
+          "answer": "Falsch",
+          "confidence": "hoch",
+          "quote": "Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein.",
+          "explain": "«mit einschließen» significa incluir: la prohibición abarca expresamente también el uso de cigarrillos electrónicos. El enunciado dice lo contrario («ausschließen» = excluir), de modo que es falso. Ojo: en la versión 07.2024 el mismo ítem se formula con «einschließen» y entonces sí es Richtig."
+        },
+        {
+          "n": 9,
+          "type": "choice",
+          "prompt": "Raucher",
+          "options": [
+            { "key": "a", "text": "müssen ihre Pausenzeiten nicht dokumentieren." },
+            { "key": "b", "text": "sind auch in der Raucherpause bei Unfällen versichert." },
+            { "key": "c", "text": "sollen die Terrassentür beim Rauchen schließen." }
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Beschäftigte, die dort rauchen, sind dazu angehalten, die Terrassentür geschlossen zu halten.",
+          "explain": "c es correcta: quien fuma en la terraza del edificio A durante eventos debe mantener la puerta de la terraza cerrada. a es falsa porque las pausas de tabaco no son tiempo de trabajo y hay que registrarlas en el sistema de control horario («müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden»). b es falsa porque durante la pausa no rige el seguro de accidentes y una caída por las escaleras no está cubierta («greift währenddessen nach dem Arbeitsrecht die Unfallversicherung nicht»)."
+        }
+      ]
+    },
+    {
+      "id": "t2_c-p27b",
+      "label": "Text 2 – Variante 3 (neue Fassung 07.2024)",
+      "page": 27,
+      "note": "Versión 07.2024: el enunciado del ítem 8 se invierte («schließt E-Zigaretten ein») y el ítem 9 estrena las opciones a) y b) nuevas.",
+      "kind": "text",
+      "intro": "Lesen Sie den Text und die Aufgaben 8 und 9. Entscheiden Sie bei Aufgabe 8, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 9 die richtige Lösung a, b oder c.",
+      "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nRauchen\nIm gesamten Betrieb gilt striktes Rauchverbot. Auf dem Betriebsgelände befinden sich vier durch Hinweisschilder gekennzeichnete Raucherzonen. Bitte benutzen Sie für Ihre Zigarettenreste die Standaschenbecher. Allerdings ist im Umkreis von mindestens 50 Metern rund um die Produktionshallen das Rauchen auch im Freien untersagt. Eine Missachtung dieser Regel zieht eine Abmahnung nach sich. Im Wiederholungsfall droht eine fristlose Kündigung. Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein. Bei Veranstaltungen ist das Rauchen auch auf der Dachterrasse des Gebäudes A zulässig. Beschäftigte, die dort rauchen, sind dazu angehalten, die Terrassentür geschlossen zu halten. Zigarettenpausen während der Arbeitszeit sind grundsätzlich zulässig, dabei sind folgende Regelungen zu beachten. Raucherpausen sind nicht Bestandteil der Arbeitszeit, deshalb müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden.\n\nDa die Raucherpause nicht zur Arbeitszeit gehört, greift währenddessen nach dem Arbeitsrecht die Unfallversicherung nicht.\nDaher ist ein Arbeitsunfall während der Raucherpausen, z. B. ein Treppensturz, nicht über die Unfallversicherung abgedeckt.\n\nDie Gesundheit unserer MitarbeiterInnen liegt uns am Herzen. Aus diesem Grund übernehmen wir in Kooperation mit unserer betrieblichen Krankenkasse die Kosten für einen Raucherentwöhnungskurs.\nFür weitere Informationen wenden Sie sich bitte vertrauensvoll an unsere Personalabteilung.",
+      "items": [
+        {
+          "n": 8,
+          "type": "truefalse",
+          "prompt": "Das Rauchverbot auf dem Firmengelände schließt E-Zigaretten ein.",
+          "options": [
+            { "key": "Richtig", "text": "Richtig" },
+            { "key": "Falsch", "text": "Falsch" }
+          ],
+          "answer": "Richtig",
+          "confidence": "hoch",
+          "quote": "Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein.",
+          "explain": "Aquí el enunciado usa «einschließen» (incluir), que es justo lo que dice el texto: la prohibición incluye «jeglichen Gebrauch von E-Zigaretten». Por tanto es correcto. Compárese con la versión antigua y la de 05.2025, donde el mismo ítem dice «ausschließen» y la respuesta es Falsch: es el enunciado invertido."
+        },
+        {
+          "n": 9,
+          "type": "choice",
+          "prompt": "Raucher",
+          "options": [
+            { "key": "a", "text": "erhalten weitere Informationen zu den Raucherbestimmungen in der Personalabteilung." },
+            { "key": "b", "text": "müssen ihre Pausenzeiten dokumentieren." },
+            { "key": "c", "text": "sind auch in der Raucherpause bei Unfällen versichert." }
+          ],
+          "answer": "b",
+          "confidence": "niedrig",
+          "quote": "Raucherpausen sind nicht Bestandteil der Arbeitszeit, deshalb müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden.",
+          "explain": "b tiene el apoyo literal más claro: al no ser tiempo de trabajo, hay que fichar la salida y la vuelta en el sistema de registro horario, es decir, documentar la pausa; además es la formulación afirmativa de la antigua opción falsa a), lo que encaja con el rediseño del ítem. c es claramente falsa (durante la pausa no hay seguro de accidentes). Confianza baja porque a) también es defendible: el texto termina con «Für weitere Informationen wenden Sie sich bitte vertrauensvoll an unsere Personalabteilung», así que hay dos opciones sostenibles y solo el diseño del ítem inclina la balanza hacia b)."
+        }
+      ]
+    },
+    {
+      "id": "t2_c-p27c",
+      "label": "Text 2 – Variante 3 (neue Fassung 05.2025)",
+      "page": 27,
+      "note": "Versión 05.2025: mantiene las opciones nuevas del ítem 9, pero vuelve a invertir el enunciado del ítem 8 («schließt E-Zigaretten aus»).",
+      "kind": "text",
+      "intro": "Lesen Sie den Text und die Aufgaben 8 und 9. Entscheiden Sie bei Aufgabe 8, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 9 die richtige Lösung a, b oder c.",
+      "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nRauchen\nIm gesamten Betrieb gilt striktes Rauchverbot. Auf dem Betriebsgelände befinden sich vier durch Hinweisschilder gekennzeichnete Raucherzonen. Bitte benutzen Sie für Ihre Zigarettenreste die Standaschenbecher. Allerdings ist im Umkreis von mindestens 50 Metern rund um die Produktionshallen das Rauchen auch im Freien untersagt. Eine Missachtung dieser Regel zieht eine Abmahnung nach sich. Im Wiederholungsfall droht eine fristlose Kündigung. Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein. Bei Veranstaltungen ist das Rauchen auch auf der Dachterrasse des Gebäudes A zulässig. Beschäftigte, die dort rauchen, sind dazu angehalten, die Terrassentür geschlossen zu halten. Zigarettenpausen während der Arbeitszeit sind grundsätzlich zulässig, dabei sind folgende Regelungen zu beachten. Raucherpausen sind nicht Bestandteil der Arbeitszeit, deshalb müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden.\n\nDa die Raucherpause nicht zur Arbeitszeit gehört, greift währenddessen nach dem Arbeitsrecht die Unfallversicherung nicht.\nDaher ist ein Arbeitsunfall während der Raucherpausen, z. B. ein Treppensturz, nicht über die Unfallversicherung abgedeckt.\n\nDie Gesundheit unserer MitarbeiterInnen liegt uns am Herzen. Aus diesem Grund übernehmen wir in Kooperation mit unserer betrieblichen Krankenkasse die Kosten für einen Raucherentwöhnungskurs.\nFür weitere Informationen wenden Sie sich bitte vertrauensvoll an unsere Personalabteilung.",
+      "items": [
+        {
+          "n": 8,
+          "type": "truefalse",
+          "prompt": "Das Rauchverbot auf dem Firmengelände schließt E-Zigaretten aus.",
+          "options": [
+            { "key": "Richtig", "text": "Richtig" },
+            { "key": "Falsch", "text": "Falsch" }
+          ],
+          "answer": "Falsch",
+          "confidence": "hoch",
+          "quote": "Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein.",
+          "explain": "El texto dice que la prohibición incluye los cigarrillos electrónicos («mit ein»), así que afirmar que los excluye («ausschließen») es falso. Es la misma formulación que la versión anterior a 07.2024; solo la versión 07.2024 usa «ein» y por eso allí la respuesta es Richtig."
+        },
+        {
+          "n": 9,
+          "type": "choice",
+          "prompt": "Raucher",
+          "options": [
+            { "key": "a", "text": "erhalten weitere Informationen zu den Raucherbestimmungen in der Personalabteilung." },
+            { "key": "b", "text": "müssen ihre Pausenzeiten dokumentieren." },
+            { "key": "c", "text": "sind auch in der Raucherpause bei Unfällen versichert." }
+          ],
+          "answer": "b",
+          "confidence": "niedrig",
+          "quote": "Raucherpausen sind nicht Bestandteil der Arbeitszeit, deshalb müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden.",
+          "explain": "Ítem idéntico al de la versión 07.2024: b se apoya en la obligación de registrar la pausa en el sistema de control horario (entrada y salida). c es falsa porque la pausa no está cubierta por el seguro de accidentes. Confianza baja porque a) también encuentra apoyo en la frase final del texto sobre informarse en la Personalabteilung; con dos opciones defendibles, la opción b) es la que reproduce una regla concreta para los fumadores."
+        }
+      ]
+    },
+    {
+      "id": "t2_c-p28",
+      "label": "Text 2 – Variante 4",
+      "page": 28,
+      "note": "",
+      "kind": "text",
+      "intro": "Lesen Sie den Text und die Aufgaben 8 und 9. Entscheiden Sie bei Aufgabe 8, ob die Aussage richtig oder falsch ist, und wählen Sie bei Aufgabe 9 die richtige Lösung a, b oder c.",
+      "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nLebensarbeitszeitkonto\nIn unserem Unternehmen wird die Möglichkeit angeboten, ein Lebensarbeitszeitkonto zu führen. Als Arbeitnehmer können Sie Arbeitszeit, zum Beispiel geleistete Überstunden, als Guthaben auf diesem Konto stehen lassen. Ähnlich wie bei einem Bankkonto, mit dem Unterschied, dass auch die Währung 'Zeit' akzeptiert wird.\n\nBei Bedarf können Sie Ihre angesparten Stunden wieder einlösen. Das Lebensarbeitszeitkonto bietet die Chance, adäquat auf verschiedene Bedürfnisse zu verschiedenen Zeiten im Laufe des Arbeitslebens einzugehen. Beispielsweise könnte die angesparte Zeit etwa für die Betreuung von pflegebedürftigen Angehörigen genutzt werden.\n\nAußerdem bietet unser Teilzeitangebot „Classic Vario“ eine Kombination von Teil- und Vollzeit bei flexibler Einteilung der Arbeitszeit. Nach rechtzeitiger Rücksprache mit dem Arbeitgeber (mindestens drei Monate vorher) kann die zu leistende Arbeitszeit auch zwischen Teil- und Vollzeit angepasst werden.\n\nWenn Sie eine gewisse zeitliche Flexibilität brauchen, können Sie auch kurzfristig nach Absprache im Homeoffice arbeiten. Für die Arbeit von zu Hause stehen den Mitarbeitern und Mitarbeiterinnen ein firmeneigener Laptop und ein Diensthandy zur Verfügung.\n\nSollten Sie eine komplette Auszeit nehmen wollen, können Sie das für einen Zeitraum von bis zu maximal zwölf Monaten vorübergehend tun. Wir sichern Ihnen einen gleichwertigen Arbeitsplatz nach Ihrer Rückkehr zu.\n\nAls familienfreundliche Firma bieten wir neben den oben beschriebenen flexiblen Arbeitszeitmodellen Betreuungsmöglichkeiten während der Schulferien für die Kinder unserer Mitarbeiter und Mitarbeiterinnen.",
+      "items": [
+        {
+          "n": 8,
+          "type": "truefalse",
+          "prompt": "Das Unternehmen unterstützt die Mitarbeiter finanziell bei privaten Problemen.",
+          "options": [
+            { "key": "Richtig", "text": "Richtig" },
+            { "key": "Falsch", "text": "Falsch" }
+          ],
+          "answer": "Falsch",
+          "confidence": "mittel",
+          "quote": "Ähnlich wie bei einem Bankkonto, mit dem Unterschied, dass auch die Währung 'Zeit' akzeptiert wird.",
+          "explain": "El texto no menciona ninguna ayuda económica para problemas privados: el apoyo es en tiempo y en servicios (cuenta de tiempo de trabajo, Teilzeit «Classic Vario», home office con portátil y móvil de empresa, excedencia de hasta doce meses, plazas de cuidado infantil en vacaciones). La única «cuenta» es de horas y su «moneda» es el tiempo, no el dinero. Confianza media porque la respuesta se deduce por ausencia de cualquier dato económico, no de una frase que lo niegue expresamente."
+        },
+        {
+          "n": 9,
+          "type": "choice",
+          "prompt": "Die Mitarbeiter können",
+          "options": [
+            { "key": "a", "text": "bei Bedarf von zu Hause aus arbeiten." },
+            { "key": "b", "text": "sich maximal ein halbes Jahr beurlauben lassen." },
+            { "key": "c", "text": "Geldleistungen für die Pflege von Angehörigen erhalten." }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Wenn Sie eine gewisse zeitliche Flexibilität brauchen, können Sie auch kurzfristig nach Absprache im Homeoffice arbeiten.",
+          "explain": "a es correcta: se puede trabajar desde casa a corto plazo tras acordarlo con la empresa, justo lo que pide el enunciado («bei Bedarf»). b es falsa porque la excedencia puede durar «bis zu maximal zwölf Monaten», es decir, hasta un año, no medio. c es falsa porque las horas acumuladas pueden destinarse al cuidado de familiares dependientes, pero se trata de tiempo y no de prestaciones económicas («könnte die angesparte Zeit etwa für die Betreuung von pflegebedürftigen Angehörigen genutzt werden»)."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "Nota general: se han unido las palabras cortadas con guion al final de línea del PDF (p. ej. «Gesundheits-zustand» → «Gesundheitszustand», «Personalab-teilung» → «Personalabteilung», «Standaschen-becher» → «Standaschenbecher»).",
+    "p.27: «vier durch Hinweisschilder gekennzeichnete Raucherzonen, Bitte benutzen Sie» → coma sustituida por punto: «… Raucherzonen. Bitte benutzen Sie …» (errata del OCR).",
+    "p.27: «das Rauchen auch im Freien untersagt, Eine Missachtung» → «… untersagt. Eine Missachtung …» (errata del OCR).",
+    "p.27: «auf der Dachterrasse des Gebäudes A zulässig, Beschäftigte» → «… zulässig. Beschäftigte …» (errata del OCR).",
+    "p.28: comilla de cierre normalizada: el original trae «„Classic Vario\"» (comilla recta) y en el JSON figura «„Classic Vario“»."
+  ]
+}

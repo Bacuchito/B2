@@ -1,0 +1,187 @@
+{
+  "block": "t3_c",
+  "section": "lesen-t3",
+  "variants": [
+    {
+      "id": "t3_c-p38",
+      "label": "Lesen Teil 3 (вариант №5)",
+      "page": 38,
+      "note": "Aviso del original: el comentario b aparece dos veces en la página — como «b) Thilo, vor 45 Minuten» y, marcado como «Новый вариант», como «b) Mallory, vor 45 Minuten» (Zug / Deutsche Bahn, taxi o noche de hotel). Se reproduce la versión impresa b) Thilo. La respuesta del ítem 12 es b en LAS DOS versiones, por lo que el aviso no altera la clave. La versión «nueva» reaparece con el nombre Mallory en la p. 39.",
+      "kind": "zuordnung",
+      "intro": "Lesen Sie die vier Aufgaben (10–13) und die sechs Kommentare (a–f). Welcher Kommentar passt zu welcher Aufgabe? Zwei Kommentare bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Hans, vor 2 Stunden",
+          "text": "Der Arbeitgeber hat eine Fürsorgepflicht und dazu gehört auch, dass er für Fahrzeuge der Mitarbeiter eine Unterbringungsmöglichkeit zu schaffen hat. Aber nur, wenn das ohne zu großen Aufwand geht. Wenn ein Unternehmen in der Innenstadt ist, gibt es einfach nicht genug Platz für ihre Parkmöglichkeiten.",
+          "distractor": ""
+        },
+        {
+          "key": "b",
+          "title": "Thilo, vor 45 Minuten",
+          "text": "Wenn die Bahn wegen eines Sturms nicht weiterfahren kann und in einem Bahnhof stehen bleiben, haben die Fahrgäste meistens Anspruch auf einen Taxigutschein, damit sie auf diese Weise ihr Ziel erreichen. Du kannst auf der Webseite der Deutschen Bahn nachlesen, unter welchen Umständen die Bahn deine Weiterfahrt bezahlt.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Johannes, vor 3 Stunden",
+          "text": "Wenn du auf dem Weg zur Arbeit einen Autounfall hast, bezahlt die Unfallversicherung nur Personenschäden. Sachschäden sind dabei nicht inbegriffen. Du kannst aber grundsätzlich selbst entscheiden, welches Fahrzeug du für den Arbeitsweg benutzt.",
+          "distractor": ""
+        },
+        {
+          "key": "d",
+          "title": "Jacqueline, vor 30 Minuten",
+          "text": "Du bist dafür verantwortlich, rechtzeitig an deinem Arbeitsplatz zu erscheinen. Wie du das machst, ist deine Sache. Aber du kannst keinesfalls die Verantwortung auf die öffentlichen Verkehrsmittel schieben und dich auf den Standpunkt stellen, dass du nichts für deine Verspätung kannst.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Andreij, vor 4 Stunden",
+          "text": "Natürlich hast du an deinem Arbeitsplatz Versicherungsschutz, aber dieser gilt nicht in allen Teilen des Gebäudes. Auf der Toilette bist du zum Beispiel nicht versichert. Warum das so ist, weiß ich aber auch nicht.",
+          "distractor": "No encaja con ninguna de las cuatro consultas. Habla del seguro DENTRO del lugar de trabajo (la toaleta no está cubierta), no del seguro en el trayecto. Es el distractor temático de la consulta 10 (Mikke, «Bin ich denn jetzt versichert?»), que pregunta por el accidente de camino al trabajo; también puede confundir a quien busque cualquier mención a «Versicherung»."
+        },
+        {
+          "key": "f",
+          "title": "Alex, vor 45 Minuten",
+          "text": "Als Arbeitnehmer musst du dafür sorgen, zum Job zu kommen. Wenn das nicht geht, darfst du aber keine Abmahnung bekommen. Ob du ein Taxi nehmen musst, kommt darauf an, ob die Kosten dafür über deinem Arbeitslohn für einen Tag liegen. Wenn ja, sind diese Kosten für dich nicht zumutbar.",
+          "distractor": "Distractor mixto: mezcla el apercibimiento (consulta 11, Ludmilla), el taxi (consulta 12, Peter) y el deber de llegar al trabajo (consulta 13, Ingo), pero no responde de forma específica a ninguno. Con la consulta 12 se confunde porque también habla de coger un taxi; con la 13, porque también trata de la obligación de acudir al puesto de trabajo. Ninguno de los cuatro casos es el suyo."
+        }
+      ],
+      "items": [
+        {
+          "n": 10,
+          "type": "choice",
+          "prompt": "Mikke: Heute hatte ich auf dem Weg zur Arbeit einen Unfall. Ich habe noch einen Umweg über die Kita gemacht, bin gestolpert und habe mir den Knöchel gebrochen. Bin ich denn jetzt versichert? Ich habe ja nicht den direkten Weg zur Arbeit genommen.",
+          "answer": "c",
+          "confidence": "mittel",
+          "quote": "Wenn du auf dem Weg zur Arbeit einen Autounfall hast, bezahlt die Unfallversicherung nur Personenschäden.",
+          "explain": "Mikke pregunta si sigue cubierto por el seguro tras lesionarse de camino al trabajo haciendo un rodeo. c es el único comentario que trata el seguro de accidentes («Unfallversicherung») precisamente «auf dem Weg zur Arbeit» y añade que uno puede decidir libremente qué vehículo usa para el trayecto, es decir, que la ruta elegida no anula la cobertura. Confianza media porque el comentario no menciona el desvío ni una caída, sino un accidente de tráfico; e (seguro solo dentro del edificio) es la trampa temática."
+        },
+        {
+          "n": 11,
+          "type": "choice",
+          "prompt": "Ludmilla: Ich habe eine Abmahnung bekommen, weil ich regelmäßig zu spät zur Arbeit komme. Ich fahre immer rechtzeitig von zu Hause weg und finde dann bei der Firma keine Parkmöglichkeit. Muss der Arbeitgeber nicht eigentlich seinen Mitarbeitern einen Parkplatz stellen?",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Der Arbeitgeber hat eine Fürsorgepflicht und dazu gehört auch, dass er für Fahrzeuge der Mitarbeiter eine Unterbringungsmöglichkeit zu schaffen hat. Aber nur, wenn das ohne zu großen Aufwand geht.",
+          "explain": "Ludmilla recibe un apercibimiento por llegar tarde porque no encuentra aparcamiento y pregunta si la empresa debe facilitarlo. a responde exactamente a eso: el deber de cuidado del empresario incluye crear plazas para los vehículos de los empleados, aunque solo si no supone un gasto desproporcionado. f también menciona el apercibimiento, pero responde sobre el taxi y el deber de acudir al trabajo, no sobre el aparcamiento."
+        },
+        {
+          "n": 12,
+          "type": "choice",
+          "prompt": "Peter: Ich wollte heute Morgen mit der S-Bahn zur Arbeit fahren, aber diese ist wegen des Unwetters ausgefallen. So hatte ich keine Möglichkeit, ins Büro zu kommen, da ich kein Auto habe. Hätte ich ein Taxi nehmen müssen?",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Wenn die Bahn wegen eines Sturms nicht weiterfahren kann und in einem Bahnhof stehen bleiben, haben die Fahrgäste meistens Anspruch auf einen Taxigutschein, damit sie auf diese Weise ihr Ziel erreichen.",
+          "explain": "Peter no pudo ir a la oficina porque la S-Bahn no circuló a causa del temporal y pregunta si debería haber tomado un taxi. b trata justamente el caso de la «Bahn» que no puede continuar por una tormenta y el derecho de los viajeros a un bono de taxi y al reembolso del trayecto. f también habla de tomar un taxi, pero lo hace como distractor: mezcla el apercibimiento y el deber general de acudir al trabajo."
+        },
+        {
+          "n": 13,
+          "type": "choice",
+          "prompt": "Ingo: Immer das Gleiche. Der Bus kommt zu spät, steht im Stau oder fällt aus. Jetzt habe ich Ärger mit meinem Chef, weil ich öfter mit Verspätung im Büro erscheine. Bin ich verpflichtet, immer einen früheren Bus zu nehmen, damit ich pünktlich bin?",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Du bist dafür verantwortlich, rechtzeitig an deinem Arbeitsplatz zu erscheinen. Wie du das machst, ist deine Sache. Aber du kannst keinesfalls die Verantwortung auf die öffentlichen Verkehrsmittel schieben und dich auf den Standpunkt stellen, dass du nichts für deine Verspätung kannst.",
+          "explain": "Ingo llega tarde por culpa del autobús y pregunta si está obligado a coger uno anterior. d contesta de forma directa: cada uno es responsable de llegar puntual y no puede echar la culpa al transporte público, así que la elección del autobús es cosa suya. La mención del autobús y de la responsabilidad del trabajador excluye a los demás comentarios."
+        }
+      ]
+    },
+    {
+      "id": "t3_c-p39",
+      "label": "Lesen Teil 3 (вариант №5) (новые имена и очередь)",
+      "page": 39,
+      "note": "Nueva versión de la variante de la p. 38: mismos cuatro casos y mismos seis comentarios, pero con otros nombres y en otro orden. Al cambiar el orden de los posteos, cambian también las respuestas: 10 a / 11 b / 12 d / 13 c, frente a 10 c / 11 a / 12 b / 13 d en la p. 38. El comentario b) Mallory retoma el texto del «Новый вариант» anunciado en la p. 38.",
+      "kind": "zuordnung",
+      "intro": "Lesen Sie die vier Aufgaben (10–13) und die sechs Kommentare (a–f). Welcher Kommentar passt zu welcher Aufgabe? Zwei Kommentare bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Enric, vor 2 Stunden",
+          "text": "Der Arbeitgeber hat eine Fürsorgepflicht und dazu gehört auch, dass er für Fahrzeuge der Mitarbeiter eine Unterbringungsmöglichkeit zu schaffen hat, aber nur, wenn das ohne zu großen Aufwand geht. Wenn ein Unternehmen in der Innenstadt ist, gibt es einfach nicht genug Platz für ihre Parkmöglichkeiten.",
+          "distractor": ""
+        },
+        {
+          "key": "b",
+          "title": "Mallory, vor 45 Minuten",
+          "text": "Wenn die Bahn wegen eines Sturms nicht weiterfahren kann und in einem Bahnhof stehen bleiben, haben die Fahrgäste meistens Anspruch auf einen Taxigutschein, damit sie auf diese Weise ihr Ziel erreichen. Du kannst auf der Webseite der Deutschen Bahn nachlesen, unter welchen Umständen die Bahn deine Weiterfahrt bezahlt.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Mao, vor 3 Stunden",
+          "text": "Wenn du auf dem Weg zur Arbeit einen Autounfall hast, bezahlt die Unfallversicherung nur Personenschäden. Sachschäden sind dabei nicht inbegriffen. Du kannst aber grundsätzlich selbst entscheiden, welches Fahrzeug du für den Arbeitsweg benutzt.",
+          "distractor": ""
+        },
+        {
+          "key": "d",
+          "title": "Nastasia, vor 30 Minuten",
+          "text": "Du bist dafür verantwortlich, rechtzeitig an deinem Arbeitsplatz zu erscheinen. Wie du das machst, ist deine Sache. Aber du kannst keinesfalls die Verantwortung auf die öffentlichen Verkehrsmittel schieben und dich auf den Standpunkt stellen, dass du nichts für deine Verspätung kannst.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Bartomeu, vor 4 Stunden",
+          "text": "Natürlich hast du an deinem Arbeitsplatz Versicherungsschutz, aber dieser gilt nicht in allen Teilen des Gebäudes. Auf der Toilette bist du zum Beispiel nicht versichert. Warum das so ist, weiß ich aber auch nicht.",
+          "distractor": "No encaja con ninguna de las cuatro consultas: trata del seguro dentro del edificio (la toaleta no está cubierta), no del seguro en el trayecto. Es el distractor temático de la consulta 13 (Karel, «Bin ich denn jetzt versichert?»), en la que se pregunta por un accidente de camino al trabajo."
+        },
+        {
+          "key": "f",
+          "title": "Sterre, vor 45 Minuten",
+          "text": "Als Arbeitnehmer musst du dafür sorgen, zum Job zu kommen. Wenn das nicht geht, darfst du aber keine Abmahnung bekommen. Ob du ein Taxi nehmen musst, kommt darauf an, ob die Kosten dafür über deinem Arbeitslohn für einen Tag liegen und diese Kosten für dich nicht zumutbar sind.",
+          "distractor": "Distractor mixto: mezcla el apercibimiento (consulta 10, Natalie), el taxi (consulta 11, Batiste) y el deber de llegar al trabajo (consulta 12, Alfons), sin responder de forma específica a ninguno. Se confunde con la 11 por la mención del taxi y con la 10 por la «Abmahnung»."
+        }
+      ],
+      "items": [
+        {
+          "n": 10,
+          "type": "choice",
+          "prompt": "Natalie: Ich habe eine Abmahnung bekommen, weil ich regelmäßig zu spät zur Arbeit komme. Ich fahre immer rechtzeitig von zu Hause weg und finde dann bei der Firma keine Parkmöglichkeit. Muss der Arbeitgeber nicht eigentlich seinen Mitarbeitern einen Parkplatz stellen?",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Der Arbeitgeber hat eine Fürsorgepflicht und dazu gehört auch, dass er für Fahrzeuge der Mitarbeiter eine Unterbringungsmöglichkeit zu schaffen hat, aber nur, wenn das ohne zu großen Aufwand geht.",
+          "explain": "Natalie recibe un apercibimiento por llegar tarde porque no encuentra aparcamiento y pregunta si la empresa debe facilitarlo. a responde exactamente a eso: el deber de cuidado incluye crear plazas para los vehículos de los empleados, aunque solo si no supone un gasto desproporcionado. f también menciona la «Abmahnung», pero responde sobre el taxi, no sobre el aparcamiento."
+        },
+        {
+          "n": 11,
+          "type": "choice",
+          "prompt": "Batiste: Ich wollte heute Morgen mit der S-Bahn zur Arbeit fahren, aber diese ist wegen des Unwetters ausgefallen. So hatte ich keine Möglichkeit, ins Büro zu kommen. Da ich kein Auto habe, hätte ich ein Taxi nehmen müssen?",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Wenn die Bahn wegen eines Sturms nicht weiterfahren kann und in einem Bahnhof stehen bleiben, haben die Fahrgäste meistens Anspruch auf einen Taxigutschein, damit sie auf diese Weise ihr Ziel erreichen.",
+          "explain": "Batiste no pudo ir a la oficina porque la S-Bahn no circuló por el temporal y pregunta si debería haber tomado un taxi. b trata justamente el caso de la «Bahn» que no puede continuar por una tormenta y el derecho a un bono de taxi y al reembolso del trayecto. f (también sobre el taxi) es el distractor: mezcla apercibimiento y deber general de acudir al trabajo."
+        },
+        {
+          "n": 12,
+          "type": "choice",
+          "prompt": "Alfons: Immer das Gleiche. Der Bus kommt zu spät, steht im Stau oder fällt aus. Jetzt habe ich Ärger mit meinem Chef, weil ich öfter mit Verspätung im Büro erscheine. Bin ich verpflichtet, immer einen früheren Bus zu nehmen, damit ich pünktlich bin?",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Du bist dafür verantwortlich, rechtzeitig an deinem Arbeitsplatz zu erscheinen. Wie du das machst, ist deine Sache. Aber du kannst keinesfalls die Verantwortung auf die öffentlichen Verkehrsmittel schieben und dich auf den Standpunkt stellen, dass du nichts für deine Verspätung kannst.",
+          "explain": "Alfons llega tarde por culpa del autobús y pregunta si está obligado a coger uno anterior. d contesta de forma directa: uno mismo es responsable de llegar puntual y no puede culpar al transporte público, de modo que la elección del autobús es asunto suyo. Coincide con la situación de Alfons (bus, atasco, retraso)."
+        },
+        {
+          "n": 13,
+          "type": "choice",
+          "prompt": "Karel: Heute hatte ich auf dem Weg zur Arbeit einen Unfall. Ich habe noch einen Umweg über die Kita gemacht, bin gestolpert und habe mir den Knöchel gebrochen. Bin ich denn jetzt versichert? Ich habe ja nicht den direkten Weg zur Arbeit genommen.",
+          "answer": "c",
+          "confidence": "mittel",
+          "quote": "Wenn du auf dem Weg zur Arbeit einen Autounfall hast, bezahlt die Unfallversicherung nur Personenschäden.",
+          "explain": "Karel pregunta si sigue cubierto por el seguro tras lesionarse de camino al trabajo haciendo un rodeo. c es el único comentario que trata el seguro de accidentes «auf dem Weg zur Arbeit» y añade que uno decide libremente qué vehículo usa para el trayecto. Confianza media porque no menciona el desvío ni una caída, sino un accidente de tráfico; e (seguro solo dentro del edificio) es la trampa temática."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.38 y p.39: unidas las palabras cortadas por guion de final de línea: «ge-macht» → «gemacht», «ausgefal-len» → «ausgefallen», «neh-men» → «nehmen», «Perso-nenschäden» → «Personenschäden», «wel-ches» → «welches», «dei-nem» → «deinem», «Ab-mahnung» → «Abmahnung».",
+    "p.38 y p.39: «Muss der Arbeitgeber nicht eigentlich seinen Mitarbeiter Parkplatz stellen?» → «… seinen Mitarbeitern einen Parkplatz stellen?» (faltaban el dativo plural y el artículo).",
+    "p.38: «Bin ich verpflichtet, immer ein früheren Bus zu nehmen» → «… einen früheren Bus zu nehmen»; p.39: «immer ein früherer Bus zu nehmen» → «einen früheren Bus zu nehmen».",
+    "p.38: «e) Andreij vor 4 Stunden» → «e) Andreij, vor 4 Stunden» (falta la coma que sí llevan los demás comentarios).",
+    "p.39: «einen Umweg über der Kita» → «einen Umweg über die Kita» (así figura en la p.38).",
+    "p.39: «keine Möglichkeit ins Büro zu kommen» → «keine Möglichkeit, ins Büro zu kommen» (coma ante la oración de infinitivo).",
+    "p.38 y p.39: «Ob du ein Taxi nehmen muss» → «Ob du ein Taxi nehmen musst».",
+    "p.39: «dass du nichts mit deiner Verspätung kannst» → «dass du nichts für deine Verspätung kannst» (así figura en la p.38).",
+    "p.39: el comentario f) Sterre está corrupto en el OCR; corregidos «Wenn das nicht, darfst du» → «Wenn das nicht geht, darfst du», «achte darauf an» → «kommt darauf an» y «fair einen Tag» → «für einen Tag». Se conserva la sintaxis del original en lo demás, sin completarla con la versión de la p.38."
+  ]
+}

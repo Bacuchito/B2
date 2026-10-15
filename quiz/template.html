@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B2 Beruf — Test de Lesen y Hören</title>
+<style>
+  :root{
+    --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
+    --txt:#e8eaf0; --dim:#9aa3b2; --acc:#4f8cff; --ok:#2fb37a; --bad:#e05561;
+    --warn:#e0a33a; --radius:10px;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--txt);}
+  header{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);
+         padding:10px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+  header h1{font-size:16px;margin:0;font-weight:600}
+  header .spacer{flex:1}
+  .stat{font-size:13px;color:var(--dim)}
+  .stat b{color:var(--txt)}
+  .layout{display:flex;align-items:flex-start;gap:0;min-height:calc(100vh - 49px)}
+  nav{width:290px;flex:0 0 290px;border-right:1px solid var(--line);background:var(--panel);
+      height:calc(100vh - 49px);overflow-y:auto;position:sticky;top:49px;padding:10px}
+  nav .sec{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
+           margin:14px 6px 6px;font-weight:700}
+  nav button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--txt);
+             padding:7px 9px;border-radius:8px;cursor:pointer;font-size:13.5px;line-height:1.3}
+  nav button:hover{background:var(--panel2)}
+  nav button.active{background:var(--acc);color:#fff;font-weight:600}
+  nav button .pill{float:right;font-size:11px;color:var(--dim);font-weight:400}
+  nav button.active .pill{color:#dce7ff}
+  main{flex:1;padding:22px 26px 80px;max-width:900px}
+  h2{font-size:20px;margin:0 0 4px}
+  h2 + .sub{color:var(--dim);font-size:13.5px;margin-bottom:18px}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+         padding:14px 16px;margin-bottom:16px}
+  .panel h3{margin:0 0 8px;font-size:14px;letter-spacing:.02em}
+  details.passage summary{cursor:pointer;font-weight:600;font-size:14px;color:var(--acc);
+                          user-select:none;outline:none}
+  details.passage[open] summary{margin-bottom:10px}
+  .passage-body{white-space:pre-wrap;font-size:14.5px;line-height:1.65;color:#d7dbe4;
+                max-height:60vh;overflow-y:auto;padding-right:6px}
+  .ad{border-left:3px solid var(--line);padding:6px 0 6px 12px;margin:10px 0}
+  .ad .k{font-weight:700;color:var(--acc);margin-right:6px}
+  .ad .t{font-weight:600}
+  .ad .body{color:#cfd4de;font-size:14px;margin-top:2px}
+  .ad.used{border-left-color:var(--ok)}
+  .ad.unused{border-left-color:var(--warn)}
+  .q{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);
+     padding:14px 16px;margin-bottom:14px}
+  .q .num{display:inline-block;min-width:24px;height:24px;line-height:24px;text-align:center;
+          background:var(--panel2);border-radius:6px;font-size:12.5px;font-weight:700;margin-right:8px}
+  .q .prompt{font-size:15px;margin-bottom:12px;display:inline}
+  .opts{display:flex;flex-direction:column;gap:7px;margin-top:6px}
+  .opt{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--line);border-radius:8px;
+       padding:9px 11px;cursor:pointer;background:var(--panel2);transition:.12s}
+  .opt:hover{border-color:var(--acc)}
+  .opt .key{font-weight:700;min-width:18px;color:var(--acc)}
+  .opt.sel{border-color:var(--acc);box-shadow:0 0 0 1px var(--acc) inset}
+  .opt.correct{border-color:var(--ok);background:#152a22}
+  .opt.wrong{border-color:var(--bad);background:#2a1719}
+  .opt.correct .key{color:var(--ok)}
+  .opt.wrong .key{color:var(--bad)}
+  .letters{display:flex;gap:6px;flex-wrap:wrap;margin-top:4px}
+  .letters button{width:38px;height:36px;border-radius:8px;border:1px solid var(--line);
+                  background:var(--panel2);color:var(--txt);font-weight:700;cursor:pointer;font-size:14px}
+  .letters button:hover{border-color:var(--acc)}
+  .letters button.sel{background:var(--acc);border-color:var(--acc);color:#fff}
+  .letters button.correct{background:var(--ok);border-color:var(--ok);color:#fff}
+  .letters button.wrong{background:var(--bad);border-color:var(--bad);color:#fff}
+  .fb{margin-top:12px;border-radius:8px;padding:11px 13px;font-size:14px;display:none}
+  .fb.show{display:block}
+  .fb.good{background:#14261f;border:1px solid #1f5c45}
+  .fb.bad{background:#261618;border:1px solid #6b2b31}
+  .fb .verdict{font-weight:700;margin-bottom:7px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .fb .quote{font-style:italic;color:#cfd4de;border-left:3px solid var(--acc);
+             padding:5px 0 5px 10px;margin:8px 0}
+  .badge{font-size:11px;font-weight:700;padding:2px 7px;border-radius:99px;letter-spacing:.02em}
+  .badge.hoch{background:#123a2a;color:#5fd6a3;border:1px solid #1f5c45}
+  .badge.mittel{background:#3a3112;color:#e8c46a;border:1px solid #6b5a1f}
+  .badge.niedrig{background:#3a1416;color:#f08a92;border:1px solid #6b2b31}
+  .badge.ok{background:#12263a;color:#7fb6ff;border:1px solid #1f4a6b}
+  .badge.tag{background:var(--panel2);color:var(--dim);border:1px solid var(--line)}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .btn{background:var(--acc);color:#fff;border:0;border-radius:8px;padding:9px 15px;
+       cursor:pointer;font-size:14px;font-weight:600}
+  .btn:hover{filter:brightness(1.1)}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--txt)}
+  .note{background:#2a2312;border:1px solid #6b5a1f;color:#e8c46a;padding:9px 12px;
+        border-radius:8px;font-size:13.5px;margin-bottom:14px}
+  .empty{color:var(--dim);padding:40px 0;text-align:center}
+  code{background:var(--panel2);padding:1px 5px;border-radius:4px;font-size:13px}
+  @media(max-width:860px){nav{position:static;height:auto;width:100%;flex:1 1 auto}
+    .layout{flex-direction:column}main{padding:16px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>B2 Beruf — Test</h1>
+  <div class="spacer"></div>
+  <div class="stat" id="stats"></div>
+  <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
+  <button class="btn ghost" id="reset">Reiniciar</button>
+</header>
+
+<div class="layout">
+  <nav id="nav"></nav>
+  <main id="main"><div class="empty">Cargando…</div></main>
+</div>
+
+<script>
+const DATA = /*__DATA__*/;
+const LS = "b2quiz.v1";
+
+function loadState(){
+  try { return JSON.parse(localStorage.getItem(LS)) || {answers:{}}; }
+  catch(e){ return {answers:{}}; }
+}
+function saveState(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
+let state = loadState();
+
+/* ---------- índices ---------- */
+const allVariants = [];
+DATA.sections.forEach(sec=>{
+  sec.variants.forEach(v=>{
+    v._section = sec.id; v._sectionTitle = sec.title;
+    /* Índice posicional: hay variantes con dos ítems del mismo número
+       (p. ej. dos formulaciones del ítem 6), así que la clave de respuesta
+       NO puede basarse en `n`. */
+    v.items.forEach((it,i)=>{ it._idx = i; });
+    /* Si una variante trae dos formulaciones del mismo número de ítem,
+       se etiquetan como 6a / 6b para que no parezcan un duplicado. */
+    const byN = {};
+    v.items.forEach(it => { byN[it.n] = (byN[it.n]||0) + 1; });
+    const seenN = {};
+    v.items.forEach(it => {
+      if(byN[it.n] > 1){
+        seenN[it.n] = (seenN[it.n]||0) + 1;
+        it._label = it.n + String.fromCharCode(96 + seenN[it.n]);
+      } else {
+        it._label = String(it.n);
+      }
+    });
+    allVariants.push(v);
+  });
+});
+
+function ansKey(v, item){ return v.id + "#" + item._idx; }
+
+function itemAnswerLetter(it){
+  return String(it.answer).toLowerCase();
+}
+
+/* Una respuesta es "dudosa" si su confianza no es alta. */
+function isDoubtful(it){
+  return String(it.confidence||"mittel").toLowerCase() !== "hoch";
+}
+function doubtfulCount(v){ return v.items.filter(isDoubtful).length; }
+
+let onlyDoubtful = false;
+
+/* ---------- estadísticas ---------- */
+function updateStats(){
+  let total = 0, done = 0, ok = 0, doubt = 0;
+  allVariants.forEach(v=>{
+    v.items.forEach(it=>{
+      total++;
+      if(isDoubtful(it)) doubt++;
+      const a = state.answers[ansKey(v,it)];
+      if(a !== undefined && a !== "__revealed__"){
+        done++; if(a === itemAnswerLetter(it)) ok++;
+      }
+    });
+  });
+  document.getElementById("stats").innerHTML =
+    done + "/" + total + " respondidas · <b>" + ok + "</b> correctas" +
+    (done ? " (" + Math.round(ok/done*100) + "%)" : "") +
+    (doubt ? ' · <span style="color:#e8c46a">' + doubt + " dudosas</span>" : "");
+}
+
+/* ---------- navegación ---------- */
+let current = allVariants.length ? allVariants[0].id : null;
+
+function renderNav(){
+  const nav = document.getElementById("nav");
+  nav.innerHTML = "";
+  DATA.sections.forEach(sec=>{
+    const h = document.createElement("div");
+    h.className = "sec";
+    h.textContent = sec.title;
+    nav.appendChild(h);
+    sec.variants.forEach(v=>{
+      const nd = doubtfulCount(v);
+      if(onlyDoubtful && nd === 0 && v.id !== current) return;
+      const b = document.createElement("button");
+      const n = v.items.length;
+      const done = v.items.filter(it => state.answers[ansKey(v,it)] !== undefined).length;
+      const ok = v.items.filter(it => state.answers[ansKey(v,it)] === itemAnswerLetter(it)).length;
+      const pill = onlyDoubtful
+        ? nd + (nd === 1 ? " dudosa" : " dudosas")
+        : (done ? ok + "/" + n : n + " ítems");
+      b.innerHTML = v.label + '<span class="pill">' + pill + '</span>';
+      if(v.id === current) b.className = "active";
+      b.onclick = ()=>{ current = v.id; render(); window.scrollTo(0,0); };
+      nav.appendChild(b);
+    });
+  });
+}
+
+/* ---------- render principal ---------- */
+function render(){
+  renderNav();
+  updateStats();
+  const main = document.getElementById("main");
+  const v = allVariants.find(x=>x.id===current);
+  if(!v){ main.innerHTML = '<div class="empty">No hay datos todavía.</div>'; return; }
+  main.innerHTML = "";
+
+  const h2 = document.createElement("h2");
+  h2.textContent = v._sectionTitle + " · " + v.label;
+  main.appendChild(h2);
+  const sub = document.createElement("div");
+  sub.className = "sub";
+  sub.innerHTML = 'Página ' + v.page + ' del PDF' +
+    (v.topic ? ' · <b>' + v.topic + '</b>' : '') +
+    ' · ' + v.items.length + ' ítems';
+  main.appendChild(sub);
+
+  if(v.note){
+    const n = document.createElement("div");
+    n.className = "note";
+    n.textContent = "⚠ " + v.note;
+    main.appendChild(n);
+  }
+  if(v.intro){
+    const p = document.createElement("div");
+    p.className = "panel";
+    p.innerHTML = '<h3>Instrucciones</h3><div>' + esc(v.intro) + '</div>';
+    main.appendChild(p);
+  }
+
+  /* texto de lectura (Teil 2) */
+  if(v.passage){
+    main.appendChild(detailsPanel("Texto de lectura", v.passage));
+  }
+
+  /* opciones compartidas: anuncios (Teil 1) o comentarios de foro (Teil 3) */
+  if(v.options && v.options.length){
+    const used = new Set(v.items.map(i=>itemAnswerLetter(i)));
+    const d = document.createElement("details");
+    d.className = "panel passage";
+    d.open = true;
+    const s = document.createElement("summary");
+    const label = v.optionsLabel ||
+      (v._section === "lesen-t3" ? "Kommentare" : "Anzeigen");
+    const ks = v.options.map(o=>String(o.key));
+    s.textContent = label + " " + ks[0] + "–" + ks[ks.length-1] +
+                    " (" + v.options.length + " opciones, " +
+                    (v.options.length - used.size) + " sin usar)";
+    d.appendChild(s);
+    const body = document.createElement("div");
+    v.options.forEach(o=>{
+      const isUsed = used.has(String(o.key).toLowerCase());
+      const div = document.createElement("div");
+      div.className = "ad " + (isUsed ? "used" : "unused");
+      div.innerHTML = '<span class="k">' + esc(o.key) + ')</span>' +
+                      '<span class="t">' + esc(o.title||"") + '</span>' +
+                      '<div class="body">' + esc(o.text||"") + '</div>';
+      body.appendChild(div);
+    });
+    d.appendChild(body);
+    main.appendChild(d);
+  }
+
+  /* ítems */
+  const shown = onlyDoubtful ? v.items.filter(isDoubtful) : v.items;
+  if(onlyDoubtful){
+    const info = document.createElement("div");
+    info.className = "note";
+    info.textContent = shown.length
+      ? "Modo repaso: mostrando solo las " + shown.length + " de " + v.items.length +
+        " respuestas con confianza media o baja. Revísalas contra el texto."
+      : "Esta variante no tiene respuestas dudosas: todas son de confianza alta.";
+    main.appendChild(info);
+  }
+  shown.forEach(it => main.appendChild(renderItem(v, it)));
+
+  const row = document.createElement("div");
+  row.className = "row";
+  const bAll = document.createElement("button");
+  bAll.className = "btn ghost";
+  bAll.textContent = "Mostrar todas las respuestas";
+  bAll.onclick = ()=>{
+    v.items.forEach(it=>{ if(state.answers[ansKey(v,it)]===undefined)
+      state.answers[ansKey(v,it)] = "__revealed__"; });
+    saveState(); render();
+  };
+  const bClear = document.createElement("button");
+  bClear.className = "btn ghost";
+  bClear.textContent = "Borrar respuestas de esta variante";
+  bClear.onclick = ()=>{ v.items.forEach(it=> delete state.answers[ansKey(v,it)]);
+    saveState(); render(); };
+  row.appendChild(bAll); row.appendChild(bClear);
+  main.appendChild(row);
+}
+
+function detailsPanel(summary, text){
+  const d = document.createElement("details");
+  d.className = "panel passage";
+  const s = document.createElement("summary");
+  s.textContent = summary;
+  const b = document.createElement("div");
+  b.className = "passage-body";
+  b.textContent = text;
+  d.appendChild(s); d.appendChild(b);
+  return d;
+}
+
+function renderItem(v, it){
+  const key = ansKey(v, it);
+  const chosen = state.answers[key];
+  const answered = chosen !== undefined && chosen !== "__revealed__";
+  const revealed = chosen === "__revealed__";
+  const correctLetter = itemAnswerLetter(it);
+
+  const div = document.createElement("div");
+  div.className = "q";
+
+  const head = document.createElement("div");
+  head.innerHTML = '<span class="num">' + (it._label || it.n) + '</span>' +
+                   '<span class="prompt">' + esc(it.prompt) + '</span>';
+  div.appendChild(head);
+
+  const isMatching = v.kind === "zuordnung";
+
+  if(isMatching){
+    const letters = document.createElement("div");
+    letters.className = "letters";
+    const opts = v.options||[];
+    opts.forEach(o=>{
+      const k = String(o.key);
+      const b = document.createElement("button");
+      b.textContent = k;
+      b.title = k + ") " + (o.title ? o.title + " — " : "") + (o.text || "").slice(0, 140);
+      b.className = "";
+      if(answered && String(chosen).toLowerCase() === k.toLowerCase()){
+        b.className = (k.toLowerCase()===correctLetter) ? "correct" : "wrong";
+      }
+      if((answered||revealed) && k.toLowerCase()===correctLetter) b.className = "correct";
+      if(!answered && !revealed && String(chosen||"").toLowerCase()===k.toLowerCase()) b.className = "sel";
+      b.onclick = ()=>{ state.answers[key] = k; saveState(); render(); };
+      letters.appendChild(b);
+    });
+    div.appendChild(letters);
+  } else {
+    const opts = document.createElement("div");
+    opts.className = "opts";
+    (it.options||[]).forEach(o=>{
+      const k = String(o.key);
+      const tf = it.type === "truefalse" || /^(richtig|falsch)$/i.test(k);
+      const isCorrect = k.toLowerCase() === correctLetter;
+      const isChosen = answered && String(chosen).toLowerCase() === k.toLowerCase();
+      const el = document.createElement("div");
+      el.className = "opt";
+      if(answered || revealed){
+        if(isCorrect) el.className += " correct";
+        else if(isChosen) el.className += " wrong";
+      } else if(isChosen) el.className += " sel";
+      el.innerHTML = tf
+        ? '<span class="key">' + (isCorrect && (answered||revealed) ? "✓" : "•") + '</span><span>' + esc(o.text||k) + '</span>'
+        : '<span class="key">' + esc(k) + ')</span><span>' + esc(o.text||"") + '</span>';
+      el.onclick = ()=>{ state.answers[key] = k; saveState(); render(); };
+      opts.appendChild(el);
+    });
+    div.appendChild(opts);
+  }
+
+  if(answered || revealed){
+    const good = answered && String(chosen).toLowerCase() === correctLetter;
+    const fb = document.createElement("div");
+    fb.className = "fb show " + (good ? "good" : "bad");
+    let verdict;
+    if(revealed) verdict = "Respuesta correcta: <b>" + correctLetter + "</b>";
+    else if(good) verdict = "✓ Correcto";
+    else verdict = "✗ Incorrecto — la correcta es <b>" + correctLetter + "</b>";
+    const conf = (it.confidence||"mittel").toLowerCase();
+    /* en las tablas de emparejar, decir a qué anuncio/comentario corresponde cada letra */
+    let traduccion = "";
+    if(isMatching && v.options){
+      const t = k => {
+        const o = (v.options||[]).find(x => String(x.key).toLowerCase() === k);
+        return o ? k + ") " + (o.title || (o.text||"").slice(0,60)) : k;
+      };
+      if(answered && !good) traduccion = "Elegiste " + esc(t(String(chosen).toLowerCase())) + ". ";
+      traduccion += "La correcta es " + esc(t(correctLetter)) + ".";
+    }
+    fb.innerHTML =
+      '<div class="verdict">' + verdict +
+        '<span class="badge ' + conf + '">confianza: ' + conf + '</span>' +
+        (it.verified ? '<span class="badge ok">✓ 2ª lectura</span>' : '') +
+        (chosen === "__revealed__" ? '<span class="badge tag">revelada</span>' : '') +
+      '</div>' +
+      (traduccion ? '<div style="margin-bottom:6px">' + traduccion + '</div>' : '') +
+      (it.quote ? '<div class="quote">„' + esc(it.quote) + '“</div>' : '') +
+      '<div>' + esc(it.explain||"") + '</div>';
+    div.appendChild(fb);
+  }
+  return div;
+}
+
+function esc(s){
+  return String(s==null?"":s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+
+document.getElementById("reset").onclick = ()=>{
+  if(confirm("¿Borrar todas tus respuestas?")){
+    state = {answers:{}}; saveState(); render();
+  }
+};
+
+document.getElementById("doubt").onclick = ()=>{
+  onlyDoubtful = !onlyDoubtful;
+  const b = document.getElementById("doubt");
+  b.textContent = onlyDoubtful ? "Ver todas" : "Solo dudosas";
+  b.className = onlyDoubtful ? "btn" : "btn ghost";
+  if(onlyDoubtful){
+    const firstDoubt = allVariants.find(v=>doubtfulCount(v) > 0);
+    if(firstDoubt) current = firstDoubt.id;
+  }
+  render();
+  window.scrollTo(0,0);
+};
+
+render();
+</script>
+</body>
+</html>

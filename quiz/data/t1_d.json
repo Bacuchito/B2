@@ -1,0 +1,332 @@
+{
+ "block": "t1_d",
+ "section": "lesen-t1",
+ "variants": [
+  {
+   "id": "t1_d-p16",
+   "label": "Variante 6",
+   "page": 16,
+   "note": "",
+   "kind": "zuordnung",
+   "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+   "passage": "",
+   "options": [
+    {
+     "key": "a",
+     "title": "Die Lebensmittelbranche boomt.",
+     "text": "Der Einzelhandel ist einer der größten und umsatzstärksten Wirtschaftszweige national und international. Es werden dort ständig qualifizierte Mitarbeiter gesucht. Allein in Hessen werden jährlich 160.000 junge Menschen ausgebildet. Der Einzelhandel ist außerdem krisenfest, denn gegessen wird immer.",
+     "distractor": ""
+    },
+    {
+     "key": "b",
+     "title": "Aus Fehlern anderer lernen.",
+     "text": "Viele Unternehmer machen zu Beginn ihrer Selbstständigkeit ähnliche Fehler. Heute weiß man, dass ein durchdachter Businessplan und eine genaue Konkurrenzanalyse unverzichtbar sind. Worauf es noch ankommt, erfährst du in den Tipps des Erfolgscoachs Gregor Daub.",
+     "distractor": ""
+    },
+    {
+     "key": "c",
+     "title": "Chancen im Einzelhandel.",
+     "text": "Die FOOD Unternehmensgruppe betreibt Supermärkte in zehn Ländern Europas. Der Branchenriese möchte weiter expandieren und hat gerade die Filialen der Jennings GmbH übernommen. Erfahrene Mitarbeiter finden dort interessante Möglichkeiten zur beruflichen Weiterentwicklung.",
+     "distractor": ""
+    },
+    {
+     "key": "d",
+     "title": "Gute Nachrichten für gekündigte Mitarbeiter.",
+     "text": "Die Tankstellenkette Fairtank hat Bankrott angekündigt und schließt zum 31. März ihre 25 Filialen in Brandenburg. Rund 100 Mitarbeiter sind betroffen und suchen nun einen neuen Job. Für einige von ihnen gibt es eine Lösung: Tankstellen in der Umgebung haben ihre Unterstützung zugesagt und versprochen, Mitarbeiter von Fairtank zu übernehmen.",
+     "distractor": "Es una noticia sobre un caso concreto (la quiebra de Fairtank y sus 25 filiales en Brandeburgo), no un consejo para quien se queda sin empleo. Se confunde con la persona 4 (Mira), pero solo informa de que otra empresa recoge a esos empleados; no dice qué debe hacer uno en general para encontrar trabajo rápido."
+    },
+    {
+     "key": "e",
+     "title": "Was nun?",
+     "text": "Egal, ob die ganze Firma pleitegeht, eine Abteilung dichtmacht oder nur der eigene Job weg ist, eine Entlassung ist immer ein Schock. Arbeitsmarktexpertin Caroline Cuyper erklärt, was man als Angestellter tun muss, um möglichst schnell eine neue Stelle zu bekommen.",
+     "distractor": ""
+    },
+    {
+     "key": "f",
+     "title": "Neue Kursreihe bei Arcadio.",
+     "text": "Ab sofort bietet das Institut Arcadio neben seinen Computerkursen für Senioren auch Weiterbildungen für Teilnehmer mit geringen Deutschkenntnissen an. Das Besondere daran: Die Dozenten verwenden eine einfache Sprache. Was hinter diesem innovativen Konzept steht, erzählt der Institutsgründer Benjamin von Adler im Interview.",
+     "distractor": "Sí ofrece cursos de informática, pero presenciales y dirigidos a seniors y a personas con pocos conocimientos de alemán; no son cursos para hacer desde casa. Es el distractor temático de la persona 2 (Brian)."
+    },
+    {
+     "key": "g",
+     "title": "Wenn die Mitarbeiter kündigen.",
+     "text": "Immer mehr Mitarbeiter kündigen und verlassen ihre Firma. Und zwar selbst dann, wenn sie mehr Gehalt bekommen als bei der Konkurrenz. Die Unternehmensberatung Schindler hat die häufigsten Gründe analysiert, warum sich Angestellte entscheiden, ihren Job zu wechseln.",
+     "distractor": "Trata de quienes se marchan por voluntad propia y de los motivos de esa decisión, no de quien pierde el empleo ni de cómo encontrar uno nuevo. Distractor vecino de la persona 4 (Mira) y, por el tema «wechseln», también de la 1."
+    },
+    {
+     "key": "h",
+     "title": "Bildung im neuen Zeitalter.",
+     "text": "Schneller technologischer Fortschritt, Globalisierung und Veränderungen auf dem Arbeitsmarkt haben dazu geführt, dass Fortbildungen im Beruf eine immer wichtigere Rolle spielen. Zunehmend werden Online-Kurse und Webinare am Computer angeboten, die den Teilnehmern maximale Flexibilität versprechen. Wo findet man passende Fortbildungen?",
+     "distractor": ""
+    }
+   ],
+   "items": [
+    {
+     "n": 1,
+     "type": "choice",
+     "prompt": "Silvie ist gelernte Verkäuferin und möchte in ihrem Job aufsteigen.",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Erfahrene Mitarbeiter finden dort interessante Möglichkeiten zur beruflichen Weiterentwicklung.",
+     "explain": "Silvie es vendedora titulada y quiere ascender. El anuncio c es el único que ofrece expresamente «berufliche Weiterentwicklung» a empleados con experiencia en el comercio. El anuncio a también es del sector alimentario, pero habla de buscar personal y de plazas de formación, no de promoción interna."
+    },
+    {
+     "n": 2,
+     "type": "choice",
+     "prompt": "Brian sucht Computerkurse, die er von zu Hause aus machen kann.",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "Zunehmend werden Online-Kurse und Webinare am Computer angeboten, die den Teilnehmern maximale Flexibilität versprechen.",
+     "explain": "Brian quiere cursos de informática que pueda hacer desde casa. El anuncio h describe exactamente cursos en línea y webinarios frente al ordenador con máxima flexibilidad. El anuncio f también ofrece «Computerkurse», pero presenciales y para seniors, de modo que no encaja con la flexibilidad que busca Brian."
+    },
+    {
+     "n": 3,
+     "type": "choice",
+     "prompt": "Carl ist Umwelttechniker und möchte seine eigene Beratungsagentur gründen.",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Viele Unternehmer machen zu Beginn ihrer Selbstständigkeit ähnliche Fehler.",
+     "explain": "Carl quiere montar su propia agencia de asesoría, es decir, pasar a la actividad por cuenta propia. El anuncio b es el único que trata del comienzo del «Selbstständigkeit» (plan de negocio, análisis de la competencia) y ofrece los consejos de un coach."
+    },
+    {
+     "n": 4,
+     "type": "choice",
+     "prompt": "Mira ist unsicher, wie es nach ihrem Arbeitsplatzverlust weitergehen soll.",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Arbeitsmarktexpertin Caroline Cuyper erklärt, was man als Angestellter tun muss, um möglichst schnell eine neue Stelle zu bekommen.",
+     "explain": "Mira ha perdido el empleo y no sabe cómo seguir. El anuncio e parte justamente de esa situación («eine Entlassung ist immer ein Schock») y da consejos para encontrar pronto un nuevo puesto. El anuncio d también habla de despedidos, pero solo de un caso concreto y sin consejos útiles."
+    },
+    {
+     "n": 5,
+     "type": "choice",
+     "prompt": "Karim sucht einen Ausbildungsplatz in einer sicheren Branche.",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Allein in Hessen werden jährlich 160.000 junge Menschen ausgebildet. Der Einzelhandel ist außerdem krisenfest, denn gegessen wird immer.",
+     "explain": "Karim busca una plaza de formación en un sector seguro. El anuncio a menciona las 160.000 plazas de formación anuales y califica el comercio minorista de «krisenfest» (a prueba de crisis). El anuncio c también es del sector, pero se dirige a personal ya experiente que busca promoción."
+    }
+   ]
+  },
+  {
+   "id": "t1_d-p17",
+   "label": "Variante 7 (test 150321, 150301)",
+   "page": 17,
+   "note": "",
+   "kind": "zuordnung",
+   "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+   "passage": "",
+   "options": [
+    {
+     "key": "a",
+     "title": "Den Arbeitsplatz produktiv gestalten.",
+     "text": "Die richtige Atmosphäre am Arbeitsplatz ist für die effektive Erledigung der Aufgaben unerlässlich. Gerlinde Strauß beschreibt, wie man mit den richtigen Möbeln, Dekoartikeln, Licht, Ordnung am Arbeitsplatz und vielem mehr die eigene Umgebung so gestaltet, dass man die Zeit am Arbeitsplatz gerne und erfolgreich verbringt.",
+     "distractor": "Va de decorar y organizar el puesto de trabajo (muebles, luz, orden) para rendir mejor, no del cansancio ni del estrés. Distractor temático de la persona 2 (Juliette), que se siente agotada, y también de la 5 (Carlos), aunque no menciona el teletrabajo."
+    },
+    {
+     "key": "b",
+     "title": "Ohne Selbstdisziplin geht es nicht.",
+     "text": "Die Arbeit von zu Hause aus erfordert ein hohes Maß an Selbstdisziplin und die Fähigkeit des Selbstmanagements. Privates und Arbeit sollten strikt getrennt werden. Doch wie funktioniert das am besten? Helga Brinkmann hat einen Ratgeber für Arbeitskräfte herausgegeben, deren Unternehmen diese Form der Arbeit anbieten.",
+     "distractor": ""
+    },
+    {
+     "key": "c",
+     "title": "Hobbys im Lebenslauf richtig einsetzen.",
+     "text": "Ausbildung und Qualifikation sind in erster Linie wichtig, wenn man den Lebenslauf eines Bewerbers liest. Doch auch, welche Hobbys eine Person hat, kann Auskunft darüber geben, ob sie zum Unternehmen passt oder nicht. Lesen Sie hier wichtige Tipps und Tricks für eine überzeugende Bewerbung.",
+     "distractor": ""
+    },
+    {
+     "key": "d",
+     "title": "Was unsere Körpersprache über uns verrät.",
+     "text": "Ob beim Vorstellungsgespräch, bei wichtigen Verhandlungen mit Kunden oder am ersten Arbeitstag – unsere Körpersprache gibt immer Auskunft darüber, wie wir uns gerade fühlen, z. B. angespannt oder selbstsicher. Lernen Sie in unserem Seminar, wie Sie Körpersprache wirksam einsetzen und wie Sie Ihr Gegenüber einschätzen können.",
+     "distractor": "Trata de la comunicación no verbal y menciona el «ersten Arbeitstag» y el estar «angespannt», lo que lo acerca a la persona 3 (Peter), pero Peter no busca un seminario sobre lenguaje corporal: busca orientación práctica para su primer día. Distractor temático de la 3."
+    },
+    {
+     "key": "e",
+     "title": "Der erste Arbeitstag in der neuen Firma.",
+     "text": "So klappt es mit den Kolleginnen. Anspannung ist ganz normal: Beim Start im neuen Job ist es wichtig, gut vorbereitet zu sein. Im folgenden Artikel von Irene Miller finden Sie eine Checkliste mit den wichtigsten Punkten, die Sie beachten sollten, damit der Einstieg gelingt.",
+     "distractor": ""
+    },
+    {
+     "key": "f",
+     "title": "Angemessene Bezahlung?",
+     "text": "Jeder möchte für seine Leistung fair bezahlt werden. Doch in vielen Berufsfeldern haben die Arbeitnehmer das Gefühl, unterbezahlt zu sein. Die Folge davon sind Motivationsverlust und Zweifel daran, ob man wirklich den richtigen Beruf gewählt hat. Lesen Sie hier, wie Sie erfolgreich Gehaltsverhandlungen führen.",
+     "distractor": ""
+    },
+    {
+     "key": "g",
+     "title": "Körperliche Folgen von Stress.",
+     "text": "Nicht jeder Stress macht krank. Es gibt auch positiven Stress, der die Leistungsfähigkeit eines Menschen erhöht. Wer aber unter Daueranspannung steht und körperliche Symptome wie Bluthochdruck, Magenbeschwerden oder eine anhaltende innere Anspannung spürt, muss etwas ändern. Wie, das erfahren Sie im neusten Buch von Harald Erhard.",
+     "distractor": ""
+    },
+    {
+     "key": "h",
+     "title": "Frauen verdienen immer noch zu wenig.",
+     "text": "Europaweit ist das Ziel der Gleichstellung noch längst nicht erreicht. Man denke hier nur an die nach wie vor ungleiche Bezahlung von Männern und Frauen und an die Besetzung von Stellen in der Führungsetage. Deutschland liegt bei diesem Vergleich noch immer auf einem der letzten Plätze.",
+     "distractor": "Es un artículo de estadística y política sobre la brecha salarial de género y la igualdad, sin ningún consejo práctico. Se confunde con la persona 4 (Katharina) por el tema del sueldo, pero no la ayuda a negociar ni a cambiar su situación: es el distractor trampa de la 4."
+    }
+   ],
+   "items": [
+    {
+     "n": 1,
+     "type": "choice",
+     "prompt": "Kurt sucht einen Job und braucht Anregungen für seine Unterlagen.",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Lesen Sie hier wichtige Tipps und Tricks für eine überzeugende Bewerbung.",
+     "explain": "Kurt busca empleo y necesita ideas para sus documentos. El anuncio c ofrece consejos para un currículum y una candidatura convincentes («Lebenslauf», «Bewerbung»), que es exactamente lo que necesita para sus «Unterlagen»."
+    },
+    {
+     "n": 2,
+     "type": "choice",
+     "prompt": "Juliette arbeitet gerne, fühlt sich aber oft erschöpft.",
+     "answer": "g",
+     "confidence": "mittel",
+     "quote": "Wer aber unter Daueranspannung steht und körperliche Symptome wie Bluthochdruck, Magenbeschwerden oder eine anhaltende innere Anspannung spürt, muss etwas ändern.",
+     "explain": "Juliette trabaja a gusto pero se siente a menudo agotada. El anuncio g es el único que trata las consecuencias físicas del estrés y la tensión permanente, que es la causa más plausible de ese agotamiento. Confianza media porque el anuncio no usa la palabra «erschöpft» y la relación se establece por el sentido global; también podría pensarse en el anuncio a, que sin embargo solo habla de decoración y orden del puesto."
+    },
+    {
+     "n": 3,
+     "type": "choice",
+     "prompt": "Peter ist vor seinem Start im neuen Unternehmen nervös.",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Anspannung ist ganz normal: Beim Start im neuen Job ist es wichtig, gut vorbereitet zu sein.",
+     "explain": "Peter está nervioso antes de empezar en la nueva empresa. El anuncio e trata exactamente el primer día en la nueva empresa y normaliza los nervios («Anspannung ist ganz normal») ofreciendo una lista de comprobación. El anuncio d también emplea «am ersten Arbeitstag» y «angespannt», pero es un seminario de lenguaje corporal."
+    },
+    {
+     "n": 4,
+     "type": "choice",
+     "prompt": "Katharina ist wegen des niedrigen Verdienstes in ihrer Branche frustriert.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Doch in vielen Berufsfeldern haben die Arbeitnehmer das Gefühl, unterbezahlt zu sein. Die Folge davon sind Motivationsverlust und Zweifel daran, ob man wirklich den richtigen Beruf gewählt hat.",
+     "explain": "Katharina está frustrada por el bajo sueldo de su sector. El anuncio f recoge justamente el sentirse mal pagado en muchos ámbitos profesionales y ofrece ayuda para negociar el salario. El anuncio h también habla de sueldos, pero como análisis general de la desigualdad entre hombres y mujeres, sin utilidad práctica para ella."
+    },
+    {
+     "n": 5,
+     "type": "choice",
+     "prompt": "Carlos braucht Tipps für seine Tätigkeit im Homeoffice.",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Die Arbeit von zu Hause aus erfordert ein hohes Maß an Selbstdisziplin und die Fähigkeit des Selbstmanagements.",
+     "explain": "Carlos necesita consejos para su trabajo desde casa. El anuncio b es el único que habla del «Arbeit von zu Hause aus», de la autodisciplina y de separar vida privada y trabajo, y remite a una guía práctica."
+    }
+   ]
+  },
+  {
+   "id": "t1_d-p18",
+   "label": "Variante 8 (test 160201, 160221)",
+   "page": 18,
+   "note": "Der Anzeigentext h) («Den Horizont erweitern») ist im Original am Seitenende abgeschnitten: Er endet mit «Auslandsaufenthalte können». Der Schluss der Anzeige fehlt im PDF.",
+   "kind": "zuordnung",
+   "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+   "passage": "",
+   "options": [
+    {
+     "key": "a",
+     "title": "Internationale Fachkräfte gesucht",
+     "text": "Im Ausland zu arbeiten, kann eine hervorragende Chance für Menschen in aller Welt sein. Erfahren Sie als Arbeitgeber, mit welchen Strategien Sie dringend benötigte Arbeitskräfte aus dem Ausland für sich gewinnen, um Ihr Unternehmen wettbewerbsfähiger zu machen.",
+     "distractor": "Se dirige expresamente al «Arbeitgeber»: son estrategias para que las empresas capten personal extranjero, no una oferta para quien quiere irse al extranjero. Distractor trampa de la persona 4 (Sandra), porque empieza hablando de trabajar en el extranjero, pero desde el lado de la empresa."
+    },
+    {
+     "key": "b",
+     "title": "Auf zu neuen Ufern!",
+     "text": "Im Job ist es nie zu spät, mit etwas Neuem zu beginnen, um sich weiterzuentwickeln. Manchmal fehlen nur ein bisschen Mut und Unterstützung. Oder man weiß erst gar nicht, welche Möglichkeiten es gibt. Eine gute Beratung ist darum wichtig. Wo Sie die bekommen, erfahren Sie hier.",
+     "distractor": ""
+    },
+    {
+     "key": "c",
+     "title": "Zufriedene Mitarbeiter",
+     "text": "Viele Firmen überlegen, wie sie ihren Angestellten das Arbeitsleben abwechslungsreicher gestalten können. Manche schicken ihre Mitarbeitenden auf Dienstreisen ins Ausland, andere finanzieren ihnen Sprachkurse oder verteilen großzügig Prämien. Was noch möglich ist und wie sich das steuerlich auswirkt, erklärt der Steuerberater Michael Hahne.",
+     "distractor": "Está escrito para las empresas (cómo hacer más variada la vida laboral de la plantilla; incluso lo explica un asesor fiscal). Menciona «Sprachkurse» y «Dienstreisen ins Ausland», de modo que es el distractor temático de la persona 1 (Barbara, idiomas) y de la 4 (Sandra, extranjero), pero no ofrece nada al empleado."
+    },
+    {
+     "key": "d",
+     "title": "Dschungel in der Arbeitswelt",
+     "text": "Wie viel Urlaub steht einem zu? Wie viel sollte man in seinem Beruf verdienen? Wie viele Stunden arbeitet man üblicherweise? Bekommt man einen Zuschuss für Sprachkurse? Mit vielen gesetzlichen Dingen muss man sich auskennen, wenn man im Arbeitsleben steht. Die wichtigsten Informationen finden Sie hier zusammengefasst.",
+     "distractor": ""
+    },
+    {
+     "key": "e",
+     "title": "Chefsache",
+     "text": "Ein erfolgreiches Unternehmen gibt es nur mit einem motivierten Team. Aber wie motiviert man seine Mitarbeiter? Hören Sie ihnen aufmerksam zu! Kontrollieren Sie nicht jeden Arbeitsschritt, sondern delegieren Sie! Nehmen Sie Mobbing ernst! Zahlen Sie faire Gehälter! Diese und noch viele andere Ratschläge lesen Sie hier.",
+     "distractor": "Son recomendaciones para jefes (imperativos dirigidos a quien manda en la empresa). Menciona «Mobbing» y «faire Gehälter», así que es el distractor trampa de la persona 3 (Petra) y de la 2 (Frank), pero no ayuda a quien sufre el problema."
+    },
+    {
+     "key": "f",
+     "title": "Vielseitig qualifiziert!",
+     "text": "Von Arbeitnehmer*innen wird immer mehr verlangt. Nicht nur die aktuellen fachlichen Kenntnisse und die souveräne Arbeit mit dem PC sind eine Selbstverständlichkeit, sondern auch die sprachlichen Kompetenzen werden immer wichtiger. Hier findet jeder den richtigen Kurs für sich, von Englisch über Japanisch bis Suaheli.",
+     "distractor": ""
+    },
+    {
+     "key": "g",
+     "title": "Lassen Sie sich von Kolleg*innen den Arbeitsalltag nicht schwermachen",
+     "text": "Sie erfahren von der Sitzung zuletzt? In der Kantine sitzen Sie allein? Es passiert immer häufiger in deutschen Unternehmen, dass manche Kollegen anderen das Leben aus unklaren Gründen schwermachen. Lesen Sie in diesem Ratgeber, wo Sie Hilfe bekommen können.",
+     "distractor": ""
+    },
+    {
+     "key": "h",
+     "title": "Den Horizont erweitern",
+     "text": "Manche zieht die Liebe in ein anderes Land. Andere sehen dort interessantere berufliche Möglichkeiten. Manchmal ist das die reine Abenteuerlust. Auslandsaufenthalte können",
+     "distractor": ""
+    }
+   ],
+   "items": [
+    {
+     "n": 1,
+     "type": "choice",
+     "prompt": "Barbara braucht beruflich Grundkenntnisse in Spanisch.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "sondern auch die sprachlichen Kompetenzen werden immer wichtiger. Hier findet jeder den richtigen Kurs für sich, von Englisch über Japanisch bis Suaheli.",
+     "explain": "Barbara necesita conocimientos básicos de español por motivos laborales. El anuncio f es el único que ofrece cursos de idiomas para el ámbito profesional y remite a un curso adecuado para cada persona. El anuncio c también menciona cursos de idiomas, pero los financian las empresas para su plantilla."
+    },
+    {
+     "n": 2,
+     "type": "choice",
+     "prompt": "Frank denkt, dass sein Gehalt nicht branchenüblich ist.",
+     "answer": "d",
+     "confidence": "mittel",
+     "quote": "Wie viel sollte man in seinem Beruf verdienen? Wie viele Stunden arbeitet man üblicherweise? Bekommt man einen Zuschuss für Sprachkurse? Mit vielen gesetzlichen Dingen muss man sich auskennen, wenn man im Arbeitsleben steht. Die wichtigsten Informationen finden Sie hier zusammengefasst.",
+     "explain": "Frank cree que su sueldo no es el habitual del sector. El anuncio d es una recopilación de información para empleados que responde, entre otras, a la pregunta «Wie viel sollte man in seinem Beruf verdienen?», lo que permite comparar con lo habitual. Confianza media porque el anuncio no dice «branchenüblich» ni da cifras: es una guía general. El anuncio e («Zahlen Sie faire Gehälter!») trata el sueldo desde la perspectiva del jefe y no sirve a Frank."
+    },
+    {
+     "n": 3,
+     "type": "choice",
+     "prompt": "Petra fühlt sich am Arbeitsplatz gemobbt.",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "Es passiert immer häufiger in deutschen Unternehmen, dass manche Kollegen anderen das Leben aus unklaren Gründen schwermachen. Lesen Sie in diesem Ratgeber, wo Sie Hilfe bekommen können.",
+     "explain": "Petra se siente acosada por sus colegas. El anuncio g describe exactamente a compañeros que hacen la vida difícil a otros y ofrece un manual con lugares donde encontrar ayuda. El anuncio e menciona «Mobbing», pero se dirige a los jefes, no a la persona afectada."
+    },
+    {
+     "n": 4,
+     "type": "choice",
+     "prompt": "Sandra möchte im Ausland berufliche Erfahrungen sammeln.",
+     "answer": "h",
+     "confidence": "mittel",
+     "quote": "Andere sehen dort interessantere berufliche Möglichkeiten. Manchmal ist das die reine Abenteuerlust. Auslandsaufenthalte können",
+     "explain": "Sandra quiere acumular experiencia profesional en el extranjero. El anuncio h es el único escrito para quien se plantea una estancia en el extranjero con motivos profesionales («interessantere berufliche Möglichkeiten», «Auslandsaufenthalte»). Confianza media porque el texto está cortado al final de la página y falta el cierre que daría el sentido completo; también hay que descartar el anuncio a, que habla del extranjero pero desde el punto de vista del empleador."
+    },
+    {
+     "n": 5,
+     "type": "choice",
+     "prompt": "Felix möchte sich beruflich verändern.",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Im Job ist es nie zu spät, mit etwas Neuem zu beginnen, um sich weiterzuentwickeln.",
+     "explain": "Felix quiere cambiar profesionalmente. El anuncio b es el único que anima a empezar algo nuevo en el trabajo para desarrollarse y que remite a un asesoramiento sobre las posibilidades existentes. Los demás anuncios presuponen que la persona se queda en su puesto."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "p.16, Anzeige h): «Wo findet man passende Fortbildungen ?» → «Wo findet man passende Fortbildungen?» (espacio suelto del OCR antes del signo de interrogación).",
+  "p.16: guiones de partición de línea reunidos en todas las palabras cortadas («Konkurrenzanalyse», «Mit-arbeiter» → «Mitarbeiter», «Ent-lassung» → «Entlassung», «On-line-Kurse» → «Online-Kurse», «verspre-chen» → «versprechen»).",
+  "p.17, Person 1: «Kurt sucht еіnen Job» → «Kurt sucht einen Job» (la palabra traía caracteres cirílicos «еі» en lugar de «ei»).",
+  "p.17, Anzeige g): «körperliche Symptome wie Bluthochdruck. Magenbeschwerden oder eine anhaltende innere Anspannung» → «wie Bluthochdruck, Magenbeschwerden oder eine anhaltende innere Anspannung» (punto donde la enumeración pide coma).",
+  "p.18, Anzeige h): el título «Den Horizont erweitern» y el inicio del texto aparecían pegados en la misma línea; se han separado en title y text.",
+  "p.18: el texto de la anzeige h) está truncado en el original («Auslandsaufenthalte können»); no se ha completado nada y se advierte en el campo note."
+ ]
+}

@@ -1,0 +1,225 @@
+{
+  "block": "t1_c",
+  "section": "lesen-t1",
+  "variants": [
+    {
+      "id": "t1_c-p14",
+      "label": "Variante 4",
+      "page": 14,
+      "note": "",
+      "kind": "zuordnung",
+      "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Erfolgreich neue Wege gehen.",
+          "text": "Das Buch „Mit Erfolg durchstarten\" von Dr. Vera Baumgart richtet sich vor allem an Akademikerinnen, die erfolgreich ein eigenes Unternehmen aufbauen wollen. Egal ob Sie sich in der Immobilienbranche, im Bauwesen oder im Gesundheitsbereich selbstständig machen, die Autorin hat Antworten auf alle wichtigen Fragen.",
+          "distractor": ""
+        },
+        {
+          "key": "b",
+          "title": "Ein grüner Arbeitsplatz.",
+          "text": "Die Firma Heller aus Rostock will mit gutem Beispiel vorangehen und behauptet: „Klimafreundliche Energie und Müllvermeidung werden bei uns ganz großgeschrieben\". Aber geht das bei einer Transport- und Logistikfirma überhaupt? Die Antwort ist ein klares „Ja\". Alle Details heute um 19:30 Uhr bei Neo TV.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Verändertes Kaufverhalten.",
+          "text": "Neuesten Statistiken zufolge greifen Verbraucher in vielen Ländern der Europäischen Union immer mehr zu regionalen und ökologisch angebauten Lebensmitteln. Auch in deutschen Haushalten wird viel Wert auf gesunde Ernährung gelegt. Die Nachfrage nach Bioprodukten ist in den letzten Jahren stetig angestiegen.",
+          "distractor": "Es ecológico, pero habla del consumo de alimentos (Bioprodukte), no del medio ambiente dentro de una empresa ni de un puesto de trabajo. Es el distractor temático de la persona 3 (Jens, Umweltschutz in Unternehmen)."
+        },
+        {
+          "key": "d",
+          "title": "Jetzt im Buchhandel.",
+          "text": "In seinem neuen Bestseller beschreibt Georg Könitz auf eindrucksvolle Weise, wie er von seinem ständig schlecht gelaunten Chef und zwei Mitarbeitern in seinem Team schikaniert, ausgegrenzt und lächerlich gemacht wurde - und wie es ihm schließlich gelang, diesen Teufelskreis zu durchbrechen. Von seinen Erfahrungen können alle, die Ähnliches erleben, profitieren.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Der richtige Praktikumsplatz.",
+          "text": "Ein Praktikum bietet tolle Möglichkeiten, den Berufsalltag kennenzulernen. Viele Praktikanten sind aber enttäuscht, dass sie nur Hilfsarbeiten verrichten dürfen und dafür schlecht oder gar nicht bezahlt werden. Auf dem Portal dein-praktikum.de findest du jetzt aktuelle Infos und interessante Praktikumsstellen in ganz Deutschland.",
+          "distractor": ""
+        },
+        {
+          "key": "f",
+          "title": "Eine Erfolgsgeschichte.",
+          "text": "Die Bilanz von Rita Jäger (34): Zwei abgebrochene Lehren und zahllose Hilfsjobs. Dann kam Tochter Samantha und Rita musste Verantwortung übernehmen. Im Interview erzählt sie, wie sie in einem Friseursalon die Chance bekam, ein Praktikum und anschließend eine Ausbildung zu machen. Nun hat sie ihren eigenen Salon eröffnet.",
+          "distractor": "Menciona un «Praktikum» y también un negocio propio (su propio salón), pero es la biografía ya cerrada de Rita Jäger, no una oferta de prácticas ni un libro para montar una empresa. Se confunde con la persona 1 (Laura, prácticas) y con la 5 (Somayeh, negocio propio)."
+        },
+        {
+          "key": "g",
+          "title": "Immobilienunternehmen expandiert.",
+          "text": "Die Frankfurter Immobilienfirma ImmoInvest expandiert nach Süd- und Osteuropa. In den letzten Jahren hat das Unternehmen hohe Gewinne erwirtschaftet und plant nun, außerhalb Deutschlands mehrere Niederlassungen zu gründen. Über die Erfolgsgeschichte des Unternehmens berichtet der Geschäftsführer Herbert Grünberg in unserem Interview.",
+          "distractor": "Habla de una empresa inmobiliaria (trampa temática para la 5, Somayeh, arquitecta) que se expande por Europa (trampa para la 2, Igor), pero no ofrece nada a ninguna persona: describe la estrategia de la propia empresa."
+        },
+        {
+          "key": "h",
+          "title": "Neue Broschüre.",
+          "text": "Sie überlegen, Ihren Lebensmittelpunkt in ein anderes Land zu verlegen? Ein Neuanfang ist eine große Chance, aber immer auch eine Herausforderung – besonders für den Partner oder die Partnerin und die Kinder. Unsere neue Broschüre bietet ausführliche Informationen und Hilfestellungen zum Leben und Arbeiten in der EU.",
+          "distractor": ""
+        }
+      ],
+      "items": [
+        {
+          "n": 1,
+          "type": "choice",
+          "prompt": "Laura möchte während des Studiums Berufserfahrung sammeln.",
+          "answer": "e",
+          "confidence": "hoch",
+          "quote": "Ein Praktikum bietet tolle Möglichkeiten, den Berufsalltag kennenzulernen.",
+          "explain": "Laura busca experiencia profesional durante sus estudios. El anuncio e ofrece justamente eso: un portal con «Praktikumsstellen» actuales en toda Alemania. El anuncio f también menciona un «Praktikum», pero es una historia personal ya concluida, no una oferta."
+        },
+        {
+          "n": 2,
+          "type": "choice",
+          "prompt": "Igor hat Familie und möchte im europäischen Ausland arbeiten.",
+          "answer": "h",
+          "confidence": "hoch",
+          "quote": "Sie überlegen, Ihren Lebensmittelpunkt in ein anderes Land zu verlegen? Ein Neuanfang ist eine große Chance, aber immer auch eine Herausforderung – besonders für den Partner oder die Partnerin und die Kinder.",
+          "explain": "Igor tiene familia y quiere trabajar en el extranjero europeo. El anuncio h se dirige a quien traslada su centro de vida a otro país, menciona expresamente a la pareja y a los hijos y ofrece información sobre «Leben und Arbeiten in der EU». El anuncio g también nombra Europa, pero es la expansión de una empresa, no el traslado de una persona."
+        },
+        {
+          "n": 3,
+          "type": "choice",
+          "prompt": "Jens interessiert sich für das Thema Umweltschutz in Unternehmen.",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Die Firma Heller aus Rostock will mit gutem Beispiel vorangehen und behauptet: „Klimafreundliche Energie und Müllvermeidung werden bei uns ganz großgeschrieben\".",
+          "explain": "Jens se interesa por el medio ambiente dentro de las empresas. El anuncio b presenta una empresa concreta (Heller, transporte y logística) que aplica energía respetuosa con el clima y evitación de residuos. El anuncio c también es ecológico, pero trata del consumo de alimentos, no de las empresas."
+        },
+        {
+          "n": 4,
+          "type": "choice",
+          "prompt": "Jasmin hat Probleme mit ihren Kollegen und braucht Hilfe.",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "wie er von seinem ständig schlecht gelaunten Chef und zwei Mitarbeitern in seinem Team schikaniert, ausgegrenzt und lächerlich gemacht wurde - und wie es ihm schließlich gelang, diesen Teufelskreis zu durchbrechen.",
+          "explain": "Jasmin tiene problemas con sus colegas y busca ayuda. El anuncio d narra exactamente un caso de acoso y exclusión por parte del jefe y de dos compañeros de equipo y ofrece la experiencia de quien logró romper ese círculo. El anuncio f también es una historia personal, pero no trata de conflictos con colegas."
+        },
+        {
+          "n": 5,
+          "type": "choice",
+          "prompt": "Somayeh ist Architektin und möchte ihr eigenes Architekturbüro eröffnen.",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "richtet sich vor allem an Akademikerinnen, die erfolgreich ein eigenes Unternehmen aufbauen wollen. Egal ob Sie sich in der Immobilienbranche, im Bauwesen oder im Gesundheitsbereich selbstständig machen, die Autorin hat Antworten auf alle wichtigen Fragen.",
+          "explain": "Somayeh es arquitecta y quiere abrir su propio despacho. El anuncio a se dirige a académicas que quieren crear su propia empresa y nombra expresamente el sector inmobiliario y el «Bauwesen» (construcción). El anuncio g es inmobiliario, pero describe la expansión de una empresa ajena, no cómo fundar la propia."
+        }
+      ]
+    },
+    {
+      "id": "t1_c-p15",
+      "label": "Variante 5",
+      "page": 15,
+      "note": "",
+      "kind": "zuordnung",
+      "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Hilfe für Betroffene.",
+          "text": "Beleidigungen, Ausgrenzung, versteckte Drohungen - am Arbeitsplatz ist Mobbing leider weit verbreitet. Für viele Angestellte ist der Arbeitsalltag oft mit Angst verbunden. Das führt schnell zu gesundheitlichen und psychischen Problemen. Inzwischen gibt es zahlreiche Coaching-Programme für Mitarbeiter, die Strategien aufzeigen, wie man mit solchen Situationen besser umgehen kann.",
+          "distractor": ""
+        },
+        {
+          "key": "b",
+          "title": "Ein starkes Team.",
+          "text": "Pünktlich zum Start der Weltmeisterschaft präsentiert der Handballbund seine neue Vertragspartnerin, die deutsche Handwerkskammer. Wie passt das zusammen? „Ganz einfach\", so der Sprecher des Handballbundes. „Was für den Handballer die Weltmeisterschaft ist, ist für den Handwerker die Meisterprüfung.\"",
+          "distractor": "Menciona la «Meisterprüfung», pero solo como metáfora publicitaria en un patrocinio deportivo: no da ninguna información sobre ella. Es el distractor de la persona 5 (Assem)."
+        },
+        {
+          "key": "c",
+          "title": "Deutsche sind risikoscheu.",
+          "text": "In Deutschland ist die Zahl der Unternehmensgründungen stark rückläufig, obwohl insbesondere viele jüngere Menschen angeben, dass sie sich gerne selbständig machen würden. Warum der Sprung in die Selbstständigkeit oft doch nicht klappt, hat vielerlei Gründe. Während Frauen häufig das finanzielle Risiko scheuen, fürchten Männer den Karriereknick.",
+          "distractor": "Trata de fundar una empresa propia (el riesgo de emprender), no de trabajar como empleado en una empresa joven. Es el distractor de la persona 2 (Jason, der bei einem neu gegründeten Unternehmen arbeiten will)."
+        },
+        {
+          "key": "d",
+          "title": "Handwerk und Karriere - passt das?",
+          "text": "Fleischer, Klempner, Tischler - laut der Bundesagentur für Arbeit werden bei uns ca. 150.000 Handwerker gesucht. Doch viele Stellen bleiben unbesetzt. Dabei bieten Handwerksberufe gerade jungen Leuten die allerbesten Chancen für eine erfolgreiche Karriere. Fachkräfte brauchen sich um ihre Zukunft nicht zu sorgen.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Stressfrei zum Ziel.",
+          "text": "Auch Fortbildungen können für eine Meisterprüfung im Handwerk anerkannt werden. Wenn Sie z. B. als Kfz-Servicetechniker einen Kurs in Elektronik erfolgreich absolviert haben, wird dieser Teil nicht noch einmal gesondert geprüft. Die Interessengemeinschaft „Das Handwerk\" hat die wichtigsten Zulassungsvoraussetzungen zur Meisterprüfung zusammengefasst.",
+          "distractor": ""
+        },
+        {
+          "key": "f",
+          "title": "Nie wieder Opfer.",
+          "text": "Sie wurde in ihrer Firma gemobbt und konnte es ihrem Chef nicht nachweisen. Aber die Atmosphäre verschlechterte sich zusehends. Die Arbeit wurde jeden Tag mehr zur Qual. Die Autorin Stephanie Hauser verarbeitet in ihrem Roman „Nie wieder Opfer\" auf eindrucksvolle Weise ihre eigenen Erfahrungen zum Thema „Mobbing\".",
+          "distractor": "También trata el mobbing, pero es una novela en la que la autora elabora sus propias experiencias: narra un caso, no ofrece ayuda ni asesoramiento. Es el distractor de la persona 3 (Hannah, sucht Hilfe)."
+        },
+        {
+          "key": "g",
+          "title": "Verpflichtend oder freiwillig.",
+          "text": "Die Anforderungen der Berufswelt ändern sich rasant und somit entsteht auch die Notwendigkeit für die Belegschaft, sich kontinuierlich weiterzubilden. Prinzipiell gilt, dass Mitarbeiter zur Teilnahme an Seminaren verpflichtet sind, wenn diese zur Ausübung ihrer Tätigkeit notwendig sind und in der normalen Arbeitszeit stattfinden.",
+          "distractor": ""
+        },
+        {
+          "key": "h",
+          "title": "Karriereplan für eine vielversprechende Laufbahn.",
+          "text": "Vor allem in Großstädten bieten immer mehr junge Unternehmen interessante Jobmöglichkeiten. Dennoch setzen die meisten Uniabsolventen nach wie vor auf große Konzerne, von denen sie sich eher Sicherheit und vielversprechende Karrierechancen erhoffen. Doch das können sie auch bei jungen Start-up-Unternehmen finden.",
+          "distractor": ""
+        }
+      ],
+      "items": [
+        {
+          "n": 1,
+          "type": "choice",
+          "prompt": "Yasmina sucht nach dem Realschulabschluss einen Beruf mit guten Perspektiven.",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Dabei bieten Handwerksberufe gerade jungen Leuten die allerbesten Chancen für eine erfolgreiche Karriere. Fachkräfte brauchen sich um ihre Zukunft nicht zu sorgen.",
+          "explain": "Yasmina busca, tras el Realschulabschluss, una profesión con buenas perspectivas, es decir, un acceso al mundo laboral sin estudios universitarios. El anuncio d presenta las profesiones artesanas como la mejor oportunidad para los jóvenes y señala 150.000 puestos sin cubrir. El anuncio h también habla de carrera, pero se dirige a «Uniabsolventen»."
+        },
+        {
+          "n": 2,
+          "type": "choice",
+          "prompt": "Jason überlegt, ob er bei einem neu gegründeten Unternehmen arbeiten soll.",
+          "answer": "h",
+          "confidence": "hoch",
+          "quote": "Vor allem in Großstädten bieten immer mehr junge Unternehmen interessante Jobmöglichkeiten.",
+          "explain": "Jason se plantea trabajar como empleado en una empresa de nueva creación. El anuncio h dice que cada vez más empresas jóvenes ofrecen puestos interesantes y que también en los start-ups se encuentran seguridad y perspectivas. El anuncio c menciona igualmente empresas nuevas, pero se refiere a fundarlas uno mismo (Selbstständigkeit), no a trabajar en ellas."
+        },
+        {
+          "n": 3,
+          "type": "choice",
+          "prompt": "Hannah wird von ihren Kollegen schlecht behandelt und sucht Hilfe.",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Inzwischen gibt es zahlreiche Coaching-Programme für Mitarbeiter, die Strategien aufzeigen, wie man mit solchen Situationen besser umgehen kann.",
+          "explain": "Hannah sufre malos tratos de sus colegas y busca ayuda. El anuncio a describe el mobbing («Beleidigungen, Ausgrenzung, versteckte Drohungen») y remite a programas de coaching con estrategias para afrontarlo. El anuncio f también trata el mobbing, pero es una novela, sin oferta de ayuda."
+        },
+        {
+          "n": 4,
+          "type": "choice",
+          "prompt": "Gacer fragt sich, ob sie Fortbildungen besuchen muss.",
+          "answer": "g",
+          "confidence": "hoch",
+          "quote": "Prinzipiell gilt, dass Mitarbeiter zur Teilnahme an Seminaren verpflichtet sind, wenn diese zur Ausübung ihrer Tätigkeit notwendig sind und in der normalen Arbeitszeit stattfinden.",
+          "explain": "Gacer se pregunta si está obligada a hacer cursos de formación continua. El anuncio g («Verpflichtend oder freiwillig») responde que los empleados están obligados a participar en seminarios cuando son necesarios para su actividad y se celebran dentro del horario laboral. El anuncio e menciona también «Fortbildungen», pero solo como parte reconocible del examen de maestría."
+        },
+        {
+          "n": 5,
+          "type": "choice",
+          "prompt": "Assem braucht Informationen zur Meisterprüfung.",
+          "answer": "e",
+          "confidence": "hoch",
+          "quote": "Die Interessengemeinschaft „Das Handwerk\" hat die wichtigsten Zulassungsvoraussetzungen zur Meisterprüfung zusammengefasst.",
+          "explain": "Assem necesita información sobre el examen de maestría. El anuncio e es el único que la ofrece: reúne los requisitos de admisión («Zulassungsvoraussetzungen») y explica qué cursos de formación se reconocen. El anuncio b nombra la Meisterprüfung, pero solo como eslogan publicitario, sin información útil."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.14: corregido «Auf dem Portaldein- praktikum.de» → «Auf dem Portal dein-praktikum.de» (errata del OCR: espacio espurio tras el guion de final de línea)",
+    "p.15: corregido «1 .Yasmina» → «1. Yasmina» (espacio espurio antes del punto)",
+    "p.15: corregido «z B.» → «z. B.» (falta el punto de la abreviatura)",
+    "p.15: corregido «ca.150.000» → «ca. 150.000» (falta el espacio tras el punto)",
+    "p.14 y p.15: se han unido las palabras partidas con guion al final de línea en los anuncios transcritos (p. ej. «wichti-gen» → «wichtigen», «angestie-gen» → «angestiegen», «Fri-seursalon» → «Friseursalon», «Nie-derlassungen» → «Niederlassungen», «Semi-naren» → «Seminaren», «Ar-beitszeit» → «Arbeitszeit»). Se conservan los guiones reales de palabras compuestas («Transport- und Logistikfirma», «Süd- und Osteuropa», «Start-up-Unternehmen»)."
+  ]
+}

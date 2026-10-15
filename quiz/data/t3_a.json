@@ -1,0 +1,267 @@
+{
+  "block": "t3_a",
+  "section": "lesen-t3",
+  "variants": [
+    {
+      "id": "t3_a-p32",
+      "label": "Variante 1",
+      "page": 32,
+      "note": "",
+      "kind": "zuordnung",
+      "intro": "Lesen Sie die vier Aufgaben (10–13) und die sechs Kommentare (a–f). Welcher Kommentar passt zu welcher Aufgabe? Zwei Kommentare bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Günther, vor 9 Stunden",
+          "text": "Das kann man pauschal gar nicht so sagen. Wie das in deinem Unternehmen geregelt ist, steht in deinem Arbeitsvertrag. Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "distractor": ""
+        },
+        {
+          "key": "b",
+          "title": "Marion, vor 4 Stunden",
+          "text": "Nein, vorher musst du erst mal eine Abmahnung bekommen. Wenn du dann allerdings noch mal fehlst, ohne Bescheid zu sagen, musst du mit der Kündigung rechnen. Such doch noch mal das Gespräch mit deinem Chef. Ihr findet bestimmt eine Lösung.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Karin, vor 45 Minuten",
+          "text": "Du kannst nicht einfach kommen und gehen, wann du willst, auch wenn du die Absicht hattest, die versäumte Zeit nachzuholen. Die Arbeitszeiten sind ja vertraglich geregelt. Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "distractor": ""
+        },
+        {
+          "key": "d",
+          "title": "Elli, vor 3 Stunden",
+          "text": "Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden. Du brauchst natürlich ein ärztliches Attest. Das gilt allerdings nicht, wenn du dich um ein krankes Kind kümmern musst. In diesem Fall gelten die Urlaubstage als genommen.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Sabine, vor 40 Minuten",
+          "text": "Diese Situation kennen doch alle Eltern. Wenn ich für meinen Sohn mal keine Betreuung finde, kann ich ihn auch ausnahmsweise mit ins Büro nehmen. Meine Chefin ist da zum Glück sehr verständnisvoll.",
+          "distractor": "Solo cuenta cómo ella resuelve la falta de guardería (llevarse al hijo a la oficina); no responde a ninguna de las cuatro consultas. Es el distractor temático de la 10 (Gabi: el hijo enfermo durante las vacaciones) y de la 11 (Charlotte: el hijo enfermo y la amenaza de despido): ninguna de las dos pregunta si puede llevar al niño al trabajo, sino qué pasa con los días de vacaciones y con el despido."
+        },
+        {
+          "key": "f",
+          "title": "Jorge, vor 2 Stunden",
+          "text": "Also ich gehe immer gleich am ersten Krankheitstag zum Arzt. Sicher ist sicher. Außerdem kann es nicht schaden, wenn dich ein Doktor anschaut, wenn du dich nicht wohlfühlst. Gerade wenn du Kinder hast, ist es wichtig, dass du weißt, was dir fehlt. Du willst ja niemanden anstecken.",
+          "distractor": "Aconseja por experiencia propia ir al médico el primer día de baja, pero no aclara la norma legal que se pregunta. Es el distractor temático de la 13 (Kamil: ¿certificado médico solo a partir del tercer día?) e, indirectamente, de la 12 (Lars, que se puso enfermo): la respuesta correcta es a) Günther, que remite al contrato de trabajo."
+        }
+      ],
+      "items": [
+        {
+          "n": 10,
+          "type": "choice",
+          "prompt": "Gabi: Ich hatte gerade Urlaub und gleich am ersten Urlaubstag wurde meine Kleine krank und ich musste sie vier Tage lang pflegen. Wenn ich im Urlaub krank werde, kann ich die Tage zurückbekommen. Aber wie ist das, wenn das Kind krank wird?",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Das gilt allerdings nicht, wenn du dich um ein krankes Kind kümmern musst. In diesem Fall gelten die Urlaubstage als genommen.",
+          "explain": "Gabi pregunta qué pasa con sus días de vacaciones cuando la que enferma es su hija, no ella. Elli (d) retoma literalmente su propio argumento («Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden») y responde con la excepción de la «krankes Kind»: si cuidas a un hijo enfermo, los días de vacaciones se consideran disfrutados. Sabine (e) también habla de hijos, pero de guardería, no de vacaciones."
+        },
+        {
+          "n": 11,
+          "type": "choice",
+          "prompt": "Charlotte: Ich konnte leider mal wieder nicht zur Arbeit gehen, weil mein Kind krank war. Als ich heute angerufen habe, hat mein Chef total überzogen reagiert und mir mit Kündigung gedroht, wenn ich mehr als einen Tag fehle. Das geht doch nicht, oder?",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Nein, vorher musst du erst mal eine Abmahnung bekommen.",
+          "explain": "Charlotte avisó de su ausencia («Als ich heute angerufen habe») y el jefe la amenaza con el despido: Marion (b) responde exactamente a eso con un «Nein» y con la regla de que antes hace falta una Abmahnung, y le aconseja hablar con el jefe. Karin (c) también menciona la Abmahnung, pero para el caso contrario (ausencia sin avisar), que es el de Lars."
+        },
+        {
+          "n": 12,
+          "type": "choice",
+          "prompt": "Lars: Ich bin letzten Montag mit furchtbaren Kopfschmerzen aufgewacht und konnte nicht aufstehen. Leider habe ich vergessen, meinen Arbeitgeber anzurufen, und bin im Bett geblieben. Jetzt will mein Chef mir kündigen, weil ich unentschuldigt gefehlt habe. Geht das so einfach?",
+          "answer": "c",
+          "confidence": "mittel",
+          "quote": "Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "explain": "Lars faltó sin excusa ni aviso, y Karin (c) es la única que responde a la pregunta «Geht das so einfach?» en sentido afirmativo: cuando el trabajador no respeta sus obligaciones, no hace falta una Abmahnung previa. Confianza media porque c se centra en el horario de trabajo y no dice literalmente «Kündigung möglich»; la asignación se confirma por eliminación (b encaja mejor con Charlotte, que sí avisó) y por la variante de la p. 34, donde este mismo posteo lleva la respuesta c."
+        },
+        {
+          "n": 13,
+          "type": "choice",
+          "prompt": "Kamil: Gestern war ich krank. Als ich heute wieder im Büro war, wollte mein Chef direkt die Krankschreibung haben. Ich war immer der Meinung, die braucht man erst nach drei Tagen?",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "explain": "Kamil pregunta a partir de cuándo está obligado a entregar el certificado médico. Günther (a) responde justo a eso: no hay una regla general, depende del contrato de trabajo y suele estar en los apartados «Arbeitsverhinderung» o «Krankheit». Jorge (f) es el distractor: habla de ir al médico el primer día, pero no de la obligación de presentar el certificado."
+        }
+      ]
+    },
+    {
+      "id": "t3_a-p33",
+      "label": "Variante 1 (versión 08.2024)",
+      "page": 33,
+      "note": "Repite los cuatro posteos de la p. 32; solo cambia la formulación del comentario d (así lo indica el encabezado ruso: «новая формулировка ответа d»). Las respuestas no cambian.",
+      "kind": "zuordnung",
+      "intro": "Lesen Sie die vier Aufgaben (10–13) und die sechs Kommentare (a–f). Welcher Kommentar passt zu welcher Aufgabe? Zwei Kommentare bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Günther, vor 9 Stunden",
+          "text": "Das kann man pauschal gar nicht so sagen. Wie das in deinem Unternehmen geregelt ist, steht in deinem Arbeitsvertrag. Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "distractor": ""
+        },
+        {
+          "key": "b",
+          "title": "Marion, vor 4 Stunden",
+          "text": "Nein, vorher musst du erst mal eine Abmahnung bekommen. Wenn du dann allerdings noch mal fehlst, ohne Bescheid zu sagen, musst du mit der Kündigung rechnen. Such doch noch mal das Gespräch mit deinem Chef. Ihr findet bestimmt eine Lösung.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Karin, vor 45 Minuten",
+          "text": "Du kannst nicht einfach kommen und gehen, wann du willst, auch wenn du die Absicht hattest, die versäumte Zeit nachzuholen. Die Arbeitszeiten sind ja vertraglich geregelt. Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "distractor": ""
+        },
+        {
+          "key": "d",
+          "title": "Elli, vor 3 Stunden",
+          "text": "Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden. Du brauchst natürlich ab dem ersten Tag ein ärztliches Attest. Anders sieht es aus, wenn du einen Familienangehörigen betreust. Das ist dann nicht Sache deines Arbeitgebers.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Sabine, vor 40 Minuten",
+          "text": "Diese Situation kennen doch alle Eltern. Wenn ich für meinen Sohn mal keine Betreuung finde, kann ich ihn auch ausnahmsweise mit ins Büro nehmen. Meine Chefin ist da zum Glück sehr verständnisvoll.",
+          "distractor": "Solo cuenta cómo ella resuelve la falta de guardería (llevarse al hijo a la oficina); no responde a ninguna de las cuatro consultas. Es el distractor temático de la 10 (Gabi: el hijo enfermo durante las vacaciones) y de la 11 (Charlotte: el hijo enfermo y la amenaza de despido): ninguna de las dos pregunta por el cuidado del niño, sino por los días de vacaciones y por el despido."
+        },
+        {
+          "key": "f",
+          "title": "Jorge, vor 2 Stunden",
+          "text": "Also ich gehe immer gleich am ersten Krankheitstag zum Arzt. Sicher ist sicher. Außerdem kann es nicht schaden, wenn dich ein Doktor anschaut, wenn du dich nicht wohlfühlst. Gerade wenn du Kinder hast, ist es wichtig, dass du weißt, was dir fehlt. Du willst ja niemanden anstecken.",
+          "distractor": "Aconseja por experiencia propia ir al médico el primer día de baja, pero no aclara la norma legal que se pregunta. Es el distractor temático de la 13 (Kamil: ¿certificado médico solo a partir del tercer día?) e, indirectamente, de la 12 (Lars, que se puso enfermo): la respuesta correcta es a) Günther, que remite al contrato de trabajo."
+        }
+      ],
+      "items": [
+        {
+          "n": 10,
+          "type": "choice",
+          "prompt": "Gabi: Ich hatte gerade Urlaub und gleich am ersten Urlaubstag wurde meine Kleine krank und ich musste sie vier Tage lang pflegen. Wenn ich im Urlaub krank werde, kann ich die Tage zurückbekommen. Aber wie ist das, wenn das Kind krank wird?",
+          "answer": "d",
+          "confidence": "mittel",
+          "quote": "Anders sieht es aus, wenn du einen Familienangehörigen betreust. Das ist dann nicht Sache deines Arbeitgebers.",
+          "explain": "Sigue siendo la única respuesta posible para Gabi: Elli (d) retoma su argumento («Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden») y marca la diferencia cuando se cuida a un familiar. Confianza media porque esta nueva formulación ya no dice expresamente que los días de vacaciones se den por disfrutados (en la versión de la p. 32 sí: «In diesem Fall gelten die Urlaubstage als genommen»)."
+        },
+        {
+          "n": 11,
+          "type": "choice",
+          "prompt": "Charlotte: Ich konnte leider mal wieder nicht zur Arbeit gehen, weil mein Kind krank war. Als ich heute angerufen habe, hat mein Chef total überzogen reagiert und mir mit Kündigung gedroht, wenn ich mehr als einen Tag fehle. Das geht doch nicht, oder?",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Nein, vorher musst du erst mal eine Abmahnung bekommen.",
+          "explain": "Charlotte avisó de su ausencia y el jefe la amenaza con el despido: Marion (b) responde con un «Nein» directo y con la regla de la Abmahnung previa. El comentario d de esta versión también menciona el «Attest», pero va dirigido a quien se toma vacaciones, no a este caso."
+        },
+        {
+          "n": 12,
+          "type": "choice",
+          "prompt": "Lars: Ich bin letzten Montag mit furchtbaren Kopfschmerzen aufgewacht und konnte nicht aufstehen. Leider habe ich vergessen, meinen Arbeitgeber anzurufen, und bin im Bett geblieben. Jetzt will mein Chef mir kündigen, weil ich unentschuldigt gefehlt habe. Geht das so einfach?",
+          "answer": "c",
+          "confidence": "mittel",
+          "quote": "Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "explain": "Lars faltó sin avisar y Karin (c) es la única que responde en sentido afirmativo a «Geht das so einfach?»: si el trabajador no cumple sus obligaciones, no hace falta una Abmahnung previa. Confianza media porque c habla del horario de trabajo y no formula literalmente la expulsión; se confirma por eliminación y por la variante de la p. 34 (mismo posteo con la respuesta c)."
+        },
+        {
+          "n": 13,
+          "type": "choice",
+          "prompt": "Kamil: Gestern war ich krank. Als ich heute wieder im Büro war, wollte mein Chef direkt die Krankschreibung haben. Ich war immer der Meinung, die braucht man erst nach drei Tagen?",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "explain": "Günther (a) responde a la pregunta de Kamil sobre desde cuándo hace falta el certificado: no hay regla general, está en el contrato de trabajo. Ojo con el nuevo comentario d, que también habla de un «ärztliches Attest», pero referido al empleado de vacaciones que enferma, no a la obligación de presentar la Krankschreibung."
+        }
+      ]
+    },
+    {
+      "id": "t3_a-p34",
+      "label": "Variante 1 (versión 07.02.2025)",
+      "page": 34,
+      "note": "Mismos textos que la p. 32, pero con nombres nuevos y las cuatro tareas en otro orden (así lo indica el encabezado ruso: «новые имена и очередь»). Por eso las respuestas se desplazan: 10→b, 11→c, 12→a, 13→d.",
+      "kind": "zuordnung",
+      "intro": "Lesen Sie die vier Aufgaben (10–13) und die sechs Kommentare (a–f). Welcher Kommentar passt zu welcher Aufgabe? Zwei Kommentare bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Jose Cristobal, vor 9 Stunden",
+          "text": "Das kann man pauschal gar nicht so sagen. Wie das in deinem Unternehmen geregelt ist, steht in deinem Arbeitsvertrag. Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "distractor": ""
+        },
+        {
+          "key": "b",
+          "title": "Gracia Maria, vor 4 Stunden",
+          "text": "Nein, vorher musst du erst mal eine Abmahnung bekommen. Wenn du dann allerdings noch mal fehlst, ohne Bescheid zu sagen, musst du mit der Kündigung rechnen. Such doch noch mal das Gespräch mit deinem Chef. Ihr findet bestimmt eine Lösung.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Lina, vor 45 Minuten",
+          "text": "Du kannst nicht einfach kommen und gehen, wann du willst, auch wenn du die Absicht hattest, die versäumte Zeit nachzuholen. Die Arbeitszeiten sind ja vertraglich geregelt. Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "distractor": ""
+        },
+        {
+          "key": "d",
+          "title": "Lida, vor 3 Stunden",
+          "text": "Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden. Du brauchst natürlich ab dem ersten Tag ein ärztliches Attest. Anders sieht es aus, wenn du einen Familienangehörigen betreust. Das ist dann nicht Sache deines Arbeitgebers.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Antonia, vor 40 Minuten",
+          "text": "Diese Situation kennen doch alle Eltern. Wenn ich für meinen Sohn mal keine Betreuung finde, kann ich ihn auch ausnahmsweise mit ins Büro nehmen. Meine Chefin ist da zum Glück sehr verständnisvoll.",
+          "distractor": "Solo cuenta cómo ella resuelve la falta de guardería (llevarse al hijo a la oficina); no responde a ninguna de las cuatro consultas. Es el distractor temático de la 10 (Petra: el hijo enfermo y la amenaza de despido) y de la 13 (Ines Maria: el hijo enfermo durante las vacaciones): ninguna pregunta si puede llevar al niño al trabajo."
+        },
+        {
+          "key": "f",
+          "title": "Jorge, vor 2 Stunden",
+          "text": "Also ich gehe immer gleich am ersten Krankheitstag zum Arzt. Sicher ist sicher. Außerdem kann es nicht schaden, wenn dich ein Doktor anschaut, wenn du dich nicht wohlfühlst. Gerade wenn du Kinder hast, ist es wichtig, dass du weißt, was dir fehlt. Du willst ja niemanden anstecken.",
+          "distractor": "Aconseja por experiencia propia ir al médico el primer día de baja, pero no aclara la norma legal. Es el distractor temático de la 12 (Leo: ¿certificado médico solo a partir del tercer día?) e, indirectamente, de la 11 (Giovanni, que se puso enfermo): la respuesta correcta es a) Jose Cristobal, que remite al contrato de trabajo."
+        }
+      ],
+      "items": [
+        {
+          "n": 10,
+          "type": "choice",
+          "prompt": "Petra: Ich konnte leider mal wieder nicht zur Arbeit gehen, weil mein Kind krank war. Als ich heute angerufen habe, hat mein Chef total überzogen reagiert und mir mit Kündigung gedroht, wenn ich mehr als einen Tag fehle. Das geht doch nicht, oder?",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Nein, vorher musst du erst mal eine Abmahnung bekommen.",
+          "explain": "Es el mismo caso que Charlotte en la p. 32, ahora en el número 10: la madre avisó de su ausencia y el jefe la amenaza con el despido. Gracia Maria (b) responde con el «Nein» y con la necesidad de una Abmahnung previa. El comentario c también habla de la Abmahnung, pero para quien falta sin dar señales (Giovanni, 11)."
+        },
+        {
+          "n": 11,
+          "type": "choice",
+          "prompt": "Giovanni: Ich bin letzten Montag mit furchtbaren Kopfschmerzen aufgewacht und konnte nicht aufstehen. Leider habe ich vergessen, meinen Arbeitgeber anzurufen, und bin im Bett geblieben. Jetzt will mein Chef mir kündigen, weil ich unentschuldigt gefehlt habe. Geht das so einfach?",
+          "answer": "c",
+          "confidence": "mittel",
+          "quote": "Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "explain": "Giovanni faltó sin excusa ni aviso y pregunta si el despido puede ser tan fácil. Lina (c) es la única que responde en sentido afirmativo: cuando el trabajador no respeta sus obligaciones, la Abmahnung previa no es necesaria. Confianza media porque c se centra en las obligaciones horarias y no nombra la «Kündigung»; la asignación queda fijada por eliminación (a→12, b→10, d→13)."
+        },
+        {
+          "n": 12,
+          "type": "choice",
+          "prompt": "Leo: Gestern war ich krank. Als ich heute wieder im Büro war, wollte mein Chef direkt die Krankschreibung haben. Ich war immer der Meinung, die braucht man erst nach drei Tagen?",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "explain": "Leo pregunta desde cuándo está obligado a presentar el certificado. Jose Cristobal (a) contesta exactamente eso: no hay una regla general, depende del contrato de trabajo y suele estar regulado en «Arbeitsverhinderung» o «Krankheit». Jorge (f) es el distractor, porque solo cuenta su costumbre de ir al médico el primer día."
+        },
+        {
+          "n": 13,
+          "type": "choice",
+          "prompt": "Ines Maria: Ich hatte gerade Urlaub und gleich am ersten Urlaubstag wurde meine Kleine krank und ich musste sie vier Tage lang pflegen. Wenn ich im Urlaub krank werde, kann ich die Tage zurückbekommen. Aber wie ist das, wenn das Kind krank wird?",
+          "answer": "d",
+          "confidence": "mittel",
+          "quote": "Anders sieht es aus, wenn du einen Familienangehörigen betreust. Das ist dann nicht Sache deines Arbeitgebers.",
+          "explain": "Es el mismo caso que Gabi en la p. 32, ahora en el número 13. Lida (d) retoma su frase literal sobre el reembolso de los días de vacaciones y señala la excepción del familiar al que se cuida. Confianza media porque la formulación nueva ya no dice expresamente que esos días de vacaciones se consideren disfrutados (la versión de la p. 32 sí lo dice)."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.32 y 33, comentario c: reunidas las palabras cortadas por el salto de línea, «ver-säumte» → «versäumte» y «da-ran» → «daran».",
+    "p.32, 33 y 34: cerrada la comilla tipográfica alemana en «„Arbeitsverhinderung“» y «„Krankheit“» (el OCR dejaba una comilla recta de cierre).",
+    "p.33, comentario d: corregido «ab den ersten Tag» → «ab dem ersten Tag» (la misma frase aparece bien en la p. 34).",
+    "p.34, comentario f: corregido «Jorge, vor. 2 Stunden» → «Jorge, vor 2 Stunden»."
+  ]
+}

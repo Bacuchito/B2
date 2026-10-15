@@ -1,0 +1,290 @@
+{
+ "block": "t4_c",
+ "section": "lesen-t4",
+ "variants": [
+  {
+   "id": "t4_c-p51",
+   "label": "Variante 3 (Protokoll 19.11.20XX)",
+   "page": 51,
+   "note": "Acta de la reunión del 19.11.20XX, cuyo texto ocupa las pp. 51-52 y cuyas preguntas 14-18 aparecen al final de la p. 52. El ítem 15 trae DOS redacciones distintas en el original: la primera («Einige Mitarbeiter machen Überstunden,») y la marcada «новый вариант вопроса» («Aufgrund des hohen Krankenstands»), que se han conservado como dos ítems con el mismo n (se mostrarán como 15a y 15b). En la p. 52 los ítems 17 («Die Firma») y 18 («Persönliche Gegenstände») vienen entrelazados a dos columnas y el OCR los mezcla en las mismas líneas («17. Die Firma 18. Persönliche Gegenstände» seguido de «a) besucht die Frühjahrsmesse regelmäßig. a) können nicht in der Küche bleiben.»); cada ítem se ha reconstruido con sus propias opciones a/b/c.",
+   "kind": "text",
+   "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "(Personalthemen, Urlaubssperre)\nProtokoll 19.11.20XX, 08.00-11.45 Uhr\nZentrale, Raum 405\nSitzungsleitung: Lukas Wallner (LW)\nTeilnehmende: Jessica Müller (JM, Personalabteilung), Maximilian Berger (MB, Marketingabteilung), Rebecca Lehmann (RL, Öffentlichkeitsarbeit), Kurt Meichsner (KM, Verkauf)\nExtern: Ansgar Wolf (AW, Hausverwaltung)\nProtokollantin: Beate Richter (BR)\nTagesordnungspunkte:\n1. Begrüßung und Genehmigung des letzten Protokolls\n2. Personal\n3. Kundenbindung, Rabattaktion\n4. Vorbereitungen der Messe\n5. Neujahrsfeier\n6. Sonstiges\nTOP 1 Begrüßung und Genehmigung des letzten Protokolls\nLW begrüßt alle Teilnehmer und eröffnet die heutige Besprechung. Herr Dr. Baumann aus der Qualitätssicherung lässt sich entschuldigen, da er in dieser Woche auf einer Dienstreise ist. Das Protokoll des Meetings vom 14. November wird ohne weitere Änderungen und Ergänzungen einstimmig per Handzeichen genehmigt.\nTOP 2 Personal\nDie Kundenbetreuung ist aktuell unterbesetzt, weil viele Kollegen krank sind. Auch in der Personalabteilung herrscht ein hoher Krankenstand. Krankmeldungen aus allen Abteilungen sollen deshalb vorübergehend direkt an JM gesendet werden.\nUrlaubsanträge können im Moment nur im Falle dringender persönlicher Angelegenheiten genehmigt werden. Aufgrund des hohen Krankenstands mussten einige Kollegen in den letzten Monaten besonders viele Überstunden machen, die möglichst bis zum Ende des Kalenderjahres abgebaut werden sollten. Sollte dies aufgrund des hohen Arbeitspensums nicht möglich sein, können die Überstunden auch in das nächste Jahr übertragen werden.\nHerr Wortmann aus dem Verkauf geht am 1. Februar des nächsten Jahres in den Ruhestand. Sein Nachfolger wird KM, den Herr Wortmann ab sofort einarbeitet. Im Rahmen der Neujahrsfeier wird unser langjähriger Mitarbeiter verabschiedet. Wir möchten ihm zum Abschied eine Freude machen. Ideen hierzu bitte an JM, die anschließend das Geld einsammeln und das Geschenk besorgen wird.\nZum 1. Dezember beginnen drei neue Mitarbeiter in der Produktion, da die Verkaufszahlen stark gestiegen sind.\nTOP 3 Kundenbindung, Rabattaktion\nKM hat erfahren, dass der Wettbewerber Lutz GmbH für das Frühjahr eine Rabattaktion plant. RL schlägt vor, ebenfalls eine Kampagne zur Kundenbindung zu entwickeln. KM hat hierfür bereits einen ersten Entwurf für ein Konzept ausgearbeitet und legt diesen vor. Er schlägt vor, das Konzept in einer kleineren Runde zu diskutieren. Wer Interesse hat, an diesem Brainstorming teilzunehmen, soll sich bis zum Ende der Woche bei KM melden.\nTOP 4 Vorbereitungen der Messe\nIm nächsten Jahr wird unsere Firma erstmals an der Frühjahrsmesse in Dresden teilnehmen, die vom 20.-24. April stattfindet. MB aus der Marketingabteilung berichtet, dass bereits der Standplatz gebucht und der Messebauer beauftragt ist. Interessierte können sich die Standgestaltung im Büro von MB ansehen. Auch die Broschüren zu unserem Messeauftritt sind bereits im Druck und können in der 2. KW an unsere Kunden verschickt werden. Abschließend bittet MB JM, externes Standpersonal und Hotelzimmer für die Mitarbeiter zu buchen, die auf die Messe gehen.\nTOP 5 Neujahrsfeier\nJM berichtet, dass am 7. Januar die Neujahrsfeier im Restaurant „Zum Schwan\" stattfindet. Die Einladungen und Menüvorschläge werden verschickt. Alle Mitarbeiter sollen bis zum 15. Dezember Bescheid sagen, mit wie vielen Personen sie teilnehmen und was sie essen möchten. Die Geschäftsführung hat auch eine kleine Überraschung für die Mitarbeiter an diesem Abend geplant.\nTOP 6 Sonstiges\nAW informiert über Renovierungsarbeiten im ersten Stock, die für die nächste Woche geplant sind. Die Firma Buntschuh wird die Wände in der Teeküche Montag und Dienstag nächster Woche streichen. Da die Küche dafür komplett ausgeräumt werden muss, werden die Mitarbeiter gebeten, bei dieser Gelegenheit persönliche Gegenstände wie zum Beispiel nicht firmeneigene Kaffeetassen, Brotdosen und Ähnliches bis Donnerstag an sich zu nehmen. Ansonsten werden diese durch AW entsorgt.",
+   "items": [
+    {
+     "n": 14,
+     "type": "choice",
+     "prompt": "Bei der Sitzung wird",
+     "options": [
+      {
+       "key": "a",
+       "text": "das Protokoll der letzten Besprechung geändert."
+      },
+      {
+       "key": "b",
+       "text": "die Tagesordnung genehmigt."
+      },
+      {
+       "key": "c",
+       "text": "über Personalthemen gesprochen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Das Protokoll des Meetings vom 14. November wird ohne weitere Änderungen und Ergänzungen einstimmig per Handzeichen genehmigt.",
+     "explain": "Correcto c: el punto 2 del orden del día («TOP 2 Personal») se dedica íntegramente a asuntos de personal (bajas por enfermedad, vacaciones, horas extras, jubilación de Herr Wortmann, nuevas incorporaciones). a es falso porque el acta se aprueba «ohne weitere Änderungen und Ergänzungen», es decir, sin cambios. b también es falso: lo que se aprueba es el acta de la reunión anterior, no el orden del día (que solo se enumera)."
+    },
+    {
+     "n": 15,
+     "type": "choice",
+     "prompt": "Einige Mitarbeiter machen Überstunden,",
+     "options": [
+      {
+       "key": "a",
+       "text": "da andere Urlaub machen."
+      },
+      {
+       "key": "b",
+       "text": "obwohl sie krank sind."
+      },
+      {
+       "key": "c",
+       "text": "weil viele Kollegen krank sind."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Aufgrund des hohen Krankenstands mussten einige Kollegen in den letzten Monaten besonders viele Überstunden machen",
+     "explain": "Correcto c: el texto justifica expresamente las horas extras con el alto índice de bajas («Aufgrund des hohen Krankenstands mussten einige Kollegen … besonders viele Überstunden machen»), y antes ha explicado que muchos compañeros están enfermos. a es falso: las vacaciones no son la causa, sino que precisamente se restringen («Urlaubsanträge können im Moment nur im Falle dringender persönlicher Angelegenheiten genehmigt werden»). b invierte los términos: quien está de baja no hace horas extras, son los demás quienes las asumen."
+    },
+    {
+     "n": 15,
+     "type": "choice",
+     "prompt": "Aufgrund des hohen Krankenstands",
+     "options": [
+      {
+       "key": "a",
+       "text": "bleibt die Arbeit teilweise unerledigt."
+      },
+      {
+       "key": "b",
+       "text": "müssen die Überstunden im kommenden Jahr abgebaut werden./ müssen die Überstunden ins kommende Jahr mitgenommen werden."
+      },
+      {
+       "key": "c",
+       "text": "gibt es eine Urlaubssperre."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Urlaubsanträge können im Moment nur im Falle dringender persönlicher Angelegenheiten genehmigt werden.",
+     "explain": "Segunda redacción del ítem 15 («новый вариант вопроса»). Correcto c: el acta dice que en ese momento las solicitudes de vacaciones solo se aprueban en caso de asuntos personales urgentes, lo que equivale a una congelación de vacaciones; el propio encabezado del acta lo anuncia con la palabra «Urlaubssperre». a es una consecuencia verosímil («Die Kundenbetreuung ist aktuell unterbesetzt»), pero el texto no afirma en ningún momento que el trabajo quede sin hacer. b es falso: las horas extras deben reducirse preferiblemente antes de fin de año («möglichst bis zum Ende des Kalenderjahres abgebaut werden sollten») y solo si no es posible se trasladan al año siguiente, no al revés."
+    },
+    {
+     "n": 16,
+     "type": "choice",
+     "prompt": "KM",
+     "options": [
+      {
+       "key": "a",
+       "text": "ist Wettbewerber der Firma."
+      },
+      {
+       "key": "b",
+       "text": "möchte sein Konzept besprechen."
+      },
+      {
+       "key": "c",
+       "text": "plant eine Rabattaktion im Frühling."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "KM hat hierfür bereits einen ersten Entwurf für ein Konzept ausgearbeitet und legt diesen vor. Er schlägt vor, das Konzept in einer kleineren Runde zu diskutieren.",
+     "explain": "Correcto b: KM presenta su borrador de concepto y propone discutirlo en un grupo reducido («in einer kleineren Runde zu diskutieren»). a es falso: el competidor es la empresa externa «Lutz GmbH», y KM es el jefe de Ventas de la propia firma. c es falso porque quien planea la acción de descuento para la primavera es el competidor, no KM."
+    },
+    {
+     "n": 17,
+     "type": "choice",
+     "prompt": "Die Firma",
+     "options": [
+      {
+       "key": "a",
+       "text": "besucht die Frühjahrsmesse regelmäßig."
+      },
+      {
+       "key": "b",
+       "text": "braucht Hilfe bei der Standgestaltung."
+      },
+      {
+       "key": "c",
+       "text": "lässt gerade Broschüren drucken."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Auch die Broschüren zu unserem Messeauftritt sind bereits im Druck und können in der 2. KW an unsere Kunden verschickt werden.",
+     "explain": "Correcto c: los folletos para la feria «sind bereits im Druck», es decir, están en imprenta en este momento. a es falso porque la empresa participará por primera vez («Im nächsten Jahr wird unsere Firma erstmals an der Frühjahrsmesse in Dresden teilnehmen»), luego no es una cita habitual. b es falso: el stand ya está reservado y el montador contratado («bereits der Standplatz gebucht und der Messebauer beauftragt ist»); lo único que se ofrece es poder ver el diseño del stand en la oficina de MB."
+    },
+    {
+     "n": 18,
+     "type": "choice",
+     "prompt": "Persönliche Gegenstände",
+     "options": [
+      {
+       "key": "a",
+       "text": "können nicht in der Küche bleiben."
+      },
+      {
+       "key": "b",
+       "text": "sollen am Donnerstag mitgenommen werden."
+      },
+      {
+       "key": "c",
+       "text": "sollen weggeworfen werden."
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "werden die Mitarbeiter gebeten, bei dieser Gelegenheit persönliche Gegenstände wie zum Beispiel nicht firmeneigene Kaffeetassen, Brotdosen und Ähnliches bis Donnerstag an sich zu nehmen. Ansonsten werden diese durch AW entsorgt.",
+     "explain": "Correcto b: se pide a los empleados que recojan sus objetos personales «bis Donnerstag», o sea, con ese plazo concreto. c es falso como norma general porque el texto solo prevé tirarlos «ansonsten», esto es, si nadie los retira. a es una lectura parcialmente defendible (la cocina debe vaciarse por completo para pintarla), pero el acta no formula esa prohibición: lo que hace es fijar la obligación de retirarlos antes del jueves; de ahí la confianza media."
+    }
+   ]
+  },
+  {
+   "id": "t4_c-p53",
+   "label": "Variante 4 (Protokoll 15.04.2003)",
+   "page": 53,
+   "note": "Acta de la reunión del 15.04.2003: el texto ocupa las pp. 53-54 y las preguntas 14-18 están al final de la p. 54, de modo que no deben confundirse con las de la variante anterior (p. 52).",
+   "kind": "text",
+   "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "(neue Werbestrategie, Jobticket)\nProtokoll 15.04.2003, 14:00-16:00 Uhr\nTagungsraum: 256, Ort: Geschwister-Scholl-Platz 12, 10738 Berlin\nAnwesende: Petra Kramer (PK, Geschäftsleitung), Yvonne Schmidt (YS, Assistenz der Geschäftsleitung), Thorsten Klein (TK, Leitung Einkauf), Sonja Kühl (SK, Leitung Finanzen), Jenny Mitschke (JM, Leitung Marketing), Ilkay Ergün (IE, Leitung Produktion), Johannes Schön (JS, Leitung Personal)\nGast: Jonas Braun (Deutsches Rotes Kreuz)\nSitzungsleitung: Johannes Schön\nProtokollantin: Yvonne Schmidt\nTagesordnungspunkte:\n1. Begrüßung und Genehmigung des Protokolls der letzten Sitzung\n2. Neue Werbemaßnahmen\n3. Beschwerden über schlecht geputzte Büros\n4. Fortbildung der Ersthelfer\n5. Einführung eines Jobtickets\n6. Sonstiges\nTOP 1 Begrüßung und Genehmigung des Protokolls der letzten Sitzung\nJS begrüßt alle Anwesenden und stellt den Gast Jonas Braun vom Deutschen Roten Kreuz vor. Weiterhin bittet er um die Genehmigung des Protokolls der letzten Sitzung. SK merkt an, dass das Datum des diesjährigen Sommerfests falsch im letzten Protokoll festgehalten wurde. Dieses findet am 19.07. statt. Die Änderung wird aufgenommen, ansonsten wird das Protokoll genehmigt.\nTOP 2 Neue Werbemaßnahmen\nJM berichtet, dass die Marketingabteilung eine neue Werbestrategie entwickelt hat, um die Verkaufszahlen wieder zu verbessern. SK hatte in der letzten Sitzung berichtet, dass sie seit Januar dieses Jahres stetig zurückgegangen sind.\nUm langfristige Lösungen zu finden, wurde eine Marktanalyse in Auftrag gegeben. Bevor die Ergebnisse vorliegen, sollen aber bereits erste Maßnahmen ergriffen werden. Ein IT-Mitarbeiter erarbeitet zurzeit ein Konzept, um die Homepage der Firma etwas moderner und benutzerfreundlicher zu gestalten. Außerdem sollte man unsere Homepage möglichst auf der ersten Seite in der Suchmaschine finden können. Diese Maßnahmen wären relativ schnell und kostengünstig umsetzbar.\nAuch die Präsenz in den sozialen Medien soll weiter ausgebaut werden, um die jüngere Zielgruppe noch besser zu erreichen. JM schlägt in diesem Zusammenhang vor, kurze, unterhaltsame Werbevideos zu drehen. Für deren Produktion wurde ein Filmteam angefragt, das auf dem Markt sehr erfolgreich, aber auch sehr teuer ist. PK beauftragt JM, bis zur nächsten Sitzung noch andere, günstigere Filmteams über Produktion zu prüfen.\nTOP 3 Beschwerden über schlecht geputzte Büros\nSeit der Zusammenarbeit mit der neuen Reinigungsfirma beschweren sich viele Kollegen aus verschiedenen Abteilungen darüber, dass die tägliche Reinigung der Büros unzureichend ausgeführt wird. Kritikpunkte sind schmutzige Tische, unregelmäßig geleerte Mülleimer und unordentlich gesaugte Fußböden. Dazu kommt, dass die Reinigungskräfte bei Eintreffen der Mitarbeiter gegen 9 Uhr noch anwesend sind, obwohl die Reinigungsarbeiten bis 8.30 Uhr abgeschlossen sein sollten. JS soll Kontakt zur Reinigungsfirma aufnehmen, um das Problem zu besprechen. Sollte es zu keiner Änderung kommen, wird der Vertrag fristlos gekündigt.\nTOP 4 Fortbildung der Ersthelfer\nUnsere Ersthelfer müssen regelmäßig Fortbildungen besuchen. Dafür konnten wir Jonas Braun vom Deutschen Roten Kreuz als Kursleiter gewinnen, der zusammen mit JS aus der Personalabteilung Samstag, den 10.06. als Termin festgelegt hat. Das Training dauert neun Stunden. Es wird bei uns im Haus stattfinden und als Arbeitszeit angerechnet. Die Teamleiter sollen möglichst bald klären, ob die bisherigen Ersthelfer diese Funktion weiter übernehmen möchten oder ob es neue Interessenten gibt. Jonas Braun weist allerdings darauf hin, dass die Teilnehmerzahl auf acht Personen beschränkt ist. Die interessierten Mitarbeiter müssen sich bis zum 15.05. in der Personalabteilung anmelden.\nTOP 5 Einführung eines Jobtickets\nPK teilt mit, dass aufgrund der schwierigen Parksituation mehr Mitarbeiter dazu animiert werden sollen, öffentliche Verkehrsmittel zu nutzen. Aus diesem Grund wird sich die Firma an den Fahrtkosten der Beschäftigten in Form von Jobtickets beteiligen. Das bedeutet, dass Mitarbeiter ab dem 01.07. zu ihrer Monatskarte einen Zuschuss von 50 Prozent, maximal aber 60 Euro erhalten.\nAntragsformulare sind bei JS erhältlich. Er steht auch für Fragen zur Verfügung.\nTOP 6 Sonstiges\nTK berichtet, dass sich die Lieferzeiten unseres Zulieferers wieder normalisiert haben. Die Ursache der Verzögerungen war ein Mitarbeiterstreik in der Partnerfirma in Litauen, der aber inzwischen beigelegt wurde.\nJS teilt mit, dass von den vier neu eingestellten Mitarbeitern einer die Probezeit nicht beendet hat und seit dem 01.04. nicht mehr in der Firma tätig ist.",
+   "items": [
+    {
+     "n": 14,
+     "type": "choice",
+     "prompt": "Die neue Werbestrategie",
+     "options": [
+      {
+       "key": "a",
+       "text": "beinhaltet ein Video über die Produktionsabläufe."
+      },
+      {
+       "key": "b",
+       "text": "ist wegen der schlechten Verkaufszahlen notwendig."
+      },
+      {
+       "key": "c",
+       "text": "lässt sich sehr schnell und kostengünstig umsetzen."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "JM berichtet, dass die Marketingabteilung eine neue Werbestrategie entwickelt hat, um die Verkaufszahlen wieder zu verbessern. SK hatte in der letzten Sitzung berichtet, dass sie seit Januar dieses Jahres stetig zurückgegangen sind.",
+     "explain": "Correcto b: la estrategia publicitaria nace precisamente para mejorar unas cifras de ventas que llevan cayendo desde enero («um die Verkaufszahlen wieder zu verbessern … stetig zurückgegangen»). a es falso: los vídeos publicitarios son breves y entretenidos y van destinados a las redes sociales para captar al público joven, no tratan de los procesos de producción. c es falso por un detalle de referencia: «Diese Maßnahmen wären relativ schnell und kostengünstig umsetzbar» se refiere solo a las medidas para la página web; además el equipo de filmación contratado es «sehr teuer» y PK encarga buscar alternativas más baratas."
+    },
+    {
+     "n": 15,
+     "type": "choice",
+     "prompt": "Die Reinigungsfirma",
+     "options": [
+      {
+       "key": "a",
+       "text": "hält sich nicht an die vereinbarten Putzzeiten."
+      },
+      {
+       "key": "b",
+       "text": "putzt die Büros der Firma nicht regelmäßig."
+      },
+      {
+       "key": "c",
+       "text": "wird den Vertrag demnächst kündigen."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Dazu kommt, dass die Reinigungskräfte bei Eintreffen der Mitarbeiter gegen 9 Uhr noch anwesend sind, obwohl die Reinigungsarbeiten bis 8.30 Uhr abgeschlossen sein sollten.",
+     "explain": "Correcto a: el personal de limpieza sigue en el edificio hacia las 9 h aunque los trabajos deben estar terminados a las 8.30 h, es decir, no respeta el horario acordado. b es falso: la limpieza sí se hace a diario («die tägliche Reinigung der Büros»), lo que ocurre es que es insuficiente; el «unregelmäßig» del texto se refiere solo a los cubos de basura que no siempre se vacían. c invierte los papeles: quien amenaza con rescindir el contrato sin preaviso es la propia empresa («Sollte es zu keiner Änderung kommen, wird der Vertrag fristlos gekündigt»), no la empresa de limpieza."
+    },
+    {
+     "n": 16,
+     "type": "choice",
+     "prompt": "Die Fortbildung für Ersthelfer",
+     "options": [
+      {
+       "key": "a",
+       "text": "ist nur mit begrenzter Teilnehmerzahl möglich."
+      },
+      {
+       "key": "b",
+       "text": "müssen die Teilnehmer nur einmal absolvieren."
+      },
+      {
+       "key": "c",
+       "text": "wird beim Deutschen Roten Kreuz veranstaltet."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Jonas Braun weist allerdings darauf hin, dass die Teilnehmerzahl auf acht Personen beschränkt ist.",
+     "explain": "Correcto a: el número de participantes está limitado a ocho personas. b es falso: los primeros auxilios exigen formación continua («Unsere Ersthelfer müssen regelmäßig Fortbildungen besuchen»), no una sola vez. c es falso: Jonas Braun, del DRK, actúa como ponente, pero el curso se celebra en la propia empresa («Es wird bei uns im Haus stattfinden»)."
+    },
+    {
+     "n": 17,
+     "type": "choice",
+     "prompt": "Das Jobticket",
+     "options": [
+      {
+       "key": "a",
+       "text": "soll zu 60 Prozent finanziert werden."
+      },
+      {
+       "key": "b",
+       "text": "kann in der Personalabteilung beantragt werden."
+      },
+      {
+       "key": "c",
+       "text": "wird ab nächsten Monat eingeführt."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Antragsformulare sind bei JS erhältlich. Er steht auch für Fragen zur Verfügung.",
+     "explain": "Correcto b: los formularios de solicitud se obtienen en JS, que es «Johannes Schön (JS, Leitung Personal)», es decir, en la dirección de Personal. a confunde las cifras: la subvención es del 50 por ciento con un máximo de 60 euros. c es falso: el abono entra en vigor «ab dem 01.07.», mientras que el acta es del 15.04.2003, de modo que no es el mes siguiente."
+    },
+    {
+     "n": 18,
+     "type": "choice",
+     "prompt": "Der Streik in Litauen",
+     "options": [
+      {
+       "key": "a",
+       "text": "dauert immer noch an."
+      },
+      {
+       "key": "b",
+       "text": "fand landesweit statt."
+      },
+      {
+       "key": "c",
+       "text": "führte zu Lieferproblemen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Die Ursache der Verzögerungen war ein Mitarbeiterstreik in der Partnerfirma in Litauen, der aber inzwischen beigelegt wurde.",
+     "explain": "Correcto c: la huelga fue la causa de los retrasos en las entregas, que ahora ya se han normalizado. a es falso porque la huelga «inzwischen beigelegt wurde», ya se ha resuelto. b es falso: fue una huelga de trabajadores «in der Partnerfirma in Litauen», es decir, en la empresa asociada, no en todo el país."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.51-54: se han unido los saltos de línea del PDF dentro de cada párrafo (solo se conservan los saltos de párrafo) y los encabezados de enumeración del protocolo (TOP 1 … TOP 6) se han mantenido como inicio de párrafo.",
+  "pp.51-54: se han unido las palabras partidas por guion de final de línea del PDF («Qualitäts-sicherung» → «Qualitätssicherung», «Mee-tings» → «Meetings», «Personalabtei-lung» → «Personalabteilung», «vorüberge-hend» → «vorübergehend», «Nach-folger» → «Nachfolger», «gestie-gen» → «gestiegen», «Ent-wurf» → «Entwurf», «Einladun-gen» → «Einladungen», «sa-gen» → «sagen», «Gelegen-heit» → «Gelegenheit», «Ähnli-ches» → «Ähnliches», «Pro-duktion» → «Produktion», «dies-jährigen» → «diesjährigen», «Verkaufszah-len» → «Verkaufszahlen», «dre-hen» → «drehen», «Kritik-punkte» → «Kritikpunkte», «Reinigungs-firma» → «Reinigungsfirma», «Ver-trag» → «Vertrag», «Sams-tag» → «Samstag», «Überstun-den» → «Überstunden», «bisheri-gen» → «bisherigen», «interes-sierten» → «interessierten», «Be-schäftigten» → «Beschäftigten», «Mo-natskarte» → «Monatskarte»).",
+  "pp.51-54: se han eliminado los números de página sueltos (51, 52, 53, 54) y los encabezados repetidos «Lesen Teil 4 (вариант № 3)» y «Lesen Teil 4 (вариант № 4)»; se conservan las acotaciones temáticas entre paréntesis («(Personalthemen, Urlaubssperre)», «(neue Werbestrategie, Jobticket)») por formar parte del enunciado del original.",
+  "p.52: la opción del ítem 14 estaba escrita con la letra cirílica «с)» («с) über Personalthemen gesprochen.»); corregida a la latina «c)».",
+  "p.52: el enunciado del ítem 16 estaba escrito «КM» con la letra cirílica «К»; corregido a «KM» (Kurt Meichsner, sigla usada en el resto del acta).",
+  "p.51: corregido el espacio antes de la coma en «Ideen hierzu bitte an JM , die anschließend …» → «Ideen hierzu bitte an JM, die anschließend …».",
+  "p.53: faltaba la coma que separa a dos participantes en la lista de asistentes: «Yvonne Schmidt (YS, Assistenz der Geschäftsleitung) Thorsten Klein (TK, …» → «Yvonne Schmidt (YS, Assistenz der Geschäftsleitung), Thorsten Klein (TK, …»."
+ ]
+}

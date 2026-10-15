@@ -1,0 +1,333 @@
+{
+  "block": "t1_b",
+  "section": "lesen-t1",
+  "variants": [
+    {
+      "id": "t1_b-p11",
+      "label": "Variante 2 (test 140321, 140301)",
+      "page": 11,
+      "note": "El original indica en una segunda línea «(тоже №140321, 140301)»: esos números de test corresponden a esta misma variante.",
+      "kind": "zuordnung",
+      "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Achtung Kündigung.",
+          "text": "Das Arbeitsrecht unterscheidet zwischen personenbedingter, betriebsbedingter und verhaltensbedingter Beendigung des Arbeitsverhältnisses. Lesen Sie hier alle Informationen darüber, aus welchen Gründen der Arbeitgeber berechtigt ist zu kündigen.",
+          "distractor": ""
+        },
+        {
+          "key": "b",
+          "title": "Automobilbranche boomt nach wie vor.",
+          "text": "Vor allem im Südwesten Deutschlands können sich die Menschen weiterhin auf sichere und gut bezahlte Anstellungen in der Automobilindustrie verlassen. Warum lohnt es sich, bei einem Autobauer oder Zulieferer zu arbeiten? Welche Berufe sind am meisten gefragt?",
+          "distractor": "Ofrece empleo seguro en la industria del automóvil, pero como asalariado de un fabricante o proveedor. Junis, mecánico de automoción, no busca un puesto fijo sino montar su propio taller. Es el distractor temático de la persona 1."
+        },
+        {
+          "key": "c",
+          "title": "Firmen setzen auf flexible Arbeitsbedingungen.",
+          "text": "In vielen Branchen sind Fachkräfte gefragt wie nie zuvor. Dabei haben immer mehr Firmen Schwierigkeiten, ihre Angestellten langfristig zu halten. Wer kann, wechselt schnell zu einem Arbeitgeber mit besseren Bedingungen. Viele große Unternehmen setzen nun verstärkt auf Flexibilität und familienfreundliche Leistungen wie Firmen-Kita oder Homeoffice.",
+          "distractor": ""
+        },
+        {
+          "key": "d",
+          "title": "Förderung von Selbstständigen.",
+          "text": "In den letzten Jahren ist die Zahl der Selbstständigen stetig gestiegen. Das liegt unter anderem auch an neuen staatlichen Förderungsmöglichkeiten für Jungunternehmer, die ihren eigenen Betrieb aufmachen möchten.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Sein eigener Chef sein!",
+          "text": "Du willst keine starren Arbeitszeiten, weiten Anfahrtswege und keinen nervigen Umgang mit Kollegen und Chefs? Dann ist der Weg in die Existenzgründung eine echte Alternative. Ob als Übersetzer, Programmierer oder Steuerberater - Theo Geertz berät dich, wie du dein Fachwissen nutzen kannst, um zu Hause und auf eigene Rechnung zu arbeiten.",
+          "distractor": ""
+        },
+        {
+          "key": "f",
+          "title": "Ungelernte Arbeitskräfte weiterhin benachteiligt.",
+          "text": "Je höher die Qualifikation, desto besser die Chancen auf dem Arbeitsmarkt. Wer keine Berufsausbildung hat, läuft Gefahr, in die Langzeitarbeitslosigkeit abzustürzen. Wer Arbeit hat, muss als Ungelernter mit geringerem Gehalt und schlechteren Aufstiegschancen rechnen.",
+          "distractor": "Describe exactamente la situación de Maria (Hilfsarbeiterin sin formación), pero solo diagnostica el problema: no ofrece ninguna vía para conseguir la Berufsausbildung. Distractor de la persona 2, cuya respuesta es el anuncio h (portal de cualificación para Ungelernte)."
+        },
+        {
+          "key": "g",
+          "title": "Möglichkeiten, mit einer Kündigung umzugehen.",
+          "text": "Du fühlst dich nach einer Kündigung gedemütigt und alleine gelassen und weißt nicht, wie es weitergehen soll? Das kann auch eine Chance sein, sich neu zu orientieren und vielleicht sogar die eigene Berufung zu finden.",
+          "distractor": "Habla de la Kündigung, pero desde el punto de vista emocional y de la reorientación profesional («sich neu orientieren»), no jurídico: no sirve para «dagegen vorgehen». Distractor de la persona 5, que confunde con el anuncio a (derecho laboral)."
+        },
+        {
+          "key": "h",
+          "title": "Wege und Chancen.",
+          "text": "Das Bundesministerium für Bildung und Forschung unterstützt bei der beruflichen Qualifizierung. Es hat ein Portal eingerichtet, um vor allem Ungelernte und Geringqualifizierte sowie Arbeitnehmer in Elternzeit über passende Aus- und Weiterbildungsmöglichkeiten zu informieren.",
+          "distractor": ""
+        }
+      ],
+      "items": [
+        {
+          "n": 1,
+          "type": "choice",
+          "prompt": "Junis ist gelernter Kfz-Mechatroniker und möchte eine eigene Werkstatt gründen.",
+          "answer": "d",
+          "confidence": "mittel",
+          "quote": "Das liegt unter anderem auch an neuen staatlichen Förderungsmöglichkeiten für Jungunternehmer, die ihren eigenen Betrieb aufmachen möchten.",
+          "explain": "Junis quiere abrir su propio taller: el anuncio d es el único que ofrece apoyo estatal a quienes ponen en marcha su propio negocio («ihren eigenen Betrieb aufmachen»). Confianza media porque e también trata de la Existenzgründung, pero e se dirige a trabajo intelectual en casa (traductor, programador, asesor fiscal) y encaja mejor con la persona 4; d, en cambio, no describe perfiles de oficina y menciona expresamente la ayuda económica para montar el negocio propio."
+        },
+        {
+          "n": 2,
+          "type": "choice",
+          "prompt": "Maria arbeitet als Hilfsarbeiterin und möchte nun eine Berufsausbildung machen.",
+          "answer": "h",
+          "confidence": "hoch",
+          "quote": "Es hat ein Portal eingerichtet, um vor allem Ungelernte und Geringqualifizierte sowie Arbeitnehmer in Elternzeit über passende Aus- und Weiterbildungsmöglichkeiten zu informieren.",
+          "explain": "Maria trabaja sin cualificación y quiere hacer una formación profesional. El anuncio h es un portal público dirigido justamente a «Ungelernte und Geringqualifizierte» que informa sobre vías de cualificación. El anuncio f solo describe las desventajas de no tener formación, sin ofrecer salida alguna."
+        },
+        {
+          "n": 3,
+          "type": "choice",
+          "prompt": "Nikolett möchte sich nicht zwischen Familie und Arbeit entscheiden müssen.",
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Viele große Unternehmen setzen nun verstärkt auf Flexibilität und familienfreundliche Leistungen wie Firmen-Kita oder Homeoffice.",
+          "explain": "Nikolett no quiere verse obligada a elegir entre familia y trabajo. El anuncio c es el único que presenta medidas «familienfreundlich» (guardería de empresa, teletrabajo), es decir, compatibilidad de familia y empleo."
+        },
+        {
+          "n": 4,
+          "type": "choice",
+          "prompt": "Amin studiert Fremdsprachen und möchte nach seinem Abschluss freiberuflich arbeiten.",
+          "answer": "e",
+          "confidence": "hoch",
+          "quote": "Ob als Übersetzer, Programmierer oder Steuerberater - Theo Geertz berät dich, wie du dein Fachwissen nutzen kannst, um zu Hause und auf eigene Rechnung zu arbeiten.",
+          "explain": "Amin estudia idiomas y quiere trabajar por cuenta propia. El anuncio e ofrece asesoramiento para ejercer como «Übersetzer» (traductor, la salida directa de sus estudios) y «auf eigene Rechnung» (por cuenta propia). El anuncio d también es sobre autoempleo, pero como vía de financiación de un negocio, no como ejercicio liberal."
+        },
+        {
+          "n": 5,
+          "type": "choice",
+          "prompt": "Samita soll aus betriebsbedingten Gründen gekündigt werden und sie möchte dagegen vorgehen.",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Das Arbeitsrecht unterscheidet zwischen personenbedingter, betriebsbedingter und verhaltensbedingter Beendigung des Arbeitsverhältnisses. Lesen Sie hier alle Informationen darüber, aus welchen Gründen der Arbeitgeber berechtigt ist zu kündigen.",
+          "explain": "Samita va a ser despedida «aus betriebsbedingten Gründen». El anuncio a reproduce literalmente esa expresión y explica cuándo está justificado el despido, que es justo lo que hay que comprobar para defenderse. El anuncio g también menciona la Kündigung, pero solo como punto de partida emocional para reorientarse."
+        }
+      ]
+    },
+    {
+      "id": "t1_b-p12",
+      "label": "Variante 3",
+      "page": 12,
+      "note": "",
+      "kind": "zuordnung",
+      "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Pflegefreistellung für Mütter und Väter.",
+          "text": "Arbeitnehmerinnen und Arbeitnehmer haben das Recht auf Freistellung am Arbeitsplatz, wenn ein im Haushalt lebendes Kind erkrankt und keine Betreuungsmöglichkeit vorhanden ist. Die Freistellung ist pro Arbeitsjahr begrenzt. In der Probezeit sollte man damit vorsichtig sein, da hier andere Kündigungsfristen gelten.",
+          "distractor": "Resuelve el caso del hijo enfermo con días de permiso para cuidarlo en casa («Freistellung»), no con la posibilidad de llevarlo a la oficina. Distractor de la persona 4, cuya respuesta es el anuncio f (Rechte berufstätiger Eltern / Kinder am Arbeitsplatz)."
+        },
+        {
+          "key": "b",
+          "title": "Tipps für Frauen im Beruf.",
+          "text": "Frauen verkaufen sich oft unter Wert. Es ist besonders wichtig, dass Sie ausreichend über Ihre Rechte im Berufsleben informiert sind. Unsere Expertin für Arbeitsrecht gibt Tipps für Gehaltsverhandlungen und ein selbstbewusstes Auftreten. Außerdem informiert sie darüber, was Sie in einem Bewerbungsgespräch nicht erzählen müssen.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Damit sich der Aufwand lohnt.",
+          "text": "Stellenangebote online zu schalten, kann für Unternehmen schnell sehr kostspielig werden. Nicht nur die Bekanntheit der Webseite ist dafür entscheidend, sondern auch die regionale Reichweite und der Grad der Spezialisierung.",
+          "distractor": "Se dirige a empresas que quieren publicar ofertas de empleo en Internet (costes, alcance, especialización), no a quien busca trabajo en la red. Distractor de la persona 2."
+        },
+        {
+          "key": "d",
+          "title": "Der Bundesverband der Tourismusbranche informiert.",
+          "text": "Trotz anhaltend großer Nachfrage von Seiten der Arbeitgeber ist die Zahl der Bewerbungen rückläufig. Auch auf dem Ausbildungsmarkt fehlt es an jungen Menschen, die sich für dieses Arbeitsfeld interessieren. Offene Stellen werden demzufolge zügig besetzt.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Informationen rund um den Mutterschutz.",
+          "text": "Frauen dürfen nach dem Mutterschutzgesetz während einer Schwangerschaft und bis zu vier Monate nach der Geburt nicht gekündigt werden. Voraussetzung hierfür ist jedoch, dass der Arbeitgeber zum Zeitpunkt der Kündigung von der Schwangerschaft wusste.",
+          "distractor": "Trata del embarazo, pero desde la protección contra el despido (Mutterschutzgesetz), no de qué hay que contar o no en una entrevista. Es el distractor temático de la persona 1."
+        },
+        {
+          "key": "f",
+          "title": "Rechte berufstätiger Eltern.",
+          "text": "Eltern haben keinen Rechtsanspruch darauf, ihre Kinder am Arbeitsplatz zu betreuen. Die Entscheidung unterliegt der Zustimmung des Arbeitgebers und viele sind damit einverstanden, wenn sich so vermeiden lässt, dass sich die Eltern krankschreiben lassen. Arbeitsplätze, bei denen die Sicherheit des Kindes gefährdet ist, sind von dieser Regelung ausgeschlossen.",
+          "distractor": ""
+        },
+        {
+          "key": "g",
+          "title": "Vom Traum zur Realität.",
+          "text": "Als angehender Gründer brauchen Sie nicht nur Branchenkenntnisse, sondern auch Wissen über betriebswirtschaftliche Vorgänge. Vom Businessplan und der richtigen Finanzierung über vernünftige Personalplanung bis hin zur Einholung der notwendigen Lizenzen kommen nun viele Dinge auf Sie zu.",
+          "distractor": ""
+        },
+        {
+          "key": "h",
+          "title": "Die richtige Wahl spart Zeit und Frust.",
+          "text": "Die Suche nach einer neuen Stelle ist extrem zeitaufwendig. Im Internet erscheint das Angebot an offenen Stellen riesig, dennoch bleibt der Erfolg oft aus. Eine der wichtigsten Voraussetzungen ist es also, Jobangebote richtig zu filtern, um ohne großen Zeitaufwand die richtige Anzeige zu finden.",
+          "distractor": ""
+        }
+      ],
+      "items": [
+        {
+          "n": 1,
+          "type": "choice",
+          "prompt": "Lamia überlegt, ob sie im Vorstellungsgespräch ihre Schwangerschaft erwähnen muss.",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Außerdem informiert sie darüber, was Sie in einem Bewerbungsgespräch nicht erzählen müssen.",
+          "explain": "Lamia se pregunta si debe mencionar su embarazo en la entrevista. El anuncio b anuncia expresamente información sobre lo que no hay que contar en una entrevista de trabajo, que es justo su duda. El anuncio e también habla del embarazo, pero solo de la protección frente al despido, no de la entrevista."
+        },
+        {
+          "n": 2,
+          "type": "choice",
+          "prompt": "Raymond möchte im Internet einen Job finden.",
+          "answer": "h",
+          "confidence": "hoch",
+          "quote": "Eine der wichtigsten Voraussetzungen ist es also, Jobangebote richtig zu filtern, um ohne großen Zeitaufwand die richtige Anzeige zu finden.",
+          "explain": "Raymond busca empleo por Internet. El anuncio h explica cómo filtrar correctamente las ofertas en la red para no perder tiempo. El anuncio c también trata de ofertas de empleo online, pero está pensado para empresas que las publican."
+        },
+        {
+          "n": 3,
+          "type": "choice",
+          "prompt": "Karl will sich in der Gastronomie selbstständig machen.",
+          "answer": "g",
+          "confidence": "hoch",
+          "quote": "Vom Businessplan und der richtigen Finanzierung über vernünftige Personalplanung bis hin zur Einholung der notwendigen Lizenzen kommen nun viele Dinge auf Sie zu.",
+          "explain": "Karl quiere establecerse por su cuenta en la hostelería. El anuncio g se dirige al «angehender Gründer» y enumera plan de negocio, financiación y sobre todo la obtención de las licencias necesarias, trámite típico de un local de restauración."
+        },
+        {
+          "n": 4,
+          "type": "choice",
+          "prompt": "Sean ist unsicher, ob er seinen kranken Sohn mit ins Büro nehmen darf.",
+          "answer": "f",
+          "confidence": "hoch",
+          "quote": "Eltern haben keinen Rechtsanspruch darauf, ihre Kinder am Arbeitsplatz zu betreuen. Die Entscheidung unterliegt der Zustimmung des Arbeitgebers",
+          "explain": "Sean duda si puede llevar a su hijo enfermo a la oficina. El anuncio f responde exactamente a eso: no existe derecho a que los hijos estén en el puesto de trabajo, decide el empleador. El anuncio a también parte de un hijo enfermo, pero ofrece quedarse en casa, no llevarlo consigo."
+        },
+        {
+          "n": 5,
+          "type": "choice",
+          "prompt": "Ramona interessiert sich für Jobchancen als Reiseverkehrskauffrau.",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Der Bundesverband der Tourismusbranche informiert. Trotz anhaltend großer Nachfrage von Seiten der Arbeitgeber ist die Zahl der Bewerbungen rückläufig.",
+          "explain": "Ramona se interesa por las salidas profesionales de «Reiseverkehrskauffrau», un perfil del sector turístico. El anuncio d es el del Bundesverband der Tourismusbranche y describe la situación del mercado laboral y de formación en esa rama, con alta demanda de trabajadores."
+        }
+      ]
+    },
+    {
+      "id": "t1_b-p13",
+      "label": "Variante 3 (nueva versión 07.2024)",
+      "page": 13,
+      "note": "Nueva versión (07.2024) de la variante de la p.12: cambian los nombres y el orden de las personas y se han reescrito los anuncios a), c), d) y f). Por eso las respuestas cambian de número, aunque el conjunto de anuncios utilizados es el mismo {b, d, f, g, h}.",
+      "kind": "zuordnung",
+      "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Familienmitglieder betreuen.",
+          "text": "Eltern haben einen Rechtsanspruch darauf, ihre kranken Kinder zu pflegen. Dafür haben sie eine bestimmte Anzahl an Tagen zur Verfügung, an denen sie freinehmen können. Aber generell gilt: kranke Personen müssen zu Hause bleiben.",
+          "distractor": "Da días libres para cuidar en casa a los hijos enfermos y añade que «kranke Personen müssen zu Hause bleiben»: justo lo contrario de llevarlos al puesto de trabajo. Distractor de la persona 3."
+        },
+        {
+          "key": "b",
+          "title": "Tipps für Frauen im Beruf.",
+          "text": "Frauen verkaufen sich oft unter Wert. Es ist besonders wichtig, dass Sie ausreichend über Ihre Rechte im Berufsleben informiert sind. Unsere Expertin für Arbeitsrecht gibt Tipps für Gehaltsverhandlungen und ein selbstbewusstes Auftreten. Außerdem informiert sie darüber, was Sie in einem Bewerbungsgespräch nicht erzählen müssen.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Damit sich der Aufwand lohnt.",
+          "text": "Stellenangebote online zu schalten, kann für Unternehmen schnell sehr kostspielig werden. Für den Erfolg muss unbedingt das richtige Stelleportal gewählt werden. Das gilt insbesondere für neu gegründete Unternehmen, die sich mehrfache Anzeigen finanziell nicht leisten können.",
+          "distractor": "Se dirige a empresas que publican ofertas en Internet y, en esta versión, menciona expresamente a las «neu gegründete Unternehmen». Es distractor de la persona 1 (quien busca empleo, no quien lo publica) y, por la mención a las empresas de nueva creación, también se confunde con la persona 2, que quiere fundar un negocio."
+        },
+        {
+          "key": "d",
+          "title": "Der Bundesverband der Tourismusbranche informiert.",
+          "text": "Trotz anhaltend großer Nachfrage von Seiten der Arbeitgeber ist die Zahl der Bewerbungen rückläufig. Auch auf dem Ausbildungsmarkt fehlt es an jungen Menschen, die sich für dieses Arbeitsfeld interessieren. Demzufolge gibt es aktuell eine Reihe offener Stellen.",
+          "distractor": ""
+        },
+        {
+          "key": "e",
+          "title": "Informationen rund um den Mutterschutz.",
+          "text": "Frauen dürfen nach dem Mutterschutzgesetz während einer Schwangerschaft und bis zu vier Monate nach der Geburt nicht gekündigt werden. Voraussetzung hierfür ist jedoch, dass der Arbeitgeber zum Zeitpunkt der Kündigung von der Schwangerschaft wusste.",
+          "distractor": "Vuelve a tratar el embarazo desde la prohibición de despido (Mutterschutzgesetz), no desde la entrevista de trabajo. Distractor temático de la persona 5."
+        },
+        {
+          "key": "f",
+          "title": "Kinder am Arbeitsplatz.",
+          "text": "Häufig stimmen Arbeitgeber der Bitte von Eltern zu, ihre Kinder mit zur Arbeit zu bringen, wenn deren Betreuung kurzfristig ausfällt. Damit können Fehlzeiten vermieden werden. Diese Möglichkeit besteht nicht, wenn die Sicherheit des Kindes am Arbeitsplatz gefährdet ist.",
+          "distractor": ""
+        },
+        {
+          "key": "g",
+          "title": "Vom Traum zur Realität.",
+          "text": "Als angehender Gründer brauchen Sie nicht nur Branchenkenntnisse, sondern auch Wissen über betriebswirtschaftliche Vorgänge. Vom Businessplan und der richtigen Finanzierung über vernünftige Personalplanung bis hin zur Einholung der notwendigen Lizenzen kommen nun viele Dinge auf Sie zu.",
+          "distractor": ""
+        },
+        {
+          "key": "h",
+          "title": "Die richtige Wahl spart Zeit und Frust.",
+          "text": "Der Stellemarkt spielt sich heutzutage fast ausschließlich online ab. Im Internet erscheint das Angebot an offenen Stellen riesig, dennoch bleibt der Erfolg oft aus. Eine der wichtigsten Voraussetzungen ist es also, Jobangebote richtig zu filtern, um ohne großen Zeitaufwand die richtige Anzeige zu finden.",
+          "distractor": ""
+        }
+      ],
+      "items": [
+        {
+          "n": 1,
+          "type": "choice",
+          "prompt": "Yuan Javier möchte im Internet einen Job finden",
+          "answer": "h",
+          "confidence": "hoch",
+          "quote": "Der Stellemarkt spielt sich heutzutage fast ausschließlich online ab. Im Internet erscheint das Angebot an offenen Stellen riesig",
+          "explain": "Yuan Javier busca trabajo por Internet. El anuncio h (reescrito en esta versión para empezar con «Der Stellemarkt spielt sich … online ab») trata precisamente de la búsqueda de empleo en la red y de filtrar bien las ofertas. El anuncio c es para empresas que publican las ofertas."
+        },
+        {
+          "n": 2,
+          "type": "choice",
+          "prompt": "Paul will sich in der Gastronomie selbstständig machen.",
+          "answer": "g",
+          "confidence": "hoch",
+          "quote": "Als angehender Gründer brauchen Sie nicht nur Branchenkenntnisse, sondern auch Wissen über betriebswirtschaftliche Vorgänge. Vom Businessplan und der richtigen Finanzierung über vernünftige Personalplanung bis hin zur Einholung der notwendigen Lizenzen kommen nun viele Dinge auf Sie zu.",
+          "explain": "Paul quiere establecerse en la hostelería. El anuncio g es el que asesora al «angehender Gründer» (plan de negocio, financiación, licencias), trámites propios de abrir un local. El anuncio c menciona empresas de nueva creación, pero solo en relación con anuncios de empleo."
+        },
+        {
+          "n": 3,
+          "type": "choice",
+          "prompt": "Avio ist unsicher, ob er seinen kranken Sohn mit ins Büro nehmen darf.",
+          "answer": "f",
+          "confidence": "hoch",
+          "quote": "Häufig stimmen Arbeitgeber der Bitte von Eltern zu, ihre Kinder mit zur Arbeit zu bringen, wenn deren Betreuung kurzfristig ausfällt. Damit können Fehlzeiten vermieden werden.",
+          "explain": "Avio duda si puede llevar a su hijo enfermo a la oficina. El anuncio f se titula ahora «Kinder am Arbeitsplatz» y confirma que el empleador suele aceptarlo cuando el cuidado falla de forma imprevista. El anuncio a también parte de hijos enfermos, pero resuelve el caso con días de permiso en casa."
+        },
+        {
+          "n": 4,
+          "type": "choice",
+          "prompt": "Nora interessiert sich für Jobchancen als Reiseverkehrskauffrau.",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Der Bundesverband der Tourismusbranche informiert. Trotz anhaltend großer Nachfrage von Seiten der Arbeitgeber ist die Zahl der Bewerbungen rückläufig. Auch auf dem Ausbildungsmarkt fehlt es an jungen Menschen, die sich für dieses Arbeitsfeld interessieren. Demzufolge gibt es aktuell eine Reihe offener Stellen.",
+          "explain": "Nora busca oportunidades como «Reiseverkehrskauffrau», profesión del sector turístico. El anuncio d, del Bundesverband der Tourismusbranche, informa de ese mercado; en esta versión la última frase se ha reformulado para destacar que hay bastantes vacantes («eine Reihe offener Stellen»)."
+        },
+        {
+          "n": 5,
+          "type": "choice",
+          "prompt": "Anna Maria überlegt, ob sie im Vorstellungsgespräch ihre Schwangerschaft erwähnen muss.",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Außerdem informiert sie darüber, was Sie in einem Bewerbungsgespräch nicht erzählen müssen.",
+          "explain": "Anna Maria se pregunta si debe mencionar su embarazo en la entrevista. El anuncio b ofrece exactamente esa información: qué no hace falta contar en una entrevista. El anuncio e vuelve a ser el distractor, porque solo trata del Mutterschutz y del despido."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.11: corregido «KIZ-Mechatroniker» → «Kfz-Mechatroniker» (errata evidente del OCR).",
+    "p.11: corregido «Junis ist gelernt Kfz-Mechatroniker» → «gelernter» (el OCR perdió la -r final).",
+    "p.11 h): añadido el punto que falta tras «bei der beruflichen Qualifizierung» antes de «Es hat ein Portal eingerichtet».",
+    "p.12 h): corregido «Je Suche nach einer neuen Stelle» → «Die Suche nach einer neuen Stelle» (el OCR leyó «Je» por «Die»).",
+    "p.12 h) y p.13 h): corregido «dennoch bleibt der Erfolge oft aus» → «der Erfolg» (aparece en ambas variantes).",
+    "p.13 a): añadida la puntuación que falta en «Aber generell gilt: kranke Personen müssen zu Hause bleiben».",
+    "Todas las variantes: se han reunido las palabras cortadas por guion de final de línea (p. ej. «Zulie-ferer» → «Zulieferer», «Schwierigkei-ten» → «Schwierigkeiten», «interessie-ren» → «interessieren»). No son erratas del original, sino artefactos del salto de línea."
+  ]
+}

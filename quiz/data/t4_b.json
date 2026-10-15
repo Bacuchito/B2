@@ -1,0 +1,267 @@
+{
+  "block": "t4_b",
+  "section": "lesen-t4",
+  "variants": [
+    {
+      "id": "t4_b-p47",
+      "label": "Variante 1",
+      "page": 47,
+      "note": "Primera versión del Protokoll «neue Werbemaßnahmen, Frau Schlosser» (pp. 47-48): el acta ocupa las dos páginas y las cinco preguntas 14-18 están al final de la p. 48. Es la versión sin la marca «Новая версия»; la p. 49 trae una segunda versión del mismo acta con el TOP 3 reescrito y preguntas nuevas (→ t4_b-p49). Las opciones de los ítems 16, 17 y 18 aparecen aquí en otro orden que en esa segunda versión.",
+      "kind": "text",
+      "intro": "Lesen Sie das Protokoll und die Aufgaben 14-18. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "(neue Werbemaßnahmen, Frau Schlosser)\n\nProtokoll 14.02.20XX, 08:00-11:45 Uhr\nAbteilung 4, Besprechungszimmer 2\nTeilnehmende: Holger Marschke (HM, Teamleiter), Cornelia Markert (CM, Marketingabteilung), Susanne Willke (SW, Marketingabteilung), Monique Rüdiger (MR, Betriebsratsmitglied)\nEntschuldigt: Martin Hamann (MH, Qualitätssicherung)\nProtokollantin: Marianne Schiller (MS)\nSitzungsleitung: Andreas Mertens (AM)\n\nTagesordnungspunkte:\n1. Begrüßung und Genehmigung des letzten Protokolls\n2. Neue Marketingmaßnahmen\n3. Qualitätsmanagement\n4. Anpassung der Pausenzeiten\n5. Standorte der neuen Fahrradständer\n6. Sonstiges\n\nTOP 1 Begrüßung und Genehmigung des letzten Protokolls\nAM begrüßt alle Teilnehmenden und eröffnet die heutige Sitzung. Das Protokoll des letzten Meetings am 10.01.20XX wird ohne weitere Änderungen und Ergänzungen einstimmig per Handzeichen genehmigt. Auf Antrag von MR, die wegen anderweitiger terminlicher Verpflichtungen nicht bis zum Ende am Meeting teilnehmen kann, wird die Reihenfolge der Tagesordnung geändert und die TOPs 4 und 5 werden am heutigen Vormittag vorgezogen.\n\nTOP 2 Neue Marketingmaßnahmen\nCM und SW berichten, dass traditionelle Marketingmaßnahmen wie z. B. Fernsehwerbung zu den Hauptsendezeiten zu teuer sind. Deshalb sollen soziale Medien wie Facebook, Instagram u. a. verstärkt genutzt werden. Weitere Möglichkeiten, Werbung zu machen, müssen von der Marketingabteilung noch erörtert werden. Es ist geplant, neue Wege zu gehen und zusätzlich zu den lokalen Geschäften einen Online-Shop zu starten. Für alle diese Maßnahmen steht insgesamt ein Budget von 150.000 € zur Verfügung. CM wird beauftragt, dafür eine spezialisierte Werbeagentur zu finden sowie einen Kostenvoranschlag der betreffenden Agentur einzuholen, SW soll Kontakte zu professionellen Fotografen und Textern herstellen und Angebote anfordern. Ergebnisse der beiden Recherchen werden bei der nächsten Besprechung am 10.03.20XX vorgestellt. Das weitere Vorgehen wird definiert, wenn alle nötigen Informationen vorliegen.\n\nTOP 3 Qualitätsmanagement\nZu den in der Besprechung vom 11.01.20XX vorgeschlagenen Maßnahmen hat MH im Vorfeld allen Sitzungsteilnehmenden erste Ergebnisse des Arbeitskreises „Optimierung innerer Kommunikationsstrukturen\" in Form eines Konzeptpapiers zukommen lassen. Da MH an der heutigen Sitzung aus gesundheitlichen Gründen nicht teilnehmen kann, ist gemeinsam beschlossen worden, die Diskussion zu diesem Punkt bis zur nächsten Besprechung am 10.03.20XX zu vertagen. Damit ist die Umsetzung der geplanten Veränderungen auf das nächste Quartal verschoben.\n\nTOP 4 Anpassung der Pausenzeiten\nAufgrund mehrfacher Anfragen von Seiten der Abteilungsleiter regt MR an, dass die Zeiten, in denen Pausen gemacht werden können, flexibler gestaltet werden. Sie schlägt ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr vor, in dem eine Mittagspause von 30 Minuten gemacht werden kann. So können die betrieblichen Notwendigkeiten und Arbeitsabläufe verschiedener Abteilungen besser berücksichtigt werden. Dieser Vorschlag wird einstimmig angenommen, MR wird beauftragt, eine entsprechende Mitteilung an die Belegschaft über die Änderung der Pausenzeiten zu verfassen.\n\nTOP 5 Standorte der neuen Fahrradständer\nMR teilt mit, dass auf Wunsch der Belegschaft zwei weitere Fahrradständer auf dem Gelände aufgestellt werden. Dabei wurden zwei Standorte favorisiert und der erste Fahrradständer wird neben Tor 2, der zweite neben Tor 3 installiert. So steht den Mitarbeitenden nun an jedem Zugang zum Gelände eine Möglichkeit zur Verfügung, ihr Fahrrad abzustellen. Dementsprechend werden der Lageplan überarbeitet und die neuen Standorte der Fahrradständer eingezeichnet. MR formuliert dazu eine Mitteilung und wird diese intern kommunizieren und am Schwarzen Brett des Betriebsrats aushängen.\n\nTOP 6 Sonstiges\nDie Assistentin der Geschäftsleitung, Frau Schlosser, verabschiedet sich in den Mutterschutz und die anschließende Elternzeit. Ansprechpartnerin bis zu ihrer Rückkehr wird für alle ab sofort Frau Meier im Büro von Frau Schmidt sein. Frau Meier wird eine Abschiedsfeier für den 16.03.20XX organisieren und sich auch um kleine Geschenke für Mutter und Kind im Namen der Kolleginnen und Kollegen kümmern.",
+      "items": [
+        {
+          "n": 14,
+          "type": "choice",
+          "prompt": "Für neue Werbemaßnahmen",
+          "options": [
+            {
+              "key": "a",
+              "text": "werden kreative Mitarbeiter gesucht."
+            },
+            {
+              "key": "b",
+              "text": "wird ein Gesamtbetrag von 150.000 € bereitgestellt."
+            },
+            {
+              "key": "c",
+              "text": "wurden Kostenvoranschläge angefragt."
+            }
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Für alle diese Maßnahmen steht insgesamt ein Budget von 150.000 € zur Verfügung.",
+          "explain": "Correcto b: el acta fija para todas las medidas publicitarias un presupuesto total («insgesamt ein Budget») de 150.000 €, que es exactamente el importe de la opción. a es falso porque no se busca personal creativo propio: lo que se hace es encargar a CM que encuentre una agencia de publicidad externa y a SW que contacte con fotógrafos y redactores («professionellen Fotografen und Textern»), proveedores externos, no trabajadores de la plantilla. c es falso porque los presupuestos todavía no se han pedido: CM «wird beauftragt … einen Kostenvoranschlag … einzuholen» (encargo para el futuro) y los resultados de ambas búsquedas se presentarán en la reunión del 10.03.20XX."
+        },
+        {
+          "n": 15,
+          "type": "choice",
+          "prompt": "Herr Hamann",
+          "options": [
+            {
+              "key": "a",
+              "text": "hat bereits ein Konzept vorbereitet."
+            },
+            {
+              "key": "b",
+              "text": "ist dienstlich verhindert."
+            },
+            {
+              "key": "c",
+              "text": "stellt die Resultate seiner Arbeit vor."
+            }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Zu den in der Besprechung vom 11.01.20XX vorgeschlagenen Maßnahmen hat MH im Vorfeld allen Sitzungsteilnehmenden erste Ergebnisse des Arbeitskreises „Optimierung innerer Kommunikationsstrukturen\" in Form eines Konzeptpapiers zukommen lassen.",
+          "explain": "Correcto a: MH (Martin Hamann) ya había elaborado un documento de concepto («in Form eines Konzeptpapiers») con los primeros resultados de su grupo de trabajo y lo envió a todos los participantes antes de la reunión, es decir, tiene un concepto ya preparado. b es falso por el motivo de la ausencia: MH no puede asistir «aus gesundheitlichen Gründen» (razones de salud), no por motivos de trabajo («dienstlich»). c es falso porque precisamente no puede asistir y el punto se aplaza a la reunión del 10.03.20XX."
+        },
+        {
+          "n": 16,
+          "type": "choice",
+          "prompt": "Die Mittagspause",
+          "options": [
+            {
+              "key": "a",
+              "text": "ist 30 Minuten lang."
+            },
+            {
+              "key": "b",
+              "text": "wird um 30 Minuten verlängert."
+            },
+            {
+              "key": "c",
+              "text": "wird um 30 Minuten verschoben."
+            }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Sie schlägt ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr vor, in dem eine Mittagspause von 30 Minuten gemacht werden kann.",
+          "explain": "Correcto a: la propuesta de MR es una pausa de mediodía «von 30 Minuten», es decir, de 30 minutos de duración. b y c confunden lo que se amplía: lo que se amplía es la franja horaria en la que se puede hacer la pausa («ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr»), no la pausa misma, que sigue siendo de 30 minutos; y nada se pospone 30 minutos."
+        },
+        {
+          "n": 17,
+          "type": "choice",
+          "prompt": "Der Standort der neuen Fahrradständer",
+          "options": [
+            {
+              "key": "a",
+              "text": "wird an der Informationstafel bekanntgegeben."
+            },
+            {
+              "key": "b",
+              "text": "wird dem Betriebsrat mitgeteilt."
+            },
+            {
+              "key": "c",
+              "text": "wird zwischen Tor 2 und 3 geplant."
+            }
+          ],
+          "answer": "a",
+          "confidence": "mittel",
+          "quote": "MR formuliert dazu eine Mitteilung und wird diese intern kommunizieren und am Schwarzen Brett des Betriebsrats aushängen.",
+          "explain": "Correcto a: el emplazamiento se da a conocer mediante un comunicado que se publica en el tablón de anuncios («am Schwarzen Brett … aushängen»), que es la «Informationstafel» de la opción; además se retoca el plano de situación con las nuevas ubicaciones. La confianza es media porque el texto dice «Schwarzes Brett», no literalmente «Informationstafel». c es falso aunque repite los nombres correctos: las dos estructuras se instalan una «neben Tor 2» y la otra «neben Tor 3», junto a cada puerta y no entre ambas. b es falso porque el comunicado va dirigido a toda la plantilla («intern kommunizieren», «an die Belegschaft») y se cuelga en el tablón del comité de empresa, no es un aviso dirigido al Betriebsrat."
+        },
+        {
+          "n": 18,
+          "type": "choice",
+          "prompt": "Frau Schlosser",
+          "options": [
+            {
+              "key": "a",
+              "text": "macht Frau Schmidt ein Geschenk."
+            },
+            {
+              "key": "b",
+              "text": "verlässt das Unternehmen."
+            },
+            {
+              "key": "c",
+              "text": "wird von Frau Meier vertreten."
+            }
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Ansprechpartnerin bis zu ihrer Rückkehr wird für alle ab sofort Frau Meier im Büro von Frau Schmidt sein.",
+          "explain": "Correcto c: mientras Frau Schlosser está de baja por maternidad y luego de permiso parental, Frau Meier pasa a ser la persona de contacto «bis zu ihrer Rückkehr», es decir, la sustituye. b es falso porque no abandona la empresa: se marcha al Mutterschutz y a la Elternzeit y se prevé su regreso. a es falso: quien se ocupa de los regalos es Frau Meier («Frau Meier wird … sich auch um kleine Geschenke für Mutter und Kind … kümmern»), y además en nombre de los colegas; Frau Schmidt solo aparece como la persona en cuyo despacho trabaja Frau Meier."
+        }
+      ]
+    },
+    {
+      "id": "t4_b-p49",
+      "label": "Variante 1 (Новая версия от 07.2024)",
+      "page": 49,
+      "note": "Segunda versión del mismo acta (pp. 49-50, «Новая версия от 07.2024: пункт 3 новый и новые вопросы»): el TOP 3 está reescrito (ahora MH envía propuestas para mejorar la calidad del producto y el punto se aplaza) y los ítems 14-18 son nuevos, con las opciones de 16, 17 y 18 en otro orden; las respuestas cambian de letra respecto a t4_b-p47. Se ha eliminado la anotación rusa de la cabecera. El acta ocupa las pp. 49-50 y las preguntas están al final de la p. 50.",
+      "kind": "text",
+      "intro": "Lesen Sie das Protokoll und die Aufgaben 14-18. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "(neue Werbemaßnahmen, Frau Schlosser)\n\nProtokoll 14.02.20XX, 08:00-11:45 Uhr\nAbteilung 4, Besprechungszimmer 2\nTeilnehmende: Holger Marschke (HM, Teamleiter), Cornelia Markert (CM, Marketingabteilung), Susanne Willke (SW, Marketingabteilung), Monique Rüdiger (MR, Betriebsratsmitglied)\nEntschuldigt: Martin Hamann (MH, Qualitätssicherung)\nProtokollantin: Marianne Schiller (MS)\nSitzungsleitung: Andreas Mertens (AM)\n\nTagesordnungspunkte:\n1. Begrüßung und Genehmigung des letzten Protokolls\n2. Neue Marketingmaßnahmen\n3. Qualitätsmanagement\n4. Anpassung der Pausenzeiten\n5. Standorte der neuen Fahrradständer\n6. Sonstiges\n\nTOP 1 Begrüßung und Genehmigung des letzten Protokolls\nAM begrüßt alle Teilnehmenden und eröffnet die heutige Sitzung. Das Protokoll des letzten Meetings am 10.01.20XX wird ohne weitere Änderungen und Ergänzungen einstimmig per Handzeichen genehmigt. Auf Antrag von MR, die wegen anderweitiger terminlicher Verpflichtungen nicht bis zum Ende am Meeting teilnehmen kann, wird die Reihenfolge der Tagesordnung geändert und die TOPs 4 und 5 werden am heutigen Vormittag vorgezogen.\n\nTOP 2 Neue Marketingmaßnahmen\nCM und SW berichten, dass traditionelle Marketingmaßnahmen wie z. B. Fernsehwerbung zu den Hauptsendezeiten zu teuer sind. Deshalb sollen soziale Medien wie Facebook, Instagram u. a. verstärkt genutzt werden. Weitere Möglichkeiten, Werbung zu machen, müssen von der Marketingabteilung noch erörtert werden. Es ist geplant, neue Wege zu gehen und zusätzlich zu den lokalen Geschäften einen Online-Shop zu starten. Für alle diese Maßnahmen steht insgesamt ein Budget von 150.000 € zur Verfügung. CM wird beauftragt, dafür eine spezialisierte Werbeagentur zu finden sowie einen Kostenvoranschlag der betreffenden Agentur einzuholen, SW soll Kontakte zu professionellen Fotografen und Textern herstellen und Angebote anfordern. Ergebnisse der beiden Recherchen werden bei der nächsten Besprechung am 10.03.20XX vorgestellt. Das weitere Vorgehen wird definiert, wenn alle nötigen Informationen vorliegen.\n\nTOP 3 Qualitätsmanagement\nMH hat vor der heutigen Sitzung allen Anwesenden erste Vorschläge zur Verbesserung der Produktqualität zugeschickt, die er mit seiner Arbeitsgruppe erstellt hat. Da MH heute wegen Krankheit nicht an dem Meeting teilnehmen kann, wird beschlossen, diesen Punkt bis zur nächsten Besprechung am 10.03.20XX zu vertagen. Damit verschiebt sich auch die Umsetzung der Maßnahmen zur Qualitätssicherung. MH hat aber zugesagt, bis Anfang März noch weitere Ideen erarbeiten und zu kommunizieren.\n\nTOP 4 Anpassung der Pausenzeiten\nAufgrund mehrfacher Anfragen von Seiten der Abteilungsleiter regt MR an, dass die Zeiten, in denen Pausen gemacht werden können, flexibler gestaltet werden. Sie schlägt ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr vor, in dem eine Mittagspause von 30 Minuten gemacht werden kann. So können die betrieblichen Notwendigkeiten und Arbeitsabläufe verschiedener Abteilungen besser berücksichtigt werden. Dieser Vorschlag wird einstimmig angenommen, MR wird beauftragt, eine entsprechende Mitteilung an die Belegschaft über die Änderung der Pausenzeiten zu verfassen.\n\nTOP 5 Standorte der neuen Fahrradständer\nMR teilt mit, dass auf Wunsch der Belegschaft zwei weitere Fahrradständer auf dem Gelände aufgestellt werden. Dabei wurden zwei Standorte favorisiert und der erste Fahrradständer wird neben Tor 2, der zweite neben Tor 3 installiert. So steht den Mitarbeitenden nun an jedem Zugang zum Gelände eine Möglichkeit zur Verfügung, ihr Fahrrad abzustellen. Dementsprechend werden der Lageplan überarbeitet und die neuen Standorte der Fahrradständer eingezeichnet. MR formuliert dazu eine Mitteilung und wird diese intern kommunizieren und am Schwarzen Brett des Betriebsrats aushängen.\n\nTOP 6 Sonstiges\nDie Assistentin der Geschäftsleitung, Frau Schlosser, verabschiedet sich in den Mutterschutz und die anschließende Elternzeit. Ansprechpartnerin bis zu ihrer Rückkehr wird für alle ab sofort Frau Meier im Büro von Frau Schmidt sein. Frau Meier wird eine Abschiedsfeier für den 16.03.20XX organisieren und sich auch um kleine Geschenke für Mutter und Kind im Namen der Kolleginnen und Kollegen kümmern.",
+      "items": [
+        {
+          "n": 14,
+          "type": "choice",
+          "prompt": "Die neuen Werbemaßnahmen",
+          "options": [
+            {
+              "key": "a",
+              "text": "dürfen bis zu 150.000 Euro kosten."
+            },
+            {
+              "key": "b",
+              "text": "sollen Online-Medien ausschließen."
+            },
+            {
+              "key": "c",
+              "text": "werden bis zur nächsten Teamsitzung umgesetzt."
+            }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Für alle diese Maßnahmen steht insgesamt ein Budget von 150.000 € zur Verfügung.",
+          "explain": "Correcto a: el presupuesto disponible para todas las medidas es de 150.000 €, de modo que pueden costar hasta esa cantidad. b es falso y contradice el acta: lo que se decide es precisamente utilizar más los medios sociales como Facebook e Instagram («Deshalb sollen soziale Medien … verstärkt genutzt werden») y abrir además una tienda en línea. c es falso porque en la reunión del 10.03.20XX solo se presentarán los resultados de las dos búsquedas y el procedimiento se definirá cuando esté toda la información: la ejecución no está prevista para la próxima reunión."
+        },
+        {
+          "n": 15,
+          "type": "choice",
+          "prompt": "Herr Hamann",
+          "options": [
+            {
+              "key": "a",
+              "text": "hat erste Arbeitsergebnisse versendet."
+            },
+            {
+              "key": "b",
+              "text": "realisiert bis März die Maßnahmen zur Qualitätssicherung."
+            },
+            {
+              "key": "c",
+              "text": "stellt die Resultate seiner Arbeit vor."
+            }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "MH hat vor der heutigen Sitzung allen Anwesenden erste Vorschläge zur Verbesserung der Produktqualität zugeschickt, die er mit seiner Arbeitsgruppe erstellt hat.",
+          "explain": "Correcto a: MH envió por adelantado a todos los asistentes los primeros resultados de su grupo de trabajo («erste Vorschläge … zugeschickt, die er mit seiner Arbeitsgruppe erstellt hat»). b es falso: la aplicación de las medidas de aseguramiento de la calidad se retrasa porque el punto se aplaza («Damit verschiebt sich auch die Umsetzung der Maßnahmen zur Qualitätssicherung»); lo único que MH promete para principios de marzo son nuevas ideas. c es falso porque no asiste a la reunión por enfermedad («Da MH heute wegen Krankheit nicht an dem Meeting teilnehmen kann»)."
+        },
+        {
+          "n": 16,
+          "type": "choice",
+          "prompt": "Die Mittagspause",
+          "options": [
+            {
+              "key": "a",
+              "text": "wird um 30 Minuten verlängert."
+            },
+            {
+              "key": "b",
+              "text": "wird um 30 Minuten verschoben."
+            },
+            {
+              "key": "c",
+              "text": "ist 30 Minuten lang."
+            }
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Sie schlägt ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr vor, in dem eine Mittagspause von 30 Minuten gemacht werden kann.",
+          "explain": "Correcto c: la pausa de mediodía es «von 30 Minuten», es decir, dura 30 minutos. a y b son falsas por el mismo motivo: lo que se amplía no es la pausa, sino la franja horaria para hacerla («ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr»); ni se alarga ni se desplaza 30 minutos."
+        },
+        {
+          "n": 17,
+          "type": "choice",
+          "prompt": "Der Standort der neuen Fahrradständer",
+          "options": [
+            {
+              "key": "a",
+              "text": "wird dem Betriebsrat mitgeteilt."
+            },
+            {
+              "key": "b",
+              "text": "wird zwischen Tor 2 und 3 geplant."
+            },
+            {
+              "key": "c",
+              "text": "wird an der Informationstafel bekanntgegeben."
+            }
+          ],
+          "answer": "c",
+          "confidence": "mittel",
+          "quote": "MR formuliert dazu eine Mitteilung und wird diese intern kommunizieren und am Schwarzen Brett des Betriebsrats aushängen.",
+          "explain": "Correcto c: el emplazamiento de los aparcabicis se da a conocer con un comunicado que se cuelga en el tablón de anuncios («am Schwarzen Brett … aushängen»), equivalente a la «Informationstafel» de la opción; el plano de situación también se actualiza con las nuevas ubicaciones. La confianza es media porque el texto literal dice «Schwarzes Brett» y no «Informationstafel». b es falso pese a citar bien las puertas: se instala uno «neben Tor 2» y otro «neben Tor 3», junto a cada acceso, no entre las dos puertas. a es falso porque el comunicado es para toda la plantilla («intern kommunizieren») y solo se publica en el tablón del comité de empresa; no es un aviso que se le dé al Betriebsrat."
+        },
+        {
+          "n": 18,
+          "type": "choice",
+          "prompt": "Frau Schlosser",
+          "options": [
+            {
+              "key": "a",
+              "text": "verlässt das Unternehmen."
+            },
+            {
+              "key": "b",
+              "text": "wird von Frau Meier vertreten."
+            },
+            {
+              "key": "c",
+              "text": "macht Frau Schmidt ein Geschenk."
+            }
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Ansprechpartnerin bis zu ihrer Rückkehr wird für alle ab sofort Frau Meier im Büro von Frau Schmidt sein.",
+          "explain": "Correcto b: Frau Meier será la persona de contacto «bis zu ihrer Rückkehr», luego sustituye a Frau Schlosser durante su ausencia. a es falso porque Frau Schlosser no deja la empresa: se va al Mutterschutz y a la Elternzeit y se cuenta con su vuelta. c es falso porque los regalos los gestiona Frau Meier («Frau Meier wird … sich auch um kleine Geschenke für Mutter und Kind … kümmern») en nombre de los colegas; Frau Schmidt solo aparece como la titular del despacho en el que trabaja Frau Meier."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "pp.47-50: se han unido los saltos de línea del PDF dentro de cada párrafo y de cada línea del encabezado del acta (solo se conservan los saltos de párrafo); se han dividido en párrafos los TOPs y la lista de Tagesordnungspunkte.",
+    "pp.47-50: se han unido las palabras partidas por guion de final de línea del PDF («Mee-ting» → «Meeting», «Haupt-sendezeiten» → «Hauptsendezeiten», «betref-fenden» → «betreffenden», «Sit-zungsteilnehmenden» → «Sitzungsteilnehmenden», «Kommunikationsstruktu-ren» → «Kommunikationsstrukturen», «gesundheitli-chen» → «gesundheitlichen», «zwi-schen» → «zwischen», «berück-sichtigt» → «berücksichtigt», «entspre-chende» → «entsprechende», «Mög-lichkeit» → «Möglichkeit», «einge-zeichnet» → «eingezeichnet», «an-schließende» → «anschließende»).",
+    "pp.47 y 49: eliminados los encabezados de examen repetidos «Lesen Teil 4 (вариант № 2)», los números de página y, en la p. 49, la anotación rusa del compilador «(Новая версия от 07.2024: пункт 3 новый и новые вопросы)».",
+    "p.47 (y también p. 49): corregido «Weitere Möglichkeiten, Werbung zu machen, müssen von der Marketingabteilung noch erörtert werden, Es ist geplant, neue Wege zu gehen …» → «… erörtert werden. Es ist geplant, neue Wege zu gehen …» (coma donde corresponde un punto, errata del OCR).",
+    "p.49: corregido «Damit verschiebt sich auch die Umsetzung Maßnahmen zur Qualitätssicherung.» → «… die Umsetzung der Maßnahmen zur Qualitätssicherung.» (falta el artículo «der», errata del OCR).",
+    "p.49: corregido «MH hat aber zugesagt, bis Anfang März noch weitere Idee erarbeiten und zu kommunizieren.» → «… noch weitere Ideen erarbeiten und zu kommunizieren.» (falta la -n del plural, errata del OCR).",
+    "p.50: corregido en la opción b del ítem 15 «realisiert bis Marz die Maßnahmen zur Qualitätssicherung.» → «realisiert bis März …» (errata del OCR; en el propio acta la palabra aparece bien escrita)."
+  ]
+}

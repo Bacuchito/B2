@@ -1,0 +1,223 @@
+{
+  "block": "t1_a2",
+  "section": "lesen-t1",
+  "variants": [
+    {
+      "id": "t1_a2-p9",
+      "label": "Variante 1 (nueva versión 08.2024)",
+      "page": 9,
+      "note": "Misma tarea que t1-v1 (p. 8); el anuncio b aparece reformulado como «Innovativer Klimaschutz».",
+      "kind": "zuordnung",
+      "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Auf ins Abenteuer!",
+          "text": "Du hast Lust auf Sonne, Strand und eine fremde Sprache? Eine Sprachreise ermöglicht es dir nicht nur Land und Leute kennenzulernen, sondern auch deine frisch erworbenen Fähigkeiten direkt anzuwenden. Wo kannst du welche Sprachen lernen?",
+          "distractor": "Habla de un viaje de idiomas (Sprachreise), no de formación profesional ni de trabajo en el extranjero. Se confunde con la persona 3 (idiomas) y con la 5 (extranjero), pero no ofrece ni una formación reglada ni un empleo."
+        },
+        {
+          "key": "b",
+          "title": "Innovativer Klimaschutz.",
+          "text": "Deutschland hat in der Forschung auf der ganzen Welt ein hohes Ansehen. Das Land arbeitet in den Bereichen Umweltschutz und Meeresbiologie eng mit anderen Ländern zusammen. So fördert die Bundesrepublik Deutschland Austauschprogramme zwischen internationalen Forschern.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Job mit guten Zukunftsaussichten.",
+          "text": "Wer verschiedene Sprachen fließend beherrscht und zwischen ihnen ohne Mühe hin- und herwechseln kann, ist der geborene Fremdsprachenkorrespondent. Es gibt unterschiedliche Möglichkeiten und Wege, diesen Beruf zu erlernen und damit die eigene Leidenschaft für Sprachen auszuleben.",
+          "distractor": ""
+        },
+        {
+          "key": "d",
+          "title": "Nutzen Sie das Recht für sich!",
+          "text": "Baumert & Partner helfen Ihnen, Ihr Recht durchzusetzen. Im Interview geben die Experten für Familienrecht Tipps zu folgenden Fragen: Wie gehen Sie aus einer Scheidung als Sieger hervor? Wie können Sie sich im Sorgerechtsstreit behaupten? Und welcher Anteil des Gehalts Ihres Expartners steht Ihnen zu?",
+          "distractor": "Es derecho de FAMILIA (divorcio, custodia, pensión), no derecho laboral. Es la trampa jurídica para la persona 2, que necesita un experto en derecho laboral."
+        },
+        {
+          "key": "e",
+          "title": "Umgangsformen im Berufsalltag.",
+          "text": "Gewisse Verhaltensweisen, die im privaten Kontext völlig in Ordnung sind, können auf der Arbeit zu unangenehmen Stolpersteinen werden. Wie kleide ich mich richtig im Büro? Duzen oder siezen? Welche Themen sollten Sie im Smalltalk vermeiden?",
+          "distractor": ""
+        },
+        {
+          "key": "f",
+          "title": "Souverän am Telefon.",
+          "text": "Die Begrüßung am Telefon dauert in der Regel nur zwei bis drei Sekunden, ist aber für den ersten Eindruck entscheidend. Die richtige Formulierung hängt davon ab, ob es sich um ein eingehendes Telefonat oder einen aktiven Anruf handelt. Worauf sollen Sie achten?",
+          "distractor": "Trata de técnica telefónica (saludo y formulación en llamadas), no de cómo tratar a colegas nuevos. Es el distractor temático de la persona 1."
+        },
+        {
+          "key": "g",
+          "title": "Warum nicht mal ganz weit weg?",
+          "text": "Du träumst von einem Job im Ausland, dann knüpfe erste Kontakte durch ein Praktikum. Ohne großen Aufwand kannst du so auch deine Sprachkenntnisse perfektionieren. Aber es gibt noch mehr überzeugende Gründe für ein Auslandspraktikum.",
+          "distractor": ""
+        },
+        {
+          "key": "h",
+          "title": "Zahl der Klagen rückläufig.",
+          "text": "Seit einigen Jahren geht die Zahl der Kündigungsschutzklagen kontinuierlich zurück, das bestätigt der Deutsche Anwaltsverein. Warum nur jeder Fünfte nach einer Kündigung Klage bei Gericht einreicht, warum es sich trotzdem für Sie lohnen kann und wie Sie dabei vorgehen müssen, erklärt der Arbeitsrechtsexperte Lars Hansson.",
+          "distractor": ""
+        }
+      ],
+      "items": [
+        {
+          "n": 1,
+          "type": "choice",
+          "prompt": "Moutasem fragt sich, wie er neue Kollegen korrekt ansprechen sollte.",
+          "answer": "e",
+          "confidence": "hoch",
+          "quote": "Wie kleide ich mich richtig im Büro? Duzen oder siezen? Welche Themen sollten Sie im Smalltalk vermeiden?",
+          "explain": "Moutasem duda de cómo dirigirse correctamente a colegas nuevos; el anuncio e trata justamente las formas de trato en el día a día laboral y plantea de forma literal «Duzen oder siezen?». El anuncio f (técnica telefónica) es el distractor temático."
+        },
+        {
+          "n": 2,
+          "type": "choice",
+          "prompt": "Selma wurde entlassen und will sich dagegen wehren.",
+          "answer": "h",
+          "confidence": "hoch",
+          "quote": "Seit einigen Jahren geht die Zahl der Kündigungsschutzklagen kontinuierlich zurück, das bestätigt der Deutsche Anwaltsverein.",
+          "explain": "Selma ha sido despedida y quiere defenderse: eso es exactamente una «Kündigungsschutzklage». h es el único anuncio que habla de demandas por despido y presenta a un experto en derecho laboral; d también es jurídico, pero de familia."
+        },
+        {
+          "n": 3,
+          "type": "choice",
+          "prompt": "Anka überlegt, eine Ausbildung im Fremdsprachenbereich zu machen.",
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Es gibt unterschiedliche Möglichkeiten und Wege, diesen Beruf zu erlernen und damit die eigene Leidenschaft für Sprachen auszuleben.",
+          "explain": "Anka quiere formarse en el ámbito de los idiomas y c menciona de forma explícita «diesen Beruf zu erlernen» refiriéndose al Fremdsprachenkorrespondent, una profesión del sector. El anuncio a (viaje de idiomas) no es una formación profesional."
+        },
+        {
+          "n": 4,
+          "type": "choice",
+          "prompt": "Sean ist Professor für Biologie und sucht einen Job im internationalen Umfeld.",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Das Land arbeitet in den Bereichen Umweltschutz und Meeresbiologie eng mit anderen Ländern zusammen. So fördert die Bundesrepublik Deutschland Austauschprogramme zwischen internationalen Forschern.",
+          "explain": "Sean es profesor de biología y busca un entorno internacional; b es el único anuncio científico e internacional y su campo (Meeresbiologie, biología marina) coincide literalmente con el suyo. El resto de anuncios se descartan por eliminación (derecho, teléfono, prácticas, viaje de idiomas)."
+        },
+        {
+          "n": 5,
+          "type": "choice",
+          "prompt": "Yassin möchte erste Berufserfahrungen im Ausland sammeln.",
+          "answer": "g",
+          "confidence": "hoch",
+          "quote": "Du träumst von einem Job im Ausland, dann knüpfe erste Kontakte durch ein Praktikum.",
+          "explain": "Yassin quiere sus primeras experiencias profesionales en el extranjero y g propone precisamente eso: un Auslandspraktikum como primera toma de contacto. El anuncio a es un viaje de idiomas, sin componente laboral."
+        }
+      ]
+    },
+    {
+      "id": "t1_a2-p10",
+      "label": "Variante 1 (nueva versión 07.02.2025)",
+      "page": 10,
+      "note": "El encabezado dice «вариант №1»: es la misma tarea que la variante de la p. 9, pero con los nombres y el orden de las personas cambiados, por lo que cambian las respuestas de cada número.",
+      "kind": "zuordnung",
+      "intro": "Sie suchen für fünf Personen (1–5) die passende Anzeige (a–h). Drei Anzeigen bleiben übrig.",
+      "passage": "",
+      "options": [
+        {
+          "key": "a",
+          "title": "Auf ins Abenteuer!",
+          "text": "Du hast Lust auf Sonne, Strand und eine fremde Sprache? Eine Sprachreise ermöglicht es dir, nicht nur Land und Leute kennenzulernen, sondern auch deine frisch erworbenen Fähigkeiten direkt anzuwenden. Wo kannst du welche Sprachen lernen?",
+          "distractor": "Habla de un viaje de idiomas (Sprachreise), no de formación profesional ni de trabajo en el extranjero. Se confunde con la persona 2 (idiomas) y con la 4 (extranjero), pero no ofrece ni una formación reglada ni un empleo."
+        },
+        {
+          "key": "b",
+          "title": "Innovativer Klimaschutz.",
+          "text": "Deutschland hat in der Forschung auf der ganzen Welt ein hohes Ansehen. Das Land arbeitet in den Bereichen Umweltschutz und Meeresbiologie eng mit anderen Ländern zusammen. So fördert die Bundesrepublik Deutschland Austauschprogramme zwischen internationalen Forschern.",
+          "distractor": ""
+        },
+        {
+          "key": "c",
+          "title": "Job mit guten Zukunftsaussichten.",
+          "text": "Wer verschiedene Sprachen fließend beherrscht und zwischen ihnen ohne Mühe hin- und herwechseln kann, ist der geborene Fremdsprachenkorrespondent. Es gibt unterschiedliche Möglichkeiten und Wege, diesen Beruf zu erlernen und damit die eigene Leidenschaft für Sprachen auszuleben.",
+          "distractor": ""
+        },
+        {
+          "key": "d",
+          "title": "Nutzen Sie das Recht für sich!",
+          "text": "Baumert & Partner helfen Ihnen, Ihr Recht durchzusetzen. Im Interview geben die Experten für Familienrecht Tipps zu folgenden Fragen: Wie gehen Sie aus einer Scheidung als Sieger hervor? Wie können Sie sich im Sorgerechtsstreit behaupten? Und welcher Anteil des Gehalts Ihres Expartners steht Ihnen zu?",
+          "distractor": "Es derecho de FAMILIA (divorcio, custodia, pensión), no derecho laboral. Es la trampa jurídica para la persona 1, que necesita un experto en derecho laboral."
+        },
+        {
+          "key": "e",
+          "title": "Umgangsformen im Berufsalltag.",
+          "text": "Gewisse Verhaltensweisen, die im privaten Kontext völlig in Ordnung sind, können auf der Arbeit zu unangenehmen Stolpersteinen werden. Wie kleide ich mich richtig im Büro? Duzen oder siezen? Welche Themen sollten Sie im Smalltalk vermeiden?",
+          "distractor": ""
+        },
+        {
+          "key": "f",
+          "title": "Souverän am Telefon.",
+          "text": "Die Begrüßung am Telefon dauert in der Regel nur zwei bis drei Sekunden, ist aber für den ersten Eindruck entscheidend. Die richtige Formulierung hängt davon ab, ob es sich um ein eingehendes Telefonat oder einen aktiven Anruf handelt. Worauf sollen Sie achten?",
+          "distractor": "Trata de técnica telefónica (saludo y formulación en llamadas), no de cómo tratar a colegas nuevos. Es el distractor temático de la persona 5."
+        },
+        {
+          "key": "g",
+          "title": "Warum nicht mal ganz weit weg?",
+          "text": "Du träumst von einem Job im Ausland? Dann knüpfe erste Kontakte durch ein Praktikum. Ohne großen Aufwand kannst du so auch deine Sprachkenntnisse perfektionieren. Aber es gibt noch mehr überzeugende Gründe für ein Auslandspraktikum.",
+          "distractor": ""
+        },
+        {
+          "key": "h",
+          "title": "Zahl der Klagen rückläufig.",
+          "text": "Seit einigen Jahren geht die Zahl der Kündigungsschutzklagen kontinuierlich zurück, das bestätigt der Deutsche Anwaltsverein. Warum nur jeder Fünfte nach einer Kündigung Klage bei Gericht einreicht, warum es sich trotzdem für Sie lohnen kann und wie Sie dabei vorgehen müssen, erklärt der Arbeitsrechtsexperte Lars Hansson.",
+          "distractor": ""
+        }
+      ],
+      "items": [
+        {
+          "n": 1,
+          "type": "choice",
+          "prompt": "Mariarita wurde entlassen und will sich dagegen wehren.",
+          "answer": "h",
+          "confidence": "hoch",
+          "quote": "Seit einigen Jahren geht die Zahl der Kündigungsschutzklagen kontinuierlich zurück, das bestätigt der Deutsche Anwaltsverein.",
+          "explain": "Mariarita ha sido despedida y quiere defenderse: eso es una «Kündigungsschutzklage». h es el único anuncio sobre demandas por despido con un experto en derecho laboral; d también es jurídico, pero de familia."
+        },
+        {
+          "n": 2,
+          "type": "choice",
+          "prompt": "Ettorina überlegt, eine Ausbildung im Fremdsprachenbereich zu machen.",
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Es gibt unterschiedliche Möglichkeiten und Wege, diesen Beruf zu erlernen und damit die eigene Leidenschaft für Sprachen auszuleben.",
+          "explain": "Ettorina quiere formarse en el ámbito de los idiomas y c habla explícitamente de «diesen Beruf zu erlernen», referido al Fremdsprachenkorrespondent. El anuncio a (viaje de idiomas) no es una formación profesional."
+        },
+        {
+          "n": 3,
+          "type": "choice",
+          "prompt": "Thom ist Wissenschaftler und sucht einen Job im internationalen Umfeld.",
+          "answer": "b",
+          "confidence": "mittel",
+          "quote": "So fördert die Bundesrepublik Deutschland Austauschprogramme zwischen internationalen Forschern.",
+          "explain": "Thom es científico y busca un entorno internacional; b es el único anuncio científico e internacional (intercambio entre investigadores) y se impone por eliminación. Confianza media porque el enunciado no precisa la especialidad y b describe un programa de intercambio, no una oferta de empleo."
+        },
+        {
+          "n": 4,
+          "type": "choice",
+          "prompt": "Baldassarre möchte erste Berufserfahrungen in verschiedenen Ländern sammeln.",
+          "answer": "g",
+          "confidence": "hoch",
+          "quote": "Du träumst von einem Job im Ausland? Dann knüpfe erste Kontakte durch ein Praktikum.",
+          "explain": "Baldassarre quiere sus primeras experiencias profesionales en el extranjero y g ofrece exactamente eso: un Auslandspraktikum como primera toma de contacto. El plural «in verschiedenen Ländern» es algo más amplio que «im Ausland», pero a (viaje de idiomas) no aporta experiencia laboral."
+        },
+        {
+          "n": 5,
+          "type": "choice",
+          "prompt": "Levi fragt sich, wie er neue Kollegen korrekt ansprechen sollte.",
+          "answer": "e",
+          "confidence": "hoch",
+          "quote": "Wie kleide ich mich richtig im Büro? Duzen oder siezen? Welche Themen sollten Sie im Smalltalk vermeiden?",
+          "explain": "Levi duda de cómo dirigirse a colegas nuevos; e trata las formas de trato en la oficina y pregunta literalmente «Duzen oder siezen?». El anuncio f (teléfono) es el distractor temático."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.9, anuncio h: corregido «dass bestätigt der Deutsche Anwaltsverein» → «das bestätigt der Deutsche Anwaltsverein» (la oración subordinada con «dass» no tiene sentido; la p. 10 y el bloque t1_a traen «das»).",
+    "p.9 y p.10: unidas las palabras cortadas por guión de final de línea: «Be-reichen» → «Bereichen», «Bundesre-publik» → «Bundesrepublik», «un-angenehmen» → «unangenehmen», «Ein-druck» → «Eindruck», «überzeu-gende» → «überzeugende», «wa-rum» → «warum», «Arbeitsrechts-experte» → «Arbeitsrechtsexperte».",
+    "p.9: eliminado el número de página suelto «9». p.10: eliminado el número de página suelto «10» y los marcadores del enlace «más» («mehr...», «mehr ...») que cierran cada anuncio en esa página."
+  ]
+}

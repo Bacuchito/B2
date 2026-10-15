@@ -1,0 +1,243 @@
+{
+ "block": "ls_c",
+ "section": "lesen-us",
+ "variants": [
+  {
+   "id": "ls_c-p74",
+   "label": "Beschwerde – Variante 7 (Falsche Rechnung)",
+   "topic": "Falsche Rechnung",
+   "page": 74,
+   "note": "El bloque de la p. 74 empieza con un correo interno (Anna Hoffner encarga la respuesta al cliente): ese correo pertenece a la tarea de escritura (ítem 21) y por eso NO forma parte del passage. La instrucción final del original «Nummer 21 Schreiben Sie eine E-Mail an den Kunden.» también pertenece a esa tarea de escritura y no se recoge en ningún enunciado.",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrte Frau Hoffner,\n\nwir haben Ihre Lieferung erhalten und sind mit allen Artikeln absolut zufrieden. Leider muss ich Sie darauf hinweisen, dass die Rechnung einige Unstimmigkeiten beinhaltet: Zunächst wurden statt 100 Stück Pinsel Größe M 200 Stück berechnet. Außerdem wurden 20 Töpfe roter Farbe berechnet. Wir hatten aber grüne Farbe bestellt und geliefert bekommen, die preislich niedriger liegt. Wir bitten Sie, dies zu korrigieren. Des Weiteren waren wir überrascht, dass unser üblicher Rabatt von 10 % in dieser Rechnung nicht gewährt wurde. Das ist wahrscheinlich ein Versehen.\n\nWir bitten um Berichtigung der Rechnung und erneute Zusendung.\n\nMit freundlichen Grüßen\nKarl Schmidt",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Herr Schmidt",
+     "options": [
+      {
+       "key": "a",
+       "text": "hat falsche Waren vom Lieferanten erhalten."
+      },
+      {
+       "key": "b",
+       "text": "meldet eine unvollständige Sendung."
+      },
+      {
+       "key": "c",
+       "text": "weist auf falsche Posten in der Zahlungsaufforderung hin."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Leider muss ich Sie darauf hinweisen, dass die Rechnung einige Unstimmigkeiten beinhaltet: Zunächst wurden statt 100 Stück Pinsel Größe M 200 Stück berechnet.",
+     "explain": "Correcto c: la «Zahlungsaufforderung» es la Rechnung, y el cliente señala en ella partidas equivocadas (200 pinceles cobrados en lugar de 100; 20 botes de pintura roja facturados aunque se pidió y se recibió verde). a es falso porque la mercancía recibida sí es la correcta: «sind mit allen Artikeln absolut zufrieden» y la pintura verde se «bestellt und geliefert bekommen». b es falso porque no falta nada en el envío; lo incorrecto son los importes de la factura."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Rechnung",
+     "options": [
+      {
+       "key": "a",
+       "text": "hat 100 Pinsel nicht aufgeführt."
+      },
+      {
+       "key": "b",
+       "text": "ist ohne Preisnachlass ausgestellt worden."
+      },
+      {
+       "key": "c",
+       "text": "wurde an einen falschen Adressaten geschickt."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Des Weiteren waren wir überrascht, dass unser üblicher Rabatt von 10 % in dieser Rechnung nicht gewährt wurde.",
+     "explain": "Correcto b: la factura se emitió sin el descuento habitual del 10 %, es decir, sin Preisnachlass. a es falso porque los pinceles sí aparecen, solo que con 200 unidades en vez de 100. c es falso porque no hay ningún destinatario equivocado: la carta va dirigida a Frau Hoffner y trata de su propio pedido."
+    }
+   ]
+  },
+  {
+   "id": "ls_c-p75",
+   "label": "Beschwerde – Die falsche Rechnung (Fassung 2, p. 75)",
+   "topic": "Falsche Rechnung",
+   "page": 75,
+   "note": "Segunda versión del mismo caso de la p. 74, con nombres y cifras cambiados (Joachim Schmidt, Sonja, Firma «Lacke und Farben», Frau Klein, 50 Töpfe, Größe S): es una variante independiente, igual que sus ítems. La respuesta del ítem 20 (c: Computerprobleme) NO se puede deducir de la carta: los problemas informáticos solo se mencionan en el correo interno del jefe («Du kannst ihm ruhig von unseren Computerproblemen berichten»), que pertenece a la tarea de escritura y queda fuera del passage; por eso la confianza baja a «mittel». El ítem 19 sí se resuelve con la propia carta.",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrte Frau Klein,\n\nwir haben Ihre Lieferung wie gewohnt zu unserer vollsten Zufriedenheit erhalten. Alle Artikel entsprechen absolut unseren Vorstellungen.\n\nLeider muss ich Sie darauf hinweisen, dass in der beigelegten Rechnung einige Unstimmigkeiten aufgetreten sind. Zunächst wurden statt der 100 Stück Pinsel Größe S 200 Stück berechnet. Außerdem wurden 50 Töpfe rote Farbe aufgeführt. Wir hatten aber grüne Farbe bestellt und geliefert bekommen, die preislich niedriger liegt. Wir bitten das zu korrigieren. Ferner waren wir verwundert, dass uns der übliche Rabatt von 10 % in dieser Rechnung nicht gewährt wurde. Dies ist wahrscheinlich ein Versehen.\n\nWir bitten um Berichtigung der Rechnung und erneute Zusendung.\n\nMit freundlichen Grüßen\nJoachim Schmidt",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Der Kunde Joachim Schmidt",
+     "options": [
+      {
+       "key": "a",
+       "text": "ist ein neuer Kunde."
+      },
+      {
+       "key": "b",
+       "text": "ist mit der gelieferten Ware zufrieden."
+      },
+      {
+       "key": "c",
+       "text": "braucht keine neue Rechnung."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "wir haben Ihre Lieferung wie gewohnt zu unserer vollsten Zufriedenheit erhalten. Alle Artikel entsprechen absolut unseren Vorstellungen.",
+     "explain": "Correcto b: el cliente declara su plena satisfacción con el envío y que todos los artículos corresponden a lo esperado. a es falso: fórmulas como «wie gewohnt» o «der übliche Rabatt von 10 %» describen una relación comercial ya establecida (el correo interno del jefe lo confirma: «langjähriger, guter Kunde»), no un cliente nuevo. c es falso porque pide expresamente «Berichtigung der Rechnung und erneute Zusendung», es decir, una factura corregida."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Malerbedarfsfirma",
+     "options": [
+      {
+       "key": "a",
+       "text": "gewährt Herrn Schmidt zum ersten Mal Rabatt."
+      },
+      {
+       "key": "b",
+       "text": "gewährt immer bei Herrn Schmidt einen Rabatt in Höhe 5%."
+      },
+      {
+       "key": "c",
+       "text": "hatte Computerprobleme, die zu Fehlern in der Rechnung führte."
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Ferner waren wir verwundert, dass uns der übliche Rabatt von 10 % in dieser Rechnung nicht gewährt wurde.",
+     "explain": "La c es la única opción que queda en pie, pero con reservas: a y b se descartan con la propia carta —el descuento es el «übliche», luego no es la primera vez, y su importe es del 10 %, no del 5 %—, de modo que por eliminación solo puede ser c. El problema es que los «Computerprobleme» que provocaron los errores de la factura no aparecen en la carta del cliente, sino en el correo interno del jefe (fuera del passage); por eso la confianza es media y no alta."
+    }
+   ]
+  },
+  {
+   "id": "ls_c-p76",
+   "label": "Beschwerde – Variante 8 (Die mangelhafte Lieferung)",
+   "topic": "Mangelhafte Lieferung",
+   "page": 76,
+   "note": "El correo interno del jefe (Siegfried Mayer, Teamleiter) encabeza el bloque: pertenece a la tarea de escritura y NO forma parte del passage. La instrucción final del original «Nummer 21 Schreiben Sie eine E-Mail an den Kunden.» también es de esa tarea. Los ítems 19 y 20 se resuelven íntegramente con la carta del cliente; la fecha de la posible Nachlieferung que da el jefe (12.05.) no es necesaria para responder.",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrter Herr Mayer,\n\nleider müssen wir Ihnen mitteilen, dass Ihre Lieferung nicht zu unserer Zufriedenheit ausgefallen ist. Wir müssen zwei Punkte beanstanden. Erstens wurden die Verpackungen der Hosen (Größe M und L) beim Transport beschädigt, sodass der Inhalt verschmutzt ist. In diesem Zustand können wir die Waren auf keinen Fall in den regulären Verkauf geben, sondern sie nur mit einem Rabatt anbieten. Wir halten daher einen Preisnachlass von 60% für angemessen. Des Weiteren teilen wir Ihnen mit, dass von den T-Shirts mit Aufdruck statt der bezahlten 100 Stück nur die Hälfte geliefert wurde. Wegen der beginnenden Sommersaison bitten wir um schnellstmögliche Nachlieferung der fehlenden Stückzahl auf Ihre Kosten spätestens bis zum 10.05. Wir hoffen, dass sich derartige Vorkommnisse in Zukunft vermeiden lassen, und bitten um prompte Erledigung.\n\nMit freundlichen Grüßen\nMatthias Schramm",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Herr Schramm",
+     "options": [
+      {
+       "key": "a",
+       "text": "bemängelt Qualität und Menge der Lieferung."
+      },
+      {
+       "key": "b",
+       "text": "fand die gesamte Lieferung beschädigt vor."
+      },
+      {
+       "key": "c",
+       "text": "verlangt wegen der Lieferungsverzögerung einen Rabatt."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Erstens wurden die Verpackungen der Hosen (Größe M und L) beim Transport beschädigt, sodass der Inhalt verschmutzt ist.",
+     "explain": "Correcto a: critica la calidad (embalajes dañados en el transporte y contenido manchado) y también la cantidad, porque de las camisetas pagadas solo llegó la mitad («statt der bezahlten 100 Stück nur die Hälfte geliefert wurde»). b es falso porque no todo el envío llegó dañado, sino los embalajes de los pantalones. c es falso porque el 60 % de descuento se exige por la mercancía manchada, no por un retraso en la entrega (el retraso, en todo caso, afecta a la entrega pendiente de las camisetas)."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Nachlieferung",
+     "options": [
+      {
+       "key": "a",
+       "text": "bezahlt der Kunde."
+      },
+      {
+       "key": "b",
+       "text": "kommt im Sommer."
+      },
+      {
+       "key": "c",
+       "text": "umfasst 50 T-Shirts."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Des Weiteren teilen wir Ihnen mit, dass von den T-Shirts mit Aufdruck statt der bezahlten 100 Stück nur die Hälfte geliefert wurde.",
+     "explain": "Correcto c: se pagaron 100 camisetas y solo llegó la mitad, de modo que el envío pendiente son 50 unidades. a es falso porque el cliente pide la reposición «auf Ihre Kosten», es decir, a cargo del proveedor. b es falso porque la reposición se reclama «spätestens bis zum 10.05.»; la «beginnende Sommersaison» es solo el motivo de la urgencia, no la fecha de entrega."
+    }
+   ]
+  },
+  {
+   "id": "ls_c-p77",
+   "label": "Beschwerde – Variante 9 (Pflanzenlieferung)",
+   "topic": "Pflanzenlieferung",
+   "page": 77,
+   "note": "El correo interno del jefe (Michael Herrmann, Teamleiter) encabeza el bloque: pertenece a la tarea de escritura (la respuesta a la clienta) y NO forma parte del passage. Los ítems 19 y 20 se resuelven íntegramente con la carta de la clienta (Gabi Talheim).",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrter Herr Herrmann,\n\nleider müssen wir Ihnen mitteilen, dass Ihre Pflanzen- und Blumenauswahl für unsere letzte Veranstaltung gänzlich unpassend war. Wie Sie wissen, war das Thema unserer Ausstellung in der vergangenen Woche: „Nachhaltigkeit & Umweltverträglichkeit im Gartenbau – Lokal und Regional“. Und Sie haben im Eingangsbereich aus dem fernen Ausland importierte exotische Pflanzen platziert, was verständlicherweise zu Beschwerden von Seiten der Besucher geführt hat. Zudem wollten wir den diesjährigen Umweltpreis zusammen mit Blumensträußen vergeben. Diese waren aber mit Orchideen bestückt. Wie passt das zum Thema „regional“? In dieser Situation haben wir daher entschieden, kurzfristigen Ersatz für die Sträuße von einem Aussteller zu beschaffen. Wir bitten Sie, diese zusätzlichen Kosten zu ersetzen. Solche Vorkommnisse müssen in Zukunft unter allen Umständen vermieden werden. Wir erwarten Ihre Vorschläge und stehen für ein Gespräch jederzeit zur Verfügung.\n\nMit freundlichen Grüßen\nGabi Talheim",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Der Lieferant hat",
+     "options": [
+      {
+       "key": "a",
+       "text": "die Dekoration passend zum Thema ausgewählt."
+      },
+      {
+       "key": "b",
+       "text": "die falsche Blumenauswahl getroffen."
+      },
+      {
+       "key": "c",
+       "text": "Ersatzsträuße aus der Region bestellt."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "leider müssen wir Ihnen mitteilen, dass Ihre Pflanzen- und Blumenauswahl für unsere letzte Veranstaltung gänzlich unpassend war.",
+     "explain": "Correcto b: la clienta califica la selección de plantas y flores de «gänzlich unpassend» para un certamen sobre sostenibilidad, producto local y regional, y lo concreta con plantas exóticas importadas y orquídeas en los ramos. a es falso porque la decoración no encajaba con el tema. c es falso porque quien consiguió los ramos de sustitución fue la propia clienta, y de un expositor («von einem Aussteller»), no el proveedor, y el texto no dice que fueran de la región."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Der Veranstalter musste",
+     "options": [
+      {
+       "key": "a",
+       "text": "an einen Aussteller Blumen liefern."
+      },
+      {
+       "key": "b",
+       "text": "auf die Beschwerden der Besucher reagieren."
+      },
+      {
+       "key": "c",
+       "text": "den Umweltpreis ohne Blumen überreichen."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Und Sie haben im Eingangsbereich aus dem fernen Ausland importierte exotische Pflanzen platziert, was verständlicherweise zu Beschwerden von Seiten der Besucher geführt hat.",
+     "explain": "Correcto b: las plantas exóticas provocaron quejas de los visitantes y el organizador tuvo que reaccionar, procurándose a toda prisa ramos de sustitución («haben wir daher entschieden, kurzfristigen Ersatz für die Sträuße von einem Aussteller zu beschaffen»). a es falso porque los ramos se consiguieron de un expositor, no se le entregaron a uno. c es falso porque el premio medioambiental sí se entregó con ramos: precisamente por eso se buscó el recambio cuando los originales llevaban orquídeas."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.74-77: se han unido los saltos de línea del PDF dentro de cada párrafo y las palabras partidas por guion de final de línea («da-rauf» → «darauf», «korrigie-ren» → «korrigieren», «entspre-chen» → «entsprechen», «aufge-treten» → «aufgetreten», «preis-lich» → «preislich», «Ra-batt» → «Rabatt», «kei-nen» → «keinen», «ei-nen» → «einen», «Sommer-saison» → «Sommersaison», «Veranstal-tung» → «Veranstaltung», «verständlicher-weise» → «verständlicherweise», «Umwelt-preis» → «Umweltpreis», «Vor-schläge» → «Vorschläge»).",
+  "pp.74-77: se han eliminado los encabezados repetidos («Lesen und Schreiben Teil Beschwerde (вариант № 7)», «Die falsche Rechnung», «Die mangelhafte Lieferung», «Pflanzenlieferung»), las etiquetas de test («тест №140321, 140301», «(№ 160201, 160221)»), la instrucción «Nummer 21 Schreiben Sie eine E-Mail an den Kunden.» y los números de página. Los correos internos del jefe, que abren cada bloque, no se incluyen en el passage porque pertenecen a la tarea de escritura (ítem 21).",
+  "p.75: corregido «Malerbedarffirma» → «Malerbedarfsfirma» en el enunciado del ítem 20 (faltaba la «s» de enlace)."
+ ]
+}

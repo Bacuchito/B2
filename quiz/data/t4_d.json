@@ -1,0 +1,276 @@
+{
+  "block": "t4_d",
+  "section": "lesen-t4",
+  "variants": [
+    {
+      "id": "t4_d-p55",
+      "label": "Variante 5 (Protokoll 05.02.20XX)",
+      "page": 55,
+      "note": "Acta de la reunión del 05.02.20XX (pp. 55-56): el texto ocupa la p. 55 y el comienzo de la p. 56, y las preguntas 14-18 aparecen al final de la p. 56. No deben confundirse con las de la variante siguiente, cuyas preguntas están al final de la p. 58. El ítem 15 se apoya en el TOP 5, que en el acta se adelantó por petición de KW.",
+      "kind": "text",
+      "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "(Frau Wagner, Kantine)\n\nProtokoll 05.02.20XX, 14.00 - 16.00 Uhr\nSitzungsraum: 239, Ort: Hauptstraße 23, 25421 Pinneberg\nAnwesende: Michael Müller (MM, Stellvertreter Geschäftsleitung), Katrin Wagner (KW, Leitung Personal), Henry Smith (HS, Leitung Produktion), Tomás Rodríguez (TR, Leitung Vertrieb), Manuela Hinz (MH, Leitung Qualitätsmanagement), Karl Lehmann (KL, Leitung Finanzen), Sabine Kurz (SK, Hausverwaltung)\nSitzungsleitung: Michael Müller\nProtokollantin: Katrin Wagner\n\nTagesordnungspunkte:\n1. Begrüßung und Genehmigung des letzten Protokolls\n2. Probleme bei der Warenauslieferung\n3. Berichte\n4. Sanierung der Kantine\n5. Neue Krankmeldungsregelung\n6. Sonstiges\n\nTOP 1 Begrüßung und Genehmigung des letzten Protokolls\nMM heißt alle Anwesenden zur heutigen Besprechung willkommen und bittet um die Genehmigung des Protokolls der letzten Sitzung. Per Handzeichen wird das Protokoll der Sitzung vom 08.01. ohne weitere Änderungen und Ergänzungen einstimmig genehmigt. Aufgrund terminlicher Verpflichtungen muss KW die Sitzung früher verlassen und bittet darum, TOP 5 der heutigen Tagesordnung vorzuziehen. Das wird einstimmig angenommen.\n\nTOP 2 Probleme bei der Warenauslieferung\nTR teilt mit, dass sich immer wieder Kunden über den Zustand unserer gelieferten Waren beschwert haben. Auf dem Transportweg kommt es wohl immer wieder zu Beschädigungen der Verpackungen, sodass die Ware teilweise gar nicht oder nur zu stark reduzierten Preisen an den Endkunden verkauft werden kann. Man habe mit der Spedition schon öfter über diese Problematik gesprochen. Diese sieht das Problem jedoch bei uns und ist der Ansicht, dass die Schäden durch minderwertiges Verpackungsmaterial entstehen und nicht durch den Transport. MH und HS haben das Verpackungsmaterial überprüft und weisen den Vorwurf vehement zurück. Nachdem das Problem bis heute nicht gelöst werden konnte, macht MH den Vorschlag, dass unsere Firma die Lieferungen in Zukunft selbst übernimmt. Dafür werden KL und TR zusammen ein Konzept zur Finanzierung erarbeiten. Dieses soll zur übernächsten Sitzung in zwei Monaten vorliegen.\n\nTOP 3 Berichte\nHS berichtet, dass durch die Einstellung von zehn Zeitarbeitskräften am Fließband 3 und 4 der personelle Engpass für den Moment behoben werden konnte, und dankt der Personalabteilung für die prompte und unbürokratische Lösung des Problems. Er regt an, um die Unterbesetzung in der Produktion dauerhaft zu lösen, einige Zeitarbeitskräfte fest anzustellen. Insbesondere Herr Ahmed Hassani und Frau Ina Zurek sind ihm durch ihre Zuverlässigkeit und schnelle Auffassungsgabe positiv aufgefallen.\n\nTOP 4 Sanierung der Kantine\nSK macht darauf aufmerksam, dass die Küche ab dem kommenden Montag saniert wird und die Kantine infolgedessen voraussichtlich sechs bis acht Wochen geschlossen sein wird. Alle Abteilungsleiter sollen ihre Teams daran erinnern, sich selbst Verpflegung mitzubringen oder alternativ das Bistro „Suppenkasper“ in der Sonnenstraße zu nutzen. Die Essensmarken der Firma gelten während der Kantinenschließung auch dort in der Mittagszeit von 12.00 bis 14.00 Uhr.\n\nTOP 5 Neue Krankmeldungsregelung (vorgezogener TOP)\nDie Geschäftsleitung hatte in der letzten Mitarbeiterversammlung angekündigt, dass die Mitarbeiter zukünftig schon ab dem ersten Krankheitstag einen Krankenschein vom Arzt benötigen. Die bisherige Regelung ab dem dritten Tag berichtet, dass diese Entscheidung in der Belegschaft für großen Unmut sorgt. Sie bittet alle Abteilungsleiter ein weiteres Mal, den Sinn dieser Maßnahme zu erläutern. In der nächsten Sitzung soll das Thema noch einmal behandelt werden. Man hofft auf eine breite Akzeptanz.\n\nTOP 6 Sonstiges\nMM teilt mit, dass ab dem kommenden Monat für die Autofahrer mehr Parkplätze zur Verfügung stehen. Diese entstehen neben dem Eingang C. Alle Mitarbeiterinnen und Mitarbeiter sollen in einer Rundmail darüber informiert werden und wer Interesse hat, kann in der Personalabteilung einen kostenlosen Stellplatz beantragen.",
+      "items": [
+        {
+          "n": 14,
+          "type": "choice",
+          "prompt": "Frau Wagner",
+          "options": [
+            {
+              "key": "a",
+              "text": "bittet um Änderungen des Protokolls vom 08.01."
+            },
+            {
+              "key": "b",
+              "text": "hat heute noch einen anderen wichtigen Termin."
+            },
+            {
+              "key": "c",
+              "text": "schlägt einen zusätzlichen Tagesordnungspunkt vor."
+            }
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Aufgrund terminlicher Verpflichtungen muss KW die Sitzung früher verlassen und bittet darum, TOP 5 der heutigen Tagesordnung vorzuziehen.",
+          "explain": "Correcto b: KW (Katrin Wagner, Leitung Personal) tiene otros compromisos de agenda («terminliche Verpflichtungen») y por eso tiene que abandonar la reunión antes de tiempo, es decir, hoy todavía tiene otro compromiso importante. a es falso: quien pide la aprobación del acta es MM y el acta del 08.01. se aprueba «ohne weitere Änderungen und Ergänzungen», o sea, sin ningún cambio. c es falso: no propone un punto nuevo, sino adelantar uno que ya figura en el orden del día, el TOP 5."
+        },
+        {
+          "n": 15,
+          "type": "choice",
+          "prompt": "Die Geschäftsleitung möchte, dass",
+          "options": [
+            {
+              "key": "a",
+              "text": "das Thema Krankmeldung nicht mehr besprochen wird."
+            },
+            {
+              "key": "b",
+              "text": "man bei Krankheit spätestens am dritten Tag zum Arzt geht."
+            },
+            {
+              "key": "c",
+              "text": "sich Mitarbeiter bei Krankheit sofort krankschreiben lassen."
+            }
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Die Geschäftsleitung hatte in der letzten Mitarbeiterversammlung angekündigt, dass die Mitarbeiter zukünftig schon ab dem ersten Krankheitstag einen Krankenschein vom Arzt benötigen.",
+          "explain": "Correcto c: la dirección exige el parte médico ya desde el primer día de enfermedad, es decir, que el empleado se haga dar la baja inmediatamente al enfermar. b reproduce justamente la norma anterior que se quiere sustituir («Die bisherige Regelung ab dem dritten Tag»), y por eso es un distractor: el «spätestens am dritten Tag» es el sistema viejo, no el deseado. a es falso porque el asunto no se archiva: «In der nächsten Sitzung soll das Thema noch einmal behandelt werden»."
+        },
+        {
+          "n": 16,
+          "type": "choice",
+          "prompt": "Karl Lehmann soll",
+          "options": [
+            {
+              "key": "a",
+              "text": "besseres Verpackungsmaterial einkaufen."
+            },
+            {
+              "key": "b",
+              "text": "einen Finanzierungsplan erstellen."
+            },
+            {
+              "key": "c",
+              "text": "Kontakt mit der Spedition aufnehmen."
+            }
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Dafür werden KL und TR zusammen ein Konzept zur Finanzierung erarbeiten. Dieses soll zur übernächsten Sitzung in zwei Monaten vorliegen.",
+          "explain": "Correcto b: para que la empresa asuma ella misma las entregas, KL (Karl Lehmann, Leitung Finanzen) y TR deben elaborar conjuntamente un concepto de financiación, con plazo fijado («zur übernächsten Sitzung in zwei Monaten»). a es falso: la acusación de que el material de embalaje es de mala calidad la formula la agencia de transportes y MH y HS la rechazan «vehement»; nadie recibe el encargo de comprar material nuevo. c es falso porque el contacto con la agencia ya existe: «Man habe mit der Spedition schon öfter über diese Problematik gesprochen»."
+        },
+        {
+          "n": 17,
+          "type": "choice",
+          "prompt": "In der Produktionsabteilung",
+          "options": [
+            {
+              "key": "a",
+              "text": "gibt es derzeit genügend Mitarbeiter."
+            },
+            {
+              "key": "b",
+              "text": "will man alle Zeitarbeiter fest anstellen."
+            },
+            {
+              "key": "c",
+              "text": "wurden zwei neue Mitarbeiter fest eingestellt."
+            }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "durch die Einstellung von zehn Zeitarbeitskräften am Fließband 3 und 4 der personelle Engpass für den Moment behoben werden konnte",
+          "explain": "Correcto a: la contratación de diez trabajadores temporales en las cintas 3 y 4 ha resuelto la falta de personal «für den Moment», de modo que ahora mismo hay plantilla suficiente. b falla por una palabra clave: el acta dice «einige Zeitarbeitskräfte fest anzustellen» (algunos), no todos. c es falso: Herr Ahmed Hassani y Frau Ina Zurek solo han llamado la atención positivamente («sind ihm … positiv aufgefallen»); los diez incorporados lo fueron como Zeitarbeitskräfte y no consta ninguna contratación fija."
+        },
+        {
+          "n": 18,
+          "type": "choice",
+          "prompt": "In der Kantine",
+          "options": [
+            {
+              "key": "a",
+              "text": "bekommt man in den kommenden Wochen kein Essen."
+            },
+            {
+              "key": "b",
+              "text": "kann man ab Montag von 12 bis 14 Uhr zu Mittag essen."
+            },
+            {
+              "key": "c",
+              "text": "sollten die Essensmarken abgeschafft werden."
+            }
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "dass die Küche ab dem kommenden Montag saniert wird und die Kantine infolgedessen voraussichtlich sechs bis acht Wochen geschlossen sein wird",
+          "explain": "Correcto a: la cocina se reforma a partir del próximo lunes y, como consecuencia, la cantina permanecerá cerrada entre seis y ocho semanas; durante esas semanas, por tanto, en la cantina no se sirve comida. b traslada a la cantina lo que vale para el bistró: el horario de 12.00 a 14.00 y el uso de los vales se refieren al Bistro «Suppenkasper» de la Sonnenstraße durante el cierre, no a la cantina, que está cerrada. c es falso: el acta no pide suprimir los vales, sino que confirma que siguen valiendo en ese establecimiento («Die Essensmarken der Firma gelten während der Kantinenschließung auch dort»)."
+        }
+      ]
+    },
+    {
+      "id": "t4_d-p57",
+      "label": "Variante 6 (Protokoll 27.08.20XX)",
+      "page": 57,
+      "note": "Acta de la reunión del 27.08.20XX (pp. 57-58): el texto ocupa la p. 57 y el comienzo de la p. 58, y las preguntas 14-18 aparecen al final de la p. 58. Aviso: el ítem 14 admite dos lecturas válidas (a y b), tal como se explica en su campo explain. El original etiqueta esta variante como «тест №150321, 150301».",
+      "kind": "text",
+      "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "(Frau Bruhns, Betriebsausflug)\n\nProtokoll 27.08.20XX, 10.00 bis 11.30 Uhr\nKonferenzraum Rhein-Main, Am Wegesrand 12, 63345 Frankfurt\nAnwesende: Thomas Köhler (TK, Werkstatt), Brigitte Turner (BT, Personal), Gerd Schneider (GS, Buchhaltung), Hilde Bruhns (HB, Buchhaltung)\nEntschuldigt: Kari Muster (KM, Lager)\nSitzungsleitung: Gerd Schneider\nProtokollführung: Thomas Köhler\n\nTagesordnungspunkte:\n1. Begrüßung und Eröffnung der Sitzung\n2. Erste-Hilfe-Kurs\n3. Homeoffice\n4. Personelle Engpässe Buchhaltung\n5. Betriebsausflug\n6. Sonstiges\n\nTOP 1 Begrüßung und Eröffnung der Sitzung\nGS eröffnet die Sitzung, begrüßt alle Anwesenden und stellt den Kolleg*innen Hilde Bruhns vor, die seit dem 1. August in der Abteilung Buchhaltung für die Auszahlung der Gehälter etc. zuständig ist.\n\nTOP 2 Erste-Hilfe-Kurs\nTK berichtet, dass es vor Kurzem zu einem Unfall in der Werkstatt gekommen ist, bei dem ein Kollege am Arm verletzt wurde und stark geblutet hat. Obwohl regelmäßig Sicherheitsunterweisungen für die Mitarbeitenden im Lager und in der Werkstatt stattfinden, reagierte nur ein Kollege ruhig und besonnen und war in der Lage, den Verletzten zu versorgen und dann Hilfe zu holen. Die anderen wussten nicht, was sie tun sollten. Auch in der Marketingabteilung gab es eine Situation, in der einer Kollegin wohl wegen der Hitze schwindlig wurde und ein Krankenwagen gerufen werden musste, da niemand von den Mitarbeiter*innen helfen konnte.\nTK schlägt deshalb vor, einen Erste-Hilfe-Kurs im Unternehmen zu organisieren, an dem alle interessierten Angestellten teilnehmen können. TK hat bereits mit dem Roten Kreuz gesprochen. Es wäre möglich, dort kurzfristig einen solchen Kurs an zwei Freitagsterminen zu buchen.\n\nTOP 3 Homeoffice\nBT stellt dar, dass immer wieder Mitarbeiter*innen den Wunsch an sie herantragen, den einen oder anderen Tag in der Woche von zu Hause aus zu arbeiten, wenn sie Aufgaben zu erledigen haben, die eine Anwesenheit im Büro nicht unbedingt erforderlich machen.\nBT steht diesem Wunsch offen gegenüber. Durch diese Möglichkeit könnten die Mitarbeiter*innen die Zeit für den Arbeitsweg sparen und sich ihre Arbeitszeit flexibler einteilen. Das würde sicher erheblich zur Mitarbeiterzufriedenheit beitragen. Den Mitarbeiter*innen, die im Homeoffice arbeiten, müssten firmeneigene Laptop, Diensthandys zur Verfügung gestellt werden. Da aber bereits einige mobile Geräte im Unternehmen vorhanden sind, würde das keine signifikanten Mehrkosten bedeuten. Sollte sich das Arbeitsmodell „Homeoffice“ bewähren, könnte für die Kolleg*innen die regelmäßig von zu Hause aus arbeiten, ein VPN-Tunnel eingerichtet werden, durch den sie sicheren Zugang zu den Daten auf dem Firmenserver erhalten würden.\nBT bittet bis Mitte der nächsten Woche um Rückmeldungen, was die einzelnen Abteilungsleiter*innen davon halten, bevor sie den Vorschlag der Geschäftsführung vorlegt.\n\nTOP 4 Personelle Engpässe in der Buchhaltung\nGS teilt mit, dass die Buchhaltung zur Zeit trotz der Neueinstellung von Frau Bruhns personell unterbesetzt ist.\nDas Arbeitsaufkommen ist von den derzeit drei Mitarbeiter*innen in der Abteilung nicht mehr zu bewältigen. Im Moment ist auch noch eine Kollegin krank, sodass das verbleibende Kolleg*innen viele Überstunden machen müssen, um die Arbeit zu schaffen. Er plant, eine weitere Mitarbeiterin oder ein weiteren Mitarbeiter einzustellen.\n\nTOP 5 Betriebsausflug\nHB arbeitet im diesjährigen Team für die Organisation des Betriebsausflugs mit, um so gleich einige Kolleg*innen kennenzulernen. Sie berichtet, dass der Ausflug am 1. Oktober stattfindet. Alle Mitarbeiter*innen treffen sich morgens um 9.00 Uhr vor dem Haupteingang der Firma. Dort werden sie von einem Bus abgeholt und zum Kastell Saalburg gefahren.\nVom Parkplatz am Fuße der Burg aus ist eine kleine Wanderung geplant. Am Ziel wartet eine Überraschung. Für das leibliche Wohl ist gesorgt. Die Rückkehr zur Firma ist für 19.00 Uhr gleichen Tag vorgesehen.\n\nTOP 6 Sonstiges\nEntfällt. Keiner der Anwesenden hat noch Punkte zu besprechen.",
+      "items": [
+        {
+          "n": 14,
+          "type": "choice",
+          "prompt": "Frau Bruhns",
+          "options": [
+            {
+              "key": "a",
+              "text": "arbeitet seit einigen Wochen in der Buchhaltung."
+            },
+            {
+              "key": "b",
+              "text": "bezahlt die Gehälter der Mitarbeiter*innen."
+            },
+            {
+              "key": "c",
+              "text": "nimmt bald ihre Tätigkeit auf."
+            }
+          ],
+          "answer": "a",
+          "confidence": "niedrig",
+          "quote": "GS eröffnet die Sitzung, begrüßt alle Anwesenden und stellt den Kolleg*innen Hilde Bruhns vor, die seit dem 1. August in der Abteilung Buchhaltung für die Auszahlung der Gehälter etc. zuständig ist.",
+          "explain": "Correcto a, pero con reservas: el acta es del 27.08.20XX y Frau Bruhns trabaja en el departamento de contabilidad desde el 1 de agosto, es decir, desde hace unas semanas; además el TOP 4 confirma que su incorporación ya se ha producido («trotz der Neueinstellung von Frau Bruhns»). c queda descartado porque ya está en el puesto y no «nimmt bald ihre Tätigkeit auf». Advertencia de ambigüedad: b también está respaldada literalmente por la misma frase («für die Auszahlung der Gehälter etc. zuständig ist»), de modo que el ítem admite dos claves; se elige a porque es el dato más explícito sobre su situación (ya trabaja allí desde el 1 de agosto), pero si la clave oficial fuera b sería igualmente defendible. De ahí la confianza baja."
+        },
+        {
+          "n": 15,
+          "type": "choice",
+          "prompt": "Der Erste-Hilfe-Kurs",
+          "options": [
+            {
+              "key": "a",
+              "text": "findet jeden Freitag statt."
+            },
+            {
+              "key": "b",
+              "text": "ist für alle Mitarbeiter*innen verpflichtet."
+            },
+            {
+              "key": "c",
+              "text": "wird vom Roten Kreuz durchgeführt."
+            }
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "TK hat bereits mit dem Roten Kreuz gesprochen. Es wäre möglich, dort kurzfristig einen solchen Kurs an zwei Freitagsterminen zu buchen.",
+          "explain": "Correcto c: el curso se encargaría al Rotes Kreuz, con quien TK ya ha hablado y donde sería posible reservarlo a corto plazo. a distorsiona la cifra: se habla de dos fechas, las dos en viernes («an zwei Freitagsterminen»), no de todos los viernes. b es falso porque el curso es voluntario y solo para quien tenga interés: «an dem alle interessierten Angestellten teilnehmen können»."
+        },
+        {
+          "n": 16,
+          "type": "choice",
+          "prompt": "Homeoffice",
+          "options": [
+            {
+              "key": "a",
+              "text": "erfordert die Anschaffung neuer Arbeitsgeräte."
+            },
+            {
+              "key": "b",
+              "text": "verringert die Arbeitszeit der Mitarbeitenden."
+            },
+            {
+              "key": "c",
+              "text": "wird von vielen Mitarbeitenden gewünscht."
+            }
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "BT stellt dar, dass immer wieder Mitarbeiter*innen den Wunsch an sie herantragen, den einen oder anderen Tag in der Woche von zu Hause aus zu arbeiten",
+          "explain": "Correcto c: son los propios empleados quienes una y otra vez le plantean ese deseo a BT («immer wieder … den Wunsch an sie herantragen»). a es falso: aunque habría que facilitar portátiles y móviles de empresa a quienes teletrabajen, el acta subraya que ya hay dispositivos móviles en la empresa y que por eso no habría «signifikante Mehrkosten», luego no hay que adquirir equipos nuevos. b es falso: el teletrabajo ahorra el tiempo de desplazamiento y permite organizar el horario con más flexibilidad, pero no reduce la jornada laboral."
+        },
+        {
+          "n": 17,
+          "type": "choice",
+          "prompt": "In der Abteilung Buchhaltung",
+          "options": [
+            {
+              "key": "a",
+              "text": "gibt es zu viele Beschäftigte."
+            },
+            {
+              "key": "b",
+              "text": "sind viele Kolleg*innen erkrankt."
+            },
+            {
+              "key": "c",
+              "text": "soll eine Stelle ausgeschrieben werden."
+            }
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Er plant, eine weitere Mitarbeiterin oder ein weiteren Mitarbeiter einzustellen.",
+          "explain": "Correcto c: GS anuncia que piensa contratar a otra persona, es decir, que va a crearse o publicarse una plaza más. a es falso: el departamento está «personell unterbesetzt» y el trabajo «ist von den derzeit drei Mitarbeiter*innen in der Abteilung nicht mehr zu bewältigen», luego no sobran empleados. b es falso: solo hay una compañera de baja («Im Moment ist auch noch eine Kollegin krank»), no muchas."
+        },
+        {
+          "n": 18,
+          "type": "choice",
+          "prompt": "Der Betriebsausflug wird",
+          "options": [
+            {
+              "key": "a",
+              "text": "für den ganzen Tag geplant."
+            },
+            {
+              "key": "b",
+              "text": "jedes Jahr von den gleichen Personen organisiert."
+            },
+            {
+              "key": "c",
+              "text": "zum besseren Kennenlernen der Kolleg*innen genutzt."
+            }
+          ],
+          "answer": "a",
+          "confidence": "mittel",
+          "quote": "Die Rückkehr zur Firma ist für 19.00 Uhr gleichen Tag vorgesehen.",
+          "explain": "Correcto a: la jornada empieza a las 9.00 h en la puerta principal y el regreso a la empresa está previsto para las 19.00 h del mismo día, de modo que el viaje ocupa el día entero. c es una lectura parcialmente defendible —de ahí la confianza media—, pero el texto solo dice que HB colabora en el equipo organizador «um so gleich einige Kolleg*innen kennenzulernen», esto es, ese es su motivo personal para participar en la organización, no la finalidad del viaje que se atribuye a todos. b es falso: el acta habla del equipo «diesjährigen» (de este año) para la organización, lo que implica que el equipo cambia, no que lo organicen siempre las mismas personas."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "pp.55-58: se han unido los saltos de línea del PDF dentro de cada párrafo (solo se conservan los saltos de párrafo) y los encabezados de enumeración del protocolo (TOP 1 … TOP 6) se han mantenido como inicio de párrafo.",
+    "pp.55-58: se han unido todas las palabras partidas por guion de final de línea del PDF (p. ej. «beschwert ha-ben» → «beschwert haben», «Prob-lem» → «Problem», «ent-stehen» → «entstehen», «Suppenkas-per» → «Suppenkasper», «Re-gelung» → «Regelung», «zu-künftig» → «zukünftig», «Stell-platz» → «Stellplatz», «Kol-leg*innen» → «Kolleg*innen», «Überra-schung» → «Überraschung», «vorge-sehen» → «vorgesehen», «unterbe-setzt» → «unterbesetzt», «bewälti-gen» → «bewältigen», «we-gen» → «wegen», «An-wesenheit» → «Anwesenheit», «fir-meneigene» → «firmeneigene», «Fir-menserver» → «Firmenserver», «ande-ren» → «anderen», «Orga-nisation» → «Organisation»).",
+    "pp.55-58: se han eliminado los números de página sueltos (55, 56, 57, 58) y los encabezados de compilación «Lesen Teil 4 (вариант № 5)» y «Lesen Teil 4 (вариант №6) (тест №150321, 150301)»; se conservan las acotaciones temáticas entre paréntesis («(Frau Wagner, Kantine)», «(Frau Bruhns, Betriebsausflug)») por formar parte del enunciado del original.",
+    "p.55: en el cuerpo del acta las siglas de los asistentes aparecen intercambiadas respecto a la lista de participantes; corregido «SH berichtet» (TOP 3) → «HS berichtet» (Henry Smith, Leitung Produktion, que es quien informa sobre la producción) y «KS macht darauf aufmerksam» (TOP 4) → «SK macht darauf aufmerksam» (Sabine Kurz, Hausverwaltung, área a la que corresponde la cantina). En la lista de asistentes las siglas ya eran las correctas (HS, SK).",
+    "p.55: corregido el apellido con las letras transpuestas «Tomás Rodrgiuez» → «Tomás Rodríguez».",
+    "p.55: en TOP 3, «… sind HS durch Ihre Zuverlässigkeit und schnelle Auffassungsgabe positiv aufgefallen» → «… sind ihm durch ihre Zuverlässigkeit und schnelle Auffassungsgabe positiv aufgefallen». El sujeto lógico de la frase es HS, de modo que la segunda aparición de las siglas ocupa el lugar del pronombre en dativo «ihm»; es una interpretación probable y no afecta a ninguna respuesta.",
+    "p.55: en TOP 3, «einige Zeitarbeitskräfte festzustellen» → «einige Zeitarbeitskräfte fest anzustellen». «feststellen» (= constatar) no tiene sentido en ese contexto y el ítem 17 b habla de «fest anstellen»; se corrige la errata evidente, conservando la palabra clave «einige», que es la que invalida la opción «alle Zeitarbeiter».",
+    "p.56: corregida la errata «Die bisherige Regelung ab dem dritten WK» → «Die bisherige Regelung ab dem dritten Tag». La sigla «WK» no tiene sentido ahí y la norma anterior era precisamente la del tercer día (cf. ítem 15 b).",
+    "p.56: la frase de TOP 5 «Die bisherige Regelung ab dem dritten Tag berichtet, dass diese Entscheidung in der Belegschaft für großen Unmut sorgt.» está truncada en el original: falta el sujeto de «berichtet» (probablemente «KW» o «Sie», cf. la frase siguiente «Sie bittet alle Abteilungsleiter ein weiteres Mal …»). No se ha reconstruido para no inventar texto; no afecta a ninguna respuesta.",
+    "p.57: normalizadas a la forma latina «BT» las siglas de Brigitte Turner, que aparecían escritas con la letra cirílica «В»: «Brigitte Turner (ВТ, Personal)», «ВТ stellt dar» y «ВТ bittet bis Mitte der nächsten Woche …».",
+    "p.57: eliminada la repetición del original «Protokoll 27.08.20XX, 10.00 bis 11.30 Uhr bis 11.30 Uhr» → «Protokoll 27.08.20XX, 10.00 bis 11.30 Uhr».",
+    "p.57: corregido el punto que separaba a dos asistentes en la lista: «Thomas Köhler (TK, Werkstatt). Brigitte Turner (…» → «Thomas Köhler (TK, Werkstatt), Brigitte Turner (…».",
+    "p.57: suprimida la coma que rompía la frase de TOP 2: «Obwohl regelmäßig Sicherheitsunterweisungen, für die Mitarbeitenden im Lager und in der Werkstatt stattfinden» → «Obwohl regelmäßig Sicherheitsunterweisungen für die Mitarbeitenden im Lager und in der Werkstatt stattfinden».",
+    "p.57: «Entschuldigt: Kari Muster (KM, Lager)»: probable errata por «Karl Muster», pero se ha dejado tal cual por no ser seguro (no afecta a ningún ítem).",
+    "p.58: corregidos el espacio interior y la letra cirílica de las opciones: «b) ist für alle Mitarbeiter* innen verpflichtet.» → «Mitarbeiter*innen» y «с) zum besseren Kennenlernen der Kolleg*innen genutzt.» (con «с» cirílica) → «c) …».",
+    "p.58: se han dejado sin corregir dos fallos de gramática del original que no cambian el sentido ni afectan a las respuestas: «eine weitere Mitarbeiterin oder ein weiteren Mitarbeiter einzustellen» (por «einen weiteren») y «sodass das verbleibende Kolleg*innen viele Überstunden machen müssen» (por «die verbleibenden Kolleg*innen»)."
+  ]
+}

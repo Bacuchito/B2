@@ -1,0 +1,305 @@
+{
+ "block": "ls_a",
+ "section": "lesen-us",
+ "variants": [
+  {
+   "id": "ls_a-p66a",
+   "label": "Beschwerde – Variante 1 (Putzdienst)",
+   "page": 66,
+   "topic": "Putzdienst / Reinigung",
+   "note": "La p. 66 trae el ítem 20 dos veces: esta primera formulación y la marcada «Новый вариант от 21.12.24» (→ ls_a-p66b). En el PDF la opción a de este ítem aparece con dos formulaciones separadas por «/» («hält die Arbeitszeit ein. / hat flexible Einsatzzeiten.»); se reproduce la primera, que es justamente la que la nueva versión niega («hält die Arbeitszeit nicht ein»).",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrte Frau Woller,\n\nleider muss ich mich heute mit einer Beschwerde an Sie wenden. Wir haben einen Vertrag mit Ihrer Firma für die Reinigung unserer Büroräume. In diesem Vertrag sind täglich 3 Stunden Arbeit bei uns festgelegt, und zwar von 6.00 Uhr bis 9.00 Uhr morgens.\n\nIn den letzten zwei Wochen war unsere Sekretärin einige Male bereits vor 9 Uhr im Büro, von Ihrem Putzdienst war aber niemand zu sehen. Wie kann das sein?\n\nWenn wir 3 Stunden bezahlen, erwarten wir auch, dass Ihr Personal drei Stunden bei uns arbeitet. Wenn Sie für die Reinigung unserer Räume weniger als die vereinbarte Zeit benötigen, sollten Sie uns darüber informieren, damit wir den Vertrag ändern.\n\nIch bitte um umgehende Stellungnahme und natürlich die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden.\n\nMit freundlichen Grüßen\nTheo Lassner",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Herr Lassner",
+     "options": [
+      {
+       "key": "a",
+       "text": "möchte seine Rechnung nicht begleichen."
+      },
+      {
+       "key": "b",
+       "text": "ist mit der Sauberkeit im Büro nicht zufrieden."
+      },
+      {
+       "key": "c",
+       "text": "will nur die geleisteten Stunden bezahlen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Ich bitte um umgehende Stellungnahme und natürlich die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden.",
+     "explain": "Correcto c: Lassner no se niega a pagar, sino que pide que la factura se ajuste a las horas realmente trabajadas. a es falso porque no rechaza el pago, solo quiere que se corrija el importe; b también es falso porque su queja no es la calidad de la limpieza, sino que el personal no aparece en el horario acordado."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Der Putzdienst",
+     "options": [
+      {
+       "key": "a",
+       "text": "hält die Arbeitszeit ein."
+      },
+      {
+       "key": "b",
+       "text": "hat zu wenig Stunden gearbeitet."
+      },
+      {
+       "key": "c",
+       "text": "möchte einen neuen Vertrag."
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "In den letzten zwei Wochen war unsere Sekretärin einige Male bereits vor 9 Uhr im Büro, von Ihrem Putzdienst war aber niemand zu sehen.",
+     "explain": "Correcto b: la carta da por hecho que el servicio de limpieza trabaja menos de las tres horas contratadas, pues no estaba antes de las 9 y el cliente exige «die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden». a es falso porque precisamente se queja de que no respetan el horario acordado; c es falso porque quien quiere cambiar el contrato es el propio Lassner, no la empresa de limpieza. Confianza media porque la carta no cifra cuántas horas se trabajaron de menos: se deduce del conjunto de la queja."
+    }
+   ]
+  },
+  {
+   "id": "ls_a-p66b",
+   "label": "Beschwerde – Variante 1 (Putzdienst) – Новый вариант от 21.12.24",
+   "page": 66,
+   "topic": "Putzdienst / Reinigung",
+   "note": "Fassung «Новый вариант от 21.12.24» del ítem 20 sobre la misma carta de la p. 66 (el PDF no repite el texto): solo cambia la opción a, que pasa a ser negativa y es ahora la clave. El ítem 19 se mantiene idéntico al de ls_a-p66a.",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrte Frau Woller,\n\nleider muss ich mich heute mit einer Beschwerde an Sie wenden. Wir haben einen Vertrag mit Ihrer Firma für die Reinigung unserer Büroräume. In diesem Vertrag sind täglich 3 Stunden Arbeit bei uns festgelegt, und zwar von 6.00 Uhr bis 9.00 Uhr morgens.\n\nIn den letzten zwei Wochen war unsere Sekretärin einige Male bereits vor 9 Uhr im Büro, von Ihrem Putzdienst war aber niemand zu sehen. Wie kann das sein?\n\nWenn wir 3 Stunden bezahlen, erwarten wir auch, dass Ihr Personal drei Stunden bei uns arbeitet. Wenn Sie für die Reinigung unserer Räume weniger als die vereinbarte Zeit benötigen, sollten Sie uns darüber informieren, damit wir den Vertrag ändern.\n\nIch bitte um umgehende Stellungnahme und natürlich die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden.\n\nMit freundlichen Grüßen\nTheo Lassner",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Herr Lassner",
+     "options": [
+      {
+       "key": "a",
+       "text": "möchte seine Rechnung nicht begleichen."
+      },
+      {
+       "key": "b",
+       "text": "ist mit der Sauberkeit im Büro nicht zufrieden."
+      },
+      {
+       "key": "c",
+       "text": "will nur die geleisteten Stunden bezahlen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Ich bitte um umgehende Stellungnahme und natürlich die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden.",
+     "explain": "Correcto c: pide que la factura se adapte a las horas efectivamente trabajadas, es decir, pagar solo lo realmente prestado. a es falso porque no se niega a pagar, solo quiere el ajuste; b es falso porque la carta no critica la calidad de la limpieza, sino el incumplimiento del horario."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Der Putzdienst",
+     "options": [
+      {
+       "key": "a",
+       "text": "hält die Arbeitszeit nicht ein."
+      },
+      {
+       "key": "b",
+       "text": "hat zu wenig Zeit."
+      },
+      {
+       "key": "c",
+       "text": "möchte einen neuen Vertrag."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "In den letzten zwei Wochen war unsere Sekretärin einige Male bereits vor 9 Uhr im Büro, von Ihrem Putzdienst war aber niemand zu sehen.",
+     "explain": "Correcto a: el contrato fija el trabajo de 6.00 a 9.00 horas y la carta afirma que en dos semanas varias veces no había nadie del servicio de limpieza antes de las 9, luego no cumple el horario pactado. b es falso porque el texto no habla de falta de tiempo del personal, sino de su ausencia en la franja acordada; c es falso porque el cambio de contrato lo plantea el cliente, no la empresa de limpieza."
+    }
+   ]
+  },
+  {
+   "id": "ls_a-p67",
+   "label": "Beschwerde – Variante 2 (Tischlampe)",
+   "page": 67,
+   "topic": "Tischlampe",
+   "note": "Esta carta reaparece en la p. 68 como «Новая версия от 08.2024 и от 07.02.2025» con la clienta, el destinatario, la cantidad de lámparas y la hora límite cambiados, y con el ítem 19 reformulado (→ ls_a-p68).",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrter Herr Richter,\n\nvergangene Woche habe ich bei Ihnen 25 Tischlampen Modell TS 13 150 07 für unsere neuen Büroräume bestellt. Mir wurde telefonisch zugesagt, dass die Lampen noch diese Woche geliefert werden, aber jetzt ist schon Freitagnachmittag und sie sind leider noch immer nicht eingetroffen.\n\nDas ist ärgerlich, da wir am Wochenende unsere Renovierungsarbeiten beenden und die Büros dann vollständig neu einrichten werden. Dazu wurden natürlich auch die Lampen gehören, da wir am Montag unseren Bürobetrieb in funktionstüchtigen Räumen wieder aufnehmen wollen. Ich habe bereits mehrfach versucht, Sie telefonisch zu erreichen, und habe Nachrichten auf Ihrem Anrufbeantworter hinterlassen, aber ich wurde leider nicht zurückgerufen. Inzwischen habe ich einen Lieferanten gefunden, der uns kurzfristig andere Tischlampen liefern könnte.\n\nWenn Ihre Lampen also bis Montagmittag, 13:00 Uhr, nicht bei uns eingetroffen sind, werde ich die Bestellung bei Ihnen stornieren. Ich bitte um eine schnelle Antwort!\n\nMit freundlichen Grüßen\nEvelyn Berger",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Frau Berger",
+     "options": [
+      {
+       "key": "a",
+       "text": "beschwert sich über die Qualität des Produktes."
+      },
+      {
+       "key": "b",
+       "text": "hat eine fehlerhafte Lieferung erhalten."
+      },
+      {
+       "key": "c",
+       "text": "wartet dringend auf die Lieferung."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Mir wurde telefonisch zugesagt, dass die Lampen noch diese Woche geliefert werden, aber jetzt ist schon Freitagnachmittag und sie sind leider noch immer nicht eingetroffen.",
+     "explain": "Correcto c: la clienta sigue esperando las lámparas, que no han llegado, y las necesita el lunes, por eso pide una respuesta rápida. a es falso porque no ha recibido el producto y no se pronuncia sobre su calidad; b también es falso porque no ha llegado ninguna entrega defectuosa: no ha llegado nada."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Renovierungsarbeiten",
+     "options": [
+      {
+       "key": "a",
+       "text": "stehen kurz bevor."
+      },
+      {
+       "key": "b",
+       "text": "verzögern sich."
+      },
+      {
+       "key": "c",
+       "text": "sollen zeitnah abgeschlossen werden."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Das ist ärgerlich, da wir am Wochenende unsere Renovierungsarbeiten beenden und die Büros dann vollständig neu einrichten werden.",
+     "explain": "Correcto c: la carta anuncia que las obras se terminan ese mismo fin de semana, es decir, deben quedar concluidas en breve. a es falso porque las obras están ya en su fase final, no por empezar; b también es falso porque lo que se retrasa es la entrega de las lámparas, no las obras, que siguen su plan para el fin de semana."
+    }
+   ]
+  },
+  {
+   "id": "ls_a-p68",
+   "label": "Beschwerde – Variante 2 (Tischlampe) – Новая версия от 08.2024 и от 07.02.2025",
+   "page": 68,
+   "topic": "Tischlampe",
+   "note": "Nueva versión de la carta de la p. 67 (el PDF la marca «Новая версия от 08.2024 и от 07.02.2025»): cambian la clienta (Berger → Lutz), el destinatario (Knut Richter → Elias Philips), la cantidad de lámparas (25 → 15) y la hora límite (13:00 → 12:00); el ítem 19 se reformula y cambia de clave, mientras que el ítem 20 es idéntico al de ls_a-p67. En el PDF la carta empieza directamente por el saludo, sin repetir el encabezado «Beschwerde».",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrter Herr Phillips,\n\nvergangene Woche habe ich bei Ihnen 15 Tischlampen Modell TS 13 150 07 für unsere neuen Büroräume bestellt. Mir wurde telefonisch zugesagt, dass die Lampen noch diese Woche geliefert werden, aber jetzt ist schon Freitagnachmittag und sie sind leider noch immer nicht eingetroffen.\n\nDas ist sehr ärgerlich, da wir am Wochenende unsere Renovierungsarbeiten beenden und die Büros dann vollständig neu einrichten werden. Dazu wurden natürlich auch die Lampen gehören, da wir am Montag unseren Bürobetrieb in funktionstüchtigen Räumen wieder aufnehmen wollen.\n\nIch habe bereits mehrfach versucht, Sie telefonisch zu erreichen, und habe Nachrichten auf Ihrem Anrufbeantworter hinterlassen, aber ich wurde leider nicht zurückgerufen. Inzwischen habe ich einen Lieferanten gefunden, der uns kurzfristig andere Tischlampen liefern könnte.\n\nWenn Ihre Lampen also bis Montagmittag, 12:00 Uhr, nicht bei uns eingetroffen sind, werde ich die Bestellung bei Ihnen stornieren. Ich bitte um eine schnelle Antwort!\n\nMit freundlichen Grüßen\nBetta Lutz",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Frau Lutz",
+     "options": [
+      {
+       "key": "a",
+       "text": "erwartet eine umgehende Rückmeldung."
+      },
+      {
+       "key": "b",
+       "text": "möchte ein anderes Lampenmodell."
+      },
+      {
+       "key": "c",
+       "text": "storniert den Auftrag."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Ich bitte um eine schnelle Antwort!",
+     "explain": "Correcto a: la clienta cierra su carta pidiendo una respuesta rápida, es decir, espera una reacción inmediata de la empresa. b es falso porque ella no pide otro modelo: lo que dice es que ha encontrado a otro proveedor que podría servirle otras lámparas; c es falso porque la cancelación es solo un anuncio condicional, para el caso de que las lámparas no lleguen antes del lunes a mediodía."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Renovierungsarbeiten",
+     "options": [
+      {
+       "key": "a",
+       "text": "stehen kurz bevor."
+      },
+      {
+       "key": "b",
+       "text": "verzögern sich."
+      },
+      {
+       "key": "c",
+       "text": "sollen zeitnah abgeschlossen werden."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Das ist sehr ärgerlich, da wir am Wochenende unsere Renovierungsarbeiten beenden und die Büros dann vollständig neu einrichten werden.",
+     "explain": "Correcto c: también en esta versión la carta afirma que las obras se acaban ese fin de semana, luego deben quedar terminadas en breve. a es falso porque las obras ya están en marcha y casi listas; b es falso porque lo que se retrasa es la entrega de las lámparas, no las obras, que mantienen su plan para el fin de semana."
+    }
+   ]
+  },
+  {
+   "id": "ls_a-p69",
+   "label": "Beschwerde – Variante 3 (Website)",
+   "page": 69,
+   "topic": "Website",
+   "note": "El ítem 20 se refiere a lo que sostiene la agencia y solo puede justificarse con el correo interno de su responsable (Jutta Spindler → Frau Holsten), que NO se incluye en el pasaje, porque pertenece a la tarea de escritura (ítem 21), fuera de este bloque; de ahí la confianza media y que su cita proceda de la carta del cliente. En el PDF el esquema de color aparece con dos formulaciones alternativas entre paréntesis («grau orange (grün blau)» y «Grau Blau (Grün Grau)»), que se reproducen tal cual.",
+   "kind": "text",
+   "intro": "Lesen Sie die Beschwerde und die Aufgaben 19 und 20. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+   "passage": "Sehr geehrte Frau Spindler,\n\nvielen Dank für Ihren Entwurf für unsere neue Firmenwebsite. Ich habe ihn gemeinsam mit dem Team gesichtet und dabei ist uns aufgefallen, dass Ihre Agentur die Vorgaben an zwei Stellen leider nicht umgesetzt hat:\n\nZum einen hatten wir besprochen, dass das Farbschema grau orange (grün blau) sein sollte. Da statt Grau Blau (Grün Grau) gewählt wurde, glaube ich, dass es zu einem Missverständnis gekommen ist. Zum anderen sind auf der Seite mit den Ansprechpartnern die Namen einiger Mitarbeiter vertauscht worden. Im Anhang schicke ich Ihnen noch einmal eine Auflistung der Namen mit den dazugehörigen Bildern. Könnten Sie diese beide Punkte bitte bis Anfang nächster Woche nachbessern? Eine kurze Rückmeldung wäre nett.\n\nMit freundlichen Grüßen\nFranz Stiller",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Herr Stiller",
+     "options": [
+      {
+       "key": "a",
+       "text": "ist mit dem Entwurf der Agentur nicht einverstanden."
+      },
+      {
+       "key": "b",
+       "text": "möchte, dass Frau Spindler sich einen Entwurf ansieht."
+      },
+      {
+       "key": "c",
+       "text": "möchte wissen, wer den Entwurf überarbeiten kann."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Ich habe ihn gemeinsam mit dem Team gesichtet und dabei ist uns aufgefallen, dass Ihre Agentur die Vorgaben an zwei Stellen leider nicht umgesetzt hat",
+     "explain": "Correcto a: Stiller ha revisado el borrador con su equipo y comprueba que la agencia no aplicó sus indicaciones en dos puntos (el color y los nombres), luego no está conforme con el resultado. b es falso porque no pide a Frau Spindler que mire un borrador, sino que corrija el suyo; c es falso porque no pregunta quién puede rehacerlo, sino que se lo pide directamente a la agencia."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Agentur sagt, dass sie",
+     "options": [
+      {
+       "key": "a",
+       "text": "Änderungen nur gegen Aufpreis macht."
+      },
+      {
+       "key": "b",
+       "text": "keine Fehler gemacht hat."
+      },
+      {
+       "key": "c",
+       "text": "keine Vorgaben von Herrn Stiller hatte."
+      }
+     ],
+     "answer": "a",
+     "confidence": "mittel",
+     "quote": "Zum anderen sind auf der Seite mit den Ansprechpartnern die Namen einiger Mitarbeiter vertauscht worden.",
+     "explain": "Correcto a por eliminación: el correo interno de la agencia, que no forma parte del texto de lectura, dice literalmente «Wenn wir das noch machen sollten, geht das nur gegen zusätzliche Bezahlung.». b es falso porque en ese mismo correo la agencia reconoce el error de los nombres («Die vertauschten Namen sind unser Fehler und die verbessern wir auch.»); c es falso porque la carta demuestra que sí había indicaciones —la agencia no las aplicó en dos puntos— y el correo insiste en que siempre se atuvieron a ellas («obwohl wir uns immer an die Vorgaben gehalten haben»). La cita es de la carta del cliente porque la justificación directa está en el correo interno, fuera del texto de lectura; de ahí la confianza media."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.66-69: se han unido los saltos de línea del PDF dentro de cada párrafo y las palabras partidas con guion de final de línea en las cartas transcritas («voll-ständig» → «vollständig», «un-seren» → «unseren», «kurz-fristig» → «kurzfristig», «Be-stellung» → «Bestellung», «Anruf-beantworter» → «Anrufbeantworter», «Lieferan-ten» → «Lieferanten», «umge-setzt» → «umgesetzt», «an-deren» → «anderen», «Könn-ten» → «Könnten»)."
+  ,
+  "pp.66-69: se han eliminado los números de página (66, 67, 68, 69) y los encabezados repetidos «Lesen und Schreiben Teil Beschwerde (вариант № N)»; las etiquetas «Новый вариант …» / «Новая версия …» se reseñan en el campo note de la variante correspondiente.",
+  "p.69: corregido «Änderungen nur gegen Aufpreis macht .» → «Änderungen nur gegen Aufpreis macht.» (espacio suelto antes del punto).",
+  "pp.66-69: se ha omitido el correo interno del jefe que encarga la respuesta, que el PDF imprime antes de cada carta: pertenece a la tarea de escritura (ítem 21), fuera del alcance de este bloque. Por eso el pasaje de cada variante contiene únicamente la carta del cliente. La única excepción de contenido es el ítem 20 de la p. 69, que remite a ese correo y así se advierte en el note de la variante.",
+  "p.69: se conservan tal cual las dos formulaciones alternativas del color tal como aparecen en el PDF («grau orange (grün blau)» y «Grau Blau (Grün Grau)»); no se han tocado por no ser erratas evidentes.",
+  "p.66: en la opción a del ítem 20 el PDF ofrece dos formulaciones («hält die Arbeitszeit ein. / hat flexible Einsatzzeiten.»); se reproduce la primera, la que la nueva versión niega, y se deja constancia en el note de la variante."
+ ]
+}
