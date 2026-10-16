@@ -988,5 +988,11 @@
     "seen": 1792102127.4158535,
     "ast_hash": "533dedf551202b3ceb8c9093a88d94d7",
     "semantic_hash": ""
+  },
+  "RESUMEN_CAMBIOS_DEEPSEEK.md": {
+    "mtime": 1792190128.8671937,
+    "seen": 1792190141.6917775,
+    "ast_hash": "5099f64080edae5cd42044b5120ffcf9",
+    "semantic_hash": ""
   }
 }
