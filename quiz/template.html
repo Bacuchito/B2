@@ -2619,11 +2619,18 @@ function openAIConfigModal(alertNotice){
         if(!firebase.apps || !firebase.apps.length){
           firebase.initializeApp(parsed);
         }
+        /* Prueba real: escribe y relee el mismo tipo de campo que usa la app, en la
+           sala de verdad. Antes escribía en la sala fija "sergio-diana" y trataba
+           "permission-denied" como éxito, así que unas reglas mal publicadas seguían
+           diciendo "conexión correcta". El documento "_test_ping" no lo lee la app
+           (listar está prohibido y solo pide ids de tareas conocidas). */
         const testDb = firebase.firestore();
-        await testDb.collection("rooms").doc("sergio-diana").collection("schreiben").doc("_test_ping").get().catch(err=>{
-          if(err && err.code === "permission-denied") return { exists: false };
-          throw err;
-        });
+        const pingField = currentUser === "sergio" ? "sergio_updated_at" : "diana_updated_at";
+        const ping = testDb.collection("rooms").doc(currentRoomId)
+          .collection("schreiben").doc("_test_ping");
+        await ping.set({ [pingField]: Date.now() }, { merge: true });
+        const readBack = await ping.get();
+        if (!readBack.exists) throw new Error("se escribió pero no se pudo releer (revisa las reglas)");
         resSpan.innerHTML = '<span style="color:var(--ok)">' + t("firebaseSuccess") + '</span>';
       } catch(e){
         resSpan.innerHTML = '<span style="color:var(--bad)">' + t("firebaseFailed", {error: e.message}) + '</span>';
