@@ -106,7 +106,7 @@ WICHTIGE VORGABEN:
 - In `critical_errors`: Analysiere den Text gründlich und liste ALLE konkreten Fehler auf (Grammatik, Verbposition/Satzbau, Deklination/Kasus, Präpositionen, unpassende Wortwahl, Rechtschreibung, Zeichensetzung).
   * `original`: MUSS ein EXAKTES, wörtliches Zitat (Substring) aus dem Text des Teilnehmers sein (ohne Anführungszeichen drumherum), damit der Fehler exakt an dieser Stelle im Text farbig markiert werden kann!
   * `correction`: Die korrigierte Version der Passage auf Deutsch (B2-Niveau).
-  * `rule_es`: Präzise, verständliche und lehrreiche Erklärung der Grammatik- oder Ausdrucksregel auf SPANISCH.
+  * `rule_es`: Präzise, verständliche und lehrreiche Erklärung der Grammatik- oder Ausdrucksregel auf SPANISCH (oder auf RUSSISCH, falls im User-Prompt angewiesen).
   * `type`: "Grammatik", "Wortschatz", "Zeichensetzung", "Stil" oder "Satzbau".
 - QUALITÄT UND FORMATIERUNG VON `corrected_version` UND `musterloesung`:
   * KEIN unleserlicher Textblock! Du MUSST den Text mit echten Leerzeilen (`\n\n`) optisch in 3 bis 4 übersichtliche Absätze gliedern (Anrede, Einleitung/Dank, Behandlung der Leitpunkte, Lösung/Schluss, Grußformel, Name).
@@ -114,7 +114,7 @@ WICHTIGE VORGABEN:
   * Grußformel (z. B. `Mit freundlichen Grüßen` oder `Herzliche Grüße`) steht auf einer EIGENEN Zeile nach einer Leerzeile (`\n\n`).
   * WICHTIGE FORMALIE: Im Deutschen steht nach `Mit freundlichen Grüßen` NIEMALS ein Komma! Danach folgt ein Zeilenumbruch mit Vor- und Nachname.
   * Sprachliches Niveau: Nutze anspruchsvolles, flüssiges und natürliches Berufsdeutsch B2 (abwechslungsreiche Konnektoren wie `darüber hinaus`, `des Weiteren`, `infolgedessen`, `demnach`; Nomen-Verb-Verbindungen wie `eine Vereinbarung treffen`, `zur Verfügung stehen`, `Kenntnis nehmen`).
-- Erklärungen der Fehler (`rule_es`), Stärken (`strengths`), Schwächen (`areas_for_improvement`) und `feedback` MÜSSEN auf SPANISCH sein.
+- Erklärungen der Fehler (`rule_es`), Stärken (`strengths`), Schwächen (`areas_for_improvement`) und `feedback` MÜSSEN auf SPANISCH sein (oder auf RUSSISCH, falls im User-Prompt ausdrücklich vorgegeben).
 - `corrected_version` und `musterloesung` MÜSSEN auf DEUTSCH sein.
 """
 
@@ -231,9 +231,10 @@ JSON_SCHEMA: Dict[str, Any] = {
 }
 
 
-def build_user_prompt(task: Dict[str, Any], student_text: str) -> str:
+def build_user_prompt(task: Dict[str, Any], student_text: str, lang: str = "es") -> str:
     """
     Construye el prompt de entrada para el modelo combinando la tarea oficial y el texto del alumno.
+    Permite especificar el idioma ('es' o 'ru') en el que el examinador debe dar explicaciones y feedback.
     """
     leitpunkte_str = "\n".join([f"   {i+1}. {lp}" for i, lp in enumerate(task.get("leitpunkte", []))])
 
@@ -262,9 +263,26 @@ def build_user_prompt(task: Dict[str, Any], student_text: str) -> str:
         "\n=======================================================",
         "### TEXT DES PRÜFUNGSTEILNEHMERS (ZUR BEWERTUNG):",
         f"\"\"\"\n{student_text}\n\"\"\"",
-        "=======================================================",
-        "\nAnalysiere nun den Text und gib das strukturierte JSON-Ergebnis gemäß der Schema-Definition zurück."
+        "======================================================="
     ])
+
+    if lang == "ru":
+        prompt_parts.extend([
+            "\nWICHTIGE VORGABE ZUR SPRACHE DES FEEDBACKS:",
+            "Die Prüfungskandidatin lernt Deutsch und ihre Muttersprache ist RUSSISCH.",
+            "- Alle Erklärungen der Fehler im Feld `rule_es` MÜSSEN AUF RUSSISCH verfasst werden!",
+            "- Die Stärken (`strengths`), Schwächen (`areas_for_improvement`) und das Feedback zu den 4 Kriterien (`feedback`) MÜSSEN AUF RUSSISCH sein!",
+            "- Die korrigierte Fassung (`corrected_version`) und die Musterlösung (`musterloesung`) MÜSSEN selbstverständlich auf DEUTSCH (B2-Niveau) sein.",
+            "- Verwende präzise russische linguistische Fachbegriffe für Deutschlerner (z. B. 'Порядок слов в предложении', 'Управление глаголов и предлоги', 'Спряжение', 'Падежи и артикли')."
+        ])
+    else:
+        prompt_parts.extend([
+            "\nWICHTIGE VORGABE ZUR SPRACHE DES FEEDBACKS:",
+            "- Alle Erklärungen der Fehler im Feld `rule_es`, Stärken (`strengths`), Schwächen (`areas_for_improvement`) und das Kriterien-Feedback MÜSSEN auf SPANISCH verfasst werden!",
+            "- Die korrigierte Fassung (`corrected_version`) und die Musterlösung (`musterloesung`) MÜSSEN auf DEUTSCH (B2-Niveau) sein."
+        ])
+
+    prompt_parts.append("\nAnalysiere nun den Text und gib das strukturierte JSON-Ergebnis gemäß der Schema-Definition zurück.")
 
     return "\n".join(prompt_parts)
 
@@ -304,9 +322,11 @@ def validate_evaluation_json(data: Dict[str, Any]) -> List[str]:
         errors.append("'critical_errors' debe ser una lista.")
     else:
         for idx, err in enumerate(data.get("critical_errors", [])):
-            for f in ["original", "correction", "rule_es", "type"]:
+            for f in ["original", "correction", "type"]:
                 if f not in err:
                     errors.append(f"Error #{idx} en 'critical_errors' carece del campo '{f}'.")
+            if "rule_es" not in err and "rule_ru" not in err and "rule" not in err:
+                errors.append(f"Error #{idx} en 'critical_errors' carece de regla de explicación ('rule_es' o 'rule_ru').")
 
     if not isinstance(data.get("strengths"), list):
         errors.append("'strengths' debe ser una lista.")

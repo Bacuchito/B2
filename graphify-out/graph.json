@@ -1173,7 +1173,7 @@
       "file_type": "code",
       "norm_label": "check()",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L70"
+      "source_location": "L71"
     },
     {
       "id": "quiz_smoke_test_descendientes",
@@ -1185,7 +1185,7 @@
       "file_type": "code",
       "norm_label": "descendientes()",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L91"
+      "source_location": "L92"
     },
     {
       "id": "quiz_smoke_test_el_appendchild",
@@ -5397,7 +5397,7 @@
       "file_type": "code",
       "norm_label": "validate_evaluation_json()",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L272"
+      "source_location": "L290"
     },
     {
       "id": "quiz_test_prompt_call_live_gemini",
@@ -5409,7 +5409,7 @@
       "file_type": "code",
       "norm_label": "call_live_gemini()",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L232"
+      "source_location": "L237"
     },
     {
       "id": "quiz_test_prompt_main",
@@ -5421,7 +5421,7 @@
       "file_type": "code",
       "norm_label": "main()",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L270"
+      "source_location": "L275"
     },
     {
       "id": "quiz_test_prompt_run_offline_tests",
@@ -9288,7 +9288,7 @@
       "file_type": "code",
       "norm_label": "checks",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L69"
+      "source_location": "L70"
     },
     {
       "id": "quiz_smoke_test_clicables",
@@ -9299,7 +9299,7 @@
       "file_type": "code",
       "norm_label": "clicables",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L96"
+      "source_location": "L97"
     },
     {
       "id": "quiz_smoke_test_document",
@@ -9321,7 +9321,7 @@
       "file_type": "code",
       "norm_label": "errors",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L60"
+      "source_location": "L61"
     },
     {
       "id": "quiz_smoke_test_evaltext",
@@ -9332,7 +9332,7 @@
       "file_type": "code",
       "norm_label": "evaltext",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L172"
+      "source_location": "L173"
     },
     {
       "id": "quiz_smoke_test_fs",
@@ -9376,7 +9376,7 @@
       "file_type": "code",
       "norm_label": "localstorage",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L53"
+      "source_location": "L54"
     },
     {
       "id": "quiz_smoke_test_maintext",
@@ -9387,7 +9387,7 @@
       "file_type": "code",
       "norm_label": "maintext",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L84"
+      "source_location": "L85"
     },
     {
       "id": "quiz_smoke_test_schrbtn",
@@ -9398,7 +9398,7 @@
       "file_type": "code",
       "norm_label": "schrbtn",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L117"
+      "source_location": "L118"
     },
     {
       "id": "quiz_smoke_test_store",
@@ -9409,7 +9409,7 @@
       "file_type": "code",
       "norm_label": "store",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L52"
+      "source_location": "L53"
     },
     {
       "id": "quiz_smoke_test_todas",
@@ -9431,7 +9431,7 @@
       "file_type": "code",
       "norm_label": "window",
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L58"
+      "source_location": "L59"
     },
     {
       "id": "quiz_make_ls_b",
@@ -10473,7 +10473,7 @@
       "source_location": "L235"
     },
     {
-      "id": "quiz_prompt_schreiben_rationale_273",
+      "id": "quiz_prompt_schreiben_rationale_291",
       "label": "Valida que un diccionario cumpla el contrato de evaluaci\u00f3n telc B2. Devuelve\u2026",
       "_origin": "ast",
       "community": 26,
@@ -10481,7 +10481,7 @@
       "file_type": "rationale",
       "norm_label": "valida que un diccionario cumpla el contrato de evaluacion telc b2. devuelve...",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L273"
+      "source_location": "L291"
     },
     {
       "id": "quiz_test_prompt_rationale_187",
@@ -10506,7 +10506,7 @@
       "source_location": "L2"
     },
     {
-      "id": "quiz_test_prompt_rationale_233",
+      "id": "quiz_test_prompt_rationale_238",
       "label": "Realiza una llamada en vivo a la API de Google Gemini.",
       "_origin": "ast",
       "community": 26,
@@ -10514,7 +10514,7 @@
       "file_type": "rationale",
       "norm_label": "realiza una llamada en vivo a la api de google gemini.",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L233"
+      "source_location": "L238"
     },
     {
       "id": "agents_skills_impeccable_scripts_live_browser_ignores",
@@ -36754,7 +36754,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L241",
+      "source_location": "L246",
       "weight": 1.0
     },
     {
@@ -36766,7 +36766,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L280",
+      "source_location": "L285",
       "weight": 1.0
     },
     {
@@ -36778,7 +36778,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L282",
+      "source_location": "L287",
       "weight": 1.0
     },
     {
@@ -36790,7 +36790,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L299",
+      "source_location": "L304",
       "weight": 1.0
     },
     {
@@ -36814,7 +36814,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L201",
+      "source_location": "L206",
       "weight": 1.0
     },
     {
@@ -37498,7 +37498,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L272",
+      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -37510,7 +37510,7 @@
       "confidence_score": 1.0,
       "context": "generic_arg",
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L232",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -51475,7 +51475,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L272",
+      "source_location": "L290",
       "weight": 1.0
     },
     {
@@ -51585,7 +51585,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L117",
+      "source_location": "L118",
       "weight": 1.0
     },
     {
@@ -51618,7 +51618,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L172",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -51651,7 +51651,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L52",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -51662,7 +51662,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L53",
+      "source_location": "L54",
       "weight": 1.0
     },
     {
@@ -51673,7 +51673,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L58",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -51695,7 +51695,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L60",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -51706,7 +51706,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L69",
+      "source_location": "L70",
       "weight": 1.0
     },
     {
@@ -51717,7 +51717,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L70",
+      "source_location": "L71",
       "weight": 1.0
     },
     {
@@ -51728,7 +51728,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L84",
+      "source_location": "L85",
       "weight": 1.0
     },
     {
@@ -51750,7 +51750,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L91",
+      "source_location": "L92",
       "weight": 1.0
     },
     {
@@ -51761,7 +51761,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/smoke_test.js",
-      "source_location": "L96",
+      "source_location": "L97",
       "weight": 1.0
     },
     {
@@ -51937,7 +51937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L232",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -51948,7 +51948,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L270",
+      "source_location": "L275",
       "weight": 1.0
     },
     {
@@ -52876,14 +52876,14 @@
       "weight": 1.0
     },
     {
-      "source": "quiz_prompt_schreiben_rationale_273",
+      "source": "quiz_prompt_schreiben_rationale_291",
       "target": "quiz_prompt_schreiben_validate_evaluation_json",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/prompt_schreiben.py",
-      "source_location": "L273",
+      "source_location": "L291",
       "weight": 1.0
     },
     {
@@ -52909,14 +52909,14 @@
       "weight": 1.0
     },
     {
-      "source": "quiz_test_prompt_rationale_233",
+      "source": "quiz_test_prompt_rationale_238",
       "target": "quiz_test_prompt_call_live_gemini",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/test_prompt.py",
-      "source_location": "L233",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -54644,5 +54644,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "011f67b495ed2d98a20f630193c915f024953478"
+  "built_at_commit": "36d4ffe5b14887487330cb63eab70271360c0d7d"
 }

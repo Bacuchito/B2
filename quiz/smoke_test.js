@@ -42,11 +42,12 @@ class El {
 }
 
 const ids = {};
-["nav", "main", "stats", "reset", "doubt", "btn-ai-config", "modal-container"].forEach(id => { ids[id] = new El("div"); });
+["nav", "main", "stats", "reset", "doubt", "btn-ai-config", "modal-container", "header-title", "lang-btn-es", "lang-btn-ru"].forEach(id => { ids[id] = new El("div"); });
 
 const document = {
   getElementById: id => ids[id] || (ids[id] = new El("div")),
   createElement: tag => new El(tag),
+  documentElement: new El("html"),
 };
 
 const store = {};
@@ -173,6 +174,43 @@ const evalText = ids.main.collectText();
 check("los resultados de evaluación se pintan correctamente", /BESTANDEN|Aufgabenbewältigung/i.test(evalText), evalText.match(/BESTANDEN[^<]*/i) ? "insignia BESTANDEN presente" : "");
 check("el texto del alumno anotado con errores está presente", /Tu texto con análisis|Ich danke Sie/i.test(evalText));
 check("la regla gramatical y corrección interactiva se muestran", /Danken rige dativo|Ich danke Ihnen/i.test(evalText));
+
+/* ---------- comprobación del sistema bilingüe (Ruso y Español) ---------- */
+if (typeof window.setLanguage === "function") {
+  try {
+    window.setLanguage("ru");
+  } catch (e) {
+    errors.push("excepción al cambiar idioma a ruso: " + e.message);
+  }
+  check("el cambio a ruso se ejecuta correctamente", window.getLang && window.getLang() === "ru", `idioma actual: ${window.getLang ? window.getLang() : "desconocido"}`);
+  
+  const statsRu = ids.stats.innerHTML;
+  check("las estadísticas cambian a ruso", /отвечено|верно|сомнительных/i.test(statsRu), statsRu.slice(0, 90));
+
+  const ruMainText = ids.main.collectText();
+  check("el panel de Schreiben y evaluación se actualizan a ruso", /Рабочая ситуация|Обязательные пункты плана|Текст с анализом/i.test(ruMainText), ruMainText.slice(0, 100));
+  check("el veredicto de evaluación muestra сдано en ruso", /СДАНО/i.test(ruMainText));
+  check("la leyenda de tipos de error se muestra en ruso", /Грамматика \/ Синтаксис/i.test(ruMainText));
+
+  // Abrir modal en ruso
+  if (aiConfigBtn && typeof aiConfigBtn.onclick === "function") {
+    try {
+      aiConfigBtn.onclick();
+    } catch(e) {
+      errors.push("excepción al abrir modal de IA en ruso: " + e.message);
+    }
+    const modalRu = ids["modal-container"].collectText();
+    check("el modal de IA se muestra completamente en ruso", /Настройка искусственного интеллекта|Провайдер ИИ|Сохранить изменения/i.test(modalRu));
+  }
+
+  // Regresar a español
+  try {
+    window.setLanguage("es");
+  } catch(e) {
+    errors.push("excepción al regresar a español: " + e.message);
+  }
+  check("el cambio de vuelta a español funciona", window.getLang && window.getLang() === "es", `idioma actual: ${window.getLang ? window.getLang() : "desconocido"}`);
+}
 
 /* ---------- informe ---------- */
 let bad = 0;

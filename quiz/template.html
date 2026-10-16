@@ -187,13 +187,23 @@
   .input, .select{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:9px 12px;color:var(--txt);font-size:13.5px;outline:none;box-sizing:border-box}
   .input:focus, .select:focus{border-color:var(--acc)}
 
+  /* Selector nativo bilingüe ES / RU */
+  .lang-switch{display:inline-flex;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:2px;gap:2px}
+  .lang-btn{background:transparent;border:0;color:var(--dim);font-size:12px;font-weight:600;padding:4px 10px;border-radius:16px;cursor:pointer;transition:all .16s ease;display:inline-flex;align-items:center;gap:4px;line-height:1}
+  .lang-btn:hover{color:var(--txt)}
+  .lang-btn.active{background:var(--acc);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.35)}
+
   @media(max-width:860px){nav{position:static;height:auto;width:100%;flex:1 1 auto}
     .layout{flex-direction:column}main{padding:16px}}
 </style>
 </head>
 <body>
 <header>
-  <h1>B2 Beruf — Test</h1>
+  <h1 id="header-title">B2 Beruf — Test</h1>
+  <div class="lang-switch" role="group" aria-label="Idioma / Язык">
+    <button class="lang-btn active" id="lang-btn-es" data-lang="es" title="Español">🇪🇸 ES</button>
+    <button class="lang-btn" id="lang-btn-ru" data-lang="ru" title="Русский">🇷🇺 RU</button>
+  </div>
   <div class="spacer"></div>
   <div class="stat" id="stats"></div>
   <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
@@ -211,6 +221,324 @@
 const DATA = /*__DATA__*/;
 const LS = "b2quiz.v1";
 const LS_AI = "b2quiz.ai_config";
+const LS_LANG = "b2quiz_lang";
+
+let currentLang = "es";
+try {
+  const savedLang = localStorage.getItem(LS_LANG);
+  if (savedLang === "es" || savedLang === "ru") currentLang = savedLang;
+} catch(e){}
+
+const I18N = {
+  es: {
+    appTitle: "B2 Beruf — Test",
+    docTitle: "B2 Beruf — Test de Lesen, Hören y Schreiben",
+    statRespondidas: "{done}/{total} respondidas · <b>{ok}</b> correctas",
+    statDudosas: "{doubt} dudosas",
+    btnSoloDudosas: "Solo dudosas",
+    btnVerTodas: "Ver todas",
+    btnSoloDudosasTitle: "Ver solo las respuestas con confianza media o baja",
+    btnAiConfig: "⚙ Configurar IA",
+    btnAiConfigTitle: "Configurar claves de API para evaluación de redacción",
+    btnReset: "Reiniciar",
+    confirmResetAll: "¿Borrar todas tus respuestas y borradores?",
+    loading: "Cargando…",
+    noData: "No hay datos todavía.",
+    pagePdf: "Página {page} del PDF",
+    itemsCount: "{count} ítems",
+    itemCountSingle: "1 ítem",
+    schreibenSubBadge: "Schreiben (150+ Wörter · 45 Min.)",
+    passedPill: "✓ Aprobado",
+    failedPill: "✗ Suspenso",
+    doubtPillSingle: "1 dudosa",
+    doubtPillPlural: "{count} dudosas",
+    instructions: "Instrucciones",
+    readingText: "Texto de lectura",
+    optionsSummary: "{label} {range} ({total} opciones, {unused} sin usar)",
+    reviewModeInfo: "Modo repaso: mostrando solo las {shown} de {total} respuestas con confianza media o baja. Revísalas contra el texto.",
+    reviewModeNoDoubt: "Esta variante no tiene respuestas dudosas: todas son de confianza alta.",
+    btnShowAllAnswers: "Mostrar todas las respuestas",
+    btnClearVariantAnswers: "Borrar respuestas de esta variante",
+    correctAnswerIs: "Respuesta correcta: <b>{letter}</b>",
+    correctVerdict: "✓ Correcto",
+    wrongVerdict: "✗ Incorrecto — la correcta es <b>{letter}</b>",
+    confidenceBadge: "confianza: {conf}",
+    secondReadingBadge: "✓ 2ª lectura",
+    revealedBadge: "revelada",
+    youChose: "Elegiste {chosen}. ",
+    correctIs: "La correcta es {correct}.",
+    schreibenTaskTitle: "Situación laboral y tarea oficial telc B2",
+    scenarioLabel: "Situación previa:",
+    sourceLetterLabel: "✉ Carta / Correo del cliente:",
+    colleaguePostLabel: "💬 Publicación en el Intranet:",
+    bossInstructionsLabel: "📌 Instrucciones internas de la jefa/jefe:",
+    missionLabel: "Tu misión:",
+    leitpunkteTitle: "Puntos guía obligatorios (4 Leitpunkte):",
+    redemittelSummary: "💡 Redemittel B2 útiles (frases modelo para esta redacción)",
+    wordBadgeFew: "{words} palabras (mínimo 150)",
+    wordBadgeNear: "{words} palabras (cerca del mínimo de 150)",
+    wordBadgeGood: "✓ {words} palabras (longitud B2 adecuada)",
+    timerStart: "Iniciar",
+    timerPause: "Pausar",
+    timerResume: "Reanudar",
+    timerReset: "Reiniciar",
+    timerFinished: "Finalizado",
+    timerAlert: "⏰ ¡Tiempo terminado! Han transcurrido los 45 minutos del examen.",
+    btnEvaluate: "✨ Evaluar con Examinador telc B2",
+    btnEvaluating: "⏳ Evaluando con examinador telc...",
+    btnClearDraft: "Limpiar texto",
+    confirmClearDraft: "¿Seguro que deseas borrar el borrador de esta tarea?",
+    alertTooShort: "Tu texto es demasiado corto ({words} palabras). Escribe un intento más desarrollado (mínimo 150 palabras para B2) antes de solicitar evaluación.",
+    alertNeedGeminiKey: "Para evaluar con Google Gemini, necesitas configurar tu API Key.",
+    alertNeedCustomKey: "Para evaluar con DeepSeek / OpenAI, necesitas ingresar tu API Key.",
+    statusConnecting: "Conectando con el LLM examinador...",
+    statusCompleted: "¡Evaluación completada con éxito!",
+    statusError: "Error al evaluar: ",
+    alertEvalError: "Error en la evaluación: {error}\n\nVerifica tu clave o configuración en el botón '⚙ Configurar IA'.",
+    verdictPass: "✓ BESTANDEN (APROBADO)",
+    verdictFail: "✗ NICHT BESTANDEN (NO APROBADO)",
+    totalScore: "Puntuación total: <b>{score} / 100</b>",
+    annotatedHeadTitle: "📝 Tu texto con análisis y corrección interactiva",
+    errorsZero: "✓ 0 errores detectados",
+    errorsCountSingle: "⚠ 1 corrección",
+    errorsCountPlural: "⚠ {count} correcciones",
+    chipGram: "Gramática / Sintaxis ({num})",
+    chipWort: "Vocabulario ({num})",
+    chipZeich: "Puntuación / Ortografía ({num})",
+    chipStil: "Estilo ({num})",
+    tabAnnotated: "🔍 Tu texto con errores marcados ({ranges}/{total} en texto)",
+    tabClean: "📄 Tu texto original limpio",
+    tabModel: "⭐ Tu texto corregido y pulido (B2)",
+    tabMuster: "🏆 Redacción Modelo 100 pts",
+    noDraftFound: "No hay texto registrado para esta evaluación. Escribe tu texto en el editor y presiona \"Evaluar con Examinador telc B2\".",
+    perfectTextNotice: "<b>✓ ¡Texto impecable!</b> No se detectaron errores gramaticales ni ortográficos.",
+    popoverCorrectionNum: "Corrección #{num}",
+    popoverClickTitle: "Clic para ver explicación detallada",
+    gradeLabel: "Nota: {grade} ({score}/25)",
+    leitpunkteCheckHeader: "Tratamiento de Leitpunkte:",
+    errorsBreakdownTitle: "⚠ Desglose detallado de errores y reglas gramaticales ({count}):",
+    locateInText: "🔍 Ubicar en el texto",
+    strengthsTitle: "Puntos Fuertes (Stärken):",
+    areasTitle: "Aspectos a Mejorar (Verbesserung):",
+    optimizedTextTitle: "⭐ Tu texto optimizado a nivel B2 profesional:",
+    optimizedTextSub: "Tu misma redacción, corregida gramaticalmente y estructurada en párrafos formales",
+    musterloesungTitle: "🏆 Redacción modelo de examen (Musterlösung oficial 100 pts):",
+    musterloesungSub: "Ejemplo alternativo de puntuación máxima con conectores avanzados y estructura telc",
+    btnCopyText: "Copiar texto",
+    btnCopiedText: "¡Copiado!",
+    btnDeleteEval: "Eliminar esta evaluación para volver a intentar",
+    confirmDeleteEval: "¿Deseas eliminar los resultados de esta evaluación?",
+    modalTitle: "Configuración de Inteligencia Artificial",
+    lblProvider: "Proveedor de IA:",
+    optGemini: "Google Gemini (Recomendado - API Key de Google)",
+    optCustom: "DeepSeek / OpenAI / OpenRouter",
+    optOllama: "Ollama (100% Local y Offline)",
+    geminiKeyHelp: "Se almacena exclusivamente en tu navegador (localStorage). Consigue una gratis en <a href=\"https://aistudio.google.com\" target=\"_blank\" style=\"color:var(--acc)\">aistudio.google.com</a>.",
+    geminiModelHelpLite: "gemini-3.5-flash-lite (Recomendado - Ultrarrápido y eficiente)",
+    geminiModelHelpFlash: "gemini-3.5-flash (Alta capacidad y velocidad)",
+    geminiModelHelpPro: "gemini-3.1-pro-preview (Máxima capacidad de razonamiento)",
+    lblCustomEndpoint: "Endpoint Base:",
+    customEndpointHelp: "DeepSeek: <code>https://api.deepseek.com</code> | OpenAI: <code>https://api.openai.com/v1</code>",
+    lblCustomKey: "API Key:",
+    lblCustomModel: "Nombre del Modelo:",
+    lblOllamaEndpoint: "Ollama Endpoint:",
+    ollamaEndpointHelp: "Si Ollama está en este equipo, usa <code>http://localhost:11434</code>. Asegúrate de tener CORS habilitado (<code>OLLAMA_ORIGINS=*</code>).",
+    lblOllamaModel: "Modelo descargado en Ollama:",
+    btnTestConn: "Probar Conexión",
+    btnSaveAi: "Guardar Cambios",
+    testTesting: "Probando conexión...",
+    testSuccess: "✓ ¡Conexión establecida exitosamente!",
+    testFailed: "✗ Fallo de conexión: {error}",
+    alertAiSaved: "Configuración de IA guardada.",
+    alertEnterGeminiKey: "Ingresa la API Key de Gemini.",
+    alertEnterKey: "Ingresa la API Key."
+  },
+  ru: {
+    appTitle: "B2 Beruf — Экзамен",
+    docTitle: "B2 Beruf — Экзамен по чтению, аудированию и письму",
+    statRespondidas: "{done}/{total} отвечено · <b>{ok}</b> верно",
+    statDudosas: "{doubt} сомнительных",
+    btnSoloDudosas: "Только сомнительные",
+    btnVerTodas: "Показать все",
+    btnSoloDudosasTitle: "Показать только вопросы со средней или низкой уверенностью",
+    btnAiConfig: "⚙ Настройка ИИ",
+    btnAiConfigTitle: "Настройка API-ключей для проверки письменной части",
+    btnReset: "Сбросить",
+    confirmResetAll: "Удалить все ваши ответы и черновики?",
+    loading: "Загрузка…",
+    noData: "Данных пока нет.",
+    pagePdf: "Страница {page} в PDF",
+    itemsCount: "{count} вопр.",
+    itemCountSingle: "1 вопрос",
+    schreibenSubBadge: "Schreiben (150+ слов · 45 мин.)",
+    passedPill: "✓ Сдано",
+    failedPill: "✗ Не сдано",
+    doubtPillSingle: "1 сомнит.",
+    doubtPillPlural: "{count} сомнит.",
+    instructions: "Инструкция",
+    readingText: "Текст для чтения",
+    optionsSummary: "{label} {range} ({total} вар., {unused} не использовано)",
+    reviewModeInfo: "Режим повторения: показаны только {shown} из {total} ответов со средней или низкой уверенностью. Сверьте их с текстом.",
+    reviewModeNoDoubt: "В этом варианте нет сомнительных ответов: все с высокой уверенностью.",
+    btnShowAllAnswers: "Показать все ответы",
+    btnClearVariantAnswers: "Очистить ответы этого варианта",
+    correctAnswerIs: "Правильный ответ: <b>{letter}</b>",
+    correctVerdict: "✓ Верно",
+    wrongVerdict: "✗ Неверно — правильный ответ <b>{letter}</b>",
+    confidenceBadge: "уверенность: {conf}",
+    secondReadingBadge: "✓ 2-я проверка",
+    revealedBadge: "раскрыто",
+    youChose: "Вы выбрали {chosen}. ",
+    correctIs: "Правильный ответ: {correct}.",
+    schreibenTaskTitle: "Рабочая ситуация и официальное задание telc B2",
+    scenarioLabel: "Исходная ситуация:",
+    sourceLetterLabel: "✉ Письмо / обращение клиента:",
+    colleaguePostLabel: "💬 Сообщение коллеги в интранете:",
+    bossInstructionsLabel: "📌 Внутренние указания руководства:",
+    missionLabel: "Ваша задача:",
+    leitpunkteTitle: "Обязательные пункты плана (4 Leitpunkte):",
+    redemittelSummary: "💡 Полезные фразы уровня B2 (Redemittel для этого текста)",
+    wordBadgeFew: "{words} слов (минимум 150)",
+    wordBadgeNear: "{words} слов (близко к минимуму 150)",
+    wordBadgeGood: "✓ {words} слов (достаточный объем для B2)",
+    timerStart: "Старт",
+    timerPause: "Пауза",
+    timerResume: "Продолжить",
+    timerReset: "Сброс",
+    timerFinished: "Время вышло",
+    timerAlert: "⏰ Время вышло! Истекли 45 минут экзамена.",
+    btnEvaluate: "✨ Проверить экзаменатором telc B2",
+    btnEvaluating: "⏳ Проверка экзаменатором telc...",
+    btnClearDraft: "Очистить текст",
+    confirmClearDraft: "Вы уверены, что хотите удалить черновик этого задания?",
+    alertTooShort: "Ваш текст слишком короткий ({words} слов). Напишите более развернутый ответ (минимум 150 слов для B2) перед отправкой на проверку.",
+    alertNeedGeminiKey: "Для проверки через Google Gemini необходимо указать ваш API-ключ.",
+    alertNeedCustomKey: "Для проверки через DeepSeek / OpenAI необходимо указать ваш API-ключ.",
+    statusConnecting: "Подключение к языковой модели...",
+    statusCompleted: "Оценка успешно завершена!",
+    statusError: "Ошибка при проверке: ",
+    alertEvalError: "Ошибка при проверке: {error}\n\nПроверьте ключ или настройки в окне '⚙ Настройка ИИ'.",
+    verdictPass: "✓ BESTANDEN (СДАНО)",
+    verdictFail: "✗ NICHT BESTANDEN (НЕ СДАНО)",
+    totalScore: "Итоговый балл: <b>{score} / 100</b>",
+    annotatedHeadTitle: "📝 Текст с анализом и интерактивной коррекцией",
+    errorsZero: "✓ 0 ошибок обнаружено",
+    errorsCountSingle: "⚠ 1 исправление",
+    errorsCountPlural: "⚠ {count} исправлений",
+    chipGram: "Грамматика / Синтаксис ({num})",
+    chipWort: "Лексика ({num})",
+    chipZeich: "Пунктуация / Орфография ({num})",
+    chipStil: "Стиль ({num})",
+    tabAnnotated: "🔍 Текст с выделенными ошибками ({ranges}/{total} в тексте)",
+    tabClean: "📄 Исходный текст без пометок",
+    tabModel: "⭐ Исправленный текст уровня B2",
+    tabMuster: "🏆 Образцовое сочинение (100 баллов)",
+    noDraftFound: "Нет текста для этой оценки. Напишите текст в редакторе и нажмите \"Проверить экзаменатором telc B2\".",
+    perfectTextNotice: "<b>✓ Безупречный текст!</b> Грамматических и орфографических ошибок не обнаружено.",
+    popoverCorrectionNum: "Исправление #{num}",
+    popoverClickTitle: "Нажмите для подробного объяснения",
+    gradeLabel: "Оценка: {grade} ({score}/25)",
+    leitpunkteCheckHeader: "Отражение пунктов плана (Leitpunkte):",
+    errorsBreakdownTitle: "⚠ Подробный разбор ошибок и грамматических правил ({count}):",
+    locateInText: "🔍 Найти в тексте",
+    strengthsTitle: "Сильные стороны (Stärken):",
+    areasTitle: "Области для улучшения (Verbesserung):",
+    optimizedTextTitle: "⭐ Ваш оптимизированный текст уровня B2:",
+    optimizedTextSub: "Ваш текст с исправленной грамматикой и делением на абзацы",
+    musterloesungTitle: "🏆 Официальный образец экзамена (Musterlösung на 100 баллов):",
+    musterloesungSub: "Пример идеального ответа с продвинутыми связками и структурой telc",
+    btnCopyText: "Копировать текст",
+    btnCopiedText: "Скопировано!",
+    btnDeleteEval: "Удалить эту оценку, чтобы попробовать снова",
+    confirmDeleteEval: "Удалить результаты этой проверки?",
+    modalTitle: "Настройка искусственного интеллекта",
+    lblProvider: "Провайдер ИИ:",
+    optGemini: "Google Gemini (Рекомендуется — Google API Key)",
+    optCustom: "DeepSeek / OpenAI / OpenRouter",
+    optOllama: "Ollama (100% локально и офлайн)",
+    geminiKeyHelp: "Ключ хранится только в вашем браузере (localStorage). Получите бесплатно на <a href=\"https://aistudio.google.com\" target=\"_blank\" style=\"color:var(--acc)\">aistudio.google.com</a>.",
+    geminiModelHelpLite: "gemini-3.5-flash-lite (Рекомендуется — ультрабыстрый и точный)",
+    geminiModelHelpFlash: "gemini-3.5-flash (Высокая скорость и качество)",
+    geminiModelHelpPro: "gemini-3.1-pro-preview (Максимальные аналитические способности)",
+    lblCustomEndpoint: "Базовый Endpoint:",
+    customEndpointHelp: "DeepSeek: <code>https://api.deepseek.com</code> | OpenAI: <code>https://api.openai.com/v1</code>",
+    lblCustomKey: "API-ключ:",
+    lblCustomModel: "Имя модели:",
+    lblOllamaEndpoint: "Ollama Endpoint:",
+    ollamaEndpointHelp: "Если Ollama запущена на этом ПК, используйте <code>http://localhost:11434</code>. Убедитесь, что CORS разрешен (<code>OLLAMA_ORIGINS=*</code>).",
+    lblOllamaModel: "Модель в Ollama:",
+    btnTestConn: "Проверить соединение",
+    btnSaveAi: "Сохранить изменения",
+    testTesting: "Проверка подключения...",
+    testSuccess: "✓ Соединение успешно установлено!",
+    testFailed: "✗ Ошибка подключения: {error}",
+    alertAiSaved: "Настройки ИИ сохранены.",
+    alertEnterGeminiKey: "Введите API Key для Gemini.",
+    alertEnterKey: "Введите API Key."
+  }
+};
+
+function t(key, vars = {}) {
+  const dict = I18N[currentLang] || I18N.es;
+  let str = dict[key] !== undefined ? dict[key] : (I18N.es[key] !== undefined ? I18N.es[key] : key);
+  for (const [k, v] of Object.entries(vars)) {
+    str = str.replace(new RegExp(`\\{${k}\\}`, "g"), v);
+  }
+  return str;
+}
+
+function formatConfidence(conf) {
+  const c = String(conf || "mittel").toLowerCase();
+  if (currentLang === "ru") {
+    if (c === "hoch") return "высокая";
+    if (c === "niedrig") return "низкая";
+    return "средняя";
+  } else {
+    if (c === "hoch") return "alta";
+    if (c === "niedrig") return "baja";
+    return "media";
+  }
+}
+
+function updateLangUI() {
+  if (document.documentElement) document.documentElement.lang = currentLang;
+  document.title = t("docTitle");
+
+  const h1 = document.getElementById("header-title");
+  if (h1) h1.textContent = t("appTitle");
+
+  const btnEs = document.getElementById("lang-btn-es");
+  const btnRu = document.getElementById("lang-btn-ru");
+  if (btnEs) btnEs.className = "lang-btn" + (currentLang === "es" ? " active" : "");
+  if (btnRu) btnRu.className = "lang-btn" + (currentLang === "ru" ? " active" : "");
+
+  const doubtBtn = document.getElementById("doubt");
+  if (doubtBtn) {
+    doubtBtn.textContent = onlyDoubtful ? t("btnVerTodas") : t("btnSoloDudosas");
+    doubtBtn.title = t("btnSoloDudosasTitle");
+    doubtBtn.className = onlyDoubtful ? "btn" : "btn ghost";
+  }
+
+  const aiBtn = document.getElementById("btn-ai-config");
+  if (aiBtn) {
+    aiBtn.textContent = t("btnAiConfig");
+    aiBtn.title = t("btnAiConfigTitle");
+  }
+
+  const resetBtn = document.getElementById("reset");
+  if (resetBtn) resetBtn.textContent = t("btnReset");
+}
+
+function setLanguage(lang) {
+  if (lang !== "es" && lang !== "ru") return;
+  currentLang = lang;
+  try { localStorage.setItem(LS_LANG, lang); } catch(e){}
+  updateLangUI();
+  render();
+}
+window.setLanguage = setLanguage;
+window.t = t;
+window.getLang = () => currentLang;
 
 function loadState(){
   try {
@@ -302,10 +630,9 @@ function updateStats(){
   });
   const el = document.getElementById("stats");
   if(!el) return;
-  el.innerHTML =
-    done + "/" + total + " respondidas · <b>" + ok + "</b> correctas" +
-    (done ? " (" + Math.round(ok/done*100) + "%)" : "") +
-    (doubt ? ' · <span style="color:#e8c46a">' + doubt + " dudosas</span>" : "");
+  const pct = done ? " (" + Math.round(ok/done*100) + "%)" : "";
+  const doubtSpan = doubt ? ' · <span style="color:#e8c46a">' + t("statDudosas", {doubt: doubt}) + "</span>" : "";
+  el.innerHTML = t("statRespondidas", {done: done, total: total, ok: ok}) + pct + doubtSpan;
 }
 
 /* ---------- navegación ---------- */
@@ -330,11 +657,11 @@ function renderNav(){
       let pill = "";
       if(v.kind === "schreiben"){
         const hasEval = state.schreiben_evals && state.schreiben_evals[v.id];
-        pill = hasEval ? (hasEval.verdict === "BESTANDEN" ? "✓ Aprobado" : "✗ Suspenso") : (v.category === "beschwerde" ? "E-Mail" : "Beitrag");
+        pill = hasEval ? (hasEval.verdict === "BESTANDEN" ? t("passedPill") : t("failedPill")) : (v.category === "beschwerde" ? "E-Mail" : "Beitrag");
       } else {
         pill = onlyDoubtful
-          ? nd + (nd === 1 ? " dudosa" : " dudosas")
-          : (done ? ok + "/" + n : n + " ítems");
+          ? (nd === 1 ? t("doubtPillSingle") : t("doubtPillPlural", {count: nd}))
+          : (done ? ok + "/" + n : (n === 1 ? t("itemCountSingle") : t("itemsCount", {count: n})));
       }
       b.innerHTML = esc(v.label) + '<span class="pill">' + esc(pill) + '</span>';
       if(v.id === current) b.className = "active";
@@ -362,7 +689,7 @@ function render(){
   const main = document.getElementById("main");
   if(!main) return;
   const v = allVariants.find(x=>x.id===current);
-  if(!v){ main.innerHTML = '<div class="empty">No hay datos todavía.</div>'; return; }
+  if(!v){ main.innerHTML = '<div class="empty">' + t("noData") + '</div>'; return; }
   main.innerHTML = "";
 
   /* Encabezado */
@@ -371,9 +698,11 @@ function render(){
   main.appendChild(h2);
   const sub = document.createElement("div");
   sub.className = "sub";
-  sub.innerHTML = 'Página ' + v.page + ' del PDF' +
+  const numItems = (v.items || []).length;
+  const itemsText = numItems === 1 ? t("itemCountSingle") : t("itemsCount", {count: numItems});
+  sub.innerHTML = t("pagePdf", {page: v.page}) +
     (v.topic ? ' · <b>' + esc(v.topic) + '</b>' : '') +
-    (v.kind === "schreiben" ? ' · <b>Schreiben (150+ Wörter · 45 Min.)</b>' : ' · ' + (v.items || []).length + ' ítems');
+    (v.kind === "schreiben" ? ' · <b>' + t("schreibenSubBadge") + '</b>' : ' · ' + itemsText);
   main.appendChild(sub);
 
   if(v.kind === "schreiben"){
@@ -391,12 +720,12 @@ function render(){
   if(v.intro){
     const p = document.createElement("div");
     p.className = "panel";
-    p.innerHTML = '<h3>Instrucciones</h3><div>' + esc(v.intro) + '</div>';
+    p.innerHTML = '<h3>' + t("instructions") + '</h3><div>' + esc(v.intro) + '</div>';
     main.appendChild(p);
   }
 
   if(v.passage){
-    main.appendChild(detailsPanel("Texto de lectura", v.passage));
+    main.appendChild(detailsPanel(t("readingText"), v.passage));
   }
 
   if(v.options && v.options.length){
@@ -407,9 +736,12 @@ function render(){
     const s = document.createElement("summary");
     const label = v.optionsLabel || (v._section === "lesen-t3" ? "Kommentare" : "Anzeigen");
     const ks = v.options.map(o=>String(o.key));
-    s.textContent = label + " " + ks[0] + "–" + ks[ks.length-1] +
-                    " (" + v.options.length + " opciones, " +
-                    (v.options.length - used.size) + " sin usar)";
+    s.textContent = t("optionsSummary", {
+      label: label,
+      range: ks[0] + "–" + ks[ks.length-1],
+      total: v.options.length,
+      unused: (v.options.length - used.size)
+    });
     d.appendChild(s);
     const body = document.createElement("div");
     v.options.forEach(o=>{
@@ -430,9 +762,8 @@ function render(){
     const info = document.createElement("div");
     info.className = "note";
     info.textContent = shown.length
-      ? "Modo repaso: mostrando solo las " + shown.length + " de " + v.items.length +
-        " respuestas con confianza media o baja. Revísalas contra el texto."
-      : "Esta variante no tiene respuestas dudosas: todas son de confianza alta.";
+      ? t("reviewModeInfo", {shown: shown.length, total: v.items.length})
+      : t("reviewModeNoDoubt");
     main.appendChild(info);
   }
   shown.forEach(it => main.appendChild(renderItem(v, it)));
@@ -441,7 +772,7 @@ function render(){
   row.className = "row";
   const bAll = document.createElement("button");
   bAll.className = "btn ghost";
-  bAll.textContent = "Mostrar todas las respuestas";
+  bAll.textContent = t("btnShowAllAnswers");
   bAll.onclick = ()=>{
     v.items.forEach(it=>{ if(state.answers[ansKey(v,it)]===undefined)
       state.answers[ansKey(v,it)] = "__revealed__"; });
@@ -449,7 +780,7 @@ function render(){
   };
   const bClear = document.createElement("button");
   bClear.className = "btn ghost";
-  bClear.textContent = "Borrar respuestas de esta variante";
+  bClear.textContent = t("btnClearVariantAnswers");
   bClear.onclick = ()=>{ v.items.forEach(it=> delete state.answers[ansKey(v,it)]);
     saveState(); render(); };
   row.appendChild(bAll); row.appendChild(bClear);
@@ -469,25 +800,25 @@ function renderSchreiben(v, main){
   /* 1. Panel de Contexto y Enunciado */
   const taskPanel = document.createElement("div");
   taskPanel.className = "panel";
-  taskPanel.innerHTML = '<h3>Situación laboral y tarea oficial telc B2</h3>';
+  taskPanel.innerHTML = '<h3>' + t("schreibenTaskTitle") + '</h3>';
 
   if(v.scenario){
     const sc = document.createElement("div");
     sc.style.marginBottom = "12px";
-    sc.innerHTML = '<b>Situación previa:</b> ' + esc(v.scenario);
+    sc.innerHTML = '<b>' + t("scenarioLabel") + '</b> ' + esc(v.scenario);
     taskPanel.appendChild(sc);
   }
 
   if(v.source_letter){
     const sl = document.createElement("div");
-    sl.innerHTML = '<div style="font-weight:600;font-size:13px;color:var(--acc);margin-bottom:4px">✉ Carta / Correo del cliente:</div>' +
+    sl.innerHTML = '<div style="font-weight:600;font-size:13px;color:var(--acc);margin-bottom:4px">' + t("sourceLetterLabel") + '</div>' +
                    '<div class="letter-card">' + esc(v.source_letter) + '</div>';
     taskPanel.appendChild(sl);
   }
 
   if(v.colleague_post){
     const cp = document.createElement("div");
-    cp.innerHTML = '<div style="font-weight:600;font-size:13px;color:var(--acc);margin-bottom:4px">💬 Publicación en el Intranet:</div>' +
+    cp.innerHTML = '<div style="font-weight:600;font-size:13px;color:var(--acc);margin-bottom:4px">' + t("colleaguePostLabel") + '</div>' +
                    '<div class="letter-card">' + esc(v.colleague_post) + '</div>';
     taskPanel.appendChild(cp);
   }
@@ -495,14 +826,14 @@ function renderSchreiben(v, main){
   if(v.boss_instructions){
     const bi = document.createElement("div");
     bi.className = "memo-card";
-    bi.innerHTML = '<b>📌 Instrucciones internas de la jefa/jefe:</b><br>' + esc(v.boss_instructions);
+    bi.innerHTML = '<b>' + t("bossInstructionsLabel") + '</b><br>' + esc(v.boss_instructions);
     taskPanel.appendChild(bi);
   }
 
   if(v.prompt){
     const pr = document.createElement("div");
     pr.style.marginTop = "12px";
-    pr.innerHTML = '<b>Tu misión:</b> ' + esc(v.prompt);
+    pr.innerHTML = '<b>' + t("missionLabel") + '</b> ' + esc(v.prompt);
     taskPanel.appendChild(pr);
   }
 
@@ -510,7 +841,7 @@ function renderSchreiben(v, main){
   if(v.leitpunkte && v.leitpunkte.length){
     const lpH = document.createElement("div");
     lpH.style.marginTop = "14px";
-    lpH.innerHTML = '<div style="font-weight:700;font-size:14px;margin-bottom:6px">Puntos guía obligatorios (4 Leitpunkte):</div>';
+    lpH.innerHTML = '<div style="font-weight:700;font-size:14px;margin-bottom:6px">' + t("leitpunkteTitle") + '</div>';
     const ul = document.createElement("ul");
     ul.className = "lp-list";
     const savedLps = state.schreiben_lps?.[v.id] || {};
@@ -542,7 +873,7 @@ function renderSchreiben(v, main){
     d.className = "panel passage";
     d.style.marginTop = "14px";
     const s = document.createElement("summary");
-    s.textContent = "💡 Redemittel B2 útiles (frases modelo para esta redacción)";
+    s.textContent = t("redemittelSummary");
     d.appendChild(s);
     const b = document.createElement("div");
     b.className = "passage-body";
@@ -573,8 +904,8 @@ function renderSchreiben(v, main){
   const timerBox = document.createElement("div");
   timerBox.className = "timer-box";
   timerBox.innerHTML = '<span class="timer-display" id="timer-display">' + formatTimer(examTimerSeconds) + '</span>' +
-                       '<button class="btn ghost" id="timer-btn" style="padding:4px 8px;font-size:12px">Iniciar</button>' +
-                       '<button class="btn ghost" id="timer-rst" style="padding:4px 8px;font-size:12px">Reiniciar</button>';
+                       '<button class="btn ghost" id="timer-btn" style="padding:4px 8px;font-size:12px">' + (examTimerRunning ? t("timerPause") : t("timerStart")) + '</button>' +
+                       '<button class="btn ghost" id="timer-rst" style="padding:4px 8px;font-size:12px">' + t("timerReset") + '</button>';
 
   toolbar.appendChild(wordBadge);
   toolbar.appendChild(timerBox);
@@ -605,13 +936,13 @@ function renderSchreiben(v, main){
   const bEval = document.createElement("button");
   bEval.className = "btn";
   bEval.id = "btn-evaluate";
-  bEval.innerHTML = "✨ Evaluar con Examinador telc B2";
+  bEval.innerHTML = t("btnEvaluate");
 
   const bClearDraft = document.createElement("button");
   bClearDraft.className = "btn ghost";
-  bClearDraft.textContent = "Limpiar texto";
+  bClearDraft.textContent = t("btnClearDraft");
   bClearDraft.onclick = ()=>{
-    if(confirm("¿Seguro que deseas borrar el borrador de esta tarea?")){
+    if(confirm(t("confirmClearDraft"))){
       textarea.value = "";
       if(state.schreiben_drafts) delete state.schreiben_drafts[v.id];
       saveState();
@@ -644,15 +975,15 @@ function renderSchreiben(v, main){
   const tRst = document.getElementById("timer-rst");
   const tDisp = document.getElementById("timer-display");
   if(tBtn && tRst && tDisp){
-    tBtn.textContent = examTimerRunning ? "Pausar" : "Iniciar";
+    tBtn.textContent = examTimerRunning ? t("timerPause") : t("timerStart");
     tBtn.onclick = ()=>{
       if(examTimerRunning){
         clearInterval(examTimer);
         examTimerRunning = false;
-        tBtn.textContent = "Reanudar";
+        tBtn.textContent = t("timerResume");
       } else {
         examTimerRunning = true;
-        tBtn.textContent = "Pausar";
+        tBtn.textContent = t("timerPause");
         examTimer = setInterval(()=>{
           if(examTimerSeconds > 0){
             examTimerSeconds--;
@@ -661,8 +992,8 @@ function renderSchreiben(v, main){
           } else {
             clearInterval(examTimer);
             examTimerRunning = false;
-            tBtn.textContent = "Finalizado";
-            alert("⏰ ¡Tiempo terminado! Han transcurrido los 45 minutos del examen.");
+            tBtn.textContent = t("timerFinished");
+            alert(t("timerAlert"));
           }
         }, 1000);
       }
@@ -673,7 +1004,7 @@ function renderSchreiben(v, main){
       examTimerSeconds = 45 * 60;
       tDisp.textContent = formatTimer(examTimerSeconds);
       tDisp.className = "timer-display";
-      tBtn.textContent = "Iniciar";
+      tBtn.textContent = t("timerStart");
     };
   }
 
@@ -682,22 +1013,22 @@ function renderSchreiben(v, main){
     const textToEval = textarea.value.trim();
     const words = countWords(textToEval);
     if(words < 30){
-      alert("Tu texto es demasiado corto (" + words + " palabras). Escribe un intento más desarrollado (mínimo 150 palabras para B2) antes de solicitar evaluación.");
+      alert(t("alertTooShort", {words: words}));
       return;
     }
     const cfg = getAIConfig();
     if(cfg.provider === "gemini" && !cfg.geminiKey){
-      openAIConfigModal("Para evaluar con Google Gemini, necesitas configurar tu API Key.");
+      openAIConfigModal(t("alertNeedGeminiKey"));
       return;
     }
     if(cfg.provider === "openai_compatible" && !cfg.customKey){
-      openAIConfigModal("Para evaluar con DeepSeek / OpenAI, necesitas ingresar tu API Key.");
+      openAIConfigModal(t("alertNeedCustomKey"));
       return;
     }
 
     bEval.disabled = true;
-    bEval.innerHTML = "⏳ Evaluando con examinador telc...";
-    statusMsg.textContent = "Conectando con el LLM examinador...";
+    bEval.innerHTML = t("btnEvaluating");
+    statusMsg.textContent = t("statusConnecting");
 
     try {
       const result = await evaluateWithLLM(v, textToEval, (msg)=>{ statusMsg.textContent = msg; });
@@ -705,14 +1036,14 @@ function renderSchreiben(v, main){
       if(!state.schreiben_evals) state.schreiben_evals = {};
       state.schreiben_evals[v.id] = result;
       saveState();
-      statusMsg.textContent = "¡Evaluación completada con éxito!";
+      statusMsg.textContent = t("statusCompleted");
       render();
     } catch(err) {
-      statusMsg.innerHTML = '<span style="color:var(--bad)">Error al evaluar: ' + esc(err.message) + '</span>';
-      alert("Error en la evaluación: " + err.message + "\\n\\nVerifica tu clave o configuración en el botón '⚙ Configurar IA'.");
+      statusMsg.innerHTML = '<span style="color:var(--bad)">' + t("statusError") + esc(err.message) + '</span>';
+      alert(t("alertEvalError", {error: err.message}));
     } finally {
       bEval.disabled = false;
-      bEval.innerHTML = "✨ Evaluar con Examinador telc B2";
+      bEval.innerHTML = t("btnEvaluate");
     }
   };
 }
@@ -721,13 +1052,13 @@ function updateWordBadge(badge, words){
   if(!badge) return;
   if(words < 100){
     badge.className = "badge niedrig";
-    badge.textContent = words + " palabras (mínimo 150)";
+    badge.textContent = t("wordBadgeFew", {words: words});
   } else if(words < 150){
     badge.className = "badge mittel";
-    badge.textContent = words + " palabras (cerca del mínimo de 150)";
+    badge.textContent = t("wordBadgeNear", {words: words});
   } else {
     badge.className = "badge hoch";
-    badge.textContent = "✓ " + words + " palabras (longitud B2 adecuada)";
+    badge.textContent = t("wordBadgeGood", {words: words});
   }
 }
 
@@ -1055,8 +1386,8 @@ function renderEvaluationResult(v, rawRes){
   const isPass = res.verdict === "BESTANDEN";
   const banner = document.createElement("div");
   banner.className = "eval-banner " + (isPass ? "pass" : "fail");
-  banner.innerHTML = '<div>' + (isPass ? '✓ BESTANDEN (APROBADO)' : '✗ NICHT BESTANDEN (NO APROBADO)') + '</div>' +
-                     '<div>Puntuación total: <b>' + (res.score_total != null ? res.score_total : '-') + ' / 100</b></div>';
+  banner.innerHTML = '<div>' + (isPass ? t("verdictPass") : t("verdictFail")) + '</div>' +
+                     '<div>' + t("totalScore", {score: (res.score_total != null ? res.score_total : '-')}) + '</div>';
   card.appendChild(banner);
 
   /* Texto del alumno analizado con errores en colores e interactivos */
@@ -1081,16 +1412,18 @@ function renderEvaluationResult(v, rawRes){
   head.className = "annotated-head";
   head.innerHTML =
     '<div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">' +
-      '<h3 style="margin:0;font-size:15.5px">📝 Tu texto con análisis y corrección interactiva</h3>' +
+      '<h3 style="margin:0;font-size:15.5px">' + t("annotatedHeadTitle") + '</h3>' +
       (errorsList.length === 0
-        ? '<span class="badge hoch">✓ 0 errores detectados</span>'
-        : '<span class="badge ' + (errorsList.length > 3 ? 'niedrig' : 'mittel') + '">⚠ ' + errorsList.length + ' corrección' + (errorsList.length>1?'es':'') + '</span>') +
+        ? '<span class="badge hoch">' + t("errorsZero") + '</span>'
+        : '<span class="badge ' + (errorsList.length > 3 ? 'niedrig' : 'mittel') + '">' +
+            (errorsList.length === 1 ? t("errorsCountSingle") : t("errorsCountPlural", {count: errorsList.length})) +
+          '</span>') +
     '</div>' +
     '<div class="err-legend">' +
-      (numGram > 0 ? '<span class="legend-chip gram"><span class="dot"></span>Gramática / Sintaxis (' + numGram + ')</span>' : '') +
-      (numWort > 0 ? '<span class="legend-chip wort"><span class="dot"></span>Vocabulario (' + numWort + ')</span>' : '') +
-      (numZeich > 0 ? '<span class="legend-chip zeichen"><span class="dot"></span>Puntuación / Ortografía (' + numZeich + ')</span>' : '') +
-      (numStil > 0 ? '<span class="legend-chip stil"><span class="dot"></span>Estilo (' + numStil + ')</span>' : '') +
+      (numGram > 0 ? '<span class="legend-chip gram"><span class="dot"></span>' + t("chipGram", {num: numGram}) + '</span>' : '') +
+      (numWort > 0 ? '<span class="legend-chip wort"><span class="dot"></span>' + t("chipWort", {num: numWort}) + '</span>' : '') +
+      (numZeich > 0 ? '<span class="legend-chip zeichen"><span class="dot"></span>' + t("chipZeich", {num: numZeich}) + '</span>' : '') +
+      (numStil > 0 ? '<span class="legend-chip stil"><span class="dot"></span>' + t("chipStil", {num: numStil}) + '</span>' : '') +
     '</div>';
   textCard.appendChild(head);
 
@@ -1098,10 +1431,10 @@ function renderEvaluationResult(v, rawRes){
   const tabRow = document.createElement("div");
   tabRow.className = "tab-pills";
   tabRow.innerHTML =
-    '<button class="tab-pill active" id="pill-annotated">🔍 Tu texto con errores marcados (' + errorRanges.length + '/' + errorsList.length + ' en texto)</button>' +
-    '<button class="tab-pill" id="pill-clean">📄 Tu texto original limpio</button>' +
-    (res.corrected_version ? '<button class="tab-pill" id="pill-model">⭐ Tu texto corregido y pulido (B2)</button>' : '') +
-    (res.musterloesung ? '<button class="tab-pill" id="pill-muster">🏆 Redacción Modelo 100 pts</button>' : '');
+    '<button class="tab-pill active" id="pill-annotated">' + t("tabAnnotated", {ranges: errorRanges.length, total: errorsList.length}) + '</button>' +
+    '<button class="tab-pill" id="pill-clean">' + t("tabClean") + '</button>' +
+    (res.corrected_version ? '<button class="tab-pill" id="pill-model">' + t("tabModel") + '</button>' : '') +
+    (res.musterloesung ? '<button class="tab-pill" id="pill-muster">' + t("tabMuster") + '</button>' : '');
   textCard.appendChild(tabRow);
 
   // Caja de texto anotada
@@ -1110,10 +1443,10 @@ function renderEvaluationResult(v, rawRes){
   annotatedBox.className = "annotated-text-box";
 
   if(!studentText){
-    annotatedBox.innerHTML = '<span style="color:var(--dim);font-style:italic">No hay texto registrado para esta evaluación. Escribe tu texto en el editor y presiona "Evaluar con Examinador telc B2".</span>';
+    annotatedBox.innerHTML = '<span style="color:var(--dim);font-style:italic">' + t("noDraftFound") + '</span>';
   } else if(errorRanges.length === 0){
     if(errorsList.length === 0){
-      annotatedBox.innerHTML = '<div style="color:var(--ok);margin-bottom:8px"><b>✓ ¡Texto impecable!</b> No se detectaron errores gramaticales ni ortográficos.</div>' + esc(studentText);
+      annotatedBox.innerHTML = '<div style="color:var(--ok);margin-bottom:8px">' + t("perfectTextNotice") + '</div>' + esc(studentText);
     } else {
       annotatedBox.innerHTML = esc(studentText);
     }
@@ -1141,13 +1474,13 @@ function renderEvaluationResult(v, rawRes){
 
       const errNumber = range.errIdx + 1;
       const pieceHtml =
-        '<mark class="err-highlight ' + typeClass + '" data-err-target="err-card-' + range.errIdx + '" title="Clic para ver explicación detallada">' +
+        '<mark class="err-highlight ' + typeClass + '" data-err-target="err-card-' + range.errIdx + '" title="' + t("popoverClickTitle") + '">' +
           esc(range.text) +
           '<span class="err-badge-num">' + errNumber + '</span>' +
           '<span class="err-popover">' +
             '<span class="err-popover-head">' +
               '<span class="badge ' + badgeClass + '">' + esc(err.type || "Grammatik") + '</span>' +
-              '<span style="font-size:11px;color:var(--dim)">Corrección #' + errNumber + '</span>' +
+              '<span style="font-size:11px;color:var(--dim)">' + t("popoverCorrectionNum", {num: errNumber}) + '</span>' +
             '</span>' +
             '<span class="err-popover-orig"><s>' + esc(err.original) + '</s></span>' +
             '<span class="err-popover-corr">➔ ' + esc(err.correction) + '</span>' +
@@ -1213,7 +1546,7 @@ function renderEvaluationResult(v, rawRes){
     const gradeColor = cData.grade === "A" ? "hoch" : (cData.grade === "B" ? "ok" : (cData.grade === "C" ? "mittel" : "niedrig"));
     box.innerHTML = '<div class="ch">' +
                     '<span>' + esc(cn.title) + '</span>' +
-                    '<span class="badge ' + gradeColor + '">Nota: ' + esc(cData.grade || "-") + ' (' + (cData.score != null ? cData.score : '-') + '/25)</span>' +
+                    '<span class="badge ' + gradeColor + '">' + t("gradeLabel", {grade: esc(cData.grade || "-"), score: (cData.score != null ? cData.score : '-')}) + '</span>' +
                     '</div>' +
                     '<div class="c-body">' + esc(cData.feedback || "") + '</div>';
 
@@ -1221,7 +1554,7 @@ function renderEvaluationResult(v, rawRes){
       const lCheck = document.createElement("div");
       lCheck.style.marginTop = "8px";
       lCheck.style.fontSize = "12px";
-      lCheck.innerHTML = '<b>Tratamiento de Leitpunkte:</b>' +
+      lCheck.innerHTML = '<b>' + t("leitpunkteCheckHeader") + '</b>' +
         '<ul style="margin:4px 0;padding-left:16px">' +
         cData.leitpunkte_check.map(lp =>
           '<li>' + (lp.covered ? '<span style="color:var(--ok)">✓</span> ' : '<span style="color:var(--bad)">✗</span> ') +
@@ -1238,7 +1571,7 @@ function renderEvaluationResult(v, rawRes){
   if(res.critical_errors && res.critical_errors.length){
     const errSec = document.createElement("div");
     errSec.style.marginTop = "18px";
-    errSec.innerHTML = '<h4 style="margin:0 0 10px;font-size:15px;color:var(--bad)">⚠ Desglose detallado de errores y reglas gramaticales (' + res.critical_errors.length + '):</h4>';
+    errSec.innerHTML = '<h4 style="margin:0 0 10px;font-size:15px;color:var(--bad)">' + t("errorsBreakdownTitle", {count: res.critical_errors.length}) + '</h4>';
     
     res.critical_errors.forEach((err, errIdx)=>{
       const typeStr = String(err.type || "Grammatik").toLowerCase();
@@ -1265,7 +1598,7 @@ function renderEvaluationResult(v, rawRes){
             '<span style="font-weight:700;font-size:13px;color:' + borderCol + '">#' + (errIdx + 1) + '</span>' +
             '<span class="badge ' + badgeClass + '">' + esc(err.type || "Grammatik") + '</span>' +
           '</div>' +
-          '<span style="font-size:11.5px;color:var(--dim)" title="Clic para localizar en el texto">🔍 Ubicar en el texto</span>' +
+          '<span style="font-size:11.5px;color:var(--dim)" title="' + t("locateInText") + '">' + t("locateInText") + '</span>' +
         '</div>' +
         '<div class="orig">„' + esc(err.original) + '“</div>' +
         '<div class="corr">➔ ' + esc(err.correction) + '</div>' +
@@ -1294,7 +1627,7 @@ function renderEvaluationResult(v, rawRes){
     const stBox = document.createElement("div");
     stBox.className = "crit-box";
     stBox.style.borderLeft = "4px solid var(--ok)";
-    stBox.innerHTML = '<b style="color:var(--ok)">Puntos Fuertes (Stärken):</b>' +
+    stBox.innerHTML = '<b style="color:var(--ok)">' + t("strengthsTitle") + '</b>' +
       '<ul style="margin:6px 0;padding-left:18px;font-size:13px;line-height:1.5">' +
       res.strengths.map(s => '<li>' + esc(s) + '</li>').join('') +
       '</ul>';
@@ -1305,7 +1638,7 @@ function renderEvaluationResult(v, rawRes){
     const impBox = document.createElement("div");
     impBox.className = "crit-box";
     impBox.style.borderLeft = "4px solid var(--warn)";
-    impBox.innerHTML = '<b style="color:var(--warn)">Aspectos a Mejorar (Verbesserung):</b>' +
+    impBox.innerHTML = '<b style="color:var(--warn)">' + t("areasTitle") + '</b>' +
       '<ul style="margin:6px 0;padding-left:18px;font-size:13px;line-height:1.5">' +
       res.areas_for_improvement.map(i => '<li>' + esc(i) + '</li>').join('') +
       '</ul>';
@@ -1320,10 +1653,10 @@ function renderEvaluationResult(v, rawRes){
     cvSec.innerHTML =
       '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">' +
         '<div>' +
-          '<h4 style="margin:0;font-size:15px;color:var(--acc)">⭐ Tu texto optimizado a nivel B2 profesional:</h4>' +
-          '<small style="color:var(--dim)">Tu misma redacción, corregida gramaticalmente y estructurada en párrafos formales</small>' +
+          '<h4 style="margin:0;font-size:15px;color:var(--acc)">' + t("optimizedTextTitle") + '</h4>' +
+          '<small style="color:var(--dim)">' + t("optimizedTextSub") + '</small>' +
         '</div>' +
-        '<button class="copy-btn" id="btn-copy-model">Copiar texto</button>' +
+        '<button class="copy-btn" id="btn-copy-model">' + t("btnCopyText") + '</button>' +
       '</div>' +
       '<div class="model-text" id="model-text-content">' + esc(res.corrected_version) + '</div>';
     card.appendChild(cvSec);
@@ -1335,10 +1668,10 @@ function renderEvaluationResult(v, rawRes){
     msSec.innerHTML =
       '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;flex-wrap:wrap;gap:8px">' +
         '<div>' +
-          '<h4 style="margin:0;font-size:15px;color:#5fd6a3">🏆 Redacción modelo de examen (Musterlösung oficial 100 pts):</h4>' +
-          '<small style="color:var(--dim)">Ejemplo alternativo de puntuación máxima con conectores avanzados y estructura telc</small>' +
+          '<h4 style="margin:0;font-size:15px;color:#5fd6a3">' + t("musterloesungTitle") + '</h4>' +
+          '<small style="color:var(--dim)">' + t("musterloesungSub") + '</small>' +
         '</div>' +
-        '<button class="copy-btn" id="btn-copy-muster">Copiar texto</button>' +
+        '<button class="copy-btn" id="btn-copy-muster">' + t("btnCopyText") + '</button>' +
       '</div>' +
       '<div class="model-text" id="muster-text-content" style="border-left:4px solid var(--ok)">' + esc(res.musterloesung) + '</div>';
     card.appendChild(msSec);
@@ -1348,9 +1681,9 @@ function renderEvaluationResult(v, rawRes){
   const bDelEval = document.createElement("button");
   bDelEval.className = "btn ghost";
   bDelEval.style.marginTop = "16px";
-  bDelEval.textContent = "Eliminar esta evaluación para volver a intentar";
+  bDelEval.textContent = t("btnDeleteEval");
   bDelEval.onclick = ()=>{
-    if(confirm("¿Deseas eliminar los resultados de esta evaluación?")){
+    if(confirm(t("confirmDeleteEval"))){
       delete state.schreiben_evals[v.id];
       saveState();
       render();
@@ -1402,8 +1735,8 @@ function renderEvaluationResult(v, rawRes){
       if(btn && text){
         btn.onclick = ()=>{
           navigator.clipboard.writeText(text).then(()=>{
-            btn.textContent = "¡Copiado!";
-            setTimeout(()=>{ btn.textContent = "Copiar texto"; }, 2000);
+            btn.textContent = t("btnCopiedText");
+            setTimeout(()=>{ btn.textContent = t("btnCopyText"); }, 2000);
           }).catch(()=>{});
         };
       }
@@ -1443,6 +1776,20 @@ function buildUserPromptClient(task, studentText){
   parts.push("### TEXT DES PRÜFUNGSTEILNEHMERS (ZUR BEWERTUNG):");
   parts.push("\"\"\"\n" + studentText + "\n\"\"\"");
   parts.push("=======================================================");
+
+  if(currentLang === "ru"){
+    parts.push("\nWICHTIGE VORGABE ZUR SPRACHE DES FEEDBACKS:");
+    parts.push("Die Prüfungskandidatin lernt Deutsch und ihre Muttersprache ist RUSSISCH.");
+    parts.push("- Alle Erklärungen der Fehler im Feld `rule_es` MÜSSEN AUF RUSSISCH verfasst werden!");
+    parts.push("- Die Stärken (`strengths`), Schwächen (`areas_for_improvement`) und das Feedback zu den 4 Kriterien (`feedback`) MÜSSEN AUF RUSSISCH sein!");
+    parts.push("- Die korrigierte Fassung (`corrected_version`) und die Musterlösung (`musterloesung`) MÜSSEN selbstverständlich auf DEUTSCH (B2-Niveau) sein.");
+    parts.push("- Verwende präzise russische linguistische Fachbegriffe für Deutschlerner (z. B. 'Порядок слов в предложении', 'Управление глаголов и предлоги', 'Спряжение', 'Падежи и артикли').");
+  } else {
+    parts.push("\nWICHTIGE VORGABE ZUR SPRACHE DES FEEDBACKS:");
+    parts.push("- Alle Erklärungen der Fehler im Feld `rule_es`, Stärken (`strengths`), Schwächen (`areas_for_improvement`) und das Kriterien-Feedback MÜSSEN auf SPANISCH verfasst werden!");
+    parts.push("- Die korrigierte Fassung (`corrected_version`) und die Musterlösung (`musterloesung`) MÜSSEN auf DEUTSCH (B2-Niveau) sein.");
+  }
+
   parts.push("\nAnalysiere nun den Text und gib das strukturierte JSON-Ergebnis gemäß der Schema-Definition zurück.");
 
   return parts.join('\n');
@@ -1603,17 +1950,17 @@ function openAIConfigModal(alertNotice){
     '<div class="modal-backdrop" id="ai-modal-backdrop">' +
       '<div class="modal">' +
         '<div class="modal-head">' +
-          '<h3>Configuración de Inteligencia Artificial</h3>' +
+          '<h3>' + t("modalTitle") + '</h3>' +
           '<button class="modal-close" id="modal-close-btn">&times;</button>' +
         '</div>' +
         '<div class="modal-body">' +
           (alertNotice ? '<div class="note" style="margin-bottom:14px">ℹ ' + esc(alertNotice) + '</div>' : '') +
           '<div class="form-group">' +
-            '<label>Proveedor de IA:</label>' +
+            '<label>' + t("lblProvider") + '</label>' +
             '<select class="select" id="cfg-provider">' +
-              '<option value="gemini"' + (cfg.provider==='gemini'?' selected':'') + '>Google Gemini (Recomendado - API Key de Google)</option>' +
-              '<option value="openai_compatible"' + (cfg.provider==='openai_compatible'?' selected':'') + '>DeepSeek / OpenAI / OpenRouter</option>' +
-              '<option value="ollama"' + (cfg.provider==='ollama'?' selected':'') + '>Ollama (100% Local y Offline)</option>' +
+              '<option value="gemini"' + (cfg.provider==='gemini'?' selected':'') + '>' + t("optGemini") + '</option>' +
+              '<option value="openai_compatible"' + (cfg.provider==='openai_compatible'?' selected':'') + '>' + t("optCustom") + '</option>' +
+              '<option value="ollama"' + (cfg.provider==='ollama'?' selected':'') + '>' + t("optOllama") + '</option>' +
             '</select>' +
           '</div>' +
 
@@ -1622,14 +1969,14 @@ function openAIConfigModal(alertNotice){
             '<div class="form-group">' +
               '<label>Gemini API Key:</label>' +
               '<input class="input" type="password" id="cfg-gemini-key" value="' + esc(cfg.geminiKey) + '" placeholder="AIzaSy...">' +
-              '<small>Se almacena exclusivamente en tu navegador (localStorage). Consigue una gratis en <a href="https://aistudio.google.com" target="_blank" style="color:var(--acc)">aistudio.google.com</a>.</small>' +
+              '<small>' + t("geminiKeyHelp") + '</small>' +
             '</div>' +
             '<div class="form-group">' +
-              '<label>Modelo:</label>' +
+              '<label>' + (currentLang === "ru" ? "Модель:" : "Modelo:") + '</label>' +
               '<select class="select" id="cfg-gemini-model">' +
-                '<option value="gemini-3.5-flash-lite"' + (cfg.geminiModel==='gemini-3.5-flash-lite'?' selected':'') + '>gemini-3.5-flash-lite (Recomendado - Ultrarrápido y eficiente)</option>' +
-                '<option value="gemini-3.5-flash"' + (cfg.geminiModel==='gemini-3.5-flash'?' selected':'') + '>gemini-3.5-flash (Alta capacidad y velocidad)</option>' +
-                '<option value="gemini-3.1-pro-preview"' + (cfg.geminiModel==='gemini-3.1-pro-preview'?' selected':'') + '>gemini-3.1-pro-preview (Máxima capacidad de razonamiento)</option>' +
+                '<option value="gemini-3.5-flash-lite"' + (cfg.geminiModel==='gemini-3.5-flash-lite'?' selected':'') + '>' + t("geminiModelHelpLite") + '</option>' +
+                '<option value="gemini-3.5-flash"' + (cfg.geminiModel==='gemini-3.5-flash'?' selected':'') + '>' + t("geminiModelHelpFlash") + '</option>' +
+                '<option value="gemini-3.1-pro-preview"' + (cfg.geminiModel==='gemini-3.1-pro-preview'?' selected':'') + '>' + t("geminiModelHelpPro") + '</option>' +
                 '<option value="gemini-2.5-flash"' + (cfg.geminiModel==='gemini-2.5-flash'?' selected':'') + '>gemini-2.5-flash</option>' +
               '</select>' +
             '</div>' +
@@ -1638,16 +1985,16 @@ function openAIConfigModal(alertNotice){
           /* Sección OpenAI/DeepSeek */
           '<div id="sec-custom" style="display:' + (cfg.provider==='openai_compatible'?'block':'none') + '">' +
             '<div class="form-group">' +
-              '<label>Endpoint Base:</label>' +
+              '<label>' + t("lblCustomEndpoint") + '</label>' +
               '<input class="input" type="text" id="cfg-custom-endpoint" value="' + esc(cfg.customEndpoint) + '" placeholder="https://api.deepseek.com">' +
-              '<small>DeepSeek: <code>https://api.deepseek.com</code> | OpenAI: <code>https://api.openai.com/v1</code></small>' +
+              '<small>' + t("customEndpointHelp") + '</small>' +
             '</div>' +
             '<div class="form-group">' +
-              '<label>API Key:</label>' +
+              '<label>' + t("lblCustomKey") + '</label>' +
               '<input class="input" type="password" id="cfg-custom-key" value="' + esc(cfg.customKey) + '" placeholder="sk-...">' +
             '</div>' +
             '<div class="form-group">' +
-              '<label>Nombre del Modelo:</label>' +
+              '<label>' + t("lblCustomModel") + '</label>' +
               '<input class="input" type="text" id="cfg-custom-model" value="' + esc(cfg.customModel) + '" placeholder="deepseek-chat">' +
             '</div>' +
           '</div>' +
@@ -1655,12 +2002,12 @@ function openAIConfigModal(alertNotice){
           /* Sección Ollama */
           '<div id="sec-ollama" style="display:' + (cfg.provider==='ollama'?'block':'none') + '">' +
             '<div class="form-group">' +
-              '<label>Ollama Endpoint:</label>' +
+              '<label>' + t("lblOllamaEndpoint") + '</label>' +
               '<input class="input" type="text" id="cfg-ollama-endpoint" value="' + esc(cfg.ollamaEndpoint) + '" placeholder="http://localhost:11434">' +
-              '<small>Si Ollama está en este equipo, usa <code>http://localhost:11434</code>. Asegúrate de tener CORS habilitado (<code>OLLAMA_ORIGINS=*</code>).</small>' +
+              '<small>' + t("ollamaEndpointHelp") + '</small>' +
             '</div>' +
             '<div class="form-group">' +
-              '<label>Modelo descargado en Ollama:</label>' +
+              '<label>' + t("lblOllamaModel") + '</label>' +
               '<input class="input" type="text" id="cfg-ollama-model" value="' + esc(cfg.ollamaModel) + '" placeholder="llama3.1">' +
             '</div>' +
           '</div>' +
@@ -1668,8 +2015,8 @@ function openAIConfigModal(alertNotice){
           '<div id="test-result" style="margin-top:12px;font-size:13px"></div>' +
         '</div>' +
         '<div class="modal-foot">' +
-          '<button class="btn ghost" id="btn-test-connection">Probar Conexión</button>' +
-          '<button class="btn" id="btn-save-ai">Guardar Cambios</button>' +
+          '<button class="btn ghost" id="btn-test-connection">' + t("btnTestConn") + '</button>' +
+          '<button class="btn" id="btn-save-ai">' + t("btnSaveAi") + '</button>' +
         '</div>' +
       '</div>' +
     '</div>';
@@ -1700,12 +2047,12 @@ function openAIConfigModal(alertNotice){
     };
     saveAIConfig(newCfg);
     closeModal();
-    alert("Configuración de IA guardada.");
+    alert(t("alertAiSaved"));
   };
 
   document.getElementById("btn-test-connection").onclick = async ()=>{
     const testRes = document.getElementById("test-result");
-    testRes.innerHTML = '<span style="color:var(--dim)">Probando conexión...</span>';
+    testRes.innerHTML = '<span style="color:var(--dim)">' + t("testTesting") + '</span>';
     const tempCfg = {
       provider: document.getElementById("cfg-provider").value,
       geminiKey: document.getElementById("cfg-gemini-key")?.value.trim() || "",
@@ -1718,7 +2065,7 @@ function openAIConfigModal(alertNotice){
     };
     try {
       if(tempCfg.provider === "gemini"){
-        if(!tempCfg.geminiKey) throw new Error("Ingresa la API Key de Gemini.");
+        if(!tempCfg.geminiKey) throw new Error(t("alertEnterGeminiKey"));
         const u = "https://generativelanguage.googleapis.com/v1beta/models/" + tempCfg.geminiModel + ":generateContent?key=" + encodeURIComponent(tempCfg.geminiKey);
         const r = await fetch(u, {
           method: "POST",
@@ -1727,7 +2074,7 @@ function openAIConfigModal(alertNotice){
         });
         if(!r.ok) throw new Error("HTTP " + r.status + ": " + (await r.text()).slice(0, 100));
       } else if(tempCfg.provider === "openai_compatible"){
-        if(!tempCfg.customKey) throw new Error("Ingresa la API Key.");
+        if(!tempCfg.customKey) throw new Error(t("alertEnterKey"));
         let u = tempCfg.customEndpoint.replace(/\/+$/, "");
         if(!u.endsWith("/chat/completions")) u += "/chat/completions";
         const r = await fetch(u, {
@@ -1741,9 +2088,9 @@ function openAIConfigModal(alertNotice){
         const r = await fetch(u);
         if(!r.ok) throw new Error("HTTP " + r.status);
       }
-      testRes.innerHTML = '<span style="color:var(--ok)">✓ ¡Conexión establecida exitosamente!</span>';
+      testRes.innerHTML = '<span style="color:var(--ok)">' + t("testSuccess") + '</span>';
     } catch(e) {
-      testRes.innerHTML = '<span style="color:var(--bad)">✗ Fallo de conexión: ' + esc(e.message) + '</span>';
+      testRes.innerHTML = '<span style="color:var(--bad)">' + t("testFailed", {error: esc(e.message)}) + '</span>';
     }
   };
 }
@@ -1833,24 +2180,25 @@ function renderItem(v, it){
     const fb = document.createElement("div");
     fb.className = "fb show " + (good ? "good" : "bad");
     let verdict;
-    if(revealed) verdict = "Respuesta correcta: <b>" + correctLetter + "</b>";
-    else if(good) verdict = "✓ Correcto";
-    else verdict = "✗ Incorrecto — la correcta es <b>" + correctLetter + "</b>";
+    if(revealed) verdict = t("correctAnswerIs", {letter: correctLetter});
+    else if(good) verdict = t("correctVerdict");
+    else verdict = t("wrongVerdict", {letter: correctLetter});
     const conf = (it.confidence||"mittel").toLowerCase();
+    const confLabel = formatConfidence(conf);
     let traduccion = "";
     if(isMatching && v.options){
-      const t = k => {
+      const optLabel = k => {
         const o = (v.options||[]).find(x => String(x.key).toLowerCase() === k);
         return o ? k + ") " + (o.title || (o.text||"").slice(0,60)) : k;
       };
-      if(answered && !good) traduccion = "Elegiste " + esc(t(String(chosen).toLowerCase())) + ". ";
-      traduccion += "La correcta es " + esc(t(correctLetter)) + ".";
+      if(answered && !good) traduccion = t("youChose", {chosen: esc(optLabel(String(chosen).toLowerCase()))});
+      traduccion += t("correctIs", {correct: esc(optLabel(correctLetter))});
     }
     fb.innerHTML =
       '<div class="verdict">' + verdict +
-        '<span class="badge ' + conf + '">confianza: ' + conf + '</span>' +
-        (it.verified ? '<span class="badge ok">✓ 2ª lectura</span>' : '') +
-        (chosen === "__revealed__" ? '<span class="badge tag">revelada</span>' : '') +
+        '<span class="badge ' + conf + '">' + t("confidenceBadge", {conf: confLabel}) + '</span>' +
+        (it.verified ? '<span class="badge ok">' + t("secondReadingBadge") + '</span>' : '') +
+        (chosen === "__revealed__" ? '<span class="badge tag">' + t("revealedBadge") + '</span>' : '') +
       '</div>' +
       (traduccion ? '<div style="margin-bottom:6px">' + traduccion + '</div>' : '') +
       (it.quote ? '<div class="quote">„' + esc(it.quote) + '“</div>' : '') +
@@ -1868,7 +2216,7 @@ function esc(s){
 const resetBtn = document.getElementById("reset");
 if(resetBtn){
   resetBtn.onclick = ()=>{
-    if(confirm("¿Borrar todas tus respuestas y borradores?")){
+    if(confirm(t("confirmResetAll"))){
       state = {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}};
       saveState(); render();
     }
@@ -1879,7 +2227,8 @@ const doubtBtn = document.getElementById("doubt");
 if(doubtBtn){
   doubtBtn.onclick = ()=>{
     onlyDoubtful = !onlyDoubtful;
-    doubtBtn.textContent = onlyDoubtful ? "Ver todas" : "Solo dudosas";
+    doubtBtn.textContent = onlyDoubtful ? t("btnVerTodas") : t("btnSoloDudosas");
+    doubtBtn.title = t("btnSoloDudosasTitle");
     doubtBtn.className = onlyDoubtful ? "btn" : "btn ghost";
     if(onlyDoubtful){
       const firstDoubt = allVariants.find(v=>doubtfulCount(v) > 0);
@@ -1890,6 +2239,12 @@ if(doubtBtn){
   };
 }
 
+const btnEs = document.getElementById("lang-btn-es");
+if(btnEs) btnEs.onclick = () => setLanguage("es");
+const btnRu = document.getElementById("lang-btn-ru");
+if(btnRu) btnRu.onclick = () => setLanguage("ru");
+
+updateLangUI();
 render();
 </script>
 </body>

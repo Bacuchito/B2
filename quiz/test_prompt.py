@@ -187,14 +187,19 @@ def run_offline_tests() -> bool:
     """Ejecuta la suite de verificación offline de contratos y prompts."""
     print("=== TEST OFFLINE: EVALUADOR TELC B2 SCHREIBEN ===")
 
-    # 1. Verificar construcción de User Prompt
-    print("[1/4] Verificando generación del prompt...")
-    prompt_fail = build_user_prompt(SAMPLE_TASK, SAMPLE_TEXT_FAIL_A2)
-    assert "Die Huber GmbH hat einen Vertrag" in prompt_fail
-    assert "Putzdienst / Büroreinigung" in prompt_fail
-    assert "1. Bezugnahme auf die Beschwerde" in prompt_fail
-    assert SAMPLE_TEXT_FAIL_A2 in prompt_fail
-    print("      OK: El user prompt incluye contexto, Leitpunkte y texto del alumno.")
+    # 1. Verificar construcción de User Prompt (ES y RU)
+    print("[1/4] Verificando generación del prompt (ES y RU)...")
+    prompt_fail_es = build_user_prompt(SAMPLE_TASK, SAMPLE_TEXT_FAIL_A2, lang="es")
+    assert "Die Huber GmbH hat einen Vertrag" in prompt_fail_es
+    assert "Putzdienst / Büroreinigung" in prompt_fail_es
+    assert "1. Bezugnahme auf die Beschwerde" in prompt_fail_es
+    assert SAMPLE_TEXT_FAIL_A2 in prompt_fail_es
+    assert "SPANISCH" in prompt_fail_es
+
+    prompt_fail_ru = build_user_prompt(SAMPLE_TASK, SAMPLE_TEXT_FAIL_A2, lang="ru")
+    assert "RUSSISCH" in prompt_fail_ru
+    assert "rule_es" in prompt_fail_ru
+    print("      OK: El user prompt incluye contexto, Leitpunkte y texto del alumno en ES y RU.")
 
     # 2. Validar contrato de Caso A (FAIL)
     print("[2/4] Validando contrato de evaluación para Caso A (A2 deficiente)...")
