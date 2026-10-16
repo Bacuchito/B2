@@ -42,7 +42,7 @@ class El {
 }
 
 const ids = {};
-["nav", "main", "stats", "reset", "doubt", "btn-ai-config", "modal-container", "header-title", "lang-btn-es", "lang-btn-ru"].forEach(id => { ids[id] = new El("div"); });
+["nav", "main", "stats", "reset", "doubt", "btn-ai-config", "modal-container", "header-title", "lang-btn-es", "lang-btn-ru", "user-btn-sergio", "user-btn-diana"].forEach(id => { ids[id] = new El("div"); });
 
 const document = {
   getElementById: id => ids[id] || (ids[id] = new El("div")),
@@ -210,6 +210,31 @@ if (typeof window.setLanguage === "function") {
     errors.push("excepción al regresar a español: " + e.message);
   }
   check("el cambio de vuelta a español funciona", window.getLang && window.getLang() === "es", `idioma actual: ${window.getLang ? window.getLang() : "desconocido"}`);
+
+  /* ---------- comprobaciones de perfil de usuario (Sergio & Diana) ---------- */
+  const btnUserSergio = ids["user-btn-sergio"];
+  const btnUserDiana = ids["user-btn-diana"];
+  check("los botones de perfil Sergio y Diana existen", btnUserSergio && btnUserDiana);
+
+  if (btnUserDiana && typeof btnUserDiana.onclick === "function") {
+    btnUserDiana.onclick();
+    check("al seleccionar Diana el perfil pasa a diana", window.getUser && window.getUser() === "diana", `usuario: ${window.getUser ? window.getUser() : "desconocido"}`);
+    check("al seleccionar Diana el idioma cambia automáticamente a ruso", window.getLang && window.getLang() === "ru", `idioma: ${window.getLang ? window.getLang() : "desconocido"}`);
+  }
+
+  if (btnUserSergio && typeof btnUserSergio.onclick === "function") {
+    btnUserSergio.onclick();
+    check("al seleccionar Sergio el perfil pasa a sergio", window.getUser && window.getUser() === "sergio", `usuario: ${window.getUser ? window.getUser() : "desconocido"}`);
+    check("al seleccionar Sergio el idioma cambia automáticamente a español", window.getLang && window.getLang() === "es", `idioma: ${window.getLang ? window.getLang() : "desconocido"}`);
+  }
+
+  // Comprobar pestañas de redacción comparativa en Schreiben
+  if (schrBtn && typeof schrBtn.onclick === "function") {
+    schrBtn.onclick();
+    const schreibenDomText = ids.main.collectText();
+    check("las pestañas de mi redacción y redacción de la pareja existen", /Mi redacción|Redacción de Diana|Redacción de Sergio/i.test(schreibenDomText));
+    check("el indicador de estado en la nube está presente", /Sincronizado en la nube|Modo local/i.test(schreibenDomText));
+  }
 }
 
 /* ---------- informe ---------- */

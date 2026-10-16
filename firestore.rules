@@ -1,0 +1,141 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // This security rules file assumes the following data structures:
+    //
+    // Collection: /rooms/{roomId}/schreiben/{taskId}
+    // Document ID: {taskId} (string, 1-64 chars: alphanumeric, '-', '_')
+    // Parent Path: /rooms/{roomId} (roomId: string, 1-64 chars: alphanumeric, '-', '_')
+    //
+    // Fields for /rooms/{roomId}/schreiben/{taskId}:
+    //   - sergio_text: string (optional, 0 to 10000 chars) - Sergio's writing draft
+    //   - sergio_words: int (optional, 0 to 2000) - Sergio's word count
+    //   - sergio_eval: map (optional, max 50 keys) - Sergio's LLM evaluation report
+    //   - sergio_updated_at: int or timestamp (optional, >= 0 if int) - Sergio's last update
+    //   - diana_text: string (optional, 0 to 10000 chars) - Diana's writing draft
+    //   - diana_words: int (optional, 0 to 2000) - Diana's word count
+    //   - diana_eval: map (optional, max 50 keys) - Diana's LLM evaluation report
+    //   - diana_updated_at: int or timestamp (optional, >= 0 if int) - Diana's last update
+    //
+    // Optional Parent Document /rooms/{roomId}:
+    //   - created_at: int or timestamp (optional, >= 0 if int) - Room creation timestamp
+    //   - updated_at: int or timestamp (optional, >= 0 if int) - Room heartbeat/update timestamp
+    //
+    // Access Pattern & Business Logic:
+    //   - Shared link access: Explicitly requested "Acceso libre sin contraseña
+    //     (solo compartiendo el enlace directo entre vosotros)" for Sergio & Diana.
+    //   - Room capability isolation: Listing all rooms is strictly forbidden (`allow list: if false`)
+    //     to prevent room scraping/enumeration. Users can only access a room if they have its ID.
+    //   - Strict schema validation: Only recognized fields can be written; field types,
+    //     ranges, and lengths are strictly enforced on both create and update.
+    //   - Deletions are forbidden (`allow delete: if false`) to prevent accidental or malicious data loss.
+    //   - Default deny at root blocks access to any undefined collection or path.
+    //
+    // ===============================================================
+
+    // ===============================================================
+    // Helper Functions
+    // ===============================================================
+
+    // Validate roomId format: alphanumeric, dashes, underscores (1 to 64 chars)
+    function isValidRoomId(roomId) {
+      return roomId is string &&
+             roomId.size() >= 1 &&
+             roomId.size() <= 64 &&
+             roomId.matches('^[a-zA-Z0-9_-]+$');
+    }
+
+    // Validate taskId format: alphanumeric, dashes, underscores (1 to 64 chars)
+    function isValidTaskId(taskId) {
+      return taskId is string &&
+             taskId.size() >= 1 &&
+             taskId.size() <= 64 &&
+             taskId.matches('^[a-zA-Z0-9_-]+$');
+    }
+
+    // Validate timestamp or millisecond epoch integer (>= 0)
+    function isValidTimestampOrMillis(val) {
+      return (val is int && val >= 0) || val is timestamp;
+    }
+
+    // Validate that document contains only recognized fields
+    function hasOnlyAllowedSchreibenFields(data) {
+      return data.keys().hasOnly([
+        'sergio_text',
+        'sergio_words',
+        'sergio_eval',
+        'sergio_updated_at',
+        'diana_text',
+        'diana_words',
+        'diana_eval',
+        'diana_updated_at'
+      ]);
+    }
+
+    // ===============================================================
+    // Domain Validator (Validator Function Pattern)
+    // Enforced in BOTH create and update operations
+    // ===============================================================
+    function isValidSchreibenDoc(data) {
+      return hasOnlyAllowedSchreibenFields(data) &&
+             // Sergio fields validation
+             (!('sergio_text' in data) || (data.sergio_text is string && data.sergio_text.size() <= 10000)) &&
+             (!('sergio_words' in data) || (data.sergio_words is int && data.sergio_words >= 0 && data.sergio_words <= 2000)) &&
+             (!('sergio_eval' in data) || data.sergio_eval == null || (data.sergio_eval is map && data.sergio_eval.keys().size() <= 50)) &&
+             (!('sergio_updated_at' in data) || data.sergio_updated_at == null || isValidTimestampOrMillis(data.sergio_updated_at)) &&
+             // Diana fields validation
+             (!('diana_text' in data) || (data.diana_text is string && data.diana_text.size() <= 10000)) &&
+             (!('diana_words' in data) || (data.diana_words is int && data.diana_words >= 0 && data.diana_words <= 2000)) &&
+             (!('diana_eval' in data) || data.diana_eval == null || (data.diana_eval is map && data.diana_eval.keys().size() <= 50)) &&
+             (!('diana_updated_at' in data) || data.diana_updated_at == null || isValidTimestampOrMillis(data.diana_updated_at));
+    }
+
+    // Root default deny: deny all collections and subcollections by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Rooms collection
+    match /rooms/{roomId} {
+      // Allow single room document read if roomId is valid
+      // Deny listing all rooms (prevents scraping/enumerating active rooms)
+      allow get: if isValidRoomId(roomId);
+      allow list: if false;
+
+      // Allow room document initialization or heartbeat if matching strict metadata schema
+      allow create, update: if isValidRoomId(roomId) &&
+                              request.resource.data.keys().hasOnly(['created_at', 'updated_at']) &&
+                              (!('created_at' in request.resource.data) || isValidTimestampOrMillis(request.resource.data.created_at)) &&
+                              (!('updated_at' in request.resource.data) || isValidTimestampOrMillis(request.resource.data.updated_at));
+      allow delete: if false;
+
+      // Schreiben tasks subcollection
+      match /schreiben/{taskId} {
+        // Allow single task fetch if both roomId and taskId are valid
+        allow get: if isValidRoomId(roomId) && isValidTaskId(taskId);
+
+        // Allow listing tasks within this specific room
+        allow list: if isValidRoomId(roomId);
+
+        // Allow task creation with strict schema validation
+        allow create: if isValidRoomId(roomId) &&
+                        isValidTaskId(taskId) &&
+                        isValidSchreibenDoc(request.resource.data);
+
+        // Allow task update with strict schema validation
+        allow update: if isValidRoomId(roomId) &&
+                        isValidTaskId(taskId) &&
+                        isValidSchreibenDoc(request.resource.data);
+
+        // Forbid deletion to prevent accidental or malicious data loss
+        allow delete: if false;
+      }
+    }
+  }
+}

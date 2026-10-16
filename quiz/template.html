@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>B2 Beruf — Test de Lesen, Hören y Schreiben</title>
+<!-- Firebase SDKs compat con tolerancia offline -->
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 <style>
   :root{
     --bg:#0f1115; --panel:#171a21; --panel2:#1e222b; --line:#2a2f3a;
@@ -193,6 +196,27 @@
   .lang-btn:hover{color:var(--txt)}
   .lang-btn.active{background:var(--acc);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.35)}
 
+  /* Selector de usuario Sergio / Diana */
+  .user-switch{display:inline-flex;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:2px;gap:2px}
+  .user-btn{background:transparent;border:0;color:var(--dim);font-size:12px;font-weight:600;padding:4px 11px;border-radius:16px;cursor:pointer;transition:all .16s ease;display:inline-flex;align-items:center;gap:4px;line-height:1}
+  .user-btn:hover{color:var(--txt)}
+  .user-btn.active{background:var(--acc);color:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.35)}
+
+  /* Indicador de sincronización en la nube */
+  .cloud-badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;color:var(--dim);padding:3px 8px;border-radius:6px;background:var(--panel2);border:1px solid var(--line)}
+  .cloud-dot{width:7px;height:7px;border-radius:50%;background:#8b949e}
+  .cloud-dot.online{background:#5fd6a3;box-shadow:0 0 6px rgba(95,214,163,0.6)}
+  .cloud-dot.syncing{background:#e8c46a;box-shadow:0 0 6px rgba(232,196,106,0.6);animation:pulse-sync 1.2s infinite}
+  @keyframes pulse-sync{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}
+
+  /* Tarjeta de redacción comparativa del compañero (Diana / Sergio) */
+  .partner-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:14px}
+  .partner-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;flex-wrap:wrap;gap:8px}
+  .partner-title{font-size:14.5px;font-weight:600;color:var(--txt);display:flex;align-items:center;gap:8px}
+  .partner-meta{font-size:12px;color:var(--dim);display:flex;align-items:center;gap:8px}
+  .partner-body{background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.65;white-space:pre-wrap;color:#e8eaf0;min-height:90px}
+  .partner-empty{color:var(--dim);font-style:italic;padding:24px 12px;text-align:center}
+
   @media(max-width:860px){nav{position:static;height:auto;width:100%;flex:1 1 auto}
     .layout{flex-direction:column}main{padding:16px}}
 </style>
@@ -200,6 +224,10 @@
 <body>
 <header>
   <h1 id="header-title">B2 Beruf — Test</h1>
+  <div class="user-switch" role="group" aria-label="Perfil / Профиль">
+    <button class="user-btn active" id="user-btn-sergio" data-user="sergio" title="Sergio (Español)">👤 Sergio</button>
+    <button class="user-btn" id="user-btn-diana" data-user="diana" title="Диана (Русский)">👤 Диана</button>
+  </div>
   <div class="lang-switch" role="group" aria-label="Idioma / Язык">
     <button class="lang-btn active" id="lang-btn-es" data-lang="es" title="Español">🇪🇸 ES</button>
     <button class="lang-btn" id="lang-btn-ru" data-lang="ru" title="Русский">🇷🇺 RU</button>
@@ -207,7 +235,7 @@
   <div class="spacer"></div>
   <div class="stat" id="stats"></div>
   <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
-  <button class="btn ghost" id="btn-ai-config" title="Configurar claves de API para evaluación de redacción">⚙ Configurar IA</button>
+  <button class="btn ghost" id="btn-ai-config" title="Configurar claves de API y sincronización">⚙ Configurar IA</button>
   <button class="btn ghost" id="reset">Reiniciar</button>
 </header>
 
@@ -222,12 +250,48 @@ const DATA = /*__DATA__*/;
 const LS = "b2quiz.v1";
 const LS_AI = "b2quiz.ai_config";
 const LS_LANG = "b2quiz_lang";
+const LS_USER = "b2quiz_user";
+const LS_ROOM = "b2quiz_room";
+const LS_FIREBASE = "b2quiz_firebase";
 
-let currentLang = "es";
-try {
-  const savedLang = localStorage.getItem(LS_LANG);
-  if (savedLang === "es" || savedLang === "ru") currentLang = savedLang;
-} catch(e){}
+const urlParams = (typeof window !== "undefined" && window.location && window.location.search)
+  ? new URLSearchParams(window.location.search)
+  : new URLSearchParams("");
+const userParam = (urlParams.get("user") || "").toLowerCase();
+const roomParam = urlParams.get("room");
+
+let currentUser = "sergio";
+if (userParam === "diana" || userParam === "sergio") {
+  currentUser = userParam;
+  try { localStorage.setItem(LS_USER, currentUser); } catch(e){}
+} else {
+  try {
+    const savedUser = localStorage.getItem(LS_USER);
+    if (savedUser === "diana" || savedUser === "sergio") currentUser = savedUser;
+  } catch(e){}
+}
+
+let currentRoomId = "sergio-diana";
+if (roomParam) {
+  currentRoomId = roomParam;
+  try { localStorage.setItem(LS_ROOM, currentRoomId); } catch(e){}
+} else {
+  try {
+    const savedRoom = localStorage.getItem(LS_ROOM);
+    if (savedRoom) currentRoomId = savedRoom;
+  } catch(e){}
+}
+
+let currentLang = (currentUser === "diana") ? "ru" : "es";
+const langParam = (urlParams.get("lang") || "").toLowerCase();
+if (langParam === "es" || langParam === "ru") {
+  currentLang = langParam;
+} else {
+  try {
+    const savedLang = localStorage.getItem(LS_LANG);
+    if (savedLang === "es" || savedLang === "ru") currentLang = savedLang;
+  } catch(e){}
+}
 
 const I18N = {
   es: {
@@ -351,7 +415,34 @@ const I18N = {
     testFailed: "✗ Fallo de conexión: {error}",
     alertAiSaved: "Configuración de IA guardada.",
     alertEnterGeminiKey: "Ingresa la API Key de Gemini.",
-    alertEnterKey: "Ingresa la API Key."
+    alertEnterKey: "Ingresa la API Key.",
+    userSergio: "Sergio",
+    userDiana: "Diana",
+    tabMyWriting: "✏ Mi redacción ({user})",
+    tabPartnerWriting: "👥 Redacción de {partner}",
+    partnerWritingHeader: "Redacción de {partner} (en vivo)",
+    partnerNotStarted: "{partner} aún no ha comenzado a escribir en este ejercicio o los datos se están sincronizando...",
+    partnerLastUpdate: "Actualizado hace {time}",
+    partnerWords: "{words} palabras",
+    partnerEvalHeader: "Evaluación oficial telc B2 de {partner}:",
+    partnerEvalScore: "Evaluación de {name}: {score}/100 ({verdict})",
+    btnViewPartnerEval: "Ver evaluación detallada de {partner}",
+    btnHidePartnerEval: "Ocultar evaluación detallada",
+    timeJustNow: "unos instantes",
+    timeMinutesAgo: "{m} min.",
+    timeHoursAgo: "{h} h.",
+    cloudStatusOnline: "Sincronizado en la nube ({room})",
+    cloudStatusSyncing: "Sincronizando...",
+    cloudStatusLocal: "Modo local (sin nube)",
+    cloudSyncTitle: "☁️ Sincronización en la Nube (Firebase)",
+    lblFirebaseConfig: "Configuración de Firebase (JSON):",
+    firebaseHelp: "Permite compartir y ver en tiempo real las redacciones entre Sergio y Diana desde cualquier dispositivo o navegador.",
+    lblRoomId: "Nombre de la Sala (Room ID):",
+    roomIdHelp: "Sergio y Diana deben usar el mismo nombre de sala para compartir sus redacciones (por defecto: sergio-diana).",
+    btnTestFirebase: "Probar Conexión Firebase",
+    firebaseTesting: "Probando conexión con Firestore...",
+    firebaseSuccess: "✓ ¡Conexión con Firestore establecida exitosamente!",
+    firebaseFailed: "✗ Error al conectar con Firestore: {error}"
   },
   ru: {
     appTitle: "B2 Beruf — Экзамен",
@@ -474,7 +565,34 @@ const I18N = {
     testFailed: "✗ Ошибка подключения: {error}",
     alertAiSaved: "Настройки ИИ сохранены.",
     alertEnterGeminiKey: "Введите API Key для Gemini.",
-    alertEnterKey: "Введите API Key."
+    alertEnterKey: "Введите API Key.",
+    userSergio: "Серхио",
+    userDiana: "Диана",
+    tabMyWriting: "✏ Моё сочинение ({user})",
+    tabPartnerWriting: "👥 Сочинение {partnerGen}",
+    partnerWritingHeader: "Сочинение {partnerGen} (в реальном времени)",
+    partnerNotStarted: "{partner} ещё не начал(а) писать к этому заданию или данные синхронизируются...",
+    partnerLastUpdate: "Обновлено {time} назад",
+    partnerWords: "{words} слов",
+    partnerEvalHeader: "Официальная оценка telc B2 ({partner}):",
+    partnerEvalScore: "Оценка работы ({name}): {score}/100 ({verdict})",
+    btnViewPartnerEval: "Посмотреть подробную оценку ({partner})",
+    btnHidePartnerEval: "Скрыть подробную оценку",
+    timeJustNow: "только что",
+    timeMinutesAgo: "{m} мин.",
+    timeHoursAgo: "{h} ч.",
+    cloudStatusOnline: "Синхронизировано в облаке ({room})",
+    cloudStatusSyncing: "Синхронизация...",
+    cloudStatusLocal: "Локальный режим (без облака)",
+    cloudSyncTitle: "☁️ Облачная синхронизация (Firebase)",
+    lblFirebaseConfig: "Конфигурация Firebase (JSON):",
+    firebaseHelp: "Позволяет Серхио и Диане видеть и сравнивать свои сочинения в реальном времени с любых устройств.",
+    lblRoomId: "Идентификатор комнаты (Room ID):",
+    roomIdHelp: "Серхио и Диана должны использовать одну и ту же комнату для синхронизации (по умолчанию: sergio-diana).",
+    btnTestFirebase: "Проверить Firebase",
+    firebaseTesting: "Проверка подключения к Firestore...",
+    firebaseSuccess: "✓ Соединение с Firestore успешно установлено!",
+    firebaseFailed: "✗ Ошибка подключения к Firestore: {error}"
   }
 };
 
@@ -527,7 +645,27 @@ function updateLangUI() {
 
   const resetBtn = document.getElementById("reset");
   if (resetBtn) resetBtn.textContent = t("btnReset");
+
+  updateUserUI();
 }
+
+function updateUserUI() {
+  const btnSergio = document.getElementById("user-btn-sergio");
+  const btnDiana = document.getElementById("user-btn-diana");
+  if (btnSergio) btnSergio.className = "user-btn" + (currentUser === "sergio" ? " active" : "");
+  if (btnDiana) btnDiana.className = "user-btn" + (currentUser === "diana" ? " active" : "");
+}
+
+function setUser(user) {
+  if (user !== "sergio" && user !== "diana") return;
+  currentUser = user;
+  try { localStorage.setItem(LS_USER, currentUser); } catch(e){}
+  updateUserUI();
+  // Al cambiar usuario, vincular su idioma preferido: Sergio -> ES, Diana -> RU
+  setLanguage(user === "diana" ? "ru" : "es");
+}
+window.setUser = setUser;
+window.getUser = () => currentUser;
 
 function setLanguage(lang) {
   if (lang !== "es" && lang !== "ru") return;
@@ -539,6 +677,155 @@ function setLanguage(lang) {
 window.setLanguage = setLanguage;
 window.t = t;
 window.getLang = () => currentLang;
+
+/* ---------- Sincronización en Tiempo Real (Firebase Firestore) ---------- */
+let fbDb = null;
+let fbSyncStatus = "local"; // "local" | "online" | "syncing"
+let cloudSchreibenCache = {}; // taskId -> doc data
+let cloudSyncTimeout = null;
+let activeTaskUnsubscribe = null;
+let currentListeningTaskId = null;
+
+function getFirebaseConfig() {
+  try {
+    const raw = localStorage.getItem(LS_FIREBASE);
+    if (raw) return JSON.parse(raw);
+  } catch(e){}
+  return null;
+}
+
+function getFirebaseConfigRaw() {
+  try {
+    return localStorage.getItem(LS_FIREBASE) || "";
+  } catch(e){ return ""; }
+}
+
+function saveFirebaseConfig(cfg) {
+  try {
+    if (!cfg) {
+      localStorage.removeItem(LS_FIREBASE);
+    } else {
+      localStorage.setItem(LS_FIREBASE, typeof cfg === "string" ? cfg : JSON.stringify(cfg, null, 2));
+    }
+    fbDb = null;
+  } catch(e){}
+}
+
+function initFirebase() {
+  if (fbDb) return fbDb;
+  if (typeof firebase === "undefined") return null;
+  const cfg = getFirebaseConfig();
+  if (!cfg || !cfg.apiKey || !cfg.projectId) return null;
+  try {
+    if (!firebase.apps || !firebase.apps.length) {
+      firebase.initializeApp(cfg);
+    }
+    fbDb = firebase.firestore();
+    fbSyncStatus = "online";
+    updateCloudStatusUI();
+    return fbDb;
+  } catch(e) {
+    console.warn("Firebase init error:", e);
+    return null;
+  }
+}
+
+function updateCloudStatusUI() {
+  const el = document.getElementById("cloud-status-indicator");
+  if (!el) return;
+  if (fbSyncStatus === "online") {
+    el.innerHTML = '<span class="cloud-dot online"></span> ' + t("cloudStatusOnline", {room: currentRoomId});
+    el.title = "Firebase Firestore: Room " + currentRoomId;
+  } else if (fbSyncStatus === "syncing") {
+    el.innerHTML = '<span class="cloud-dot syncing"></span> ' + t("cloudStatusSyncing");
+  } else {
+    el.innerHTML = '<span class="cloud-dot offline"></span> ' + t("cloudStatusLocal");
+    el.title = "Modo local: configura Firebase en 'Configurar IA' para sincronizar con tu pareja";
+  }
+}
+
+function startListeningToTask(taskId, onPartnerUpdate) {
+  if (activeTaskUnsubscribe) {
+    activeTaskUnsubscribe();
+    activeTaskUnsubscribe = null;
+  }
+  currentListeningTaskId = taskId;
+  const db = initFirebase();
+  if (!db) {
+    fbSyncStatus = "local";
+    updateCloudStatusUI();
+    return;
+  }
+  try {
+    fbSyncStatus = "online";
+    updateCloudStatusUI();
+    activeTaskUnsubscribe = db.collection("rooms").doc(currentRoomId)
+      .collection("schreiben").doc(taskId)
+      .onSnapshot((doc) => {
+        if (doc && doc.exists) {
+          const data = doc.data() || {};
+          cloudSchreibenCache[taskId] = data;
+          if (onPartnerUpdate && currentListeningTaskId === taskId) {
+            onPartnerUpdate(data);
+          }
+        }
+      }, (err) => {
+        console.warn("Firestore snapshot error:", err);
+      });
+  } catch(e) {
+    console.warn("Firestore listen error:", e);
+  }
+}
+
+function pushSchreibenToFirestore(taskId, text, evalResult) {
+  const db = initFirebase();
+  if (!db) return;
+  fbSyncStatus = "syncing";
+  updateCloudStatusUI();
+  const updateData = {};
+  const now = Date.now();
+  if (currentUser === "sergio") {
+    if (text !== undefined) {
+      updateData.sergio_text = text;
+      updateData.sergio_words = countWords(text);
+      updateData.sergio_updated_at = now;
+    }
+    if (evalResult !== undefined) {
+      updateData.sergio_eval = evalResult;
+      updateData.sergio_updated_at = now;
+    }
+  } else {
+    if (text !== undefined) {
+      updateData.diana_text = text;
+      updateData.diana_words = countWords(text);
+      updateData.diana_updated_at = now;
+    }
+    if (evalResult !== undefined) {
+      updateData.diana_eval = evalResult;
+      updateData.diana_updated_at = now;
+    }
+  }
+
+  db.collection("rooms").doc(currentRoomId)
+    .collection("schreiben").doc(taskId)
+    .set(updateData, { merge: true })
+    .then(() => {
+      fbSyncStatus = "online";
+      updateCloudStatusUI();
+    })
+    .catch((err) => {
+      console.warn("Firestore write error:", err);
+      fbSyncStatus = "online";
+      updateCloudStatusUI();
+    });
+}
+
+function queueSchreibenSync(taskId, text) {
+  if (cloudSyncTimeout) clearTimeout(cloudSyncTimeout);
+  cloudSyncTimeout = setTimeout(() => {
+    pushSchreibenToFirestore(taskId, text);
+  }, 900);
+}
 
 function loadState(){
   try {
@@ -793,6 +1080,96 @@ function countWords(str){
   return m ? m.length : 0;
 }
 
+function renderPartnerSchreibenView(container, v, data){
+  if(!container) return;
+  container.innerHTML = "";
+  const partnerKey = currentUser === "sergio" ? "diana" : "sergio";
+  const partnerName = currentUser === "sergio" ? "Diana" : "Sergio";
+  const partnerGen = currentUser === "sergio" ? "Дианы" : "Серхио";
+  const partnerText = data ? (data[partnerKey + "_text"] || "") : "";
+  const partnerWords = data ? (data[partnerKey + "_words"] || countWords(partnerText)) : 0;
+  const partnerUpdatedAt = data ? data[partnerKey + "_updated_at"] : null;
+  const partnerEval = data ? data[partnerKey + "_eval"] : null;
+
+  const card = document.createElement("div");
+  card.className = "partner-card";
+
+  let timeStr = "";
+  if(partnerUpdatedAt){
+    const millis = (typeof partnerUpdatedAt === "object" && partnerUpdatedAt.toMillis) ? partnerUpdatedAt.toMillis() : Number(partnerUpdatedAt);
+    if(!isNaN(millis) && millis > 0){
+      const diffSec = Math.max(0, Math.round((Date.now() - millis) / 1000));
+      if(diffSec < 60) timeStr = t("timeJustNow");
+      else if(diffSec < 3600) timeStr = t("timeMinutesAgo", {m: Math.max(1, Math.floor(diffSec / 60))});
+      else timeStr = t("timeHoursAgo", {h: Math.floor(diffSec / 3600)});
+    }
+  }
+
+  const pHead = document.createElement("div");
+  pHead.className = "partner-head";
+  pHead.innerHTML =
+    '<div class="partner-title">' +
+      '<span>👤 ' + t("partnerWritingHeader", {partner: partnerName, partnerGen: partnerGen}) + '</span>' +
+      (partnerWords > 0 ? '<span class="badge ' + (partnerWords >= 150 ? 'hoch' : 'mittel') + '">' + t("partnerWords", {words: partnerWords}) + '</span>' : '') +
+    '</div>' +
+    '<div class="partner-meta">' +
+      (timeStr ? '<span style="color:var(--dim)">🕒 ' + t("partnerLastUpdate", {time: timeStr}) + '</span>' : '') +
+    '</div>';
+  card.appendChild(pHead);
+
+  const pBody = document.createElement("div");
+  if(!partnerText || !partnerText.trim()){
+    pBody.className = "partner-body partner-empty";
+    pBody.textContent = t("partnerNotStarted", {partner: partnerName});
+  } else {
+    pBody.className = "partner-body";
+    pBody.textContent = partnerText;
+  }
+  card.appendChild(pBody);
+  container.appendChild(card);
+
+  if(partnerEval){
+    const evalSec = document.createElement("div");
+    evalSec.style.marginTop = "14px";
+
+    const isPass = partnerEval.verdict === "BESTANDEN";
+    const score = partnerEval.score_total != null ? partnerEval.score_total : "-";
+
+    const evalBanner = document.createElement("div");
+    evalBanner.className = "eval-banner " + (isPass ? "pass" : "fail");
+    evalBanner.style.marginBottom = "10px";
+    evalBanner.style.display = "flex";
+    evalBanner.style.justifyContent = "space-between";
+    evalBanner.style.alignItems = "center";
+    evalBanner.style.flexWrap = "wrap";
+    evalBanner.style.gap = "8px";
+
+    evalBanner.innerHTML =
+      '<div>' + t("partnerEvalScore", {name: partnerName, score: score, verdict: (isPass ? t("verdictPass") : t("verdictFail"))}) + '</div>' +
+      '<button class="btn ghost" id="btn-toggle-partner-eval-' + v.id + '" style="padding:4px 10px;font-size:12px;background:rgba(0,0,0,0.3)">' + t("btnViewPartnerEval", {partner: partnerName}) + '</button>';
+    evalSec.appendChild(evalBanner);
+
+    const detailedContainer = document.createElement("div");
+    detailedContainer.id = "partner-detailed-eval-" + v.id;
+    detailedContainer.style.display = "none";
+    detailedContainer.appendChild(renderEvaluationResult(v, partnerEval));
+    evalSec.appendChild(detailedContainer);
+
+    container.appendChild(evalSec);
+
+    setTimeout(()=>{
+      const toggleBtn = document.getElementById("btn-toggle-partner-eval-" + v.id);
+      if(toggleBtn){
+        toggleBtn.onclick = ()=>{
+          const isHidden = detailedContainer.style.display === "none";
+          detailedContainer.style.display = isHidden ? "block" : "none";
+          toggleBtn.textContent = isHidden ? t("btnHidePartnerEval") : t("btnViewPartnerEval", {partner: partnerName});
+        };
+      }
+    }, 15);
+  }
+}
+
 function renderSchreiben(v, main){
   const layout = document.createElement("div");
   layout.className = "schreiben-layout";
@@ -886,7 +1263,38 @@ function renderSchreiben(v, main){
 
   layout.appendChild(taskPanel);
 
-  /* 2. Panel del Editor de Redacción */
+  /* Pestañas de Redacción: Mi Redacción vs Redacción de la Pareja */
+  const partnerName = currentUser === "sergio" ? "Diana" : "Sergio";
+  const partnerGen = currentUser === "sergio" ? "Дианы" : "Серхио";
+  const myName = currentUser === "sergio" ? "Sergio" : "Диана";
+
+  const tabContainer = document.createElement("div");
+  tabContainer.style.display = "flex";
+  tabContainer.style.justifyContent = "space-between";
+  tabContainer.style.alignItems = "center";
+  tabContainer.style.margin = "14px 0 10px";
+  tabContainer.style.flexWrap = "wrap";
+  tabContainer.style.gap = "10px";
+
+  tabContainer.innerHTML =
+    '<div class="tab-pills" style="margin:0">' +
+      '<button class="tab-pill active" id="tab-schreiben-mine">' + t("tabMyWriting", {user: myName}) + '</button>' +
+      '<button class="tab-pill" id="tab-schreiben-partner">' + t("tabPartnerWriting", {partner: partnerName, partnerGen: partnerGen}) + '</button>' +
+    '</div>' +
+    '<div class="cloud-badge" id="cloud-status-indicator">' +
+      '<span class="cloud-dot ' + (fbSyncStatus === "online" ? "online" : (fbSyncStatus === "syncing" ? "syncing" : "offline")) + '"></span> ' +
+      (fbSyncStatus === "online" ? t("cloudStatusOnline", {room: currentRoomId}) : (fbSyncStatus === "syncing" ? t("cloudStatusSyncing") : t("cloudStatusLocal"))) +
+    '</div>';
+  layout.appendChild(tabContainer);
+
+  const mineContainer = document.createElement("div");
+  mineContainer.id = "schreiben-mine-container";
+
+  const partnerContainer = document.createElement("div");
+  partnerContainer.id = "schreiben-partner-container";
+  partnerContainer.style.display = "none";
+
+  /* 2. Panel del Editor de Redacción (Propio) */
   const editorCard = document.createElement("div");
   editorCard.className = "editor-card";
 
@@ -925,6 +1333,7 @@ function renderSchreiben(v, main){
     saveState();
     const words = countWords(val);
     updateWordBadge(document.getElementById("word-badge"), words);
+    queueSchreibenSync(v.id, val);
   };
   editorCard.appendChild(textarea);
 
@@ -947,6 +1356,7 @@ function renderSchreiben(v, main){
       if(state.schreiben_drafts) delete state.schreiben_drafts[v.id];
       saveState();
       updateWordBadge(document.getElementById("word-badge"), 0);
+      pushSchreibenToFirestore(v.id, "", undefined);
     }
   };
 
@@ -960,15 +1370,42 @@ function renderSchreiben(v, main){
   actRow.appendChild(statusMsg);
   editorCard.appendChild(actRow);
 
-  layout.appendChild(editorCard);
+  mineContainer.appendChild(editorCard);
 
-  /* 3. Panel de Resultados (si ya fue evaluado) */
+  /* 3. Panel de Resultados (si ya fue evaluado por el usuario actual) */
   const existingEval = state.schreiben_evals && state.schreiben_evals[v.id];
   if(existingEval){
-    layout.appendChild(renderEvaluationResult(v, existingEval));
+    mineContainer.appendChild(renderEvaluationResult(v, existingEval));
   }
 
+  layout.appendChild(mineContainer);
+  layout.appendChild(partnerContainer);
   main.appendChild(layout);
+
+  /* Cargar y escuchar datos de la pareja en tiempo real */
+  const cachedPartnerData = cloudSchreibenCache[v.id] || null;
+  renderPartnerSchreibenView(partnerContainer, v, cachedPartnerData);
+  startListeningToTask(v.id, (freshData)=>{
+    renderPartnerSchreibenView(partnerContainer, v, freshData);
+  });
+
+  /* Conectar eventos de cambio de pestañas Mi Redacción / Redacción de Pareja */
+  const tabMineBtn = tabContainer.querySelector("#tab-schreiben-mine");
+  const tabPartnerBtn = tabContainer.querySelector("#tab-schreiben-partner");
+  if(tabMineBtn && tabPartnerBtn){
+    tabMineBtn.onclick = ()=>{
+      tabMineBtn.classList.add("active");
+      tabPartnerBtn.classList.remove("active");
+      mineContainer.style.display = "block";
+      partnerContainer.style.display = "none";
+    };
+    tabPartnerBtn.onclick = ()=>{
+      tabPartnerBtn.classList.add("active");
+      tabMineBtn.classList.remove("active");
+      mineContainer.style.display = "none";
+      partnerContainer.style.display = "block";
+    };
+  }
 
   /* Conectar eventos del temporizador */
   const tBtn = document.getElementById("timer-btn");
@@ -1036,6 +1473,7 @@ function renderSchreiben(v, main){
       if(!state.schreiben_evals) state.schreiben_evals = {};
       state.schreiben_evals[v.id] = result;
       saveState();
+      pushSchreibenToFirestore(v.id, textToEval, result);
       statusMsg.textContent = t("statusCompleted");
       render();
     } catch(err) {
@@ -1686,6 +2124,7 @@ function renderEvaluationResult(v, rawRes){
     if(confirm(t("confirmDeleteEval"))){
       delete state.schreiben_evals[v.id];
       saveState();
+      pushSchreibenToFirestore(v.id, undefined, null);
       render();
     }
   };
@@ -2012,6 +2451,25 @@ function openAIConfigModal(alertNotice){
             '</div>' +
           '</div>' +
 
+          <!-- Sección Firebase Cloud Sync -->
+          '<div style="border-top:1px solid var(--line);margin-top:16px;padding-top:16px">' +
+            '<h4 style="margin:0 0 6px;font-size:14px;color:var(--txt)">' + t("cloudSyncTitle") + '</h4>' +
+            '<small style="display:block;margin-bottom:12px;color:var(--dim);line-height:1.4">' + t("firebaseHelp") + '</small>' +
+            '<div class="form-group">' +
+              '<label>' + t("lblRoomId") + '</label>' +
+              '<input class="input" type="text" id="cfg-room-id" value="' + esc(currentRoomId) + '" placeholder="sergio-diana">' +
+              '<small>' + t("roomIdHelp") + '</small>' +
+            '</div>' +
+            '<div class="form-group">' +
+              '<label>' + t("lblFirebaseConfig") + '</label>' +
+              '<textarea class="input" id="cfg-firebase-json" rows="3" style="font-family:monospace;font-size:12px" placeholder=\'{"apiKey": "AIzaSy...", "projectId": "telc-b2-...", ...}\'>' + esc(getFirebaseConfigRaw()) + '</textarea>' +
+            '</div>' +
+            '<div style="display:flex;gap:10px;align-items:center;margin-top:8px">' +
+              '<button class="btn ghost" id="btn-test-firebase" style="font-size:12px;padding:5px 10px">' + t("btnTestFirebase") + '</button>' +
+              '<span id="fb-test-result" style="font-size:12px"></span>' +
+            '</div>' +
+          '</div>' +
+
           '<div id="test-result" style="margin-top:12px;font-size:13px"></div>' +
         '</div>' +
         '<div class="modal-foot">' +
@@ -2046,9 +2504,63 @@ function openAIConfigModal(alertNotice){
       ollamaModel: document.getElementById("cfg-ollama-model")?.value.trim() || "llama3.1"
     };
     saveAIConfig(newCfg);
+
+    const roomIdInput = document.getElementById("cfg-room-id")?.value.trim();
+    if(roomIdInput){
+      currentRoomId = roomIdInput;
+      try { localStorage.setItem(LS_ROOM, currentRoomId); } catch(e){}
+    }
+
+    const fbRaw = document.getElementById("cfg-firebase-json")?.value.trim() || "";
+    if(fbRaw){
+      try {
+        const parsed = JSON.parse(fbRaw);
+        saveFirebaseConfig(parsed);
+        initFirebase();
+      } catch(err){
+        alert("El JSON de Firebase no es válido: " + err.message);
+        return;
+      }
+    } else {
+      saveFirebaseConfig(null);
+      fbDb = null;
+      fbSyncStatus = "local";
+      updateCloudStatusUI();
+    }
+
     closeModal();
     alert(t("alertAiSaved"));
+    render();
   };
+
+  const btnTestFb = document.getElementById("btn-test-firebase");
+  if(btnTestFb){
+    btnTestFb.onclick = async ()=>{
+      const resSpan = document.getElementById("fb-test-result");
+      resSpan.innerHTML = '<span style="color:var(--dim)">' + t("firebaseTesting") + '</span>';
+      const fbRaw = document.getElementById("cfg-firebase-json")?.value.trim() || "";
+      if(!fbRaw){
+        resSpan.innerHTML = '<span style="color:var(--warn)">' + t("alertEnterKey") + '</span>';
+        return;
+      }
+      try {
+        const parsed = JSON.parse(fbRaw);
+        if(!parsed.apiKey || !parsed.projectId) throw new Error("Faltan campos obligatorios (apiKey o projectId)");
+        if(typeof firebase === "undefined") throw new Error("SDK de Firebase no disponible o sin conexión");
+        if(!firebase.apps || !firebase.apps.length){
+          firebase.initializeApp(parsed);
+        }
+        const testDb = firebase.firestore();
+        await testDb.collection("rooms").doc("sergio-diana").collection("schreiben").doc("_test_ping").get().catch(err=>{
+          if(err && err.code === "permission-denied") return { exists: false };
+          throw err;
+        });
+        resSpan.innerHTML = '<span style="color:var(--ok)">' + t("firebaseSuccess") + '</span>';
+      } catch(e){
+        resSpan.innerHTML = '<span style="color:var(--bad)">' + t("firebaseFailed", {error: e.message}) + '</span>';
+      }
+    };
+  }
 
   document.getElementById("btn-test-connection").onclick = async ()=>{
     const testRes = document.getElementById("test-result");
@@ -2239,11 +2751,18 @@ if(doubtBtn){
   };
 }
 
+const btnSergio = document.getElementById("user-btn-sergio");
+if(btnSergio) btnSergio.onclick = () => setUser("sergio");
+const btnDiana = document.getElementById("user-btn-diana");
+if(btnDiana) btnDiana.onclick = () => setUser("diana");
+
 const btnEs = document.getElementById("lang-btn-es");
 if(btnEs) btnEs.onclick = () => setLanguage("es");
 const btnRu = document.getElementById("lang-btn-ru");
 if(btnRu) btnRu.onclick = () => setLanguage("ru");
 
+initFirebase();
+updateUserUI();
 updateLangUI();
 render();
 </script>
