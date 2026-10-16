@@ -96,6 +96,8 @@ El archivo [`firestore.rules`](./firestore.rules) fue generado siguiendo las mej
 5. **Límites de recursos:** Validación de longitud máxima de cadenas ($\le$ 10.000 caracteres) para neutralizar ataques de denegación de servicio por documentos de 1MB.
 6. **Prohibición de borrado:** `allow delete: if false` en tareas y salas para impedir pérdida accidental o malintencionada de borradores.
 
+> **Nota de auditoría (17/10/2026).** Estos puntos describen el *esquema*, no un control de acceso: **no hay autenticación**, así que el identificador de sala (`sergio-diana` por defecto) es un secreto compartido por enlace y quien lo conozca puede leer y escribir los borradores de ambos; el aislamiento "Sergio solo escribe `sergio_*`" es del cliente, no de las reglas. Tras la auditoría se endureció: se validan `score_total` (entero 0–100) y `verdict` dentro de `*_eval`, se prohíbe listar tareas (`allow list: if false`) y un `update` no puede eliminar campos existentes (`removedKeys()`), con lo que un `set()` sin merge ya no puede vaciar el documento. El aislamiento real por usuario exige login anónimo y `request.auth.uid`.
+
 ### E. Evaluador LLM Pedagógico Bilingüe
 * En [`quiz/prompt_schreiben.py`](./quiz/prompt_schreiben.py) y en [`quiz/template.html`](./quiz/template.html):
   * Soporte para **Google Gemini 3.5 Flash Lite** (`gemini-3.5-flash-lite`, recomendado por rapidez y bajo coste), Gemini 3.5 Flash, Gemini 3.1 Pro, DeepSeek Chat (`deepseek-chat`), OpenAI (`gpt-4o-mini`, etc.) y Ollama local.
@@ -182,9 +184,11 @@ Todos los tests offline del evaluador telc B2 pasaron con éxito (4/4).
 3. Acceder como Diana (en ventana privada o incógnito): `http://localhost:8080/quiz/B2_quiz.html?user=diana`
 
 ### Despliegue en GitHub Pages
-1. Alojar el repositorio en GitHub en la rama `feature/russian-i18n` (o fusionar en `main`).
-2. Configurar **Settings** > **Pages** para servir desde la rama y carpeta correspondiente.
-3. Diana puede acceder con su enlace directo: `https://<usuario>.github.io/<repo>/?user=diana`.
+1. Subir el repositorio a GitHub. **El repositorio debe ser público**: GitHub Pages solo publica desde repositorios privados en los planes de pago. No hay ningún secreto en el repositorio (ni claves de IA ni la configuración de Firebase), así que publicarlo no expone nada; lo que protege las redacciones es el identificador de sala.
+2. Configurar **Settings** > **Pages** > *Source*: rama `main` y carpeta `/ (root)`.
+3. La app queda en `https://<usuario>.github.io/<repo>/quiz/B2_quiz.html`. El fichero `index.html` de la raíz redirige conservando los parámetros, así que **el enlace corto también funciona**:
+   `https://<usuario>.github.io/<repo>/?user=diana&room=<sala>`
+4. En la app, abrir `⚙ Configurar IA` y pulsar **«🔗 Copiar enlace de invitación para Diana»**: genera el enlace con su perfil y la sala actual. Enviárselo por WhatsApp; ella solo tiene que abrirlo.
 
 ### Conexión a Firebase Firestore (Opcional, para sincronizar entre dispositivos)
 1. Crear proyecto gratis en [console.firebase.google.com](https://console.firebase.google.com).

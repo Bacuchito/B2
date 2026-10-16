@@ -50,11 +50,34 @@ $node = "C:\Users\sergi\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\
 & $py quiz\make_quiz_sources.py out\B2_ohne_antworten.md quiz\src
 & $py quiz\build.py quiz\data quiz\template.html quiz\B2_quiz.html
 & $node quiz\smoke_test.js quiz\B2_quiz.html
+& $node quiz\security_test.js quiz\B2_quiz.html
 ```
 
 `build.py` **valida antes de generar** y no escribe el HTML si hay errores.
 `smoke_test.js` ejecuta el visor con un DOM simulado: detecta errores de ejecución
 que un simple chequeo de sintaxis no ve.
+`security_test.js` cubre los cuatro fallos críticos de la auditoría del 17/10/2026
+(inyección por `?room=`, ruptura del atributo `value` del modal, evaluación de la
+pareja con datos maliciosos y evaluación malformada que rompía la pantalla).
+
+## Seguridad y sincronización
+
+- **La sincronización es opcional.** Sin configurar Firebase la app funciona en local
+  y no sale nada del navegador.
+- **La sala es el único secreto.** Al abrir la app por primera vez se genera un
+  identificador aleatorio (`b2-…`) y se guarda en el navegador; el fichero `index.html`
+  de la raíz permite compartir el enlace corto `…/<repo>/?user=diana&room=b2-…`.
+  Compártelo solo con Diana: quien tenga ese enlace puede leer y escribir vuestras
+  redacciones, porque no hay login. El enlace se copia desde «⚙ Configurar IA».
+- **Las claves de API viven solo en tu `localStorage`** y viajan directamente al
+  proveedor que elijas: no se comparten con la pareja ni con GitHub Pages.
+- La insignia de la nube dice la verdad: si una escritura falla, muestra
+  «Sin sincronizar» en rojo. Un borrador escrito sin conexión se sube al volver a
+  abrir la tarea (solo si la nube aún no tiene nada tuyo: nunca pisa un texto que sí llegó).
+- `firestore.rules` valida tipos y rangos (incluidos `score_total` y `verdict` de las
+  evaluaciones), impide listar salas y tareas, prohíbe borrar y no deja que un `set()`
+  sin merge elimine campos que ya existían. **No separa por usuario**: eso exigiría
+  autenticación (login anónimo + `request.auth.uid`).
 
 ## Verificación de las respuestas
 

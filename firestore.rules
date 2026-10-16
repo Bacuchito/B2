@@ -30,10 +30,19 @@ service cloud.firestore {
     // Access Pattern & Business Logic:
     //   - Shared link access: Explicitly requested "Acceso libre sin contraseña
     //     (solo compartiendo el enlace directo entre vosotros)" for Sergio & Diana.
+    //   - NO AUTHENTICATION: the room id is a shared secret, not an access control.
+    //     Anyone who knows it can read and write both users' drafts. Treat the room
+    //     id like a password (long and random) and do not publish it. Real per-user
+    //     isolation would require auth (anonymous sign-in + request.auth.uid).
     //   - Room capability isolation: Listing all rooms is strictly forbidden (`allow list: if false`)
     //     to prevent room scraping/enumeration. Users can only access a room if they have its ID.
+    //     Listing tasks inside a room is forbidden too: the app only fetches known documents.
     //   - Strict schema validation: Only recognized fields can be written; field types,
-    //     ranges, and lengths are strictly enforced on both create and update.
+    //     ranges, and lengths are strictly enforced on both create and update. The
+    //     `*_eval` maps are validated because the client renders their values.
+    //   - Updates cannot remove fields that already exist (`removedKeys()`), so a `set()`
+    //     without merge can no longer wipe the other user's draft. Values can still be
+    //     overwritten by anyone holding the room id.
     //   - Deletions are forbidden (`allow delete: if false`) to prevent accidental or malicious data loss.
     //   - Default deny at root blocks access to any undefined collection or path.
     //
@@ -78,6 +87,21 @@ service cloud.firestore {
       ]);
     }
 
+    // Validate the evaluation report: the client interpolates these values into the
+    // interface, so types and ranges matter (score_total must be an integer).
+    function isValidEvalMap(m) {
+      return m == null || (
+        m is map &&
+        m.keys().size() <= 50 &&
+        (!('verdict' in m) || (m.verdict is string && m.verdict in ['BESTANDEN', 'NICHT BESTANDEN'])) &&
+        (!('score_total' in m) || (m.score_total is int && m.score_total >= 0 && m.score_total <= 100)) &&
+        (!('word_count' in m) || (m.word_count is int && m.word_count >= 0 && m.word_count <= 5000)) &&
+        (!('student_text' in m) || (m.student_text is string && m.student_text.size() <= 10000)) &&
+        (!('corrected_version' in m) || (m.corrected_version is string && m.corrected_version.size() <= 10000)) &&
+        (!('musterloesung' in m) || (m.musterloesung is string && m.musterloesung.size() <= 10000))
+      );
+    }
+
     // ===============================================================
     // Domain Validator (Validator Function Pattern)
     // Enforced in BOTH create and update operations
@@ -87,12 +111,12 @@ service cloud.firestore {
              // Sergio fields validation
              (!('sergio_text' in data) || (data.sergio_text is string && data.sergio_text.size() <= 10000)) &&
              (!('sergio_words' in data) || (data.sergio_words is int && data.sergio_words >= 0 && data.sergio_words <= 2000)) &&
-             (!('sergio_eval' in data) || data.sergio_eval == null || (data.sergio_eval is map && data.sergio_eval.keys().size() <= 50)) &&
+             (!('sergio_eval' in data) || isValidEvalMap(data.sergio_eval)) &&
              (!('sergio_updated_at' in data) || data.sergio_updated_at == null || isValidTimestampOrMillis(data.sergio_updated_at)) &&
              // Diana fields validation
              (!('diana_text' in data) || (data.diana_text is string && data.diana_text.size() <= 10000)) &&
              (!('diana_words' in data) || (data.diana_words is int && data.diana_words >= 0 && data.diana_words <= 2000)) &&
-             (!('diana_eval' in data) || data.diana_eval == null || (data.diana_eval is map && data.diana_eval.keys().size() <= 50)) &&
+             (!('diana_eval' in data) || isValidEvalMap(data.diana_eval)) &&
              (!('diana_updated_at' in data) || data.diana_updated_at == null || isValidTimestampOrMillis(data.diana_updated_at));
     }
 
@@ -120,18 +144,20 @@ service cloud.firestore {
         // Allow single task fetch if both roomId and taskId are valid
         allow get: if isValidRoomId(roomId) && isValidTaskId(taskId);
 
-        // Allow listing tasks within this specific room
-        allow list: if isValidRoomId(roomId);
+        // Listing tasks is forbidden: the app always fetches a known document id.
+        allow list: if false;
 
         // Allow task creation with strict schema validation
         allow create: if isValidRoomId(roomId) &&
                         isValidTaskId(taskId) &&
                         isValidSchreibenDoc(request.resource.data);
 
-        // Allow task update with strict schema validation
+        // Allow task update with strict schema validation, but never removing fields
+        // that already exist: un `set()` sin merge no puede vaciar el documento.
         allow update: if isValidRoomId(roomId) &&
                         isValidTaskId(taskId) &&
-                        isValidSchreibenDoc(request.resource.data);
+                        isValidSchreibenDoc(request.resource.data) &&
+                        request.resource.data.diff(resource.data).removedKeys().size() == 0;
 
         // Forbid deletion to prevent accidental or malicious data loss
         allow delete: if false;

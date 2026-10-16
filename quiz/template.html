@@ -207,6 +207,7 @@
   .cloud-dot{width:7px;height:7px;border-radius:50%;background:#8b949e}
   .cloud-dot.online{background:#5fd6a3;box-shadow:0 0 6px rgba(95,214,163,0.6)}
   .cloud-dot.syncing{background:#e8c46a;box-shadow:0 0 6px rgba(232,196,106,0.6);animation:pulse-sync 1.2s infinite}
+  .cloud-dot.error{background:var(--bad);box-shadow:0 0 6px rgba(224,85,97,0.6)}
   @keyframes pulse-sync{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}
 
   /* Tarjeta de redacción comparativa del compañero (Diana / Sergio) */
@@ -259,6 +260,9 @@ const urlParams = (typeof window !== "undefined" && window.location && window.lo
   : new URLSearchParams("");
 const userParam = (urlParams.get("user") || "").toLowerCase();
 const roomParam = urlParams.get("room");
+/* La sala se usa en la ruta de Firestore y se pinta en la interfaz: solo aceptamos
+   el mismo formato que exige firestore.rules (letras, dígitos, guion y guion bajo). */
+const ROOM_RE = /^[a-zA-Z0-9_-]{1,64}$/;
 
 let currentUser = "sergio";
 if (userParam === "diana" || userParam === "sergio") {
@@ -271,16 +275,27 @@ if (userParam === "diana" || userParam === "sergio") {
   } catch(e){}
 }
 
-let currentRoomId = "sergio-diana";
-if (roomParam) {
+/* La sala es lo único que protege los borradores (no hay login): si no llega por el
+   enlace ni está guardada, se genera una aleatoria en vez de usar una adivinable. */
+function randomRoomId(){
+  const bytes = new Uint8Array(12);
+  crypto.getRandomValues(bytes);
+  return "b2-" + Array.from(bytes, b => b.toString(36).padStart(2, "0")).join("").slice(0, 16);
+}
+
+let currentRoomId = "";
+if (ROOM_RE.test(roomParam || "")) {
   currentRoomId = roomParam;
-  try { localStorage.setItem(LS_ROOM, currentRoomId); } catch(e){}
 } else {
+  if (roomParam) console.warn("Parámetro ?room= ignorado (formato no válido):", roomParam);
   try {
     const savedRoom = localStorage.getItem(LS_ROOM);
-    if (savedRoom) currentRoomId = savedRoom;
+    if (ROOM_RE.test(savedRoom || "")) currentRoomId = savedRoom;
+    else if (savedRoom) console.warn("Sala guardada ignorada (formato no válido):", savedRoom);
   } catch(e){}
+  if (!currentRoomId) currentRoomId = randomRoomId();
 }
+try { localStorage.setItem(LS_ROOM, currentRoomId); } catch(e){}
 
 let currentLang = (currentUser === "diana") ? "ru" : "es";
 const langParam = (urlParams.get("lang") || "").toLowerCase();
@@ -359,6 +374,13 @@ const I18N = {
     statusCompleted: "¡Evaluación completada con éxito!",
     statusError: "Error al evaluar: ",
     alertEvalError: "Error en la evaluación: {error}\n\nVerifica tu clave o configuración en el botón '⚙ Configurar IA'.",
+    alertInvalidRoom: "Sala no válida: usa solo letras, números, «-» y «_» (máximo 64 caracteres).",
+    alertNeedHostedLink: "Para compartir el enlace, abre la app desde su dirección web (no desde un fichero local).",
+    btnCopyPartnerLink: "🔗 Copiar enlace de invitación para Diana",
+    btnCopyPartnerLinkDone: "✓ Enlace copiado: mándaselo por WhatsApp",
+    cloudStatusError: "Sin sincronizar: revisa la conexión o los permisos de la base de datos",
+    renderErrorTitle: "No se pudo mostrar esta pantalla",
+    renderErrorHint: "Cambia de sección y vuelve. Si sigue igual, pulsa «Limpiar texto» en la redacción y vuelve a escribirla.",
     verdictPass: "✓ BESTANDEN (APROBADO)",
     verdictFail: "✗ NICHT BESTANDEN (NO APROBADO)",
     totalScore: "Puntuación total: <b>{score} / 100</b>",
@@ -438,7 +460,7 @@ const I18N = {
     lblFirebaseConfig: "Configuración de Firebase (JSON):",
     firebaseHelp: "Permite compartir y ver en tiempo real las redacciones entre Sergio y Diana desde cualquier dispositivo o navegador.",
     lblRoomId: "Nombre de la Sala (Room ID):",
-    roomIdHelp: "Sergio y Diana deben usar el mismo nombre de sala para compartir sus redacciones (por defecto: sergio-diana).",
+    roomIdHelp: "Sergio y Diana deben usar la misma sala para compartir sus redacciones. Al abrir la app por primera vez se crea una sala aleatoria: pulsa «Copiar enlace de invitación» y mándale ese enlace a Diana.",
     btnTestFirebase: "Probar Conexión Firebase",
     firebaseTesting: "Probando conexión con Firestore...",
     firebaseSuccess: "✓ ¡Conexión con Firestore establecida exitosamente!",
@@ -509,6 +531,13 @@ const I18N = {
     statusCompleted: "Оценка успешно завершена!",
     statusError: "Ошибка при проверке: ",
     alertEvalError: "Ошибка при проверке: {error}\n\nПроверьте ключ или настройки в окне '⚙ Настройка ИИ'.",
+    alertInvalidRoom: "Недопустимый идентификатор комнаты: только буквы, цифры, «-» и «_» (до 64 знаков).",
+    alertNeedHostedLink: "Чтобы поделиться ссылкой, откройте приложение по веб-адресу (не из локального файла).",
+    btnCopyPartnerLink: "🔗 Скопировать ссылку-приглашение для Дианы",
+    btnCopyPartnerLinkDone: "✓ Ссылка скопирована: отправьте её в WhatsApp",
+    cloudStatusError: "Нет синхронизации: проверьте соединение или права доступа к базе данных",
+    renderErrorTitle: "Не удалось отобразить этот экран",
+    renderErrorHint: "Перейдите в другой раздел и вернитесь. Если не помогло, нажмите «Очистить текст» и напишите заново.",
     verdictPass: "✓ BESTANDEN (СДАНО)",
     verdictFail: "✗ NICHT BESTANDEN (НЕ СДАНО)",
     totalScore: "Итоговый балл: <b>{score} / 100</b>",
@@ -588,7 +617,7 @@ const I18N = {
     lblFirebaseConfig: "Конфигурация Firebase (JSON):",
     firebaseHelp: "Позволяет Серхио и Диане видеть и сравнивать свои сочинения в реальном времени с любых устройств.",
     lblRoomId: "Идентификатор комнаты (Room ID):",
-    roomIdHelp: "Серхио и Диана должны использовать одну и ту же комнату для синхронизации (по умолчанию: sergio-diana).",
+    roomIdHelp: "Серхио и Диана должны использовать одну и ту же комнату. При первом запуске создаётся случайная комната: нажмите «Скопировать ссылку-приглашение» и отправьте её Диане.",
     btnTestFirebase: "Проверить Firebase",
     firebaseTesting: "Проверка подключения к Firestore...",
     firebaseSuccess: "✓ Соединение с Firestore успешно установлено!",
@@ -676,6 +705,7 @@ function setLanguage(lang) {
 }
 window.setLanguage = setLanguage;
 window.t = t;
+window.esc = esc;
 window.getLang = () => currentLang;
 
 /* ---------- Sincronización en Tiempo Real (Firebase Firestore) ---------- */
@@ -734,10 +764,13 @@ function updateCloudStatusUI() {
   const el = document.getElementById("cloud-status-indicator");
   if (!el) return;
   if (fbSyncStatus === "online") {
-    el.innerHTML = '<span class="cloud-dot online"></span> ' + t("cloudStatusOnline", {room: currentRoomId});
+    el.innerHTML = '<span class="cloud-dot online"></span> ' + t("cloudStatusOnline", {room: esc(currentRoomId)});
     el.title = "Firebase Firestore: Room " + currentRoomId;
   } else if (fbSyncStatus === "syncing") {
     el.innerHTML = '<span class="cloud-dot syncing"></span> ' + t("cloudStatusSyncing");
+  } else if (fbSyncStatus === "error") {
+    el.innerHTML = '<span class="cloud-dot error"></span> ' + t("cloudStatusError");
+    el.title = "Firestore: " + currentRoomId + " · " + t("firebaseHelp");
   } else {
     el.innerHTML = '<span class="cloud-dot offline"></span> ' + t("cloudStatusLocal");
     el.title = "Modo local: configura Firebase en 'Configurar IA' para sincronizar con tu pareja";
@@ -815,7 +848,7 @@ function pushSchreibenToFirestore(taskId, text, evalResult) {
     })
     .catch((err) => {
       console.warn("Firestore write error:", err);
-      fbSyncStatus = "online";
+      fbSyncStatus = "error";          // no mentir: el borrador sigue solo en local
       updateCloudStatusUI();
     });
 }
@@ -970,7 +1003,20 @@ function formatTimer(sec){
 }
 
 /* ---------- render principal ---------- */
+/* Una evaluación con datos raros (del LLM o de la pareja) no debe dejar la app
+   a medias: si el render falla, se muestra un aviso en lugar de una pantalla rota. */
 function render(){
+  try {
+    renderMain();
+  } catch(e){
+    console.warn("Error al renderizar:", e);
+    const main = document.getElementById("main");
+    if(main) main.innerHTML = '<div class="panel"><h3>' + t("renderErrorTitle") + '</h3>' +
+      '<div>' + esc(e.message) + '</div><div class="sub">' + t("renderErrorHint") + '</div></div>';
+  }
+}
+
+function renderMain(){
   renderNav();
   updateStats();
   const main = document.getElementById("main");
@@ -1145,7 +1191,7 @@ function renderPartnerSchreibenView(container, v, data){
     evalBanner.style.gap = "8px";
 
     evalBanner.innerHTML =
-      '<div>' + t("partnerEvalScore", {name: partnerName, score: score, verdict: (isPass ? t("verdictPass") : t("verdictFail"))}) + '</div>' +
+      '<div>' + t("partnerEvalScore", {name: partnerName, score: esc(score), verdict: (isPass ? t("verdictPass") : t("verdictFail"))}) + '</div>' +
       '<button class="btn ghost" id="btn-toggle-partner-eval-' + v.id + '" style="padding:4px 10px;font-size:12px;background:rgba(0,0,0,0.3)">' + t("btnViewPartnerEval", {partner: partnerName}) + '</button>';
     evalSec.appendChild(evalBanner);
 
@@ -1282,8 +1328,8 @@ function renderSchreiben(v, main){
       '<button class="tab-pill" id="tab-schreiben-partner">' + t("tabPartnerWriting", {partner: partnerName, partnerGen: partnerGen}) + '</button>' +
     '</div>' +
     '<div class="cloud-badge" id="cloud-status-indicator">' +
-      '<span class="cloud-dot ' + (fbSyncStatus === "online" ? "online" : (fbSyncStatus === "syncing" ? "syncing" : "offline")) + '"></span> ' +
-      (fbSyncStatus === "online" ? t("cloudStatusOnline", {room: currentRoomId}) : (fbSyncStatus === "syncing" ? t("cloudStatusSyncing") : t("cloudStatusLocal"))) +
+      '<span class="cloud-dot ' + (fbSyncStatus === "online" ? "online" : (fbSyncStatus === "syncing" ? "syncing" : (fbSyncStatus === "error" ? "error" : "offline"))) + '"></span> ' +
+      (fbSyncStatus === "online" ? t("cloudStatusOnline", {room: esc(currentRoomId)}) : (fbSyncStatus === "syncing" ? t("cloudStatusSyncing") : (fbSyncStatus === "error" ? t("cloudStatusError") : t("cloudStatusLocal")))) +
     '</div>';
   layout.appendChild(tabContainer);
 
@@ -1325,6 +1371,7 @@ function renderSchreiben(v, main){
     ? "Sehr geehrte(r) Frau/Herr [Name],\\n\\nvielen Dank für Ihre Nachricht..."
     : "Liebe Kolleginnen und Kollegen,\\n\\nich möchte mich gerne an der Diskussion beteiligen...";
   textarea.value = draftText;
+  textarea.maxLength = 10000;   // mismo tope que firestore.rules: evita perder el envío entero
 
   textarea.oninput = (e)=>{
     const val = e.target.value;
@@ -1387,6 +1434,11 @@ function renderSchreiben(v, main){
   renderPartnerSchreibenView(partnerContainer, v, cachedPartnerData);
   startListeningToTask(v.id, (freshData)=>{
     renderPartnerSchreibenView(partnerContainer, v, freshData);
+    /* Si se escribió sin conexión, el borrador se quedó en localStorage: lo subimos al
+       abrir la tarea, pero solo si la nube no tiene ya nada nuestro (nunca pisamos un
+       texto que sí llegó). */
+    const localDraft = (state.schreiben_drafts && state.schreiben_drafts[v.id]) || "";
+    if(localDraft && !freshData[currentUser + "_text"]) pushSchreibenToFirestore(v.id, localDraft);
   });
 
   /* Conectar eventos de cambio de pestañas Mi Redacción / Redacción de Pareja */
@@ -1717,13 +1769,14 @@ function normalizeEvaluationResult(raw){
   if(!Array.isArray(critical_errors)) critical_errors = [];
   critical_errors = critical_errors.map(e => {
     if(typeof e === "string") return { original: e, correction: "", rule_es: "", type: "Hinweis" };
+    if(!e || typeof e !== "object") return null;   // el LLM (o un doc ajeno) puede devolver null/números
     return {
       original: String(e.original || e.falsch || e.text || e.fehler || ""),
       correction: String(e.correction || e.korrektur || e.richtig || e.besser || ""),
       rule_es: String(e.rule_es || e.rule || e.regla || e.erklaerung || e.explicacion || e.grund || ""),
       type: String(e.type || e.kategorie || e.art || "Grammatik")
     };
-  }).filter(e => e.original || e.correction);
+  }).filter(e => e && (e.original || e.correction));
 
   // Puntos fuertes
   let strengths = raw.strengths || raw.staerken || raw.stärken || raw.puntos_fuertes || raw.positiv || [];
@@ -1743,10 +1796,13 @@ function normalizeEvaluationResult(raw){
   const corrected_version = formatGermanLetter(raw.corrected_version || raw.korrigierte_fassung || raw.version_corregida || raw.model_text || raw.korrektur || "");
   const musterloesung = formatGermanLetter(raw.musterloesung || raw.musterlösung || raw.beispiel_loesung || "");
 
+  // El recuento puede venir como cadena del modelo; Firestore exige entero.
+  const wordCount = Math.round(Number(raw.word_count));
+
   return {
     verdict,
     score_total: scoreTotal,
-    word_count: raw.word_count || 0,
+    word_count: Number.isFinite(wordCount) && wordCount > 0 ? wordCount : 0,
     student_text: raw.student_text || "",
     criteria: {
       aufgabenbewaeltigung: c1,
@@ -2457,8 +2513,9 @@ function openAIConfigModal(alertNotice){
             '<small style="display:block;margin-bottom:12px;color:var(--dim);line-height:1.4">' + t("firebaseHelp") + '</small>' +
             '<div class="form-group">' +
               '<label>' + t("lblRoomId") + '</label>' +
-              '<input class="input" type="text" id="cfg-room-id" value="' + esc(currentRoomId) + '" placeholder="sergio-diana">' +
+              '<input class="input" type="text" id="cfg-room-id" value="' + esc(currentRoomId) + '" placeholder="b2-...">' +
               '<small>' + t("roomIdHelp") + '</small>' +
+              '<button class="btn ghost" id="btn-copy-room-link" style="font-size:12px;padding:5px 10px;margin-top:8px">' + t("btnCopyPartnerLink") + '</button>' +
             '</div>' +
             '<div class="form-group">' +
               '<label>' + t("lblFirebaseConfig") + '</label>' +
@@ -2492,6 +2549,17 @@ function openAIConfigModal(alertNotice){
     if(e.target.id === "ai-modal-backdrop") closeModal();
   };
 
+  /* Copiar el enlace de invitación: Diana solo tiene que abrirlo. */
+  const btnCopyLink = document.getElementById("btn-copy-room-link");
+  if(btnCopyLink) btnCopyLink.onclick = ()=>{
+    if(!/^https?:$/.test(location.protocol)){ alert(t("alertNeedHostedLink")); return; }
+    const url = location.origin + location.pathname + "?user=diana&room=" + encodeURIComponent(currentRoomId);
+    navigator.clipboard.writeText(url).then(()=>{
+      btnCopyLink.textContent = t("btnCopyPartnerLinkDone");
+      setTimeout(()=>{ btnCopyLink.textContent = t("btnCopyPartnerLink"); }, 2500);
+    }).catch(()=>{ prompt(t("btnCopyPartnerLink"), url); });
+  };
+
   document.getElementById("btn-save-ai").onclick = ()=>{
     const newCfg = {
       provider: document.getElementById("cfg-provider").value,
@@ -2507,6 +2575,7 @@ function openAIConfigModal(alertNotice){
 
     const roomIdInput = document.getElementById("cfg-room-id")?.value.trim();
     if(roomIdInput){
+      if(!ROOM_RE.test(roomIdInput)){ alert(t("alertInvalidRoom")); return; }
       currentRoomId = roomIdInput;
       try { localStorage.setItem(LS_ROOM, currentRoomId); } catch(e){}
     }
@@ -2722,7 +2791,8 @@ function renderItem(v, it){
 
 function esc(s){
   return String(s==null?"":s)
-    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 }
 
 const resetBtn = document.getElementById("reset");
