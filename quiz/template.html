@@ -1895,7 +1895,12 @@ function normalizeEvaluationResult(raw){
       rule_es: String(e.rule_es || e.rule || e.regla || e.erklaerung || e.explicacion || e.grund || ""),
       type: String(e.type || e.kategorie || e.art || "Grammatik")
     };
-  }).filter(e => e && (e.original || e.correction));
+  }).filter(e => e && (e.original || e.correction))
+    /* Una «corrección» idéntica al original no corrige nada: pasa cuando la IA
+       escribe en `original` la frase ya arreglada (p. ej. un error de mayúsculas
+       en «zuständigen abteilung») y la tarjeta sale con el mismo texto en rojo y
+       en verde. Se descarta para no confundir al alumno ni inflar el recuento. */
+    .filter(e => comparableText(e.original) !== comparableText(e.correction));
 
   // Puntos fuertes
   let strengths = raw.strengths || raw.staerken || raw.stärken || raw.puntos_fuertes || raw.positiv || [];
@@ -1939,6 +1944,13 @@ function normalizeEvaluationResult(raw){
 
 function cleanQuotes(s){
   return String(s || "").replace(/^[«»"„“”'’`\s]+|[«»"„“”'’`\s]+$/g, "").trim();
+}
+
+/* Texto normalizado para comparar dos fragmentos: sin comillas decorativas y con
+   los espacios colapsados, pero SIN tocar las mayúsculas: «abteilung» -> «Abteilung»
+   es una corrección real y debe seguir mostrándose. */
+function comparableText(s){
+  return cleanQuotes(String(s == null ? "" : s)).replace(/\s+/g, " ");
 }
 
 function findErrorRanges(studentText, errors){

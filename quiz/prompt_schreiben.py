@@ -105,9 +105,13 @@ WICHTIGE VORGABEN:
 - Jedes Kriterium in `criteria` MUSS die Felder `grade` (A, B, C oder D), `score` (Zahl von 0 bis 25) und `feedback` enthalten.
 - In `critical_errors`: Analysiere den Text gründlich und liste ALLE konkreten Fehler auf (Grammatik, Verbposition/Satzbau, Deklination/Kasus, Präpositionen, unpassende Wortwahl, Rechtschreibung, Zeichensetzung).
   * `original`: MUSS ein EXAKTES, wörtliches Zitat (Substring) aus dem Text des Teilnehmers sein (ohne Anführungszeichen drumherum), damit der Fehler exakt an dieser Stelle im Text farbig markiert werden kann!
+    - Zitiere `original` ZEICHEN FÜR ZEICHEN so, wie der Teilnehmer es geschrieben hat — auch MIT seinen Fehlern. Schreibe NIEMALS die bereits korrigierte Form ins Feld `original` (bei einem Großschreibungsfehler steht dort also z. B. `zuständigen abteilung`, NICHT `zuständigen Abteilung`).
+    - Prüfe vor der Ausgabe, ob dieser Wortlaut wirklich genau so im Text vorkommt. Wenn nicht, zitiere den tatsächlichen Wortlaut.
   * `correction`: Die korrigierte Version der Passage auf Deutsch (B2-Niveau).
+    - `correction` MUSS sich von `original` unterscheiden. Wenn du keine echte Änderung nennen kannst, ist es KEIN Fehler: dann lass den Eintrag ganz weg. Ein Eintrag, in dem `original` und `correction` gleich lauten, ist ungültig.
   * `rule_es`: Präzise, verständliche und lehrreiche Erklärung der Grammatik- oder Ausdrucksregel auf SPANISCH (oder auf RUSSISCH, falls im User-Prompt angewiesen).
-  * `type`: "Grammatik", "Wortschatz", "Zeichensetzung", "Stil" oder "Satzbau".
+    - Die Erklärung MUSS zu dem zitierten Fehler passen: wenn du Groß- und Kleinschreibung bemängelst, muss im Zitat auch wirklich ein Wort falsch groß- oder kleingeschrieben sein.
+  * `type`: "Grammatik", "Wortschatz", "Rechtschreibung" (Groß-/Kleinschreibung, falsch geschriebene Wörter), "Zeichensetzung" (nur Kommas, Punkte und andere Satzzeichen), "Stil" oder "Satzbau".
 - QUALITÄT UND FORMATIERUNG VON `corrected_version` UND `musterloesung`:
   * KEIN unleserlicher Textblock! Du MUSST den Text mit echten Leerzeilen (`\n\n`) optisch in 3 bis 4 übersichtliche Absätze gliedern (Anrede, Einleitung/Dank, Behandlung der Leitpunkte, Lösung/Schluss, Grußformel, Name).
   * Anrede (z. B. `Sehr geehrte(r) Frau/Herr [Name],` oder `Liebe Kolleginnen und Kollegen,`) steht zwingend auf einer EIGENEN Zeile, gefolgt von einer Leerzeile (`\n\n`).
@@ -211,7 +215,7 @@ JSON_SCHEMA: Dict[str, Any] = {
                     "rule_es": {"type": "string"},
                     "type": {
                         "type": "string",
-                        "enum": ["Grammatik", "Wortschatz", "Zeichensetzung", "Stil", "Satzbau"]
+                        "enum": ["Grammatik", "Wortschatz", "Rechtschreibung", "Zeichensetzung", "Stil", "Satzbau"]
                     }
                 }
             }

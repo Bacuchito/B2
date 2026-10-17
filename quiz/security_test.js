@@ -285,6 +285,41 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     /AIzaFalsa/.test(modal), /AIzaFalsa/.test(modal) ? "se muestra" : "no aparece en el modal");
 }
 
+/* C6 · una «corrección» idéntica al original no es una corrección */
+{
+  const RUIDO = "Xylophonpruefgeraet";   // no aparece ni en el enunciado ni en los Redemittel
+  const h = montar("", {}, false);
+  h.window.quizState.schreiben_drafts["schr-b-p66"] =
+    "Sehr geehrte Damen und Herren, darum sie sind früher gegangen. Mit freundlichen Grüßen";
+  h.window.quizState.schreiben_evals["schr-b-p66"] = {
+    verdict: "BESTANDEN", score_total: 80,
+    critical_errors: [
+      { original: "darum sie sind", correction: "deshalb sind sie", rule_es: "Verbos", type: "Grammatik" },
+      { original: RUIDO, correction: RUIDO, rule_es: "Ruido", type: "Zeichensetzung" },
+      { original: "früher gegangen", correction: "früher gegangen ", rule_es: "Espacios", type: "Stil" }
+    ]
+  };
+  abrirSchreiben(h.registro);
+  const texto = (h.registro["main"] || new El("div")).texto();
+  check("se descartan las correcciones vacías (idénticas o con espacios de más)",
+    /Verbos/.test(texto) && !texto.includes(RUIDO) && !/Espacios/.test(texto),
+    "real: " + /Verbos/.test(texto) + " · idéntica: " + texto.includes(RUIDO) + " · espacios: " + /Espacios/.test(texto));
+
+  const h2 = montar("", {}, false);
+  h2.window.quizState.schreiben_drafts["schr-b-p66"] = "… unserer zuständigen abteilung geschrieben.";
+  h2.window.quizState.schreiben_evals["schr-b-p66"] = {
+    verdict: "BESTANDEN", score_total: 80,
+    critical_errors: [
+      { original: "zuständigen abteilung", correction: "zuständigen Abteilung", rule_es: "Mayúsculas", type: "Rechtschreibung" }
+    ]
+  };
+  abrirSchreiben(h2.registro);
+  const texto2 = (h2.registro["main"] || new El("div")).texto();
+  check("una diferencia solo de mayúsculas SÍ se conserva",
+    /Mayúsculas/.test(texto2) && /zuständigen abteilung/.test(texto2),
+    "regla: " + /Mayúsculas/.test(texto2) + " · original en minúscula: " + /zuständigen abteilung/.test(texto2));
+}
+
 /* C3 · evaluación de la pareja recibida por Firestore */
 {
   const h = montar("?user=sergio&room=sala-prueba", {}, true);
