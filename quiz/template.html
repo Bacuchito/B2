@@ -26,7 +26,12 @@
   nav{width:290px;flex:0 0 290px;border-right:1px solid var(--line);background:var(--panel);
       height:calc(100vh - 49px);overflow-y:auto;position:sticky;top:49px;padding:10px}
   nav .sec{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);
-           margin:14px 6px 6px;font-weight:700}
+           margin:14px 6px 6px;font-weight:700;display:flex;align-items:center;
+           justify-content:space-between;gap:8px}
+  nav button.sec-reset{display:inline-block;width:auto;padding:2px 7px;border:1px solid var(--line);
+           border-radius:6px;font-size:10px;font-weight:700;letter-spacing:.02em;color:var(--dim);
+           text-transform:none;line-height:1.4}
+  nav button.sec-reset:hover{background:var(--panel2);color:var(--txt);border-color:var(--acc)}
   nav button{display:block;width:100%;text-align:left;background:none;border:0;color:var(--txt);
              padding:7px 9px;border-radius:8px;cursor:pointer;font-size:13.5px;line-height:1.3}
   nav button:hover{background:var(--panel2)}
@@ -335,6 +340,9 @@ const I18N = {
     reviewModeNoDoubt: "Esta variante no tiene respuestas dudosas: todas son de confianza alta.",
     btnShowAllAnswers: "Mostrar todas las respuestas",
     btnClearVariantAnswers: "Borrar respuestas de este ejercicio",
+    btnResetSection: "↺ Reiniciar",
+    btnResetSectionTitle: "Borrar las {n} respuestas de {title} para volver a hacerlo entero",
+    confirmResetSection: "¿Borrar las {n} respuestas de {title}? Se quedarán en blanco para volver a hacerlo. El resto de tu progreso no se toca.",
     correctAnswerIs: "Respuesta correcta: <b>{letter}</b>",
     correctVerdict: "✓ Correcto",
     wrongVerdict: "✗ Incorrecto — la correcta es <b>{letter}</b>",
@@ -503,6 +511,9 @@ const I18N = {
     reviewModeNoDoubt: "В этом варианте нет сомнительных ответов: все с высокой уверенностью.",
     btnShowAllAnswers: "Показать все ответы",
     btnClearVariantAnswers: "Очистить ответы этого задания",
+    btnResetSection: "↺ Сбросить",
+    btnResetSectionTitle: "Удалить {n} ответов раздела {title}, чтобы пройти его заново",
+    confirmResetSection: "Удалить {n} ответов раздела {title}? Раздел станет пустым, чтобы пройти его снова. Остальной прогресс не затрагивается.",
     correctAnswerIs: "Правильный ответ: <b>{letter}</b>",
     correctVerdict: "✓ Верно",
     wrongVerdict: "✗ Неверно — правильный ответ <b>{letter}</b>",
@@ -724,6 +735,7 @@ function setLanguage(lang) {
 window.setLanguage = setLanguage;
 window.t = t;
 window.esc = esc;
+window.DATA = DATA;
 window.getLang = () => currentLang;
 
 /* ---------- Sincronización en Tiempo Real (Firebase Firestore) ---------- */
@@ -1051,7 +1063,28 @@ function renderNav(){
   DATA.sections.forEach(sec=>{
     const h = document.createElement("div");
     h.className = "sec";
-    h.textContent = sec.title;
+    const titulo = document.createElement("span");
+    titulo.textContent = sec.title;
+    h.appendChild(titulo);
+
+    /* Reiniciar el bloque entero: borra solo las respuestas de esta sección, y
+       solo aparece si hay algo que borrar. Las tareas de Schreiben se quedan
+       fuera a propósito (tienen sus propios botones por tarea). */
+    const objetivos = (sec.variants || []).filter(v => v.kind !== "schreiben");
+    const pendientes = objetivos.reduce((acc, v) =>
+      acc + (v.items || []).filter(it => state.answers[ansKey(v, it)] !== undefined).length, 0);
+    if(pendientes > 0){
+      const bResetSec = document.createElement("button");
+      bResetSec.className = "sec-reset";
+      bResetSec.textContent = t("btnResetSection");
+      bResetSec.title = t("btnResetSectionTitle", { title: sec.title, n: pendientes });
+      bResetSec.onclick = ()=>{
+        if(!confirm(t("confirmResetSection", { title: sec.title, n: pendientes }))) return;
+        objetivos.forEach(v => (v.items || []).forEach(it => { delete state.answers[ansKey(v, it)]; }));
+        saveState(); render();
+      };
+      h.appendChild(bResetSec);
+    }
     nav.appendChild(h);
     sec.variants.forEach(v=>{
       const nd = doubtfulCount(v);

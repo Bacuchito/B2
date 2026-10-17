@@ -232,6 +232,38 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     "respuestas=" + Object.keys(s.answers).length + " borradores=" + Object.keys(s.schreiben_drafts).length);
 }
 
+/* S7 · reiniciar un bloque entero (por ejemplo Lesen Teil 1) sin tocar el resto */
+{
+  const h = montar("", {}, false);
+  const nav = h.registro["nav"];
+  const secciones = h.window.DATA.sections.filter(s => (s.variants || []).some(v => v.kind !== "schreiben"));
+  const secA = secciones[0], secB = secciones[1];
+  const claves = sec => {
+    const ks = [];
+    sec.variants.filter(v => v.kind !== "schreiben").forEach(v =>
+      (v.items || []).forEach((it, i) => ks.push(v.id + "#" + i)));
+    return ks;
+  };
+  const clavesA = claves(secA), clavesB = claves(secB);
+  check("sin respuestas no aparece el botón de reiniciar bloque",
+    !buscar(nav, e => e.className === "sec-reset"), "secciones: " + secciones.length);
+
+  clavesA.slice(0, 3).forEach(k => { h.window.quizState.answers[k] = "a"; });
+  clavesB.slice(0, 2).forEach(k => { h.window.quizState.answers[k] = "a"; });
+  const variante = buscar(nav, e => e.tagName === "button" && e.onclick && e.className !== "sec-reset");
+  if (variante) variante.onclick();            // fuerza un render con las respuestas ya puestas
+
+  const bReset = buscar(nav, e => e.className === "sec-reset");
+  check("con respuestas aparece el botón de reiniciar en el encabezado del bloque",
+    !!(bReset && typeof bReset.onclick === "function"), bReset ? "«" + (bReset.textContent || "") + "»" : "no apareció");
+
+  if (bReset && bReset.onclick) bReset.onclick();
+  const quedanA = clavesA.filter(k => h.window.quizState.answers[k] !== undefined).length;
+  const quedanB = clavesB.filter(k => h.window.quizState.answers[k] !== undefined).length;
+  check("reiniciar el bloque borra solo ese bloque, no los demás",
+    quedanA === 0 && quedanB === 2, "bloque A: " + quedanA + " · bloque B: " + quedanB);
+}
+
 /* C3 · evaluación de la pareja recibida por Firestore */
 {
   const h = montar("?user=sergio&room=sala-prueba", {}, true);
