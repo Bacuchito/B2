@@ -192,6 +192,34 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     !!fallo, fallo ? fallo.message : "no lanzó error");
 }
 
+/* S5 · importar una copia de seguridad del progreso */
+{
+  const h = montar("", {}, false);
+  const antes = h.window.quizState;
+  antes.schreiben_drafts["basura"] = "debe desaparecer";
+  let r = null, error = null;
+  try {
+    r = h.window.aplicarProgreso({ answers: { "t1-v1": "a" }, schreiben_drafts: { "schr-b-p66": "texto importado" } });
+  } catch (e) { error = e; }
+  const s = h.window.quizState;
+  check("importar progreso sustituye los datos y reengancha quizState",
+    !error && s !== antes && s.answers["t1-v1"] === "a" &&
+    s.schreiben_drafts["schr-b-p66"] === "texto importado" && !s.schreiben_drafts["basura"] && r && r.respuestas === 1,
+    error ? error.message : "respuestas=" + Object.keys(s.answers).length + " borradores=" + Object.keys(s.schreiben_drafts).length);
+  check("tras importar, el progreso queda guardado en localStorage",
+    /texto importado/.test(h.store["b2quiz.v1"] || ""), (h.store["b2quiz.v1"] || "").slice(0, 60));
+}
+
+/* S6 · «Reiniciar» no deja el estado global obsoleto */
+{
+  const h = montar("", {}, false);
+  h.window.quizState.answers["t1-v1"] = "a";
+  const boton = h.registro["reset"];
+  if (boton && boton.onclick) boton.onclick();
+  const n = Object.keys(h.window.quizState.answers).length;
+  check("«Reiniciar» vacía también el quizState global", n === 0, "respuestas tras reiniciar: " + n);
+}
+
 /* C3 · evaluación de la pareja recibida por Firestore */
 {
   const h = montar("?user=sergio&room=sala-prueba", {}, true);

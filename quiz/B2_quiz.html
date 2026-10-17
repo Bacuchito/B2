@@ -464,7 +464,16 @@ const I18N = {
     btnTestFirebase: "Probar Conexión Firebase",
     firebaseTesting: "Probando conexión con Firestore...",
     firebaseSuccess: "✓ ¡Conexión con Firestore establecida exitosamente!",
-    firebaseFailed: "✗ Error al conectar con Firestore: {error}"
+    firebaseFailed: "✗ Error al conectar con Firestore: {error}",
+    backupTitle: "💾 Copia de seguridad del progreso",
+    backupHelp: "El progreso (respuestas, borradores y evaluaciones) se guarda solo en este navegador y en esta dirección web. Exporta un fichero para llevarlo a otro navegador o dispositivo, o para no perderlo. No incluye las claves de IA ni de Firebase.",
+    btnExportProgress: "⬇ Exportar progreso",
+    btnImportProgress: "⬆ Importar progreso",
+    importConfirm: "El fichero trae {n} respuestas y {d} borradores. Se sustituirá el progreso actual de este navegador. ¿Continuar?",
+    importOk: "✓ Progreso importado: {n} respuestas, {d} borradores.",
+    importNoProgress: "El fichero no tiene un progreso válido de esta app.",
+    importError: "✗ No se pudo importar: {error}",
+    exportDone: "Fichero descargado. Guárdalo donde no se pierda."
   },
   ru: {
     appTitle: "B2 Beruf — Экзамен",
@@ -621,7 +630,16 @@ const I18N = {
     btnTestFirebase: "Проверить Firebase",
     firebaseTesting: "Проверка подключения к Firestore...",
     firebaseSuccess: "✓ Соединение с Firestore успешно установлено!",
-    firebaseFailed: "✗ Ошибка подключения к Firestore: {error}"
+    firebaseFailed: "✗ Ошибка подключения к Firestore: {error}",
+    backupTitle: "💾 Резервная копия прогресса",
+    backupHelp: "Прогресс (ответы, черновики и проверки) хранится только в этом браузере и по этому адресу. Экспортируйте файл, чтобы перенести его в другой браузер или устройство, либо чтобы не потерять. Ключи ИИ и Firebase в файл не входят.",
+    btnExportProgress: "⬇ Экспортировать прогресс",
+    btnImportProgress: "⬆ Импортировать прогресс",
+    importConfirm: "В файле {n} ответов и {d} черновиков. Текущий прогресс в этом браузере будет заменён. Продолжить?",
+    importOk: "✓ Прогресс импортирован: {n} ответов, {d} черновиков.",
+    importNoProgress: "В файле нет корректного прогресса этой программы.",
+    importError: "✗ Не удалось импортировать: {error}",
+    exportDone: "Файл скачан. Сохраните его в надёжном месте."
   }
 };
 
@@ -892,6 +910,56 @@ function loadState(){
 function saveState(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
 let state = loadState();
 window.quizState = state;
+
+/* ---------- Copia de seguridad del progreso ----------
+   El progreso vive en el localStorage de UN origen (navegador + dirección web),
+   así que exportar/importar es la forma de llevarlo de file:// a GitHub Pages,
+   a otro navegador o a otro dispositivo. No incluye claves. */
+function exportProgress(){
+  try {
+    const payload = {
+      app: "B2-Beruf-Quiz",
+      formato: 1,
+      exportado: new Date().toISOString(),
+      usuario: currentUser,
+      sala: currentRoomId,
+      progreso: state
+    };
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "progreso-B2-" + new Date().toISOString().slice(0, 10) + ".json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 2000);
+    return true;
+  } catch(e){
+    console.warn("No se pudo exportar el progreso:", e);
+    return false;
+  }
+}
+
+/* Sustituye el progreso actual por el del fichero y reengancha window.quizState
+   (si no, el puntero global se queda apuntando al objeto viejo). */
+function aplicarProgreso(prog){
+  state = {
+    answers: prog.answers || {},
+    schreiben_drafts: prog.schreiben_drafts || {},
+    schreiben_evals: prog.schreiben_evals || {},
+    schreiben_lps: prog.schreiben_lps || {}
+  };
+  window.quizState = state;
+  saveState();
+  render();
+  return {
+    respuestas: Object.keys(state.answers).length,
+    borradores: Object.keys(state.schreiben_drafts).length
+  };
+}
+window.exportProgress = exportProgress;
+window.aplicarProgreso = aplicarProgreso;
 
 /* ---------- Configuración de IA ---------- */
 function getAIConfig(){
@@ -2545,6 +2613,18 @@ function openAIConfigModal(alertNotice){
             '</div>' +
           '</div>' +
 
+          /* Sección copia de seguridad del progreso */
+          '<div style="border-top:1px solid var(--line);margin-top:16px;padding-top:16px">' +
+            '<h4 style="margin:0 0 6px;font-size:14px;color:var(--txt)">' + t("backupTitle") + '</h4>' +
+            '<small style="display:block;margin-bottom:12px;color:var(--dim);line-height:1.4">' + t("backupHelp") + '</small>' +
+            '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">' +
+              '<button class="btn ghost" id="btn-export-progress" style="font-size:12px;padding:5px 10px">' + t("btnExportProgress") + '</button>' +
+              '<button class="btn ghost" id="btn-import-progress" style="font-size:12px;padding:5px 10px">' + t("btnImportProgress") + '</button>' +
+              '<input type="file" id="file-import-progress" accept=".json,application/json" style="display:none">' +
+            '</div>' +
+            '<span id="import-result" style="display:block;margin-top:8px;font-size:12px"></span>' +
+          '</div>' +
+
           '<div id="test-result" style="margin-top:12px;font-size:13px"></div>' +
         '</div>' +
         '<div class="modal-foot">' +
@@ -2619,6 +2699,38 @@ function openAIConfigModal(alertNotice){
     closeModal();
     alert(t("alertAiSaved"));
     render();
+  };
+
+  /* Exportar / importar progreso */
+  const btnExportProg = document.getElementById("btn-export-progress");
+  if(btnExportProg) btnExportProg.onclick = ()=>{
+    const res = document.getElementById("import-result");
+    if(res) res.innerHTML = exportProgress() ? '<span style="color:var(--ok)">' + t("exportDone") + '</span>' : "";
+  };
+  const btnImportProg = document.getElementById("btn-import-progress");
+  const fileImportProg = document.getElementById("file-import-progress");
+  if(btnImportProg && fileImportProg) btnImportProg.onclick = ()=> fileImportProg.click();
+  if(fileImportProg) fileImportProg.onchange = ()=>{
+    const res = document.getElementById("import-result");
+    const f = fileImportProg.files && fileImportProg.files[0];
+    if(!f) return;
+    const lector = new FileReader();
+    lector.onerror = ()=>{ if(res) res.innerHTML = '<span style="color:var(--bad)">' + t("importError", { error: "no se pudo leer el fichero" }) + '</span>'; };
+    lector.onload = ()=>{
+      try {
+        const datos = JSON.parse(String(lector.result));
+        const prog = datos && (datos.progreso || datos.state || datos);
+        if(!prog || !prog.answers) throw new Error(t("importNoProgress"));
+        const n = Object.keys(prog.answers).length;
+        const d = Object.keys(prog.schreiben_drafts || {}).length;
+        if(!confirm(t("importConfirm", { n: n, d: d }))) return;
+        const r = aplicarProgreso(prog);
+        if(res) res.innerHTML = '<span style="color:var(--ok)">' + t("importOk", { n: r.respuestas, d: r.borradores }) + '</span>';
+      } catch(e){
+        if(res) res.innerHTML = '<span style="color:var(--bad)">' + t("importError", { error: esc(e.message) }) + '</span>';
+      }
+    };
+    lector.readAsText(f);
   };
 
   const btnTestFb = document.getElementById("btn-test-firebase");
@@ -2826,6 +2938,7 @@ if(resetBtn){
   resetBtn.onclick = ()=>{
     if(confirm(t("confirmResetAll"))){
       state = {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}};
+      window.quizState = state;
       saveState(); render();
     }
   };
