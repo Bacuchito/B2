@@ -115,6 +115,10 @@ check("ningún anuncio sale marcado antes de responder (no revela la clave)",
 check("el resumen del panel cuenta tus asignaciones, no las de la clave",
       /0 asignadas/.test(mainText),
       (mainText.match(/Anzeigen[^<]{0,60}/) || ["(sin resumen)"])[0]);
+/* Mesa de examen a dos columnas: la clase la pone el render solo si hay
+   referencia (anuncios o texto) que poner al lado; el CSS la usa a ≥1500px. */
+check("la mesa de examen se activa cuando hay anuncios que poner al lado",
+      ids.main.className === "desk", `clase de main: «${ids.main.className}»`);
 
 /* ---------- simulación de clic en preguntas ---------- */
 const clicables = descendientes(ids.main).filter(e => typeof e.onclick === "function");
@@ -157,6 +161,8 @@ if (schrBtn && typeof schrBtn.onclick === "function") {
   const schrText = ids.main.collectText();
   check("el panel de Schreiben se pintó", /Situación laboral|Leitpunkte|Wörter/i.test(schrText), schrText.slice(0, 100));
   check("el editor y botón de evaluación están presentes", /Evaluar con Examinador telc/i.test(schrText));
+  check("al cambiar a una variante sin referencia se vuelve a una columna",
+        ids.main.className === "", `clase de main: «${ids.main.className}»`);
 }
 
 /* Modal de configuración de IA */

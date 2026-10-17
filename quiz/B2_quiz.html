@@ -85,6 +85,9 @@
 
     /* --- Medidas de estructura --- */
     --header-h:57px; --nav-w:288px; --read-w:68ch;
+    /* Mesa de examen (pantallas ≥1500px): ancho de la columna de referencia
+       —anuncios o texto— y tope al que se estira la hoja de preguntas. */
+    --desk-ref:600px; --desk-work:860px;
   }
 
   /* --- Modo noche: mismo mundo, tinta clara sobre carbón cálido --- */
@@ -672,6 +675,31 @@
     #theme-btn{width:44px}
     .letters button{width:44px}
     .btn.sm,.copy-btn{min-height:36px}
+  }
+
+  /* --- Escritorio ancho (≥1500px): la mesa de examen, en dos columnas ---
+     A 1920px una columna de 960px dejaba media pantalla vacía a la derecha. Aquí
+     la referencia —los anuncios de Lesen 1 y 3 o el texto de lectura— se queda a
+     la izquierda, fija y con su propio scroll, y la hoja de preguntas ocupa la
+     derecha: se responde sin subir y bajar a consultar el anuncio.
+     Solo se activa si la variante tiene referencia; por eso la clase la pone el
+     render (main.desk), no un :has() ni un ancho fijo. */
+  @media(min-width:1500px){
+    main.desk{max-width:none;display:grid;align-items:start;column-gap:var(--sp-6);
+              grid-template-columns:minmax(0,var(--desk-ref)) minmax(0,1fr)}
+    main.desk > *{grid-column:1 / -1}
+    main.desk > details.passage{grid-column:1;position:sticky;
+              top:calc(var(--header-h) + var(--sp-5));
+              max-height:calc(100vh - var(--header-h) - var(--sp-6));
+              padding-top:0;overflow:auto;overscroll-behavior:contain}
+    /* El rótulo del panel no se va con el scroll: sigue diciendo qué miras y
+       cuántos anuncios llevas asignados. */
+    main.desk > details.passage > summary{position:sticky;top:0;z-index:2;
+              background:var(--panel);padding-top:var(--sp-4);
+              border-radius:var(--r-3) var(--r-3) 0 0}
+    /* Un solo scroll (el del panel), no dos anidados. */
+    main.desk > details.passage .passage-body{max-height:none;overflow:visible}
+    main.desk > .q-sheet,main.desk > .row{grid-column:2;width:100%;max-width:var(--desk-work)}
   }
 
   /* --- Movimiento reducido: se apaga todo lo decorativo (HIG) --- */
@@ -1861,8 +1889,13 @@ function renderMain(){
   const main = document.getElementById("main");
   if(!main) return;
   const v = allVariants.find(x=>x.id===current);
-  if(!v){ main.innerHTML = '<div class="empty">' + t("noData") + '</div>'; return; }
+  if(!v){ main.className = ""; main.innerHTML = '<div class="empty">' + t("noData") + '</div>'; return; }
   main.innerHTML = "";
+  /* Mesa de examen a dos columnas (CSS ≥1500px): solo si hay referencia que
+     poner al lado —anuncios de zuordnung o texto de lectura—. Sin ella, una
+     columna; la clase se quita siempre para no arrastrarla entre variantes. */
+  main.className = (v.kind !== "schreiben" && (v.passage || (v.options && v.options.length)))
+    ? "desk" : "";
 
   /* Encabezado */
   const h2 = document.createElement("h2");

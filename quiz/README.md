@@ -23,6 +23,11 @@ necesita servidor, ni Internet, ni instalar nada. Los datos van incrustados.
   asignado salen en azul con `✓` y el resumen cuenta cuántos llevas; los libres,
   en ámbar. Ese estado es tu progreso, nunca la solución: la app no dice qué
   anuncios son correctos hasta que respondes.
+- En una pantalla ancha (**≥1500px**) la app se pone en modo *mesa de examen*: la
+  referencia —los anuncios o el texto de lectura— se queda en la columna
+  izquierda, fija y con su propio scroll, y la hoja de preguntas pasa a la
+  derecha. Se responde sin subir y bajar a mirar el anuncio. Por debajo de ese
+  ancho sigue siendo una sola columna.
 - En **Lesen Teil 2** el texto de lectura está en un panel plegable.
 - Al responder aparece la corrección con la cita y la confianza.
 - El progreso se guarda en el navegador (`localStorage`). «Reiniciar» lo borra.
@@ -85,6 +90,8 @@ componentes**: basta el bloque `:root`.
 | Tipografía | `--fs-micro` … `--fs-h2` (11, 12, 13, 15, 17, 20, 27) | Seis pasos, sin tallas sueltas |
 | Movimiento | `--dur-1/2/3`, `--ease`, `--spring` | Duraciones y curvas elásticas |
 | Elevación | `--sh-1/2/3`, `--lit` | Sombra amplia + corta, borde de luz |
+| Estructura | `--header-h`, `--nav-w`, `--read-w` | Alto de cabecera, ancho del índice y medida de lectura |
+| Mesa de examen | `--desk-ref`, `--desk-work` | Ancho de la columna de referencia y tope de la hoja de preguntas a partir de 1500px |
 
 Las tres familias tipográficas son del sistema (`--font-ui`, `--font-read` serif
 para textos largos y `--font-mono`): la app sigue funcionando sin conexión y sin
