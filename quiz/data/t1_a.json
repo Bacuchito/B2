@@ -68,6 +68,7 @@
           "answer": "e",
           "confidence": "hoch",
           "quote": "Wie kleide ich mich richtig im Büro? Duzen oder siezen? Welche Themen sollten Sie im Smalltalk vermeiden?",
+          "explain_ru": "Moutasem сомневается, как обращаться к новым коллегам. Объявление e как раз посвящено формам обращения в повседневной работе и дословно упоминает «Duzen oder siezen?». Объявление f (телефон) — тематическая ловушка.",
           "explain": "Moutasem duda de cómo dirigirse a colegas nuevos. El anuncio e trata exactamente las formas de trato en el día a día laboral y menciona de forma literal «Duzen oder siezen?». El anuncio f (teléfono) es el distractor temático."
         },
         {
@@ -77,6 +78,7 @@
           "answer": "h",
           "confidence": "hoch",
           "quote": "Seit einigen Jahren geht die Zahl der Kündigungsschutzklagen kontinuierlich zurück",
+          "explain_ru": "Selma уволена и хочет защититься: это «Kündigungsschutzklage» (иск о защите от несправедливого увольнения). Объявление h — единственное, где речь идёт об исках по увольнению и о специалисте по трудовому праву. Объявление d тоже юридическое, но по семейному праву.",
           "explain": "Selma ha sido despedida y quiere defenderse: eso es una «Kündigungsschutzklage» (demanda por despido improcedente). El anuncio h es el único que habla de demandas por despido y de un experto en derecho laboral. El anuncio d también es jurídico, pero de familia."
         },
         {
@@ -86,6 +88,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "ist der geborene Fremdsprachenkorrespondent. In diesem Jobprofil kann er oder sie seine/ihre Leidenschaft für Sprachen nämlich voll und ganz ausleben.",
+          "explain_ru": "Anka хочет учиться в сфере языков. Объявление c описывает именно профессию «Fremdsprachenkorrespondent» — это официальное профессиональное обучение в этой области. Объявление a (языковая поездка) не является профессиональным обучением.",
           "explain": "Anka quiere formarse en el ámbito de idiomas. El anuncio c describe precisamente la profesión de «Fremdsprachenkorrespondent», que es una formación reglada en ese campo. El anuncio a (viaje de idiomas) no es una formación profesional."
         },
         {
@@ -95,6 +98,7 @@
           "answer": "b",
           "confidence": "mittel",
           "quote": "So arbeiten beide Länder zum Beispiel eng in der Meeresforschung und im Umweltschutz zusammen. Die Bundesrepublik fördert die Zusammenarbeit erfahrener deutscher und japanischer Wissenschaftler.",
+          "explain_ru": "Sean — преподаватель биологии и ищет международную среду. Объявление b — единственное научное и международное: сотрудничество в области морских исследований и экологии и программы для исследователей. Средняя уверенность, потому что b описывает программу сотрудничества, а не официальное предложение работы.",
           "explain": "Sean es profesor de biología y busca un entorno internacional. El anuncio b es el único científico e internacional: cooperación en investigación marina y medio ambiente y programas para investigadores. Confianza media porque b describe un programa de cooperación, no una oferta de empleo formal."
         },
         {
@@ -104,6 +108,7 @@
           "answer": "g",
           "confidence": "hoch",
           "quote": "Du träumst von einem Job im Ausland, dann knüpfe erste Kontakte durch ein Praktikum.",
+          "explain_ru": "Yassin хочет получить первый профессиональный опыт за границей. Объявление g предлагает именно это: «Auslandspraktikum» как первый шаг. Объявление a — языковая поездка без рабочей составляющей.",
           "explain": "Yassin quiere sus primeras experiencias profesionales en el extranjero. El anuncio g propone exactamente eso: un «Auslandspraktikum» como primera toma de contacto. El anuncio a es un viaje de idiomas, sin componente laboral."
         }
       ]

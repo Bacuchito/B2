@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "t2_a-p19a",
+   "note_ru": "На с. 19 две версии пунктов 6 и 7 по одному и тому же тексту Willkommensmappe (Zugangskontrolle): эта первая и помеченная «Новый вариант» (→ t2_a-p19b). Они разделены на два варианта, чтобы каждый пункт сохранил свой ключ ответа («id#n»).",
    "label": "Text 1 – Variante 1",
    "page": 19,
    "note": "La p. 19 trae dos versiones de los ítems 6 y 7 sobre el mismo texto de la Willkommensmappe (Zugangskontrolle): esta primera y la marcada «Новый вариант» (→ t2_a-p19b). Se han separado en dos variantes para que cada ítem conserve su propia clave de respuesta («id#n»).",
@@ -28,6 +29,8 @@
      "answer": "Richtig",
      "confidence": "hoch",
      "quote": "Außerdem können Sie mit Ihrem Firmenausweis in der Kantine und am Getränkeautomaten bezahlen und das hauseigene Fitnessstudio benutzen.",
+     "explain_ru": "«Richtig»: в тексте пропуску приписывают, помимо учёта рабочего времени, и другие функции (оплата в столовой и автоматах и доступ в спортзал предприятия). «Falsch» не выдерживает критики, потому что эти функции прямо перечислены в приведённом отрывке.",
+
      "explain": "«Richtig»: el texto atribuye al carné, además de registrar la jornada, otras funciones (pagar en la cantina y en las máquinas expendedoras y usar el gimnasio de la empresa). «Falsch» no se sostiene, porque esas funciones se enumeran expresamente en el pasaje citado."
     },
     {
@@ -51,12 +54,15 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Die Zeiterfassung berechnet automatisch die reguläre Arbeitszeit sowie eventuelle Über- als auch Minusstunden. Die Personalabteilung richtet Ihnen einen Zugang zu unserem Arbeitskonten-System PersoTime ein. Damit können Sie im Intranet Ihr Arbeitszeitkonto jederzeit einsehen.",
+     "explain_ru": "Верно a: Zeiterfassung автоматически считает сверхурочные, а баланс рабочего времени, куда они попадают, можно в любой момент посмотреть в интранете, то есть онлайн. b неверно, потому что текст считает сверхурочные само собой разумеющимися (их подсчитывают и предусматривают компенсацию), а не запрещает их; c неверно, потому что учитывают их как раз Zeiterfassung и система PersoTime.",
+
      "explain": "Correcto a: la Zeiterfassung calcula automáticamente las horas extraordinarias y la cuenta horaria que las recoge se puede consultar en cualquier momento en la intranet, es decir, en línea. b es falso porque el texto da por hechas las horas extraordinarias (las calcula y prevé su compensación), no las prohíbe; c es falso porque son precisamente la Zeiterfassung y el sistema PersoTime quienes las registran."
     }
    ]
   },
   {
    "id": "t2_a-p19b",
+   "note_ru": "Fassung «Новый вариант» пунктов 6 и 7 по тому же тексту с. 19 (в оригинале текст не повторяется): пункт 6 — переформулировка предыдущего, а пункт 7 теперь о личном учёте часов вместо сверхурочных. Там, где вопрос или вариант даны в двух формулировках через «/», сохранена последняя.",
    "label": "Text 1 – Variante 1 (Новый вариант)",
    "page": 19,
    "note": "Fassung «Новый вариант» de los ítems 6 y 7 sobre el mismo texto de la p. 19 (el original no repite el texto): el ítem 6 es una reformulación del anterior y el 7 plantea ahora la cuenta horaria personal en lugar de las horas extraordinarias. Donde el enunciado o una opción aparecían con dos formulaciones separadas por «/», se ha conservado la última.",
@@ -81,6 +87,8 @@
      "answer": "Richtig",
      "confidence": "hoch",
      "quote": "Außerdem können Sie mit Ihrem Firmenausweis in der Kantine und am Getränkeautomaten bezahlen und das hauseigene Fitnessstudio benutzen.",
+     "explain_ru": "«Richtig»: пропуск служит для оплаты внутри предприятия — в столовой и в автоматах с напитками, которые находятся на его территории. «Falsch» исключается той же фразой, где пропуск описан как внутреннее платёжное средство.",
+
      "explain": "«Richtig»: el carné sirve para pagar dentro de la empresa, en la cantina y en las máquinas expendedoras de bebidas, que forman parte del recinto. «Falsch» queda descartado por esa misma frase, que describe el carné como medio de pago interno."
     },
     {
@@ -104,12 +112,15 @@
      "answer": "c",
      "confidence": "mittel",
      "quote": "Bitte halten Sie beim Betreten und Verlassen des Gebäudes Ihren Firmenausweis an die blau markierte Fläche und vergewissern Sie sich, dass die Zeit des Arbeitsbeginns und Arbeitsendes richtig erfasst wurde.",
+     "explain_ru": "Остаётся только c, методом исключения. a) утверждает, что баланс виден только через отдел кадров, и текст прямо это опровергает: «Die Personalabteilung richtet Ihnen einen Zugang … ein. Damit können Sie im Intranet Ihr Arbeitszeitkonto jederzeit einsehen.» Доступ оформляет сам отдел кадров, но смотрите вы его самостоятельно в интранете, а не в окошке. b) неверно, потому что часы записывает не работник: «Die Zeiterfassung berechnet automatisch die reguläre Arbeitszeit sowie eventuelle Über- als auch Minusstunden.» c) не встречается в тексте дословно — отсюда средняя уверенность, — но отметка прихода и ухода ежедневная, а баланс считается автоматически, так что после исключения a и b это разумное прочтение.",
+
      "explain": "La c es la única que queda en pie, por eliminación. a) dice que la cuenta solo se ve a través de la oficina de personal, y el texto lo contradice de forma directa: «Die Personalabteilung richtet Ihnen einen Zugang … ein. Damit können Sie im Intranet Ihr Arbeitszeitkonto jederzeit einsehen.» Es la propia oficina de personal la que le habilita el acceso, pero usted lo consulta por su cuenta en la intranet, no en ventanilla. b) es falsa porque las horas no las apunta el trabajador: «Die Zeiterfassung berechnet automatisch die reguläre Arbeitszeit sowie eventuelle Über- als auch Minusstunden.» c) no aparece literalmente en el texto —de ahí la confianza media—, pero el fichaje de entrada y salida es diario y el saldo se calcula de forma automática, así que es la lectura razonable una vez descartadas a y b."
     }
    ]
   },
   {
    "id": "t2_a-p20a",
+   "note_ru": "На с. 20 раздел «Arbeitszeit» встречается дважды: эта первая версия (Gleitzeitsystem, Kernarbeitszeit 9.00–15.30) и помеченная «Новый вариант» (→ t2_a-p20b) с другим текстом и новыми пунктами.",
    "label": "Text 1 – Variante 2",
    "page": 20,
    "note": "La p. 20 trae el apartado «Arbeitszeit» dos veces: esta primera versión (Gleitzeitsystem, Kernarbeitszeit 9.00–15.30) y la marcada «Новый вариант» (→ t2_a-p20b), con otro texto y nuevos ítems.",
@@ -134,6 +145,8 @@
      "answer": "Falsch",
      "confidence": "hoch",
      "quote": "Bitte beachten Sie, dass innerhalb dieses Zeitrahmens maximal acht, in Ausnahmefällen zehn, Stunden täglich gearbeitet werden darf.",
+     "explain_ru": "«Falsch»: текст ограничивает рабочий день максимум восемью часами в день, десятью только в исключительных случаях, в рамках с 6.00 до 19.30. «Richtig» было бы несостоятельно, потому что ни одна фраза не позволяет работать «beliebig viele Stunden».",
+
      "explain": "«Falsch»: el texto limita la jornada a un máximo de ocho horas diarias, diez solo en casos excepcionales, dentro del marco horario de 6.00 a 19.30. «Richtig» sería insostenible porque ninguna frase permite trabajar «beliebig viele Stunden»."
     },
     {
@@ -157,12 +170,15 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Bei entsprechendem Guthaben kann einmal pro Monat ein ganzer Arbeitstag (acht Stunden) als Gleitzeittag genommen werden.",
+     "explain_ru": "Верно a: система гибкого графика позволяет накапливать часы на счёте («Bei entsprechendem Guthaben», «ein Minuskontostand im Folgemonat auszugleichen»), то есть формировать запас часов. b неверно, потому что при достаточном балансе берут целый день в месяц (а в декабре до четырёх), а не «einige Tage» каждый месяц; c неверно, потому что максимум — восемь часов в день, десять только в исключительных случаях.",
+
      "explain": "Correcto a: el sistema de horario flexible permite acumular horas en la cuenta («Bei entsprechendem Guthaben», «ein Minuskontostand im Folgemonat auszugleichen»), es decir, formar un saldo de horas. b es falso porque con saldo suficiente se toma un día completo al mes (y hasta cuatro en diciembre), no «einige Tage» todos los meses; c es falso porque el máximo es de ocho horas diarias, diez solo en casos excepcionales."
     }
    ]
   },
   {
    "id": "t2_a-p20b",
+   "note_ru": "Fassung «Новый вариант» (с. 20): раздел «Arbeitszeit» полностью переписан (40-часовая рабочая неделя, Kernzeit с 10 до 15 Uhr, Gleitzeiten 8–10 и 15–17) с новыми пунктами 6 и 7. В оригинале заголовок «Willkommensmappe» не повторяется.",
    "label": "Text 1 – Variante 2 (Новый вариант)",
    "page": 20,
    "note": "Fassung «Новый вариант» (p. 20): el apartado «Arbeitszeit» aparece reescrito por completo (jornada semanal de 40 horas, Kernzeit de 10 a 15 Uhr, Gleitzeiten 8–10 y 15–17) con nuevos ítems 6 y 7. El original no repite el título «Willkommensmappe».",
@@ -187,6 +203,8 @@
      "answer": "Falsch",
      "confidence": "mittel",
      "quote": "Zwischen 10 und 15 Uhr, in der sogenannten Kernzeit, müssen Sie jedoch anwesend sein. Gleitzeiten sind zwischen 8 und 10 Uhr und 15 und 17 Uhr.",
+     "explain_ru": "«Falsch»: хотя текст говорит, что вы сами определяете, когда начинать, он тут же добавляет ограничение — делать это можно только внутри интервалов гибкого графика (8–10 и 15–17), а с 10 до 15 часов нужно быть на месте; предприятие может даже приостановить Gleitzeit. Первая фраза раздела («Sie können selbst bestimmen, wann Sie morgens anfangen») вводит в заблуждение, поэтому уверенность средняя, но решает пункт именно явное ограничение.",
+
      "explain": "«Falsch»: aunque el texto dice que uno mismo determina cuándo empieza, añade inmediatamente la restricción de que solo puede hacerlo dentro de las franjas de horario flexible (8-10 y 15-17) y que entre las 10 y las 15 horas hay que estar presente; la empresa puede incluso suspender la Gleitzeit. La primera frase de la sección («Sie können selbst bestimmen, wann Sie morgens anfangen») induce a error y por eso la confianza es media, pero la restricción explícita decide el ítem."
     },
     {
@@ -210,6 +228,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Haben Sie in einer Woche mehr als 40 Stunden gearbeitet, sollten Ihre Überstunden bereits vor Monatsende durch weniger Arbeit abgebaut werden. Wenn ein Abbau nicht möglich ist, wird mit der Geschäftsführung eine rasche Lösung besprochen.",
+     "explain_ru": "Верно b: если накапливается положительный баланс (больше 40 часов в неделю), сверхурочные нужно компенсировать меньшей работой до конца месяца, а если это невозможно — быстро искать решение с руководством. a неверно, потому что текст не позволяет удлинять или укорачивать восьмичасовой день в зависимости от баланса; c тоже неверно, потому что предприятие может временно приостановить Gleitzeit по производственным причинам, но это не следствие положительного баланса.",
+
      "explain": "Correcto b: si se acumula un saldo positivo (más de 40 horas semanales), hay que compensar las horas extras con menos trabajo antes de fin de mes y, si no es posible, buscar rápidamente una solución con la dirección. a es falso porque el texto no permite alargar ni acortar el día de ocho horas en función del saldo; c también es falso porque la empresa puede suspender temporalmente la Gleitzeit por motivos operativos, pero eso no es consecuencia de un saldo positivo."
     }
    ]
@@ -240,6 +260,8 @@
      "answer": "Falsch",
      "confidence": "hoch",
      "quote": "Ein anteiliger Urlaub ist jedoch nach Rücksprache auch bereits während dieser Zeit möglich.",
+     "explain_ru": "«Falsch»: полное право на отпуск действительно возникает только после шести месяцев испытательного срока, но текст прямо допускает частичный отпуск уже в этот период по согласованию. Поэтому утверждение, что никакой отпуск невозможен, неверно.",
+
      "explain": "«Falsch»: es cierto que el derecho completo a vacaciones solo nace tras los seis meses de prueba, pero el texto permite expresamente vacaciones parciales ya durante ese periodo previa consulta. Por eso la afirmación de que no es posible ningún tipo de vacaciones es incorrecta."
     },
     {
@@ -263,6 +285,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Urlaubsanträge für das folgende Kalenderjahr sind spätestens bis zum 15.11. mittels des dafür vorgesehenen Formulars beim Abteilungsleiter bzw. seiner Vertretung einzureichen.",
+     "explain_ru": "Верно c: заявки на следующий год нужно подавать не позднее 15.11., то есть заранее и ещё в текущем году. a неверно, потому что Betriebsrat вмешивается только если пожелания сотрудников несовместимы между собой; b неверно, потому что отпуск дают только при совместимости с процессами предприятия («sofern diese mit den Betriebsabläufen vereinbar sind»).",
+
      "explain": "Correcto c: las solicitudes para el año siguiente deben presentarse a más tardar el 15.11., es decir, con antelación y todavía en el año anterior. a es falso porque el Betriebsrat solo interviene si los deseos de los empleados son incompatibles entre sí; b es falso porque solo se conceden si son compatibles con los procesos de la empresa («sofern diese mit den Betriebsabläufen vereinbar sind»)."
     }
    ]
@@ -293,6 +317,8 @@
      "answer": "Richtig",
      "confidence": "hoch",
      "quote": "Bei der Bedienung der Maschinen sind die jeweiligen Sicherheitsbestimmungen zu befolgen, angepasst an die neuen Richtlinien laut Arbeitsschutzgesetz vom Januar dieses Jahres.",
+     "explain_ru": "«Richtig»: в тексте сказано, что правила безопасности приведены в соответствие («angepasst») с новыми директивами закона об охране труда от января этого года, значит правила на рабочем месте обновлены. «Falsch» противоречило бы этому «neuen Richtlinien … vom Januar dieses Jahres».",
+
      "explain": "«Richtig»: el texto dice que las normas de seguridad se han adaptado («angepasst») a las nuevas directrices de la ley de seguridad laboral de enero de este año, luego las reglas del puesto de trabajo están actualizadas. «Falsch» chocaría con ese «neuen Richtlinien … vom Januar dieses Jahres»."
     },
     {
@@ -316,6 +342,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Sollten Sie hierzu Fragen haben, setzen Sie sich bitte mit unserer Sicherheitsbeauftragten Frau Scholz, Zimmer 122, Durchwahl - 308, in Verbindung. Dies ist auch die Kontaktstelle für alle Störungen, Unfälle, Brand oder bei für Sie unklaren Situationen.",
+     "explain_ru": "Верно b: госпожа Scholz — контактное лицо по неисправностям, несчастным случаям, пожарам и неясным ситуациям, то есть при опасности нужно сообщать ей (а также на ресепшен). a неверно, потому что текст не запрещает отходы, а требует сортировать их в контейнеры во дворе; c неверно, потому что запрещены только съёмка, фотографирование, алкоголь и табак, но не еда.",
+
      "explain": "Correcto b: la Sra. Scholz es el punto de contacto para averías, accidentes, incendios y situaciones poco claras, es decir, hay que avisarla en caso de peligro (y también a recepción). a es falso porque el texto no prohíbe los residuos, sino que obliga a separarlos en los contenedores del patio; c es falso porque solo se prohíben filmar, fotografiar, el alcohol y el tabaco, no comer."
     }
    ]

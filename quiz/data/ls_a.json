@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "ls_a-p66a",
+   "note_ru": "На с. 66 пункт 20 встречается дважды: эта первая формулировка и помеченная «Новый вариант от 21.12.24» (→ ls_a-p66b). В PDF вариант a этого пункта дан в двух формулировках, разделённых «/» («hält die Arbeitszeit ein. / hat flexible Einsatzzeiten.»); воспроизведена первая — именно её отрицает новая версия («hält die Arbeitszeit nicht ein»).",
    "label": "Beschwerde – Variante 1 (Putzdienst)",
    "page": 66,
    "topic": "Putzdienst / Reinigung",
@@ -33,6 +34,7 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Ich bitte um umgehende Stellungnahme und natürlich die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden.",
+     "explain_ru": "Верно c: Lassner не отказывается платить, а просит привести счёт в соответствие с фактически отработанными часами. a неверно, потому что он не отказывается от оплаты, а хочет исправить сумму; b тоже неверно, потому что его претензия не в качестве уборки, а в том, что персонал не появляется в согласованное время.",
      "explain": "Correcto c: Lassner no se niega a pagar, sino que pide que la factura se ajuste a las horas realmente trabajadas. a es falso porque no rechaza el pago, solo quiere que se corrija el importe; b también es falso porque su queja no es la calidad de la limpieza, sino que el personal no aparece en el horario acordado."
     },
     {
@@ -56,12 +58,14 @@
      "answer": "b",
      "confidence": "mittel",
      "quote": "In den letzten zwei Wochen war unsere Sekretärin einige Male bereits vor 9 Uhr im Büro, von Ihrem Putzdienst war aber niemand zu sehen.",
+     "explain_ru": "Верно b: из письма следует, что клининговая служба работает меньше трёх оговорённых часов — до 9 утра её не было, и клиент требует «die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden». a неверно, потому что он как раз жалуется на несоблюдение согласованного графика; c неверно, потому что изменить договор хочет сам Lassner, а не клининговая компания. Средняя уверенность: в письме не указано, сколько именно часов недоработано, это выводится из всей жалобы.",
      "explain": "Correcto b: la carta da por hecho que el servicio de limpieza trabaja menos de las tres horas contratadas, pues no estaba antes de las 9 y el cliente exige «die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden». a es falso porque precisamente se queja de que no respetan el horario acordado; c es falso porque quien quiere cambiar el contrato es el propio Lassner, no la empresa de limpieza. Confianza media porque la carta no cifra cuántas horas se trabajaron de menos: se deduce del conjunto de la queja."
     }
    ]
   },
   {
    "id": "ls_a-p66b",
+   "note_ru": "Fassung «Новый вариант от 21.12.24» пункта 20 по тому же письму с. 66 (в PDF текст не повторяется): меняется только вариант a — он становится отрицательным и теперь является ключом. Пункт 19 совпадает с ls_a-p66a.",
    "label": "Beschwerde – Variante 1 (Putzdienst) – Новый вариант от 21.12.24",
    "page": 66,
    "topic": "Putzdienst / Reinigung",
@@ -91,6 +95,7 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Ich bitte um umgehende Stellungnahme und natürlich die Angleichung der Rechnung an die tatsächlich geleisteten Arbeitsstunden.",
+     "explain_ru": "Верно c: он просит привести счёт в соответствие с фактически отработанными часами, то есть платить только за реально выполненное. a неверно, потому что он не отказывается платить, а хочет корректировки; b неверно, потому что в письме критикуют не качество уборки, а несоблюдение графика.",
      "explain": "Correcto c: pide que la factura se adapte a las horas efectivamente trabajadas, es decir, pagar solo lo realmente prestado. a es falso porque no se niega a pagar, solo quiere el ajuste; b es falso porque la carta no critica la calidad de la limpieza, sino el incumplimiento del horario."
     },
     {
@@ -114,12 +119,14 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "In den letzten zwei Wochen war unsere Sekretärin einige Male bereits vor 9 Uhr im Büro, von Ihrem Putzdienst war aber niemand zu sehen.",
+     "explain_ru": "Верно a: договор устанавливает работу с 6.00 до 9.00, а в письме сказано, что за две недели несколько раз до 9 утра никого из клининговой службы не было, значит согласованный график не соблюдается. b неверно, потому что в тексте речь не о нехватке времени у персонала, а о его отсутствии в согласованный интервал; c неверно, потому что изменение договора предлагает клиент, а не клининговая компания.",
      "explain": "Correcto a: el contrato fija el trabajo de 6.00 a 9.00 horas y la carta afirma que en dos semanas varias veces no había nadie del servicio de limpieza antes de las 9, luego no cumple el horario pactado. b es falso porque el texto no habla de falta de tiempo del personal, sino de su ausencia en la franja acordada; c es falso porque el cambio de contrato lo plantea el cliente, no la empresa de limpieza."
     }
    ]
   },
   {
    "id": "ls_a-p67",
+   "note_ru": "Это письмо снова появляется на с. 68 как «Новая версия от 08.2024 и от 07.02.2025»: изменены клиентка, адресат, количество ламп и крайний срок, а пункт 19 переформулирован (→ ls_a-p68).",
    "label": "Beschwerde – Variante 2 (Tischlampe)",
    "page": 67,
    "topic": "Tischlampe",
@@ -149,6 +156,7 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Mir wurde telefonisch zugesagt, dass die Lampen noch diese Woche geliefert werden, aber jetzt ist schon Freitagnachmittag und sie sind leider noch immer nicht eingetroffen.",
+     "explain_ru": "Верно c: клиентка всё ещё ждёт лампы, они не пришли, а нужны ей в понедельник, поэтому она просит быстрого ответа. a неверно, потому что товар она не получила и о его качестве не высказывается; b тоже неверно, потому что никакой бракованной поставки не было: не пришло вообще ничего.",
      "explain": "Correcto c: la clienta sigue esperando las lámparas, que no han llegado, y las necesita el lunes, por eso pide una respuesta rápida. a es falso porque no ha recibido el producto y no se pronuncia sobre su calidad; b también es falso porque no ha llegado ninguna entrega defectuosa: no ha llegado nada."
     },
     {
@@ -172,12 +180,14 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Das ist ärgerlich, da wir am Wochenende unsere Renovierungsarbeiten beenden und die Büros dann vollständig neu einrichten werden.",
+     "explain_ru": "Верно c: в письме сообщается, что работы завершаются в эти же выходные, то есть должны закончиться в ближайшее время. a неверно, потому что работы уже на финальной стадии, а не только начинаются; b тоже неверно, потому что задерживается поставка ламп, а не работы, которые идут по плану на выходные.",
      "explain": "Correcto c: la carta anuncia que las obras se terminan ese mismo fin de semana, es decir, deben quedar concluidas en breve. a es falso porque las obras están ya en su fase final, no por empezar; b también es falso porque lo que se retrasa es la entrega de las lámparas, no las obras, que siguen su plan para el fin de semana."
     }
    ]
   },
   {
    "id": "ls_a-p68",
+   "note_ru": "Новая версия письма с. 67 (в PDF помечена «Новая версия от 08.2024 и от 07.02.2025»): изменены клиентка (Berger → Lutz), адресат (Knut Richter → Elias Philips), количество ламп (25 → 15) и крайний срок (13:00 → 12:00); пункт 19 переформулирован и меняет ключ, а пункт 20 совпадает с ls_a-p67. В PDF письмо начинается сразу с приветствия, без повторения заголовка «Beschwerde».",
    "label": "Beschwerde – Variante 2 (Tischlampe) – Новая версия от 08.2024 и от 07.02.2025",
    "page": 68,
    "topic": "Tischlampe",
@@ -207,6 +217,7 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Ich bitte um eine schnelle Antwort!",
+     "explain_ru": "Верно a: клиентка завершает письмо просьбой о быстром ответе, то есть ждёт немедленной реакции компании. b неверно, потому что она не просит другую модель: она говорит, что нашла другого поставщика, который мог бы предложить ей другие лампы; c неверно, потому что отказ от заказа только условный — на случай, если лампы не придут до понедельника, полудня.",
      "explain": "Correcto a: la clienta cierra su carta pidiendo una respuesta rápida, es decir, espera una reacción inmediata de la empresa. b es falso porque ella no pide otro modelo: lo que dice es que ha encontrado a otro proveedor que podría servirle otras lámparas; c es falso porque la cancelación es solo un anuncio condicional, para el caso de que las lámparas no lleguen antes del lunes a mediodía."
     },
     {
@@ -230,12 +241,14 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Das ist sehr ärgerlich, da wir am Wochenende unsere Renovierungsarbeiten beenden und die Büros dann vollständig neu einrichten werden.",
+     "explain_ru": "Верно c: и в этой версии в письме сказано, что работы заканчиваются в эти выходные, значит они должны быть завершены в ближайшее время. a неверно, потому что работы уже идут и почти готовы; b неверно, потому что задерживается поставка ламп, а не работы, которые идут по плану на выходные.",
      "explain": "Correcto c: también en esta versión la carta afirma que las obras se acaban ese fin de semana, luego deben quedar terminadas en breve. a es falso porque las obras ya están en marcha y casi listas; b es falso porque lo que se retrasa es la entrega de las lámparas, no las obras, que mantienen su plan para el fin de semana."
     }
    ]
   },
   {
    "id": "ls_a-p69",
+   "note_ru": "Пункт 20 касается того, что утверждает агентство, и обосновывается только внутренним письмом его руководителя (Jutta Spindler → Frau Holsten), которое НЕ входит в passage, так как относится к заданию по письму (пункт 21), за пределами этого блока; отсюда средняя уверенность и цитата из письма клиента. В PDF цветовая схема дана в двух альтернативных формулировках в скобках («grau orange (grün blau)» и «Grau Blau (Grün Grau)»), они воспроизведены как есть.",
    "label": "Beschwerde – Variante 3 (Website)",
    "page": 69,
    "topic": "Website",
@@ -265,6 +278,7 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Ich habe ihn gemeinsam mit dem Team gesichtet und dabei ist uns aufgefallen, dass Ihre Agentur die Vorgaben an zwei Stellen leider nicht umgesetzt hat",
+     "explain_ru": "Верно a: Stiller проверил черновик со своей командой и видит, что агентство не выполнило его указания в двух местах (цвет и имена), значит результатом он недоволен. b неверно, потому что он не просит Frau Spindler посмотреть черновик, а просит исправить свой; c неверно, потому что он не спрашивает, кто может переделать, а прямо просит об этом агентство.",
      "explain": "Correcto a: Stiller ha revisado el borrador con su equipo y comprueba que la agencia no aplicó sus indicaciones en dos puntos (el color y los nombres), luego no está conforme con el resultado. b es falso porque no pide a Frau Spindler que mire un borrador, sino que corrija el suyo; c es falso porque no pregunta quién puede rehacerlo, sino que se lo pide directamente a la agencia."
     },
     {
@@ -288,6 +302,7 @@
      "answer": "a",
      "confidence": "mittel",
      "quote": "Zum anderen sind auf der Seite mit den Ansprechpartnern die Namen einiger Mitarbeiter vertauscht worden.",
+     "explain_ru": "Верно a методом исключения: во внутреннем письме агентства, которое не входит в текст для чтения, буквально сказано «Wenn wir das noch machen sollten, geht das nur gegen zusätzliche Bezahlung.». b неверно, потому что в том же письме агентство признаёт ошибку с именами («Die vertauschten Namen sind unser Fehler und die verbessern wir auch.»); c неверно, потому что письмо показывает: указания были — агентство не выполнило их в двух местах, — а во внутреннем письме оно настаивает, что всегда их соблюдало («obwohl wir uns immer an die Vorgaben gehalten haben»). Цитата взята из письма клиента, потому что прямое обоснование находится во внутреннем письме, вне текста для чтения; отсюда средняя уверенность.",
      "explain": "Correcto a por eliminación: el correo interno de la agencia, que no forma parte del texto de lectura, dice literalmente «Wenn wir das noch machen sollten, geht das nur gegen zusätzliche Bezahlung.». b es falso porque en ese mismo correo la agencia reconoce el error de los nombres («Die vertauschten Namen sind unser Fehler und die verbessern wir auch.»); c es falso porque la carta demuestra que sí había indicaciones —la agencia no las aplicó en dos puntos— y el correo insiste en que siempre se atuvieron a ellas («obwohl wir uns immer an die Vorgaben gehalten haben»). La cita es de la carta del cliente porque la justificación directa está en el correo interno, fuera del texto de lectura; de ahí la confianza media."
     }
    ]

@@ -28,6 +28,7 @@
           "answer": "Richtig",
           "confidence": "hoch",
           "quote": "Nur wenn es vollständig ist, wird der Prüfungsausschuss Sie zu den Prüfungen zulassen.",
+          "explain_ru": "В тексте прямо сказано, что только при полном Berichtsheft экзаменационная комиссия («Prüfungsausschuss») допустит ученика к экзаменам, и что его обязательно предъявлять перед промежуточным и итоговым экзаменом. Значит, тот, кто не ведёт его как следует, не может явиться на Abschlussprüfung: утверждение верно.",
           "explain": "El texto dice literalmente que solo si el Berichtsheft está completo el tribunal de examen («Prüfungsausschuss») admitirá al aprendiz a los exámenes, y que es obligatorio presentarlo antes del examen intermedio y del final. Por tanto, quien no lo lleve correctamente no puede presentarse a la Abschlussprüfung: la afirmación es correcta."
         },
         {
@@ -51,6 +52,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "In festen Abständen haben Sie das Heft Ihrem Ausbildungsleiter zur Kenntnisnahme vorzulegen.",
+          "explain_ru": "Верно b: текст требует предъявлять журнал Ausbildungsleiter «in festen Abständen», то есть регулярно. a неверно: «Sie dürfen Ihre Berichte während der Arbeitszeit schreiben», значит делать это в свободное время не нужно. c тоже неверно: отчёты недельные («die Sie jeden Freitag an Ihren Teamleiter schicken»), плюс есть дополнительный отчёт по отделу, а не ежедневный.",
           "explain": "La opción b es correcta porque el texto exige presentar el cuaderno al Ausbildungsleiter «in festen Abständen», es decir, con regularidad. La a es falsa: «Sie dürfen Ihre Berichte während der Arbeitszeit schreiben», luego no hay que hacerlo en el tiempo libre. La c también es falsa: los informes son semanales («die Sie jeden Freitag an Ihren Teamleiter schicken») y además hay un informe adicional por departamento, no uno diario."
         }
       ]
@@ -81,6 +83,7 @@
           "answer": "Falsch",
           "confidence": "mittel",
           "quote": "müssen regelmäßig alle sechs Monate geändert werden",
+          "explain_ru": "В тексте установлена обязанность: пароли «müssen regelmäßig alle sechs Monate geändert werden», то есть не реже чем раз в полгода (максимальный интервал). Утверждение переворачивает это словом «frühestens» (не раньше чем раз в полгода), что означало бы запрет менять их чаще; этого в тексте нет, и это противоречит смыслу регулярной обязанности. Средняя уверенность: текст задаёт максимальный срок, но прямо не упоминает возможность сменить пароль раньше.",
           "explain": "El texto establece una obligación: las contraseñas «müssen regelmäßig alle sechs Monate geändert werden», es decir, como máximo cada seis meses (intervalo máximo). El enunciado lo invierte con «frühestens» (como muy pronto cada seis meses = no antes), lo que significaría que está prohibido cambiarlas más a menudo; eso no se dice en el texto y contradice el sentido de obligación periódica. Confianza media porque el texto fija el plazo máximo, pero no menciona explícitamente la posibilidad de cambiarlas antes."
         },
         {
@@ -104,6 +107,7 @@
           "answer": "b",
           "confidence": "mittel",
           "quote": "Vertrauliche und personenbezogene Daten müssen nach Dienstschluss verschlossen werden. Sie dürfen zudem nicht länger als unbedingt erforderlich aufgehoben oder gespeichert werden.",
+          "explain_ru": "b воспроизводит фразу именно о конфиденциальных данных: их нельзя хранить «länger als unbedingt erforderlich», то есть после истечения необходимого срока их нужно удалить. c явно неверно: конфиденциальные данные на бумаге «sind in dafür bereitgestellten Schreddern zu vernichten», а не подшивать в архив. a — ловушка: она опирается на «Außerdem ist es untersagt, Daten lokal abzuspeichern», но это общее правило по ИТ связано с запретом устанавливать программы и не относится специально к конфиденциальным данным; более того, текст допускает их хранение («verschlossen», «nicht länger als … gespeichert»), значит регулируется срок, а не абсолютный запрет. Средняя уверенность из-за этой близости a и b.",
           "explain": "La b reproduce la frase que habla exactamente de los datos confidenciales: no pueden conservarse ni almacenarse «länger als unbedingt erforderlich», es decir, hay que borrarlos una vez transcurrido el plazo necesario. La c es claramente falsa: los datos confidenciales en papel «sind in dafür bereitgestellten Schreddern zu vernichten», no archivarse. La a es la trampa: se apoya en «Außerdem ist es untersagt, Daten lokal abzuspeichern», pero esa norma general de TI va unida a la prohibición de instalar software y no se refiere específicamente a los datos confidenciales; de hecho el texto sí admite conservarlos («verschlossen», «nicht länger als … gespeichert»), por lo que lo regulado es el plazo y no una prohibición absoluta. Confianza media por esa cercanía entre a y b."
         }
       ]
@@ -134,6 +138,7 @@
           "answer": "Falsch",
           "confidence": "hoch",
           "quote": "Mit dem Arbeitsantritt in unserem Unternehmen sind Sie als Arbeitnehmer*in automatisch gesetzlich unfallversichert.",
+          "explain_ru": "В тексте сказано, что страхование от несчастных случаев действует автоматически с началом работы и что эту защиту берёт на себя страховая организация (Berufsgenossenschaft). Значит, сотрудникам не нужно самим заключать или оформлять какую-либо Arbeitsunfallversicherung: утверждение неверно.",
           "explain": "El texto dice que el seguro de accidentes es automático al empezar a trabajar y que la aseguradora (la Berufsgenossenschaft) es la que asume esa cobertura. Por tanto, los empleados no tienen que contratar ni procurarse ninguna Arbeitsunfallversicherung por su cuenta: la afirmación es falsa."
         },
         {
@@ -157,6 +162,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "müssen Sie aber in jedem Fall von einem Durchgangsarzt untersucht werden",
+          "explain_ru": "Верно a: текст требует во всех случаях («in jedem Fall») осмотра у Durchgangsarzt, с госпитализацией или без неё. b неверно, потому что первым действует не BG, а первый помощник («wird zunächst der Ersthelfer oder die Ersthelferin informiert») и, в зависимости от тяжести, вызывают скорую. c тоже неверно: BG продолжает платить зарплату только «ab der siebten Woche der Arbeitsunfähigkeit», а не сразу.",
           "explain": "La a es correcta: el texto impone en todos los casos («in jedem Fall») el reconocimiento por un Durchgangsarzt, con o sin hospitalización. La b es falsa porque quien actúa primero no es la BG sino el primer auxiliador («wird zunächst der Ersthelfer oder die Ersthelferin informiert») y, según la gravedad, se avisa a una ambulancia. La c también es falsa: la BG sigue pagando el salario solo «ab der siebten Woche der Arbeitsunfähigkeit», no de inmediato."
         }
       ]

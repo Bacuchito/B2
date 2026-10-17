@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "t4_a-p43",
+   "note_ru": "Протокол занимает с. 43-44: текст Protokoll начинается на с. 43 (до TOP 3) и продолжается на с. 44 (TOP 4-6), где находятся пункты 14-18 этого же протокола. На с. 45 — новая версия того же протокола (→ t4_a-p45) с переписанным TOP 1 и новым пунктом 14; пункты 15-18 в обеих версиях идентичны.",
    "label": "Variante 1",
    "page": 43,
    "note": "El acta ocupa las pp. 43-44: el texto del Protokoll empieza en la p. 43 (hasta el TOP 3) y continúa en la p. 44 (TOP 4-6), donde están los ítems 14-18 de esta misma acta. La p. 45 trae una nueva versión del mismo acta (→ t4_a-p45), con el TOP 1 reescrito y el ítem 14 nuevo; los ítems 15-18 son idénticos en ambas versiones.",
@@ -32,6 +33,7 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Als nächster Besprechungstermin wird der 24.09.20XX nach der Urlaubszeit einstimmig festgelegt.",
+     "explain_ru": "Верно a: дату следующего собрания назначают голосованием (вопросы принимают «per Handzeichen einstimmig», и сам срок «legt … einstimmig fest») — 24.09.20XX, после периода отпусков, то есть осенью. b неверно, потому что дату не откладывают: её определяют здесь же. c неверно, потому что она не ждёт сообщения, а уже решена и занесена в протокол.",
      "explain": "Correcto a: la fecha de la próxima reunión se fija por votación (los asuntos se aprueban «per Handzeichen einstimmig», y el propio término se «legt … einstimmig fest») y se sitúa el 24.09.20XX, después del periodo de vacaciones, es decir, en otoño. b es falso porque la fecha no se aplaza: se acuerda aquí mismo. c es falso porque no queda pendiente de comunicarse, sino que ya está decidida y consta en el acta."
     },
     {
@@ -55,6 +57,7 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Wir behalten es uns vor, bis zum 31. des kommenden Monats einen für uns günstigeren Zulieferer zu finden. Hierfür zuständig sind MH und TH. Neue Lieferpartner könnten im asiatischen Raum gesucht werden.",
+     "explain_ru": "Верно c: предприятие оставляет за собой возможность найти более дешёвого поставщика до 31-го числа следующего месяца и рассматривает поиск новых партнёров по поставкам в Азии; кроме того, цель — расторгнуть договор с нынешним поставщиком («von dem Vertrag des Zulieferers zurückzutreten»). a неверно, текст говорит обратное: «Dies wird von uns nicht akzeptiert». b тоже неверно: удорожание вызвано транспортными расходами, но предприятие отклоняет повышение, а не предлагает его оплатить.",
      "explain": "Correcto c: la empresa se reserva la posibilidad de encontrar un proveedor más barato antes del día 31 del mes próximo, y se plantea buscar nuevos socios de suministro en Asia; además el objetivo es rescindir el contrato con el proveedor actual («von dem Vertrag des Zulieferers zurückzutreten»). a es falso, el texto lo dice al revés: «Dies wird von uns nicht akzeptiert». b también es falso: el encarecimiento se debe a los costes de transporte, pero la empresa rechaza la subida, no se ofrece a asumirla."
     },
     {
@@ -78,6 +81,7 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Dies führt seit drei Monaten zu einem messbaren Erfolg, berichtet JR. Die Zahl der Reklamationen ist signifikant zurückgegangen.",
+     "explain_ru": "Верно c: новая концепция контроля качества уже три месяца даёт измеримый результат, и число рекламаций заметно снизилось. a — ловушка с цифрой: 30 % — это степень отклонения, при которой система выдаёт сообщение об ошибке («bei einer Abweichung von 30 Prozent eine Fehlermeldung»), а не доля брака. b неверно, потому что рекламации есть — именно их и стало меньше.",
      "explain": "Correcto c: el nuevo concepto de control de calidad arroja desde hace tres meses un éxito medible y las reclamaciones han disminuido de forma significativa. a es la trampa de la cifra: el 30 % es el grado de desviación a partir del cual el sistema lanza un aviso de error («bei einer Abweichung von 30 Prozent eine Fehlermeldung»), no el porcentaje de productos defectuosos. b es falso porque existen reclamaciones, que son precisamente las que han bajado."
     },
     {
@@ -101,6 +105,7 @@
      "answer": "c",
      "confidence": "mittel",
      "quote": "Aufgrund eines momentan unerwartet hohen Auftragsvolumens wird ab sofort festgelegt, dass bis zu 20 Überstunden pro Quartal ausschließlich vergütet werden können, da die Freistellung von der Arbeit aus personellen Gründen momentan nicht möglich ist.",
+     "explain_ru": "Верно c методом исключения: объём заказов сейчас неожиданно высокий, сверхурочные нельзя компенсировать отгулами, и в протоколе отмечена готовность большинства их брать, значит сейчас работают больше нормы (уверенность средняя, потому что в протоколе речь о «Bereitschaft» сотрудников и о том, что сверхурочных «lässt sich … nicht immer vermeiden», а не о прямой обязанности). a неверно: порядок утвердил Betriebsrat протоколом от 15.06.20XX, и никакого разговора сотрудников с ним не зафиксировано. b неверно: как раз эту возможность только что отменили; до 20 часов в квартал теперь только оплачиваются.",
      "explain": "Correcto c por eliminación: el volumen de pedidos es ahora inesperadamente alto, las horas extraordinarias no se pueden compensar con tiempo libre y se agradece la disposición mayoritaria a hacerlas, de modo que en este momento se trabaja de más (la confianza es media porque el acta habla de la «Bereitschaft» de los empleados y de que las horas extras «lässt sich … nicht immer vermeiden», más que de una obligación expresa). a es falso: quien aprobó el procedimiento fue el Betriebsrat, mediante acta del 15.06.20XX, y no consta ninguna conversación de los empleados con él. b es falso: precisamente se acaba de suprimir esa posibilidad; hasta 20 horas por trimestre solo se pagan."
     },
     {
@@ -124,12 +129,14 @@
      "answer": "b",
      "confidence": "mittel",
      "quote": "Es wird aber darauf hingewiesen, dass dann unbedingt ein Fahrtenbuch geführt werden muss, das die privat gefahrenen Kilometer angibt.",
+     "explain_ru": "Верно b: протокол требует, чтобы в путевом журнале были указаны километры, пройденные в личных целях, то есть неслужебные поездки (машину теперь можно использовать «nicht mehr nur für dienstliche, sondern auch für private Zwecke»). a — путающий вариант: в тексте упомянуты только личные километры, а не «alle gefahrenen Kilometer»; настоящий Fahrtenbuch фиксирует всё, но в протоколе этого нет — отсюда средняя уверенность. c неверно, потому что журнал ведут только сотрудники со служебной машиной («alle Mitarbeiter, die über einen Dienstwagen verfügen»).",
      "explain": "Correcto b: el acta exige que el libro de ruta indique los kilómetros recorridos en uso privado, es decir, los desplazamientos no laborales (el coche pasa a poder usarse «nicht mehr nur für dienstliche, sondern auch für private Zwecke»). a es la opción que confunde: el texto solo menciona los kilómetros privados, no «alle gefahrenen Kilometer»; un Fahrtenbuch real recoge todo, pero el protocolo no lo dice, de ahí la confianza media. c es falso porque solo lo llevan los empleados que disponen de coche de empresa («alle Mitarbeiter, die über einen Dienstwagen verfügen»)."
     }
    ]
   },
   {
    "id": "t4_a-p45",
+   "note_ru": "Новая версия протокола с. 43-44, помеченная в оригинале «Новый вариант от 08.2024» / «пункт 1 новый и новый вопрос»: TOP 1 переписан (дата следующего собрания назначается прямо во время заседания), пункт 14 новый, а пункты 15-18 повторяются дословно. Протокол снова занимает две страницы: TOP 1-3 на с. 45 и TOP 4-6 с пунктами 14-18 на с. 46. Вариант c пункта 14 («wurde während der Sitzung gesprochen») сохранён как есть, хотя в оригинале, вероятно, было «besprochen».",
    "label": "Variante 1 (Новый вариант от 08.2024)",
    "page": 45,
    "note": "Nueva versión del acta de las pp. 43-44, marcada en el original «Новый вариант от 08.2024» / «пункт 1 новый и новый вопрос»: el TOP 1 aparece reescrito (la fecha de la próxima reunión se fija expresamente durante la sesión) y el ítem 14 es nuevo, mientras que los ítems 15-18 se repiten literalmente. El acta vuelve a ocupar dos páginas: TOP 1-3 en la p. 45 y TOP 4-6 con los ítems 14-18 en la p. 46. Se ha conservado tal cual la opción c del ítem 14 («wurde während der Sitzung gesprochen»), aunque probablemente el original decía «besprochen».",
@@ -158,6 +165,7 @@
      "answer": "c",
      "confidence": "mittel",
      "quote": "Der nächste Besprechungstermin findet am 24.09.20XX statt; also nach der Urlaubszeit. Dies wird einstimmig beschlossen.",
+     "explain_ru": "Верно c методом исключения: дату (24.09.20XX, после отпусков) решили единогласно на этом же заседании, то есть вопрос обсуждали во время встречи; вариант сформулирован неловко (похоже, в «gesprochen» пропущено «be-», то есть «besprochen»), и это снижает уверенность. a неверно: «Dies wird einstimmig beschlossen», решать больше нечего. b — ловушка «nach der Urlaubszeit»: после отпусков наступает само собрание, а не голосование, которое идёт сейчас.",
      "explain": "Correcto c por eliminación: la fecha (24.09.20XX, después de las vacaciones) se decidió por unanimidad en esta misma sesión, es decir, fue un punto tratado durante la reunión; la opción está redactada de forma torpe (parece faltar «be-» en «gesprochen», por «besprochen»), y eso rebaja la confianza. a es falso: «Dies wird einstimmig beschlossen», ya no hay nada que decidir. b es el distractor de «nach der Urlaubszeit»: lo que cae después de las vacaciones es la reunión, no la votación, que tiene lugar ahora."
     },
     {
@@ -181,6 +189,7 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Wir behalten es uns vor, bis zum 31. des kommenden Monats einen für uns günstigeren Zulieferer zu finden. Hierfür zuständig sind MH und TH. Neue Lieferpartner könnten im asiatischen Raum gesucht werden.",
+     "explain_ru": "Верно c: в протоколе зафиксировано намерение до 31-го числа следующего месяца найти более выгодного поставщика и изучить новых партнёров по поставкам в Азии; кроме того, предполагается расторгнуть договор с нынешним поставщиком. a неверно, потому что повышение не принимают («Dies wird von uns nicht akzeptiert»). b неверно: рост транспортных расходов — это объяснение поставщика, а не предложение предприятия разделить их.",
      "explain": "Correcto c: el acta recoge la intención de buscar antes del día 31 del mes próximo un proveedor más favorable, y de explorar nuevos socios de suministro en Asia; además se pretende rescindir el contrato con el proveedor actual. a es falso porque la subida no se acepta («Dies wird von uns nicht akzeptiert»). b es falso: el aumento de costes de transporte es la explicación del proveedor, no una oferta de la empresa para repartirlos."
     },
     {
@@ -204,6 +213,7 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Dies führt seit drei Monaten zu einem messbaren Erfolg, berichtet JR. Die Zahl der Reklamationen ist signifikant zurückgegangen.",
+     "explain_ru": "Верно c: уже три месяца новая концепция контроля качества даёт измеримый результат, а рекламации заметно снизились. a путает цифру: 30 % — это порог отклонения, при котором появляется сообщение об ошибке, а не доля брака. b неверно, потому что результат измеряется как раз снижением рекламаций.",
      "explain": "Correcto c: desde hace tres meses el nuevo concepto de control de calidad produce un éxito medible y las reclamaciones han bajado de forma significativa. a confunde el dato: el 30 % es el umbral de desviación que provoca un aviso de error, no la cuota de productos defectuosos. b es falso, pues el éxito se mide justamente por el descenso de las reclamaciones."
     },
     {
@@ -227,6 +237,7 @@
      "answer": "c",
      "confidence": "mittel",
      "quote": "Aufgrund eines momentan unerwartet hohen Auftragsvolumens wird ab sofort festgelegt, dass bis zu 20 Überstunden pro Quartal ausschließlich vergütet werden können, da die Freistellung von der Arbeit aus personellen Gründen momentan nicht möglich ist.",
+     "explain_ru": "Верно c методом исключения: из-за большого объёма заказов сверхурочные уже нельзя компенсировать отгулами и оплачиваются только до 20 часов в квартал, значит сейчас работают больше нормы (средняя уверенность, потому что в протоколе подчёркнута «Bereitschaft» сотрудников, а не обязанность). a неверно: Betriebsrat утвердил порядок протоколом от 15.06.20XX, но нет данных, что сотрудники с ним говорили. b неверно: эту возможность только что приостановили.",
      "explain": "Correcto c por eliminación: debido al elevado volumen de pedidos, las horas extraordinarias ya no pueden compensarse con tiempo libre y solo se pagan hasta 20 por trimestre, de modo que actualmente se trabaja de más (confianza media, porque el acta subraya la «Bereitschaft» de los empleados más que una obligación). a es falso: el Betriebsrat aprobó el procedimiento con acta del 15.06.20XX, pero no consta que los empleados hablaran con él. b es falso: esa posibilidad acaba de quedar suspendida."
     },
     {
@@ -250,6 +261,7 @@
      "answer": "b",
      "confidence": "mittel",
      "quote": "Es wird aber darauf hingewiesen, dass dann unbedingt ein Fahrtenbuch geführt werden muss, das die privat gefahrenen Kilometer angibt.",
+     "explain_ru": "Верно b: в путевом журнале нужно указывать километры, пройденные в личных целях, то есть неслужебные поездки, поскольку служебной машиной теперь можно пользоваться и в личных целях. a — ловушка: в протоколе упомянуты только личные километры, а не «alle gefahrenen Kilometer» (хотя на практике Fahrtenbuch фиксирует весь путь, в тексте этого нет). c неверно: журнал ведут только те, у кого есть служебная машина.",
      "explain": "Correcto b: el libro de ruta debe indicar los kilómetros hechos en uso privado, esto es, los desplazamientos no laborales, ya que el coche de empresa pasa a poder usarse también de forma privada. a es la trampa: el protocolo solo menciona los kilómetros privados, no «alle gefahrenen Kilometer» (aunque en la práctica un Fahrtenbuch recoja todo el recorrido, el texto no lo dice). c es falso: solo lo llevan quienes tienen coche de empresa."
     }
    ]

@@ -4,6 +4,7 @@
   "variants": [
     {
       "id": "t4_d-p55",
+      "note_ru": "Протокол собрания от 05.02.20XX (с. 55-56): текст занимает с. 55 и начало с. 56, вопросы 14-18 — в конце с. 56. Их не следует путать с вопросами следующего варианта, которые находятся в конце с. 58. Пункт 15 опирается на TOP 5, который в протоколе был перенесён вперёд по просьбе KW.",
       "label": "Variante 5 (Protokoll 05.02.20XX)",
       "page": 55,
       "note": "Acta de la reunión del 05.02.20XX (pp. 55-56): el texto ocupa la p. 55 y el comienzo de la p. 56, y las preguntas 14-18 aparecen al final de la p. 56. No deben confundirse con las de la variante siguiente, cuyas preguntas están al final de la p. 58. El ítem 15 se apoya en el TOP 5, que en el acta se adelantó por petición de KW.",
@@ -32,6 +33,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Aufgrund terminlicher Verpflichtungen muss KW die Sitzung früher verlassen und bittet darum, TOP 5 der heutigen Tagesordnung vorzuziehen.",
+          "explain_ru": "Верно b: у KW (Katrin Wagner, Leitung Personal) другие обязательства по календарю («terminliche Verpflichtungen»), поэтому ей приходится уйти с собрания раньше, то есть сегодня у неё ещё есть важная встреча. a неверно: утверждение протокола просит MM, и протокол от 08.01. утверждают «ohne weitere Änderungen und Ergänzungen», то есть без изменений. c неверно: она предлагает не новый пункт, а перенести вперёд уже включённый в повестку TOP 5.",
           "explain": "Correcto b: KW (Katrin Wagner, Leitung Personal) tiene otros compromisos de agenda («terminliche Verpflichtungen») y por eso tiene que abandonar la reunión antes de tiempo, es decir, hoy todavía tiene otro compromiso importante. a es falso: quien pide la aprobación del acta es MM y el acta del 08.01. se aprueba «ohne weitere Änderungen und Ergänzungen», o sea, sin ningún cambio. c es falso: no propone un punto nuevo, sino adelantar uno que ya figura en el orden del día, el TOP 5."
         },
         {
@@ -55,6 +57,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "Die Geschäftsleitung hatte in der letzten Mitarbeiterversammlung angekündigt, dass die Mitarbeiter zukünftig schon ab dem ersten Krankheitstag einen Krankenschein vom Arzt benötigen.",
+          "explain_ru": "Верно c: руководство требует больничный лист уже с первого дня болезни, то есть работник должен оформить его сразу. b воспроизводит как раз прежнее правило, которое хотят заменить («Die bisherige Regelung ab dem dritten Tag»), и потому это ловушка: «spätestens am dritten Tag» — старая система, а не желаемая. a неверно, потому что вопрос не закрывают: «In der nächsten Sitzung soll das Thema noch einmal behandelt werden».",
           "explain": "Correcto c: la dirección exige el parte médico ya desde el primer día de enfermedad, es decir, que el empleado se haga dar la baja inmediatamente al enfermar. b reproduce justamente la norma anterior que se quiere sustituir («Die bisherige Regelung ab dem dritten Tag»), y por eso es un distractor: el «spätestens am dritten Tag» es el sistema viejo, no el deseado. a es falso porque el asunto no se archiva: «In der nächsten Sitzung soll das Thema noch einmal behandelt werden»."
         },
         {
@@ -78,6 +81,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Dafür werden KL und TR zusammen ein Konzept zur Finanzierung erarbeiten. Dieses soll zur übernächsten Sitzung in zwei Monaten vorliegen.",
+          "explain_ru": "Верно b: чтобы предприятие само взяло на себя доставку, KL (Karl Lehmann, Leitung Finanzen) и TR должны совместно разработать концепцию финансирования, со сроком («zur übernächsten Sitzung in zwei Monaten»). a неверно: упрёк в плохом качестве упаковочного материала высказывает транспортное агентство, а MH и HS «vehement» его отвергают; никому не поручают покупать новый материал. c неверно, потому что контакт с агентством уже есть: «Man habe mit der Spedition schon öfter über diese Problematik gesprochen».",
           "explain": "Correcto b: para que la empresa asuma ella misma las entregas, KL (Karl Lehmann, Leitung Finanzen) y TR deben elaborar conjuntamente un concepto de financiación, con plazo fijado («zur übernächsten Sitzung in zwei Monaten»). a es falso: la acusación de que el material de embalaje es de mala calidad la formula la agencia de transportes y MH y HS la rechazan «vehement»; nadie recibe el encargo de comprar material nuevo. c es falso porque el contacto con la agencia ya existe: «Man habe mit der Spedition schon öfter über diese Problematik gesprochen»."
         },
         {
@@ -101,6 +105,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "durch die Einstellung von zehn Zeitarbeitskräften am Fließband 3 und 4 der personelle Engpass für den Moment behoben werden konnte",
+          "explain_ru": "Верно a: привлечение десяти временных работников на конвейеры 3 и 4 решило нехватку персонала «für den Moment», значит сейчас людей достаточно. b ошибается в одном слове: в протоколе сказано «einige Zeitarbeitskräfte fest anzustellen» (некоторых), а не всех. c неверно: Herr Ahmed Hassani и Frau Ina Zurek лишь положительно себя проявили («sind ihm … positiv aufgefallen»); десять человек пришли как Zeitarbeitskräfte, и о постоянных договорах с ними не сказано.",
           "explain": "Correcto a: la contratación de diez trabajadores temporales en las cintas 3 y 4 ha resuelto la falta de personal «für den Moment», de modo que ahora mismo hay plantilla suficiente. b falla por una palabra clave: el acta dice «einige Zeitarbeitskräfte fest anzustellen» (algunos), no todos. c es falso: Herr Ahmed Hassani y Frau Ina Zurek solo han llamado la atención positivamente («sind ihm … positiv aufgefallen»); los diez incorporados lo fueron como Zeitarbeitskräfte y no consta ninguna contratación fija."
         },
         {
@@ -124,12 +129,14 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "dass die Küche ab dem kommenden Montag saniert wird und die Kantine infolgedessen voraussichtlich sechs bis acht Wochen geschlossen sein wird",
+          "explain_ru": "Верно a: кухню ремонтируют со следующего понедельника, и поэтому столовая будет закрыта от шести до восьми недель; значит в эти недели в столовой не кормят. b переносит на столовую то, что относится к бистро: время с 12.00 до 14.00 и талоны касаются бистро «Suppenkasper» на Sonnenstraße на время закрытия, а не столовой, которая закрыта. c неверно: протокол не требует отменить талоны, а подтверждает, что они продолжают действовать в этом заведении («Die Essensmarken der Firma gelten während Kantinenschließung auch dort»).",
           "explain": "Correcto a: la cocina se reforma a partir del próximo lunes y, como consecuencia, la cantina permanecerá cerrada entre seis y ocho semanas; durante esas semanas, por tanto, en la cantina no se sirve comida. b traslada a la cantina lo que vale para el bistró: el horario de 12.00 a 14.00 y el uso de los vales se refieren al Bistro «Suppenkasper» de la Sonnenstraße durante el cierre, no a la cantina, que está cerrada. c es falso: el acta no pide suprimir los vales, sino que confirma que siguen valiendo en ese establecimiento («Die Essensmarken der Firma gelten während der Kantinenschließung auch dort»)."
         }
       ]
     },
     {
       "id": "t4_d-p57",
+      "note_ru": "Протокол собрания от 27.08.20XX (с. 57-58): текст занимает с. 57 и начало с. 58, вопросы 14-18 — в конце с. 58. Примечание: пункт 14 допускает два верных прочтения (a и b), как объяснено в его поле explain. В оригинале вариант помечен как «тест №150321, 150301».",
       "label": "Variante 6 (Protokoll 27.08.20XX)",
       "page": 57,
       "note": "Acta de la reunión del 27.08.20XX (pp. 57-58): el texto ocupa la p. 57 y el comienzo de la p. 58, y las preguntas 14-18 aparecen al final de la p. 58. Aviso: el ítem 14 admite dos lecturas válidas (a y b), tal como se explica en su campo explain. El original etiqueta esta variante como «тест №150321, 150301».",
@@ -158,6 +165,7 @@
           "answer": "a",
           "confidence": "niedrig",
           "quote": "GS eröffnet die Sitzung, begrüßt alle Anwesenden und stellt den Kolleg*innen Hilde Bruhns vor, die seit dem 1. August in der Abteilung Buchhaltung für die Auszahlung der Gehälter etc. zuständig ist.",
+          "explain_ru": "Верно a, но с оговоркой: протокол от 27.08.20XX, а Frau Bruhns работает в бухгалтерии с 1 августа, то есть уже несколько недель; кроме того, TOP 4 подтверждает, что она уже приступила («trotz der Neueinstellung von Frau Bruhns»). c исключается, потому что она уже на месте и не «nimmt bald ihre Tätigkeit auf». Предупреждение о неоднозначности: b тоже буквально подтверждается той же фразой («für die Auszahlung der Gehälter etc. zuständig ist»), поэтому пункт допускает два ключа; выбран a как самый явный факт о её положении (она работает там с 1 августа), но если официальный ключ — b, он столь же защитим. Отсюда низкая уверенность.",
           "explain": "Correcto a, pero con reservas: el acta es del 27.08.20XX y Frau Bruhns trabaja en el departamento de contabilidad desde el 1 de agosto, es decir, desde hace unas semanas; además el TOP 4 confirma que su incorporación ya se ha producido («trotz der Neueinstellung von Frau Bruhns»). c queda descartado porque ya está en el puesto y no «nimmt bald ihre Tätigkeit auf». Advertencia de ambigüedad: b también está respaldada literalmente por la misma frase («für die Auszahlung der Gehälter etc. zuständig ist»), de modo que el ítem admite dos claves; se elige a porque es el dato más explícito sobre su situación (ya trabaja allí desde el 1 de agosto), pero si la clave oficial fuera b sería igualmente defendible. De ahí la confianza baja."
         },
         {
@@ -181,6 +189,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "TK hat bereits mit dem Roten Kreuz gesprochen. Es wäre möglich, dort kurzfristig einen solchen Kurs an zwei Freitagsterminen zu buchen.",
+          "explain_ru": "Верно c: курс поручили бы Rotes Kreuz, с которым TK уже говорила и где его можно было бы забронировать в короткий срок. a искажает цифру: речь о двух датах, обе в пятницу («an zwei Freitagsterminen»), а не о каждой пятнице. b неверно, потому что курс добровольный и только для тех, кому интересно: «an dem alle interessierten Angestellten teilnehmen können».",
           "explain": "Correcto c: el curso se encargaría al Rotes Kreuz, con quien TK ya ha hablado y donde sería posible reservarlo a corto plazo. a distorsiona la cifra: se habla de dos fechas, las dos en viernes («an zwei Freitagsterminen»), no de todos los viernes. b es falso porque el curso es voluntario y solo para quien tenga interés: «an dem alle interessierten Angestellten teilnehmen können»."
         },
         {
@@ -204,6 +213,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "BT stellt dar, dass immer wieder Mitarbeiter*innen den Wunsch an sie herantragen, den einen oder anderen Tag in der Woche von zu Hause aus zu arbeiten",
+          "explain_ru": "Верно c: именно сами сотрудники снова и снова высказывают это пожелание BT («immer wieder … den Wunsch an sie herantragen»). a неверно: хотя работающим из дома нужно было бы предоставить ноутбуки и служебные телефоны, в протоколе подчёркнуто, что мобильные устройства на предприятии уже есть и потому «signifikante Mehrkosten» не возникнет, значит новую технику покупать не нужно. b неверно: удалённая работа экономит время на дорогу и позволяет гибче планировать день, но не сокращает рабочее время.",
           "explain": "Correcto c: son los propios empleados quienes una y otra vez le plantean ese deseo a BT («immer wieder … den Wunsch an sie herantragen»). a es falso: aunque habría que facilitar portátiles y móviles de empresa a quienes teletrabajen, el acta subraya que ya hay dispositivos móviles en la empresa y que por eso no habría «signifikante Mehrkosten», luego no hay que adquirir equipos nuevos. b es falso: el teletrabajo ahorra el tiempo de desplazamiento y permite organizar el horario con más flexibilidad, pero no reduce la jornada laboral."
         },
         {
@@ -227,6 +237,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "Er plant, eine weitere Mitarbeiterin oder ein weiteren Mitarbeiter einzustellen.",
+          "explain_ru": "Верно c: GS сообщает, что собирается взять ещё одного человека, то есть место будет создано или объявлено. a неверно: отдел «personell unterbesetzt», и работу «ist von den derzeit drei Mitarbeiter*innen in der Abteilung nicht mehr zu bewältigen», значит лишних сотрудников нет. b неверно: на больничном только одна коллега («Im Moment ist auch noch eine Kollegin krank»), а не многие.",
           "explain": "Correcto c: GS anuncia que piensa contratar a otra persona, es decir, que va a crearse o publicarse una plaza más. a es falso: el departamento está «personell unterbesetzt» y el trabajo «ist von den derzeit drei Mitarbeiter*innen in der Abteilung nicht mehr zu bewältigen», luego no sobran empleados. b es falso: solo hay una compañera de baja («Im Moment ist auch noch eine Kollegin krank»), no muchas."
         },
         {
@@ -250,6 +261,7 @@
           "answer": "a",
           "confidence": "mittel",
           "quote": "Die Rückkehr zur Firma ist für 19.00 Uhr gleichen Tag vorgesehen.",
+          "explain_ru": "Верно a: рабочий день начинается в 9.00 у главного входа, а возвращение на предприятие запланировано на 19.00 того же дня, значит поездка занимает целый день. c — частично защитимое прочтение (отсюда средняя уверенность), но в тексте сказано лишь, что HB участвует в команде организаторов «um so gleich einige Kolleg*innen kennenzulernen», то есть это её личный мотив участвовать в организации, а не цель поездки для всех. b неверно: в протоколе речь о команде «diesjährigen» (этого года), что подразумевает смену состава, а не то, что организуют всегда одни и те же.",
           "explain": "Correcto a: la jornada empieza a las 9.00 h en la puerta principal y el regreso a la empresa está previsto para las 19.00 h del mismo día, de modo que el viaje ocupa el día entero. c es una lectura parcialmente defendible —de ahí la confianza media—, pero el texto solo dice que HB colabora en el equipo organizador «um so gleich einige Kolleg*innen kennenzulernen», esto es, ese es su motivo personal para participar en la organización, no la finalidad del viaje que se atribuye a todos. b es falso: el acta habla del equipo «diesjährigen» (de este año) para la organización, lo que implica que el equipo cambia, no que lo organicen siempre las mismas personas."
         }
       ]

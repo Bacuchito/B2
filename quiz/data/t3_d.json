@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "t3_d-p40",
+   "note_ru": "Форум о времени на переодевание (Umkleidezeit), рабочих поездках на поезде и посещении добровольных курсов повышения квалификации.",
    "label": "Variante 6 (Arbeitszeit, Kleidung und Reise)",
    "page": 40,
    "note": "Foro sobre tiempo de cambio de vestimenta (Umkleidezeit), viajes de trabajo en tren y asistencia a cursos de formación voluntaria.",
@@ -57,6 +58,8 @@
      "answer": "d",
      "confidence": "hoch",
      "quote": "Ich kann verstehen, dass du die Uniform nicht auch noch im Zug tragen möchtest.",
+     "explain_ru": "Claudia обязана носить рабочую униформу, но ей неудобно надевать её в электричке («in der Bahn anzuhaben»), и она предпочитает переодеваться в отеле. Hubert (d) прямо отвечает на её ситуацию, понимая её нежелание появляться в униформе в общественном транспорте («dass du die Uniform nicht auch noch im Zug tragen möchtest»).",
+
      "explain": "Claudia debe llevar uniforme de trabajo pero le incomoda ponérselo en el tren («in der Bahn anzuhaben») y prefiere cambiarse en el hotel. Hubert (d) responde directamente a su situación empatizando con su rechazo a lucir el uniforme en el transporte público («dass du die Uniform nicht auch noch im Zug tragen möchtest»)."
     },
     {
@@ -66,6 +69,8 @@
      "answer": "f",
      "confidence": "hoch",
      "quote": "Wenn du dich aber mit privaten Dingen wie einem Roman oder einem privaten Telefonat beschäftigst, gilt das als Freizeit.",
+     "explain_ru": "Maisel ехал 11 часов на поезде к клиенту и всю дорогу читал для удовольствия, а теперь требует сверхурочные. Winfried (f) объясняет, что если во время поездки на поезде занимаешься личными делами (например, читаешь роман), это время считается свободным, а не рабочим.",
+
      "explain": "Maisel viajó 11 horas en tren a ver a un cliente y estuvo leyendo por placer durante el trayecto, reclamando horas extras. Winfried (f) explica que si durante el viaje en tren realizas actividades privadas (como leer una novela), ese tiempo computa como tiempo libre y no como jornada laboral."
     },
     {
@@ -75,6 +80,8 @@
      "answer": "e",
      "confidence": "hoch",
      "quote": "Wenn du selbst entscheidest, eine Fortbildung zu besuchen, und das vorher nicht mit deinem Arbeitgeber absprichst, ist das reines Privatvergnügen.",
+     "explain_ru": "Cristof по собственной инициативе пошёл на обучение в выходные и хочет получить за это отгул. Yvonne (e) подтверждает позицию начальницы: курсы, о которых работник решает сам, без распоряжения и договорённости с предприятием, носят чисто частный характер.",
+
      "explain": "Cristof asistió por propia iniciativa en fin de semana a una formación y pretende compensarla con un día libre. Yvonne (e) confirma la postura de la jefa: los cursos decididos unilateralmente por el trabajador sin orden ni acuerdo previo con la empresa son de índole puramente privada."
     },
     {
@@ -84,12 +91,15 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "In diesem Fall ist die Umkleidezeit keine Arbeitszeit.",
+     "explain_ru": "Samira приезжает на велосипеде и переодевается после отметки в 9:00. Andres (a) разъясняет, что переодевание из спортивной одежды по личному выбору транспорта не считается рабочим временем («die Umkleidezeit keine Arbeitszeit»), поэтому приходить нужно уже переодетой до начала смены.",
+
      "explain": "Samira llega en bicicleta y se cambia tras fichar a las 9:00. Andres (a) aclara que cambiarse de ropa deportiva por elección personal de transporte no computa como tiempo de trabajo («die Umkleidezeit keine Arbeitszeit»), por lo que debe llegar cambiada antes del inicio de su turno."
     }
    ]
   },
   {
    "id": "t3_d-p41",
+   "note_ru": "Форум о пенсионном возрасте (67 против 65 лет), понижающих коэффициентах при досрочном выходе на пенсию, пробелах из-за воспитания детей и корпоративных пенсионных планах.",
    "label": "Variante 7 (Rente und Altersvorsorge)",
    "page": 41,
    "note": "Foro sobre edad de jubilación (67 vs 65 años), coeficientes reductores por jubilación anticipada, lagunas por crianza de hijos y planes de pensiones de empresa.",
@@ -143,6 +153,8 @@
      "answer": "e",
      "confidence": "hoch",
      "quote": "Für alle, die nach 1964 geboren sind, gilt dass sie bis 67 Jahre arbeiten müssen. Außer, wenn man mit 65 schon 45 Beitragsjahre nachweisen kann",
+     "explain_ru": "Torsten спрашивает, можно ли выйти на пенсию на два года раньше обычного возраста 67 лет (в 65). Jörg (e) подтверждает законное исключение для тех, кто подтвердит 45 лет страхового стажа.",
+
      "explain": "Torsten pregunta si es posible jubilarse dos años antes de la edad ordinaria de 67 (a los 65). Jörg (e) confirma la excepción legal para quienes acrediten 45 años cotizados."
     },
     {
@@ -152,6 +164,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Dabei spielt es keine Rolle, ob man Teilzeit oder Vollzeit gearbeitet hat.",
+     "explain_ru": "Hella боится, что её накажут за работу на полставки из-за ухода за детьми. Antje (c) разъясняет основные условия доступа к государственной пенсии и отмечает, что право возникает независимо от того, работал человек полную норму или частичную.",
+
      "explain": "Hella teme verse penalizada por haber trabajado a tiempo parcial por el cuidado de sus hijos. Antje (c) le aclara los requisitos básicos de acceso a la pensión pública y señala que el derecho existe independientemente de si se ha trabajado a jornada completa o parcial."
     },
     {
@@ -161,6 +175,8 @@
      "answer": "d",
      "confidence": "hoch",
      "quote": "Man hat das Recht, früher als mit 67 Jahren in Rente zu gehen, aber man muss Abschläge in Kauf nehmen. Im Moment sind das für jeden Monat, den man weniger arbeitet, 0,3 Prozent weniger.",
+     "explain_ru": "Petra спрашивает, какие последствия будет иметь досрочный выход на пенсию на два года, чтобы уйти одновременно с мужем. Jonas (d) отвечает, подробно описывая денежные потери (Abschläge): снижение на 0,3 % за каждый месяц досрочного выхода.",
+
      "explain": "Petra pregunta qué consecuencias tendría adelantar su jubilación dos años para retirarse a la vez que su marido. Jonas (d) responde detallando las penalizaciones económicas (Abschläge): una reducción del 0,3 % por cada mes de adelanto."
     },
     {
@@ -170,12 +186,15 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Erkundige dich bei deinem Arbeitgeber, ob eine betriebliche Altersvorsorge angeboten wird. Wenn man dann später Rentner ist, bekommt man eine zusätzliche Rente.",
+     "explain_ru": "Leni молода и хочет знать, что делать уже сейчас, чтобы дополнить будущую пенсию. Jana (b) советует интересоваться корпоративными пенсионными планами (betriebliche Altersvorsorge), чтобы получать дополнительные выплаты на пенсии.",
+
      "explain": "Leni es joven y quiere saber qué pasos dar ya para complementar su pensión futura. Jana (b) le aconseja interesarse por los planes de pensiones de empresa (betriebliche Altersvorsorge) para obtener ingresos adicionales al jubilarse."
     }
    ]
   },
   {
    "id": "t3_d-p42",
+   "note_ru": "Форум о продолжительности родительского отпуска (Elternzeit: 14 месяцев Elterngeld против 3 лет отпуска), ночной работе беременных, отсрочке отпуска после обучения и совместимости с частичной занятостью.",
    "label": "Variante 8 (Elternzeit und Schwangerschaft)",
    "page": 42,
    "note": "Foro sobre duración del permiso parental (Elternzeit: 14 meses de Elterngeld vs 3 años de excedencia), trabajo nocturno en embarazadas, retraso del permiso tras la formación y compatibilidad con trabajo a tiempo parcial.",
@@ -229,6 +248,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Beides ist nicht ganz falsch - nach der Geburt des Kindes hat man bis zu drei Jahre Anspruch auf Freistellung von der Arbeit. 14 Monate erhält das Paar Elterngeld.",
+     "explain_ru": "Natalja сомневается между двумя услышанными версиями (1 год оплачиваемый или 3 года дома). Johann (b) прямо отвечает, что верны оба утверждения: есть право на отпуск по уходу (Freistellung) до трёх лет, но денежная выплата (Elterngeld) покрывает максимум 14 оплачиваемых месяцев.",
+
      "explain": "Natalja duda entre las dos versiones que ha escuchado (1 año pagado vs 3 años en casa). Johann (b) responde expresamente que ambas afirmaciones son ciertas: existe derecho a excedencia por cuidado (Freistellung) de hasta tres años, pero la prestación económica (Elterngeld) cubre un máximo de 14 meses remunerados."
     },
     {
@@ -238,6 +259,8 @@
      "answer": "f",
      "confidence": "hoch",
      "quote": "Zwischen 20 und 22 Uhr kann man als Schwangere nur auf eigenen Wunsch arbeiten, der Arbeitgeber darf das nicht anordnen.",
+     "explain_ru": "Katrin беременна, и начальник хочет обязать её работать в вечерние смены до 21:00. Petra (f) разъясняет норму закона об охране материнства (Mutterschutzgesetz): между 20:00 и 22:00 работница может работать только добровольно и по собственной просьбе, а работодатель не вправе это навязывать.",
+
      "explain": "Katrin está embarazada y su jefe quiere obligarla a hacer turnos de tarde hasta las 21:00. Petra (f) aclara la normativa de protección de la maternidad (Mutterschutzgesetz): entre las 20:00 y las 22:00 la trabajadora solo puede laborar voluntariamente si ella lo solicita, pero el empresario no puede imponérselo."
     },
     {
@@ -247,6 +270,8 @@
      "answer": "c",
      "confidence": "mittel",
      "quote": "Vater und Mutter können die bezahlte Elternzeit von 14 Monaten untereinander aufteilen, wie es ihnen am besten passt.",
+     "explain_ru": "Giovanni и его партнёрша — ученики и хотят отложить родительский отпуск до окончания обучения. Hanna (c) отмечает, что родители могут распределять периоды родительского отпуска как им удобнее. Средняя уверенность: ни один комментарий прямо не рассматривает отсрочку до экзамена по профессии.",
+
      "explain": "Giovanni y su pareja son aprendices y quieren diferir el permiso parental hasta completar la formación. Hanna (c) señala que los padres pueden distribuir los periodos de baja parental como mejor les convenga. Se califica con confianza media porque ningún comentario aborda expresamente la postergación hasta después del examen de formación profesional."
     },
     {
@@ -256,6 +281,8 @@
      "answer": "d",
      "confidence": "hoch",
      "quote": "kannst du beantragen, auch während der Elternzeit ein bisschen zu arbeiten. Du darfst dann allerdings nicht mehr als 30 Stunden pro Woche tätig sein.",
+     "explain_ru": "Sandra спрашивает, совместимо ли получение помощи на ребёнка с частичной работой, чтобы не терять профессиональный темп. Angela (d) подтверждает, что просить о работе во время родительского отпуска законно, с ограничением до 30 часов в неделю.",
+
      "explain": "Sandra pregunta si es compatible cobrar la ayuda parental y seguir trabajando parcialmente para no perder ritmo profesional. Angela (d) confirma que es legal solicitar trabajar durante el permiso parental con un tope de 30 horas semanales."
     }
    ]

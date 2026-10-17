@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "t4_e-p59",
+   "note_ru": "Протокол собрания от 15.01.20XX в Erfurt (с. 59-60). В оригинале помечен как «тест №140321, 140301».",
    "label": "Variante 7 (Protokoll 15.01.20XX, Erfurt)",
    "topic": "Kosteneinsparungen, Lagebericht, Betriebsarzt",
    "page": 59,
@@ -33,6 +34,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Hierzu gibt es keine Kommentare und damit gilt die Tagesordnung als genehmigt.",
+     "explain_ru": "Верно c: после того как председательствующий спрашивает о дополнительных пунктах и замечаний не поступает, повестка дня утверждается («gilt die Tagesordnung als genehmigt»). a неверно, потому что дополнительных тем никто не предлагал; b неверно, потому что присутствуют только директора и руководители отделов, а не весь коллектив.",
+
      "explain": "Correcto c: tras preguntar el presidente de la sesión si hay puntos adicionales y no haber comentarios, el orden del día se aprueba («gilt die Tagesordnung als genehmigt»). a es falso porque nadie propuso temas adicionales; b es falso porque solo asisten los directores y jefes de departamento, no toda la plantilla."
     },
     {
@@ -56,6 +59,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Durch die so gewonnene Zeitersparnis am Empfang können Mitarbeiter*innen von dort flexibler eingesetzt werden und zum Beispiel zusätzlich den für das Unternehmer wichtigen Konferenzbereich und die Gästebetreuung übernehmen.",
+     "explain_ru": "Верно b: переводя входящие звонки во внешний колл-центр, сотрудники ресепшена получают новые задачи (встречи посетителей и переговорные). a и c неверны: сотрудников не переводят во внешний колл-центр и ресепшен не закрывают.",
+
      "explain": "Correcto b: al desviar las llamadas telefónicas entrantes a un centro de llamadas externo, el personal de recepción asume nuevas tareas (atención de visitas y salas de conferencias). a y c son falsos: el personal no se traslada al call center externo ni se cierra la recepción."
     },
     {
@@ -79,6 +84,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "dass sowohl zu hohe als auch niedrige Lagermengen vermieden werden müssen, da sie zu unnötigen Kosten führen.",
+     "explain_ru": "Верно a: стремятся избежать и избытка запасов (расходы на площади), и их нехватки (остановки производства), то есть сбалансировать и подстроить склад под реальные потребности производства. b и c неверны, потому что речь не о резком сокращении и не о постоянном расширении, а об оптимизации.",
+
      "explain": "Correcto a: se busca evitar tanto el exceso de existencias (costes de espacio) como la escasez (parones de producción), es decir, equilibrar y ajustar el stock a las necesidades productivas reales. b y c son falsos porque no se pretende ni una reducción drástica ni una ampliación continuada, sino optimización."
     },
     {
@@ -102,6 +109,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "dass unser Betriebsarzt die Firma zum Jahresende verlässt, da er eine eigene Praxis eröffnen will.",
+     "explain_ru": "Верно b: заводской врач уходит из компании по собственному желанию, чтобы открыть свою практику («da er eine eigene Praxis eröffnen will»), то есть работать самостоятельно. a неверно, потому что практика Dr. Mertens принимает медицинское обслуживание предприятия вместо него, а не в сотрудничестве; c неверно, потому что его не уволили, он уходит сам.",
+
      "explain": "Correcto b: el médico de empresa deja la compañía voluntariamente para abrir su propia consulta («da er eine eigene Praxis eröffnen will»), es decir, para ejercer de forma autónoma/independiente. a es falso porque la consulta del Dr. Mertens asume el servicio médico de la empresa en su sustitución, no en cooperación; c es falso porque no ha sido despedido sino que se marcha voluntariamente."
     },
     {
@@ -125,12 +134,15 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Zusätzlich bietet die Versicherungsgesellschaft immer donnerstags eine gesonderte Sprechstunde an, zu der man sich aber anmelden muss.",
+     "explain_ru": "Верно a: страховая компания проводит консультации по четвергам, но по предварительной записи («zu der man sich aber anmelden muss»). b неверно, потому что в протоколе подчёркнуто: до сих пор этим воспользовались очень немногие («nur von wenigen Kolleg*innen genutzt»); c неверно, потому что программа предлагается уже год («Seit einem Jahr bietet die Firma...»).",
+
      "explain": "Correcto a: la aseguradora ofrece consultas los jueves requiriendo cita previa («zu der man sich aber anmelden muss»). b es falso porque el acta subraya que hasta ahora muy pocos empleados se han acogido («nur von wenigen Kolleg*innen genutzt»); c es falso porque el plan lleva ofertándose un año («Seit einem Jahr bietet die Firma...»)."
     }
    ]
   },
   {
    "id": "t4_e-p61",
+   "note_ru": "Протокол собрания в Herbolzen (с. 61-62). В оригинале помечен как «тест №160201, 160221».",
    "label": "Variante 8 (Protokoll Herbolzen)",
    "topic": "Marketingmaßnahmen, Einführung Jobticket",
    "page": 61,
@@ -160,6 +172,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "JS begrüßt die Abteilungsleitungen zur heutigen Sitzung, die daraufhin pünktlich eröffnet wird.",
+     "explain_ru": "Верно a: собрание открывается вовремя («pünktlich eröffnet wird»). b неверно, потому что 25.06 — согласованная дата следующего собрания; c неверно, потому что повестку утвердили без дополнений и изменений («ohne Ergänzungen und Änderungen»).",
+
      "explain": "Correcto a: la reunión da comienzo con puntualidad («pünktlich eröffnet wird»). b es falso porque el 25.06 es la fecha acordada para la próxima reunión; c es falso porque el orden del día se aprobó sin enmiendas ni modificaciones («ohne Ergänzungen und Änderungen»)."
     },
     {
@@ -183,6 +197,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "JS zeigt sich mit dieser ersten Entwicklung zufrieden und erwartet einen weiteren positiven Trend.",
+     "explain_ru": "Верно c: руководство выражает удовлетворение первоначальным ростом продаж (+18 %) и ожидает продолжения положительной тенденции («erwartet einen weiteren positiven Trend»). a неверно, потому что 350 000 € — утверждённый бюджет на маркетинг; b неверно, потому что 38 % относятся к росту внимания в соцсетях, а не к обороту.",
+
      "explain": "Correcto c: la dirección manifiesta su satisfacción con el aumento inicial de ventas (+18 %) y anticipa que la tendencia al alza continuará («erwartet einen weiteren positiven Trend»). a es falso porque 350.000 € fue el presupuesto aprobado de marketing; b es falso porque el 38 % se refiere al aumento de atención/interés en redes sociales, no a la facturación."
     },
     {
@@ -206,6 +222,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Neu kommt hinzu, dass ab dem kommenden Jahr für jeweils 100 geleistete Überstunden jährlich ein Urlaubstag zusätzlich gegeben wird.",
+     "explain_ru": "Верно b: действующий порядок сохраняется в основе, но к нему добавляется новое условие («Neu kommt hinzu... ein Urlaubstag zusätzlich»), то есть он получает дополнение. a неверно, потому что его расширяют; c неверно, потому что компенсация сверхурочных действует с первых часов, а не начиная со 100.",
+
      "explain": "Correcto b: el régimen existente se mantiene en sus bases pero añade una cláusula nueva («Neu kommt hinzu... ein Urlaubstag zusätzlich»), recibiendo así un complemento. a es falso porque se amplía; c es falso porque la compensación de horas extras opera desde las primeras horas, no a partir de 100."
     },
     {
@@ -229,6 +247,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Da in der Vergangenheit die Situation auf unseren Firmenparkplätzen sehr angespannt war, nahm die Firma Kontakt zum örtlichen öffentlichen Personennahverkehr auf, um die Einführung von Jobtickets für die Mitarbeitenden möglich zu machen.",
+     "explain_ru": "Верно c: инициатива появилась, чтобы разгрузить переполненную парковку предприятия и ответить на пожелание работников, сделав поездку удобнее и спокойнее. a неверно, потому что об этом прямо сказано «diesem günstigen Ticket»; b неверно, потому что заявление оформляют внутри, в отделе кадров предприятия.",
+
      "explain": "Correcto c: la iniciativa surge para aliviar el colapso del aparcamiento de empresa y responder al deseo de los trabajadores, facilitando un desplazamiento más cómodo y sin estrés. a es falso porque se describe expresamente como «diesem günstigen Ticket»; b es falso porque la solicitud se tramita internamente en el departamento de personal de la empresa."
     },
     {
@@ -252,12 +272,15 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Wenn man seine Betriebszugehörigkeit nachweist, kann man einen Vertrag zu besonders günstigen Konditionen abschließen.",
+     "explain_ru": "Верно c: предприятие поддерживает занятия спортом, договариваясь с ближайшим фитнес-клубом об особо выгодных условиях со скидкой для своих сотрудников («besonders günstige Konditionen»). a и b неверны, потому что занятия проходят не на территории предприятия и не в его отделах, а во внешнем фитнес-центре.",
+
      "explain": "Correcto c: la empresa promueve la práctica deportiva negociando con un gimnasio cercano tarifas ventajosas subvencionadas/descontadas para sus empleados («besonders günstige Konditionen»). a y b son falsos porque las actividades no se imparten dentro de las instalaciones ni en los departamentos de la compañía sino en un centro fitness externo."
     }
    ]
   },
   {
    "id": "t4_e-p63",
+   "note_ru": "Протокол собрания от 19.02.20XX в Ballhausen (с. 63-64). В оригинале помечен как «вариант № 9 (не с экзамена)».",
    "label": "Variante 9 (Protokoll 19.02.20XX, Ballhausen)",
    "topic": "Fertigungsanlage, Software-Update, Sommerfest",
    "page": 63,
@@ -287,6 +310,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Protokollantin: Volha Schäfer",
+     "explain_ru": "Верно c: в заголовке документа прямо указано, что протокол ведёт Volha Schäfer («Protokollantin: Volha Schäfer»). a неверно, потому что протокол предыдущего заседания утвердили без правок («ohne weitere Änderungen und Ergänzungen»); b неверно, потому что в протоколе перечислены участники нынешнего, февральского заседания, а не январского.",
+
      "explain": "Correcto c: el encabezado del documento indica expresamente que la redactora del acta actual es Volha Schäfer («Protokollantin: Volha Schäfer»). a es falso porque el acta de la sesión previa se aprobó sin enmiendas («ohne weitere Änderungen und Ergänzungen»); b es falso porque el acta lista los asistentes de la sesión presente de febrero, no los de enero."
     },
     {
@@ -310,6 +335,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "wird unmittelbar mit der Herstellung der Fertigungsanlage in Italien begonnen.",
+     "explain_ru": "Верно c: изготовление оборудования начато на площадке компании-подрядчика в Италии («in Italien begonnen»). a неверно, потому что пока неизвестно, поместится ли оно в цехе II или IV; b неверно, потому что новый цех построили бы только если после технического осмотра существующих не хватит.",
+
      "explain": "Correcto c: la fabricación de la maquinaria se realiza en las instalaciones de la empresa adjudicataria en Italia («in Italien begonnen»). a es falso porque aún no se sabe si encajará en la nave II o en la IV; b es falso porque solo se construiría una nave nueva si las existentes resultaran insuficientes tras la inspección técnica."
     },
     {
@@ -333,6 +360,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Besonders die Metallgehäuse für den Hochbau zeigen sehr gute Verkaufszahlen.",
+     "explain_ru": "Верно c: квартальные продажи превысили прошлогодние на 20 %, а металлические корпуса показали исключительные результаты. a неверно, потому что выделяется крупная международная продажа в Казахстан; b неверно, потому что производство идёт без происшествий и при высоком спросе.",
+
      "explain": "Correcto c: las ventas trimestrales superaron en un 20 % las del año anterior y las carcasas metálicas registraron cifras excepcionales. a es falso porque destaca una gran venta internacional para Kazajistán; b es falso porque la producción discurre sin incidentes y con alta demanda."
     },
     {
@@ -356,6 +385,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "WL spielt am kommenden Freitag ab 19 Uhr ein Software-Update auf unser Computersystem.",
+     "explain_ru": "Верно c: ответственная за ИТ загрузит обновление в следующую пятницу с 19:00 («am kommenden Freitag ab 19 Uhr ein Software-Update»). a неверно, потому что обновляют существующую систему; b неверно, потому что обучающие семинары для персонала длятся полдня («in einem halbtägigen Info-Workshop»), а не весь день.",
+
      "explain": "Correcto c: la responsable de TI cargará la actualización el próximo viernes a partir de las 19:00 horas («am kommenden Freitag ab 19 Uhr ein Software-Update»). a es falso porque se actualiza el sistema existente; b es falso porque los talleres de formación para el personal son de media jornada («in einem halbtägigen Info-Workshop»), no de un día entero."
     },
     {
@@ -379,6 +410,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Alle wichtigen Kunden und großen Lieferanten werden eingeladen.",
+     "explain_ru": "Верно c: генеральный директор (Maria Loppinet) сообщает, что приглашения на летний праздник будут разосланы важнейшим клиентам и поставщикам. a неверно, потому что место празднования держат в секрете как сюрприз к её 60-летию; b не соответствует тому, что обсуждалось на собрании.",
+
      "explain": "Correcto c: la directora general (Maria Loppinet) informa de que se cursará invitación a los clientes y proveedores más relevantes para la fiesta de verano. a es falso porque mantiene en secreto el lugar de celebración como sorpresa de su 60 cumpleaños; b no se ajusta a lo tratado en la reunión."
     }
    ]

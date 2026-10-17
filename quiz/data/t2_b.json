@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "t2_b-p22",
+   "note_ru": "На с. 22 вариант 5 с тем же текстом «Betriebssport» приведён дважды: во втором списке (с номерами тестов 150321/150301) текст не повторяется, только пункты 6 и 7, причём варианты 7 переставлены, а опечатка «Schreibtischen» уже исправлена. Сохранена именно эта вторая версия вариантов (тогда правильный ответ «b», а не «c»).",
    "label": "Text 1 – Variante 5",
    "page": 22,
    "note": "La página 22 reproduce dos veces la variante 5 con el mismo texto «Betriebssport»: la segunda lista (con los números de test 150321/150301) no repite el texto, solo los ítems 6 y 7, con las opciones del 7 reordenadas y con la errata «Schreibtischen» ya corregida. Se conserva esa segunda versión de las opciones (la respuesta correcta es entonces «b», no «c»).",
@@ -28,6 +29,8 @@
      "answer": "Richtig",
      "confidence": "hoch",
      "quote": "Dieser ist für alle ganztägig frei und ohne Gebühr zugänglich und kann selbstverständlich auch in den Pausen genutzt werden.",
+     "explain_ru": "В тексте сказано, что Fitnessraum доступен «ganztägig» (весь день) и что им можно пользоваться «auch in den Pausen», то есть и в рабочее время; значит утверждение верно. Нигде не сказано, что он закрыт в рабочие часы, поэтому «Falsch» не выдерживает критики.",
+
      "explain": "El texto dice que el Fitnessraum está disponible «ganztägig» (todo el día) y que puede usarse «auch in den Pausen», es decir, también durante el tiempo de trabajo; por tanto la afirmación es correcta. No hay ninguna indicación de que esté cerrado en horario laboral, así que «Falsch» no se sostiene."
     },
     {
@@ -51,12 +54,15 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Dieser ist für alle ganztägig frei und ohne Gebühr zugänglich",
+     "explain_ru": "Вариант b верен, потому что в тексте сказано: внутренний Fitnessraum «ist für alle ganztägig frei und ohne Gebühr zugänglich», то есть пользоваться им можно бесплатно. a неверно: это не особые столы для избранных, а «Alle Schreibtische sind höhenverstellbar». c тоже неверно: Deskbike предлагают («Zusätzlich bieten wir das sogenannte „Deskbike“ an»), но нигде не говорится о дотации на его покупку.",
+
      "explain": "La opción b es correcta porque el texto afirma que el Fitnessraum interno «ist für alle ganztägig frei und ohne Gebühr zugänglich», es decir, se puede usar gratis. La a es falsa: no son mesas especiales solo para algunos, sino que «Alle Schreibtische sind höhenverstellbar». La c también es falsa: el Deskbike se ofrece («Zusätzlich bieten wir das sogenannte „Deskbike“ an»), pero en ningún momento se menciona un Zuschuss (subvención) para comprarlo."
     }
    ]
   },
   {
    "id": "t2_b-p23",
+   "note_ru": "Пункт 6 встречается дважды: первая формулировка (обязанность посещать несколько раз в год) и помеченная «Новый вариант» (запись в Personal). Это явно разные вопросы с противоположными ответами, поэтому сохранены оба как два пункта с n=6. Из пункта 7 сохранена только действующая версия с пометкой «Новый вариант от 21.12.24»: предыдущая версия ставит тот же вопрос (что показывают новым сотрудникам) с тем же правильным ответом (система безопасности), то есть это переформулировка, а не отдельный пункт. Оба пункта с n=6 показываются как 6a и 6b и оцениваются отдельно.",
    "label": "Text 1 – Variante 6",
    "page": 23,
    "note": "El ítem 6 aparece dos veces: la primera formulación (obligación de asistir varias veces al año) y la marcada «Новый вариант» (inscripción en Personal). Son preguntas claramente distintas y con respuesta opuesta, por eso se conservan las dos como dos ítems con n=6. Del ítem 7 solo se conserva la versión vigente marcada «Новый вариант от 21.12.24»: la versión anterior plantea la misma cuestión (qué se les presenta a los nuevos empleados) con la misma respuesta correcta (el sistema de seguridad), así que es una reformulación, no un ítem distinto. Los dos ítems con n=6 se muestran como 6a y 6b y se puntúan por separado.",
@@ -81,6 +87,8 @@
      "answer": "Falsch",
      "confidence": "hoch",
      "quote": "Eine gesonderte Anmeldung ist nicht erforderlich.",
+     "explain_ru": "Текст говорит это прямо: «Eine gesonderte Anmeldung ist nicht erforderlich», значит для Einführungstag записываться не нужно, и утверждение неверно. Единственное упоминание отдела кадров в связи с этим днём — «Für Rückfragen zum Einführungstag steht die Personalabteilung gerne zur Verfügung», то есть только для вопросов.",
+
      "explain": "El texto lo dice de forma explícita: «Eine gesonderte Anmeldung ist nicht erforderlich», así que no hay que inscribirse para el Einführungstag y la afirmación es falsa. La única mención a la Personalabteilung en relación con ese día es «Für Rückfragen zum Einführungstag steht die Personalabteilung gerne zur Verfügung», es decir, solo para consultas."
     },
     {
@@ -100,6 +108,8 @@
      "answer": "Richtig",
      "confidence": "mittel",
      "quote": "Wir möchten darauf hinweisen, dass die Teilnahme an einer solchen Informationsveranstaltung verpflichtend ist.",
+     "explain_ru": "Утверждение соединяет две информации из текста: Einführungstag проводится «mehrmals jährlich», а участие обязательно («die Teilnahme … ist verpflichtend»), поэтому утверждение подходит и ответ «Richtig». Средняя уверенность: в тексте речь о «neuen Mitarbeiterinnen und Mitarbeiter», а в утверждении — «Alle Mitarbeiter», и «ein paar Mal pro Jahr» скорее описывает частоту мероприятия, чем повторяющуюся личную обязанность. «Falsch» было бы оправдано только при буквальном прочтении.",
+
      "explain": "El enunciado combina las dos informaciones del texto: el Einführungstag se celebra «mehrmals jährlich» y la asistencia es obligatoria («die Teilnahme … ist verpflichtend»), de modo que la afirmación encaja y la respuesta es «Richtig». Confianza media porque el texto habla de los «neuen Mitarbeiterinnen und Mitarbeiter» mientras el enunciado dice «Alle Mitarbeiter», y porque «ein paar Mal pro Jahr» describe más bien la frecuencia del evento que una obligación individual repetida. «Falsch» solo sería defendible forzando esa lectura literal."
     },
     {
@@ -123,6 +133,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Auch dieses stellen wir Ihnen im Rahmen des Orientierungstages im Detail vor.",
+     "explain_ru": "Верно c: в тексте сказано, что в день ориентации подробно представляют систему безопасности здания, то есть знакомят новых сотрудников с её работой. a не выдерживает: о руководителях отделов сказано лишь «werden … in kurzen Worten einen Einblick in den Tätigkeitsbereich ihrer Teams geben», а не что они проводят экскурсию по предприятию. b — ловушка: участие представлено как добровольное («können»), тогда как в тексте оно обязательно («die Teilnahme … ist verpflichtend»).",
+
      "explain": "La c es la correcta: el texto anuncia que el sistema de seguridad del edificio se presenta en detalle durante el día de orientación, lo que equivale a familiarizar a los nuevos empleados con su funcionamiento. La a no se sostiene: de los jefes de departamento solo se dice que «werden … in kurzen Worten einen Einblick in den Tätigkeitsbereich ihrer Teams geben», no que hagan una visita guiada por la empresa. La b es un distractor: presenta la asistencia como algo voluntario («können»), cuando el texto dice que es obligatoria («die Teilnahme … ist verpflichtend»)."
     }
    ]
@@ -153,6 +165,8 @@
      "answer": "Richtig",
      "confidence": "hoch",
      "quote": "Deshalb steht auch unsere Kantine, die für die Mitarbeiterverpflegung sorgt, täglich 24 Stunden zur Verfügung.",
+     "explain_ru": "В тексте сказано, что столовая доступна «täglich 24 Stunden», то есть круглосуточно каждый день, потому что предприятие работает «an sieben Tagen rund um die Uhr im Drei-Schicht-System». Поэтому утверждение верно, а «Falsch» было бы ошибкой.",
+
      "explain": "El texto dice que la cantina está a disposición «täglich 24 Stunden», es decir, las 24 horas de todos los días, porque la empresa trabaja «an sieben Tagen rund um die Uhr im Drei-Schicht-System». Por eso la afirmación es correcta y «Falsch» sería erróneo."
     },
     {
@@ -176,6 +190,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Außerdem können die Mitarbeitenden jederzeit frisch zubereitete Snacks oder kleine Mahlzeiten wie Suppen oder Nudelgerichte aus den in der Kantine aufgestellten Automaten entnehmen.",
+     "explain_ru": "Верно b: столовая открыта 24 часа в сутки, и сотрудники могут «jederzeit» (в любой момент) взять снеки или небольшие блюда из автоматов, установленных в столовой, в том числе ночью. a неверно: в тексте упомянуты «Zusätzliche Automaten für kalte und warme Getränke» в здании, но нигде не сказано, что в столовой нет напитков. c неверно, потому что интервалы по группам ввели именно «Um unnötige Wartezeiten in der Mittagszeit zu vermeiden», то есть чтобы избежать долгого ожидания.",
+
      "explain": "La b es correcta: la cantina está abierta 24 horas al día y los empleados pueden coger «jederzeit» (en cualquier momento) snacks o platos pequeños de las máquinas instaladas en la cantina, también de noche. La a es falsa: el texto menciona «Zusätzliche Automaten für kalte und warme Getränke» en el edificio, de modo que en ningún momento se afirma que en la cantina no haya bebidas. La c es falsa porque las franjas por grupos se fijaron precisamente «Um unnötige Wartezeiten in der Mittagszeit zu vermeiden», es decir, para evitar esperas largas."
     }
    ]
@@ -206,6 +222,8 @@
      "answer": "Richtig",
      "confidence": "hoch",
      "quote": "Für Sie als neue Mitarbeiterin / neuer Mitarbeiter in unserem Traditionsunternehmen ist es wichtig zu wissen, wie das Unternehmen aufgebaut ist, d. h. welche Abteilungen es gibt, wer wofür verantwortlich ist und an wen Sie sich mit Ihren Fragen wenden können.",
+     "explain_ru": "Текст адресован именно новым сотрудникам и объясняет структуру предприятия (какие есть отделы, кто за что отвечает, к кому обращаться) как раз с помощью этой схемы («Dafür wollen wir Ihnen im Folgenden Orientierung geben»). Утверждение совпадает, значит «Richtig»; ничего в тексте ему не противоречит.",
+
      "explain": "El texto se dirige expresamente a los nuevos empleados y les explica la estructura de la empresa (qué departamentos hay, quién es responsable de qué, a quién dirigirse) precisamente mediante este organigrama («Dafür wollen wir Ihnen im Folgenden Orientierung geben»). La afirmación coincide, así que es «Richtig»; nada en el texto la contradice."
     },
     {
@@ -229,6 +247,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Von ihr erhalten Sie Ihren Mitarbeiterausweis, die für Sie notwendigen Schlüssel und die Arbeitskleidung.",
+     "explain_ru": "Верно a: в отделе кадров госпожа Müller выдаёт пропуск сотрудника, необходимые ключи и рабочую одежду, то есть оснащение («Ausstattung») работника. b неверно: рабочую одежду «erhalten» (получают), а не покупают, и ни о какой оплате не говорится. c тоже неверно: Dienstreisen упомянуты только для расчёта расходов с господином Friedrich («rechnen Sie die entstandenen Kosten mit Herrn Friedrich ab»), а не для бронирования.",
+
      "explain": "La a es correcta: en la Personalabteilung, la Sra. Müller entrega el carné de empleado, las llaves necesarias y la ropa de trabajo, es decir, el equipamiento («Ausstattung») del empleado. La b es falsa: la ropa de trabajo se «erhalten» (se recibe), no se paga, y no se menciona ningún pago. La c también es falsa: las Dienstreisen solo aparecen para liquidar los gastos con el Sr. Friedrich («rechnen Sie die entstandenen Kosten mit Herrn Friedrich ab»), no para reservarlas."
     }
    ]

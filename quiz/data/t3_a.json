@@ -56,6 +56,7 @@
           "answer": "d",
           "confidence": "hoch",
           "quote": "Das gilt allerdings nicht, wenn du dich um ein krankes Kind kümmern musst. In diesem Fall gelten die Urlaubstage als genommen.",
+          "explain_ru": "Gabi спрашивает, что будет с её днями отпуска, если заболеет не она, а дочь. Elli (d) дословно повторяет её собственный аргумент («Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden») и отвечает исключением «krankes Kind»: если ухаживаешь за больным ребёнком, дни отпуска считаются использованными. Sabine (e) тоже говорит о детях, но о детском саде, а не об отпуске.",
           "explain": "Gabi pregunta qué pasa con sus días de vacaciones cuando la que enferma es su hija, no ella. Elli (d) retoma literalmente su propio argumento («Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden») y responde con la excepción de la «krankes Kind»: si cuidas a un hijo enfermo, los días de vacaciones se consideran disfrutados. Sabine (e) también habla de hijos, pero de guardería, no de vacaciones."
         },
         {
@@ -65,6 +66,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Nein, vorher musst du erst mal eine Abmahnung bekommen.",
+          "explain_ru": "Charlotte сообщила о своём отсутствии («Als ich heute angerufen habe»), и начальник угрожает ей увольнением: Marion (b) отвечает именно на это «Nein» и правилом, что сначала нужна Abmahnung, и советует поговорить с начальником. Karin (c) тоже упоминает Abmahnung, но для противоположного случая (отсутствие без предупреждения) — это случай Lars.",
           "explain": "Charlotte avisó de su ausencia («Als ich heute angerufen habe») y el jefe la amenaza con el despido: Marion (b) responde exactamente a eso con un «Nein» y con la regla de que antes hace falta una Abmahnung, y le aconseja hablar con el jefe. Karin (c) también menciona la Abmahnung, pero para el caso contrario (ausencia sin avisar), que es el de Lars."
         },
         {
@@ -74,6 +76,7 @@
           "answer": "c",
           "confidence": "mittel",
           "quote": "Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "explain_ru": "Lars отсутствовал без оправдания и предупреждения, и Karin (c) — единственная, кто отвечает на вопрос «Geht das so einfach?» утвердительно: когда работник не соблюдает свои обязанности, предварительная Abmahnung не нужна. Средняя уверенность: c говорит о рабочем времени и не пишет дословно «Kündigung möglich»; отнесение подтверждается методом исключения (b лучше подходит Charlotte, которая предупредила) и вариантом с. 34, где тот же пост идёт с ответом c.",
           "explain": "Lars faltó sin excusa ni aviso, y Karin (c) es la única que responde a la pregunta «Geht das so einfach?» en sentido afirmativo: cuando el trabajador no respeta sus obligaciones, no hace falta una Abmahnung previa. Confianza media porque c se centra en el horario de trabajo y no dice literalmente «Kündigung möglich»; la asignación se confirma por eliminación (b encaja mejor con Charlotte, que sí avisó) y por la variante de la p. 34, donde este mismo posteo lleva la respuesta c."
         },
         {
@@ -83,12 +86,14 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "explain_ru": "Kamil спрашивает, с какого момента он обязан предъявить медицинскую справку. Günther (a) отвечает именно на это: общего правила нет, всё зависит от трудового договора и обычно написано в разделах «Arbeitsverhinderung» или «Krankheit». Jorge (f) — ловушка: он говорит о походе к врачу в первый день, но не об обязанности предъявить справку.",
           "explain": "Kamil pregunta a partir de cuándo está obligado a entregar el certificado médico. Günther (a) responde justo a eso: no hay una regla general, depende del contrato de trabajo y suele estar en los apartados «Arbeitsverhinderung» o «Krankheit». Jorge (f) es el distractor: habla de ir al médico el primer día, pero no de la obligación de presentar el certificado."
         }
       ]
     },
     {
       "id": "t3_a-p33",
+      "note_ru": "Повторяет четыре поста с. 32; меняется только формулировка комментария d (об этом говорит русский заголовок: «новая формулировка ответа d»). Ответы не меняются.",
       "label": "Variante 1 (versión 08.2024)",
       "page": 33,
       "note": "Repite los cuatro posteos de la p. 32; solo cambia la formulación del comentario d (así lo indica el encabezado ruso: «новая формулировка ответа d»). Las respuestas no cambian.",
@@ -141,6 +146,7 @@
           "answer": "d",
           "confidence": "mittel",
           "quote": "Anders sieht es aus, wenn du einen Familienangehörigen betreust. Das ist dann nicht Sache deines Arbeitgebers.",
+          "explain_ru": "Для Gabi по-прежнему возможен только один ответ: Elli (d) повторяет её аргумент («Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden») и отмечает разницу, когда ухаживаешь за членом семьи. Средняя уверенность: в новой формулировке уже не сказано прямо, что дни отпуска считаются использованными (в версии с. 32 это было: «In diesem Fall gelten die Urlaubstage als genommen»).",
           "explain": "Sigue siendo la única respuesta posible para Gabi: Elli (d) retoma su argumento («Wie du selbst schreibst, können im Krankheitsfall die Urlaubstage auf dein Urlaubskonto zurückgebucht werden») y marca la diferencia cuando se cuida a un familiar. Confianza media porque esta nueva formulación ya no dice expresamente que los días de vacaciones se den por disfrutados (en la versión de la p. 32 sí: «In diesem Fall gelten die Urlaubstage als genommen»)."
         },
         {
@@ -150,6 +156,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Nein, vorher musst du erst mal eine Abmahnung bekommen.",
+          "explain_ru": "Charlotte сообщила об отсутствии, и начальник угрожает увольнением: Marion (b) отвечает прямым «Nein» и правилом о предварительной Abmahnung. Комментарий d в этой версии тоже упоминает «Attest», но он адресован тому, кто уходит в отпуск, а не этому случаю.",
           "explain": "Charlotte avisó de su ausencia y el jefe la amenaza con el despido: Marion (b) responde con un «Nein» directo y con la regla de la Abmahnung previa. El comentario d de esta versión también menciona el «Attest», pero va dirigido a quien se toma vacaciones, no a este caso."
         },
         {
@@ -159,6 +166,7 @@
           "answer": "c",
           "confidence": "mittel",
           "quote": "Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "explain_ru": "Lars отсутствовал без предупреждения, и Karin (c) — единственная, кто отвечает утвердительно на «Geht das so einfach?»: если работник не выполняет обязанности, предварительная Abmahnung не нужна. Средняя уверенность: c говорит о рабочем времени и не формулирует увольнение дословно; подтверждается методом исключения и вариантом с. 34 (тот же пост с ответом c).",
           "explain": "Lars faltó sin avisar y Karin (c) es la única que responde en sentido afirmativo a «Geht das so einfach?»: si el trabajador no cumple sus obligaciones, no hace falta una Abmahnung previa. Confianza media porque c habla del horario de trabajo y no formula literalmente la expulsión; se confirma por eliminación y por la variante de la p. 34 (mismo posteo con la respuesta c)."
         },
         {
@@ -168,12 +176,14 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "explain_ru": "Günther (a) отвечает на вопрос Kamil о том, с какого момента нужна справка: общего правила нет, всё в трудовом договоре. Осторожно с новым комментарием d: он тоже говорит об «ärztliches Attest», но о работнике в отпуске, который заболел, а не об обязанности предъявить Krankschreibung.",
           "explain": "Günther (a) responde a la pregunta de Kamil sobre desde cuándo hace falta el certificado: no hay regla general, está en el contrato de trabajo. Ojo con el nuevo comentario d, que también habla de un «ärztliches Attest», pero referido al empleado de vacaciones que enferma, no a la obligación de presentar la Krankschreibung."
         }
       ]
     },
     {
       "id": "t3_a-p34",
+      "note_ru": "Те же тексты, что на с. 32, но с новыми именами и четырьмя заданиями в другом порядке (об этом говорит русский заголовок: «новые имена и очередь»). Поэтому ответы смещаются: 10→b, 11→c, 12→a, 13→d.",
       "label": "Variante 1 (versión 07.02.2025)",
       "page": 34,
       "note": "Mismos textos que la p. 32, pero con nombres nuevos y las cuatro tareas en otro orden (así lo indica el encabezado ruso: «новые имена и очередь»). Por eso las respuestas se desplazan: 10→b, 11→c, 12→a, 13→d.",
@@ -226,6 +236,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Nein, vorher musst du erst mal eine Abmahnung bekommen.",
+          "explain_ru": "Тот же случай, что Charlotte на с. 32, теперь под номером 10: мать сообщила об отсутствии, и начальник угрожает увольнением. Gracia Maria (b) отвечает «Nein» и напоминает о необходимости предварительной Abmahnung. Комментарий c тоже об Abmahnung, но для того, кто отсутствует без предупреждения (Giovanni, 11).",
           "explain": "Es el mismo caso que Charlotte en la p. 32, ahora en el número 10: la madre avisó de su ausencia y el jefe la amenaza con el despido. Gracia Maria (b) responde con el «Nein» y con la necesidad de una Abmahnung previa. El comentario c también habla de la Abmahnung, pero para quien falta sin dar señales (Giovanni, 11)."
         },
         {
@@ -235,6 +246,7 @@
           "answer": "c",
           "confidence": "mittel",
           "quote": "Wenn sich Mitarbeiter nicht daran halten, ist eine Abmahnung vor der Kündigung nicht notwendig.",
+          "explain_ru": "Giovanni отсутствовал без оправдания и предупреждения и спрашивает, так ли просто уволить. Lina (c) — единственная, кто отвечает утвердительно: когда работник не соблюдает обязанности, предварительная Abmahnung не нужна. Средняя уверенность: c говорит о трудовых обязанностях и не называет «Kündigung»; отнесение определяется методом исключения (a→12, b→10, d→13).",
           "explain": "Giovanni faltó sin excusa ni aviso y pregunta si el despido puede ser tan fácil. Lina (c) es la única que responde en sentido afirmativo: cuando el trabajador no respeta sus obligaciones, la Abmahnung previa no es necesaria. Confianza media porque c se centra en las obligaciones horarias y no nombra la «Kündigung»; la asignación queda fijada por eliminación (a→12, b→10, d→13)."
         },
         {
@@ -244,6 +256,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Ab wann du eine Arbeitsunfähigkeitsbescheinigung brauchst, findest du meistens unter den Paragraphen „Arbeitsverhinderung“ oder „Krankheit“.",
+          "explain_ru": "Leo спрашивает, с какого момента он обязан предъявить справку. Jose Cristobal (a) отвечает именно на это: общего правила нет, всё зависит от трудового договора и обычно регулируется в «Arbeitsverhinderung» или «Krankheit». Jorge (f) — ловушка, он лишь рассказывает о своей привычке идти к врачу в первый день.",
           "explain": "Leo pregunta desde cuándo está obligado a presentar el certificado. Jose Cristobal (a) contesta exactamente eso: no hay una regla general, depende del contrato de trabajo y suele estar regulado en «Arbeitsverhinderung» o «Krankheit». Jorge (f) es el distractor, porque solo cuenta su costumbre de ir al médico el primer día."
         },
         {
@@ -253,6 +266,7 @@
           "answer": "d",
           "confidence": "mittel",
           "quote": "Anders sieht es aus, wenn du einen Familienangehörigen betreust. Das ist dann nicht Sache deines Arbeitgebers.",
+          "explain_ru": "Тот же случай, что Gabi на с. 32, теперь под номером 13. Lida (d) дословно повторяет её фразу о возврате дней отпуска и указывает исключение для члена семьи, за которым ухаживают. Средняя уверенность: в новой формулировке уже не сказано прямо, что эти дни отпуска считаются использованными (в версии с. 32 это сказано).",
           "explain": "Es el mismo caso que Gabi en la p. 32, ahora en el número 13. Lida (d) retoma su frase literal sobre el reembolso de los días de vacaciones y señala la excepción del familiar al que se cuida. Confianza media porque la formulación nueva ya no dice expresamente que esos días de vacaciones se consideren disfrutados (la versión de la p. 32 sí lo dice)."
         }
       ]

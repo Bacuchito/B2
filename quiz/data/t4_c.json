@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "t4_c-p51",
+   "note_ru": "Протокол собрания от 19.11.20XX: текст занимает с. 51-52, вопросы 14-18 — в конце с. 52. В пункте 15 в оригинале ДВЕ разные редакции: первая («Einige Mitarbeiter machen Überstunden,») и помеченная «новый вариант вопроса» («Aufgrund des hohen Krankenstands»); они сохранены как два пункта с одинаковым n (показываются как 15a и 15b). На с. 52 пункты 17 («Die Firma») и 18 («Persönliche Gegenstände») набраны в две колонки, и OCR смешал их в одних строках («17. Die Firma 18. Persönliche Gegenstände», затем «a) besucht die Frühjahrsmesse regelmäßig. a) können nicht in der Küche bleiben.»); каждый пункт восстановлен со своими вариантами a/b/c.",
    "label": "Variante 3 (Protokoll 19.11.20XX)",
    "page": 51,
    "note": "Acta de la reunión del 19.11.20XX, cuyo texto ocupa las pp. 51-52 y cuyas preguntas 14-18 aparecen al final de la p. 52. El ítem 15 trae DOS redacciones distintas en el original: la primera («Einige Mitarbeiter machen Überstunden,») y la marcada «новый вариант вопроса» («Aufgrund des hohen Krankenstands»), que se han conservado como dos ítems con el mismo n (se mostrarán como 15a y 15b). En la p. 52 los ítems 17 («Die Firma») y 18 («Persönliche Gegenstände») vienen entrelazados a dos columnas y el OCR los mezcla en las mismas líneas («17. Die Firma 18. Persönliche Gegenstände» seguido de «a) besucht die Frühjahrsmesse regelmäßig. a) können nicht in der Küche bleiben.»); cada ítem se ha reconstruido con sus propias opciones a/b/c.",
@@ -32,6 +33,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Das Protokoll des Meetings vom 14. November wird ohne weitere Änderungen und Ergänzungen einstimmig per Handzeichen genehmigt.",
+     "explain_ru": "Верно c: пункт 2 повестки дня («TOP 2 Personal») целиком посвящён кадровым вопросам (больничные, отпуска, сверхурочные, выход на пенсию Herr Wortmann, новые сотрудники). a неверно, потому что протокол утверждают «ohne weitere Änderungen und Ergänzungen», то есть без изменений. b тоже неверно: утверждают протокол предыдущего собрания, а не повестку дня (её только перечисляют).",
+
      "explain": "Correcto c: el punto 2 del orden del día («TOP 2 Personal») se dedica íntegramente a asuntos de personal (bajas por enfermedad, vacaciones, horas extras, jubilación de Herr Wortmann, nuevas incorporaciones). a es falso porque el acta se aprueba «ohne weitere Änderungen und Ergänzungen», es decir, sin cambios. b también es falso: lo que se aprueba es el acta de la reunión anterior, no el orden del día (que solo se enumera)."
     },
     {
@@ -55,6 +58,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Aufgrund des hohen Krankenstands mussten einige Kollegen in den letzten Monaten besonders viele Überstunden machen",
+     "explain_ru": "Верно c: текст прямо объясняет сверхурочные высоким уровнем больничных («Aufgrund des hohen Krankenstands mussten einige Kollegen … besonders viele Überstunden machen»), а до этого сказано, что многие коллеги болеют. a неверно: отпуска не причина, их как раз ограничивают («Urlaubsanträge können im Moment nur im Falle dringender persönlicher Angelegenheiten genehmigt werden»). b переворачивает смысл: сверхурочные делает не тот, кто на больничном, а остальные.",
+
      "explain": "Correcto c: el texto justifica expresamente las horas extras con el alto índice de bajas («Aufgrund des hohen Krankenstands mussten einige Kollegen … besonders viele Überstunden machen»), y antes ha explicado que muchos compañeros están enfermos. a es falso: las vacaciones no son la causa, sino que precisamente se restringen («Urlaubsanträge können im Moment nur im Falle dringender persönlicher Angelegenheiten genehmigt werden»). b invierte los términos: quien está de baja no hace horas extras, son los demás quienes las asumen."
     },
     {
@@ -78,6 +83,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Urlaubsanträge können im Moment nur im Falle dringender persönlicher Angelegenheiten genehmigt werden.",
+     "explain_ru": "Вторая редакция пункта 15 («новый вариант вопроса»). Верно c: в протоколе сказано, что сейчас заявления на отпуск одобряют только при срочных личных обстоятельствах, что равнозначно запрету на отпуск; сам заголовок протокола объявляет это словом «Urlaubssperre». a — правдоподобное следствие («Die Kundenbetreuung ist aktuell unterbesetzt»), но в тексте нигде не сказано, что работа останется несделанной. b неверно: сверхурочные следует по возможности снять до конца года («möglichst bis zum Ende des Kalenderjahres abgebaut werden sollten»), и только если это невозможно, переносят на следующий год, а не наоборот.",
+
      "explain": "Segunda redacción del ítem 15 («новый вариант вопроса»). Correcto c: el acta dice que en ese momento las solicitudes de vacaciones solo se aprueban en caso de asuntos personales urgentes, lo que equivale a una congelación de vacaciones; el propio encabezado del acta lo anuncia con la palabra «Urlaubssperre». a es una consecuencia verosímil («Die Kundenbetreuung ist aktuell unterbesetzt»), pero el texto no afirma en ningún momento que el trabajo quede sin hacer. b es falso: las horas extras deben reducirse preferiblemente antes de fin de año («möglichst bis zum Ende des Kalenderjahres abgebaut werden sollten») y solo si no es posible se trasladan al año siguiente, no al revés."
     },
     {
@@ -101,6 +108,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "KM hat hierfür bereits einen ersten Entwurf für ein Konzept ausgearbeitet und legt diesen vor. Er schlägt vor, das Konzept in einer kleineren Runde zu diskutieren.",
+     "explain_ru": "Верно b: KM представляет свой черновик концепции и предлагает обсудить его в узком кругу («in einer kleineren Runde zu diskutieren»). a неверно: конкурент — внешняя фирма «Lutz GmbH», а KM — руководитель отдела продаж в самой компании. c неверно, потому что акцию со скидками к весне планирует конкурент, а не KM.",
+
      "explain": "Correcto b: KM presenta su borrador de concepto y propone discutirlo en un grupo reducido («in einer kleineren Runde zu diskutieren»). a es falso: el competidor es la empresa externa «Lutz GmbH», y KM es el jefe de Ventas de la propia firma. c es falso porque quien planea la acción de descuento para la primavera es el competidor, no KM."
     },
     {
@@ -124,6 +133,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Auch die Broschüren zu unserem Messeauftritt sind bereits im Druck und können in der 2. KW an unsere Kunden verschickt werden.",
+     "explain_ru": "Верно c: буклеты для выставки «sind bereits im Druck», то есть уже в печати. a неверно, потому что фирма участвует впервые («Im nächsten Jahr wird unsere Firma erstmals an der Frühjahrsmesse in Dresden teilnehmen»), значит это не привычное участие. b неверно: стенд уже забронирован и монтажник нанят («bereits der Standplatz gebucht und der Messebauer beauftragt ist»); предлагается только посмотреть дизайн стенда в офисе MB.",
+
      "explain": "Correcto c: los folletos para la feria «sind bereits im Druck», es decir, están en imprenta en este momento. a es falso porque la empresa participará por primera vez («Im nächsten Jahr wird unsere Firma erstmals an der Frühjahrsmesse in Dresden teilnehmen»), luego no es una cita habitual. b es falso: el stand ya está reservado y el montador contratado («bereits der Standplatz gebucht und der Messebauer beauftragt ist»); lo único que se ofrece es poder ver el diseño del stand en la oficina de MB."
     },
     {
@@ -147,12 +158,15 @@
      "answer": "b",
      "confidence": "mittel",
      "quote": "werden die Mitarbeiter gebeten, bei dieser Gelegenheit persönliche Gegenstände wie zum Beispiel nicht firmeneigene Kaffeetassen, Brotdosen und Ähnliches bis Donnerstag an sich zu nehmen. Ansonsten werden diese durch AW entsorgt.",
+     "explain_ru": "Верно b: сотрудников просят забрать личные вещи «bis Donnerstag», то есть указан конкретный срок. c как общее правило неверно, потому что в тексте их выбрасывают только «ansonsten», то есть если никто их не заберёт. a — частично защитимое прочтение (кухню нужно полностью освободить для покраски), но такой запрет в протоколе не сформулирован: там устанавливают обязанность забрать вещи до четверга; отсюда средняя уверенность.",
+
      "explain": "Correcto b: se pide a los empleados que recojan sus objetos personales «bis Donnerstag», o sea, con ese plazo concreto. c es falso como norma general porque el texto solo prevé tirarlos «ansonsten», esto es, si nadie los retira. a es una lectura parcialmente defendible (la cocina debe vaciarse por completo para pintarla), pero el acta no formula esa prohibición: lo que hace es fijar la obligación de retirarlos antes del jueves; de ahí la confianza media."
     }
    ]
   },
   {
    "id": "t4_c-p53",
+   "note_ru": "Протокол собрания от 15.04.2003: текст занимает с. 53-54, вопросы 14-18 — в конце с. 54, их не следует путать с вопросами предыдущего варианта (с. 52).",
    "label": "Variante 4 (Protokoll 15.04.2003)",
    "page": 53,
    "note": "Acta de la reunión del 15.04.2003: el texto ocupa las pp. 53-54 y las preguntas 14-18 están al final de la p. 54, de modo que no deben confundirse con las de la variante anterior (p. 52).",
@@ -181,6 +195,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "JM berichtet, dass die Marketingabteilung eine neue Werbestrategie entwickelt hat, um die Verkaufszahlen wieder zu verbessern. SK hatte in der letzten Sitzung berichtet, dass sie seit Januar dieses Jahres stetig zurückgegangen sind.",
+     "explain_ru": "Верно b: рекламная стратегия появилась именно чтобы улучшить показатели продаж, которые с января постоянно падают («um die Verkaufszahlen wieder zu verbessern … stetig zurückgegangen»). a неверно: рекламные ролики короткие и занимательные и предназначены для соцсетей, чтобы привлечь молодую аудиторию, а не рассказывают о производственных процессах. c неверно из-за детали: «Diese Maßnahmen wären relativ schnell und kostengünstig umsetzbar» относится только к мерам для сайта; к тому же нанятая съёмочная команда «sehr teuer», и PK поручено искать более дешёвые варианты.",
+
      "explain": "Correcto b: la estrategia publicitaria nace precisamente para mejorar unas cifras de ventas que llevan cayendo desde enero («um die Verkaufszahlen wieder zu verbessern … stetig zurückgegangen»). a es falso: los vídeos publicitarios son breves y entretenidos y van destinados a las redes sociales para captar al público joven, no tratan de los procesos de producción. c es falso por un detalle de referencia: «Diese Maßnahmen wären relativ schnell und kostengünstig umsetzbar» se refiere solo a las medidas para la página web; además el equipo de filmación contratado es «sehr teuer» y PK encarga buscar alternativas más baratas."
     },
     {
@@ -204,6 +220,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Dazu kommt, dass die Reinigungskräfte bei Eintreffen der Mitarbeiter gegen 9 Uhr noch anwesend sind, obwohl die Reinigungsarbeiten bis 8.30 Uhr abgeschlossen sein sollten.",
+     "explain_ru": "Верно a: уборщики всё ещё в здании около 9 часов, хотя работы должны быть закончены к 8.30, то есть согласованный график не соблюдается. b неверно: уборка всё же делается ежедневно («die tägliche Reinigung der Büros»), просто её недостаточно; «unregelmäßig» в тексте относится только к мусорным вёдрам, которые не всегда опорожняют. c меняет роли: расторгнуть договор без предупреждения угрожает сама фирма («Sollte es zu keiner Änderung kommen, wird der Vertrag fristlos gekündigt»), а не клининговая компания.",
+
      "explain": "Correcto a: el personal de limpieza sigue en el edificio hacia las 9 h aunque los trabajos deben estar terminados a las 8.30 h, es decir, no respeta el horario acordado. b es falso: la limpieza sí se hace a diario («die tägliche Reinigung der Büros»), lo que ocurre es que es insuficiente; el «unregelmäßig» del texto se refiere solo a los cubos de basura que no siempre se vacían. c invierte los papeles: quien amenaza con rescindir el contrato sin preaviso es la propia empresa («Sollte es zu keiner Änderung kommen, wird der Vertrag fristlos gekündigt»), no la empresa de limpieza."
     },
     {
@@ -227,6 +245,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Jonas Braun weist allerdings darauf hin, dass die Teilnehmerzahl auf acht Personen beschränkt ist.",
+     "explain_ru": "Верно a: число участников ограничено восемью человеками. b неверно: для первой помощи требуется регулярное повышение квалификации («Unsere Ersthelfer müssen regelmäßig Fortbildungen besuchen»), а не однократное. c неверно: Jonas Braun из DRK выступает как докладчик, но курс проходит на самом предприятии («Es wird bei uns im Haus stattfinden»).",
+
      "explain": "Correcto a: el número de participantes está limitado a ocho personas. b es falso: los primeros auxilios exigen formación continua («Unsere Ersthelfer müssen regelmäßig Fortbildungen besuchen»), no una sola vez. c es falso: Jonas Braun, del DRK, actúa como ponente, pero el curso se celebra en la propia empresa («Es wird bei uns im Haus stattfinden»)."
     },
     {
@@ -250,6 +270,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Antragsformulare sind bei JS erhältlich. Er steht auch für Fragen zur Verfügung.",
+     "explain_ru": "Верно b: бланки заявлений можно получить у JS, то есть у «Johannes Schön (JS, Leitung Personal)» — в отделе кадров. a путает цифры: дотация составляет 50 процентов, максимум 60 евро. c неверно: выплата действует «ab dem 01.07.», а протокол от 15.04.2003, значит это не следующий месяц.",
+
      "explain": "Correcto b: los formularios de solicitud se obtienen en JS, que es «Johannes Schön (JS, Leitung Personal)», es decir, en la dirección de Personal. a confunde las cifras: la subvención es del 50 por ciento con un máximo de 60 euros. c es falso: el abono entra en vigor «ab dem 01.07.», mientras que el acta es del 15.04.2003, de modo que no es el mes siguiente."
     },
     {
@@ -273,6 +295,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Die Ursache der Verzögerungen war ein Mitarbeiterstreik in der Partnerfirma in Litauen, der aber inzwischen beigelegt wurde.",
+     "explain_ru": "Верно c: причиной задержек поставок была забастовка, и сейчас поставки уже нормализовались. a неверно, потому что забастовка «inzwischen beigelegt wurde», то есть уже урегулирована. b неверно: это была забастовка работников «in der Partnerfirma in Litauen», то есть на партнёрском предприятии, а не по всей стране.",
+
      "explain": "Correcto c: la huelga fue la causa de los retrasos en las entregas, que ahora ya se han normalizado. a es falso porque la huelga «inzwischen beigelegt wurde», ya se ha resuelto. b es falso: fue una huelga de trabajadores «in der Partnerfirma in Litauen», es decir, en la empresa asociada, no en todo el país."
     }
    ]

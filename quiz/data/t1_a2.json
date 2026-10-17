@@ -4,6 +4,7 @@
   "variants": [
     {
       "id": "t1_a2-p9",
+      "note_ru": "То же задание, что t1-v1 (с. 8); объявление b переформулировано как «Innovativer Klimaschutz».",
       "label": "Variante 1 (nueva versión 08.2024)",
       "page": 9,
       "note": "Misma tarea que t1-v1 (p. 8); el anuncio b aparece reformulado como «Innovativer Klimaschutz».",
@@ -68,6 +69,7 @@
           "answer": "e",
           "confidence": "hoch",
           "quote": "Wie kleide ich mich richtig im Büro? Duzen oder siezen? Welche Themen sollten Sie im Smalltalk vermeiden?",
+          "explain_ru": "Moutasem сомневается, как правильно обращаться к новым коллегам; объявление e как раз посвящено формам обращения в повседневной работе и дословно ставит вопрос «Duzen oder siezen?». Объявление f (телефонная техника) — тематическая ловушка.",
           "explain": "Moutasem duda de cómo dirigirse correctamente a colegas nuevos; el anuncio e trata justamente las formas de trato en el día a día laboral y plantea de forma literal «Duzen oder siezen?». El anuncio f (técnica telefónica) es el distractor temático."
         },
         {
@@ -77,6 +79,7 @@
           "answer": "h",
           "confidence": "hoch",
           "quote": "Seit einigen Jahren geht die Zahl der Kündigungsschutzklagen kontinuierlich zurück, das bestätigt der Deutsche Anwaltsverein.",
+          "explain_ru": "Selma уволена и хочет защититься: это именно «Kündigungsschutzklage». h — единственное объявление об исках по увольнению, и в нём представлен специалист по трудовому праву; d тоже юридическое, но по семейному праву.",
           "explain": "Selma ha sido despedida y quiere defenderse: eso es exactamente una «Kündigungsschutzklage». h es el único anuncio que habla de demandas por despido y presenta a un experto en derecho laboral; d también es jurídico, pero de familia."
         },
         {
@@ -86,6 +89,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "Es gibt unterschiedliche Möglichkeiten und Wege, diesen Beruf zu erlernen und damit die eigene Leidenschaft für Sprachen auszuleben.",
+          "explain_ru": "Anka хочет учиться в сфере языков, и c прямо упоминает «diesen Beruf zu erlernen» применительно к Fremdsprachenkorrespondent — профессии этой отрасли. Объявление a (языковая поездка) не является профессиональным обучением.",
           "explain": "Anka quiere formarse en el ámbito de los idiomas y c menciona de forma explícita «diesen Beruf zu erlernen» refiriéndose al Fremdsprachenkorrespondent, una profesión del sector. El anuncio a (viaje de idiomas) no es una formación profesional."
         },
         {
@@ -95,6 +99,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Das Land arbeitet in den Bereichen Umweltschutz und Meeresbiologie eng mit anderen Ländern zusammen. So fördert die Bundesrepublik Deutschland Austauschprogramme zwischen internationalen Forschern.",
+          "explain_ru": "Sean — преподаватель биологии и ищет международную среду; b — единственное научное и международное объявление, и его область (Meeresbiologie, морская биология) дословно совпадает с его специальностью. Остальные объявления исключаются методом отбора (право, телефон, практика, языковая поездка).",
           "explain": "Sean es profesor de biología y busca un entorno internacional; b es el único anuncio científico e internacional y su campo (Meeresbiologie, biología marina) coincide literalmente con el suyo. El resto de anuncios se descartan por eliminación (derecho, teléfono, prácticas, viaje de idiomas)."
         },
         {
@@ -104,12 +109,14 @@
           "answer": "g",
           "confidence": "hoch",
           "quote": "Du träumst von einem Job im Ausland, dann knüpfe erste Kontakte durch ein Praktikum.",
+          "explain_ru": "Yassin хочет получить первый профессиональный опыт за границей, и g предлагает именно это: Auslandspraktikum как первый шаг. Объявление a — языковая поездка без рабочей составляющей.",
           "explain": "Yassin quiere sus primeras experiencias profesionales en el extranjero y g propone precisamente eso: un Auslandspraktikum como primera toma de contacto. El anuncio a es un viaje de idiomas, sin componente laboral."
         }
       ]
     },
     {
       "id": "t1_a2-p10",
+      "note_ru": "В заголовке указано «вариант №1»: это то же задание, что и вариант с. 9, но с изменёнными именами и порядком людей, поэтому ответы каждого номера меняются.",
       "label": "Variante 1 (nueva versión 07.02.2025)",
       "page": 10,
       "note": "El encabezado dice «вариант №1»: es la misma tarea que la variante de la p. 9, pero con los nombres y el orden de las personas cambiados, por lo que cambian las respuestas de cada número.",
@@ -174,6 +181,7 @@
           "answer": "h",
           "confidence": "hoch",
           "quote": "Seit einigen Jahren geht die Zahl der Kündigungsschutzklagen kontinuierlich zurück, das bestätigt der Deutsche Anwaltsverein.",
+          "explain_ru": "Mariarita уволена и хочет защититься: это «Kündigungsschutzklage». h — единственное объявление об исках по увольнению со специалистом по трудовому праву; d тоже юридическое, но по семейному праву.",
           "explain": "Mariarita ha sido despedida y quiere defenderse: eso es una «Kündigungsschutzklage». h es el único anuncio sobre demandas por despido con un experto en derecho laboral; d también es jurídico, pero de familia."
         },
         {
@@ -183,6 +191,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "Es gibt unterschiedliche Möglichkeiten und Wege, diesen Beruf zu erlernen und damit die eigene Leidenschaft für Sprachen auszuleben.",
+          "explain_ru": "Ettorina хочет учиться в сфере языков, и c прямо говорит «diesen Beruf zu erlernen» о Fremdsprachenkorrespondent. Объявление a (языковая поездка) не является профессиональным обучением.",
           "explain": "Ettorina quiere formarse en el ámbito de los idiomas y c habla explícitamente de «diesen Beruf zu erlernen», referido al Fremdsprachenkorrespondent. El anuncio a (viaje de idiomas) no es una formación profesional."
         },
         {
@@ -192,6 +201,7 @@
           "answer": "b",
           "confidence": "mittel",
           "quote": "So fördert die Bundesrepublik Deutschland Austauschprogramme zwischen internationalen Forschern.",
+          "explain_ru": "Thom — учёный и ищет международную среду; b — единственное научное и международное объявление (обмен между исследователями), и оно выигрывает методом исключения. Средняя уверенность: в задании не указана специальность, а b описывает программу обмена, а не предложение работы.",
           "explain": "Thom es científico y busca un entorno internacional; b es el único anuncio científico e internacional (intercambio entre investigadores) y se impone por eliminación. Confianza media porque el enunciado no precisa la especialidad y b describe un programa de intercambio, no una oferta de empleo."
         },
         {
@@ -201,6 +211,7 @@
           "answer": "g",
           "confidence": "hoch",
           "quote": "Du träumst von einem Job im Ausland? Dann knüpfe erste Kontakte durch ein Praktikum.",
+          "explain_ru": "Baldassarre хочет получить первый профессиональный опыт за границей, и g предлагает именно это: Auslandspraktikum как первый шаг. Формулировка «in verschiedenen Ländern» немного шире, чем «im Ausland», но a (языковая поездка) не даёт рабочего опыта.",
           "explain": "Baldassarre quiere sus primeras experiencias profesionales en el extranjero y g ofrece exactamente eso: un Auslandspraktikum como primera toma de contacto. El plural «in verschiedenen Ländern» es algo más amplio que «im Ausland», pero a (viaje de idiomas) no aporta experiencia laboral."
         },
         {
@@ -210,6 +221,7 @@
           "answer": "e",
           "confidence": "hoch",
           "quote": "Wie kleide ich mich richtig im Büro? Duzen oder siezen? Welche Themen sollten Sie im Smalltalk vermeiden?",
+          "explain_ru": "Levi сомневается, как обращаться к новым коллегам; e посвящено формам обращения в офисе и дословно спрашивает «Duzen oder siezen?». Объявление f (телефон) — тематическая ловушка.",
           "explain": "Levi duda de cómo dirigirse a colegas nuevos; e trata las formas de trato en la oficina y pregunta literalmente «Duzen oder siezen?». El anuncio f (teléfono) es el distractor temático."
         }
       ]

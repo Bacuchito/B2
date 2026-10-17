@@ -18,3 +18,8 @@ Thumbs.db
 *.swo
 .vscode/
 .idea/
+
+# Informes locales y material de trabajo: se quedan en el disco, no se publican
+# (el repositorio es publico y una auditoria interna detalla como se rompe la app)
+AUDITORIA_B2.md
+.design/

@@ -54,6 +54,8 @@ const store = {};
 const localStorage = {
   getItem: k => (k in store ? store[k] : null),
   setItem: (k, v) => { store[k] = String(v); },
+  removeItem: k => { delete store[k]; },
+  clear: () => { Object.keys(store).forEach(k => delete store[k]); },
 };
 
 const window = { scrollTo: () => {} };
@@ -175,6 +177,74 @@ check("los resultados de evaluación se pintan correctamente", /BESTANDEN|Aufgab
 check("el texto del alumno anotado con errores está presente", /Tu texto con análisis|Ich danke Sie/i.test(evalText));
 check("la regla gramatical y corrección interactiva se muestran", /Danken rige dativo|Ich danke Ihnen/i.test(evalText));
 
+/* ---------- guardado de la clave de IA ---------- */
+/* El síntoma que reportó Sergio: pegaba la clave, guardaba, y no se quedaba.
+   Aquí se comprueba la ida y vuelta real contra el almacenamiento, el estado
+   que ve el usuario y que los campos no inviten al gestor de contraseñas. */
+if (typeof window.saveAIConfig === "function") {
+  const previo = window.getAIConfig();
+  const clave = "sk-prueba-1234";
+  const cfg = Object.assign({}, previo, {
+    provider: "openai_compatible", customKey: clave,
+    customEndpoint: "https://api.deepseek.com", customModel: "deepseek-chat"
+  });
+  const guardado = window.saveAIConfig(cfg);
+  const leido = window.getAIConfig();
+  check("guardar y releer la clave de IA conserva la clave",
+    guardado === true && leido.customKey === clave && leido.provider === "openai_compatible",
+    `guardado=${guardado} proveedor=${leido.provider} clave=${leido.customKey}`);
+
+  check("aiKeyOf devuelve la clave del proveedor elegido y ninguna en Ollama",
+    window.aiKeyOf({ provider: "gemini", geminiKey: "g" }) === "g" &&
+    window.aiKeyOf({ provider: "openai_compatible", customKey: "c" }) === "c" &&
+    window.aiKeyOf({ provider: "ollama" }) === "");
+
+  check("la clave se enmascara dejando los cuatro últimos",
+    window.maskKey("sk-abcdef1234") === "••••••1234" && window.maskKey("") === "",
+    window.maskKey("sk-abcdef1234"));
+
+  check("el estado del modal dice si hay clave guardada o no",
+    /clave guardada/.test(window.aiStatusText({ provider: "gemini", geminiKey: "AIzaSy1234" })) &&
+    /sin clave/.test(window.aiStatusText({ provider: "gemini", geminiKey: "" })),
+    window.aiStatusText({ provider: "gemini", geminiKey: "AIzaSy1234" }));
+
+  const estadoGuardado = window.storageOk();
+  check("el navegador deja guardar ajustes (si no, el modal lo avisaría)",
+    estadoGuardado === true, `storageOk=${estadoGuardado}`);
+
+  if (aiConfigBtn && typeof aiConfigBtn.onclick === "function") {
+    try { aiConfigBtn.onclick(); } catch (e) { errors.push("excepción al abrir el modal de IA: " + e.message); }
+    const modalHtml = ids["modal-container"].innerHTML;
+    check("los campos de clave se libran del gestor de contraseñas del navegador",
+      /id="cfg-gemini-key"[^>]*autocomplete="new-password"/.test(modalHtml) &&
+      /id="cfg-custom-key"[^>]*autocomplete="new-password"/.test(modalHtml),
+      "autocomplete=new-password presente");
+    check("el modal muestra el estado del guardado y el botón para ver la clave",
+      /id="ai-status-text"/.test(modalHtml) && /id="btn-reveal-keys"/.test(modalHtml));
+    check("el modal recuerda la clave guardada en el campo",
+      /id="cfg-custom-key"[^>]*value="sk-prueba-1234"/.test(modalHtml));
+  }
+
+  check("el estado del modal incluye si el navegador deja guardar",
+    /se puede guardar/.test(window.aiStatusText({ provider: "gemini", geminiKey: "AIzaSy1" })),
+    window.aiStatusText({ provider: "gemini", geminiKey: "AIzaSy1" }));
+
+  check("un fallo de red se traduce a un mensaje entendible",
+    /no he podido llegar al servidor/.test(window.errorDeRed(new TypeError("Failed to fetch"))) &&
+    window.errorDeRed(new Error("HTTP 401")) === "HTTP 401",
+    window.errorDeRed(new TypeError("Failed to fetch")).slice(0, 60));
+
+  /* Si el navegador pierde lo guardado, la clave debe seguir viva en memoria
+     durante la sesión (antes desaparecía sin más). */
+  const enMemoria = window.getAIConfig().customKey;
+  localStorage.removeItem("b2quiz.ai_config");
+  check("la clave sobrevive en memoria aunque el almacenamiento se pierda",
+    enMemoria === clave && window.getAIConfig().customKey === clave,
+    `antes=${enMemoria} despues=${window.getAIConfig().customKey}`);
+
+  window.saveAIConfig(previo);
+}
+
 /* ---------- comprobación del sistema bilingüe (Ruso y Español) ---------- */
 if (typeof window.setLanguage === "function") {
   try {
@@ -191,6 +261,88 @@ if (typeof window.setLanguage === "function") {
   check("el panel de Schreiben y evaluación se actualizan a ruso", /Рабочая ситуация|Обязательные пункты плана|Текст с анализом/i.test(ruMainText), ruMainText.slice(0, 100));
   check("el veredicto de evaluación muestra сдано en ruso", /СДАНО/i.test(ruMainText));
   check("la leyenda de tipos de error se muestra en ruso", /Грамматика \/ Синтаксис/i.test(ruMainText));
+
+  /* Todo lo que sale en pantalla tiene que existir en los dos idiomas: los
+     rótulos del PDF, los avisos del extractor y el diccionario de la interfaz. */
+  if (window.I18N && window.I18N.es && window.I18N.ru) {
+    const faltanRu = Object.keys(window.I18N.es).filter(k => window.I18N.ru[k] === undefined);
+    const faltanEs = Object.keys(window.I18N.ru).filter(k => window.I18N.es[k] === undefined);
+    check("el diccionario ruso cubre todas las claves del español", faltanRu.length === 0, "faltan: " + faltanRu.join(", "));
+    check("el diccionario español cubre todas las claves del ruso", faltanEs.length === 0, "faltan: " + faltanEs.join(", "));
+  }
+  if (typeof window.localizeLabel === "function") {
+    const l1 = window.localizeLabel("Variante 2 (test 140321, 140301)");
+    const l2 = window.localizeLabel("Beschwerde – Variante 1 (Putzdienst)");
+    const l3 = window.localizeLabel("Text 2 – Variante 3 (alte Fassung bis 07.2024)");
+    check("los rótulos traducen el andamiaje y respetan los nombres alemanes",
+      l1 === "Вариант 2 (тест 140321, 140301)" &&
+      l2 === "Beschwerde – Вариант 1 (Putzdienst)" &&
+      l3 === "Текст 2 – Вариант 3 (alte Fassung bis 07.2024)",
+      `${l1} · ${l2} · ${l3}`);
+  }
+  if (typeof window.localizeSection === "function") {
+    check("las partes del examen llevan glosa rusa en el menú",
+      window.localizeSection("Lesen Teil 1") === "Lesen Teil 1 · Чтение 1" &&
+      window.localizeSection("Schreiben: Forumsbeitrag") === "Schreiben: Forumsbeitrag · Письмо: форум",
+      window.localizeSection("Lesen Teil 1"));
+  }
+  if (typeof window.noteOf === "function") {
+    check("el aviso ruso tiene prioridad y sin él se cae al español",
+      window.noteOf({ note: "español", note_ru: "русский" }) === "русский" &&
+      window.noteOf({ note: "español" }) === "español",
+      window.noteOf({ note: "español", note_ru: "русский" }));
+  }
+  if (typeof window.explainOf === "function") {
+    check("la explicación rusa tiene prioridad y sin ella se cae al español",
+      window.explainOf({ explain: "español", explain_ru: "русский" }) === "русский" &&
+      window.explainOf({ explain: "español" }) === "español",
+      window.explainOf({ explain: "español", explain_ru: "русский" }));
+  }
+  if (window.DATA && Array.isArray(window.DATA.sections)) {
+    const conAviso = [];
+    const sinRuso = [];
+    window.DATA.sections.forEach(s => (s.variants || []).forEach(v => {
+      if (v.note) { conAviso.push(v.id); if (!v.note_ru) sinRuso.push(v.id); }
+    }));
+    check("cada aviso del extractor tiene su versión rusa",
+      conAviso.length > 0 && sinRuso.length === 0,
+      `${conAviso.length} avisos, sin ruso: ${sinRuso.slice(0, 4).join(", ")}`);
+
+    const conExplain = [];
+    const explainSinRuso = [];
+    window.DATA.sections.forEach(s => (s.variants || []).forEach(v => {
+      (v.items || []).forEach(it => {
+        if (it.explain) {
+          conExplain.push(v.id);
+          if (!it.explain_ru) explainSinRuso.push(`${v.id}#${it.n}`);
+        }
+      });
+    }));
+    check("cada explicación de respuesta tiene su versión rusa",
+      conExplain.length > 0 && explainSinRuso.length === 0,
+      `${conExplain.length} explicaciones, sin ruso: ${explainSinRuso.slice(0, 4).join(", ")}`);
+
+    /* Integración real: abrir una variante con aviso y leer lo que se pinta. */
+    let objetivo = null;
+    window.DATA.sections.forEach(s => (s.variants || []).forEach(v => {
+      if (!objetivo && v.note && v.note_ru && v.kind !== "schreiben") objetivo = v;
+    }));
+    if (objetivo) {
+      const etiqueta = window.localizeLabel ? window.localizeLabel(objetivo.label) : objetivo.label;
+      const boton = todas.find(el => el.tagName === "button" &&
+        typeof el.innerHTML === "string" && el.innerHTML.indexOf(etiqueta.slice(0, 18)) !== -1);
+      if (boton && typeof boton.onclick === "function") {
+        boton.onclick();
+        const texto = ids.main.collectText();
+        check("al abrir una variante en ruso el aviso sale traducido",
+          texto.indexOf(objetivo.note_ru.slice(0, 30)) !== -1 &&
+          texto.indexOf(objetivo.note.slice(0, 30)) === -1,
+          `${objetivo.id}: ${texto.slice(0, 70)}`);
+      } else {
+        check("al abrir una variante en ruso el aviso sale traducido", false, "no encontré el botón del menú");
+      }
+    }
+  }
 
   // Abrir modal en ruso
   if (aiConfigBtn && typeof aiConfigBtn.onclick === "function") {

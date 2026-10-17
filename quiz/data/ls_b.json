@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "ls_b-p70",
+   "note_ru": "Блок с. 70 включает предшествующее внутреннее письмо (Dorothee Sturm поручает отправить техника и ответить с извинениями): оно относится к заданию по письму (пункт 21) и исключено из passage. Вопросы 19 и 20 решаются полностью по письму-рекламации Claudio Krüger.",
    "label": "Beschwerde – Variante 4 (Spülmaschine)",
    "topic": "Spülmaschine",
    "page": 70,
@@ -33,6 +34,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Beim Spülen ist Wasser ausgelaufen und nun ist unser Parkett beschädigt.",
+     "explain_ru": "Верно b: посудомоечная машина дала течь во время мойки и повредила паркет на кухне («Beim Spülen ist Wasser ausgelaufen und nun ist unser Parkett beschädigt»), то есть произошло повреждение водой (Wasserschaden). a неверно, потому что клиент просит не новую машину, а ремонт существующей («der das Gerät repariert»); c неверно, потому что ремонта ещё не было: жалоба на поломку только что установленной машины.",
+
      "explain": "Correcto b: el lavavajillas derramó agua durante el lavado y dañó el parqué de la cocina («Beim Spülen ist Wasser ausgelaufen und nun ist unser Parkett beschädigt»), es decir, se produjo un daño por agua (Wasserschaden). a es falso porque no pide una máquina nueva sino la reparación de la existente («der das Gerät repariert»); c es falso porque aún no se han hecho reparaciones, la queja es por la avería de la máquina recién instalada."
     },
     {
@@ -56,12 +59,15 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Wir brauchen die Spülmaschine spätestens übermorgen, da wir ein großes Meeting unserer Außendienstmitarbeiter haben und viele Personen bewirten müssen.",
+     "explain_ru": "Верно b: клиенту нужен отремонтированный прибор не позднее послезавтра («spätestens übermorgen»), то есть в срок два дня, к важной встрече. a неверно, потому что он не просит оплатить ему ремонт, а требует гарантии ремонта и покрытия расходов; c неверно, потому что замену паркета они организуют сами и выставят компании счёт («müssen wir einen Teil des Parketts austauschen. Die Kosten dafür werden wir Ihnen in Rechnung stellen»).",
+
      "explain": "Correcto b: el cliente necesita el aparato reparado a más tardar pasado mañana («spätestens übermorgen»), es decir, en un plazo de dos días, para una reunión importante. a es falso porque no pide que le cobren la reparación, sino una garantía de reparación y asunción de costes; c es falso porque la sustitución del parqué la gestionan ellos mismos y le pasarán la factura a la empresa («müssen wir einen Teil des Parketts austauschen. Die Kosten dafür werden wir Ihnen in Rechnung stellen»)."
     }
    ]
   },
   {
    "id": "ls_b-p71a",
+   "note_ru": "На с. 71 представлена рекламация по переезду из Hanau во Франкфурт с двумя формулировками вопросов (Fassung 1: Thomas Zaun / Börne; Fassung 2: Matteo Lozano / Prince). Внутреннее письмо Frieda Börne опущено, так как относится к заданию по письму.",
    "label": "Beschwerde – Variante 5 (Umzug – Fassung 1, Thomas Zaun)",
    "topic": "Umzug",
    "page": 71,
@@ -91,6 +97,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Ihre Mitarbeiter kamen eine halbe Stunde zu spät und nur zu dritt statt wie vereinbart zu viert.",
+     "explain_ru": "Верно a: он жалуется на непунктуальность и нехватку людей у бригады грузчиков («Ihre Mitarbeiter kamen eine halbe Stunde zu spät und nur zu dritt statt wie vereinbart zu viert») и на причинённые повреждения. b неверно, потому что речь не о товарах, а об услуге переезда; c неверно, потому что поставка не пропала: переезд состоялся, но с опозданием и ущербом.",
+
      "explain": "Correcto a: se queja de la impuntualidad y la falta de personal del equipo de mudanza («Ihre Mitarbeiter kamen eine halbe Stunde zu spät und nur zu dritt statt wie vereinbart zu viert») así como de los desperfectos que ocasionaron. b es falso porque no se trata de productos sino de un servicio de mudanza; c es falso porque no falta una entrega, la mudanza se realizó pero con retraso y daños."
     },
     {
@@ -114,12 +122,15 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Des Weiteren sind Glasplatten zu Bruch gegangen und einige Schränke sind verkratzt. Ich gehe davon aus, dass Ihre Firma die Kosten dafür übernimmt.",
+     "explain_ru": "Верно c: он требует, чтобы компания взяла на себя расходы на разбитые стёкла и поцарапанную мебель («dass Ihre Firma die Kosten dafür übernimmt»), что равнозначно требованию возмещения ущерба (Schadensersatz). a неверно, потому что переезжали ИЗ Hanau В Франкфурт («von Hanau nach Frankfurt umgezogen»), а не в Hanau; b неверно, потому что переезд состоялся в выходные, а не был отложен.",
+
      "explain": "Correcto c: exige que la empresa asuma el coste de los cristales rotos y muebles rayados («dass Ihre Firma die Kosten dafür übernimmt»), lo que equivale a reclamar una indemnización por daños (Schadensersatz). a es falso porque se mudaron DE Hanau A Fráncfort («von Hanau nach Frankfurt umgezogen»), no hacia Hanau; b es falso porque la mudanza se llevó a cabo el fin de semana, no se aplazó."
     }
    ]
   },
   {
    "id": "ls_b-p71b",
+   "note_ru": "Вторая формулировка вопросов с. 71 («второй вариант вопросов») с альтернативными именами (Matteo Lozano, Sophia Prince), отмеченными в оригинале.",
    "label": "Beschwerde – Variante 5 (Umzug – Fassung 2, Matteo Lozano)",
    "topic": "Umzug",
    "page": 71,
@@ -149,6 +160,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Deshalb dauerte der ganze Umzug natürlich länger als geplant und einige Arbeiten sind auch noch nicht abgeschlossen:",
+     "explain_ru": "Верно b: переезд затянулся («dauerte der ganze Umzug natürlich länger als geplant»), потому что грузчики пришли на полчаса позже и их было трое вместо четырёх. a неверно, потому что работали трое грузчиков («nur zu dritt statt wie vereinbart zu viert»); c неверно, потому что всю мебель перевезли, осталась несделанной сборка («Es sind noch nicht alle Möbel aufgebaut»).",
+
      "explain": "Correcto b: la mudanza sufrió demoras («dauerte der ganze Umzug natürlich länger als geplant») debido a que los operarios llegaron media hora tarde y eran tres en vez de cuatro. a es falso porque trabajaron tres mozos («nur zu dritt statt wie vereinbart zu viert»); c es falso porque los muebles se transportaron todos, lo que quedó pendiente fue el montaje («Es sind noch nicht alle Möbel aufgebaut»)."
     },
     {
@@ -172,12 +185,15 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Des Weiteren sind Glasplatten zu Bruch gegangen und einige Schränke sind verkratzt. Ich gehe davon aus, dass Ihre Firma die Kosten dafür übernimmt.",
+     "explain_ru": "Верно b: он требует, чтобы компания покрыла расходы на повреждения стёкол и шкафов («Ich gehe davon aus, dass Ihre Firma die Kosten dafür übernimmt»), то есть возмещение ущерба. a неверно, потому что переезд выполнялся в выходные; c неверно, потому что перевозили из Hanau во Франкфурт.",
+
      "explain": "Correcto b: reclama que la empresa cubra los costes de los daños causados en cristales y armarios («Ich gehe davon aus, dass Ihre Firma die Kosten dafür übernimmt»), es decir, indemnización por daños. a es falso porque la mudanza se ejecutó durante el fin de semana; c es falso porque el traslado fue de Hanau a Fráncfort."
     }
    ]
   },
   {
    "id": "ls_b-p72a",
+   "note_ru": "На с. 72 представлена рекламация Benno Schmidt о сломанном копире с двумя наборами альтернативных вопросов в PDF. В пункте 20 (Die Firma Copyprofi) вариант a («besteht auf der Bezahlung der Rechnungen») отражает ответ из внутреннего письма Sibyl Aichele («Die Kosten für die Überprüfung des Geräts bleiben die Angelegenheit der Mova GmbH»); поскольку это письмо относится к заданию по письму и остаётся вне passage, уверенность помечена как «mittel».",
    "label": "Beschwerde – Variante 6 (Der Drucker – Fassung 1)",
    "topic": "Der Drucker",
    "page": 72,
@@ -207,6 +223,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "vorgestern wurde von einem Ihrer Mitarbeiter unser fast neues Druck- und Kopiergerät der Marke Lexios zum dritten Mal innerhalb von zwei Wochen geprüft, da bei diesem immer wieder Papierstaus aufgetreten sind.",
+     "explain_ru": "Верно a: прибор «fast neu» (почти новый), и его за две недели проверяли трижды, что говорит о том, что в офисе он работает недолго. b неверно, потому что клиент просит не очередную проверку, а немедленную замену на другую машину («ein anderes Gerät zu liefern»); c не подтверждается, потому что сервисная служба объясняет сбои неправильным использованием.",
+
      "explain": "Correcto a: el aparato es «fast neu» (casi nuevo) y ha sido revisado tres veces en dos semanas, lo que indica que lleva poco tiempo en funcionamiento en la oficina. b es falso porque el cliente no pide otra revisión sino la sustitución inmediata por otra máquina («ein anderes Gerät zu liefern»); c no es seguro porque el servicio técnico achaca los fallos al mal uso."
     },
     {
@@ -230,12 +248,15 @@
      "answer": "a",
      "confidence": "mittel",
      "quote": "Die Rechnungen für die drei vorangegangenen Technikereinsätze werden wir natürlich nicht bezahlen.",
+     "explain_ru": "Верно a: клиент отказывается оплачивать три предыдущих счёта («werden wir natürlich nicht bezahlen»), а компания Copyprofi настаивает на их оплате (во внутреннем письме: «Die Kosten für die Überprüfung des Geräts bleiben die Angelegenheit der Mova GmbH»). Средняя уверенность: явное подтверждение позиции компании находится во внутренней записке, исключённой из текста для чтения. b и c неверны: компания не меняет оборудование и не предлагает бесплатный ремонт, только обучающее занятие для персонала.",
+
      "explain": "Correcto a: el cliente rechaza pagar las tres facturas anteriores («werden wir natürlich nicht bezahlen») y la empresa Copyprofi insiste en que las abone (en el correo interno: «Die Kosten für die Überprüfung des Geräts bleiben die Angelegenheit der Mova GmbH»). Confianza media porque la confirmación explícita de la postura de la empresa está en la nota interna excluida del texto de lectura. b y c son falsos: la empresa no cambia el equipo ni ofrece repararlo gratis, solo una sesión formativa al personal."
     }
    ]
   },
   {
    "id": "ls_b-p72b",
+   "note_ru": "Вторая формулировка вопросов с. 72 («второй вариант вопросов»): пункты о проблеме замятий бумаги и требовании заменить устройство.",
    "label": "Beschwerde – Variante 6 (Der Drucker – Fassung 2)",
    "topic": "Der Drucker",
    "page": 72,
@@ -265,6 +286,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "da bei diesem immer wieder Papierstaus aufgetreten sind.",
+     "explain_ru": "Верно b: клиент отмечает, что в машине постоянно происходят замятия бумаги («immer wieder Papierstaus aufgetreten sind»). a неверно, потому что аппарат почти новый («fast neues … Gerät»), а не старая модель; c неверно, потому что его уже трижды проверяли за две недели («zum dritten Mal innerhalb von zwei Wochen geprüft»).",
+
      "explain": "Correcto b: el cliente señala que la máquina sufre atascos de papel continuos («immer wieder Papierstaus aufgetreten sind»). a es falso porque es un aparato casi nuevo («fast neues … Gerät»), no un modelo antiguo; c es falso porque ya se inspeccionó tres veces en dos semanas («zum dritten Mal innerhalb von zwei Wochen geprüft»)."
     },
     {
@@ -288,6 +311,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "wir fordern Sie aber auf, uns umgehend auf Ihre Kosten ein anderes Gerät zu liefern.",
+     "explain_ru": "Верно a: клиент официально требует предоставить ему другое устройство на замену за счёт компании-поставщика («fordern Sie aber auf, uns umgehend auf Ihre Kosten ein anderes Gerät zu liefern»). b неверно, потому что он отказывается от дальнейших технических проверок, которые не устраняют неисправность; c неверно, потому что он категорически отказывается платить по счетам за предыдущие вмешательства («werden wir natürlich nicht bezahlen»).",
+
      "explain": "Correcto a: el cliente exige formalmente que le entreguen otro aparato de sustitución a cargo de la empresa proveedora («fordern Sie aber auf, uns umgehend auf Ihre Kosten ein anderes Gerät zu liefern»). b es falso porque rechaza más revisiones técnicas que no solucionan el fallo; c es falso porque se niega rotundamente a pagar las facturas de las intervenciones previas («werden wir natürlich nicht bezahlen»)."
     }
    ]

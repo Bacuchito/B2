@@ -36,6 +36,7 @@ quiz/
 ├─ SPEC.md               ← contrato de datos que siguen los extractores
 ├─ make_quiz_sources.py  ← parte el Markdown en bloques por página
 ├─ smoke_test.js         ← ejecuta el visor con un DOM simulado
+├─ design_audit.js       ← audita el diseño: contraste WCAG, rejilla de 4pt, áreas táctiles, foco, físicas
 ├─ verified.json         ← respuestas confirmadas por una 2ª lectura
 ├─ data/                 ← un JSON por bloque (la fuente de verdad)
 └─ src/                  ← Markdown por bloque, entrada de los extractores
@@ -51,6 +52,7 @@ $node = "C:\Users\sergi\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\
 & $py quiz\build.py quiz\data quiz\template.html quiz\B2_quiz.html
 & $node quiz\smoke_test.js quiz\B2_quiz.html
 & $node quiz\security_test.js quiz\B2_quiz.html
+& $node quiz\design_audit.js quiz\template.html
 ```
 
 `build.py` **valida antes de generar** y no escribe el HTML si hay errores.
@@ -59,6 +61,51 @@ que un simple chequeo de sintaxis no ve.
 `security_test.js` cubre los cuatro fallos críticos de la auditoría del 17/10/2026
 (inyección por `?room=`, ruptura del atributo `value` del modal, evaluación de la
 pareja con datos maliciosos y evaluación malformada que rompía la pantalla).
+`design_audit.js` no abre ningún navegador: lee el CSS, resuelve los tokens, compone
+las transparencias sobre el fondo real y comprueba 44 reglas de diseño (contraste
+mínimo 4.5:1, espaciado múltiplo de 4, áreas táctiles de 28px/44px, foco visible,
+movimiento reducido, cristal, sombras multicapa y estados de presión).
+
+## Sistema de diseño
+
+Todo el aspecto vive en el bloque `<style>` de `template.html` y sale de tokens
+(valores con nombre reutilizables). Para cambiar el tema **no hay que tocar los
+componentes**: basta el bloque `:root`.
+
+| Grupo | Tokens | Para qué |
+|---|---|---|
+| Color | `--bg`, `--panel`, `--panel2`, `--panel3`, `--line` | Fondos y superficies |
+| Texto | `--txt`, `--dim`, `--dim-2` | Tres niveles de jerarquía |
+| Acento | `--acc`, `--acc-fill-1/2`, `--acc-ink` | Rellenos (texto blanco) y texto de acento |
+| Semánticos | `--ok`, `--bad`, `--warn`, `--violet-ink` y sus `-ink` | Aciertos, fallos, avisos |
+| Espaciado | `--sp-1` … `--sp-8` (4, 8, 12, 16, 24, 32, 48, 64) | Rejilla de 4/8pt |
+| Tipografía | `--fs-micro` … `--fs-h2` (11, 12, 13, 15, 17, 20, 27) | Seis pasos, sin tallas sueltas |
+| Movimiento | `--dur-1/2/3`, `--ease`, `--spring` | Duraciones y curvas elásticas |
+| Elevación | `--sh-1/2/3`, `--lit` | Sombra amplia + corta, borde de luz |
+
+Las tres familias tipográficas son del sistema (`--font-ui`, `--font-read` serif
+para textos largos y `--font-mono`): la app sigue funcionando sin conexión y sin
+descargar fuentes.
+
+## Bilingüismo (ES / RU)
+
+La regla es una: **lo que es examen va en alemán; lo que es ayuda va traducido.**
+Los textos alemanes (enunciados, opciones, pasajes, citas) no se tocan nunca,
+porque son justo lo que hay que practicar.
+
+| Qué | Dónde vive | Cómo se traduce |
+|---|---|---|
+| Interfaz (botones, avisos, errores) | `I18N` en `template.html` | Clave en `es` y en `ru`. `smoke_test.js` falla si una clave existe solo en un idioma. |
+| Avisos del extractor (⚠) | `note_ru` junto a `note` en `quiz/data/*.json` | Se usa `note_ru` en ruso; si falta, cae al español. |
+| Rótulos de variante | `label` en los datos | `localizeLabel()` traduce el andamiaje («Variante» → «Вариант», «nueva versión» → «новая версия», «test» → «тест») y deja intactos los nombres alemanes (Beschwerde, Protokoll, temas). |
+| Partes del examen | `SECTIONS` en `build.py` | `localizeSection()` añade la glosa rusa al nombre alemán («Lesen Teil 1 · Чтение 1»). |
+| Explicaciones de cada respuesta | `explain_ru` junto a `explain` en `quiz/data/*.json` | Se usa `explain_ru` en ruso; si falta, cae al español. `smoke_test.js` comprueba que las 226 la tengan. |
+
+Para añadir la versión rusa de un aviso o de una explicación, escribe `"note_ru"`
+o `"explain_ru"` justo debajo de su campo en español, en el JSON de la variante.
+`smoke_test.js` comprueba que cada aviso (`note`) y cada explicación (`explain`)
+tengan su versión rusa, y que el diccionario de la interfaz esté completo en los
+dos idiomas.
 
 ## Seguridad y sincronización
 
@@ -71,6 +118,16 @@ pareja con datos maliciosos y evaluación malformada que rompía la pantalla).
   redacciones, porque no hay login. El enlace se copia desde «⚙ Configurar IA».
 - **Las claves de API viven solo en tu `localStorage`** y viajan directamente al
   proveedor que elijas: no se comparten con la pareja ni con GitHub Pages.
+  En el modal «⚙ Configurar IA» la cabecera dice el proveedor activo, si hay clave
+  guardada (enmascarada) y si el navegador deja guardarla; con «Ver clave» se
+  comprueba lo que hay dentro del campo. **«Probar conexión» también guarda**, así
+  que probar no deja la clave a medias. Si el navegador bloquea el almacenamiento,
+  la clave sigue funcionando durante esa sesión (queda en memoria) y el modal lo
+  avisa en vez de perderla en silencio.
+  Ojo: abrir la app como fichero local (`file://`) y abrirla desde el enlace web
+  son **dos almacenes distintos**; lo guardado en uno no aparece en el otro.
+  Si una prueba falla con «no he podido llegar al servidor», el problema es de red,
+  clave o endpoint, no del guardado.
 - La insignia de la nube dice la verdad: si una escritura falla, muestra
   «Sin sincronizar» en rojo. Un borrador escrito sin conexión se sube al volver a
   abrir la tarea (solo si la nube aún no tiene nada tuyo: nunca pisa un texto que sí llegó).

@@ -4,6 +4,7 @@
   "variants": [
     {
       "id": "t4_b-p47",
+      "note_ru": "Первая версия Protokoll «neue Werbemaßnahmen, Frau Schlosser» (с. 47-48): протокол занимает две страницы, пять вопросов 14-18 — в конце с. 48. Это версия без пометки «Новая версия»; на с. 49 — вторая версия того же протокола с переписанным TOP 3 и новыми вопросами (→ t4_b-p49). Варианты пунктов 16, 17 и 18 здесь идут в другом порядке, чем во второй версии.",
       "label": "Variante 1",
       "page": 47,
       "note": "Primera versión del Protokoll «neue Werbemaßnahmen, Frau Schlosser» (pp. 47-48): el acta ocupa las dos páginas y las cinco preguntas 14-18 están al final de la p. 48. Es la versión sin la marca «Новая версия»; la p. 49 trae una segunda versión del mismo acta con el TOP 3 reescrito y preguntas nuevas (→ t4_b-p49). Las opciones de los ítems 16, 17 y 18 aparecen aquí en otro orden que en esa segunda versión.",
@@ -32,6 +33,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Für alle diese Maßnahmen steht insgesamt ein Budget von 150.000 € zur Verfügung.",
+          "explain_ru": "Верно b: протокол устанавливает для всех рекламных мер общий бюджет («insgesamt ein Budget») в 150 000 € — ровно столько и указано в варианте. a неверно, потому что собственных креативных сотрудников не ищут: CM поручают найти внешнее рекламное агентство, а SW — связаться с фотографами и текстовиками («professionellen Fotografen und Textern»), то есть с внешними подрядчиками, а не со штатными работниками. c неверно, потому что сметы ещё не запрошены: CM «wird beauftragt … einen Kostenvoranschlag … einzuholen» (поручение на будущее), а результаты обоих поисков представят на собрании 10.03.20XX.",
           "explain": "Correcto b: el acta fija para todas las medidas publicitarias un presupuesto total («insgesamt ein Budget») de 150.000 €, que es exactamente el importe de la opción. a es falso porque no se busca personal creativo propio: lo que se hace es encargar a CM que encuentre una agencia de publicidad externa y a SW que contacte con fotógrafos y redactores («professionellen Fotografen und Textern»), proveedores externos, no trabajadores de la plantilla. c es falso porque los presupuestos todavía no se han pedido: CM «wird beauftragt … einen Kostenvoranschlag … einzuholen» (encargo para el futuro) y los resultados de ambas búsquedas se presentarán en la reunión del 10.03.20XX."
         },
         {
@@ -55,6 +57,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Zu den in der Besprechung vom 11.01.20XX vorgeschlagenen Maßnahmen hat MH im Vorfeld allen Sitzungsteilnehmenden erste Ergebnisse des Arbeitskreises „Optimierung innerer Kommunikationsstrukturen\" in Form eines Konzeptpapiers zukommen lassen.",
+          "explain_ru": "Верно a: MH (Martin Hamann) уже подготовил документ с концепцией («in Form eines Konzeptpapiers») с первыми результатами своей рабочей группы и разослал его всем участникам до собрания, то есть концепция у него уже готова. b неверно по причине отсутствия: MH не может участвовать «aus gesundheitlichen Gründen» (по состоянию здоровья), а не по рабочим делам («dienstlich»). c неверно, потому что он как раз не может присутствовать, и вопрос отложен до собрания 10.03.20XX.",
           "explain": "Correcto a: MH (Martin Hamann) ya había elaborado un documento de concepto («in Form eines Konzeptpapiers») con los primeros resultados de su grupo de trabajo y lo envió a todos los participantes antes de la reunión, es decir, tiene un concepto ya preparado. b es falso por el motivo de la ausencia: MH no puede asistir «aus gesundheitlichen Gründen» (razones de salud), no por motivos de trabajo («dienstlich»). c es falso porque precisamente no puede asistir y el punto se aplaza a la reunión del 10.03.20XX."
         },
         {
@@ -78,6 +81,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Sie schlägt ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr vor, in dem eine Mittagspause von 30 Minuten gemacht werden kann.",
+          "explain_ru": "Верно a: предложение MR — обеденный перерыв «von 30 Minuten», то есть продолжительностью 30 минут. b и c путают, что именно расширяют: расширяется временной интервал, в который можно сделать перерыв («ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr»), а не сам перерыв, который остаётся 30-минутным; и ничего не сдвигается на 30 минут.",
           "explain": "Correcto a: la propuesta de MR es una pausa de mediodía «von 30 Minuten», es decir, de 30 minutos de duración. b y c confunden lo que se amplía: lo que se amplía es la franja horaria en la que se puede hacer la pausa («ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr»), no la pausa misma, que sigue siendo de 30 minutos; y nada se pospone 30 minutos."
         },
         {
@@ -101,6 +105,7 @@
           "answer": "a",
           "confidence": "mittel",
           "quote": "MR formuliert dazu eine Mitteilung und wird diese intern kommunizieren und am Schwarzen Brett des Betriebsrats aushängen.",
+          "explain_ru": "Верно a: о месте сообщают объявлением, которое вывешивают на доске объявлений («am Schwarzen Brett … aushängen») — это и есть «Informationstafel» из варианта; кроме того, план расположения обновляют с новыми местами. Уверенность средняя, потому что в тексте сказано «Schwarzes Brett», а не буквально «Informationstafel». c неверно, хотя и повторяет правильные названия ворот: одну конструкцию ставят «neben Tor 2», другую «neben Tor 3» — у каждых ворот, а не между ними. b неверно, потому что объявление адресовано всему коллективу («intern kommunizieren», «an die Belegschaft») и вывешивается на доске совета трудового коллектива, а не направляется Betriebsrat.",
           "explain": "Correcto a: el emplazamiento se da a conocer mediante un comunicado que se publica en el tablón de anuncios («am Schwarzen Brett … aushängen»), que es la «Informationstafel» de la opción; además se retoca el plano de situación con las nuevas ubicaciones. La confianza es media porque el texto dice «Schwarzes Brett», no literalmente «Informationstafel». c es falso aunque repite los nombres correctos: las dos estructuras se instalan una «neben Tor 2» y la otra «neben Tor 3», junto a cada puerta y no entre ambas. b es falso porque el comunicado va dirigido a toda la plantilla («intern kommunizieren», «an die Belegschaft») y se cuelga en el tablón del comité de empresa, no es un aviso dirigido al Betriebsrat."
         },
         {
@@ -124,12 +129,14 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "Ansprechpartnerin bis zu ihrer Rückkehr wird für alle ab sofort Frau Meier im Büro von Frau Schmidt sein.",
+          "explain_ru": "Верно c: пока Frau Schlosser находится в Mutterschutz, а затем в Elternzeit, контактным лицом становится Frau Meier «bis zu ihrer Rückkehr», то есть она её замещает. b неверно, потому что она не покидает предприятие: она уходит в Mutterschutz и Elternzeit, и её возвращение планируется. a неверно: подарками занимается Frau Meier («Frau Meier wird … sich auch um kleine Geschenke für Mutter und Kind … kümmern») и от имени коллег; Frau Schmidt упомянута лишь как хозяйка кабинета, в котором работает Frau Meier.",
           "explain": "Correcto c: mientras Frau Schlosser está de baja por maternidad y luego de permiso parental, Frau Meier pasa a ser la persona de contacto «bis zu ihrer Rückkehr», es decir, la sustituye. b es falso porque no abandona la empresa: se marcha al Mutterschutz y a la Elternzeit y se prevé su regreso. a es falso: quien se ocupa de los regalos es Frau Meier («Frau Meier wird … sich auch um kleine Geschenke für Mutter und Kind … kümmern»), y además en nombre de los colegas; Frau Schmidt solo aparece como la persona en cuyo despacho trabaja Frau Meier."
         }
       ]
     },
     {
       "id": "t4_b-p49",
+      "note_ru": "Вторая версия того же протокола (с. 49-50, «Новая версия от 07.2024: пункт 3 новый и новые вопросы»): TOP 3 переписан (теперь MH присылает предложения по улучшению качества продукта, и вопрос откладывается), пункты 14-18 новые, варианты 16, 17 и 18 идут в другом порядке; ответы меняют букву по сравнению с t4_b-p47. Русская пометка в заголовке убрана. Протокол занимает с. 49-50, вопросы — в конце с. 50.",
       "label": "Variante 1 (Новая версия от 07.2024)",
       "page": 49,
       "note": "Segunda versión del mismo acta (pp. 49-50, «Новая версия от 07.2024: пункт 3 новый и новые вопросы»): el TOP 3 está reescrito (ahora MH envía propuestas para mejorar la calidad del producto y el punto se aplaza) y los ítems 14-18 son nuevos, con las opciones de 16, 17 y 18 en otro orden; las respuestas cambian de letra respecto a t4_b-p47. Se ha eliminado la anotación rusa de la cabecera. El acta ocupa las pp. 49-50 y las preguntas están al final de la p. 50.",
@@ -158,6 +165,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Für alle diese Maßnahmen steht insgesamt ein Budget von 150.000 € zur Verfügung.",
+          "explain_ru": "Верно a: бюджет на все меры составляет 150 000 €, значит они могут стоить до этой суммы. b неверно и противоречит протоколу: решено как раз активнее использовать соцсети, такие как Facebook и Instagram («Deshalb sollen soziale Medien … verstärkt genutzt werden»), и дополнительно открыть интернет-магазин. c неверно, потому что на собрании 10.03.20XX представят только результаты двух поисков, а порядок действий определят, когда будет вся информация: реализация на следующем собрании не планируется.",
           "explain": "Correcto a: el presupuesto disponible para todas las medidas es de 150.000 €, de modo que pueden costar hasta esa cantidad. b es falso y contradice el acta: lo que se decide es precisamente utilizar más los medios sociales como Facebook e Instagram («Deshalb sollen soziale Medien … verstärkt genutzt werden») y abrir además una tienda en línea. c es falso porque en la reunión del 10.03.20XX solo se presentarán los resultados de las dos búsquedas y el procedimiento se definirá cuando esté toda la información: la ejecución no está prevista para la próxima reunión."
         },
         {
@@ -181,6 +189,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "MH hat vor der heutigen Sitzung allen Anwesenden erste Vorschläge zur Verbesserung der Produktqualität zugeschickt, die er mit seiner Arbeitsgruppe erstellt hat.",
+          "explain_ru": "Верно a: MH заранее разослал всем участникам первые результаты своей рабочей группы («erste Vorschläge … zugeschickt, die er mit seiner Arbeitsgruppe erstellt hat»). b неверно: внедрение мер по обеспечению качества откладывается, потому что вопрос отложен («Damit verschiebt sich auch die Umsetzung der Maßnahmen zur Qualitätssicherung»); на начало марта MH обещает только новые идеи. c неверно, потому что он не участвует в собрании из-за болезни («Da MH heute wegen Krankheit nicht an dem Meeting teilnehmen kann»).",
           "explain": "Correcto a: MH envió por adelantado a todos los asistentes los primeros resultados de su grupo de trabajo («erste Vorschläge … zugeschickt, die er mit seiner Arbeitsgruppe erstellt hat»). b es falso: la aplicación de las medidas de aseguramiento de la calidad se retrasa porque el punto se aplaza («Damit verschiebt sich auch die Umsetzung der Maßnahmen zur Qualitätssicherung»); lo único que MH promete para principios de marzo son nuevas ideas. c es falso porque no asiste a la reunión por enfermedad («Da MH heute wegen Krankheit nicht an dem Meeting teilnehmen kann»)."
         },
         {
@@ -204,6 +213,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "Sie schlägt ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr vor, in dem eine Mittagspause von 30 Minuten gemacht werden kann.",
+          "explain_ru": "Верно c: обеденный перерыв «von 30 Minuten», то есть длится 30 минут. a и b неверны по одной причине: расширяется не перерыв, а временной интервал для него («ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr»); его ни удлиняют, ни сдвигают на 30 минут.",
           "explain": "Correcto c: la pausa de mediodía es «von 30 Minuten», es decir, dura 30 minutos. a y b son falsas por el mismo motivo: lo que se amplía no es la pausa, sino la franja horaria para hacerla («ein erweitertes Zeitfenster zwischen 11:30 Uhr und 13:00 Uhr»); ni se alarga ni se desplaza 30 minutos."
         },
         {
@@ -227,6 +237,7 @@
           "answer": "c",
           "confidence": "mittel",
           "quote": "MR formuliert dazu eine Mitteilung und wird diese intern kommunizieren und am Schwarzen Brett des Betriebsrats aushängen.",
+          "explain_ru": "Верно c: о месте велопарковки сообщают объявлением, которое вывешивают на доске объявлений («am Schwarzen Brett … aushängen») — это и есть «Informationstafel» из варианта; план расположения тоже обновляют. Уверенность средняя, потому что в тексте буквально «Schwarzes Brett», а не «Informationstafel». b неверно, хотя ворота названы верно: одну ставят «neben Tor 2», другую «neben Tor 3» — у каждого входа, а не между воротами. a неверно, потому что объявление предназначено всему коллективу («intern kommunizieren») и публикуется только на доске совета трудового коллектива; это не уведомление для Betriebsrat.",
           "explain": "Correcto c: el emplazamiento de los aparcabicis se da a conocer con un comunicado que se cuelga en el tablón de anuncios («am Schwarzen Brett … aushängen»), equivalente a la «Informationstafel» de la opción; el plano de situación también se actualiza con las nuevas ubicaciones. La confianza es media porque el texto literal dice «Schwarzes Brett» y no «Informationstafel». b es falso pese a citar bien las puertas: se instala uno «neben Tor 2» y otro «neben Tor 3», junto a cada acceso, no entre las dos puertas. a es falso porque el comunicado es para toda la plantilla («intern kommunizieren») y solo se publica en el tablón del comité de empresa; no es un aviso que se le dé al Betriebsrat."
         },
         {
@@ -250,6 +261,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Ansprechpartnerin bis zu ihrer Rückkehr wird für alle ab sofort Frau Meier im Büro von Frau Schmidt sein.",
+          "explain_ru": "Верно b: Frau Meier будет контактным лицом «bis zu ihrer Rückkehr», значит она замещает Frau Schlosser на время её отсутствия. a неверно, потому что Frau Schlosser не уходит с предприятия: она уходит в Mutterschutz и Elternzeit, и её возвращение планируется. c неверно, потому что подарками занимается Frau Meier («Frau Meier wird … sich auch um kleine Geschenke für Mutter und Kind … kümmern») от имени коллег; Frau Schmidt упомянута лишь как хозяйка кабинета, в котором работает Frau Meier.",
           "explain": "Correcto b: Frau Meier será la persona de contacto «bis zu ihrer Rückkehr», luego sustituye a Frau Schlosser durante su ausencia. a es falso porque Frau Schlosser no deja la empresa: se va al Mutterschutz y a la Elternzeit y se cuenta con su vuelta. c es falso porque los regalos los gestiona Frau Meier («Frau Meier wird … sich auch um kleine Geschenke für Mutter und Kind … kümmern») en nombre de los colegas; Frau Schmidt solo aparece como la titular del despacho en el que trabaja Frau Meier."
         }
       ]

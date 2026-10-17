@@ -4,6 +4,7 @@
   "variants": [
     {
       "id": "t2_c-p25a",
+      "note_ru": "Тот же текст Willkommensmappe (Arbeitsunfälle); это старая версия пунктов 8 и 9, до 08.2024.",
       "label": "Text 2 – Variante 1 (alte Antwortversion bis 08.2024)",
       "page": 25,
       "note": "Mismo texto de la Willkommensmappe (Arbeitsunfälle); esta es la versión antigua de los ítems 8 y 9, anterior a 08.2024.",
@@ -22,6 +23,7 @@
           "answer": "Falsch",
           "confidence": "hoch",
           "quote": "Zu Arbeitsunfällen zählen auch Wegeunfälle, also Unfälle, die sich auf dem direkten Weg zwischen dem Wohngebäude und der Arbeitsstätte ereignen.",
+          "explain_ru": "В тексте прямо включены «Wegeunfälle» (несчастные случаи по дороге) на прямом пути между домом и работой, и даже покрываются необходимые отклонения, например дорога в детский сад. Транспорт не имеет значения («unabhängig davon, mit welchen Verkehrsmitteln man sich fortbewegt»), поэтому падение с велосипеда по дороге на работу считается несчастным случаем на производстве, и утверждение неверно.",
           "explain": "El texto incluye expresamente los «Wegeunfälle» (accidentes in itinere) en el trayecto directo entre la vivienda y el lugar de trabajo, e incluso cubre desvíos necesarios como el camino a la guardería. El medio de transporte es irrelevante («unabhängig davon, mit welchen Verkehrsmitteln man sich fortbewegt»), así que un accidente de bicicleta de camino al trabajo sí cuenta como accidente laboral y la afirmación es falsa."
         },
         {
@@ -36,12 +38,14 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Im Falle einer Arbeitsunfähigkeit nach einem Arbeitsunfall erhalten Arbeitnehmende für sechs Wochen eine Lohnfortzahlung vom Arbeitgeber, danach übernimmt die Berufsgenossenschaft (BG), zahlt u. a. Verletztengeld in Höhe von 80 Prozent des Bruttogehalts",
+          "explain_ru": "Верно b: в течение шести недель работодатель продолжает платить полную зарплату («Lohnfortzahlung»), и только «danach» подключается Berufsgenossenschaft. a неверно, потому что Verletztengeld платят не «sofort», а после этих шести недель (и это 80 % брутто, а не полная зарплата). c неверно, потому что отчёт о несчастном случае составляет сам пострадавший работник («ist ein detaillierter Unfallbericht zu verfassen») и сдаёт его в отдел кадров, а не выдаёт врач.",
           "explain": "b es correcta: durante seis semanas el empresario sigue pagando el salario íntegro («Lohnfortzahlung»), y solo «danach» entra la Berufsgenossenschaft. a es falsa porque el Verletztengeld no se paga «sofort», sino tras esas seis semanas (y además es el 80 % del bruto, no el salario completo). c es falsa porque el informe de accidente lo redacta el propio trabajador accidentado («ist ein detaillierter Unfallbericht zu verfassen») y se entrega a Recursos Humanos, no lo emite el médico."
         }
       ]
     },
     {
       "id": "t2_c-p25b",
+      "note_ru": "Тот же текст, что в предыдущем варианте; пункты новые (№160201, 160221). Формулировка пункта 8 меняется полностью (теперь речь о сообщении о несчастном случае).",
       "label": "Text 2 – Variante 1 (neue Antwortversion №160201, 160221)",
       "page": 25,
       "note": "Mismo texto que la variante anterior; ítems nuevos (№160201, 160221). El enunciado del ítem 8 cambia por completo (ahora se refiere al informe del accidente).",
@@ -60,6 +64,7 @@
           "answer": "Falsch",
           "confidence": "hoch",
           "quote": "Außerdem ist, sobald es der Gesundheitszustand des Geschädigten zulässt, ein detaillierter Unfallbericht zu verfassen und der Personalabteilung vorzulegen.",
+          "explain_ru": "Сразу («umgehend») нужно сообщить о несчастном случае работодателю, а не подавать отчёт; подробный отчёт составляют только тогда, когда это позволяет состояние здоровья пострадавшего («sobald es der Gesundheitszustand des Geschädigten zulässt»). Поэтому утверждение «sofort» неверно. Кроме того, отчёт идёт в отдел кадров, а не просто «подаётся» работодателю.",
           "explain": "Lo inmediato («umgehend») es informar al empresario del accidente, no presentar un informe; el informe detallado solo hay que redactarlo cuando el estado de salud del accidentado lo permita («sobald es der Gesundheitszustand des Geschädigten zulässt»). Por eso la afirmación «sofort» es falsa. Además el informe va a la Personalabteilung, no se «presenta» sin más al empresario."
         },
         {
@@ -74,12 +79,14 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Im Falle einer Arbeitsunfähigkeit nach einem Arbeitsunfall erhalten Arbeitnehmende für sechs Wochen eine Lohnfortzahlung vom Arbeitgeber, danach übernimmt die Berufsgenossenschaft (BG), zahlt u. a. Verletztengeld in Höhe von 80 Prozent des Bruttogehalts",
+          "explain_ru": "Верно b: работодатель сохраняет зарплату в течение шести недель («Lohnfortzahlung»). a неверно: Berufsgenossenschaft действует только «danach», то есть после этих шести недель. c неверно, потому что расходы на лечение берёт на себя не работодатель, а BG («Die BG übernimmt in diesem Fall z. B. die Behandlungskosten sowie ggf. Krankenpflege oder medizinische Rehabilitation»).",
           "explain": "b es correcta: el empresario mantiene el salario durante seis semanas («Lohnfortzahlung»). a es falsa: la Berufsgenossenschaft actúa solo «danach», es decir, después de las seis semanas. c es falsa porque los costes médicos no los asume el empresario, sino la BG («Die BG übernimmt in diesem Fall z. B. die Behandlungskosten sowie ggf. Krankenpflege oder medizinische Rehabilitation»)."
         }
       ]
     },
     {
       "id": "t2_c-p26a",
+      "note_ru": "Первая Fassung текста Datenschutz: обязательное обучение повторяется «spätestens alle drei Jahre».",
       "label": "Text 2 – Variante 2 (alte Fassung)",
       "page": 26,
       "note": "Primera fassung del texto de Datenschutz: la formación obligatoria debe repetirse «spätestens alle drei Jahre».",
@@ -98,6 +105,7 @@
           "answer": "Falsch",
           "confidence": "hoch",
           "quote": "Eine Teilnahme an einem solchen Training muss spätestens alle drei Jahre erfolgen und durch ein Zertifikat nachgewiesen werden.",
+          "explain_ru": "В этой Fassung текста обучение обязательно не реже чем раз в три года («spätestens alle drei Jahre»). То, что предприятие «предлагает» курсы каждый год («bieten daher jedes Jahr Schulungen … an»), не значит, что сотрудник обязан проходить их ежегодно: обязанность — раз в три года, поэтому утверждение неверно.",
           "explain": "En esta fassung del texto la formación es obligatoria como muy tarde cada tres años («spätestens alle drei Jahre»). Que la empresa «ofrezca» cursos cada año («bieten daher jedes Jahr Schulungen … an») no significa que el empleado deba hacer uno anual: la obligación es trienal, así que la afirmación es falsa."
         },
         {
@@ -112,12 +120,14 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Der Besuch des Seminars wird als Arbeitszeit angerechnet und ist für unsere Mitarbeiter kostenfrei.",
+          "explain_ru": "Верно a: участие засчитывается как рабочее время. b неверно, потому что семинар для сотрудников «kostenfrei». c неверно, потому что текст допускает другой путь: «Alternativ können Sie auch eine vergleichbare Schulung bei einem anderen Anbieter besuchen» — с предварительного согласия отдела кадров.",
           "explain": "a es correcta: la asistencia se computa como tiempo de trabajo. b es falsa porque el seminario es «kostenfrei» para los empleados. c es falsa porque el texto permite otra vía: «Alternativ können Sie auch eine vergleichbare Schulung bei einem anderen Anbieter besuchen», previa autorización de Recursos Humanos."
         }
       ]
     },
     {
       "id": "t2_c-p26b",
+      "note_ru": "Вторая Fassung того же текста Datenschutz: меняется одна деталь — обучение становится «jedes Jahr». Пункты 8 и 9 остаются дословно, но ответ пункта 8 меняется на противоположный.",
       "label": "Text 2 – Variante 2 (neue Fassung)",
       "page": 26,
       "note": "Segunda fassung del mismo texto de Datenschutz: cambia un solo dato, la formación pasa a ser «jedes Jahr». Los ítems 8 y 9 se mantienen literalmente, pero la respuesta del ítem 8 se invierte.",
@@ -136,6 +146,7 @@
           "answer": "Richtig",
           "confidence": "hoch",
           "quote": "Eine Teilnahme an einem solchen Training muss jedes Jahr erfolgen und durch ein Zertifikat nachgewiesen werden.",
+          "explain_ru": "В этой новой версии текста ключевая фраза меняется: участие в обучении «muss jedes Jahr erfolgen» (раньше: «spätestens alle drei Jahre»). Поскольку утверждение говорит именно это — раз в год, — оно верно. Это типичный случай инверсии ответа между версиями одного текста.",
           "explain": "En esta versión nueva del texto la frase clave cambia: la participación en la formación «muss jedes Jahr erfolgen» (antes: «spätestens alle drei Jahre»). Como el enunciado dice exactamente eso —una vez al año—, es correcto. Es el caso típico de la inversión de la respuesta entre versiones del mismo texto."
         },
         {
@@ -150,12 +161,14 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Der Besuch des Seminars wird als Arbeitszeit angerechnet und ist für unsere Mitarbeiter kostenfrei.",
+          "explain_ru": "Верно a: участие засчитывается как рабочее время, как и в предыдущей версии (этот пункт между версиями не меняется). b неверно, потому что обучение бесплатное («kostenfrei»). c неверно, потому что допускается равноценное обучение у другого провайдера по согласованию с отделом кадров.",
           "explain": "a es correcta: la asistencia cuenta como tiempo de trabajo, igual que en la versión anterior (este ítem no cambia entre versiones). b es falsa porque es gratuita («kostenfrei»). c es falsa porque se admite una formación equivalente en otro proveedor previa consulta con Recursos Humanos."
         }
       ]
     },
     {
       "id": "t2_c-p27a",
+      "note_ru": "Первая из трёх версий текста о табаке. В пункте 8 сказано «schließt E-Zigaretten aus».",
       "label": "Text 2 – Variante 3 (alte Fassung bis 07.2024)",
       "page": 27,
       "note": "Primera de las tres versiones del texto sobre el tabaco. El ítem 8 dice «schließt E-Zigaretten aus».",
@@ -174,6 +187,7 @@
           "answer": "Falsch",
           "confidence": "hoch",
           "quote": "Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein.",
+          "explain_ru": "«mit einschließen» означает «включать»: запрет прямо распространяется и на использование электронных сигарет. Утверждение говорит обратное («ausschließen» = исключать), значит оно неверно. Внимание: в версии 07.2024 тот же пункт сформулирован с «einschließen», и там ответ Richtig.",
           "explain": "«mit einschließen» significa incluir: la prohibición abarca expresamente también el uso de cigarrillos electrónicos. El enunciado dice lo contrario («ausschließen» = excluir), de modo que es falso. Ojo: en la versión 07.2024 el mismo ítem se formula con «einschließen» y entonces sí es Richtig."
         },
         {
@@ -188,12 +202,14 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "Beschäftigte, die dort rauchen, sind dazu angehalten, die Terrassentür geschlossen zu halten.",
+          "explain_ru": "Верно c: тот, кто курит на террасе здания A во время мероприятий, должен держать дверь террасы закрытой. a неверно, потому что перерывы на курение не являются рабочим временем и их нужно отмечать в системе учёта («müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden»). b неверно, потому что во время перерыва страхование от несчастных случаев не действует и падение на лестнице не покрывается («greift währenddessen nach dem Arbeitsrecht die Unfallversicherung nicht»).",
           "explain": "c es correcta: quien fuma en la terraza del edificio A durante eventos debe mantener la puerta de la terraza cerrada. a es falsa porque las pausas de tabaco no son tiempo de trabajo y hay que registrarlas en el sistema de control horario («müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden»). b es falsa porque durante la pausa no rige el seguro de accidentes y una caída por las escaleras no está cubierta («greift währenddessen nach dem Arbeitsrecht die Unfallversicherung nicht»)."
         }
       ]
     },
     {
       "id": "t2_c-p27b",
+      "note_ru": "Версия 07.2024: формулировка пункта 8 меняется на противоположную («schließt E-Zigaretten ein»), а в пункте 9 появляются новые варианты a) и b).",
       "label": "Text 2 – Variante 3 (neue Fassung 07.2024)",
       "page": 27,
       "note": "Versión 07.2024: el enunciado del ítem 8 se invierte («schließt E-Zigaretten ein») y el ítem 9 estrena las opciones a) y b) nuevas.",
@@ -212,6 +228,7 @@
           "answer": "Richtig",
           "confidence": "hoch",
           "quote": "Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein.",
+          "explain_ru": "Здесь в утверждении стоит «einschließen» (включать) — именно то, что сказано в тексте: запрет включает «jeglichen Gebrauch von E-Zigaretten». Значит верно. Сравните со старой версией и версией 05.2025: там тот же пункт говорит «ausschließen», и ответ Falsch — это перевёрнутое утверждение.",
           "explain": "Aquí el enunciado usa «einschließen» (incluir), que es justo lo que dice el texto: la prohibición incluye «jeglichen Gebrauch von E-Zigaretten». Por tanto es correcto. Compárese con la versión antigua y la de 05.2025, donde el mismo ítem dice «ausschließen» y la respuesta es Falsch: es el enunciado invertido."
         },
         {
@@ -226,12 +243,14 @@
           "answer": "b",
           "confidence": "niedrig",
           "quote": "Raucherpausen sind nicht Bestandteil der Arbeitszeit, deshalb müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden.",
+          "explain_ru": "b имеет самую явную опору в тексте: раз перерыв не рабочее время, нужно отмечать уход и возвращение в системе учёта, то есть документировать перерыв; кроме того, это утвердительная формулировка прежнего неверного варианта a), что согласуется с переработкой пункта. c явно неверно (во время перерыва страхования от несчастных случаев нет). Низкая уверенность, потому что a) тоже защитимо: текст заканчивается словами «Für weitere Informationen wenden Sie sich bitte vertrauensvoll an unsere Personalabteilung», то есть есть два состоятельных варианта, и только конструкция пункта склоняет к b).",
           "explain": "b tiene el apoyo literal más claro: al no ser tiempo de trabajo, hay que fichar la salida y la vuelta en el sistema de registro horario, es decir, documentar la pausa; además es la formulación afirmativa de la antigua opción falsa a), lo que encaja con el rediseño del ítem. c es claramente falsa (durante la pausa no hay seguro de accidentes). Confianza baja porque a) también es defendible: el texto termina con «Für weitere Informationen wenden Sie sich bitte vertrauensvoll an unsere Personalabteilung», así que hay dos opciones sostenibles y solo el diseño del ítem inclina la balanza hacia b)."
         }
       ]
     },
     {
       "id": "t2_c-p27c",
+      "note_ru": "Версия 05.2025: новые варианты пункта 9 сохраняются, но формулировка пункта 8 снова меняется на противоположную («schließt E-Zigaretten aus»).",
       "label": "Text 2 – Variante 3 (neue Fassung 05.2025)",
       "page": 27,
       "note": "Versión 05.2025: mantiene las opciones nuevas del ítem 9, pero vuelve a invertir el enunciado del ítem 8 («schließt E-Zigaretten aus»).",
@@ -250,6 +269,7 @@
           "answer": "Falsch",
           "confidence": "hoch",
           "quote": "Das Rauchverbot schließt Zigaretten, Zigarren, Pfeifen und den Konsum ähnlich verwendbarer Substanzen sowie jeglichen Gebrauch von E-Zigaretten mit ein.",
+          "explain_ru": "В тексте сказано, что запрет включает электронные сигареты («mit ein»), поэтому утверждать, что он их исключает («ausschließen»), неверно. Это та же формулировка, что в версии до 07.2024; только в версии 07.2024 стоит «ein», и там ответ Richtig.",
           "explain": "El texto dice que la prohibición incluye los cigarrillos electrónicos («mit ein»), así que afirmar que los excluye («ausschließen») es falso. Es la misma formulación que la versión anterior a 07.2024; solo la versión 07.2024 usa «ein» y por eso allí la respuesta es Richtig."
         },
         {
@@ -264,6 +284,7 @@
           "answer": "b",
           "confidence": "niedrig",
           "quote": "Raucherpausen sind nicht Bestandteil der Arbeitszeit, deshalb müssen sich Mitarbeiter ordnungsgemäß vom Zeiterfassungssystem ab- bzw. nach Beendigung der Pause wieder anmelden.",
+          "explain_ru": "Пункт идентичен версии 07.2024: b опирается на обязанность отмечать перерыв в системе учёта рабочего времени (уход и возвращение). c неверно, потому что перерыв не покрывается страхованием от несчастных случаев. Низкая уверенность, потому что a) тоже находит опору в последней фразе текста о том, что можно обратиться в отдел кадров; при двух защитимых вариантах b) воспроизводит конкретное правило для курящих.",
           "explain": "Ítem idéntico al de la versión 07.2024: b se apoya en la obligación de registrar la pausa en el sistema de control horario (entrada y salida). c es falsa porque la pausa no está cubierta por el seguro de accidentes. Confianza baja porque a) también encuentra apoyo en la frase final del texto sobre informarse en la Personalabteilung; con dos opciones defendibles, la opción b) es la que reproduce una regla concreta para los fumadores."
         }
       ]
@@ -288,6 +309,7 @@
           "answer": "Falsch",
           "confidence": "mittel",
           "quote": "Ähnlich wie bei einem Bankkonto, mit dem Unterschied, dass auch die Währung 'Zeit' akzeptiert wird.",
+          "explain_ru": "В тексте не упоминается никакая денежная помощь при личных проблемах: поддержка выражается во времени и услугах (счёт рабочего времени, Teilzeit «Classic Vario», home office с ноутбуком и служебным телефоном, отпуск до двенадцати месяцев, места в детском саду на время каникул). Единственный «счёт» — это часы, и его «валюта» — время, а не деньги. Средняя уверенность: ответ выводится из отсутствия любых финансовых данных, а не из фразы, которая прямо это отрицает.",
           "explain": "El texto no menciona ninguna ayuda económica para problemas privados: el apoyo es en tiempo y en servicios (cuenta de tiempo de trabajo, Teilzeit «Classic Vario», home office con portátil y móvil de empresa, excedencia de hasta doce meses, plazas de cuidado infantil en vacaciones). La única «cuenta» es de horas y su «moneda» es el tiempo, no el dinero. Confianza media porque la respuesta se deduce por ausencia de cualquier dato económico, no de una frase que lo niegue expresamente."
         },
         {
@@ -302,6 +324,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Wenn Sie eine gewisse zeitliche Flexibilität brauchen, können Sie auch kurzfristig nach Absprache im Homeoffice arbeiten.",
+          "explain_ru": "Верно a: работать из дома можно и на короткий срок по договорённости с предприятием — именно это и просит утверждение («bei Bedarf»). b неверно, потому что длительный отпуск может длиться «bis zu maximal zwölf Monaten», то есть до года, а не полгода. c неверно, потому что накопленные часы можно использовать для ухода за зависимыми родственниками, но речь идёт о времени, а не о денежных выплатах («könnte die angesparte Zeit etwa für die Betreuung von pflegebedürftigen Angehörigen genutzt werden»).",
           "explain": "a es correcta: se puede trabajar desde casa a corto plazo tras acordarlo con la empresa, justo lo que pide el enunciado («bei Bedarf»). b es falsa porque la excedencia puede durar «bis zu maximal zwölf Monaten», es decir, hasta un año, no medio. c es falsa porque las horas acumuladas pueden destinarse al cuidado de familiares dependientes, pero se trata de tiempo y no de prestaciones económicas («könnte die angesparte Zeit etwa für die Betreuung von pflegebedürftigen Angehörigen genutzt werden»)."
         }
       ]

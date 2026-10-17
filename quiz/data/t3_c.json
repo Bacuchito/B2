@@ -4,6 +4,7 @@
   "variants": [
     {
       "id": "t3_c-p38",
+      "note_ru": "Примечание оригинала: комментарий b встречается на странице дважды — как «b) Thilo, vor 45 Minuten» и, с пометкой «Новый вариант», как «b) Mallory, vor 45 Minuten» (Zug / Deutsche Bahn, такси или ночь в отеле). Воспроизведена печатная версия b) Thilo. Ответ пункта 12 — b в ОБЕИХ версиях, поэтому примечание ключ не меняет. «Новая» версия с именем Mallory снова появляется на с. 39.",
       "label": "Lesen Teil 3 (вариант №5)",
       "page": 38,
       "note": "Aviso del original: el comentario b aparece dos veces en la página — como «b) Thilo, vor 45 Minuten» y, marcado como «Новый вариант», como «b) Mallory, vor 45 Minuten» (Zug / Deutsche Bahn, taxi o noche de hotel). Se reproduce la versión impresa b) Thilo. La respuesta del ítem 12 es b en LAS DOS versiones, por lo que el aviso no altera la clave. La versión «nueva» reaparece con el nombre Mallory en la p. 39.",
@@ -56,6 +57,7 @@
           "answer": "c",
           "confidence": "mittel",
           "quote": "Wenn du auf dem Weg zur Arbeit einen Autounfall hast, bezahlt die Unfallversicherung nur Personenschäden.",
+          "explain_ru": "Mikke спрашивает, действует ли страховка, если он получил травму по дороге на работу, сделав крюк. c — единственный комментарий, где речь о страховании от несчастных случаев («Unfallversicherung») именно «auf dem Weg zur Arbeit», и там добавлено, что человек свободно выбирает транспорт для этой дороги, то есть выбранный маршрут не отменяет покрытие. Средняя уверенность: в комментарии нет ни крюка, ни падения, а есть дорожная авария; e (страховка только внутри здания) — тематическая ловушка.",
           "explain": "Mikke pregunta si sigue cubierto por el seguro tras lesionarse de camino al trabajo haciendo un rodeo. c es el único comentario que trata el seguro de accidentes («Unfallversicherung») precisamente «auf dem Weg zur Arbeit» y añade que uno puede decidir libremente qué vehículo usa para el trayecto, es decir, que la ruta elegida no anula la cobertura. Confianza media porque el comentario no menciona el desvío ni una caída, sino un accidente de tráfico; e (seguro solo dentro del edificio) es la trampa temática."
         },
         {
@@ -65,6 +67,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Der Arbeitgeber hat eine Fürsorgepflicht und dazu gehört auch, dass er für Fahrzeuge der Mitarbeiter eine Unterbringungsmöglichkeit zu schaffen hat. Aber nur, wenn das ohne zu großen Aufwand geht.",
+          "explain_ru": "Ludmilla получает предупреждение за опоздание, потому что не нашла парковку, и спрашивает, обязано ли предприятие её предоставить. a отвечает именно на это: обязанность работодателя заботиться о сотрудниках включает создание мест для их машин, но только если это не требует несоразмерных расходов. f тоже упоминает предупреждение, но отвечает про такси и обязанность прийти на работу, а не про парковку.",
           "explain": "Ludmilla recibe un apercibimiento por llegar tarde porque no encuentra aparcamiento y pregunta si la empresa debe facilitarlo. a responde exactamente a eso: el deber de cuidado del empresario incluye crear plazas para los vehículos de los empleados, aunque solo si no supone un gasto desproporcionado. f también menciona el apercibimiento, pero responde sobre el taxi y el deber de acudir al trabajo, no sobre el aparcamiento."
         },
         {
@@ -74,6 +77,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Wenn die Bahn wegen eines Sturms nicht weiterfahren kann und in einem Bahnhof stehen bleiben, haben die Fahrgäste meistens Anspruch auf einen Taxigutschein, damit sie auf diese Weise ihr Ziel erreichen.",
+          "explain_ru": "Peter не смог поехать в офис, потому что из-за непогоды не ходила S-Bahn, и спрашивает, должен ли был взять такси. b как раз о случае, когда «Bahn» не может продолжать движение из-за шторма, и о праве пассажиров на талон на такси и возмещение стоимости поездки. f тоже говорит о такси, но как ловушка: смешивает предупреждение и общую обязанность являться на работу.",
           "explain": "Peter no pudo ir a la oficina porque la S-Bahn no circuló a causa del temporal y pregunta si debería haber tomado un taxi. b trata justamente el caso de la «Bahn» que no puede continuar por una tormenta y el derecho de los viajeros a un bono de taxi y al reembolso del trayecto. f también habla de tomar un taxi, pero lo hace como distractor: mezcla el apercibimiento y el deber general de acudir al trabajo."
         },
         {
@@ -83,12 +87,14 @@
           "answer": "d",
           "confidence": "hoch",
           "quote": "Du bist dafür verantwortlich, rechtzeitig an deinem Arbeitsplatz zu erscheinen. Wie du das machst, ist deine Sache. Aber du kannst keinesfalls die Verantwortung auf die öffentlichen Verkehrsmittel schieben und dich auf den Standpunkt stellen, dass du nichts für deine Verspätung kannst.",
+          "explain_ru": "Ingo опаздывает из-за автобуса и спрашивает, обязан ли он сесть на более ранний. d отвечает прямо: каждый сам отвечает за то, чтобы прийти вовремя, и не может винить общественный транспорт, значит выбор автобуса — его дело. Упоминание автобуса и ответственности работника исключает остальные комментарии.",
           "explain": "Ingo llega tarde por culpa del autobús y pregunta si está obligado a coger uno anterior. d contesta de forma directa: cada uno es responsable de llegar puntual y no puede echar la culpa al transporte público, así que la elección del autobús es cosa suya. La mención del autobús y de la responsabilidad del trabajador excluye a los demás comentarios."
         }
       ]
     },
     {
       "id": "t3_c-p39",
+      "note_ru": "Новая версия варианта с. 38: те же четыре случая и те же шесть комментариев, но с другими именами и в другом порядке. Из-за смены порядка постов меняются и ответы: 10 a / 11 b / 12 d / 13 c против 10 c / 11 a / 12 b / 13 d на с. 38. Комментарий b) Mallory повторяет текст «Новый вариант», анонсированный на с. 38.",
       "label": "Lesen Teil 3 (вариант №5) (новые имена и очередь)",
       "page": 39,
       "note": "Nueva versión de la variante de la p. 38: mismos cuatro casos y mismos seis comentarios, pero con otros nombres y en otro orden. Al cambiar el orden de los posteos, cambian también las respuestas: 10 a / 11 b / 12 d / 13 c, frente a 10 c / 11 a / 12 b / 13 d en la p. 38. El comentario b) Mallory retoma el texto del «Новый вариант» anunciado en la p. 38.",
@@ -141,6 +147,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Der Arbeitgeber hat eine Fürsorgepflicht und dazu gehört auch, dass er für Fahrzeuge der Mitarbeiter eine Unterbringungsmöglichkeit zu schaffen hat, aber nur, wenn das ohne zu großen Aufwand geht.",
+          "explain_ru": "Natalie получает предупреждение за опоздание, потому что не нашла парковку, и спрашивает, обязано ли предприятие её предоставить. a отвечает именно на это: обязанность заботы включает создание мест для машин сотрудников, но только если это не требует несоразмерных расходов. f тоже упоминает «Abmahnung», но отвечает про такси, а не про парковку.",
           "explain": "Natalie recibe un apercibimiento por llegar tarde porque no encuentra aparcamiento y pregunta si la empresa debe facilitarlo. a responde exactamente a eso: el deber de cuidado incluye crear plazas para los vehículos de los empleados, aunque solo si no supone un gasto desproporcionado. f también menciona la «Abmahnung», pero responde sobre el taxi, no sobre el aparcamiento."
         },
         {
@@ -150,6 +157,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Wenn die Bahn wegen eines Sturms nicht weiterfahren kann und in einem Bahnhof stehen bleiben, haben die Fahrgäste meistens Anspruch auf einen Taxigutschein, damit sie auf diese Weise ihr Ziel erreichen.",
+          "explain_ru": "Batiste не смог поехать в офис, потому что из-за непогоды не ходила S-Bahn, и спрашивает, должен ли был взять такси. b как раз о случае, когда «Bahn» не может продолжать движение из-за шторма, и о праве на талон на такси и возмещение поездки. f (тоже о такси) — ловушка: смешивает предупреждение и общую обязанность являться на работу.",
           "explain": "Batiste no pudo ir a la oficina porque la S-Bahn no circuló por el temporal y pregunta si debería haber tomado un taxi. b trata justamente el caso de la «Bahn» que no puede continuar por una tormenta y el derecho a un bono de taxi y al reembolso del trayecto. f (también sobre el taxi) es el distractor: mezcla apercibimiento y deber general de acudir al trabajo."
         },
         {
@@ -159,6 +167,7 @@
           "answer": "d",
           "confidence": "hoch",
           "quote": "Du bist dafür verantwortlich, rechtzeitig an deinem Arbeitsplatz zu erscheinen. Wie du das machst, ist deine Sache. Aber du kannst keinesfalls die Verantwortung auf die öffentlichen Verkehrsmittel schieben und dich auf den Standpunkt stellen, dass du nichts für deine Verspätung kannst.",
+          "explain_ru": "Alfons опаздывает из-за автобуса и спрашивает, обязан ли он сесть на более ранний. d отвечает прямо: сам работник отвечает за своевременный приход и не может винить общественный транспорт, поэтому выбор автобуса — его дело. Совпадает с ситуацией Alfons (автобус, пробка, опоздание).",
           "explain": "Alfons llega tarde por culpa del autobús y pregunta si está obligado a coger uno anterior. d contesta de forma directa: uno mismo es responsable de llegar puntual y no puede culpar al transporte público, de modo que la elección del autobús es asunto suyo. Coincide con la situación de Alfons (bus, atasco, retraso)."
         },
         {
@@ -168,6 +177,7 @@
           "answer": "c",
           "confidence": "mittel",
           "quote": "Wenn du auf dem Weg zur Arbeit einen Autounfall hast, bezahlt die Unfallversicherung nur Personenschäden.",
+          "explain_ru": "Karel спрашивает, действует ли страховка, если он получил травму по дороге на работу, сделав крюк. c — единственный комментарий о страховании от несчастных случаев «auf dem Weg zur Arbeit», и там добавлено, что человек сам решает, каким транспортом ехать. Средняя уверенность: не упомянуты ни крюк, ни падение, а есть дорожная авария; e (страховка только внутри здания) — тематическая ловушка.",
           "explain": "Karel pregunta si sigue cubierto por el seguro tras lesionarse de camino al trabajo haciendo un rodeo. c es el único comentario que trata el seguro de accidentes «auf dem Weg zur Arbeit» y añade que uno decide libremente qué vehículo usa para el trayecto. Confianza media porque no menciona el desvío ni una caída, sino un accidente de tráfico; e (seguro solo dentro del edificio) es la trampa temática."
         }
       ]

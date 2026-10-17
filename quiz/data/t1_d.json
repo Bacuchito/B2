@@ -68,6 +68,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Erfahrene Mitarbeiter finden dort interessante Möglichkeiten zur beruflichen Weiterentwicklung.",
+     "explain_ru": "Silvie — дипломированный продавец и хочет расти. Объявление c — единственное, где прямо предлагают «berufliche Weiterentwicklung» сотрудникам с опытом в торговле. Объявление a тоже из пищевой отрасли, но там ищут персонал и учебные места, а не повышение внутри компании.",
+
      "explain": "Silvie es vendedora titulada y quiere ascender. El anuncio c es el único que ofrece expresamente «berufliche Weiterentwicklung» a empleados con experiencia en el comercio. El anuncio a también es del sector alimentario, pero habla de buscar personal y de plazas de formación, no de promoción interna."
     },
     {
@@ -77,6 +79,8 @@
      "answer": "h",
      "confidence": "hoch",
      "quote": "Zunehmend werden Online-Kurse und Webinare am Computer angeboten, die den Teilnehmern maximale Flexibilität versprechen.",
+     "explain_ru": "Brian хочет курсы по информатике, которые можно проходить из дома. Объявление h описывает именно онлайн-курсы и вебинары у компьютера с максимальной гибкостью. Объявление f тоже предлагает «Computerkurse», но очные и для пожилых, поэтому не подходит под гибкость, которую ищет Brian.",
+
      "explain": "Brian quiere cursos de informática que pueda hacer desde casa. El anuncio h describe exactamente cursos en línea y webinarios frente al ordenador con máxima flexibilidad. El anuncio f también ofrece «Computerkurse», pero presenciales y para seniors, de modo que no encaja con la flexibilidad que busca Brian."
     },
     {
@@ -86,6 +90,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Viele Unternehmer machen zu Beginn ihrer Selbstständigkeit ähnliche Fehler.",
+     "explain_ru": "Carl хочет открыть своё консультационное агентство, то есть перейти к работе на себя. Объявление b — единственное о начале «Selbstständigkeit» (бизнес-план, анализ конкурентов) с советами коуча.",
+
      "explain": "Carl quiere montar su propia agencia de asesoría, es decir, pasar a la actividad por cuenta propia. El anuncio b es el único que trata del comienzo del «Selbstständigkeit» (plan de negocio, análisis de la competencia) y ofrece los consejos de un coach."
     },
     {
@@ -95,6 +101,8 @@
      "answer": "e",
      "confidence": "hoch",
      "quote": "Arbeitsmarktexpertin Caroline Cuyper erklärt, was man als Angestellter tun muss, um möglichst schnell eine neue Stelle zu bekommen.",
+     "explain_ru": "Mira потеряла работу и не знает, как быть дальше. Объявление e исходит именно из этой ситуации («eine Entlassung ist immer ein Schock») и даёт советы, как быстро найти новое место. Объявление d тоже говорит об уволенных, но только об одном конкретном случае и без полезных советов.",
+
      "explain": "Mira ha perdido el empleo y no sabe cómo seguir. El anuncio e parte justamente de esa situación («eine Entlassung ist immer ein Schock») y da consejos para encontrar pronto un nuevo puesto. El anuncio d también habla de despedidos, pero solo de un caso concreto y sin consejos útiles."
     },
     {
@@ -104,6 +112,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Allein in Hessen werden jährlich 160.000 junge Menschen ausgebildet. Der Einzelhandel ist außerdem krisenfest, denn gegessen wird immer.",
+     "explain_ru": "Karim ищет учебное место в надёжной отрасли. Объявление a упоминает 160 000 учебных мест в год и называет розничную торговлю «krisenfest» (устойчивой к кризисам). Объявление c тоже из этой отрасли, но адресовано уже опытным сотрудникам, которые ищут повышения.",
+
      "explain": "Karim busca una plaza de formación en un sector seguro. El anuncio a menciona las 160.000 plazas de formación anuales y califica el comercio minorista de «krisenfest» (a prueba de crisis). El anuncio c también es del sector, pero se dirige a personal ya experiente que busca promoción."
     }
    ]
@@ -174,6 +184,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Lesen Sie hier wichtige Tipps und Tricks für eine überzeugende Bewerbung.",
+     "explain_ru": "Kurt ищет работу и нуждается в идеях для своих документов. Объявление c предлагает советы для убедительного резюме и заявки («Lebenslauf», «Bewerbung») — именно то, что нужно для его «Unterlagen».",
+
      "explain": "Kurt busca empleo y necesita ideas para sus documentos. El anuncio c ofrece consejos para un currículum y una candidatura convincentes («Lebenslauf», «Bewerbung»), que es exactamente lo que necesita para sus «Unterlagen»."
     },
     {
@@ -183,6 +195,8 @@
      "answer": "g",
      "confidence": "mittel",
      "quote": "Wer aber unter Daueranspannung steht und körperliche Symptome wie Bluthochdruck, Magenbeschwerden oder eine anhaltende innere Anspannung spürt, muss etwas ändern.",
+     "explain_ru": "Juliette работает с удовольствием, но часто чувствует себя истощённой. Объявление g — единственное, где речь о физических последствиях стресса и постоянного напряжения, то есть о самой вероятной причине этой истощённости. Средняя уверенность: в объявлении нет слова «erschöpft», и связь устанавливается по общему смыслу; можно было бы подумать и об объявлении a, но там речь только об оформлении и порядке на рабочем месте.",
+
      "explain": "Juliette trabaja a gusto pero se siente a menudo agotada. El anuncio g es el único que trata las consecuencias físicas del estrés y la tensión permanente, que es la causa más plausible de ese agotamiento. Confianza media porque el anuncio no usa la palabra «erschöpft» y la relación se establece por el sentido global; también podría pensarse en el anuncio a, que sin embargo solo habla de decoración y orden del puesto."
     },
     {
@@ -192,6 +206,8 @@
      "answer": "e",
      "confidence": "hoch",
      "quote": "Anspannung ist ganz normal: Beim Start im neuen Job ist es wichtig, gut vorbereitet zu sein.",
+     "explain_ru": "Peter волнуется перед началом работы в новой компании. Объявление e посвящено именно первому дню в новой компании и нормализует волнение («Anspannung ist ganz normal»), предлагая контрольный список. Объявление d тоже использует «am ersten Arbeitstag» и «angespannt», но это семинар по языку тела.",
+
      "explain": "Peter está nervioso antes de empezar en la nueva empresa. El anuncio e trata exactamente el primer día en la nueva empresa y normaliza los nervios («Anspannung ist ganz normal») ofreciendo una lista de comprobación. El anuncio d también emplea «am ersten Arbeitstag» y «angespannt», pero es un seminario de lenguaje corporal."
     },
     {
@@ -201,6 +217,8 @@
      "answer": "f",
      "confidence": "hoch",
      "quote": "Doch in vielen Berufsfeldern haben die Arbeitnehmer das Gefühl, unterbezahlt zu sein. Die Folge davon sind Motivationsverlust und Zweifel daran, ob man wirklich den richtigen Beruf gewählt hat.",
+     "explain_ru": "Katharina разочарована низкой зарплатой в своей отрасли. Объявление f как раз о том, что во многих профессиях платят мало, и предлагает помощь в переговорах о зарплате. Объявление h тоже о зарплатах, но как общий анализ неравенства между мужчинами и женщинами, без практической пользы для неё.",
+
      "explain": "Katharina está frustrada por el bajo sueldo de su sector. El anuncio f recoge justamente el sentirse mal pagado en muchos ámbitos profesionales y ofrece ayuda para negociar el salario. El anuncio h también habla de sueldos, pero como análisis general de la desigualdad entre hombres y mujeres, sin utilidad práctica para ella."
     },
     {
@@ -210,12 +228,15 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Die Arbeit von zu Hause aus erfordert ein hohes Maß an Selbstdisziplin und die Fähigkeit des Selbstmanagements.",
+     "explain_ru": "Carlos нуждается в советах для работы из дома. Объявление b — единственное о «Arbeit von zu Hause aus», о самодисциплине и разделении личной жизни и работы, и оно ссылается на практическое руководство.",
+
      "explain": "Carlos necesita consejos para su trabajo desde casa. El anuncio b es el único que habla del «Arbeit von zu Hause aus», de la autodisciplina y de separar vida privada y trabajo, y remite a una guía práctica."
     }
    ]
   },
   {
    "id": "t1_d-p18",
+   "note_ru": "Текст объявления h) («Den Horizont erweitern») в оригинале обрезан в конце страницы: он заканчивается на «Auslandsaufenthalte können». Концовка объявления в PDF отсутствует.",
    "label": "Variante 8 (test 160201, 160221)",
    "page": 18,
    "note": "Der Anzeigentext h) («Den Horizont erweitern») ist im Original am Seitenende abgeschnitten: Er endet mit «Auslandsaufenthalte können». Der Schluss der Anzeige fehlt im PDF.",
@@ -280,6 +301,8 @@
      "answer": "f",
      "confidence": "hoch",
      "quote": "sondern auch die sprachlichen Kompetenzen werden immer wichtiger. Hier findet jeder den richtigen Kurs für sich, von Englisch über Japanisch bis Suaheli.",
+     "explain_ru": "Barbara нужны базовые знания испанского по работе. Объявление f — единственное с курсами языков для профессиональной сферы и подбором курса под каждого. Объявление c тоже упоминает языковые курсы, но их оплачивают компании для своих сотрудников.",
+
      "explain": "Barbara necesita conocimientos básicos de español por motivos laborales. El anuncio f es el único que ofrece cursos de idiomas para el ámbito profesional y remite a un curso adecuado para cada persona. El anuncio c también menciona cursos de idiomas, pero los financian las empresas para su plantilla."
     },
     {
@@ -289,6 +312,8 @@
      "answer": "d",
      "confidence": "mittel",
      "quote": "Wie viel sollte man in seinem Beruf verdienen? Wie viele Stunden arbeitet man üblicherweise? Bekommt man einen Zuschuss für Sprachkurse? Mit vielen gesetzlichen Dingen muss man sich auskennen, wenn man im Arbeitsleben steht. Die wichtigsten Informationen finden Sie hier zusammengefasst.",
+     "explain_ru": "Frank считает, что его зарплата не соответствует обычной для отрасли. Объявление d — подборка информации для сотрудников, которая отвечает в том числе на вопрос «Wie viel sollte man in seinem Beruf verdienen?», что позволяет сравнить с обычным уровнем. Средняя уверенность: в объявлении нет слова «branchenüblich» и нет цифр, это общее руководство. Объявление e («Zahlen Sie faire Gehälter!») рассматривает зарплату с точки зрения начальника и Frank не помогает.",
+
      "explain": "Frank cree que su sueldo no es el habitual del sector. El anuncio d es una recopilación de información para empleados que responde, entre otras, a la pregunta «Wie viel sollte man in seinem Beruf verdienen?», lo que permite comparar con lo habitual. Confianza media porque el anuncio no dice «branchenüblich» ni da cifras: es una guía general. El anuncio e («Zahlen Sie faire Gehälter!») trata el sueldo desde la perspectiva del jefe y no sirve a Frank."
     },
     {
@@ -298,6 +323,8 @@
      "answer": "g",
      "confidence": "hoch",
      "quote": "Es passiert immer häufiger in deutschen Unternehmen, dass manche Kollegen anderen das Leben aus unklaren Gründen schwermachen. Lesen Sie in diesem Ratgeber, wo Sie Hilfe bekommen können.",
+     "explain_ru": "Petra чувствует травлю со стороны коллег. Объявление g описывает именно коллег, которые усложняют жизнь другим, и предлагает пособие с указанием, где искать помощь. Объявление e упоминает «Mobbing», но адресовано начальникам, а не пострадавшему.",
+
      "explain": "Petra se siente acosada por sus colegas. El anuncio g describe exactamente a compañeros que hacen la vida difícil a otros y ofrece un manual con lugares donde encontrar ayuda. El anuncio e menciona «Mobbing», pero se dirige a los jefes, no a la persona afectada."
     },
     {
@@ -307,6 +334,8 @@
      "answer": "h",
      "confidence": "mittel",
      "quote": "Andere sehen dort interessantere berufliche Möglichkeiten. Manchmal ist das die reine Abenteuerlust. Auslandsaufenthalte können",
+     "explain_ru": "Sandra хочет набрать профессиональный опыт за границей. Объявление h — единственное, написанное для тех, кто рассматривает пребывание за границей по рабочим причинам («interessantere berufliche Möglichkeiten», «Auslandsaufenthalte»). Средняя уверенность: текст обрезан в конце страницы и не хватает концовки, которая дала бы полный смысл; также нужно исключить объявление a, где о загранице говорится с точки зрения работодателя.",
+
      "explain": "Sandra quiere acumular experiencia profesional en el extranjero. El anuncio h es el único escrito para quien se plantea una estancia en el extranjero con motivos profesionales («interessantere berufliche Möglichkeiten», «Auslandsaufenthalte»). Confianza media porque el texto está cortado al final de la página y falta el cierre que daría el sentido completo; también hay que descartar el anuncio a, que habla del extranjero pero desde el punto de vista del empleador."
     },
     {
@@ -316,6 +345,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Im Job ist es nie zu spät, mit etwas Neuem zu beginnen, um sich weiterzuentwickeln.",
+     "explain_ru": "Felix хочет сменить профессию. Объявление b — единственное, которое побуждает начать на работе что-то новое для развития и ссылается на консультацию о существующих возможностях. Остальные объявления предполагают, что человек остаётся на своём месте.",
+
      "explain": "Felix quiere cambiar profesionalmente. El anuncio b es el único que anima a empezar algo nuevo en el trabajo para desarrollarse y que remite a un asesoramiento sobre las posibilidades existentes. Los demás anuncios presuponen que la persona se queda en su puesto."
     }
    ]

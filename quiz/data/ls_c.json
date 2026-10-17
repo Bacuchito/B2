@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "ls_c-p74",
+   "note_ru": "Блок с. 74 начинается с внутреннего письма (Anna Hoffner поручает ответить клиенту): это письмо относится к заданию по письму (пункт 21) и поэтому НЕ входит в passage. Финальная инструкция оригинала «Nummer 21 Schreiben Sie eine E-Mail an den Kunden.» тоже относится к этому заданию и не включена ни в один вопрос.",
    "label": "Beschwerde – Variante 7 (Falsche Rechnung)",
    "topic": "Falsche Rechnung",
    "page": 74,
@@ -33,6 +34,7 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Leider muss ich Sie darauf hinweisen, dass die Rechnung einige Unstimmigkeiten beinhaltet: Zunächst wurden statt 100 Stück Pinsel Größe M 200 Stück berechnet.",
+     "explain_ru": "Верно c: «Zahlungsaufforderung» — это Rechnung, и клиент указывает в ней неверные позиции (200 кистей вместо 100; 20 банок красной краски выставлены в счёт, хотя заказывали и получили зелёную). a неверно, потому что полученный товар как раз правильный: «sind mit allen Artikeln absolut zufrieden», а зелёную краску «bestellt und geliefert bekommen». b неверно, потому что в поставке ничего не отсутствует; неверны суммы в счёте.",
      "explain": "Correcto c: la «Zahlungsaufforderung» es la Rechnung, y el cliente señala en ella partidas equivocadas (200 pinceles cobrados en lugar de 100; 20 botes de pintura roja facturados aunque se pidió y se recibió verde). a es falso porque la mercancía recibida sí es la correcta: «sind mit allen Artikeln absolut zufrieden» y la pintura verde se «bestellt und geliefert bekommen». b es falso porque no falta nada en el envío; lo incorrecto son los importes de la factura."
     },
     {
@@ -56,12 +58,14 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Des Weiteren waren wir überrascht, dass unser üblicher Rabatt von 10 % in dieser Rechnung nicht gewährt wurde.",
+     "explain_ru": "Верно b: счёт выставили без обычной скидки 10 %, то есть без Preisnachlass. a неверно, потому что кисти в счёте есть, только в количестве 200 вместо 100. c неверно, потому что получатель указан верно: письмо адресовано Frau Hoffner и речь о её собственном заказе.",
      "explain": "Correcto b: la factura se emitió sin el descuento habitual del 10 %, es decir, sin Preisnachlass. a es falso porque los pinceles sí aparecen, solo que con 200 unidades en vez de 100. c es falso porque no hay ningún destinatario equivocado: la carta va dirigida a Frau Hoffner y trata de su propio pedido."
     }
    ]
   },
   {
    "id": "ls_c-p75",
+   "note_ru": "Вторая версия того же случая с. 74 с изменёнными именами и цифрами (Joachim Schmidt, Sonja, фирма «Lacke und Farben», Frau Klein, 50 Töpfe, Größe S): это самостоятельный вариант, как и его пункты. Ответ пункта 20 (c: Computerprobleme) НЕ выводится из письма: компьютерные проблемы упомянуты только во внутреннем письме начальника («Du kannst ihm ruhig von unseren Computerproblemen berichten»), которое относится к заданию по письму и остаётся вне passage; поэтому уверенность понижена до «mittel». Пункт 19 решается по самому письму.",
    "label": "Beschwerde – Die falsche Rechnung (Fassung 2, p. 75)",
    "topic": "Falsche Rechnung",
    "page": 75,
@@ -91,6 +95,7 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "wir haben Ihre Lieferung wie gewohnt zu unserer vollsten Zufriedenheit erhalten. Alle Artikel entsprechen absolut unseren Vorstellungen.",
+     "explain_ru": "Верно b: клиент заявляет о полном удовлетворении поставкой и о том, что все позиции соответствуют ожидаемому. a неверно: выражения вроде «wie gewohnt» или «der übliche Rabatt von 10 %» описывают уже сложившиеся деловые отношения (внутреннее письмо начальника это подтверждает: «langjähriger, guter Kunde»), а не нового клиента. c неверно, потому что он прямо просит «Berichtigung der Rechnung und erneute Zusendung», то есть исправленный счёт.",
      "explain": "Correcto b: el cliente declara su plena satisfacción con el envío y que todos los artículos corresponden a lo esperado. a es falso: fórmulas como «wie gewohnt» o «der übliche Rabatt von 10 %» describen una relación comercial ya establecida (el correo interno del jefe lo confirma: «langjähriger, guter Kunde»), no un cliente nuevo. c es falso porque pide expresamente «Berichtigung der Rechnung und erneute Zusendung», es decir, una factura corregida."
     },
     {
@@ -114,12 +119,14 @@
      "answer": "c",
      "confidence": "mittel",
      "quote": "Ferner waren wir verwundert, dass uns der übliche Rabatt von 10 % in dieser Rechnung nicht gewährt wurde.",
+     "explain_ru": "c — единственный оставшийся вариант, но с оговорками: a и b отпадают по самому письму — скидка «übliche», значит это не впервые, и её размер 10 %, а не 5 %, — поэтому методом исключения остаётся только c. Проблема в том, что «Computerprobleme», из-за которых возникли ошибки в счёте, упомянуты не в письме клиента, а во внутреннем письме начальника (вне passage); поэтому уверенность средняя, а не высокая.",
      "explain": "La c es la única opción que queda en pie, pero con reservas: a y b se descartan con la propia carta —el descuento es el «übliche», luego no es la primera vez, y su importe es del 10 %, no del 5 %—, de modo que por eliminación solo puede ser c. El problema es que los «Computerprobleme» que provocaron los errores de la factura no aparecen en la carta del cliente, sino en el correo interno del jefe (fuera del passage); por eso la confianza es media y no alta."
     }
    ]
   },
   {
    "id": "ls_c-p76",
+   "note_ru": "Внутреннее письмо начальника (Siegfried Mayer, Teamleiter) открывает блок: оно относится к заданию по письму и НЕ входит в passage. Финальная инструкция оригинала «Nummer 21 Schreiben Sie eine E-Mail an den Kunden.» тоже из этого задания. Пункты 19 и 20 решаются полностью по письму клиента; дата возможной Nachlieferung, указанная начальником (12.05.), для ответа не нужна.",
    "label": "Beschwerde – Variante 8 (Die mangelhafte Lieferung)",
    "topic": "Mangelhafte Lieferung",
    "page": 76,
@@ -149,6 +156,7 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Erstens wurden die Verpackungen der Hosen (Größe M und L) beim Transport beschädigt, sodass der Inhalt verschmutzt ist.",
+     "explain_ru": "Верно a: он критикует и качество (повреждённая при перевозке упаковка и запачканное содержимое), и количество, потому что из оплаченных футболок пришла лишь половина («statt der bezahlten 100 Stück nur die Hälfte geliefert wurde»). b неверно, потому что повреждена не вся поставка, а упаковка брюк. c неверно, потому что скидку 60 % требуют за запачканный товар, а не за задержку поставки (задержка касается, скорее, ещё не полученных футболок).",
      "explain": "Correcto a: critica la calidad (embalajes dañados en el transporte y contenido manchado) y también la cantidad, porque de las camisetas pagadas solo llegó la mitad («statt der bezahlten 100 Stück nur die Hälfte geliefert wurde»). b es falso porque no todo el envío llegó dañado, sino los embalajes de los pantalones. c es falso porque el 60 % de descuento se exige por la mercancía manchada, no por un retraso en la entrega (el retraso, en todo caso, afecta a la entrega pendiente de las camisetas)."
     },
     {
@@ -172,12 +180,14 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Des Weiteren teilen wir Ihnen mit, dass von den T-Shirts mit Aufdruck statt der bezahlten 100 Stück nur die Hälfte geliefert wurde.",
+     "explain_ru": "Верно c: оплатили 100 футболок, а пришла половина, значит недостающая поставка — 50 штук. a неверно, потому что клиент требует замену «auf Ihre Kosten», то есть за счёт поставщика. b неверно, потому что замену требуют «spätestens bis zum 10.05.»; «beginnende Sommersaison» — лишь причина срочности, а не дата поставки.",
      "explain": "Correcto c: se pagaron 100 camisetas y solo llegó la mitad, de modo que el envío pendiente son 50 unidades. a es falso porque el cliente pide la reposición «auf Ihre Kosten», es decir, a cargo del proveedor. b es falso porque la reposición se reclama «spätestens bis zum 10.05.»; la «beginnende Sommersaison» es solo el motivo de la urgencia, no la fecha de entrega."
     }
    ]
   },
   {
    "id": "ls_c-p77",
+   "note_ru": "Внутреннее письмо начальника (Michael Herrmann, Teamleiter) открывает блок: оно относится к заданию по письму (ответ клиентке) и НЕ входит в passage. Пункты 19 и 20 решаются полностью по письму клиентки (Gabi Talheim).",
    "label": "Beschwerde – Variante 9 (Pflanzenlieferung)",
    "topic": "Pflanzenlieferung",
    "page": 77,
@@ -207,6 +217,7 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "leider müssen wir Ihnen mitteilen, dass Ihre Pflanzen- und Blumenauswahl für unsere letzte Veranstaltung gänzlich unpassend war.",
+     "explain_ru": "Верно b: клиентка называет подбор растений и цветов «gänzlich unpassend» для конкурса об устойчивом развитии, местной и региональной продукции, и поясняет это экзотическими импортными растениями и орхидеями в букетах. a неверно, потому что оформление не соответствовало теме. c неверно, потому что букеты на замену достала сама клиентка и у одного экспонента («von einem Aussteller»), а не поставщик, и в тексте не сказано, что они были из региона.",
      "explain": "Correcto b: la clienta califica la selección de plantas y flores de «gänzlich unpassend» para un certamen sobre sostenibilidad, producto local y regional, y lo concreta con plantas exóticas importadas y orquídeas en los ramos. a es falso porque la decoración no encajaba con el tema. c es falso porque quien consiguió los ramos de sustitución fue la propia clienta, y de un expositor («von einem Aussteller»), no el proveedor, y el texto no dice que fueran de la región."
     },
     {
@@ -230,6 +241,7 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Und Sie haben im Eingangsbereich aus dem fernen Ausland importierte exotische Pflanzen platziert, was verständlicherweise zu Beschwerden von Seiten der Besucher geführt hat.",
+     "explain_ru": "Верно b: экзотические растения вызвали жалобы посетителей, и организатору пришлось реагировать, срочно найдя букеты на замену («haben wir daher entschieden, kurzfristigen Ersatz für die Sträuße von einem Aussteller zu beschaffen»). a неверно, потому что букеты взяли у экспонента, а не передали ему. c неверно, потому что экологическую премию как раз вручали с букетами: именно поэтому искали замену, когда в оригинальных оказались орхидеи.",
      "explain": "Correcto b: las plantas exóticas provocaron quejas de los visitantes y el organizador tuvo que reaccionar, procurándose a toda prisa ramos de sustitución («haben wir daher entschieden, kurzfristigen Ersatz für die Sträuße von einem Aussteller zu beschaffen»). a es falso porque los ramos se consiguieron de un expositor, no se le entregaron a uno. c es falso porque el premio medioambiental sí se entregó con ramos: precisamente por eso se buscó el recambio cuando los originales llevaban orquídeas."
     }
    ]

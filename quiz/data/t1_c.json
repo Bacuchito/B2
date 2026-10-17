@@ -68,6 +68,7 @@
           "answer": "e",
           "confidence": "hoch",
           "quote": "Ein Praktikum bietet tolle Möglichkeiten, den Berufsalltag kennenzulernen.",
+          "explain_ru": "Laura ищет профессиональный опыт во время учёбы. Объявление e предлагает именно это: портал с актуальными «Praktikumsstellen» по всей Германии. Объявление f тоже упоминает «Praktikum», но это уже завершённая личная история, а не предложение.",
           "explain": "Laura busca experiencia profesional durante sus estudios. El anuncio e ofrece justamente eso: un portal con «Praktikumsstellen» actuales en toda Alemania. El anuncio f también menciona un «Praktikum», pero es una historia personal ya concluida, no una oferta."
         },
         {
@@ -77,6 +78,7 @@
           "answer": "h",
           "confidence": "hoch",
           "quote": "Sie überlegen, Ihren Lebensmittelpunkt in ein anderes Land zu verlegen? Ein Neuanfang ist eine große Chance, aber immer auch eine Herausforderung – besonders für den Partner oder die Partnerin und die Kinder.",
+          "explain_ru": "У Igor есть семья, и он хочет работать в другой стране Европы. Объявление h адресовано тем, кто переносит центр своей жизни в другую страну, прямо упоминает партнёра и детей и предлагает информацию о «Leben und Arbeiten in der EU». Объявление g тоже называет Европу, но это расширение компании, а не переезд человека.",
           "explain": "Igor tiene familia y quiere trabajar en el extranjero europeo. El anuncio h se dirige a quien traslada su centro de vida a otro país, menciona expresamente a la pareja y a los hijos y ofrece información sobre «Leben und Arbeiten in der EU». El anuncio g también nombra Europa, pero es la expansión de una empresa, no el traslado de una persona."
         },
         {
@@ -86,6 +88,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Die Firma Heller aus Rostock will mit gutem Beispiel vorangehen und behauptet: „Klimafreundliche Energie und Müllvermeidung werden bei uns ganz großgeschrieben\".",
+          "explain_ru": "Jens интересуется экологией внутри предприятий. Объявление b представляет конкретную компанию (Heller, транспорт и логистика), которая использует климатически дружелюбную энергию и избегает отходов. Объявление c тоже экологическое, но речь о потреблении продуктов, а не о предприятиях.",
           "explain": "Jens se interesa por el medio ambiente dentro de las empresas. El anuncio b presenta una empresa concreta (Heller, transporte y logística) que aplica energía respetuosa con el clima y evitación de residuos. El anuncio c también es ecológico, pero trata del consumo de alimentos, no de las empresas."
         },
         {
@@ -95,6 +98,7 @@
           "answer": "d",
           "confidence": "hoch",
           "quote": "wie er von seinem ständig schlecht gelaunten Chef und zwei Mitarbeitern in seinem Team schikaniert, ausgegrenzt und lächerlich gemacht wurde - und wie es ihm schließlich gelang, diesen Teufelskreis zu durchbrechen.",
+          "explain_ru": "У Jasmin проблемы с коллегами, и она ищет помощь. Объявление d рассказывает именно о случае травли и исключения со стороны начальника и двух товарищей по команде и предлагает опыт того, кто смог разорвать этот круг. Объявление f тоже личная история, но не о конфликтах с коллегами.",
           "explain": "Jasmin tiene problemas con sus colegas y busca ayuda. El anuncio d narra exactamente un caso de acoso y exclusión por parte del jefe y de dos compañeros de equipo y ofrece la experiencia de quien logró romper ese círculo. El anuncio f también es una historia personal, pero no trata de conflictos con colegas."
         },
         {
@@ -104,6 +108,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "richtet sich vor allem an Akademikerinnen, die erfolgreich ein eigenes Unternehmen aufbauen wollen. Egal ob Sie sich in der Immobilienbranche, im Bauwesen oder im Gesundheitsbereich selbstständig machen, die Autorin hat Antworten auf alle wichtigen Fragen.",
+          "explain_ru": "Somayeh — архитектор и хочет открыть своё бюро. Объявление a адресовано женщинам с высшим образованием, которые хотят создать своё дело, и прямо называет сферу недвижимости и «Bauwesen» (строительство). Объявление g тоже о недвижимости, но описывает расширение чужой компании, а не открытие своего дела.",
           "explain": "Somayeh es arquitecta y quiere abrir su propio despacho. El anuncio a se dirige a académicas que quieren crear su propia empresa y nombra expresamente el sector inmobiliario y el «Bauwesen» (construcción). El anuncio g es inmobiliario, pero describe la expansión de una empresa ajena, no cómo fundar la propia."
         }
       ]
@@ -174,6 +179,7 @@
           "answer": "d",
           "confidence": "hoch",
           "quote": "Dabei bieten Handwerksberufe gerade jungen Leuten die allerbesten Chancen für eine erfolgreiche Karriere. Fachkräfte brauchen sich um ihre Zukunft nicht zu sorgen.",
+          "explain_ru": "Yasmina после Realschulabschluss ищет профессию с хорошими перспективами, то есть путь в мир труда без университета. Объявление d представляет ремесленные профессии как лучший шанс для молодых и указывает 150 000 незанятых мест. Объявление h тоже говорит о карьере, но адресовано «Uniabsolventen».",
           "explain": "Yasmina busca, tras el Realschulabschluss, una profesión con buenas perspectivas, es decir, un acceso al mundo laboral sin estudios universitarios. El anuncio d presenta las profesiones artesanas como la mejor oportunidad para los jóvenes y señala 150.000 puestos sin cubrir. El anuncio h también habla de carrera, pero se dirige a «Uniabsolventen»."
         },
         {
@@ -183,6 +189,7 @@
           "answer": "h",
           "confidence": "hoch",
           "quote": "Vor allem in Großstädten bieten immer mehr junge Unternehmen interessante Jobmöglichkeiten.",
+          "explain_ru": "Jason рассматривает работу по найму в молодой компании. Объявление h говорит, что всё больше молодых компаний предлагают интересные места и что в стартапах тоже есть надёжность и перспективы. Объявление c тоже упоминает новые компании, но речь об их создании (Selbstständigkeit), а не о работе в них.",
           "explain": "Jason se plantea trabajar como empleado en una empresa de nueva creación. El anuncio h dice que cada vez más empresas jóvenes ofrecen puestos interesantes y que también en los start-ups se encuentran seguridad y perspectivas. El anuncio c menciona igualmente empresas nuevas, pero se refiere a fundarlas uno mismo (Selbstständigkeit), no a trabajar en ellas."
         },
         {
@@ -192,6 +199,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Inzwischen gibt es zahlreiche Coaching-Programme für Mitarbeiter, die Strategien aufzeigen, wie man mit solchen Situationen besser umgehen kann.",
+          "explain_ru": "Hannah страдает от плохого обращения коллег и ищет помощь. Объявление a описывает моббинг («Beleidigungen, Ausgrenzung, versteckte Drohungen») и предлагает программы коучинга со стратегиями, как с этим справляться. Объявление f тоже о моббинге, но это роман, без предложения помощи.",
           "explain": "Hannah sufre malos tratos de sus colegas y busca ayuda. El anuncio a describe el mobbing («Beleidigungen, Ausgrenzung, versteckte Drohungen») y remite a programas de coaching con estrategias para afrontarlo. El anuncio f también trata el mobbing, pero es una novela, sin oferta de ayuda."
         },
         {
@@ -201,6 +209,7 @@
           "answer": "g",
           "confidence": "hoch",
           "quote": "Prinzipiell gilt, dass Mitarbeiter zur Teilnahme an Seminaren verpflichtet sind, wenn diese zur Ausübung ihrer Tätigkeit notwendig sind und in der normalen Arbeitszeit stattfinden.",
+          "explain_ru": "Gacer спрашивает, обязана ли она проходить курсы повышения квалификации. Объявление g («Verpflichtend oder freiwillig») отвечает, что сотрудники обязаны участвовать в семинарах, когда они необходимы для их работы и проходят в рабочее время. Объявление e тоже упоминает «Fortbildungen», но лишь как часть, которую засчитывают для Meisterprüfung.",
           "explain": "Gacer se pregunta si está obligada a hacer cursos de formación continua. El anuncio g («Verpflichtend oder freiwillig») responde que los empleados están obligados a participar en seminarios cuando son necesarios para su actividad y se celebran dentro del horario laboral. El anuncio e menciona también «Fortbildungen», pero solo como parte reconocible del examen de maestría."
         },
         {
@@ -210,6 +219,7 @@
           "answer": "e",
           "confidence": "hoch",
           "quote": "Die Interessengemeinschaft „Das Handwerk\" hat die wichtigsten Zulassungsvoraussetzungen zur Meisterprüfung zusammengefasst.",
+          "explain_ru": "Assem нужна информация о Meisterprüfung. Объявление e — единственное, где она есть: там собраны условия допуска («Zulassungsvoraussetzungen») и объясняется, какие курсы засчитываются. Объявление b называет Meisterprüfung, но только как рекламный слоган, без полезной информации.",
           "explain": "Assem necesita información sobre el examen de maestría. El anuncio e es el único que la ofrece: reúne los requisitos de admisión («Zulassungsvoraussetzungen») y explica qué cursos de formación se reconocen. El anuncio b nombra la Meisterprüfung, pero solo como eslogan publicitario, sin información útil."
         }
       ]

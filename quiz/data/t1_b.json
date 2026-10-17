@@ -4,6 +4,7 @@
   "variants": [
     {
       "id": "t1_b-p11",
+      "note_ru": "В оригинале во второй строке указано «(тоже №140321, 140301)»: эти номера тестов соответствуют этому же варианту.",
       "label": "Variante 2 (test 140321, 140301)",
       "page": 11,
       "note": "El original indica en una segunda línea «(тоже №140321, 140301)»: esos números de test corresponden a esta misma variante.",
@@ -68,6 +69,7 @@
           "answer": "d",
           "confidence": "mittel",
           "quote": "Das liegt unter anderem auch an neuen staatlichen Förderungsmöglichkeiten für Jungunternehmer, die ihren eigenen Betrieb aufmachen möchten.",
+          "explain_ru": "Junis хочет открыть свою мастерскую: объявление d — единственное, где предлагают государственную поддержку тем, кто открывает собственное дело («ihren eigenen Betrieb aufmachen»). Средняя уверенность: e тоже о Existenzgründung, но e ориентировано на интеллектуальную работу на дому (переводчик, программист, налоговый консультант) и лучше подходит человеку 4; d же не описывает офисные профили и прямо упоминает финансовую помощь для открытия своего дела.",
           "explain": "Junis quiere abrir su propio taller: el anuncio d es el único que ofrece apoyo estatal a quienes ponen en marcha su propio negocio («ihren eigenen Betrieb aufmachen»). Confianza media porque e también trata de la Existenzgründung, pero e se dirige a trabajo intelectual en casa (traductor, programador, asesor fiscal) y encaja mejor con la persona 4; d, en cambio, no describe perfiles de oficina y menciona expresamente la ayuda económica para montar el negocio propio."
         },
         {
@@ -77,6 +79,7 @@
           "answer": "h",
           "confidence": "hoch",
           "quote": "Es hat ein Portal eingerichtet, um vor allem Ungelernte und Geringqualifizierte sowie Arbeitnehmer in Elternzeit über passende Aus- und Weiterbildungsmöglichkeiten zu informieren.",
+          "explain_ru": "Maria работает без квалификации и хочет пройти профессиональное обучение. Объявление h — публичный портал, адресованный именно «Ungelernte und Geringqualifizierte», где рассказывают о путях получения квалификации. Объявление f лишь описывает минусы отсутствия образования, не предлагая выхода.",
           "explain": "Maria trabaja sin cualificación y quiere hacer una formación profesional. El anuncio h es un portal público dirigido justamente a «Ungelernte und Geringqualifizierte» que informa sobre vías de cualificación. El anuncio f solo describe las desventajas de no tener formación, sin ofrecer salida alguna."
         },
         {
@@ -86,6 +89,7 @@
           "answer": "c",
           "confidence": "hoch",
           "quote": "Viele große Unternehmen setzen nun verstärkt auf Flexibilität und familienfreundliche Leistungen wie Firmen-Kita oder Homeoffice.",
+          "explain_ru": "Nikolett не хочет выбирать между семьёй и работой. Объявление c — единственное, где представлены меры «familienfreundlich» (корпоративный детский сад, удалённая работа), то есть совмещение семьи и работы.",
           "explain": "Nikolett no quiere verse obligada a elegir entre familia y trabajo. El anuncio c es el único que presenta medidas «familienfreundlich» (guardería de empresa, teletrabajo), es decir, compatibilidad de familia y empleo."
         },
         {
@@ -95,6 +99,7 @@
           "answer": "e",
           "confidence": "hoch",
           "quote": "Ob als Übersetzer, Programmierer oder Steuerberater - Theo Geertz berät dich, wie du dein Fachwissen nutzen kannst, um zu Hause und auf eigene Rechnung zu arbeiten.",
+          "explain_ru": "Amin изучает языки и хочет работать на себя. Объявление e предлагает консультацию, как работать «Übersetzer» (переводчик — прямое продолжение его учёбы) и «auf eigene Rechnung» (на свой счёт). Объявление d тоже о самозанятости, но как о способе финансирования бизнеса, а не о свободной профессии.",
           "explain": "Amin estudia idiomas y quiere trabajar por cuenta propia. El anuncio e ofrece asesoramiento para ejercer como «Übersetzer» (traductor, la salida directa de sus estudios) y «auf eigene Rechnung» (por cuenta propia). El anuncio d también es sobre autoempleo, pero como vía de financiación de un negocio, no como ejercicio liberal."
         },
         {
@@ -104,6 +109,7 @@
           "answer": "a",
           "confidence": "hoch",
           "quote": "Das Arbeitsrecht unterscheidet zwischen personenbedingter, betriebsbedingter und verhaltensbedingter Beendigung des Arbeitsverhältnisses. Lesen Sie hier alle Informationen darüber, aus welchen Gründen der Arbeitgeber berechtigt ist zu kündigen.",
+          "explain_ru": "Samita будет уволена «aus betriebsbedingten Gründen». Объявление a дословно повторяет это выражение и объясняет, когда увольнение оправдано, — именно это и нужно проверить, чтобы защититься. Объявление g тоже упоминает Kündigung, но лишь как эмоциональную отправную точку для переориентации.",
           "explain": "Samita va a ser despedida «aus betriebsbedingten Gründen». El anuncio a reproduce literalmente esa expresión y explica cuándo está justificado el despido, que es justo lo que hay que comprobar para defenderse. El anuncio g también menciona la Kündigung, pero solo como punto de partida emocional para reorientarse."
         }
       ]
@@ -174,6 +180,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Außerdem informiert sie darüber, was Sie in einem Bewerbungsgespräch nicht erzählen müssen.",
+          "explain_ru": "Lamia спрашивает себя, нужно ли упоминать беременность на собеседовании. Объявление b прямо обещает информацию о том, о чём не нужно рассказывать на собеседовании, — как раз её вопрос. Объявление e тоже говорит о беременности, но только о защите от увольнения, а не о собеседовании.",
           "explain": "Lamia se pregunta si debe mencionar su embarazo en la entrevista. El anuncio b anuncia expresamente información sobre lo que no hay que contar en una entrevista de trabajo, que es justo su duda. El anuncio e también habla del embarazo, pero solo de la protección frente al despido, no de la entrevista."
         },
         {
@@ -183,6 +190,7 @@
           "answer": "h",
           "confidence": "hoch",
           "quote": "Eine der wichtigsten Voraussetzungen ist es also, Jobangebote richtig zu filtern, um ohne großen Zeitaufwand die richtige Anzeige zu finden.",
+          "explain_ru": "Raymond ищет работу через интернет. Объявление h объясняет, как правильно фильтровать предложения в сети, чтобы не терять время. Объявление c тоже о вакансиях онлайн, но оно предназначено для компаний, которые их публикуют.",
           "explain": "Raymond busca empleo por Internet. El anuncio h explica cómo filtrar correctamente las ofertas en la red para no perder tiempo. El anuncio c también trata de ofertas de empleo online, pero está pensado para empresas que las publican."
         },
         {
@@ -192,6 +200,7 @@
           "answer": "g",
           "confidence": "hoch",
           "quote": "Vom Businessplan und der richtigen Finanzierung über vernünftige Personalplanung bis hin zur Einholung der notwendigen Lizenzen kommen nun viele Dinge auf Sie zu.",
+          "explain_ru": "Karl хочет открыть своё дело в гостинично-ресторанной сфере. Объявление g адресовано «angehender Gründer» и перечисляет бизнес-план, финансирование и прежде всего получение необходимых разрешений — типичная процедура для заведения общепита.",
           "explain": "Karl quiere establecerse por su cuenta en la hostelería. El anuncio g se dirige al «angehender Gründer» y enumera plan de negocio, financiación y sobre todo la obtención de las licencias necesarias, trámite típico de un local de restauración."
         },
         {
@@ -201,6 +210,7 @@
           "answer": "f",
           "confidence": "hoch",
           "quote": "Eltern haben keinen Rechtsanspruch darauf, ihre Kinder am Arbeitsplatz zu betreuen. Die Entscheidung unterliegt der Zustimmung des Arbeitgebers",
+          "explain_ru": "Sean сомневается, можно ли привести больного ребёнка в офис. Объявление f отвечает именно на это: права приводить детей на рабочее место нет, решает работодатель. Объявление a тоже исходит из больного ребёнка, но предлагает остаться дома, а не брать его с собой.",
           "explain": "Sean duda si puede llevar a su hijo enfermo a la oficina. El anuncio f responde exactamente a eso: no existe derecho a que los hijos estén en el puesto de trabajo, decide el empleador. El anuncio a también parte de un hijo enfermo, pero ofrece quedarse en casa, no llevarlo consigo."
         },
         {
@@ -210,12 +220,14 @@
           "answer": "d",
           "confidence": "hoch",
           "quote": "Der Bundesverband der Tourismusbranche informiert. Trotz anhaltend großer Nachfrage von Seiten der Arbeitgeber ist die Zahl der Bewerbungen rückläufig.",
+          "explain_ru": "Ramona интересуется профессиональными перспективами «Reiseverkehrskauffrau» — профиля из туристической отрасли. Объявление d — от Bundesverband der Tourismusbranche, и в нём описана ситуация на рынке труда и обучения в этой отрасли с высоким спросом на работников.",
           "explain": "Ramona se interesa por las salidas profesionales de «Reiseverkehrskauffrau», un perfil del sector turístico. El anuncio d es el del Bundesverband der Tourismusbranche y describe la situación del mercado laboral y de formación en esa rama, con alta demanda de trabajadores."
         }
       ]
     },
     {
       "id": "t1_b-p13",
+      "note_ru": "Новая версия (07.2024) варианта с. 12: изменены имена и порядок людей, переписаны объявления a), c), d) и f). Поэтому ответы меняют номер, хотя набор использованных объявлений тот же {b, d, f, g, h}.",
       "label": "Variante 3 (nueva versión 07.2024)",
       "page": 13,
       "note": "Nueva versión (07.2024) de la variante de la p.12: cambian los nombres y el orden de las personas y se han reescrito los anuncios a), c), d) y f). Por eso las respuestas cambian de número, aunque el conjunto de anuncios utilizados es el mismo {b, d, f, g, h}.",
@@ -280,6 +292,7 @@
           "answer": "h",
           "confidence": "hoch",
           "quote": "Der Stellemarkt spielt sich heutzutage fast ausschließlich online ab. Im Internet erscheint das Angebot an offenen Stellen riesig",
+          "explain_ru": "Yuan Javier ищет работу через интернет. Объявление h (в этой версии переписано так, что начинается с «Der Stellemarkt spielt sich … online ab») посвящено как раз поиску работы в сети и правильной фильтрации предложений. Объявление c — для компаний, которые публикуют вакансии.",
           "explain": "Yuan Javier busca trabajo por Internet. El anuncio h (reescrito en esta versión para empezar con «Der Stellemarkt spielt sich … online ab») trata precisamente de la búsqueda de empleo en la red y de filtrar bien las ofertas. El anuncio c es para empresas que publican las ofertas."
         },
         {
@@ -289,6 +302,7 @@
           "answer": "g",
           "confidence": "hoch",
           "quote": "Als angehender Gründer brauchen Sie nicht nur Branchenkenntnisse, sondern auch Wissen über betriebswirtschaftliche Vorgänge. Vom Businessplan und der richtigen Finanzierung über vernünftige Personalplanung bis hin zur Einholung der notwendigen Lizenzen kommen nun viele Dinge auf Sie zu.",
+          "explain_ru": "Paul хочет открыть своё дело в гостинично-ресторанной сфере. Объявление g консультирует «angehender Gründer» (бизнес-план, финансирование, разрешения) — это процедуры для открытия заведения. Объявление c упоминает новые компании, но только в связи с публикацией вакансий.",
           "explain": "Paul quiere establecerse en la hostelería. El anuncio g es el que asesora al «angehender Gründer» (plan de negocio, financiación, licencias), trámites propios de abrir un local. El anuncio c menciona empresas de nueva creación, pero solo en relación con anuncios de empleo."
         },
         {
@@ -298,6 +312,7 @@
           "answer": "f",
           "confidence": "hoch",
           "quote": "Häufig stimmen Arbeitgeber der Bitte von Eltern zu, ihre Kinder mit zur Arbeit zu bringen, wenn deren Betreuung kurzfristig ausfällt. Damit können Fehlzeiten vermieden werden.",
+          "explain_ru": "Avio сомневается, можно ли привести больного ребёнка в офис. Объявление f теперь называется «Kinder am Arbeitsplatz» и подтверждает, что работодатель обычно соглашается, когда присмотр неожиданно срывается. Объявление a тоже исходит из больных детей, но решает вопрос днями отпуска дома.",
           "explain": "Avio duda si puede llevar a su hijo enfermo a la oficina. El anuncio f se titula ahora «Kinder am Arbeitsplatz» y confirma que el empleador suele aceptarlo cuando el cuidado falla de forma imprevista. El anuncio a también parte de hijos enfermos, pero resuelve el caso con días de permiso en casa."
         },
         {
@@ -307,6 +322,7 @@
           "answer": "d",
           "confidence": "hoch",
           "quote": "Der Bundesverband der Tourismusbranche informiert. Trotz anhaltend großer Nachfrage von Seiten der Arbeitgeber ist die Zahl der Bewerbungen rückläufig. Auch auf dem Ausbildungsmarkt fehlt es an jungen Menschen, die sich für dieses Arbeitsfeld interessieren. Demzufolge gibt es aktuell eine Reihe offener Stellen.",
+          "explain_ru": "Nora ищет возможности как «Reiseverkehrskauffrau» — профессия туристической отрасли. Объявление d от Bundesverband der Tourismusbranche рассказывает об этом рынке; в этой версии последняя фраза переформулирована, чтобы подчеркнуть, что вакансий довольно много («eine Reihe offener Stellen»).",
           "explain": "Nora busca oportunidades como «Reiseverkehrskauffrau», profesión del sector turístico. El anuncio d, del Bundesverband der Tourismusbranche, informa de ese mercado; en esta versión la última frase se ha reformulado para destacar que hay bastantes vacantes («eine Reihe offener Stellen»)."
         },
         {
@@ -316,6 +332,7 @@
           "answer": "b",
           "confidence": "hoch",
           "quote": "Außerdem informiert sie darüber, was Sie in einem Bewerbungsgespräch nicht erzählen müssen.",
+          "explain_ru": "Anna Maria спрашивает себя, нужно ли упоминать беременность на собеседовании. Объявление b даёт именно эту информацию: о чём не обязательно рассказывать на собеседовании. Объявление e снова оказывается ловушкой, потому что говорит только о Mutterschutz и увольнении.",
           "explain": "Anna Maria se pregunta si debe mencionar su embarazo en la entrevista. El anuncio b ofrece exactamente esa información: qué no hace falta contar en una entrevista. El anuncio e vuelve a ser el distractor, porque solo trata del Mutterschutz y del despido."
         }
       ]

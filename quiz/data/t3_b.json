@@ -4,6 +4,7 @@
  "variants": [
   {
    "id": "t3_b-p35",
+   "note_ru": "Форум о совместимости профессионального обучения (Ausbildung), семьи, беременности и возраста.",
    "label": "Variante 2 (Ausbildung und Familie)",
    "page": 35,
    "note": "Foro sobre compatibilidad de formación profesional (Ausbildung), familia, embarazo y edad.",
@@ -57,6 +58,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Solange du so nicht weniger arbeitest als im Vertrag vereinbart, müsstest du rechtlich auf der sicheren Seite sein. Wenn du es genau wissen willst, solltest du in diesem Fall einen Anwalt für Arbeitsrecht kontaktieren.",
+     "explain_ru": "Inka отрабатывает свою норму, но должна уходить вовремя, чтобы забрать сына из детского сада, и начальник угрожает ей увольнением. Susi (a) объясняет, что пока она работает положенные по договору часы, закон её защищает, и советует обратиться к юристу по трудовому праву.",
+
      "explain": "Inka cumple con su jornada pero debe salir puntual para recoger a su hijo de la guardería y el jefe la amenaza con el despido. Susi (a) le aclara que mientras trabaje las horas contractuales está protegida legalmente y le recomienda consultar a un abogado laboralista."
     },
     {
@@ -66,6 +69,8 @@
      "answer": "f",
      "confidence": "hoch",
      "quote": "Aber versuch auf jeden Fall, die Ausbildung durchzuziehen.",
+     "explain_ru": "Jacqueline забеременела вскоре после начала обучения и сомневается, не бросить ли его («Soll ich die Ausbildung abbrechen?»). Peter (f) горячо уговаривает её не бросать («durchzuziehen»), найти детский сад или поддержку семьи и поговорить с начальником, чтобы найти решение.",
+
      "explain": "Jacqueline se ha quedado embarazada al poco de iniciar la formación y duda si abandonarla («Soll ich die Ausbildung abbrechen?»). Peter (f) la anima vehementemente a no dejarla («durchzuziehen»), buscar guardería o apoyo familiar y hablar con el jefe para buscar una solución."
     },
     {
@@ -75,6 +80,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Mit Berufen im Finanzbereich hast du gute Aussichten auf dem Arbeitsmarkt und verdienst später auch gutes Geld. Mach dir das nicht kaputt. Meine Tochter ist Steuerberaterin und sucht händeringend nach fähigen Mitarbeitern.",
+     "explain_ru": "Hans-Peter спрашивает, есть ли у него шансы в налоговой сфере («Steuerfachangestellten») почти в 50 лет. Jürgen (c) подтверждает отличные перспективы на рынке труда в финансовой сфере и приводит в пример свою дочь — налогового консультанта, которая срочно ищет сотрудников.",
+
      "explain": "Hans-Peter pregunta si a sus casi 50 años tiene posibilidades en el sector fiscal («Steuerfachangestellten»). Jürgen (c) confirma las excelentes perspectivas laborales en el ámbito financiero y cita a su hija asesora fiscal, que busca personal urgentemente."
     },
     {
@@ -84,12 +91,15 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Rein rechtlich kannst du das nicht ohne Zustimmung deiner Eltern machen. Sie müssen die Kündigung sogar unterschreiben.",
+     "explain_ru": "Max несовершеннолетний («Ich bin noch nicht 18») и спрашивает, может ли он расторгнуть договор сам, против воли отца. Julia (b) предупреждает, что по закону несовершеннолетние не могут расторгнуть обучение без согласия и подписи родителей.",
+
      "explain": "Max es menor de edad («Ich bin noch nicht 18») y pregunta si puede rescindir su contrato por su cuenta contra el deseo de su padre. Julia (b) le advierte de que legalmente los menores no pueden rescindir la formación sin el consentimiento y la firma de sus padres."
     }
    ]
   },
   {
    "id": "t3_b-p36",
+   "note_ru": "Форум о работе по субботам, переходе с частичной занятости на полную и отпуске по уходу.",
    "label": "Variante 3 (Arbeitszeit und Familie)",
    "page": 36,
    "note": "Foro sobre trabajo en sábado, ampliación de jornada parcial a completa y excedencias.",
@@ -143,6 +153,8 @@
      "answer": "e",
      "confidence": "hoch",
      "quote": "Der Samstag ist ein normaler Werktag und deshalb kann der Arbeitgeber anordnen, dass an diesem Tag auch gearbeitet wird. Dabei spielt es keine Rolle, ob du Kinder hast oder nicht.",
+     "explain_ru": "Soma спрашивает, может ли предприятие обязать её выйти в субботу, если у неё маленькие дети. Alex (e) прямо отвечает, что суббота — рабочий день («Werktag») и работодатель может назначить работу в этот день независимо от семейных обязанностей.",
+
      "explain": "Soma pregunta si su empresa puede obligarla a acudir en sábado teniendo hijos pequeños. Alex (e) responde directamente que el sábado es día laborable («Werktag») y el empleador puede ordenar trabajar en él con independencia de las cargas familiares."
     },
     {
@@ -152,6 +164,8 @@
      "answer": "d",
      "confidence": "hoch",
      "quote": "Soviel ich weiß, hast du also keinen Anspruch, in die Vollzeit zurückzukehren. Sprich doch einfach mal mit deinem Chef.",
+     "explain_ru": "Reinhold двенадцать лет работает на полставки и спрашивает, есть ли у него законное право перейти на полную занятость. Ratna (d) разъясняет, что новое регулирование временной неполной занятости не действует задним числом для его давнего случая, поэтому такого автоматического права нет.",
+
      "explain": "Reinhold lleva doce años a media jornada y pregunta si tiene derecho legal a pasar a jornada completa. Ratna (d) le aclara que la nueva regulación de jornada reducida temporal no opera con carácter retroactivo para su caso antiguo, por lo que no existe ese derecho automático."
     },
     {
@@ -161,6 +175,8 @@
      "answer": "c",
      "confidence": "hoch",
      "quote": "Man muss sich das aber genau überlegen, da man nicht nur kurz- oder mittelfristig weniger verdient, sondern auch weniger Rentenansprüche hat.",
+     "explain_ru": "Mandy оценивает трёхлетнюю паузу или сокращение работы по семейным причинам и сомневается в финансовых последствиях. Angela (c) объясняет право на сокращение рабочего времени, но предупреждает о влиянии на доход и особенно на будущую пенсию («weniger Rentenansprüche»).",
+
      "explain": "Mandy evalúa una pausa de tres años o reducción laboral por motivos familiares y duda del impacto económico. Angela (c) explica el derecho a reducir jornada pero advierte del impacto en los ingresos y especialmente en la reducción de las futuras pensiones de jubilación («weniger Rentenansprüche»)."
     },
     {
@@ -170,12 +186,15 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "In meinen Augen ist Familie das Wichtigste auf der Welt. Es ist doch auch ein Gewinn, wenn man mehr Zeit mit seinen Kindern verbringen kann und weniger gestresst ist. Ich würde mich auf jeden Fall für Teilzeit entscheiden.",
+     "explain_ru": "Nici сомневается: выбрать неполную занятость после второго ребёнка или быстро вернуться к полной, боясь затормозить карьеру. Thilo (a) советует поставить на первое место семью и без колебаний выбрать Teilzeit («Ich würde mich auf jeden Fall für Teilzeit entscheiden»).",
+
      "explain": "Nici duda entre optar por la jornada reducida tras su segundo hijo o volver rápido a jornada completa por miedo a frenar su carrera. Thilo (a) le aconseja priorizar a la familia y decantarse sin dudar por el tiempo parcial («Ich würde mich auf jeden Fall für Teilzeit entscheiden»)."
     }
    ]
   },
   {
    "id": "t3_b-p37",
+   "note_ru": "Форум о законных днях отпуска, внезапных сменах, отмене уже согласованного отпуска и работе в выходные во время практики.",
    "label": "Variante 4 (Urlaub und Dienstplan)",
    "page": 37,
    "note": "Foro sobre días de vacaciones legales, turnos de trabajo imprevistos, anulación de vacaciones concedidas y trabajo en fin de semana durante prácticas.",
@@ -229,6 +248,8 @@
      "answer": "a",
      "confidence": "hoch",
      "quote": "Leider muss ich dich enttäuschen. Die Regelung ist gesetzeskonform. Das Minimum liegt sogar nur bei 20 Tagen. Sei froh, dass du mehr hast.",
+     "explain_ru": "Thia жалуется, что у неё всего 25 дней отпуска. Cécile (a) объясняет, что 25 дней полностью соответствуют закону: минимальный отпуск в Германии — 20 рабочих дней при пятидневной неделе.",
+
      "explain": "Thia se queja de tener solo 25 días de vacaciones. Cécile (a) le aclara que 25 días se ajusta plenamente a la ley, ya que el mínimo legal en Alemania es de 20 días laborables para jornadas de 5 días."
     },
     {
@@ -238,6 +259,8 @@
      "answer": "b",
      "confidence": "hoch",
      "quote": "Meines Wissens gibt es keine gesetzliche Regelung dafür, aber sprich doch einfach mal mit eurem Chef. Dem ist vielleicht gar nicht klar, dass du das nicht so toll findest, wenn du immer erst so kurz vorher weißt, an welchen Tagen du arbeiten musst",
+     "explain_ru": "Marilena получает график в конце предыдущей недели и не может планировать личную жизнь. Limit (b) говорит об отсутствии жёсткого регулирования и советует поговорить с начальником и сказать о проблеме с уведомлением за столь короткий срок.",
+
      "explain": "Marilena recibe el cuadrante horario a finales de la semana previa impidiéndole organizar su vida personal. Limit (b) le comenta la ausencia de una regulación rígida y le aconseja hablar con el jefe para comunicarle el problema de los avisos con tan poco margen."
     },
     {
@@ -247,6 +270,8 @@
      "answer": "f",
      "confidence": "hoch",
      "quote": "Das kann dein Chef nicht einfach so machen. Personelle Engpässe reichen für den Widerruf eines Urlaubsantrags nicht aus.",
+     "explain_ru": "Hans уже согласовал и оплатил отпуск, а начальник собирается его отменить. Michele (f) подтверждает, что предприятие не может в одностороннем порядке отменить уже предоставленный отпуск из-за нехватки персонала и должно взять на себя возникшие расходы.",
+
      "explain": "Hans ya tenía sus vacaciones autorizadas y contratadas y el jefe pretende cancelárselas. Michele (f) le confirma que una empresa no puede anular unilateralmente unas vacaciones ya concedidas por falta de personal y que debería asumir los costes derivados."
     },
     {
@@ -256,6 +281,8 @@
      "answer": "d",
      "confidence": "hoch",
      "quote": "Allerdings darfst du keine sieben Tage am Stück arbeiten. Der Samstag gilt in Deutschland als normalen Wochentag.",
+     "explain_ru": "Lisa проходит практику с понедельника по пятницу (8 часов в день), и ей назначают работу в субботу. Nico (d) объясняет, что суббота — обычный рабочий день («Werktag»), но напоминает о законном пределе: нельзя ставить семь дней подряд без отдыха.",
+
      "explain": "Lisa hace prácticas de lunes a viernes (8h/día) y le ordenan trabajar el sábado. Nico (d) explica que el sábado es día laborable ordinario («Werktag»), pero recuerda el límite legal de que no se pueden encadenar siete días consecutivos sin descanso."
     }
    ]
