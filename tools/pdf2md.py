@@ -680,6 +680,10 @@ class Run:
 def extract_runs(data: bytes, fonts: dict[str, Font], runs: list[Run]) -> None:
     lx = Lexer(data)
     stack: list = []
+    # Pila de estado grafico (q/Q). Sin ella, la fuente elegida dentro de un
+    # bloque q...Q se filtraba a los textos siguientes: en las paginas con OCR
+    # eso convertia texto ASCII en codigos de dos bytes y se perdia.
+    gstack: list = []
     cur_font = Font()
     size = 10.0
     tm = [1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
@@ -711,7 +715,12 @@ def extract_runs(data: bytes, fonts: dict[str, Font], runs: list[Run]) -> None:
 
         op = tok
         try:
-            if op == b"BT":
+            if op == b"q":
+                gstack.append((cur_font, size, char_sp, word_sp, hscale, leading))
+            elif op == b"Q":
+                if gstack:
+                    cur_font, size, char_sp, word_sp, hscale, leading = gstack.pop()
+            elif op == b"BT":
                 tm = [1.0, 0.0, 0.0, 1.0, 0.0, 0.0]
                 tlm = list(tm)
             elif op == b"Tm" and len(stack) >= 6:

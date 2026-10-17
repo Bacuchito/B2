@@ -84,6 +84,50 @@ const mainNodes = ids.main.children.length;
 check("la barra lateral se rellenó", navNodes > 0, `nodos: ${navNodes}`);
 check("el panel principal se rellenó", mainNodes > 0, `nodos: ${mainNodes}`);
 
+/* ---------- menú plegable: acordeón por sección ---------- */
+/* El menú tenía 140 entradas seguidas: para llegar a Schreiben había que bajar
+   toda la lista. Ahora cada cabecera pliega su grupo y solo el grupo donde
+   estás aparece desplegado. */
+const clases = el => String(el.className).split(/\s+/);
+const cabeceras = () => ids.nav.children.filter(c => clases(c).includes("sec"));
+const abiertas = () => cabeceras().filter(c => clases(c).includes("open"));
+/* Entradas que cuelgan de la cabecera i, en el orden del DOM. */
+const entradasDe = i => {
+  const out = [];
+  let dentro = false;
+  for (const c of ids.nav.children) {
+    if (clases(c).includes("sec")) { dentro = c === cabeceras()[i]; continue; }
+    if (dentro) out.push(c);
+  }
+  return out;
+};
+const toggleDe = i => cabeceras()[i].children[0];
+
+check("hay una cabecera plegable por sección", cabeceras().length === 7,
+      `cabeceras: ${cabeceras().length}`);
+check("al abrir la app solo está desplegado el grupo donde estás",
+      abiertas().length === 1, `desplegadas: ${abiertas().length}`);
+check("el grupo desplegado deja ver sus entradas",
+      entradasDe(0).length > 0 && entradasDe(0).every(e => !e.hidden),
+      `visibles: ${entradasDe(0).filter(e => !e.hidden).length}/${entradasDe(0).length}`);
+check("los grupos plegados esconden sus entradas sin borrarlas del DOM",
+      entradasDe(1).length > 0 && entradasDe(1).every(e => e.hidden),
+      `escondidas: ${entradasDe(1).filter(e => e.hidden).length}/${entradasDe(1).length}`);
+check("la cabecera cuenta las entradas que esconde",
+      Number(cabeceras()[1].children[0].children[1].textContent) === entradasDe(1).length,
+      `contador: ${cabeceras()[1].children[0].children[1].textContent} · entradas: ${entradasDe(1).length}`);
+
+toggleDe(1).onclick();
+check("pulsar otra cabecera abre ese grupo y cierra el anterior",
+      abiertas().length === 1 && abiertas()[0] === cabeceras()[1] &&
+      entradasDe(1).every(e => !e.hidden) && entradasDe(0).every(e => e.hidden),
+      `desplegadas: ${abiertas().length} · visibles en el grupo 2: ${entradasDe(1).filter(e => !e.hidden).length}`);
+
+toggleDe(1).onclick();
+check("volver a pulsar la cabecera abierta pliega el menú entero",
+      abiertas().length === 0 && cabeceras().every((_, i) => entradasDe(i).every(e => e.hidden)),
+      `desplegadas: ${abiertas().length}`);
+
 const stats = ids.stats.innerHTML;
 check("las estadísticas se calcularon", /respondidas/.test(stats), stats.slice(0, 90));
 

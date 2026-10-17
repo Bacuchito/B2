@@ -99,6 +99,20 @@ en paralelo.
 
 Idioma: **92,9 % alemán / 7,1 % ruso** (el ruso son las notas del autor).
 
+## Prueba del extractor
+
+```powershell
+& $py tools\test_pdf2md.py
+```
+
+Cubre el fallo corregido en `extract_runs`: se ignoraba el estado gráfico
+`q`/`Q`, así que la fuente elegida dentro de un bloque `q...Q` se filtraba a los
+textos siguientes. En las páginas con la capa de texto mezclada (la tabla de
+Forumsbeitrag, pp. 98-106) eso hacía que texto ASCII escrito con una fuente
+Type0 se leyera como códigos de dos bytes y **se perdiera en silencio**: por eso
+faltaban trozos como «nehmen, da keine neuen Mitarbeitenden». Sin el arreglo la
+prueba falla en las tres comprobaciones.
+
 ## Limitaciones conocidas
 
 - **Diseño multicolumna** (p. ej. p.1, tablas) se lee en orden de coordenadas, no
@@ -107,3 +121,6 @@ Idioma: **92,9 % alemán / 7,1 % ruso** (el ruso son las notas del autor).
   extraería nada. `pdf2md.py` lo detecta (páginas casi vacías) pero no lo resuelve.
 - Solo soporta `FlateDecode`. Un PDF con `LZWDecode`, `ASCII85Decode` o cifrado
   requeriría añadir filtros.
+- **Celdas de tabla partidas**: cuando el texto de una celda sigue en la página
+  siguiente (p. ej. la fila 110101 de la tabla de Forumsbeitrag), hay que unir a
+  mano el fragmento del principio de la página siguiente.

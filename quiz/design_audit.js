@@ -173,7 +173,7 @@ const fontTokens = rules.filter((r) => !r.media).reduce((n, r) => n + Object.ent
 
 /* Áreas táctiles: mínimo 28px en escritorio y 44px en móvil */
 const interactive = ["nav button", ".btn", ".letters button", ".tab-pill", ".lang-btn", ".user-btn",
-  ".modal-close", ".copy-btn", ".input", ".select", ".opt", ".lp-item", ".sec-reset", "details.passage summary"];
+  ".modal-close", ".copy-btn", ".input", ".select", ".opt", ".lp-item", ".sec-reset", ".sec-toggle", "details.passage summary"];
 const smallTargets = [];
 for (const sel of interactive) {
   const rule = findRule(sel) || rules.find((r) => !r.media && r.selector.includes(sel));

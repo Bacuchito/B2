@@ -192,7 +192,7 @@ Tareas abiertas de expresión escrita del examen telc Deutsch-Test für den Beru
 | `kind` | sí | `"schreiben"` |
 | `category` | sí | `"beschwerde"` o `"forum"` |
 | `topic` | sí | Tema profesional (ej. `"Putzdienst / Reinigung"`, `"Homeoffice"`) |
-| `scenario` | sí | Contexto laboral o situación que motiva el texto |
+| `scenario` | sí | Situación que motiva el texto. En `forum` es el **texto literal** de la tabla del PDF (pp. 98-106); en `beschwerde`, un resumen del caso |
 | `source_letter` | solo `beschwerde` | Carta de queja completa recibida del cliente/proveedor |
 | `boss_instructions`| solo `beschwerde` | Indicaciones o notas internas del superior |
 | `prompt` | sí | Enunciado formal del examen en alemán |

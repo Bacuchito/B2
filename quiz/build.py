@@ -7,6 +7,7 @@ Uso:
 import glob
 import json
 import os
+import re
 import sys
 
 if sys.stdout and hasattr(sys.stdout, "reconfigure"):
@@ -265,6 +266,34 @@ def main():
                     infos.append("mismo enunciado, opciones distintas "
                                  "(pregunta distinta, sin conflicto): " + where)
 
+    # --- cobertura del catálogo de Schreiben ---
+    # La parte de lectura (sección «lesen-us») ya trae las variantes 1-9 del
+    # bloque Beschwerde (pp. 66-77). Si una variante tiene lectura pero no tarea
+    # de redacción, al catálogo le falta contenido: pasó con las variantes 3, 8
+    # y 9, que estuvieron meses sin su tarea de escritura sin que nadie lo notara.
+    nums_lesen = set()
+    for v in by_section.get("lesen-us", []):
+        for m in re.finditer(r"Variante (\d+)", str(v.get("label") or "")):
+            nums_lesen.add(int(m.group(1)))
+    nums_schreiben = {v.get("source_variant")
+                      for v in by_section.get("schreiben-beschwerde", [])}
+    sin_tarea = sorted(n for n in nums_lesen if n not in nums_schreiben)
+    if sin_tarea:
+        errors.append("Beschwerde: variantes con lectura pero sin tarea de redacción: "
+                      + ", ".join(f"Nº {n}" for n in sin_tarea))
+
+    # --- orden del catálogo de Forumsbeitrag ---
+    # El menú se ordena por (página, num). Un `num` repetido o con huecos
+    # descoloca el bloque respecto al PDF: las entradas 64-66 tenían página 104
+    # y se colaban entre la 44 y la 45.
+    nums_foro = [v.get("num") for v in by_section.get("schreiben-forum", [])]
+    if any(n is None for n in nums_foro):
+        errors.append("Forumsbeitrag: hay entradas sin `num` (orden del PDF)")
+    elif len(set(nums_foro)) != len(nums_foro):
+        errors.append("Forumsbeitrag: `num` repetido en el catálogo")
+    elif sorted(nums_foro) != list(range(1, len(nums_foro) + 1)):
+        errors.append("Forumsbeitrag: la numeración debe ser 1..N sin huecos")
+
     if infos:
         print(f"\n--- INFORMATIVO ({len(infos)}) ---")
         for i in infos:
@@ -291,7 +320,9 @@ def main():
     for sid in ORDER:
         if sid not in by_section:
             continue
-        vs = sorted(by_section[sid], key=lambda v: (v.get("page", 0), v.get("id", "")))
+        # `num` es la posición en el PDF (solo lo usan los Forumsbeiträge);
+        # donde no existe, 0 y decide el id.
+        vs = sorted(by_section[sid], key=lambda v: (v.get("page", 0), v.get("num", 0), v.get("id", "")))
         for v in vs:
             ok_ns = set(verified.get(v.get("id"), []))
             for it in v.get("items", []):

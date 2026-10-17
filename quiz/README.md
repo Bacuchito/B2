@@ -57,11 +57,24 @@ $py = "C:\Users\sergi\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\python\
 $node = "C:\Users\sergi\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\bin\node.exe"
 
 & $py quiz\make_quiz_sources.py out\B2_ohne_antworten.md quiz\src
+& $py quiz\make_schreiben.py
+& $py quiz\make_full_forums.py
 & $py quiz\build.py quiz\data quiz\template.html quiz\B2_quiz.html
 & $node quiz\smoke_test.js quiz\B2_quiz.html
 & $node quiz\security_test.js quiz\B2_quiz.html
 & $node quiz\design_audit.js quiz\template.html
 ```
+
+Los dos primeros regeneran el catálogo de Schreiben. Ojo con el reparto:
+`make_schreiben.py` escribe **solo** `data/schreiben_beschwerde.json` (13 tareas
+de las pp. 66-77) y `make_full_forums.py` **solo** `data/schreiben_forum.json`
+(98 temas de las pp. 98-106, en el orden de la tabla del PDF y numerados 1-98).
+La lista `foren` que sigue dentro de `make_schreiben.py` es un subconjunto
+antiguo de 8 temas: no la vuelvas a volcar sobre el fichero.
+
+En los Forumsbeiträge, `num` es la posición en el PDF y manda el orden del menú;
+los `id` **no** siguen esa numeración (se dejaron como estaban para no perder
+borradores ni evaluaciones ya guardados, que van por `id`).
 
 `build.py` **valida antes de generar** y no escribe el HTML si hay errores.
 `smoke_test.js` ejecuta el visor con un DOM simulado: detecta errores de ejecución
@@ -171,6 +184,13 @@ revisarlas contra el texto original.
   (¿texto truncado?).
 - Avisa si no quedan exactamente 3 anuncios sin usar.
 - Detecta `id` duplicados en todo el proyecto.
+- **Cobertura del bloque Beschwerde**: cada «Variante N» de la parte de lectura
+  (`ls_*.json`, variantes 1-9 de las pp. 66-77) tiene que tener su tarea de
+  redacción con ese `source_variant`. Faltaban las variantes 3, 8 y 9 y el HTML
+  se generaba igual: ahora el build se niega y las nombra.
+- **Orden del bloque Forumsbeitrag**: el menú se ordena por (página, `num`), y
+  `num` es la posición en la tabla del PDF (pp. 98-106). Un `num` repetido, con
+  huecos o ausente detiene el build.
 - **Coherencia entre variantes**: si el mismo enunciado lleva respuestas distintas,
   distingue tres casos — conflicto real (mismo texto y mismas opciones → aviso),
   cambio de versión del texto (informativo) y opciones distintas (informativo).

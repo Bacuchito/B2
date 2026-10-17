@@ -190,6 +190,24 @@
            padding-bottom:var(--sp-2);border-bottom:1px solid var(--line);
            font-weight:700;display:flex;align-items:center;
            justify-content:space-between;gap:var(--sp-2)}
+  /* Cabecera plegable: al menú le sobraban 140 entradas. Un clic abre el grupo
+     y cierra el anterior; el contador dice cuántas entradas esconde. */
+  nav .sec-toggle{display:flex;align-items:center;gap:var(--sp-2);flex:1 1 auto;
+           min-width:0;min-height:32px;cursor:pointer;user-select:none;
+           border-radius:var(--r-1);
+           transition:color var(--dur-1) var(--ease),transform var(--dur-1) var(--spring)}
+  nav .sec-toggle::before{content:"";width:7px;height:7px;flex:0 0 7px;
+           border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+           transform:rotate(-45deg);transition:transform var(--dur-2) var(--spring)}
+  nav .sec.open .sec-toggle::before{transform:rotate(45deg)}
+  nav .sec-toggle:hover{color:var(--txt)}
+  nav .sec-toggle:active{transform:scale(.985)}
+  nav .sec-toggle:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+  nav .sec-count{font-variant-numeric:tabular-nums;color:var(--dim-2);font-weight:700;
+           margin-left:auto}
+  nav .sec.open .sec-count{color:var(--dim)}
+  /* El display:flex de los botones gana al [hidden] del navegador: se apaga a mano. */
+  nav button[hidden]{display:none}
   nav button.sec-reset{display:inline-flex;align-items:center;width:auto;min-height:28px;
            padding:var(--sp-1) var(--sp-2);border:1px solid var(--line);
            border-radius:var(--r-1);font-size:var(--fs-micro);font-weight:700;letter-spacing:.02em;
@@ -669,7 +687,7 @@
         padding:var(--sp-2) var(--sp-3) var(--sp-4)}
     body.nav-open nav{display:block;max-height:60vh;overflow-y:auto}
     main{padding:var(--sp-5) var(--sp-4) var(--sp-7)}
-    nav button,.letters button,.btn,.tab-pill,.lang-btn,.user-btn,.modal-close,
+    nav button,.sec-toggle,.letters button,.btn,.tab-pill,.lang-btn,.user-btn,.modal-close,
     .copy-btn,.input,.select,.lp-item,.opt,.sec-reset,details.passage summary{min-height:44px}
     #nav-toggle,.icon-btn{min-height:44px}
     #theme-btn{width:44px}
@@ -844,6 +862,8 @@ const I18N = {
     btnShowAllAnswers: "Mostrar todas las respuestas",
     btnClearVariantAnswers: "Borrar respuestas de este ejercicio",
     btnResetSection: "↺ Reiniciar",
+    secToggleExpand: "Desplegar {title}",
+    secToggleCollapse: "Plegar {title}",
     btnResetSectionTitle: "Borrar las {n} respuestas de {title} para volver a hacerlo entero",
     confirmResetSection: "¿Borrar las {n} respuestas de {title}? Se quedarán en blanco para volver a hacerlo. El resto de tu progreso no se toca.",
     correctAnswerIs: "Respuesta correcta: <b>{letter}</b>",
@@ -1054,6 +1074,8 @@ const I18N = {
     btnShowAllAnswers: "Показать все ответы",
     btnClearVariantAnswers: "Очистить ответы этого задания",
     btnResetSection: "↺ Сбросить",
+    secToggleExpand: "Развернуть {title}",
+    secToggleCollapse: "Свернуть {title}",
     btnResetSectionTitle: "Удалить {n} ответов раздела {title}, чтобы пройти его заново",
     confirmResetSection: "Удалить {n} ответов раздела {title}? Раздел станет пустым, чтобы пройти его снова. Остальной прогресс не затрагивается.",
     correctAnswerIs: "Правильный ответ: <b>{letter}</b>",
@@ -1804,16 +1826,55 @@ function updateStats(){
 /* ---------- navegación ---------- */
 let current = allVariants.length ? allVariants[0].id : null;
 
+/* Grupo desplegado del menú. `undefined` = sin decidir todavía (se despliega el
+   grupo donde estás); `null` = todos plegados, que es lo que deja el clic en la
+   cabecera abierta. Son variables de sesión a propósito: al recargar, el menú
+   vuelve a abrir solo el grupo activo, sin memoria que arrastre estados raros. */
+let openSec;
+let lastNavCurrent;
+
 function renderNav(){
   const nav = document.getElementById("nav");
   if(!nav) return;
   nav.innerHTML = "";
+  /* Saltar a otra entrada (clic, filtro de dudosas) reabre su grupo: el menú
+     nunca esconde el ejercicio que estás viendo. */
+  const aqui = allVariants.find(v => v.id === current);
+  const secActual = aqui ? aqui._section : null;
+  if(openSec === undefined || current !== lastNavCurrent){
+    openSec = secActual; lastNavCurrent = current;
+  }
   DATA.sections.forEach(sec=>{
+    const abierto = openSec === sec.id;
+    /* Con el filtro de dudosas puesto, el contador cuenta lo que de verdad
+       se ve, no lo que el grupo guarda. */
+    const visibles = sec.variants.filter(v => !(onlyDoubtful && doubtfulCount(v) === 0 && v.id !== current));
+
     const h = document.createElement("div");
-    h.className = "sec";
-    const titulo = document.createElement("span");
-    titulo.textContent = localizeSection(sec.title);
-    h.appendChild(titulo);
+    h.className = "sec" + (abierto ? " open" : "");
+
+    const tog = document.createElement("div");
+    tog.className = "sec-toggle";
+    tog.tabIndex = 0;
+    tog.title = t(abierto ? "secToggleCollapse" : "secToggleExpand", { title: localizeSection(sec.title) });
+    const nom = document.createElement("span");
+    nom.textContent = localizeSection(sec.title);
+    const cnt = document.createElement("span");
+    cnt.className = "sec-count";
+    cnt.textContent = visibles.length;
+    tog.appendChild(nom); tog.appendChild(cnt);
+    /* setAttribute no existe en el DOM simulado de las pruebas; en el navegador
+       sí, así que el rol y el estado plegado se anuncian sin romper nada. */
+    if(tog.setAttribute){
+      tog.setAttribute("role", "button");
+      tog.setAttribute("aria-expanded", abierto ? "true" : "false");
+    }
+    const alternar = ()=>{ openSec = abierto ? null : sec.id; renderNav(); };
+    tog.onclick = alternar;
+    tog.onkeydown = e => {
+      if(e.key === "Enter" || e.key === " " || e.key === "Spacebar"){ e.preventDefault(); alternar(); }
+    };
+    h.appendChild(tog);
 
     /* Reiniciar el bloque entero: borra solo las respuestas de esta sección, y
        solo aparece si hay algo que borrar. Las tareas de Schreiben se quedan
@@ -1821,7 +1882,7 @@ function renderNav(){
     const objetivos = (sec.variants || []).filter(v => v.kind !== "schreiben");
     const pendientes = objetivos.reduce((acc, v) =>
       acc + (v.items || []).filter(it => state.answers[ansKey(v, it)] !== undefined).length, 0);
-    if(pendientes > 0){
+    if(abierto && pendientes > 0){
       const bResetSec = document.createElement("button");
       bResetSec.className = "sec-reset";
       bResetSec.textContent = t("btnResetSection");
@@ -1834,9 +1895,8 @@ function renderNav(){
       h.appendChild(bResetSec);
     }
     nav.appendChild(h);
-    sec.variants.forEach(v=>{
+    visibles.forEach(v=>{
       const nd = doubtfulCount(v);
-      if(onlyDoubtful && nd === 0 && v.id !== current) return;
       const b = document.createElement("button");
       const n = (v.items || []).length;
       const done = (v.items || []).filter(it => state.answers[ansKey(v,it)] !== undefined).length;
@@ -1851,7 +1911,10 @@ function renderNav(){
           : (done ? ok + "/" + n : (n === 1 ? t("itemCountSingle") : t("itemsCount", {count: n})));
       }
       b.innerHTML = esc(localizeLabel(v.label)) + '<span class="pill">' + esc(pill) + '</span>';
-      if(v.id === current) b.className = "active";
+      b.className = (v.id === current ? "active " : "") + "sec-item";
+      /* Los grupos plegados se ocultan, no se borran: el teclado y las pruebas
+         siguen encontrando sus entradas. */
+      b.hidden = !abierto;
       b.onclick = ()=>{ current = v.id; render(); window.scrollTo(0,0); };
       nav.appendChild(b);
     });

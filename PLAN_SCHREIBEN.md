@@ -25,6 +25,7 @@
 - [x] **1.2** Definir el esquema JSON formal en [`quiz/SPEC.md`](./quiz/SPEC.md) para el bloque `kind: "schreiben"`:
   - Campos requeridos: `id`, `title`, `type` (*email* o *forum*), `page`, `scenario` (situación previa), `leitpunkte` (los 4 puntos guía obligatorios) y `redemittel` (frases útiles sugeridas de apoyo).
 - [x] **1.3** Crear el extractor y generar [`quiz/data/schreiben_beschwerde.json`](./quiz/data/schreiben_beschwerde.json) y [`quiz/data/schreiben_forum.json`](./quiz/data/schreiben_forum.json) con todas las tareas catalogadas.
+  - Beschwerden: **13 tareas** = las 9 variantes del bloque de las pp. 66-77 más sus segundas impresiones (pp. 68, 71, 73, 75). La primera versión del catálogo solo tenía 6: faltaban las variantes 3 (Website), 8 (mangelhafte Lieferung) y 9 (Pflanzenlieferung). Cada tarea lleva `source_variant` y `build.py` comprueba que ninguna variante de la parte de lectura se quede sin su tarea de redacción.
 - [x] **1.4** Actualizar [`quiz/build.py`](./quiz/build.py) para validar la estructura del nuevo bloque y enlazar las secciones `schreiben-beschwerde` y `schreiben-forum` en la generación del HTML.
 
 ---
