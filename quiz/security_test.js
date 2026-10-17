@@ -162,6 +162,36 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     !/onfocus=|autofocus/.test(modal), (modal.match(/id="cfg-room-id"[^>]*/) || ["(sin input)"])[0]);
 }
 
+/* S4 · configuración de Firebase tal cual la da la consola de Google */
+{
+  const h = montar("");
+  const parsear = h.window.parseFirebaseConfig;
+  const google = [
+    "// Import the functions you need from the SDKs you need",
+    'import { initializeApp } from "firebase/app";',
+    "const firebaseConfig = {",
+    '  apiKey: "AIzaFalsa",',
+    '  authDomain: "x.firebaseapp.com",',
+    '  projectId: "x",',
+    '  appId: "1:2:web:3",',
+    "};",
+  ].join("\n");
+  let cfg = null, error = null;
+  try { cfg = parsear ? parsear(google) : null; } catch (e) { error = e; }
+  check("acepta el fragmento JavaScript de la consola de Firebase (claves sin comillas)",
+    cfg && cfg.projectId === "x" && cfg.apiKey === "AIzaFalsa",
+    error ? error.message : (cfg ? "projectId=" + cfg.projectId : "no devolvió nada"));
+
+  let puro = null;
+  try { puro = parsear ? parsear('{"apiKey":"a","projectId":"p"}') : null; } catch (e) {}
+  check("sigue aceptando JSON puro", !!puro && puro.projectId === "p", "");
+
+  let fallo = null;
+  try { parsear ? parsear("esto no es una configuración") : null; } catch (e) { fallo = e; }
+  check("una configuración sin objeto { … } se rechaza con error",
+    !!fallo, fallo ? fallo.message : "no lanzó error");
+}
+
 /* C3 · evaluación de la pareja recibida por Firestore */
 {
   const h = montar("?user=sergio&room=sala-prueba", {}, true);

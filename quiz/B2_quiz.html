@@ -741,6 +741,24 @@ function saveFirebaseConfig(cfg) {
   } catch(e){}
 }
 
+/* La consola de Firebase ofrece un fragmento de JavaScript, no JSON: las claves
+   van sin comillas y lleva "const firebaseConfig = ... ;" alrededor. Aceptamos
+   las dos formas para que se pueda pegar tal cual lo que da Google. */
+function parseFirebaseConfig(raw) {
+  const txt = String(raw == null ? "" : raw).trim();
+  if (!txt) return null;
+  try { return JSON.parse(txt); } catch(e){}
+  const desde = txt.indexOf("{", Math.max(0, txt.indexOf("firebaseConfig")));
+  const hasta = txt.lastIndexOf("}");
+  if (desde < 0 || hasta <= desde) throw new Error("no encuentro un objeto { … }");
+  const cuerpo = txt.slice(desde, hasta + 1)
+    .replace(/^\s*\/\/.*$/gm, "")                            // comentarios de línea
+    .replace(/([{,]\s*)([A-Za-z_$][\w$]*)\s*:/g, '$1"$2":')  // claves sin comillas
+    .replace(/,(\s*[}\]])/g, "$1");                          // comas finales
+  return JSON.parse(cuerpo);
+}
+window.parseFirebaseConfig = parseFirebaseConfig;
+
 function initFirebase() {
   if (fbDb) return fbDb;
   if (typeof firebase === "undefined") return null;
@@ -2583,11 +2601,12 @@ function openAIConfigModal(alertNotice){
     const fbRaw = document.getElementById("cfg-firebase-json")?.value.trim() || "";
     if(fbRaw){
       try {
-        const parsed = JSON.parse(fbRaw);
+        const parsed = parseFirebaseConfig(fbRaw);
+        if(!parsed || !parsed.apiKey || !parsed.projectId) throw new Error("faltan apiKey o projectId");
         saveFirebaseConfig(parsed);
         initFirebase();
       } catch(err){
-        alert("El JSON de Firebase no es válido: " + err.message);
+        alert("La configuración de Firebase no es válida: " + err.message);
         return;
       }
     } else {
@@ -2613,7 +2632,7 @@ function openAIConfigModal(alertNotice){
         return;
       }
       try {
-        const parsed = JSON.parse(fbRaw);
+        const parsed = parseFirebaseConfig(fbRaw);
         if(!parsed.apiKey || !parsed.projectId) throw new Error("Faltan campos obligatorios (apiKey o projectId)");
         if(typeof firebase === "undefined") throw new Error("SDK de Firebase no disponible o sin conexión");
         if(!firebase.apps || !firebase.apps.length){
