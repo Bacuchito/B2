@@ -19,7 +19,10 @@ necesita servidor, ni Internet, ni instalar nada. Los datos van incrustados.
 
 - Elige una variante en la barra lateral.
 - En **Lesen Teil 1** verás los 8 anuncios (a-h) arriba y una fila de letras bajo
-  cada persona: pulsa la letra que corresponda.
+  cada persona: pulsa la letra que corresponda. Los anuncios que **tú** ya has
+  asignado salen en azul con `✓` y el resumen cuenta cuántos llevas; los libres,
+  en ámbar. Ese estado es tu progreso, nunca la solución: la app no dice qué
+  anuncios son correctos hasta que respondes.
 - En **Lesen Teil 2** el texto de lectura está en un panel plegable.
 - Al responder aparece la corrección con la cita y la confianza.
 - El progreso se guarda en el navegador (`localStorage`). «Reiniciar» lo borra.

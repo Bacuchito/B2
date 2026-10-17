@@ -252,7 +252,9 @@
 
   /* Anuncios: recuadro de papel, sin barras de color de 3px. */
   /* Anuncios como columna de clasificados: filas con filete, no cajas en cajas.
-     El estado se lee en la letra: azul = ya usada, ámbar = aún sin usar. */
+     El estado se lee en la letra: azul = ya asignada por ti, ámbar = libre.
+     Nunca marca lo que la clave da por correcto: eso sería enseñar la solución.
+     El ✓ repite el estado sin depender del color. */
   .ad{border:0;border-top:1px solid var(--line);padding:var(--sp-3) var(--sp-2);margin:0;
       border-radius:0;background:transparent;font-family:var(--font-read);
       transition:background var(--dur-2) var(--ease)}
@@ -808,7 +810,7 @@ const I18N = {
     doubtPillPlural: "{count} dudosas",
     instructions: "Instrucciones",
     readingText: "Texto de lectura",
-    optionsSummary: "{label} {range} ({total} opciones, {unused} sin usar)",
+    optionsSummary: "{label} {range} ({total} opciones · {used} asignadas)",
     reviewModeInfo: "Modo repaso: mostrando solo las {shown} de {total} respuestas con confianza media o baja. Revísalas contra el texto.",
     reviewModeNoDoubt: "Esta variante no tiene respuestas dudosas: todas son de confianza alta.",
     btnShowAllAnswers: "Mostrar todas las respuestas",
@@ -1018,7 +1020,7 @@ const I18N = {
     doubtPillPlural: "{count} сомнит.",
     instructions: "Инструкция",
     readingText: "Текст для чтения",
-    optionsSummary: "{label} {range} ({total} вар., {unused} не использовано)",
+    optionsSummary: "{label} {range} ({total} вар. · {used} назначено)",
     reviewModeInfo: "Режим повторения: показаны только {shown} из {total} ответов со средней или низкой уверенностью. Сверьте их с текстом.",
     reviewModeNoDoubt: "В этом варианте нет сомнительных ответов: все с высокой уверенностью.",
     btnShowAllAnswers: "Показать все ответы",
@@ -1899,7 +1901,13 @@ function renderMain(){
   }
 
   if(v.options && v.options.length){
-    const used = new Set(v.items.map(i=>itemAnswerLetter(i)));
+    /* «Usada» = la ha asignado el usuario, no la clave. Derivarlo de la clave
+       (itemAnswerLetter) convertía este panel en la solución: salían marcados
+       con ✓ justo los 5 anuncios correctos antes de responder nada. */
+    const used = new Set(
+      v.items.map(i => state.answers[ansKey(v, i)])
+             .filter(a => a !== undefined && a !== "__revealed__")
+             .map(a => String(a).toLowerCase()));
     const d = document.createElement("details");
     d.className = "panel passage";
     d.open = true;
@@ -1910,7 +1918,7 @@ function renderMain(){
       label: label,
       range: ks[0] + "–" + ks[ks.length-1],
       total: v.options.length,
-      unused: (v.options.length - used.size)
+      used: used.size
     });
     d.appendChild(s);
     const body = document.createElement("div");

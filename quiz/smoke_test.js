@@ -93,12 +93,30 @@ check("el enunciado de Lesen se pintó", /Moutasem|fragt sich|Firmenausweis|Text
 check("los anuncios se pintaron", /Anzeigen|Auf ins Abenteuer|Umgangsformen/i.test(mainText));
 check("las opciones de respuesta se pintaron", /letters|opt|Falsch|Richtig|[a-h]\)/i.test(mainText));
 
-/* ---------- simulación de clic en preguntas ---------- */
+/* ---------- el panel de anuncios no puede ser la solución ---------- */
 function descendientes(el, out) {
   out = out || [];
   for (const c of el.children) { out.push(c); descendientes(c, out); }
   return out;
 }
+const letraDelAnuncio = a => (String(a._html).match(/class="k">([a-z])\)/) || [])[1];
+const esUsado = a => String(a.className).split(/\s+/).includes("used");
+const anunciosActuales = () => descendientes(ids.main).filter(e => /^ad\s+(used|unused)$/.test(e.className));
+
+const anunciosIniciales = anunciosActuales();
+const usadosIniciales = anunciosIniciales.filter(esUsado);
+check("el panel de anuncios existe", anunciosIniciales.length > 0,
+      `anuncios pintados: ${anunciosIniciales.length}`);
+/* El fallo original: «used» salía de itemAnswerLetter (la clave), así que los 5
+   anuncios correctos llevaban ✓ antes de responder nada. */
+check("ningún anuncio sale marcado antes de responder (no revela la clave)",
+      anunciosIniciales.length > 0 && usadosIniciales.length === 0,
+      `marcados con ✓ sin responder: ${usadosIniciales.map(letraDelAnuncio).join(",") || "ninguno"}`);
+check("el resumen del panel cuenta tus asignaciones, no las de la clave",
+      /0 asignadas/.test(mainText),
+      (mainText.match(/Anzeigen[^<]{0,60}/) || ["(sin resumen)"])[0]);
+
+/* ---------- simulación de clic en preguntas ---------- */
 const clicables = descendientes(ids.main).filter(e => typeof e.onclick === "function");
 check("hay opciones pulsables en el panel", clicables.length > 0,
       `pulsables dentro de main: ${clicables.length}`);
@@ -113,6 +131,13 @@ if (clicables.length) {
   const despues = ids.main.collectText();
   check("el clic repinta la vista", despues.length !== antes,
         `antes ${antes} chars, después ${despues.length}`);
+
+  /* Ahora sí: el ✓ tiene que marcar lo que ha pulsado el usuario, y solo eso. */
+  const asignada = String(clicables[0].textContent || "").toLowerCase();
+  const marcados = anunciosActuales().filter(esUsado);
+  check("tras responder se marca el anuncio asignado (y solo ese)",
+        marcados.length === 1 && letraDelAnuncio(marcados[0]) === asignada,
+        `letra pulsada: ${asignada} · marcados: ${marcados.map(letraDelAnuncio).join(",") || "ninguno"}`);
   check("aparece la corrección", /confianza:|Correcto|Incorrecto|correcta es/i.test(despues),
         despues.match(/confianza:[^<]*/i) ? "insignia de confianza presente" : "sin insignia");
   check("la respuesta se guardó", Object.keys(store).length > 0,
