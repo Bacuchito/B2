@@ -264,6 +264,27 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     quedanA === 0 && quedanB === 2, "bloque A: " + quedanA + " · bloque B: " + quedanB);
 }
 
+/* S8 · la configuración se pega a mano una vez por navegador, y el HTML no lleva
+   ninguna clave incrustada (para que GitHub no vuelva a avisar de un secreto) */
+{
+  const h = montar("?user=diana&room=sala-prueba", {}, false);
+  abrirSchreiben(h.registro);
+  const badge = (h.registro["cloud-status-indicator"] || new El("div")).html();
+  check("sin pegar la configuración, la app avisa de que va en modo local",
+    /cloud-dot offline/.test(badge), badge.replace(/<[^>]*>/g, "").slice(0, 70));
+
+  check("el HTML compilado no contiene ninguna clave incrustada",
+    !/AIza[0-9A-Za-z_\-]{25,}/.test(html),
+    (html.match(/AIza[0-9A-Za-z_\-]{0,14}/) || ["ninguna"])[0]);
+
+  const h2 = montar("", { b2quiz_firebase: '{"apiKey":"AIzaFalsa","projectId":"p"}' }, false);
+  const btn = h2.registro["btn-ai-config"];
+  if (btn && btn.onclick) btn.onclick();
+  const modal = (h2.registro["modal-container"] || new El("div")).innerHTML;
+  check("el modal recuerda la configuración ya pegada",
+    /AIzaFalsa/.test(modal), /AIzaFalsa/.test(modal) ? "se muestra" : "no aparece en el modal");
+}
+
 /* C3 · evaluación de la pareja recibida por Firestore */
 {
   const h = montar("?user=sergio&room=sala-prueba", {}, true);
