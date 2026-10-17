@@ -13,7 +13,8 @@
 const fs = require("fs");
 
 const file = process.argv[2] || "quiz/B2_quiz.html";
-const script = fs.readFileSync(file, "utf8").match(/<script>([\s\S]*?)<\/script>\s*<\/body>/)[1];
+const html = fs.readFileSync(file, "utf8");
+const script = html.match(/<script>([\s\S]*?)<\/script>\s*<\/body>/)[1];
 const PAYLOAD = '<img src=x onerror="globalThis.__pwn()">';
 
 /* ---------- DOM simulado (registra los nodos por id, como el real) ---------- */class El {
@@ -210,14 +211,25 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     /texto importado/.test(h.store["b2quiz.v1"] || ""), (h.store["b2quiz.v1"] || "").slice(0, 60));
 }
 
-/* S6 · «Reiniciar» no deja el estado global obsoleto */
+/* S6 · no hay «Reiniciar» global: borrar todo vive dentro de ⚙ Configurar IA */
 {
+  check("el botón global de reiniciar ya no está en la barra",
+    !/id="reset"/.test(html), /id="reset"/.test(html) ? "todavía aparece en el HTML" : "eliminado");
+
   const h = montar("", {}, false);
   h.window.quizState.answers["t1-v1"] = "a";
-  const boton = h.registro["reset"];
-  if (boton && boton.onclick) boton.onclick();
-  const n = Object.keys(h.window.quizState.answers).length;
-  check("«Reiniciar» vacía también el quizState global", n === 0, "respuestas tras reiniciar: " + n);
+  h.window.quizState.schreiben_drafts["schr-b-p66"] = "un borrador";
+  const abrir = h.registro["btn-ai-config"];
+  if (abrir && abrir.onclick) abrir.onclick();
+  const borrar = h.registro["btn-delete-all-progress"];
+  check("borrar todo el progreso está dentro de ⚙ Configurar IA",
+    !!(borrar && typeof borrar.onclick === "function"),
+    borrar && borrar.onclick ? "enganchado" : "sin manejador");
+  if (borrar && borrar.onclick) borrar.onclick();
+  const s = h.window.quizState;
+  check("borrar todo deja el progreso vacío y el estado reenganchado",
+    Object.keys(s.answers).length === 0 && Object.keys(s.schreiben_drafts).length === 0,
+    "respuestas=" + Object.keys(s.answers).length + " borradores=" + Object.keys(s.schreiben_drafts).length);
 }
 
 /* C3 · evaluación de la pareja recibida por Firestore */

@@ -237,7 +237,6 @@
   <div class="stat" id="stats"></div>
   <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
   <button class="btn ghost" id="btn-ai-config" title="Configurar claves de API y sincronización">⚙ Configurar IA</button>
-  <button class="btn ghost" id="reset">Reiniciar</button>
 </header>
 
 <div class="layout">
@@ -319,8 +318,6 @@ const I18N = {
     btnSoloDudosasTitle: "Ver solo las respuestas con confianza media o baja",
     btnAiConfig: "⚙ Configurar IA",
     btnAiConfigTitle: "Configurar claves de API para evaluación de redacción",
-    btnReset: "Reiniciar",
-    confirmResetAll: "¿Borrar todas tus respuestas y borradores?",
     loading: "Cargando…",
     noData: "No hay datos todavía.",
     pagePdf: "Página {page} del PDF",
@@ -337,7 +334,7 @@ const I18N = {
     reviewModeInfo: "Modo repaso: mostrando solo las {shown} de {total} respuestas con confianza media o baja. Revísalas contra el texto.",
     reviewModeNoDoubt: "Esta variante no tiene respuestas dudosas: todas son de confianza alta.",
     btnShowAllAnswers: "Mostrar todas las respuestas",
-    btnClearVariantAnswers: "Borrar respuestas de esta variante",
+    btnClearVariantAnswers: "Borrar respuestas de este ejercicio",
     correctAnswerIs: "Respuesta correcta: <b>{letter}</b>",
     correctVerdict: "✓ Correcto",
     wrongVerdict: "✗ Incorrecto — la correcta es <b>{letter}</b>",
@@ -473,7 +470,11 @@ const I18N = {
     importOk: "✓ Progreso importado: {n} respuestas, {d} borradores.",
     importNoProgress: "El fichero no tiene un progreso válido de esta app.",
     importError: "✗ No se pudo importar: {error}",
-    exportDone: "Fichero descargado. Guárdalo donde no se pierda."
+    exportDone: "Fichero descargado. Guárdalo donde no se pierda.",
+    btnDeleteAllProgress: "🗑 Borrar todo el progreso",
+    confirmDeleteAll: "Se borrarán {n} respuestas y {b} borradores de ESTE navegador, y no se puede deshacer. Lo que ya está subido a la nube no se toca. ¿Seguro?",
+    deleteAllDone: "Progreso borrado en este navegador.",
+    nothingToDelete: "No hay nada que borrar en este navegador."
   },
   ru: {
     appTitle: "B2 Beruf — Экзамен",
@@ -485,8 +486,6 @@ const I18N = {
     btnSoloDudosasTitle: "Показать только вопросы со средней или низкой уверенностью",
     btnAiConfig: "⚙ Настройка ИИ",
     btnAiConfigTitle: "Настройка API-ключей для проверки письменной части",
-    btnReset: "Сбросить",
-    confirmResetAll: "Удалить все ваши ответы и черновики?",
     loading: "Загрузка…",
     noData: "Данных пока нет.",
     pagePdf: "Страница {page} в PDF",
@@ -503,7 +502,7 @@ const I18N = {
     reviewModeInfo: "Режим повторения: показаны только {shown} из {total} ответов со средней или низкой уверенностью. Сверьте их с текстом.",
     reviewModeNoDoubt: "В этом варианте нет сомнительных ответов: все с высокой уверенностью.",
     btnShowAllAnswers: "Показать все ответы",
-    btnClearVariantAnswers: "Очистить ответы этого варианта",
+    btnClearVariantAnswers: "Очистить ответы этого задания",
     correctAnswerIs: "Правильный ответ: <b>{letter}</b>",
     correctVerdict: "✓ Верно",
     wrongVerdict: "✗ Неверно — правильный ответ <b>{letter}</b>",
@@ -639,7 +638,11 @@ const I18N = {
     importOk: "✓ Прогресс импортирован: {n} ответов, {d} черновиков.",
     importNoProgress: "В файле нет корректного прогресса этой программы.",
     importError: "✗ Не удалось импортировать: {error}",
-    exportDone: "Файл скачан. Сохраните его в надёжном месте."
+    exportDone: "Файл скачан. Сохраните его в надёжном месте.",
+    btnDeleteAllProgress: "🗑 Удалить весь прогресс",
+    confirmDeleteAll: "Будут удалены {n} ответов и {b} черновиков в ЭТОМ браузере, отменить нельзя. То, что уже отправлено в облако, не затрагивается. Продолжить?",
+    deleteAllDone: "Прогресс в этом браузере удалён.",
+    nothingToDelete: "В этом браузере нечего удалять."
   }
 };
 
@@ -689,9 +692,6 @@ function updateLangUI() {
     aiBtn.textContent = t("btnAiConfig");
     aiBtn.title = t("btnAiConfigTitle");
   }
-
-  const resetBtn = document.getElementById("reset");
-  if (resetBtn) resetBtn.textContent = t("btnReset");
 
   updateUserUI();
 }
@@ -2620,6 +2620,7 @@ function openAIConfigModal(alertNotice){
             '<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">' +
               '<button class="btn ghost" id="btn-export-progress" style="font-size:12px;padding:5px 10px">' + t("btnExportProgress") + '</button>' +
               '<button class="btn ghost" id="btn-import-progress" style="font-size:12px;padding:5px 10px">' + t("btnImportProgress") + '</button>' +
+              '<button class="btn ghost" id="btn-delete-all-progress" style="font-size:12px;padding:5px 10px;color:var(--bad)">' + t("btnDeleteAllProgress") + '</button>' +
               '<input type="file" id="file-import-progress" accept=".json,application/json" style="display:none">' +
             '</div>' +
             '<span id="import-result" style="display:block;margin-top:8px;font-size:12px"></span>' +
@@ -2707,6 +2708,19 @@ function openAIConfigModal(alertNotice){
     const res = document.getElementById("import-result");
     if(res) res.innerHTML = exportProgress() ? '<span style="color:var(--ok)">' + t("exportDone") + '</span>' : "";
   };
+  /* Borrar todo el progreso: aquí dentro, con confirmación, y nunca de un clic
+     desde la barra principal. */
+  const btnBorrarTodo = document.getElementById("btn-delete-all-progress");
+  if(btnBorrarTodo) btnBorrarTodo.onclick = ()=>{
+    const res = document.getElementById("import-result");
+    const n = Object.keys(state.answers).length;
+    const b = Object.keys(state.schreiben_drafts).length;
+    if(!n && !b){ if(res) res.innerHTML = t("nothingToDelete"); return; }
+    if(!confirm(t("confirmDeleteAll", { n: n, b: b }))) return;
+    aplicarProgreso({});
+    if(res) res.innerHTML = '<span style="color:var(--ok)">' + t("deleteAllDone") + '</span>';
+  };
+
   const btnImportProg = document.getElementById("btn-import-progress");
   const fileImportProg = document.getElementById("file-import-progress");
   if(btnImportProg && fileImportProg) btnImportProg.onclick = ()=> fileImportProg.click();
@@ -2931,17 +2945,6 @@ function esc(s){
   return String(s==null?"":s)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
-}
-
-const resetBtn = document.getElementById("reset");
-if(resetBtn){
-  resetBtn.onclick = ()=>{
-    if(confirm(t("confirmResetAll"))){
-      state = {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}};
-      window.quizState = state;
-      saveState(); render();
-    }
-  };
 }
 
 const doubtBtn = document.getElementById("doubt");
