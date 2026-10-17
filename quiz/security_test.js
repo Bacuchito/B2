@@ -14,7 +14,10 @@ const fs = require("fs");
 
 const file = process.argv[2] || "quiz/B2_quiz.html";
 const html = fs.readFileSync(file, "utf8");
-const script = html.match(/<script>([\s\S]*?)<\/script>\s*<\/body>/)[1];
+/* Script de la app = bloque <script> inline más largo (el <head> tiene uno
+   minúsculo que aplica el tema antes del primer pintado). */
+const bloques = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]);
+const script = bloques.reduce((a, b) => (b.length > a.length ? b : a), "");
 const PAYLOAD = '<img src=x onerror="globalThis.__pwn()">';
 
 /* ---------- DOM simulado (registra los nodos por id, como el real) ---------- */class El {

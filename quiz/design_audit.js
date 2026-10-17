@@ -112,7 +112,7 @@ const contrastChecks = [
   ["Acento claro sobre panel (.card-label)", { sel: ".card-label", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
   ["Blanco sobre relleno de acento (.btn)", { sel: ".btn", prop: "color" }, { token: "--acc-fill-1" }],
   ["Blanco sobre relleno oscuro del degradado", { literal: "#ffffff" }, { token: "--acc-fill-2" }],
-  ["Menú activo (nav button.active)", { sel: "nav button.active", prop: "color" }, { token: "--acc-fill-1" }],
+  ["Menú activo (nav button.active)", { sel: "nav button.active", prop: "color" }, { sel: "nav button.active", prop: "background", over: true }],
   ["Menú inactivo (nav button)", { sel: "nav button", prop: "color" }, { sel: "nav", prop: "background", over: true }],
   ["Estadística de cabecera (.stat)", { sel: ".stat", prop: "color" }, { sel: "header", prop: "background", over: true }],
   ["Opción de respuesta (.opt)", { token: "--txt" }, { sel: ".opt", prop: "background", over: true }],
@@ -205,13 +205,21 @@ const noRing = outlineNone.filter((r) => {
 const reduced = rules.some((r) => r.media.includes("prefers-reduced-motion"));
 (reduced ? ok : bad)(4, "Respeta prefers-reduced-motion", reduced ? "bloque presente" : "no existe");
 
-/* Materiales: cristal y sombras multicapa */
+/* Materiales: papel (superficies sólidas, hairline desde token, sin glass decorativo) */
+const gradientsInBody = rules.filter((r) => /(^|,)\s*body\s*(,|$)/.test(r.selector) && /gradient\(/.test(r.decls.background || ""));
+(gradientsInBody.length === 0 ? ok : bad)(3, "Fondos sólidos desde tokens (sin radiales/degradados decorativos)",
+  gradientsInBody.length === 0 ? "body sin gradientes" : gradientsInBody.map((r) => r.selector).join(" · "));
+const hairlineUses = rules.filter((r) => Object.values(r.decls).some((v) => String(v).indexOf("var(--line)") !== -1)).length;(hairlineUses >= 12 ? ok : bad)(3, "Bordes hairline desde el token --line (no gris plano)",
+  hairlineUses + " reglas con var(--line)");
 const blur = rules.filter((r) => r.decls["backdrop-filter"]).length;
-(blur >= 5 ? ok : bad)(3, "Cristal esmerilado (translúcido + desenfoque + hairline)", blur + " superficies con backdrop-filter");
+(blur <= 2 ? ok : bad)(3, "Sin cristal decorativo (backdrop-filter como efecto, no como default)",
+  blur + " superficies con backdrop-filter");
 const shadowLayers = ["--sh-1", "--sh-2", "--sh-3"].map((t) => (String(tokens[t] || "").match(/rgba?\(/g) || []).length);
 (shadowLayers.every((n) => n >= 2) ? ok : bad)(3, "Sombras multicapa (atmósfera + plano)", "capas por nivel: " + shadowLayers.join("/"));
-const hairline = String(tokens["--line"] || "").includes("rgba(255,255,255");
-(hairline ? ok : bad)(3, "Bordes hairline refractivos en vez de gris plano", tokens["--line"]);
+const darkRule = rules.find((r) => r.selector.includes('[data-theme="dark"]'));
+const darkTokens = darkRule ? Object.keys(darkRule.decls).filter((k) => tokens[k] !== undefined).length : 0;
+(darkTokens >= 25 ? ok : bad)(3, "Modo noche completo (tokens propios, no filtros)",
+  darkTokens + " tokens redefinidos en [data-theme=dark]");
 
 /* Físicas y micro-interacciones */
 const activeScale = rules.filter((r) => r.selector.includes(":active") && /scale/.test(r.decls["transform"] || "")).length;

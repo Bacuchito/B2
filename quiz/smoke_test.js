@@ -7,7 +7,10 @@ const fs = require("fs");
 
 const file = process.argv[2];
 const html = fs.readFileSync(file, "utf8");
-const script = html.match(/<script>([\s\S]*?)<\/script>/)[1];
+/* El script de la app es el bloque <script> inline más largo (hay un script
+   minúsculo en el <head> que aplica el tema antes del primer pintado). */
+const bloques = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]);
+const script = bloques.reduce((a, b) => (b.length > a.length ? b : a), "");
 
 /* ---------- DOM mínimo ---------- */
 const todas = [];   // registro de nodos creados, para poder simular clics
