@@ -290,6 +290,18 @@
   .ad.unused .k{color:var(--warn-ink)}
   .ad.used .t::after{content:" ✓";color:var(--ok-ink);font-weight:700}
 
+  /* Banco de palabras (Sprachbausteine Teil 1). Las opciones son UNA palabra, así
+     que la tarjeta alta de los anuncios no tiene sentido: en rejilla caben las diez
+     de un vistazo y los huecos no se van media pantalla más abajo. Se declara desde
+     el dato con `optionsLayout: "bank"`, no por heurística de longitud. */
+  .bank{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--sp-2)}
+  .bank .ad{border:1px solid var(--line);border-top:1px solid var(--line);border-radius:var(--r-2);
+            padding:var(--sp-2) var(--sp-3);display:flex;align-items:baseline;gap:var(--sp-2);
+            background:var(--sheet)}
+  .bank .ad:first-child{border-top:1px solid var(--line)}
+  .bank .ad .body{margin-top:0;color:var(--txt);max-width:none}
+  .bank .ad.used .body::after{content:" ✓";color:var(--ok-ink);font-weight:700}
+
   /* Hoja de examen continua: las preguntas NO son tarjetas apiladas, son filas
      de una sola hoja, con filete de margen rojo como en el papel del examen. */
   .q-sheet{position:relative;background:var(--panel);border-radius:var(--r-3);
@@ -2064,7 +2076,7 @@ function renderMain(){
   }
 
   if(v.passage){
-    main.appendChild(detailsPanel(t("readingText"), v.passage));
+    main.appendChild(detailsPanel(t("readingText"), v.passage, v.passageOpen));
   }
 
   if(v.options && v.options.length){
@@ -2089,13 +2101,19 @@ function renderMain(){
     });
     d.appendChild(s);
     const body = document.createElement("div");
+    /* El banco de palabras se pinta en rejilla compacta: la opción es una palabra. */
+    const enBanco = v.optionsLayout === "bank";
+    if(enBanco) body.className = "bank";
     v.options.forEach(o=>{
       const isUsed = used.has(String(o.key).toLowerCase());
       const div = document.createElement("div");
       div.className = "ad " + (isUsed ? "used" : "unused");
-      div.innerHTML = '<span class="k">' + esc(o.key) + ')</span>' +
-                      '<span class="t">' + esc(o.title||"") + '</span>' +
-                      '<div class="body">' + esc(o.text||"") + '</div>';
+      div.innerHTML = enBanco
+        ? '<span class="k">' + esc(o.key) + ')</span>' +
+          '<span class="body">' + esc(o.text || o.title || "") + '</span>'
+        : '<span class="k">' + esc(o.key) + ')</span>' +
+          '<span class="t">' + esc(o.title||"") + '</span>' +
+          '<div class="body">' + esc(o.text||"") + '</div>';
       body.appendChild(div);
     });
     d.appendChild(body);
@@ -4008,9 +4026,12 @@ const aiBtn = document.getElementById("btn-ai-config");
 if(aiBtn) aiBtn.onclick = ()=> openAIConfigModal();
 
 /* ---------- Renderizador de ítems de preguntas ---------- */
-function detailsPanel(summary, text){
+function detailsPanel(summary, text, abierto){
   const d = document.createElement("details");
   d.className = "panel passage";
+  /* En los ejercicios de huecos el texto ES la referencia del examen (la carta con
+     los huecos), así que se abre solo. Lo declara el dato con `passageOpen`. */
+  d.open = !!abierto;
   const s = document.createElement("summary");
   s.textContent = summary;
   const b = document.createElement("div");

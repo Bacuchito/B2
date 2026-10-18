@@ -8,12 +8,13 @@
    "page": 86,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Stornierung des Auftrages mit Nr. RB 2876/20\n\nSehr geehrte Damen und Herren,\nnach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei\nKaffeevollautomaten für unsere Krankenhauskantine.\nUnsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit\nLiefertermin in KW 16.\n54 ( ) der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich darauf hingewiesen, dass wir die Maschinen dringend benötigen.\n55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.\nWir räumen Ihnen letztmalig eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin\n56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung. Wir bitten um Ihr Verständnis.\nBitte schicken Sie uns umgehend eine 57 ( ).\nMit freundlichen Grüßen\nEva Al Hossan",
+   "passageOpen": true,
+   "passage": "Stornierung des Auftrages mit Nr. RB 2876/20\n\nSehr geehrte Damen und Herren, nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine. Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16. 54 ( ) der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich darauf hingewiesen, dass wir die Maschinen dringend benötigen. 55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten. Wir räumen Ihnen letztmalig eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung. Wir bitten um Ihr Verständnis. Bitte schicken Sie uns umgehend eine 57 ( ). Mit freundlichen Grüßen Eva Al Hossan",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "Herren, nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine. Unsere",
+     "prompt": "Sehr geehrte Damen und Herren, nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine.",
      "options": [
       {
        "key": "a",
@@ -37,7 +38,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "für unsere Krankenhauskantine. Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16. 54 ( ) der Lieferfrist",
+     "prompt": "Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16.",
      "options": [
       {
        "key": "a",
@@ -61,7 +62,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16. 54 ( ) der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich darauf",
+     "prompt": "54 ( ) der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich darauf hingewiesen, dass wir die Maschinen dringend benötigen.",
      "options": [
       {
        "key": "a",
@@ -85,7 +86,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "eindringlich darauf hingewiesen, dass wir die Maschinen dringend benötigen. 55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten. Wir räumen",
+     "prompt": "55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.",
      "options": [
       {
        "key": "a",
@@ -109,7 +110,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere",
+     "prompt": "Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung.",
      "options": [
       {
        "key": "a",
@@ -133,7 +134,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "Wir bitten um Ihr Verständnis. Bitte schicken Sie uns umgehend eine 57 ( ). Mit freundlichen Grüßen Eva Al Hossan",
+     "prompt": "Bitte schicken Sie uns umgehend eine 57 ( ).",
      "options": [
       {
        "key": "a",
@@ -162,12 +163,13 @@
    "page": 87,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Verspätete Lieferung des Auftrages mit Nr. RB 2876/20\n\nSehr geehrte Damen und Herren,\nnach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei\nKaffeevollautomaten für unsere Krankenhauskantine.\nUnsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung\nmit Liefertermin in KW 16.\nNach Ablauf der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich 54 ( ),\ndass wir die Maschinen dringend benötigen.\n55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.\nWir räumen Ihnen letztmalig eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin\n56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung. Wir bitten um Ihr Verständnis.\nBitte schicken Sie uns umgehend eine 57 ( ).\nMit freundlichen Grüßen\nEva Al Hossan",
+   "passageOpen": true,
+   "passage": "Verspätete Lieferung des Auftrages mit Nr. RB 2876/20\n\nSehr geehrte Damen und Herren, nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine. Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16. Nach Ablauf der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich 54 ( ), dass wir die Maschinen dringend benötigen. 55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten. Wir räumen Ihnen letztmalig eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung. Wir bitten um Ihr Verständnis. Bitte schicken Sie uns umgehend eine 57 ( ). Mit freundlichen Grüßen Eva Al Hossan",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "Herren, nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine. Unsere",
+     "prompt": "Sehr geehrte Damen und Herren, nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine.",
      "options": [
       {
        "key": "a",
@@ -191,7 +193,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "für unsere Krankenhauskantine. Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16. Nach Ablauf der",
+     "prompt": "Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16.",
      "options": [
       {
        "key": "a",
@@ -215,7 +217,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "Nach Ablauf der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich 54 ( ), dass wir die Maschinen dringend benötigen. 55 ( ) wir uns in KW 18 und haben",
+     "prompt": "Nach Ablauf der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich 54 ( ), dass wir die Maschinen dringend benötigen.",
      "options": [
       {
        "key": "a",
@@ -239,7 +241,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "mehrmals eindringlich 54 ( ), dass wir die Maschinen dringend benötigen. 55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten. Wir räumen",
+     "prompt": "55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.",
      "options": [
       {
        "key": "a",
@@ -263,7 +265,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere",
+     "prompt": "Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung.",
      "options": [
       {
        "key": "a",
@@ -287,7 +289,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "Wir bitten um Ihr Verständnis. Bitte schicken Sie uns umgehend eine 57 ( ). Mit freundlichen Grüßen Eva Al Hossan",
+     "prompt": "Bitte schicken Sie uns umgehend eine 57 ( ).",
      "options": [
       {
        "key": "a",
@@ -316,12 +318,13 @@
    "page": 88,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Ihre Beschwerde bezüglich des beschädigten Produktes\n\nSehr geehrte Frau Janiashvilli,\nwir danken Ihnen für Ihr Schreiben, mit dem Sie uns auf die Schäden an der Bettcouch aufmerksam machen, die Sie bei uns gekauft haben. Wir haben 52 ( ) und teilen Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden. 54 ( ) hätte\ndie Couch nicht ausgeliefert werden dürfen.\nHeute erhalten Sie das Ersatzprodukt, das beschädigte Möbelstück wird dann kostenlos mitgenommen. Wir bitten Sie, die entstandenen 55( ), und wünschen Ihnen viel Vergnügen\nmit Ihrem neuen Sitzmöbel. Ihre Reklamation haben wir an die Abteilung für Qualitätssicherung\nweitergegeben, um sicherzustellen, dass solche Fehler zukünftig vermieden werden. Als kleines\nDankeschön für Ihr Verständnis finden Sie anbei einen Gutschein 56 ( ) 50 Euro für Ihren\nnächsten Besuch in unserem Haus.\nWir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).\nMit freundlichen Grüßen\nLudmilla Dombrowski Leiterin Kundenservice",
+   "passageOpen": true,
+   "passage": "Ihre Beschwerde bezüglich des beschädigten Produktes\n\nSehr geehrte Frau Janiashvilli, wir danken Ihnen für Ihr Schreiben, mit dem Sie uns auf die Schäden an der Bettcouch aufmerksam machen, die Sie bei uns gekauft haben. Wir haben 52 ( ) und teilen Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden. 54 ( ) hätte die Couch nicht ausgeliefert werden dürfen. Heute erhalten Sie das Ersatzprodukt, das beschädigte Möbelstück wird dann kostenlos mitgenommen. Wir bitten Sie, die entstandenen 55( ), und wünschen Ihnen viel Vergnügen mit Ihrem neuen Sitzmöbel. Ihre Reklamation haben wir an die Abteilung für Qualitätssicherung weitergegeben, um sicherzustellen, dass solche Fehler zukünftig vermieden werden. Als kleines Dankeschön für Ihr Verständnis finden Sie anbei einen Gutschein 56 ( ) 50 Euro für Ihren nächsten Besuch in unserem Haus. Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ). Mit freundlichen Grüßen Ludmilla Dombrowski Leiterin Kundenservice",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "an der Bettcouch aufmerksam machen, die Sie bei uns gekauft haben. Wir haben 52 ( ) und teilen Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53",
+     "prompt": "Wir haben 52 ( ) und teilen Ihre Ansicht.",
      "options": [
       {
        "key": "a",
@@ -345,7 +348,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "( ) und teilen Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden. 54 ( ) hätte die Couch nicht ausgeliefert werden dürfen. Heute",
+     "prompt": "Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden.",
      "options": [
       {
        "key": "a",
@@ -369,7 +372,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden. 54 ( ) hätte die Couch nicht ausgeliefert werden dürfen. Heute erhalten Sie das",
+     "prompt": "54 ( ) hätte die Couch nicht ausgeliefert werden dürfen.",
      "options": [
       {
        "key": "a",
@@ -393,7 +396,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "Möbelstück wird dann kostenlos mitgenommen. Wir bitten Sie, die entstandenen 55( ), und wünschen Ihnen viel Vergnügen mit Ihrem neuen Sitzmöbel. Ihre Reklamation",
+     "prompt": "Wir bitten Sie, die entstandenen 55( ), und wünschen Ihnen viel Vergnügen mit Ihrem neuen Sitzmöbel.",
      "options": [
       {
        "key": "a",
@@ -417,7 +420,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "Als kleines Dankeschön für Ihr Verständnis finden Sie anbei einen Gutschein 56 ( ) 50 Euro für Ihren nächsten Besuch in unserem Haus. Wir würden uns freuen, Sie",
+     "prompt": "Als kleines Dankeschön für Ihr Verständnis finden Sie anbei einen Gutschein 56 ( ) 50 Euro für Ihren nächsten Besuch in unserem Haus.",
      "options": [
       {
        "key": "a",
@@ -441,7 +444,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "unserem Haus. Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ). Mit freundlichen Grüßen Ludmilla Dombrowski Leiterin Kundenservice",
+     "prompt": "Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).",
      "options": [
       {
        "key": "a",
@@ -470,12 +473,13 @@
    "page": 89,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Ihre Beschwerde\n\nSehr geehrte Frau Janiashvilli,\nvielen Dank für Ihr Schreiben, in dem Sie uns auf die Schäden an der bei uns bestellten\nBettcouch hinweisen. Wir haben Ihre Reklamation anhand Ihrer mitgeschickten Fotos geprüft. Offensichtlich ist bei unserer Qualitätskontrolle 52 ( ) worden. Die\nCouch hätte 53 ( ) nicht ausgeliefert werden dürfen.\nSelbstverständlich erhalten Sie ein Ersatzprodukt, das beschädigte Möbelstück wird dann\nkostenlos mitgenommen. Wir bitten Sie, die entstandenen 54 ( ). Rufen Sie\nuns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue 55 ( )\nsollen. Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro.\nWir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).\nMit freundlichen Grüßen\nLudmilla Dombrowski",
+   "passageOpen": true,
+   "passage": "Ihre Beschwerde\n\nSehr geehrte Frau Janiashvilli, vielen Dank für Ihr Schreiben, in dem Sie uns auf die Schäden an der bei uns bestellten Bettcouch hinweisen. Wir haben Ihre Reklamation anhand Ihrer mitgeschickten Fotos geprüft. Offensichtlich ist bei unserer Qualitätskontrolle 52 ( ) worden. Die Couch hätte 53 ( ) nicht ausgeliefert werden dürfen. Selbstverständlich erhalten Sie ein Ersatzprodukt, das beschädigte Möbelstück wird dann kostenlos mitgenommen. Wir bitten Sie, die entstandenen 54 ( ). Rufen Sie uns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue 55 ( ) sollen. Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro. Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ). Mit freundlichen Grüßen Ludmilla Dombrowski",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "Fotos geprüft. Offensichtlich ist bei unserer Qualitätskontrolle 52 ( ) worden. Die Couch hätte 53 ( ) nicht ausgeliefert werden dürfen.",
+     "prompt": "Offensichtlich ist bei unserer Qualitätskontrolle 52 ( ) worden.",
      "options": [
       {
        "key": "a",
@@ -499,7 +503,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "ist bei unserer Qualitätskontrolle 52 ( ) worden. Die Couch hätte 53 ( ) nicht ausgeliefert werden dürfen. Selbstverständlich erhalten Sie ein",
+     "prompt": "Die Couch hätte 53 ( ) nicht ausgeliefert werden dürfen.",
      "options": [
       {
        "key": "a",
@@ -523,7 +527,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "Möbelstück wird dann kostenlos mitgenommen. Wir bitten Sie, die entstandenen 54 ( ). Rufen Sie uns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue",
+     "prompt": "Wir bitten Sie, die entstandenen 54 ( ).",
      "options": [
       {
        "key": "a",
@@ -547,7 +551,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "Rufen Sie uns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue 55 ( ) sollen. Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro.",
+     "prompt": "Rufen Sie uns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue 55 ( ) sollen.",
      "options": [
       {
        "key": "a",
@@ -571,7 +575,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "die neue 55 ( ) sollen. Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro. Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 (",
+     "prompt": "Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro.",
      "options": [
       {
        "key": "a",
@@ -595,7 +599,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "( ) 50 Euro. Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ). Mit freundlichen Grüßen Ludmilla Dombrowski",
+     "prompt": "Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).",
      "options": [
       {
        "key": "a",
@@ -624,12 +628,13 @@
    "page": 90,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Zahlungserinnerung\n\nSehr geehrter Herr Batic,\nIn Oktober haben wir in Ihrem Firmengebäude an der Heizungsanlage Reparaturarbeiten ausgeführt. Da wir 52 ( ) gehört haben, gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war. Allerdings ist bislang für unsere Rechnung Nr. 2008/123 in Höhe von 2.746,- Euro\nleider keine 53 ( ).\nFür den Fall, dass die Rechnung bei Ihnen verloren gegangen ist, senden wir Ihnen anbei eine\nneue mit der Bitte um 54 ( ).\nDa der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten\nSkonto von 2% leider nicht mehr 56 ( ). Wir bitten um Verständnis.\nSollten Sie die Rechnung 57 ( ) bezahlt haben, betrachten Sie dieses Schreiben bitte\nals gegenstandslos.\nMit freundlichen Grüßen\nIlka Desgrane (Heizung und Sanitär Resch)",
+   "passageOpen": true,
+   "passage": "Zahlungserinnerung\n\nSehr geehrter Herr Batic, In Oktober haben wir in Ihrem Firmengebäude an der Heizungsanlage Reparaturarbeiten ausgeführt. Da wir 52 ( ) gehört haben, gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war. Allerdings ist bislang für unsere Rechnung Nr. 2008/123 in Höhe von 2.746,- Euro leider keine 53 ( ). Für den Fall, dass die Rechnung bei Ihnen verloren gegangen ist, senden wir Ihnen anbei eine neue mit der Bitte um 54 ( ). Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( ). Wir bitten um Verständnis. Sollten Sie die Rechnung 57 ( ) bezahlt haben, betrachten Sie dieses Schreiben bitte als gegenstandslos. Mit freundlichen Grüßen Ilka Desgrane (Heizung und Sanitär Resch)",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "Ihrem Firmengebäude an der Heizungsanlage Reparaturarbeiten ausgeführt. Da wir 52 ( ) gehört haben, gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war.",
+     "prompt": "Da wir 52 ( ) gehört haben, gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war.",
      "options": [
       {
        "key": "a",
@@ -653,7 +658,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "bislang für unsere Rechnung Nr. 2008/123 in Höhe von 2.746,- Euro leider keine 53 ( ). Für den Fall, dass die Rechnung bei Ihnen verloren gegangen ist, senden wir",
+     "prompt": "2008/123 in Höhe von 2.746,- Euro leider keine 53 ( ).",
      "options": [
       {
        "key": "a",
@@ -677,7 +682,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "Ihnen verloren gegangen ist, senden wir Ihnen anbei eine neue mit der Bitte um 54 ( ). Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den",
+     "prompt": "Für den Fall, dass die Rechnung bei Ihnen verloren gegangen ist, senden wir Ihnen anbei eine neue mit der Bitte um 54 ( ).",
      "options": [
       {
        "key": "a",
@@ -701,7 +706,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "anbei eine neue mit der Bitte um 54 ( ). Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( ).",
+     "prompt": "Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr",
      "options": [
       {
        "key": "a",
@@ -725,7 +730,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( ). Wir bitten um Verständnis. Sollten Sie die Rechnung 57 ( ) bezahlt haben,",
+     "prompt": "Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( ).",
      "options": [
       {
        "key": "a",
@@ -749,7 +754,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "leider nicht mehr 56 ( ). Wir bitten um Verständnis. Sollten Sie die Rechnung 57 ( ) bezahlt haben, betrachten Sie dieses Schreiben bitte als gegenstandslos. Mit",
+     "prompt": "Sollten Sie die Rechnung 57 ( ) bezahlt haben, betrachten Sie dieses Schreiben bitte als gegenstandslos.",
      "options": [
       {
        "key": "a",
@@ -778,12 +783,13 @@
    "page": 91,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Sehr geehrte Damen und Herren,\nvielen Dank für Ihr Interesse an unseren Leistungen. Für den regelmäßigen Reinigungsservice Ihres Restaurants hatten wir Ihnen am 24.11. ein Angebot 52 ( ) unterbreitet. Wie\naus der Übersicht auf der zweiten Seite hervorgeht, ist eine Reinigung Ihrer Räumlichkeiten auch\nam frühen Sonntagmorgen für uns selbstverständlich ohne Probleme machbar. Für diesen Service\nberechnen wir im Rahmen unserer Rabattaktion keinen Wochenendzuschlag. Hatten Sie schon\ndie Möglichkeit, 53 ( )? Bitte denken Sie daran, dass die erwähnte Rabattaktion\nnur noch bis Ende des Jahres 54 ( ). Sollten Sie dazu noch Fragen haben, zögern Sie\nbitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice 56 (\n) Ihnen gerne jederzeit zur Verfügung. Wir freuen uns, Sie zukünftig 57 ( ) zu\nkönnen.\nMit freundlichen Grüßen\nHelmuth Heidinger („Tiptop-Service \")",
+   "passageOpen": true,
+   "passage": "Sehr geehrte Damen und Herren, vielen Dank für Ihr Interesse an unseren Leistungen. Für den regelmäßigen Reinigungsservice Ihres Restaurants hatten wir Ihnen am 24.11. ein Angebot 52 ( ) unterbreitet. Wie aus der Übersicht auf der zweiten Seite hervorgeht, ist eine Reinigung Ihrer Räumlichkeiten auch am frühen Sonntagmorgen für uns selbstverständlich ohne Probleme machbar. Für diesen Service berechnen wir im Rahmen unserer Rabattaktion keinen Wochenendzuschlag. Hatten Sie schon die Möglichkeit, 53 ( )? Bitte denken Sie daran, dass die erwähnte Rabattaktion nur noch bis Ende des Jahres 54 ( ). Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice 56 ( ) Ihnen gerne jederzeit zur Verfügung. Wir freuen uns, Sie zukünftig 57 ( ) zu können. Mit freundlichen Grüßen Helmuth Heidinger („Tiptop-Service \")",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "Reinigungsservice Ihres Restaurants hatten wir Ihnen am 24.11. ein Angebot 52 ( ) unterbreitet. Wie aus der Übersicht auf der zweiten Seite hervorgeht, ist eine",
+     "prompt": "ein Angebot 52 ( ) unterbreitet.",
      "options": [
       {
        "key": "a",
@@ -807,7 +813,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "Rabattaktion keinen Wochenendzuschlag. Hatten Sie schon die Möglichkeit, 53 ( )? Bitte denken Sie daran, dass die erwähnte Rabattaktion nur noch bis Ende des",
+     "prompt": "Hatten Sie schon die Möglichkeit, 53 ( )?",
      "options": [
       {
        "key": "a",
@@ -831,7 +837,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "denken Sie daran, dass die erwähnte Rabattaktion nur noch bis Ende des Jahres 54 ( ). Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 (",
+     "prompt": "Bitte denken Sie daran, dass die erwähnte Rabattaktion nur noch bis Ende des Jahres 54 ( ).",
      "options": [
       {
        "key": "a",
@@ -855,7 +861,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "( ). Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice 56 ( ) Ihnen gerne jederzeit zur",
+     "prompt": "Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice",
      "options": [
       {
        "key": "a",
@@ -879,7 +885,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "Sie bitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice 56 ( ) Ihnen gerne jederzeit zur Verfügung. Wir freuen uns, Sie zukünftig 57 ( ) zu",
+     "prompt": "Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice 56 ( ) Ihnen gerne jederzeit zur Verfügung.",
      "options": [
       {
        "key": "a",
@@ -903,7 +909,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "56 ( ) Ihnen gerne jederzeit zur Verfügung. Wir freuen uns, Sie zukünftig 57 ( ) zu können. Mit freundlichen Grüßen Helmuth Heidinger („Tiptop-Service \")",
+     "prompt": "Wir freuen uns, Sie zukünftig 57 ( ) zu können.",
      "options": [
       {
        "key": "a",
@@ -932,12 +938,13 @@
    "page": 92,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Auftragsbestätigung\n\nSehr geehrte Frau Mackbock,\nich danke Ihnen für Ihre Bestellung und bestätige hiermit die Zustellung des PKW Bulldog zum\nPreis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre\nRechnungsadresse nicht mit der Lieferadresse übereinstimmen, teilen Sie uns dies bitte bis spätestens 07.07 schriftlich mit.\nDie Rechnungszustellung erfolgt per Post. Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der\nRechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ).\nDie detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen\nauf der Rückseite dieser Auftragsbestätigung.\nBei Rückfragen steht Ihnen unser 24-Stunden-Service unter der Rufnummer 0175 545621 zur\nVerfügung. Bitte halten Sie hierzu Ihre 56 ( ).\nWir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.\nMit freundlichen Grüßen\nChristoph Sellert",
+   "passageOpen": true,
+   "passage": "Auftragsbestätigung\n\nSehr geehrte Frau Mackbock, ich danke Ihnen für Ihre Bestellung und bestätige hiermit die Zustellung des PKW Bulldog zum Preis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre Rechnungsadresse nicht mit der Lieferadresse übereinstimmen, teilen Sie uns dies bitte bis spätestens 07.07 schriftlich mit. Die Rechnungszustellung erfolgt per Post. Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen auf der Rückseite dieser Auftragsbestätigung. Bei Rückfragen steht Ihnen unser 24-Stunden-Service unter der Rufnummer 0175 545621 zur Verfügung. Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden. Mit freundlichen Grüßen Christoph Sellert",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "die Zustellung des PKW Bulldog zum Preis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre Rechnungsadresse nicht mit der Lieferadresse",
+     "prompt": "an die von 52 ( ) Lieferadresse.",
      "options": [
       {
        "key": "a",
@@ -961,7 +968,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die",
+     "prompt": "Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ).",
      "options": [
       {
        "key": "a",
@@ -985,7 +992,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen",
+     "prompt": "Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ).",
      "options": [
       {
        "key": "a",
@@ -1009,7 +1016,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen auf der Rückseite dieser",
+     "prompt": "Die detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen auf der Rückseite dieser Auftragsbestätigung.",
      "options": [
       {
        "key": "a",
@@ -1033,7 +1040,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "unter der Rufnummer 0175 545621 zur Verfügung. Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit",
+     "prompt": "Bitte halten Sie hierzu Ihre 56 ( ).",
      "options": [
       {
        "key": "a",
@@ -1057,7 +1064,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden. Mit",
+     "prompt": "Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.",
      "options": [
       {
        "key": "a",
@@ -1086,12 +1093,13 @@
    "page": 93,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Auftragsbestätigung\n\nSehr geehrte Frau Mackbock,\nich danke Ihnen für Ihre Bestellung und bestätige hiermit die Zustellung des PKW Bulldog zum\nPreis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre\nRechnungsadresse nicht mit der Lieferadresse übereinstimmen, teilen Sie uns dies bitte bis spätestens 07.07 schriftlich mit.\nDie Rechnungszustellung erfolgt per Post. Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ).\nDie detaillierten Konditionen 55 ( ) in unseren allgemeinen Geschäftsbedingungen\nauf der Rückseite unserer Auftragsbestätigung.\nBei Rückfragen steht Ihnen unser 24-Stunden-Service unter der Rufnummer 0175 345621 zur\nVerfügung. Bitte halten Sie hierzu Ihre 56 ( ).\nWir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.\nMit freundlichen Grüßen\nChristoph Sellert",
+   "passageOpen": true,
+   "passage": "Auftragsbestätigung\n\nSehr geehrte Frau Mackbock, ich danke Ihnen für Ihre Bestellung und bestätige hiermit die Zustellung des PKW Bulldog zum Preis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre Rechnungsadresse nicht mit der Lieferadresse übereinstimmen, teilen Sie uns dies bitte bis spätestens 07.07 schriftlich mit. Die Rechnungszustellung erfolgt per Post. Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) in unseren allgemeinen Geschäftsbedingungen auf der Rückseite unserer Auftragsbestätigung. Bei Rückfragen steht Ihnen unser 24-Stunden-Service unter der Rufnummer 0175 345621 zur Verfügung. Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden. Mit freundlichen Grüßen Christoph Sellert",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "die Zustellung des PKW Bulldog zum Preis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre Rechnungsadresse nicht mit der Lieferadresse",
+     "prompt": "an die von 52 ( ) Lieferadresse.",
      "options": [
       {
        "key": "a",
@@ -1115,7 +1123,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die",
+     "prompt": "Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ).",
      "options": [
       {
        "key": "a",
@@ -1139,7 +1147,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) in unseren allgemeinen",
+     "prompt": "Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ).",
      "options": [
       {
        "key": "a",
@@ -1163,7 +1171,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) in unseren allgemeinen Geschäftsbedingungen auf der Rückseite unserer",
+     "prompt": "Die detaillierten Konditionen 55 ( ) in unseren allgemeinen Geschäftsbedingungen auf der Rückseite unserer Auftragsbestätigung.",
      "options": [
       {
        "key": "a",
@@ -1187,7 +1195,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "unter der Rufnummer 0175 345621 zur Verfügung. Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit",
+     "prompt": "Bitte halten Sie hierzu Ihre 56 ( ).",
      "options": [
       {
        "key": "a",
@@ -1211,7 +1219,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden. Mit",
+     "prompt": "Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.",
      "options": [
       {
        "key": "a",
@@ -1240,12 +1248,13 @@
    "page": 94,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Angebot\n\nSehr geehrte Damen und Herren,\nwir danken Ihnen für Ihre Anfrage vom 08.12.20xx und unterbreiten Ihnen 52 ( ) acht\nSchreibtischcontainer MV 17 WW weiß zum Preis von je 156,99 Euro netto. Ab einem Auftragswert von 900,00 Euro liefern wir frei Haus, ansonsten fällt eine Lieferpauschale 53 ( ) von\n39,00 Euro an.\nGerne montieren wir die Möbel auch vor Ort. Die Kosten für den Aufbau 54 ( ) nach\ndem Warenwert und betragen 20% des Nettopreises. Natürlich besteht auch 55 ( ) die\nWare in unserem Lager abzuholen und selbst aufzubauen.\n56 ( ) ist 14 Tage bindend. Wir würden uns sehr freuen, 57 ( ) zu\nerhalten. Sollten Sie noch Fragen haben, stehen wir Ihnen gerne jederzeit zur Verfügung.\nMit freundlichen Grüßen\nLars Walter",
+   "passageOpen": true,
+   "passage": "Angebot\n\nSehr geehrte Damen und Herren, wir danken Ihnen für Ihre Anfrage vom 08.12.20xx und unterbreiten Ihnen 52 ( ) acht Schreibtischcontainer MV 17 WW weiß zum Preis von je 156,99 Euro netto. Ab einem Auftragswert von 900,00 Euro liefern wir frei Haus, ansonsten fällt eine Lieferpauschale 53 ( ) von 39,00 Euro an. Gerne montieren wir die Möbel auch vor Ort. Die Kosten für den Aufbau 54 ( ) nach dem Warenwert und betragen 20% des Nettopreises. Natürlich besteht auch 55 ( ) die Ware in unserem Lager abzuholen und selbst aufzubauen. 56 ( ) ist 14 Tage bindend. Wir würden uns sehr freuen, 57 ( ) zu erhalten. Sollten Sie noch Fragen haben, stehen wir Ihnen gerne jederzeit zur Verfügung. Mit freundlichen Grüßen Lars Walter",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "wir danken Ihnen für Ihre Anfrage vom 08.12.20xx und unterbreiten Ihnen 52 ( ) acht Schreibtischcontainer MV 17 WW weiß zum Preis von je 156,99 Euro netto.",
+     "prompt": "Sehr geehrte Damen und Herren, wir danken Ihnen für Ihre Anfrage vom 08.12.20xx und unterbreiten Ihnen 52 ( ) acht Schreibtischcontainer MV 17 WW weiß zum Preis von je 156,99 Euro netto.",
      "options": [
       {
        "key": "a",
@@ -1269,7 +1278,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "von 900,00 Euro liefern wir frei Haus, ansonsten fällt eine Lieferpauschale 53 ( ) von 39,00 Euro an. Gerne montieren wir die Möbel auch vor Ort. Die Kosten für",
+     "prompt": "Ab einem Auftragswert von 900,00 Euro liefern wir frei Haus, ansonsten fällt eine Lieferpauschale 53 ( ) von 39,00 Euro an.",
      "options": [
       {
        "key": "a",
@@ -1293,7 +1302,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "Euro an. Gerne montieren wir die Möbel auch vor Ort. Die Kosten für den Aufbau 54 ( ) nach dem Warenwert und betragen 20% des Nettopreises. Natürlich besteht auch",
+     "prompt": "Die Kosten für den Aufbau 54 ( ) nach dem Warenwert und betragen 20% des Nettopreises.",
      "options": [
       {
        "key": "a",
@@ -1317,7 +1326,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": ") nach dem Warenwert und betragen 20% des Nettopreises. Natürlich besteht auch 55 ( ) die Ware in unserem Lager abzuholen und selbst aufzubauen. 56 ( ) ist 14 Tage",
+     "prompt": "Natürlich besteht auch 55 ( ) die Ware in unserem Lager abzuholen und selbst aufzubauen.",
      "options": [
       {
        "key": "a",
@@ -1341,7 +1350,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "besteht auch 55 ( ) die Ware in unserem Lager abzuholen und selbst aufzubauen. 56 ( ) ist 14 Tage bindend. Wir würden uns sehr freuen, 57 ( ) zu erhalten. Sollten",
+     "prompt": "56 ( ) ist 14 Tage bindend.",
      "options": [
       {
        "key": "a",
@@ -1365,7 +1374,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "und selbst aufzubauen. 56 ( ) ist 14 Tage bindend. Wir würden uns sehr freuen, 57 ( ) zu erhalten. Sollten Sie noch Fragen haben, stehen wir Ihnen gerne jederzeit",
+     "prompt": "Wir würden uns sehr freuen, 57 ( ) zu erhalten.",
      "options": [
       {
        "key": "a",
@@ -1394,12 +1403,13 @@
    "page": 95,
    "kind": "text",
    "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
-   "passage": "Fehlerhafte Lieferung\n\nSehr geehrter Herr Sonneberg,\nvielen Dank für die schnelle Bearbeitung unserer Bestellung vom 29.10.\nFür die Einrichtung unserer Pausenräume hatten wir zehn Sitzeckbänken in der Farbe\nWeiß bestellt. 52 ( ) Sie zehn Tische und für jede Sitzeinheit drei Stühle in\nder gleichen Farbe liefern.\nLeider entspricht die Lieferung nicht 53 ( ). Zwei von den zehn Sitzeckbänken\nwurden in Braun geliefert. Von den 30 Stühlen haben ebenfalls fünf die falsche Farbe. Wir\nbitten Sie, die reklamierten Möbelstücke 54 ( ).\nAußerdem weisen zwei Tische Kratzer an der Oberfläche auf. Wir würden die Tische\ntrotzdem behalten, wenn Sie dafür einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )?\nWir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur Verfügung.\nMit freundlichen Grüßen\nSonja Schmidt",
+   "passageOpen": true,
+   "passage": "Fehlerhafte Lieferung\n\nSehr geehrter Herr Sonneberg, vielen Dank für die schnelle Bearbeitung unserer Bestellung vom 29.10. Für die Einrichtung unserer Pausenräume hatten wir zehn Sitzeckbänken in der Farbe Weiß bestellt. 52 ( ) Sie zehn Tische und für jede Sitzeinheit drei Stühle in der gleichen Farbe liefern. Leider entspricht die Lieferung nicht 53 ( ). Zwei von den zehn Sitzeckbänken wurden in Braun geliefert. Von den 30 Stühlen haben ebenfalls fünf die falsche Farbe. Wir bitten Sie, die reklamierten Möbelstücke 54 ( ). Außerdem weisen zwei Tische Kratzer an der Oberfläche auf. Wir würden die Tische trotzdem behalten, wenn Sie dafür einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )? Wir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur Verfügung. Mit freundlichen Grüßen Sonja Schmidt",
    "items": [
     {
      "n": 52,
      "type": "choice",
-     "prompt": "unserer Pausenräume hatten wir zehn Sitzeckbänken in der Farbe Weiß bestellt. 52 ( ) Sie zehn Tische und für jede Sitzeinheit drei Stühle in der gleichen Farbe",
+     "prompt": "52 ( ) Sie zehn Tische und für jede Sitzeinheit drei Stühle in der gleichen Farbe liefern.",
      "options": [
       {
        "key": "a",
@@ -1423,7 +1433,7 @@
     {
      "n": 53,
      "type": "choice",
-     "prompt": "Stühle in der gleichen Farbe liefern. Leider entspricht die Lieferung nicht 53 ( ). Zwei von den zehn Sitzeckbänken wurden in Braun geliefert. Von den 30 Stühlen",
+     "prompt": "Leider entspricht die Lieferung nicht 53 ( ).",
      "options": [
       {
        "key": "a",
@@ -1447,7 +1457,7 @@
     {
      "n": 54,
      "type": "choice",
-     "prompt": "ebenfalls fünf die falsche Farbe. Wir bitten Sie, die reklamierten Möbelstücke 54 ( ). Außerdem weisen zwei Tische Kratzer an der Oberfläche auf. Wir würden die",
+     "prompt": "Wir bitten Sie, die reklamierten Möbelstücke 54 ( ).",
      "options": [
       {
        "key": "a",
@@ -1471,7 +1481,7 @@
     {
      "n": 55,
      "type": "choice",
-     "prompt": "Wir würden die Tische trotzdem behalten, wenn Sie dafür einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )? Wir bitten um 57 ( ). Für Rückfragen stehen",
+     "prompt": "Wir würden die Tische trotzdem behalten, wenn Sie dafür einen entsprechenden 55 ( ) .",
      "options": [
       {
        "key": "a",
@@ -1495,7 +1505,7 @@
     {
      "n": 56,
      "type": "choice",
-     "prompt": "behalten, wenn Sie dafür einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )? Wir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur",
+     "prompt": "Könnten Sie uns hierfür 56 ( )?",
      "options": [
       {
        "key": "a",
@@ -1519,7 +1529,7 @@
     {
      "n": 57,
      "type": "choice",
-     "prompt": "einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )? Wir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur Verfügung. Mit freundlichen",
+     "prompt": "Wir bitten um 57 ( ).",
      "options": [
       {
        "key": "a",

@@ -258,7 +258,11 @@ def partir_cuerpo(lineas):
             continue
         visto_texto = True
         cuerpo.append(limpia.replace("**", ""))
-    return titulo, limpiar_guiones("\n".join(cuerpo)).strip(), opciones, notas
+    # Primero se unen las palabras partidas por el salto de línea del PDF y después
+    # se aplana el texto: los cortes de línea del original, dentro de la columna
+    # estrecha de la mesa de examen, dejan huérfanos de una palabra por línea.
+    texto = limpiar_guiones("\n".join(cuerpo)).strip()
+    return titulo, " ".join(texto.split()), opciones, notas
 
 
 def frase_del_hueco(texto: str, n: str) -> str:
@@ -270,15 +274,28 @@ def frase_del_hueco(texto: str, n: str) -> str:
     m = re.search(r"\b" + re.escape(n) + r"\s*\(\s*\)", plano)
     if not m:
         return ""
-    ventana = 80
-    ini, fin = max(0, m.start() - ventana), min(len(plano), m.end() + ventana)
-    if ini > 0:
-        esp = plano.find(" ", ini)
-        ini = esp + 1 if esp != -1 else ini
-    if fin < len(plano):
-        esp = plano.rfind(" ", m.end(), fin)
-        fin = esp if esp != -1 else fin
-    return plano[ini:fin].strip()
+    # La frase entera es más legible que una ventana de texto, pero dos huecos de la
+    # misma frase darían el mismo enunciado: se corta en el hueco siguiente. Si aun
+    # así sale muy larga, se recorta a una ventana alrededor del hueco.
+    ini = 0
+    for marca in (". ", "! ", "? "):
+        p = plano.rfind(marca, 0, m.start())
+        if p != -1:
+            ini = max(ini, p + 2)
+    fin = len(plano)
+    for marca in (". ", "! ", "? "):
+        p = plano.find(marca, m.end())
+        if p != -1:
+            fin = min(fin, p + 1)
+    siguiente = re.search(r"\b\d{2}\s*\(\s*\)", plano[m.end():])
+    if siguiente:
+        fin = min(fin, m.end() + siguiente.start())
+    frase = plano[ini:fin].strip()
+    if len(frase) <= 260:
+        return frase
+    # Frase muy larga: ventana alrededor del hueco, que siempre lo contiene.
+    ini2, fin2 = max(ini, m.start() - 120), min(fin, m.end() + 120)
+    return plano[ini2:fin2].strip()
 
 
 def main():
@@ -342,6 +359,8 @@ def main():
                 "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? "
                          "Vier Wörter bleiben übrig.",
                 "optionsLabel": "Wörter",
+                "optionsLayout": "bank",
+                "passageOpen": True,
                 "passage": (titulo + "\n\n" + cuerpo).strip() if titulo else cuerpo,
                 "options": banco, "items": items,
             })
@@ -367,6 +386,7 @@ def main():
             t2.append({
                 "id": vid, "label": etiqueta, "page": b["page"], "kind": "text",
                 "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+                "passageOpen": True,
                 "passage": (titulo + "\n\n" + cuerpo).strip() if titulo else cuerpo,
                 "items": items,
             })

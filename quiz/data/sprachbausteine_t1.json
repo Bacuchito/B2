@@ -9,7 +9,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Bewerbung um ein Praktikum\n\nSehr geehrte Damen und Herren,\nzunächst bedanke ich mich für das freundliche, informative Telefonat. Wie besprochen übersende ich\nIhnen meine Bewerbungsunterlagen. Auf Ihrer Homepage habe ich mich bereits über das Ausbildungskonzept Ihrer Hotelkette informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit\neines Hotelkaufmannes erhalten zu können.\nIch arbeite sehr gerne mit Menschen zusammen. Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( )\nauch im Planen und Organisieren meine großen Stärken sehe.\nIch erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde ich mich sehr freuen.\nMit freundlichen Grüßen\nAlexander Thiel",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Bewerbung um ein Praktikum\n\nSehr geehrte Damen und Herren, zunächst bedanke ich mich für das freundliche, informative Telefonat. Wie besprochen übersende ich Ihnen meine Bewerbungsunterlagen. Auf Ihrer Homepage habe ich mich bereits über das Ausbildungskonzept Ihrer Hotelkette informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können. Ich arbeite sehr gerne mit Menschen zusammen. Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe. Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde ich mich sehr freuen. Mit freundlichen Grüßen Alexander Thiel",
    "options": [
     {
      "key": "a",
@@ -56,7 +58,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "mich bereits über das Ausbildungskonzept Ihrer Hotelkette informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes",
+     "prompt": "Auf Ihrer Homepage habe ich mich bereits über das Ausbildungskonzept Ihrer Hotelkette informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können.",
      "answer": "e",
      "confidence": "hoch",
      "quote": "informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können.",
@@ -66,7 +68,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte",
+     "prompt": "Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung.",
      "answer": "d",
      "confidence": "hoch",
      "quote": "Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung.",
@@ -76,7 +78,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren",
+     "prompt": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen,",
      "answer": "b",
      "confidence": "hoch",
      "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe.",
@@ -86,7 +88,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe. Ich erwarte von",
+     "prompt": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe.",
      "answer": "f",
      "confidence": "hoch",
      "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe.",
@@ -96,7 +98,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich",
+     "prompt": "Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein.",
      "answer": "g",
      "confidence": "hoch",
      "quote": "Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein.",
@@ -106,7 +108,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde",
+     "prompt": "51 ( ) überzeuge ich Sie in einem persönlichen Gespräch.",
      "answer": "a",
      "confidence": "hoch",
      "quote": "51 ( ) überzeuge ich Sie in einem persönlichen Gespräch.",
@@ -122,7 +124,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Bewerbung um ein Praktikum\n\nSehr geehrte Damen und Herren,\nzunächst bedanke ich mich für das freundliche, informative Telefonat. 46 ( ) besprochen übersende\nich Ihnen meine Bewerbungsunterlagen. Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können. Ich arbeite sehr gerne mit Menschen zusammen. Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in\nder Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich\nnicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren meine großen Stärken\nsehe.\nIch erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde ich mich sehr freuen.\nMit freundlichen Grüßen\nAlexander Thiel",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Bewerbung um ein Praktikum\n\nSehr geehrte Damen und Herren, zunächst bedanke ich mich für das freundliche, informative Telefonat. 46 ( ) besprochen übersende ich Ihnen meine Bewerbungsunterlagen. Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können. Ich arbeite sehr gerne mit Menschen zusammen. Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in der Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich nicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren meine großen Stärken sehe. Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde ich mich sehr freuen. Mit freundlichen Grüßen Alexander Thiel",
    "options": [
     {
      "key": "a",
@@ -165,7 +169,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "Herren, zunächst bedanke ich mich für das freundliche, informative Telefonat. 46 ( ) besprochen übersende ich Ihnen meine Bewerbungsunterlagen. Auf Ihrer Homepage",
+     "prompt": "46 ( ) besprochen übersende ich Ihnen meine Bewerbungsunterlagen.",
      "answer": "h",
      "confidence": "hoch",
      "quote": "46 ( ) besprochen übersende ich Ihnen meine Bewerbungsunterlagen.",
@@ -175,7 +179,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "ich Ihnen meine Bewerbungsunterlagen. Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in",
+     "prompt": "Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können.",
      "answer": "i",
      "confidence": "hoch",
      "quote": "Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können.",
@@ -185,7 +189,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in der Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte",
+     "prompt": "Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in der Hotelverwaltung.",
      "answer": "d",
      "confidence": "hoch",
      "quote": "Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in der Hotelverwaltung.",
@@ -195,7 +199,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich nicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren",
+     "prompt": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich nicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren meine großen Stärken sehe.",
      "answer": "b",
      "confidence": "hoch",
      "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich nicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren meine großen Stärken sehe.",
@@ -205,7 +209,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich",
+     "prompt": "Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein.",
      "answer": "e",
      "confidence": "hoch",
      "quote": "Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein.",
@@ -215,7 +219,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde",
+     "prompt": "51 ( ) überzeuge ich Sie in einem persönlichen Gespräch.",
      "answer": "a",
      "confidence": "hoch",
      "quote": "51 ( ) überzeuge ich Sie in einem persönlichen Gespräch.",
@@ -231,7 +235,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Arbeitsvertrag\n\nSehr geehrter Herr Salzmann,\nmeinen Arbeitsvertrag habe ich heute mit der Post erhalten und möchte mich hiermit herzlich bedanken.\nIch habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben.\nBei meinem Vorstellungsgespräch hatte Frau Ott mir mündlich ein Jobticket zugesagt, das im Vertrag\nnicht erwähnt wird. Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen?\nMeine zweite Frage bezieht sich auf den Arbeitsort. Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf\nauch an einem anderen Ort in Deutschland eingesetzt werden können. Gilt das auch für meine Stelle? Das\nwar mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig. 50 ( )\nich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für meine Familie nicht möglich.\nIch freue mich auf Ihre Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück,\n51 ( ) diese Punkte geklärt sind.\nIch freue mich auf meinen Arbeitsbeginn am 1. Juli.\nMit freundlichen Grüßen\nIrina Lopez",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Arbeitsvertrag\n\nSehr geehrter Herr Salzmann, meinen Arbeitsvertrag habe ich heute mit der Post erhalten und möchte mich hiermit herzlich bedanken. Ich habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben. Bei meinem Vorstellungsgespräch hatte Frau Ott mir mündlich ein Jobticket zugesagt, das im Vertrag nicht erwähnt wird. Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen? Meine zweite Frage bezieht sich auf den Arbeitsort. Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf auch an einem anderen Ort in Deutschland eingesetzt werden können. Gilt das auch für meine Stelle? Das war mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig. 50 ( ) ich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für meine Familie nicht möglich. Ich freue mich auf Ihre Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück, 51 ( ) diese Punkte geklärt sind. Ich freue mich auf meinen Arbeitsbeginn am 1. Juli. Mit freundlichen Grüßen Irina Lopez",
    "options": [
     {
      "key": "a",
@@ -278,7 +284,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "möchte mich hiermit herzlich bedanken. Ich habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben. Bei meinem Vorstellungsgespräch hatte",
+     "prompt": "Ich habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben.",
      "answer": "c",
      "confidence": "mittel",
      "quote": "Ich habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben.",
@@ -288,7 +294,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "mündlich ein Jobticket zugesagt, das im Vertrag nicht erwähnt wird. Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen? Meine zweite Frage bezieht sich auf",
+     "prompt": "Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen?",
      "answer": "d",
      "confidence": "mittel",
      "quote": "Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen?",
@@ -298,7 +304,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "rechnen? Meine zweite Frage bezieht sich auf den Arbeitsort. Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf auch an einem anderen Ort in Deutschland eingesetzt",
+     "prompt": "Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf auch an einem anderen Ort in Deutschland eingesetzt werden können.",
      "answer": "e",
      "confidence": "hoch",
      "quote": "Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf auch an einem anderen Ort in Deutschland eingesetzt werden können.",
@@ -308,7 +314,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "können. Gilt das auch für meine Stelle? Das war mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig. 50 ( ) ich, wie Sie wissen,",
+     "prompt": "Das war mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig.",
      "answer": "a",
      "confidence": "hoch",
      "quote": "Das war mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig.",
@@ -318,7 +324,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig. 50 ( ) ich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für",
+     "prompt": "50 ( ) ich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für meine Familie nicht möglich.",
      "answer": "b",
      "confidence": "hoch",
      "quote": "50 ( ) ich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für meine Familie nicht möglich.",
@@ -328,7 +334,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück, 51 ( ) diese Punkte geklärt sind. Ich freue mich auf meinen Arbeitsbeginn am 1. Juli.",
+     "prompt": "Ich freue mich auf Ihre Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück, 51 ( ) diese Punkte geklärt sind.",
      "answer": "j",
      "confidence": "hoch",
      "quote": "Ich freue mich auf Ihre Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück, 51 ( ) diese Punkte geklärt sind.",
@@ -344,7 +350,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingosbergr,\nvielen Dank für die positive Nachricht, bereits ab dem ersten März bei Ihnen anfangen zu dürfen. 46 ( )\nfreue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag zurück.\nNun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz.\nAber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine\nneue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit\n48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.\nBei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen.\nBenötigen Sie 50 ( ) meine Kleider- und Schuhgröße ? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.\nSollten Sie sonst irgendetwas von mir benötigten, können Sie mich natürlich gern kontaktieren.\nMit freundlichen Grüßen",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingosbergr, vielen Dank für die positive Nachricht, bereits ab dem ersten März bei Ihnen anfangen zu dürfen. 46 ( ) freue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag zurück. Nun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgröße ? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir benötigten, können Sie mich natürlich gern kontaktieren. Mit freundlichen Grüßen",
    "options": [
     {
      "key": "a",
@@ -391,7 +399,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "positive Nachricht, bereits ab dem ersten März bei Ihnen anfangen zu dürfen. 46 ( ) freue ich mich wirklich sehr. In der Anlage sende ich Ihnen den",
+     "prompt": "46 ( ) freue ich mich wirklich sehr.",
      "answer": "g",
      "confidence": "hoch",
      "quote": "46 ( ) freue ich mich wirklich sehr.",
@@ -401,7 +409,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf",
+     "prompt": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
      "answer": "c",
      "confidence": "hoch",
      "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
@@ -411,7 +419,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem",
+     "prompt": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
      "answer": "e",
      "confidence": "hoch",
      "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
@@ -421,7 +429,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen. Benötigen Sie 50 ( )",
+     "prompt": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen.",
      "answer": "d",
      "confidence": "hoch",
      "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen.",
@@ -431,7 +439,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgröße ? Das erforderliche ärztliche Attest vom",
+     "prompt": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgröße ?",
      "answer": "b",
      "confidence": "hoch",
      "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgröße ?",
@@ -441,7 +449,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "Schuhgröße ? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir",
+     "prompt": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
      "answer": "i",
      "confidence": "hoch",
      "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
@@ -457,7 +465,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingenberg,\nvielen Dank für die positive Nachricht, bereits zum ersten März bei Ihnen anfangen zu dürfen. Hierüber\nfreue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).\nNun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz.\nAber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine\nneue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit\n48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.\nBei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?\nDas erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.\nSollten Sie sonst irgendetwas von mir benötigen, können Sie mich natürlich gern kontaktieren.\nMit freundlichen Grüßen\nPhilipp Kunz",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingenberg, vielen Dank für die positive Nachricht, bereits zum ersten März bei Ihnen anfangen zu dürfen. Hierüber freue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ). Nun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir benötigen, können Sie mich natürlich gern kontaktieren. Mit freundlichen Grüßen Philipp Kunz",
    "options": [
     {
      "key": "a",
@@ -504,7 +514,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ). Nun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem",
+     "prompt": "In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).",
      "answer": "g",
      "confidence": "hoch",
      "quote": "In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).",
@@ -514,7 +524,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf",
+     "prompt": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
      "answer": "c",
      "confidence": "hoch",
      "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
@@ -524,7 +534,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem",
+     "prompt": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
      "answer": "e",
      "confidence": "hoch",
      "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
@@ -534,7 +544,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider-",
+     "prompt": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen.",
      "answer": "d",
      "confidence": "hoch",
      "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen.",
@@ -544,7 +554,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ? Das erforderliche ärztliche Attest vom",
+     "prompt": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?",
      "answer": "b",
      "confidence": "hoch",
      "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?",
@@ -554,7 +564,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir",
+     "prompt": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
      "answer": "i",
      "confidence": "hoch",
      "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
@@ -570,7 +580,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingenberg,\nvielen Dank für die positive Nachricht, bereits zum ersten März bei Ihnen anfangen zu dürfen. Hierüber\nfreue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).\nNun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz.\nAber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine\nneue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit\n48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.\nBei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?\nDas erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.\nSollten Sie sonst irgendetwas von mir benötigen, können Sie mich natürlich gern kontaktieren.\nMit freundlichen Grüßen\nPhilipp Kunz",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingenberg, vielen Dank für die positive Nachricht, bereits zum ersten März bei Ihnen anfangen zu dürfen. Hierüber freue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ). Nun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir benötigen, können Sie mich natürlich gern kontaktieren. Mit freundlichen Grüßen Philipp Kunz",
    "options": [
     {
      "key": "a",
@@ -617,7 +629,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ). Nun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem",
+     "prompt": "In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).",
      "answer": "j",
      "confidence": "hoch",
      "quote": "In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).",
@@ -627,7 +639,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf",
+     "prompt": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
      "answer": "d",
      "confidence": "hoch",
      "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
@@ -637,7 +649,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem",
+     "prompt": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
      "answer": "f",
      "confidence": "hoch",
      "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
@@ -647,7 +659,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider-",
+     "prompt": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen.",
      "answer": "e",
      "confidence": "hoch",
      "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen.",
@@ -657,7 +669,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ? Das erforderliche ärztliche Attest vom",
+     "prompt": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?",
      "answer": "c",
      "confidence": "hoch",
      "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?",
@@ -667,7 +679,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir",
+     "prompt": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
      "answer": "i",
      "confidence": "hoch",
      "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
@@ -683,7 +695,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Kündigung\n\nSehr geehrter Herr Dr. Reinicke,\nhiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( )\nnächstmöglichen Datum.\nWie ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung nicht leicht\ngemacht. Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie\nso bald wie 47 ( ) umziehen. Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe,\naber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.\nFür die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich\nhabe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich\nstets in der Firma erfahren habe.\nBitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.\nMit freundlichen Grüßen\nIrina Kaspercik",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Kündigung\n\nSehr geehrter Herr Dr. Reinicke, hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum. Wie ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung nicht leicht gemacht. Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie 47 ( ) umziehen. Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats. Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe. Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet. Mit freundlichen Grüßen Irina Kaspercik",
    "options": [
     {
      "key": "a",
@@ -730,7 +744,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum. Wie ich Ihnen in unserem persönlichen Gespräch erklärt",
+     "prompt": "Reinicke, hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum.",
      "answer": "j",
      "confidence": "hoch",
      "quote": "hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum.",
@@ -740,7 +754,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie 47 ( ) umziehen. Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe,",
+     "prompt": "Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie 47 ( ) umziehen.",
      "answer": "c",
      "confidence": "hoch",
      "quote": "Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie 47 ( ) umziehen.",
@@ -750,7 +764,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats. Für die lange Zeit, die ich in",
+     "prompt": "Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15.",
      "answer": "h",
      "confidence": "hoch",
      "quote": "Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.",
@@ -760,7 +774,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "Monats. Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen",
+     "prompt": "Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken.",
      "answer": "b",
      "confidence": "mittel",
      "quote": "Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken.",
@@ -770,7 +784,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe. Bitte bestätigen Sie",
+     "prompt": "Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe.",
      "answer": "a",
      "confidence": "mittel",
      "quote": "Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe.",
@@ -780,7 +794,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "der Firma erfahren habe. Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet. Mit freundlichen Grüßen Irina",
+     "prompt": "Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.",
      "answer": "f",
      "confidence": "hoch",
      "quote": "Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.",
@@ -796,7 +810,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Sehr geehrter Herr Dr. Reinicke,\nhiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( )\nnächstmöglichen Datum.\n47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung\nnicht leicht gemacht. Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie möglich umziehen. Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.\nFür die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich\nhabe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets\nin der Firma erfahren habe.\nBitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag\nendet.\nMit freundlichen Grüßen\nIrina Kaspercik",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Sehr geehrter Herr Dr. Reinicke, hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum. 47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung nicht leicht gemacht. Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie möglich umziehen. Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats. Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe. Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet. Mit freundlichen Grüßen Irina Kaspercik",
    "options": [
     {
      "key": "a",
@@ -843,7 +859,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum. 47 ( ) ich Ihnen in unserem persönlichen Gespräch",
+     "prompt": "Reinicke, hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum.",
      "answer": "j",
      "confidence": "hoch",
      "quote": "hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum.",
@@ -853,7 +869,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum. 47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die",
+     "prompt": "47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung nicht leicht gemacht.",
      "answer": "c",
      "confidence": "hoch",
      "quote": "47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung nicht leicht gemacht.",
@@ -863,7 +879,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats. Für die lange Zeit, die ich in",
+     "prompt": "Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15.",
      "answer": "h",
      "confidence": "hoch",
      "quote": "Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.",
@@ -873,7 +889,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "Monats. Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen",
+     "prompt": "Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken.",
      "answer": "b",
      "confidence": "mittel",
      "quote": "Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken.",
@@ -883,7 +899,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe. Bitte bestätigen Sie",
+     "prompt": "Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe.",
      "answer": "a",
      "confidence": "mittel",
      "quote": "Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe.",
@@ -893,7 +909,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "der Firma erfahren habe. Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet. Mit freundlichen Grüßen Irina",
+     "prompt": "Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.",
      "answer": "f",
      "confidence": "hoch",
      "quote": "Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.",
@@ -909,7 +925,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Probearbeiten\n\nSehr geehrte Fran Sabani,\nes freut mich sehr, dass ich in meinem Vorstellungsgespräch einen ersten positiven Eindruck hinterlassen\nhabe und Sie mich 46 ( ) Probearbeiten einladen. Natürlich nutze ich sehr gern diese Gelegenheit,\nmeine Fähigkeiten 47 ( ) Beweis zu stellen. Von den beiden Terminvorschlägen, die Sie mir geschickt haben, passt mir der nächste Dienstag am besten. Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.\nStellen Sie mir die Arbeitskleidung für diesen Tag zur Verfügung oder soll ich selbst spezielle Kleidung\nmitbringen? Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss? Brauche ich 51 ( )\nnoch eine ärztliche Bescheinigung vom Gesundheitsamt?\nDanke im Voraus für eine kurze Beantwortung meiner Fragen.",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Probearbeiten\n\nSehr geehrte Fran Sabani, es freut mich sehr, dass ich in meinem Vorstellungsgespräch einen ersten positiven Eindruck hinterlassen habe und Sie mich 46 ( ) Probearbeiten einladen. Natürlich nutze ich sehr gern diese Gelegenheit, meine Fähigkeiten 47 ( ) Beweis zu stellen. Von den beiden Terminvorschlägen, die Sie mir geschickt haben, passt mir der nächste Dienstag am besten. Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen. Stellen Sie mir die Arbeitskleidung für diesen Tag zur Verfügung oder soll ich selbst spezielle Kleidung mitbringen? Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss? Brauche ich 51 ( ) noch eine ärztliche Bescheinigung vom Gesundheitsamt? Danke im Voraus für eine kurze Beantwortung meiner Fragen.",
    "options": [
     {
      "key": "a",
@@ -956,7 +974,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "einen ersten positiven Eindruck hinterlassen habe und Sie mich 46 ( ) Probearbeiten einladen. Natürlich nutze ich sehr gern diese Gelegenheit, meine",
+     "prompt": "Sehr geehrte Fran Sabani, es freut mich sehr, dass ich in meinem Vorstellungsgespräch einen ersten positiven Eindruck hinterlassen habe und Sie mich 46 ( ) Probearbeiten einladen.",
      "answer": "j",
      "confidence": "hoch",
      "quote": "habe und Sie mich 46 ( ) Probearbeiten einladen.",
@@ -966,7 +984,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "einladen. Natürlich nutze ich sehr gern diese Gelegenheit, meine Fähigkeiten 47 ( ) Beweis zu stellen. Von den beiden Terminvorschlägen, die Sie mir geschickt",
+     "prompt": "Natürlich nutze ich sehr gern diese Gelegenheit, meine Fähigkeiten 47 ( ) Beweis zu stellen.",
      "answer": "g",
      "confidence": "hoch",
      "quote": "meine Fähigkeiten 47 ( ) Beweis zu stellen.",
@@ -976,7 +994,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "mir geschickt haben, passt mir der nächste Dienstag am besten. Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und",
+     "prompt": "Ich freue mich 48 ( ), bei dieser Gelegenheit",
      "answer": "f",
      "confidence": "hoch",
      "quote": "Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.",
@@ -986,7 +1004,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "der nächste Dienstag am besten. Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu",
+     "prompt": "Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.",
      "answer": "b",
      "confidence": "mittel",
      "quote": "Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.",
@@ -996,7 +1014,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "oder soll ich selbst spezielle Kleidung mitbringen? Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss? Brauche ich 51 ( ) noch eine ärztliche Bescheinigung",
+     "prompt": "Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss?",
      "answer": "h",
      "confidence": "hoch",
      "quote": "Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss?",
@@ -1006,7 +1024,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss? Brauche ich 51 ( ) noch eine ärztliche Bescheinigung vom Gesundheitsamt? Danke im Voraus für eine",
+     "prompt": "Brauche ich 51 ( ) noch eine ärztliche Bescheinigung vom Gesundheitsamt?",
      "answer": "c",
      "confidence": "mittel",
      "quote": "Brauche ich 51 ( ) noch eine ärztliche Bescheinigung vom Gesundheitsamt?",
@@ -1022,7 +1040,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Fragen zur Ausbildung\n\nSehr geehrte Damen und Herren,\nich habe mich sehr darüber gefreut, dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement\nim August in Ihrem Unternehmen beginnen kann.\nIch würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist. Im Vorstellungsgespräch teilten Sie mir mit, dass sich die theoretischen und praktischen Blöcke teilt. Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten. 49 ( ) wäre es wichtig, so\nschnell wie\nmöglich die Termine zu wissen. In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die Miete bezahlt.\nAußerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der\nAusbildung sein wird.\nMit freundlichen Grüßen\nAnna Ivanova",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Fragen zur Ausbildung\n\nSehr geehrte Damen und Herren, ich habe mich sehr darüber gefreut, dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement im August in Ihrem Unternehmen beginnen kann. Ich würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist. Im Vorstellungsgespräch teilten Sie mir mit, dass sich die theoretischen und praktischen Blöcke teilt. Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten. 49 ( ) wäre es wichtig, so schnell wie möglich die Termine zu wissen. In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die Miete bezahlt. Außerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der Ausbildung sein wird. Mit freundlichen Grüßen Anna Ivanova",
    "options": [
     {
      "key": "a",
@@ -1069,7 +1089,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "und Herren, ich habe mich sehr darüber gefreut, dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement im August in Ihrem Unternehmen beginnen kann. Ich",
+     "prompt": "Sehr geehrte Damen und Herren, ich habe mich sehr darüber gefreut, dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement im August in Ihrem Unternehmen beginnen kann.",
      "answer": "k",
      "confidence": "hoch",
      "quote": "dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement im August in Ihrem Unternehmen beginnen kann.",
@@ -1079,7 +1099,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "im August in Ihrem Unternehmen beginnen kann. Ich würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist. Im Vorstellungsgespräch teilten Sie",
+     "prompt": "Ich würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist.",
      "answer": "g",
      "confidence": "hoch",
      "quote": "Ich würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist.",
@@ -1089,7 +1109,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "mit, dass sich die theoretischen und praktischen Blöcke teilt. Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten.",
+     "prompt": "Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten.",
      "answer": "j",
      "confidence": "hoch",
      "quote": "Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten.",
@@ -1099,7 +1119,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": ") praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten. 49 ( ) wäre es wichtig, so schnell wie möglich die Termine zu wissen. In diesem",
+     "prompt": "49 ( ) wäre es wichtig, so schnell wie möglich die Termine zu wissen.",
      "answer": "b",
      "confidence": "hoch",
      "quote": "49 ( ) wäre es wichtig, so schnell wie möglich die Termine zu wissen.",
@@ -1109,7 +1129,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "möglich die Termine zu wissen. In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die",
+     "prompt": "In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die Miete bezahlt.",
      "answer": "d",
      "confidence": "hoch",
      "quote": "In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die Miete bezahlt.",
@@ -1119,7 +1139,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "die Miete bezahlt. Außerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der Ausbildung sein wird. Mit freundlichen Grüßen Anna",
+     "prompt": "Außerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der Ausbildung sein wird.",
      "answer": "e",
      "confidence": "mittel",
      "quote": "Außerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der Ausbildung sein wird.",
@@ -1135,7 +1155,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Kündigung\n\nSehr geehrte Frau Schneider,\nich teile Ihnen mit, dass ich mein Arbeitsverhältnis zum 31.03. fristgerecht kündige, weil mein Mann am\n01.05. 46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April dorthin\numziehen wird. Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig.\nIch habe noch einige Fragen 48 ( ) den Formalitäten: Bitte teilen Sie mir mit, bis wann und wo ich\nden Firmenwagen abgeben und ob ich die Daten von meinem Firmenlaptop löschen soll. 49 ( )\nbitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue Stelle bewerben möchte .\nWürden Sie mir bitte auch mitteilen, ob mir mein Arbeitszeugnis am letzten Arbeitstag ausgehändigt oder 50 ( ) Nachhinein zugeschickt wird?\nIch bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare Zusammenarbeit.\nMit freundlichen Grüßen\nMelanie Sommer",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Kündigung\n\nSehr geehrte Frau Schneider, ich teile Ihnen mit, dass ich mein Arbeitsverhältnis zum 31.03. fristgerecht kündige, weil mein Mann am 01.05. 46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April dorthin umziehen wird. Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig. Ich habe noch einige Fragen 48 ( ) den Formalitäten: Bitte teilen Sie mir mit, bis wann und wo ich den Firmenwagen abgeben und ob ich die Daten von meinem Firmenlaptop löschen soll. 49 ( ) bitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue Stelle bewerben möchte . Würden Sie mir bitte auch mitteilen, ob mir mein Arbeitszeugnis am letzten Arbeitstag ausgehändigt oder 50 ( ) Nachhinein zugeschickt wird? Ich bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare Zusammenarbeit. Mit freundlichen Grüßen Melanie Sommer",
    "options": [
     {
      "key": "a",
@@ -1182,7 +1204,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "Arbeitsverhältnis zum 31.03. fristgerecht kündige, weil mein Mann am 01.05. 46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April",
+     "prompt": "46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April dorthin umziehen wird.",
      "answer": "h",
      "confidence": "hoch",
      "quote": "46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April dorthin umziehen wird.",
@@ -1192,7 +1214,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "April dorthin umziehen wird. Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig. Ich habe noch einige Fragen 48 ( ) den",
+     "prompt": "Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig.",
      "answer": "i",
      "confidence": "mittel",
      "quote": "Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig.",
@@ -1202,7 +1224,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "ich war 47 ( ) immer sehr gerne hier tätig. Ich habe noch einige Fragen 48 ( ) den Formalitäten: Bitte teilen Sie mir mit, bis wann und wo ich den",
+     "prompt": "Ich habe noch einige Fragen 48 ( ) den Formalitäten: Bitte teilen Sie mir mit, bis wann und wo ich den Firmenwagen abgeben und ob ich die Daten von meinem Firmenlaptop löschen soll.",
      "answer": "j",
      "confidence": "hoch",
      "quote": "Ich habe noch einige Fragen 48 ( ) den Formalitäten:",
@@ -1212,7 +1234,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "Firmenwagen abgeben und ob ich die Daten von meinem Firmenlaptop löschen soll. 49 ( ) bitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue",
+     "prompt": "49 ( ) bitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue Stelle bewerben möchte .",
      "answer": "b",
      "confidence": "mittel",
      "quote": "49 ( ) bitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue Stelle bewerben möchte",
@@ -1222,7 +1244,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "mitteilen, ob mir mein Arbeitszeugnis am letzten Arbeitstag ausgehändigt oder 50 ( ) Nachhinein zugeschickt wird? Ich bedanke 51 ( ) für die interessante Zeit in",
+     "prompt": "Würden Sie mir bitte auch mitteilen, ob mir mein Arbeitszeugnis am letzten Arbeitstag ausgehändigt oder 50 ( ) Nachhinein zugeschickt wird?",
      "answer": "f",
      "confidence": "hoch",
      "quote": "oder 50 ( ) Nachhinein zugeschickt wird?",
@@ -1232,7 +1254,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "Arbeitstag ausgehändigt oder 50 ( ) Nachhinein zugeschickt wird? Ich bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare",
+     "prompt": "Ich bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare Zusammenarbeit.",
      "answer": "g",
      "confidence": "hoch",
      "quote": "Ich bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare Zusammenarbeit.",
@@ -1248,7 +1270,9 @@
    "kind": "zuordnung",
    "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
    "optionsLabel": "Wörter",
-   "passage": "Kündigung\n\nSehr geehrte Damen und Herren,\nmit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum 31.12.20xx.\nIch habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood\nGmbH gearbeitet habe.\n48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich weiterzuentwickeln, und\nhabe mich deshalb dazu entschlossen, eine Stelle in einem größeren Unternehmen anzunehmen.\nMir stehen noch vier Tage Resturlaub 49 ( ). Da in unserer Abteilung kurz vor dem Jahresende\nsehr viel zu tun ist, würde ich vorschlagen, dass Sie mir diese Tage auszahlen und ich noch bis zum Jahresende arbeite.\nSollte das nicht möglich sein, ist mein letzter Arbeitstag der 23.12.20xx, da 50 ( ) 31.12.20xx auf\neinen Samstag fällt. Ich bitte um eine schriftliche Bestätigung über den Erhalt meiner Kündigung und den\nBescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen.\nIch bedanke mich für die Zusammenarbeit!\nMit freundlichen Grüßen\nMarkus Stein",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Kündigung\n\nSehr geehrte Damen und Herren, mit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum 31.12.20xx. Ich habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe. 48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich weiterzuentwickeln, und habe mich deshalb dazu entschlossen, eine Stelle in einem größeren Unternehmen anzunehmen. Mir stehen noch vier Tage Resturlaub 49 ( ). Da in unserer Abteilung kurz vor dem Jahresende sehr viel zu tun ist, würde ich vorschlagen, dass Sie mir diese Tage auszahlen und ich noch bis zum Jahresende arbeite. Sollte das nicht möglich sein, ist mein letzter Arbeitstag der 23.12.20xx, da 50 ( ) 31.12.20xx auf einen Samstag fällt. Ich bitte um eine schriftliche Bestätigung über den Erhalt meiner Kündigung und den Bescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen. Ich bedanke mich für die Zusammenarbeit! Mit freundlichen Grüßen Markus Stein",
    "options": [
     {
      "key": "a",
@@ -1295,7 +1319,7 @@
     {
      "n": 46,
      "type": "choice",
-     "prompt": "Sehr geehrte Damen und Herren, mit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum",
+     "prompt": "Sehr geehrte Damen und Herren, mit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum 31.12.20xx.",
      "answer": "g",
      "confidence": "hoch",
      "quote": "mit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum 31.12.20xx.",
@@ -1305,7 +1329,7 @@
     {
      "n": 47,
      "type": "choice",
-     "prompt": "zum 31.12.20xx. Ich habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe. 48( ) leider sehe ich",
+     "prompt": "Ich habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe.",
      "answer": "c",
      "confidence": "hoch",
      "quote": "Ich habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe.",
@@ -1315,7 +1339,7 @@
     {
      "n": 48,
      "type": "choice",
-     "prompt": "leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe. 48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich",
+     "prompt": "48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich weiterzuentwickeln, und habe mich deshalb dazu entschlossen, eine Stelle in einem größeren Unternehmen anzunehmen.",
      "answer": "a",
      "confidence": "hoch",
      "quote": "48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich weiterzuentwickeln, und habe mich deshalb dazu entschlossen, eine Stelle in einem größeren Unternehmen anzunehmen.",
@@ -1325,7 +1349,7 @@
     {
      "n": 49,
      "type": "choice",
-     "prompt": "in einem größeren Unternehmen anzunehmen. Mir stehen noch vier Tage Resturlaub 49 ( ). Da in unserer Abteilung kurz vor dem Jahresende sehr viel zu tun ist, würde",
+     "prompt": "Mir stehen noch vier Tage Resturlaub 49 ( ).",
      "answer": "j",
      "confidence": "hoch",
      "quote": "Mir stehen noch vier Tage Resturlaub 49 ( ).",
@@ -1335,7 +1359,7 @@
     {
      "n": 50,
      "type": "choice",
-     "prompt": "Sollte das nicht möglich sein, ist mein letzter Arbeitstag der 23.12.20xx, da 50 ( ) 31.12.20xx auf einen Samstag fällt. Ich bitte um eine schriftliche Bestätigung",
+     "prompt": "Sollte das nicht möglich sein, ist mein letzter Arbeitstag der 23.12.20xx, da 50 ( ) 31.12.20xx auf einen Samstag fällt.",
      "answer": "f",
      "confidence": "hoch",
      "quote": "da 50 ( ) 31.12.20xx auf einen Samstag fällt.",
@@ -1345,7 +1369,7 @@
     {
      "n": 51,
      "type": "choice",
-     "prompt": "schriftliche Bestätigung über den Erhalt meiner Kündigung und den Bescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen. Ich bedanke mich für die",
+     "prompt": "Ich bitte um eine schriftliche Bestätigung über den Erhalt meiner Kündigung und den Bescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen.",
      "answer": "i",
      "confidence": "hoch",
      "quote": "Bescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen.",
