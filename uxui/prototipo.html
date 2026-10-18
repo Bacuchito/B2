@@ -44,6 +44,19 @@
   --bad:#f2635a;  --bad-ink:#ffa49b;
   --warn:#e2b153; --warn-ink:#f4d191;
 
+  /* ---- Rellenos de estado (con texto encima), tintes y filos ---- */
+  --bien-fill:#246b4c; --bien-ink:#f2fff9;
+  --mal-fill:#8f3229;  --mal-ink:#fff6f5;
+  --tint-ok:rgba(66,193,132,.15);
+  --tint-bad:rgba(242,99,90,.15);
+  --tint-warn:rgba(226,177,83,.14);
+  --tint-acc:rgba(106,164,255,.15);
+  --tint-neutral:rgba(255,255,255,.05);
+  --line-ok:rgba(66,193,132,.35);
+  --line-bad:rgba(242,99,90,.35);
+  --line-warn:rgba(226,177,83,.35);
+  --line-acc:rgba(106,164,255,.35);
+
   /* ---- Líneas y bisel ---- */
   --line:rgba(255,255,255,.07);
   --line-2:rgba(255,255,255,.14);
@@ -80,54 +93,67 @@
 }
 
 /* ============================================================================
-   MODO CLARO: la MISMA lengua de piezas, con los valores al revés.
-   Dos cosas cambian de física, y conviene saberlas:
+   MODO CLARO: «Calma». Marfil, verde bosque, menta y piedra.
 
-   1. En oscuro la jerarquía la lleva el filo claro de arriba, porque una sombra
-      negra sobre carbón casi no se ve. En claro la lleva el borde y la sombra
-      corta, porque un filo blanco sobre blanco tampoco se ve. Por eso aquí el
-      borde pesa más y la sombra es más corta y más tenue.
-   2. La tinta del botón se da la vuelta: en oscuro el azul es brillante y la
-      tinta va oscura (5.6-7.3:1); en claro el azul se hunde y la tinta va
-      blanca (4.8:1). El blanco sobre el azul brillante no llega a 4.5:1 en
-      ninguno de los dos mundos: por eso el azul no es el mismo en cada tema.
+   Dos cosas cambian de física respecto al oscuro, y conviene saberlas:
+   1. En oscuro la jerarquía la lleva el filo claro de arriba (una sombra negra
+      sobre carbón casi no se ve). En claro la llevan el borde y una sombra corta
+      y tenue, porque un filo blanco sobre marfil tampoco se ve.
+   2. El acento deja de ser azul y pasa a verde bosque: sobre marfil, el azul
+      frío era justo lo que hacía que todo pareciera lavado.
+
+   Contrastes medidos en el navegador sobre --surface (#FAF9F4):
+   txt 14.1:1 · dim 6.9:1 · dim-2 5.2:1 · acento 6.6:1 · tinta del botón
+   6.2-8.9:1 sobre el verde.
    ============================================================================ */
 [data-theme="claro"]{
-  --bg:#e6e7ea;
-  --bg-luz:#f8f9fb;
-  --surface:#f3f4f6;
-  --surface-2:#fcfcfd;
-  --sunken:#e3e4e8;
-  --scrim:rgba(24,26,32,.45);
+  --bg:#EDEBE3;
+  --bg-luz:#FAF9F4;
+  --surface:#FAF9F4;
+  --surface-2:#FFFFFF;
+  --sunken:#E5E2D8;
+  --scrim:rgba(24,32,28,.45);
 
-  --txt:#1c1d21;                            /* 16.3:1 sobre --surface */
-  --dim:#4f5259;                            /* 7.0:1 */
-  --dim-2:#686b73;                          /* 4.8:1 */
+  --txt:#1F2A24;
+  --dim:#4C5A52;
+  --dim-2:#57645C;
 
-  --acc:#2f6ede;
-  --acc-hi:#4d8df6;
-  --acc-deep:#2457b6;
-  --acc-ink:#2457b6;                        /* 6.1:1 sobre --surface */
-  --acc-grad:linear-gradient(180deg,var(--acc),var(--acc-deep));
-  --on-acc:#f7fbff;
-  --glow:rgba(47,110,222,.28);
+  --acc:#0F5132;
+  --acc-hi:#1B6B45;
+  --acc-deep:#0B3D26;
+  --acc-ink:#0F5132;
+  --acc-grad:linear-gradient(180deg,var(--acc-hi),var(--acc));
+  --on-acc:#FAF9F4;
+  --glow:rgba(15,81,50,.20);
 
-  --ok:#25795a;   --ok-ink:#1c6047;
-  --bad:#b23b32;  --bad-ink:#8f2f27;
-  --warn:#8a6414; --warn-ink:#6e5110;
+  --ok:#0F5132;   --ok-ink:#0B3D26;
+  --bad:#9C3B2E;  --bad-ink:#7E2E23;
+  --warn:#8A6414; --warn-ink:#6E5110;
 
-  --line:rgba(20,22,28,.10);
-  --line-2:rgba(20,22,28,.20);
+  --bien-fill:#0F5132; --bien-ink:#FAF9F4;
+  --mal-fill:#8A3428;  --mal-ink:#FDF6F4;
+  --tint-ok:rgba(183,217,193,.55);          /* menta */
+  --tint-bad:rgba(156,59,46,.10);
+  --tint-warn:rgba(138,100,20,.10);
+  --tint-acc:rgba(15,81,50,.10);
+  --tint-neutral:rgba(31,42,36,.05);
+  --line-ok:rgba(15,81,50,.28);
+  --line-bad:rgba(156,59,46,.30);
+  --line-warn:rgba(138,100,20,.30);
+  --line-acc:rgba(15,81,50,.30);
+
+  --line:rgba(31,42,36,.12);
+  --line-2:rgba(31,42,36,.22);
   --bisel-alto:rgba(255,255,255,.90);
-  --bisel-bajo:rgba(20,22,28,.06);
-  --scroll:rgba(20,22,28,.26);
-  --mando-grad:linear-gradient(180deg,#ffffff,#dcdee3);
+  --bisel-bajo:rgba(31,42,36,.06);
+  --scroll:rgba(31,42,36,.24);
+  --mando-grad:linear-gradient(180deg,#FFFFFF,#E3E0D6);
 
-  --sh-1:0 1px 2px rgba(24,26,32,.10),0 2px 6px rgba(24,26,32,.08);
-  --sh-2:0 2px 4px rgba(24,26,32,.10),0 10px 22px -8px rgba(24,26,32,.18);
-  --sh-3:0 4px 10px rgba(24,26,32,.12),0 26px 52px -16px rgba(24,26,32,.24);
-  --hundido:inset 0 2px 4px rgba(20,22,28,.12),inset 0 -1px 0 rgba(255,255,255,.70);
-  --halo:0 0 0 1px rgba(47,110,222,.45),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
+  --sh-1:0 1px 2px rgba(31,42,36,.08),0 2px 6px rgba(31,42,36,.06);
+  --sh-2:0 2px 4px rgba(31,42,36,.08),0 10px 22px -8px rgba(31,42,36,.14);
+  --sh-3:0 4px 10px rgba(31,42,36,.10),0 26px 52px -16px rgba(31,42,36,.18);
+  --hundido:inset 0 2px 4px rgba(31,42,36,.10),inset 0 -1px 0 rgba(255,255,255,.70);
+  --halo:0 0 0 1px rgba(15,81,50,.35),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
 }
 
 *{box-sizing:border-box}
@@ -290,7 +316,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   box-shadow var(--dur-2) var(--ease),color var(--dur-2) var(--ease)}
 .lista li b{color:var(--txt);font-weight:640;margin-right:var(--sp-2)}
 .lista li:hover{background:var(--tint-neutral);color:var(--txt)}
-.lista li.asignado{background:rgba(77,141,246,.12);border-color:rgba(106,164,255,.35);color:var(--txt);
+.lista li.asignado{background:var(--tint-acc);border-color:var(--line-acc);color:var(--txt);
   box-shadow:var(--sh-1)}
 .lista li.elegido{background:var(--surface-2);border-color:var(--line-2);color:var(--txt);
   box-shadow:var(--sh-2),var(--bisel)}
@@ -314,25 +340,25 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 /* Correcta y fallada: relleno solido y oscuro, para que la letra clara pase 4.5:1
    (con el verde y el rojo claros de la referencia se quedaba en 2.7 y 3.3). El
    brillo de color se queda en la sombra, que es donde no hace dano. */
-.letra.bien{background:#246b4c;color:#f2fff9;
-  border-color:rgba(255,255,255,.28);box-shadow:var(--sh-1),var(--bisel),0 0 16px rgba(66,193,132,.35)}
-.letra.mal{background:#8f3229;color:#fff6f5;
-  border-color:rgba(255,255,255,.28);box-shadow:var(--sh-1),var(--bisel),0 0 16px rgba(242,99,90,.35)}
+.letra.bien{background:var(--bien-fill);color:var(--bien-ink);
+  border-color:rgba(255,255,255,.28);box-shadow:var(--sh-1),var(--bisel),0 6px 16px -4px rgba(66,193,132,.35)}
+.letra.mal{background:var(--mal-fill);color:var(--mal-ink);
+  border-color:rgba(255,255,255,.28);box-shadow:var(--sh-1),var(--bisel),0 6px 16px -4px rgba(242,99,90,.35)}
 .caption{color:var(--dim-2);font-size:12px;margin:var(--sp-2) 0 0}
 
 /* ============ Corrección ============ */
 .correccion{border-radius:var(--r-3);padding:var(--sp-4) var(--sp-5);
-  background:linear-gradient(180deg,rgba(242,99,90,.14),rgba(242,99,90,.07));
-  border:var(--b-std) solid rgba(242,99,90,.30);box-shadow:var(--sh-1),var(--bisel)}
-.correccion.bien{background:linear-gradient(180deg,rgba(66,193,132,.14),rgba(66,193,132,.07));
-  border-color:rgba(66,193,132,.30)}
+  background:linear-gradient(180deg,var(--tint-bad),transparent);
+  border:var(--b-std) solid var(--line-bad);box-shadow:var(--sh-1),var(--bisel)}
+.correccion.bien{background:linear-gradient(180deg,var(--tint-ok),transparent);
+  border-color:var(--line-ok)}
 .veredicto{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap;font-weight:640;
   margin-bottom:var(--sp-2)}
 .insignia{font-size:11px;font-weight:700;padding:3px var(--sp-2);border-radius:var(--r-1);
   background:var(--tint-neutral);color:var(--dim);border:var(--b-sutil) solid var(--line-2)}
-.insignia.alta{color:var(--ok-ink);background:rgba(66,193,132,.14);border-color:rgba(66,193,132,.35)}
-.insignia.media{color:var(--warn-ink);background:rgba(226,177,83,.14);border-color:rgba(226,177,83,.35)}
-.insignia.acento{color:var(--acc-ink);background:rgba(77,141,246,.14);border-color:rgba(106,164,255,.35)}
+.insignia.alta{color:var(--ok-ink);background:var(--tint-ok);border-color:var(--line-ok)}
+.insignia.media{color:var(--warn-ink);background:var(--tint-warn);border-color:var(--line-warn)}
+.insignia.acento{color:var(--acc-ink);background:var(--tint-acc);border-color:var(--line-acc)}
 .cita{font-family:var(--lectura);font-size:15px;color:var(--dim);
   border-left:var(--b-fuerte) solid var(--acc);padding:var(--sp-1) 0 var(--sp-1) var(--sp-3);
   margin:var(--sp-3) 0;max-width:68ch}
@@ -354,8 +380,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   color:var(--dim);font:inherit;font-size:17px;cursor:pointer;box-shadow:none}
 .cerrar:hover{color:var(--txt);background:var(--tint-neutral)}
 .aviso{display:flex;gap:var(--sp-3);align-items:flex-start;padding:var(--sp-3) var(--sp-4);
-  border-radius:var(--r-3);background:rgba(226,177,83,.12);
-  border:var(--b-std) solid rgba(226,177,83,.30);color:var(--warn-ink);font-size:14px}
+  border-radius:var(--r-3);background:var(--tint-warn);
+  border:var(--b-std) solid var(--line-warn);color:var(--warn-ink);font-size:14px}
 .vacio{display:flex;flex-direction:column;align-items:center;gap:var(--sp-3);text-align:center;
   padding:var(--sp-7) var(--sp-5);border-radius:var(--r-4);background:var(--sunken);
   box-shadow:var(--hundido);border:var(--b-std) dashed var(--line-2);color:var(--dim)}
@@ -615,16 +641,18 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   <h4>Espaciado</h4>
   <dl><dt>--sp-1…7</dt><dd>4 · 8 · 12 · 16 · 24 · 32 · 48</dd></dl>
   <h4>Color</h4>
-  <dl><dt>--bg</dt><dd>#25262a / #e6e7ea</dd>
-      <dt>--surface</dt><dd>#313239 / #f3f4f6</dd>
-      <dt>--acc</dt><dd>#4d8df6 / #2f6ede</dd>
-      <dt>--on-acc</dt><dd>#0b1526 · 5.6:1 / #f7fbff · 4.6:1</dd>
-      <dt>--txt</dt><dd>#e9eaee · 10.6:1 / #1c1d21 · 15.3:1</dd>
-      <dt>--dim</dt><dd>#b3b5bd · 6.2:1 / #4f5259 · 7.1:1</dd>
-      <dt>--dim-2</dt><dd>#9ea0a8 · 4.9:1 / #686b73 · 4.8:1</dd></dl>
-  <p class="caption" style="margin-top:8px">El azul no es el mismo en cada tema, y
-    es a propósito: la tinta que lo acompaña cambia de color, así que el relleno
-    tiene que cambiar con ella para que la tinta siga pasando 4.5:1.</p>
+  <dl><dt>--bg</dt><dd>#25262a / #EDEBE3</dd>
+      <dt>--surface</dt><dd>#313239 / #FAF9F4</dd>
+      <dt>--acc</dt><dd>#4d8df6 / #0F5132</dd>
+      <dt>--on-acc</dt><dd>#0b1526 · 5.6:1 / #FAF9F4 · 6.2-8.9:1</dd>
+      <dt>--txt</dt><dd>#e9eaee · 10.6:1 / #1F2A24 · 14.1:1</dd>
+      <dt>--dim</dt><dd>#b3b5bd · 6.2:1 / #4C5A52 · 6.9:1</dd>
+      <dt>--dim-2</dt><dd>#9ea0a8 · 4.9:1 / #57645C · 5.2:1</dd>
+      <dt>--tint-ok</dt><dd>verde / <b>menta</b> #B7D9C1</dd></dl>
+  <p class="caption" style="margin-top:8px">El acento cambia de color con el tema,
+    y es a propósito: en oscuro el azul brillante pide tinta oscura (5,6:1), y
+    sobre marfil el verde bosque pide tinta marfil (6,2:1). El azul frío sobre
+    marfil era justo lo que hacía que el claro pareciera lavado.</p>
 </aside>
 
 </div>
@@ -640,16 +668,15 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 </p>
 
 <p class="pie-pagina">
-  <b>Los dos temas, y qué cambia entre ellos.</b> En <b>oscuro</b> la altura la
-  cuenta el <b>filo claro</b> de arriba: una sombra negra sobre carbón apenas se
-  ve, así que la jerarquía la llevan el bisel y el tono de la superficie. En
-  <b>claro</b> pasa lo contrario: un filo blanco sobre blanco tampoco se ve, así
-  que la jerarquía la llevan el <b>borde</b> y la sombra corta. La otra diferencia
-  es la tinta del botón: en oscuro el azul es brillante y la tinta va oscura
-  (5.6-7.3:1); en claro el azul se hunde y la tinta va blanca (4.6:1 en el
-  extremo claro del degradado, 6.5:1 en el oscuro). El blanco sobre el azul
-  brillante no llega a 4.5:1 en ninguno de los dos mundos, y por eso el azul no
-  es el mismo.
+  <b>Los dos temas.</b> El <b>oscuro</b> es el «taller nocturno»: carbón, azul
+  brillante con halo, y la altura la cuenta el <b>filo claro</b> de arriba, porque
+  una sombra negra sobre carbón casi no se ve. El <b>claro</b> es «Calma»:
+  marfil, verde bosque, <b>menta</b> y piedra; ahí la altura la llevan el
+  <b>borde</b> y una sombra corta, porque un filo blanco sobre marfil tampoco se
+  ve. El acento cambia de color con el tema a propósito: en oscuro el azul
+  brillante pide tinta oscura (5,6:1) y sobre marfil el verde bosque pide tinta
+  marfil (6,2:1). El blanco sobre el azul brillante no llega a 4,5:1 en ninguno
+  de los dos mundos.
 </p>
 </div>
 

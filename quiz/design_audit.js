@@ -56,16 +56,24 @@ const tokens = (() => {
   return root.decls;
 })();
 
-/* ---------- 2. Color: resolución, composición y contraste WCAG ---------- */
-function resolve(value) {
+/* ---------- 2. Color: resolución, composición y contraste WCAG ----------
+   Todo lleva el mapa de tokens como parámetro, porque la app tiene DOS temas y
+   los dos se auditan: el oscuro (:root) y el claro ([data-theme="paper"]). */
+const tokensClaro = (() => {
+  const alt = findRule('[data-theme="paper"]');
+  return alt ? Object.assign({}, tokens, alt.decls) : null;
+})();
+function resolve(value, mapa) {
+  const T = mapa || tokens;
   let v = String(value || "").trim();
   for (let i = 0; i < 6 && v.includes("var("); i++) {
-    v = v.replace(/var\((--[a-z0-9-]+)\)/gi, (_, name) => (tokens[name] !== undefined ? tokens[name] : "transparent"));
+    v = v.replace(/var\((--[a-z0-9-]+)\)/gi,
+      (_, name) => (T[name] !== undefined ? T[name] : (tokens[name] !== undefined ? tokens[name] : "transparent")));
   }
   return v;
 }
-function parseColor(value) {
-  const v = resolve(value).toLowerCase();
+function parseColor(value, mapa) {
+  const v = resolve(value, mapa).toLowerCase();
   let m = v.match(/^#([0-9a-f]{3})$/);
   if (m) return { r: parseInt(m[1][0] + m[1][0], 16), g: parseInt(m[1][1] + m[1][1], 16), b: parseInt(m[1][2] + m[1][2], 16), a: 1 };
   m = v.match(/^#([0-9a-f]{6})$/);
@@ -77,7 +85,7 @@ function parseColor(value) {
   }
   if (v.startsWith("linear-gradient")) {
     const stop = v.match(/#[0-9a-f]{6}|rgba?\([^)]+\)/i);
-    return stop ? parseColor(stop[0]) : null;
+    return stop ? parseColor(stop[0], mapa) : null;
   }
   return null;
 }
@@ -89,18 +97,18 @@ const luminance = (c) => {
 const contrast = (a, b) => { const l1 = luminance(a), l2 = luminance(b); return (Math.max(l1, l2) + 0.05) / (Math.min(l1, l2) + 0.05); };
 
 const baseBg = parseColor(tokens["--bg"]);
-function colorOf(spec) {
+function colorOf(spec, mapa, fondo) {
   let value;
   if (spec.literal) value = spec.literal;
-  else if (spec.token) value = tokens[spec.token];
+  else if (spec.token) value = mapa[spec.token];
   else {
     const rule = findRule(spec.sel);
     if (!rule || rule.decls[spec.prop] === undefined) return null;
     value = rule.decls[spec.prop];
   }
-  const c = parseColor(value);
+  const c = parseColor(value, mapa);
   if (!c) return null;
-  return spec.over ? over(c, baseBg) : c;
+  return spec.over ? over(c, fondo || baseBg) : c;
 }
 
 /* Los pares de contraste se miden contra la superficie REAL sobre la que se pinta
@@ -147,11 +155,18 @@ const bad = (lens, label, detail) => results.push({ lens, pass: false, label, de
 
 const MIN_TEXT = 4.5; // texto normal (HIG/WCAG AA)
 
-for (const [label, fgSpec, bgSpec] of contrastChecks) {
-  const fg = colorOf(fgSpec), bg = colorOf(bgSpec);
-  if (!fg || !bg) { bad(1, label, "no se pudo resolver el color"); continue; }
-  const ratio = contrast(fg, bg);
-  (ratio >= MIN_TEXT ? ok : bad)(1, label, ratio.toFixed(2) + ":1 (mínimo " + MIN_TEXT + ":1)");
+/* Los dos temas se auditan. El claro hereda lo que no redefine, así que el mapa
+   es la mezcla de :root y [data-theme="paper"]. */
+const TEMAS = [["oscuro", tokens], ["claro", tokensClaro]];
+for (const [tema, mapa] of TEMAS) {
+  if (!mapa) { bad(1, "Tema " + tema, "no encuentro sus tokens"); continue; }
+  const fondo = parseColor(mapa["--bg"], mapa);
+  for (const [label, fgSpec, bgSpec] of contrastChecks) {
+    const fg = colorOf(fgSpec, mapa, fondo), bg = colorOf(bgSpec, mapa, fondo);
+    if (!fg || !bg) { bad(1, "[" + tema + "] " + label, "no se pudo resolver el color"); continue; }
+    const ratio = contrast(fg, bg);
+    (ratio >= MIN_TEXT ? ok : bad)(1, "[" + tema + "] " + label, ratio.toFixed(2) + ":1 (mínimo " + MIN_TEXT + ":1)");
+  }
 }
 
 /* Rejilla de 4/8pt en el espaciado */

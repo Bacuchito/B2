@@ -97,10 +97,11 @@ que un simple chequeo de sintaxis no ve.
 (inyección por `?room=`, ruptura del atributo `value` del modal, evaluación de la
 pareja con datos maliciosos y evaluación malformada que rompía la pantalla).
 `design_audit.js` no abre ningún navegador: lee el CSS, resuelve los tokens, compone
-las transparencias sobre el fondo real y comprueba 46 reglas de diseño (contraste
-mínimo 4.5:1, espaciado múltiplo de 4, áreas táctiles de 28px/44px, foco visible,
-movimiento reducido, relieve, un solo degradado de fondo, el segundo tema por
-tokens y estados de presión).
+las transparencias sobre el fondo real y comprueba **75 reglas de diseño en los dos
+temas** (contraste mínimo 4.5:1 sobre la superficie real de cada texto, en oscuro y
+en claro; espaciado múltiplo de 4; áreas táctiles de 28px/44px; foco visible;
+movimiento reducido; relieve; un solo degradado de fondo; el segundo tema por tokens
+y no por filtros; y estados de presión).
 
 ## Sistema de diseño
 
@@ -125,14 +126,23 @@ componentes**: basta el bloque `:root`.
 | Estructura | `--header-h`, `--nav-w`, `--read-w` | Alto de cabecera, ancho del índice y medida de lectura |
 | Mesa de examen | `--desk-ref`, `--desk-work` | Ancho máximo de la columna de referencia (fluida con `clamp`) y tope de la hoja de preguntas a partir de 1280px |
 
-### Lenguaje de piezas (relieve)
+### Lenguaje de piezas (dos temas)
 
 **Esta rama (`UXUI`) es un experimento**: cambia el material de la app. En `main`
-el mundo es la hoja de examen impresa; aquí es un taller nocturno, con los colores
-y los relieves de la referencia que pasó Sergio.
+el mundo es la hoja de examen impresa; aquí son dos mundos con la misma lengua de
+piezas, uno para cada uno: **Diana trabaja en claro y Sergio en oscuro**, y cambiar
+de perfil cambia el tema (además del idioma). El botón de tema sigue mandando si
+alguno quiere cambiarlo en ese momento.
 
-- **Una sola luz**: el fondo es carbón con un degradado cenital fijo. No hay
-  texturas ni patrones, y se comprueba que sea el único degradado de fondo.
+| | Oscuro — «taller nocturno» | Claro — «Calma» |
+|---|---|---|
+| Mesa y piezas | carbón `#25262a` y `#313239` | marfil `#EDEBE3` y `#FAF9F4` |
+| Acento | azul `#4d8df6`, tinta **oscura** (5,6:1) | verde bosque `#0F5132`, tinta **marfil** (6,2-8,9:1) |
+| De dónde viene la altura | del **filo claro** de arriba: una sombra negra sobre carbón casi no se ve | del **borde** y una sombra corta: un filo blanco sobre marfil tampoco se ve |
+| Estados | verde y rojo claros con brillo | verde bosque y terracota, y **menta** `#B7D9C1` en los tintes |
+
+- **Una sola luz**: el fondo lleva un único degradado cenital fijo. No hay texturas
+  ni patrones, y se comprueba que sea el único degradado de fondo.
 - **Relieve solo en lo que se pulsa.** Cada pieza lleva su sombra de fuera (altura)
   y su filo claro arriba (material): letras a–h, botones, conmutadores, pestañas,
   filas pulsables, el número del ítem. El texto —los anuncios alemanes, la cita,
@@ -142,12 +152,14 @@ y los relieves de la referencia que pasó Sergio.
   con tinte y filo en el color del estado (`.fb`, `.note`, insignias).
 - **Lo que flota de verdad** —modal, popover de error, enlace de salto— es lo único
   que lleva sombra profunda (`--sh-3`).
-- **El brillo azul** (`--glow`, `--halo`) está reservado al foco, a lo elegido y a
-  la acción principal. Con desplazamiento, nunca como cerco de desplazamiento cero.
+- **El brillo del acento** (`--glow`, `--halo`) está reservado al foco, a lo elegido
+  y a la acción principal. Con desplazamiento, nunca como cerco de desplazamiento cero.
 - **Los formularios sí llevan borde**: un campo necesita un límite definido.
 - **Dos temas por tokens**: el oscuro en `:root` y el claro en
-  `[data-theme="paper"]`; el lenguaje de piezas es el mismo, cambian los valores.
-  La tinta sobre el azul brillante es **oscura** (con blanco se quedaba en 3.2:1).
+  `[data-theme="paper"]`. El lenguaje de piezas es el mismo; cambian los valores.
+  Cualquier color escrito a mano en un componente rompe el segundo tema, así que los
+  filos de estado (`--line-ok/-bad/-warn/-acc`) y los rellenos (`--bien-fill`,
+  `--mal-fill`) también son tokens.
 
 Las tres familias tipográficas son del sistema (`--font-ui`, `--font-read` serif
 para textos largos y `--font-mono`): la app sigue funcionando sin conexión y sin

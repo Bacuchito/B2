@@ -74,7 +74,14 @@
     --bien-fill:#246b4c; --bien-ink:#f2fff9;
     --mal-fill:#8f3229;  --mal-ink:#fff6f5;
     --acc-grad:linear-gradient(180deg,var(--acc-hi),var(--acc));
+    --exito-grad:linear-gradient(180deg,#2f9c6c,#246b4c);
     --peligro-grad:linear-gradient(180deg,#c4453b,#a03a31);
+    /* Filos de estado: el color de cada familia al 35 %, para no escribirlo a mano
+       en cada componente (y para que el tema claro los pueda cambiar). */
+    --line-ok:rgba(66,193,132,.35);
+    --line-bad:rgba(242,99,90,.35);
+    --line-warn:rgba(226,177,83,.35);
+    --line-acc:rgba(106,164,255,.35);
 
     /* --- Espaciado: grid de 8pt (4px solo para ajustes finos) --- */
     --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
@@ -116,56 +123,67 @@
     --desk-ref:600px; --desk-work:860px;
   }
 
-  /* --- La misma lengua en claro: relieve suave sobre gris papel --- */
+  /* --- Segundo tema: «Calma». Marfil, verde bosque, menta y piedra ---
+     Diana trabaja en claro y Sergio en oscuro: el perfil cambia el tema, y el
+     tema claro es un mundo entero, no el oscuro aclarado. Sobre marfil el azul
+     frío lavaba todo; el verde bosque es lo que le da carácter. */
   [data-theme="paper"]{
-    --bg:#e6e7ea;
-    --bg-luz:#f7f8fa;
-    --panel:#f2f3f5;
-    --panel2:#fbfbfc;
-    --panel3:#e3e4e8;
-    --sheet:#ffffff;
-    --sunken:#e3e4e8;
-    --line:rgba(20,22,28,.09);
-    --line-2:rgba(20,22,28,.18);
+    --bg:#EDEBE3;
+    --bg-luz:#FAF9F4;
+    --panel:#FAF9F4;
+    --panel2:#FFFFFF;
+    --panel3:#E5E2D8;
+    --sheet:#FFFFFF;
+    --sunken:#E5E2D8;
+    --line:rgba(31,42,36,.12);
+    --line-2:rgba(31,42,36,.22);
 
-    --txt:#1c1d21;
-    --dim:#4f5259;
-    --dim-2:#686b73;
+    --txt:#1F2A24;                            /* 14.1:1 sobre --panel */
+    --dim:#4C5A52;                            /* 6.9:1 */
+    --dim-2:#57645C;                          /* 5.2:1 sobre --bg y 4.8:1 sobre --sunken */
 
-    --acc:#2f6ede;
-    --acc-hi:#4d8df6;
-    --acc-deep:#2457b6;
-    --acc-fill-1:#2f6ede;
-    --acc-fill-2:#4d8df6;
-    --acc-2:#2457b6;
-    --acc-ink:#2457b6;
-    --on-acc:#f7fbff;
-    --ring:rgba(47,110,222,.55);
-    --glow:rgba(47,110,222,.30);
+    --acc:#0F5132;
+    --acc-hi:#1B6B45;
+    --acc-deep:#0B3D26;
+    --acc-fill-1:#0F5132;
+    --acc-fill-2:#1B6B45;
+    --acc-2:#0B3D26;
+    --acc-ink:#0F5132;                        /* 6.6:1 sobre --panel */
+    --on-acc:#FAF9F4;                         /* 6.2-8.9:1 sobre el verde */
+    --ring:rgba(15,81,50,.45);
+    --glow:rgba(15,81,50,.20);
 
-    --ok:#25795a; --ok-ink:#1c6047;
-    --bad:#b23b32; --bad-ink:#8f2f27;
-    --warn:#8a6414; --warn-ink:#6e5110;
-    --violet-ink:#5b3f9e;
+    --ok:#0F5132;   --ok-ink:#0B3D26;
+    --bad:#9C3B2E;  --bad-ink:#7E2E23;
+    --warn:#8A6414; --warn-ink:#6E5110;
+    --violet-ink:#5B3F8E;
 
-    --tint-ok:rgba(37,121,90,.12);
-    --tint-bad:rgba(178,59,50,.12);
-    --tint-warn:rgba(138,100,20,.12);
-    --tint-acc:rgba(47,110,222,.12);
-    --tint-violet:rgba(91,63,158,.12);
-    --tint-neutral:rgba(20,22,28,.05);
-    --chip:#fbfbfc;
-    --chip-hover:#eff0f3;
-    --scrim:rgba(24,26,32,.45);
-    --selection:rgba(47,110,222,.22);
-    --scroll:rgba(20,22,28,.28);
+    --bien-fill:#0F5132; --bien-ink:#FAF9F4;
+    --mal-fill:#8A3428;  --mal-ink:#FDF6F4;
+
+    --tint-ok:rgba(183,217,193,.55);          /* menta */
+    --tint-bad:rgba(156,59,46,.10);
+    --tint-warn:rgba(138,100,20,.10);
+    --tint-acc:rgba(15,81,50,.10);
+    --tint-violet:rgba(91,63,142,.10);
+    --tint-neutral:rgba(31,42,36,.05);
+    --line-ok:rgba(15,81,50,.28);
+    --line-bad:rgba(156,59,46,.30);
+    --line-warn:rgba(138,100,20,.30);
+    --line-acc:rgba(15,81,50,.30);
+    --chip:#FFFFFF;
+    --chip-hover:#F2F0E9;
+    --scrim:rgba(24,32,28,.45);
+    --selection:rgba(183,217,193,.65);
+    --scroll:rgba(31,42,36,.24);
 
     --acc-grad:linear-gradient(180deg,var(--acc-fill-2),var(--acc-fill-1));
-    --peligro-grad:linear-gradient(180deg,#c4453b,#a03a31);
+    --exito-grad:linear-gradient(180deg,#1B6B45,#0F5132);
+    --peligro-grad:linear-gradient(180deg,#A8483A,#8A3428);
 
-    --sh-1:0 1px 2px rgba(24,26,32,.10),0 2px 6px rgba(24,26,32,.08);
-    --sh-2:0 2px 4px rgba(24,26,32,.10),0 10px 22px -8px rgba(24,26,32,.18);
-    --sh-3:0 4px 10px rgba(24,26,32,.12),0 26px 52px -16px rgba(24,26,32,.24);
+    --sh-1:0 1px 2px rgba(31,42,36,.08),0 2px 6px rgba(31,42,36,.06);
+    --sh-2:0 2px 4px rgba(31,42,36,.08),0 10px 22px -8px rgba(31,42,36,.14);
+    --sh-3:0 4px 10px rgba(31,42,36,.10),0 26px 52px -16px rgba(31,42,36,.18);
     --bisel:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(20,22,28,.07);
     --hundido:inset 0 2px 4px rgba(20,22,28,.12),inset 0 -1px 0 rgba(255,255,255,.6);
     --halo:0 0 0 1px rgba(77,141,246,.55),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
@@ -463,8 +481,8 @@
       font-size:var(--fs-base);display:none;
       border:var(--b-std) solid var(--line);background:var(--tint-neutral)}
   .fb.show{display:block;animation:pop var(--dur-2) var(--spring)}
-  .fb.good{background:var(--tint-ok);border-color:rgba(66,193,132,.35)}
-  .fb.bad{background:var(--tint-bad);border-color:rgba(242,99,90,.35)}
+  .fb.good{background:var(--tint-ok);border-color:var(--line-ok)}
+  .fb.bad{background:var(--tint-bad);border-color:var(--line-bad)}
   .fb .verdict{font-weight:650;margin-bottom:var(--sp-2);display:flex;align-items:center;
                gap:var(--sp-2);flex-wrap:wrap}
   /* La cita: bloque sangrado con filete de margen (el patrón del «inset text»).
@@ -478,10 +496,10 @@
   .badge{font-size:var(--fs-micro);font-weight:700;padding:4px var(--sp-2);border-radius:var(--r-1);
          letter-spacing:.02em;white-space:nowrap;border:var(--b-sutil) solid var(--line-2);
          text-transform:none}
-  .badge.hoch{background:var(--tint-ok);color:var(--ok-ink);border-color:rgba(66,193,132,.35)}
-  .badge.mittel{background:var(--tint-warn);color:var(--warn-ink);border-color:rgba(226,177,83,.35)}
-  .badge.niedrig{background:var(--tint-bad);color:var(--bad-ink);border-color:rgba(242,99,90,.35)}
-  .badge.ok{background:var(--tint-acc);color:var(--acc-ink);border-color:rgba(106,164,255,.35)}
+  .badge.hoch{background:var(--tint-ok);color:var(--ok-ink);border-color:var(--line-ok)}
+  .badge.mittel{background:var(--tint-warn);color:var(--warn-ink);border-color:var(--line-warn)}
+  .badge.niedrig{background:var(--tint-bad);color:var(--bad-ink);border-color:var(--line-bad)}
+  .badge.ok{background:var(--tint-acc);color:var(--acc-ink);border-color:var(--line-acc)}
   .badge.tag{background:var(--tint-neutral);color:var(--dim);border-color:var(--line)}
 
   .row{display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center}
@@ -510,7 +528,7 @@
   .btn.danger{background:var(--peligro-grad);color:#fff6f5;border-color:rgba(255,255,255,.18);
               box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(242,99,90,.28)}
   .btn.danger:hover{filter:brightness(1.06)}
-  .btn.success{background:linear-gradient(180deg,#2f9c6c,#246b4c);color:#f2fff9;
+  .btn.success{background:var(--exito-grad);color:#f2fff9;
                border-color:rgba(255,255,255,.18);
                box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(66,193,132,.28)}
   .btn.success:hover{filter:brightness(1.06)}
@@ -518,7 +536,7 @@
 
   /* Aviso del sistema: pieza con tinte y filo. Uno por pantalla y como mucho:
      repetido pierde su fuerza. */
-  .note{background:var(--tint-warn);border:var(--b-std) solid rgba(226,177,83,.35);
+  .note{background:var(--tint-warn);border:var(--b-std) solid var(--line-warn);
         color:var(--warn-ink);padding:var(--sp-3) var(--sp-4);
         border-radius:var(--r-2);font-size:var(--fs-sm);margin-bottom:var(--sp-4)}
   .empty{color:var(--dim-2);padding:var(--sp-8) 0;text-align:center;font-size:var(--fs-base)}
@@ -564,7 +582,7 @@
   /* Schreiben UI & Editor */
   .schreiben-layout{display:flex;flex-direction:column;gap:var(--sp-5)}
   /* Aviso interno de la tarea: pieza con tinte y filo. */
-  .memo-card{background:var(--tint-warn);border:var(--b-std) solid rgba(226,177,83,.35);
+  .memo-card{background:var(--tint-warn);border:var(--b-std) solid var(--line-warn);
              padding:var(--sp-3) var(--sp-4);
              border-radius:var(--r-2);margin:var(--sp-4) 0;font-size:var(--fs-base);line-height:1.6}
   .memo-card b{color:var(--warn-ink)}
@@ -1613,6 +1631,9 @@ function setUser(user) {
   updateUserUI();
   // Al cambiar usuario, vincular su idioma preferido: Sergio -> ES, Diana -> RU
   setLanguage(user === "diana" ? "ru" : "es");
+  /* Y su mundo: Diana trabaja en claro (Calma) y Sergio en oscuro. El botón de
+     tema sigue mandando si alguno quiere cambiarlo en ese momento. */
+  setTheme(user === "diana" ? "paper" : "dark");
 }
 window.setUser = setUser;
 window.getUser = () => currentUser;
