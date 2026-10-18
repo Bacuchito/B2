@@ -27,7 +27,7 @@
       "file_type": "code",
       "norm_label": "el",
       "source_file": "quiz/security_test.js",
-      "source_location": "L25"
+      "source_location": "L26"
     },
     {
       "id": "tools_pdf2md_font",
@@ -4726,7 +4726,7 @@
       "file_type": "code",
       "norm_label": "abrirschreiben()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L94"
+      "source_location": "L95"
     },
     {
       "id": "quiz_security_test_buscar",
@@ -4738,7 +4738,7 @@
       "file_type": "code",
       "norm_label": "buscar()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L100"
+      "source_location": "L101"
     },
     {
       "id": "quiz_security_test_check",
@@ -4750,7 +4750,7 @@
       "file_type": "code",
       "norm_label": "check()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L111"
+      "source_location": "L112"
     },
     {
       "id": "quiz_security_test_el_appendchild",
@@ -4762,7 +4762,7 @@
       "file_type": "code",
       "norm_label": ".appendchild()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L42"
+      "source_location": "L43"
     },
     {
       "id": "quiz_security_test_el_constructor",
@@ -4774,7 +4774,7 @@
       "file_type": "code",
       "norm_label": ".constructor()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L26"
+      "source_location": "L27"
     },
     {
       "id": "quiz_security_test_el_html",
@@ -4786,7 +4786,7 @@
       "file_type": "code",
       "norm_label": ".html()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L45"
+      "source_location": "L46"
     },
     {
       "id": "quiz_security_test_el_id",
@@ -4798,7 +4798,7 @@
       "file_type": "code",
       "norm_label": ".id()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L40"
+      "source_location": "L41"
     },
     {
       "id": "quiz_security_test_el_innerhtml",
@@ -4810,7 +4810,7 @@
       "file_type": "code",
       "norm_label": ".innerhtml()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L38"
+      "source_location": "L39"
     },
     {
       "id": "quiz_security_test_el_queryselector",
@@ -4822,7 +4822,7 @@
       "file_type": "code",
       "norm_label": ".queryselector()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L43"
+      "source_location": "L44"
     },
     {
       "id": "quiz_security_test_el_queryselectorall",
@@ -4834,7 +4834,7 @@
       "file_type": "code",
       "norm_label": ".queryselectorall()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L44"
+      "source_location": "L45"
     },
     {
       "id": "quiz_security_test_el_texto",
@@ -4846,7 +4846,7 @@
       "file_type": "code",
       "norm_label": ".texto()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L46"
+      "source_location": "L47"
     },
     {
       "id": "quiz_security_test_montar",
@@ -4858,7 +4858,7 @@
       "file_type": "code",
       "norm_label": "montar()",
       "source_file": "quiz/security_test.js",
-      "source_location": "L50"
+      "source_location": "L51"
     },
     {
       "id": "dsh_asar_extract_root_lib_main_boundederrorsection",
@@ -22976,7 +22976,7 @@
       "file_type": "code",
       "norm_label": "bloques",
       "source_file": "quiz/security_test.js",
-      "source_location": "L21"
+      "source_location": "L22"
     },
     {
       "id": "quiz_security_test_checks",
@@ -22987,7 +22987,7 @@
       "file_type": "code",
       "norm_label": "checks",
       "source_file": "quiz/security_test.js",
-      "source_location": "L110"
+      "source_location": "L111"
     },
     {
       "id": "quiz_security_test_fs",
@@ -22998,7 +22998,7 @@
       "file_type": "code",
       "norm_label": "fs",
       "source_file": "quiz/security_test.js",
-      "source_location": "L15"
+      "source_location": "L16"
     },
     {
       "id": "quiz_security_test_html",
@@ -23009,7 +23009,7 @@
       "file_type": "code",
       "norm_label": "html",
       "source_file": "quiz/security_test.js",
-      "source_location": "L18"
+      "source_location": "L19"
     },
     {
       "id": "quiz_security_test_registro",
@@ -23020,7 +23020,7 @@
       "file_type": "code",
       "norm_label": "registro",
       "source_file": "quiz/security_test.js",
-      "source_location": "L49"
+      "source_location": "L50"
     },
     {
       "id": "quiz_security_test_script",
@@ -23031,7 +23031,7 @@
       "file_type": "code",
       "norm_label": "script",
       "source_file": "quiz/security_test.js",
-      "source_location": "L22"
+      "source_location": "L23"
     },
     {
       "id": "quiz_extract_all_forums",
@@ -30123,7 +30123,7 @@
       "node_kind": "heading",
       "norm_label": "anadir una seccion nueva",
       "source_file": "quiz/README.md",
-      "source_location": "L234"
+      "source_location": "L237"
     },
     {
       "id": "quiz_readme_biling\u00fcismo_es_ru",
@@ -30159,7 +30159,7 @@
       "node_kind": "heading",
       "norm_label": "huecos conocidos del documento fuente",
       "source_file": "quiz/README.md",
-      "source_location": "L214"
+      "source_location": "L217"
     },
     {
       "id": "quiz_readme_niveles_de_confianza",
@@ -30171,7 +30171,7 @@
       "node_kind": "heading",
       "norm_label": "niveles de confianza",
       "source_file": "quiz/README.md",
-      "source_location": "L206"
+      "source_location": "L209"
     },
     {
       "id": "quiz_readme_qu\u00e9_valida_build_py",
@@ -30183,7 +30183,7 @@
       "node_kind": "heading",
       "norm_label": "que valida `build.py`",
       "source_file": "quiz/README.md",
-      "source_location": "L183"
+      "source_location": "L186"
     },
     {
       "id": "quiz_readme_reconstruir",
@@ -30255,7 +30255,7 @@
       "node_kind": "heading",
       "norm_label": "verificacion de las respuestas",
       "source_file": "quiz/README.md",
-      "source_location": "L170"
+      "source_location": "L173"
     },
     {
       "id": "agents_skills_apple_design_skill",
@@ -59833,7 +59833,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "quiz/security_test.js",
-      "source_location": "L43",
+      "source_location": "L44",
       "weight": 1.0
     },
     {
@@ -59845,7 +59845,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "quiz/security_test.js",
-      "source_location": "L59",
+      "source_location": "L60",
       "weight": 1.0
     },
     {
@@ -87625,7 +87625,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/README.md",
-      "source_location": "L170",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -87636,7 +87636,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/README.md",
-      "source_location": "L183",
+      "source_location": "L186",
       "weight": 1.0
     },
     {
@@ -87647,7 +87647,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/README.md",
-      "source_location": "L206",
+      "source_location": "L209",
       "weight": 1.0
     },
     {
@@ -87658,7 +87658,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/README.md",
-      "source_location": "L214",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -87669,7 +87669,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/README.md",
-      "source_location": "L234",
+      "source_location": "L237",
       "weight": 1.0
     },
     {
@@ -87713,7 +87713,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L100",
+      "source_location": "L101",
       "weight": 1.0
     },
     {
@@ -87724,7 +87724,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L110",
+      "source_location": "L111",
       "weight": 1.0
     },
     {
@@ -87735,7 +87735,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L111",
+      "source_location": "L112",
       "weight": 1.0
     },
     {
@@ -87746,7 +87746,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L15",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -87757,7 +87757,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L18",
+      "source_location": "L19",
       "weight": 1.0
     },
     {
@@ -87768,7 +87768,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L21",
+      "source_location": "L22",
       "weight": 1.0
     },
     {
@@ -87779,7 +87779,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L22",
+      "source_location": "L23",
       "weight": 1.0
     },
     {
@@ -87790,7 +87790,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L25",
+      "source_location": "L26",
       "weight": 1.0
     },
     {
@@ -87801,7 +87801,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -87812,7 +87812,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L50",
+      "source_location": "L51",
       "weight": 1.0
     },
     {
@@ -87823,7 +87823,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L94",
+      "source_location": "L95",
       "weight": 1.0
     },
     {
@@ -89121,7 +89121,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0
     },
     {
@@ -89132,7 +89132,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -89143,7 +89143,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L41",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -89154,7 +89154,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L42",
+      "source_location": "L43",
       "weight": 1.0
     },
     {
@@ -89165,7 +89165,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0
     },
     {
@@ -89176,7 +89176,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L45",
+      "source_location": "L46",
       "weight": 1.0
     },
     {
@@ -89187,7 +89187,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "quiz/security_test.js",
-      "source_location": "L46",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -91210,7 +91210,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "quiz/security_test.js",
-      "source_location": "L38",
+      "source_location": "L39",
       "weight": 1.0
     },
     {
@@ -91623,5 +91623,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d6ddcd63be4530b616bad848ab18b59e19daf92b"
+  "built_at_commit": "cb542a2ed4b4a9227de5fc55bdffadd6acde25ef"
 }

@@ -696,15 +696,15 @@
     "semantic_hash": ""
   },
   "quiz/B2_quiz.html": {
-    "mtime": 1792323974.7240453,
-    "seen": 1792323988.1390617,
-    "ast_hash": "9505a06537aeac46d556d4c3af632da2",
+    "mtime": 1792328069.500712,
+    "seen": 1792328093.965605,
+    "ast_hash": "04ac8c1992759eb69cdbae5f5f692e0f",
     "semantic_hash": ""
   },
   "quiz/README.md": {
-    "mtime": 1792322372.1922867,
-    "seen": 1792322412.2188222,
-    "ast_hash": "2da9fd92deb7fbb5e0a9283e95abe265",
+    "mtime": 1792328064.1362138,
+    "seen": 1792328093.965605,
+    "ast_hash": "816fc37e120dbc08ec741752296a43ae",
     "semantic_hash": ""
   },
   "quiz/SPEC.md": {
@@ -930,9 +930,9 @@
     "semantic_hash": ""
   },
   "quiz/template.html": {
-    "mtime": 1792323953.926416,
-    "seen": 1792323988.1516645,
-    "ast_hash": "b618fb16aadf6a361d981a7dc038f214",
+    "mtime": 1792328003.3518577,
+    "seen": 1792328093.9756203,
+    "ast_hash": "6e755d70388acfde22447c860652b615",
     "semantic_hash": ""
   },
   "tools/README.md": {
@@ -966,15 +966,15 @@
     "semantic_hash": ""
   },
   "quiz/prompt_schreiben.py": {
-    "mtime": 1792201072.120458,
-    "seen": 1792320974.3846166,
-    "ast_hash": "d092a98da7184eeb2a2ff2a8cc2bd2f8",
+    "mtime": 1792327905.713626,
+    "seen": 1792328093.953593,
+    "ast_hash": "a19614dca72192e0d5f8aed4c5125b3e",
     "semantic_hash": ""
   },
   "quiz/test_prompt.py": {
-    "mtime": 1792153501.5313134,
-    "seen": 1792154062.0311415,
-    "ast_hash": "f8f4fe0d2b241e172c5d438c3c5d7a89",
+    "mtime": 1792328044.4762788,
+    "seen": 1792328093.953593,
+    "ast_hash": "caba7de50e152d9e0541c2fad9fa1817",
     "semantic_hash": ""
   },
   "quiz/extract_all_forums.py": {
@@ -1026,9 +1026,9 @@
     "semantic_hash": ""
   },
   "quiz/security_test.js": {
-    "mtime": 1792323970.3272443,
-    "seen": 1792323988.1141179,
-    "ast_hash": "76254abd2520692e72102e3504cae255",
+    "mtime": 1792327962.5644836,
+    "seen": 1792328093.953593,
+    "ast_hash": "ad8c3894faac71aa9e81a671d4b33427",
     "semantic_hash": ""
   },
   "tools/test_pdf2md.py": {

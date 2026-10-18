@@ -23,7 +23,7 @@ from typing import Dict, Any
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-from prompt_schreiben import SYSTEM_PROMPT, JSON_SCHEMA, build_user_prompt, validate_evaluation_json
+from prompt_schreiben import SYSTEM_PROMPT, JSON_SCHEMA, build_user_prompt, validate_evaluation_json, count_words
 
 # Tarea de prueba (de schreiben_beschwerde.json: Putzdienst)
 SAMPLE_TASK = {
@@ -74,14 +74,15 @@ Friederike Woller
 Kundenservice Huber Reinigung GmbH"""
 
 # Fixture de evaluación esperada para Caso A
+# Los `score` son los de la tabla de bandas: I A 34/B 26/C 13/D 0; II-IV A 22/B 17/C 9/D 0.
 MOCK_EVAL_FAIL_A2 = {
     "verdict": "NICHT BESTANDEN",
-    "score_total": 38,
+    "score_total": 9,
     "word_count": 68,
     "criteria": {
         "aufgabenbewaeltigung": {
             "grade": "D",
-            "score": 8,
+            "score": 0,
             "leitpunkte_check": [
                 {"point": "Bezugnahme auf die Beschwerde und Dank für den Hinweis", "covered": False, "comment": "Mención muy vaga, sin agradecer el aviso."},
                 {"point": "Förmliche Entschuldigung und Erklärung der Ursache des Problems", "covered": True, "comment": "Se disculpa de manera informal y da una excusa superficial."},
@@ -92,17 +93,17 @@ MOCK_EVAL_FAIL_A2 = {
         },
         "angemessenheit": {
             "grade": "D",
-            "score": 9,
+            "score": 0,
             "feedback": "Registro inadecuado: uso de 'du' ('deine E-Mail', 'gebe dir') en una comunicación formal de empresa con un cliente externo ('Sehr geehrter Herr Lassner'). Saludo y despedida informales."
         },
         "korrektheit": {
             "grade": "D",
-            "score": 10,
+            "score": 0,
             "feedback": "Frecuentes errores de sintaxis y orden de palabras: 'darum sie sind früher...' (el verbo debe ir en segunda posición tras darum), 'weil wir wollen kein Streit' (verbo al final con weil), omisión de comas obligatorias."
         },
         "repertoire": {
             "grade": "C",
-            "score": 11,
+            "score": 9,
             "feedback": "Vocabulario básico de nivel A2/B1 ('Putzen', 'billiger', 'kein Streit'). Ausencia de estructuras B2 como Nomen-Verb-Verbindungen o conectores subordinantes variados."
         }
     },
@@ -140,12 +141,12 @@ MOCK_EVAL_FAIL_A2 = {
 # Fixture de evaluación esperada para Caso B
 MOCK_EVAL_PASS_B2 = {
     "verdict": "BESTANDEN",
-    "score_total": 92,
+    "score_total": 90,
     "word_count": 178,
     "criteria": {
         "aufgabenbewaeltigung": {
             "grade": "A",
-            "score": 24,
+            "score": 34,
             "leitpunkte_check": [
                 {"point": "Bezugnahme auf die Beschwerde und Dank für den Hinweis", "covered": True, "comment": "Excelente referencia a la carta del 14 de octubre y agradecimiento formal por el aviso."},
                 {"point": "Förmliche Entschuldigung und Erklärung der Ursache des Problems", "covered": True, "comment": "Disculpa en nombre de la empresa y explicación plausible (bajas por enfermedad y personal en formación)."},
@@ -155,13 +156,13 @@ MOCK_EVAL_PASS_B2 = {
             "feedback": "Los 4 Leitpunkte están completamente cubiertos con un desarrollo lógico, profesional y persuasivo. Cumple holgadamente el requisito de extensión (178 palabras)."
         },
         "angemessenheit": {
-            "grade": "A",
-            "score": 24,
+            "grade": "B",
+            "score": 17,
             "feedback": "Registro formal impecable. Tratamiento de cortesía 'Sie/Ihre', fórmulas de apertura y cierre de estándar comercial alemán de alto nivel."
         },
         "korrektheit": {
-            "grade": "A",
-            "score": 22,
+            "grade": "B",
+            "score": 17,
             "feedback": "Gran dominio gramatical: subordinadas con dass/in der con verbo al final, régimen preposicional correcto (anliegen sehr ernst nehmen, Rücksprache mit, Nachlass auf), puntuación precisa."
         },
         "repertoire": {
@@ -188,7 +189,7 @@ def run_offline_tests() -> bool:
     print("=== TEST OFFLINE: EVALUADOR TELC B2 SCHREIBEN ===")
 
     # 1. Verificar construcción de User Prompt (ES y RU)
-    print("[1/4] Verificando generación del prompt (ES y RU)...")
+    print("[1/5] Verificando generación del prompt (ES y RU)...")
     prompt_fail_es = build_user_prompt(SAMPLE_TASK, SAMPLE_TEXT_FAIL_A2, lang="es")
     assert "Die Huber GmbH hat einen Vertrag" in prompt_fail_es
     assert "Putzdienst / Büroreinigung" in prompt_fail_es
@@ -199,10 +200,12 @@ def run_offline_tests() -> bool:
     prompt_fail_ru = build_user_prompt(SAMPLE_TASK, SAMPLE_TEXT_FAIL_A2, lang="ru")
     assert "RUSSISCH" in prompt_fail_ru
     assert "rule_es" in prompt_fail_ru
-    print("      OK: El user prompt incluye contexto, Leitpunkte y texto del alumno en ES y RU.")
+    n_palabras = count_words(SAMPLE_TEXT_FAIL_A2)
+    assert f"GENAU {n_palabras} Wörter" in prompt_fail_es, "el prompt debe llevar el recuento ya hecho"
+    print("      OK: El user prompt incluye contexto, Leitpunkte, texto y recuento de palabras en ES y RU.")
 
     # 2. Validar contrato de Caso A (FAIL)
-    print("[2/4] Validando contrato de evaluación para Caso A (A2 deficiente)...")
+    print("[2/5] Validando contrato de evaluación para Caso A (A2 deficiente)...")
     errors_a = validate_evaluation_json(MOCK_EVAL_FAIL_A2)
     assert len(errors_a) == 0, f"Errores de esquema en Caso A: {errors_a}"
     assert MOCK_EVAL_FAIL_A2["verdict"] == "NICHT BESTANDEN"
@@ -211,7 +214,7 @@ def run_offline_tests() -> bool:
     print(f"      OK: Caso A verificado. Veredicto: {MOCK_EVAL_FAIL_A2['verdict']} ({MOCK_EVAL_FAIL_A2['score_total']}/100)")
 
     # 3. Validar contrato de Caso B (PASS)
-    print("[3/4] Validando contrato de evaluación para Caso B (B2 sólido)...")
+    print("[3/5] Validando contrato de evaluación para Caso B (B2 sólido)...")
     errors_b = validate_evaluation_json(MOCK_EVAL_PASS_B2)
     assert len(errors_b) == 0, f"Errores de esquema en Caso B: {errors_b}"
     assert MOCK_EVAL_PASS_B2["verdict"] == "BESTANDEN"
@@ -220,7 +223,7 @@ def run_offline_tests() -> bool:
     print(f"      OK: Caso B verificado. Veredicto: {MOCK_EVAL_PASS_B2['verdict']} ({MOCK_EVAL_PASS_B2['score_total']}/100)")
 
     # 4. Probar detector de esquemas inválidos
-    print("[4/4] Verificando robustez del validador de contratos frente a JSON corrupto...")
+    print("[4/5] Verificando robustez del validador de contratos frente a JSON corrupto...")
     corrupt_eval = {
         "verdict": "INVALID_VERDICT",
         "score_total": 150,  # fuera de rango
@@ -230,7 +233,17 @@ def run_offline_tests() -> bool:
     assert len(caught_errors) >= 3, "El validador debería haber detectado múltiples errores."
     print(f"      OK: El validador detectó correctamente {len(caught_errors)} anomalías en un payload corrupto.")
 
-    print("\nTodos los tests offline del evaluador telc B2 pasaron con éxito (4/4).")
+    # 5. La rúbrica: los 4 criterios oficiales, los pesos de telc y nuestras reglas extra
+    print("[5/5] Verificando la rúbrica (criterios y pesos de telc + reglas nuestras)...")
+    for trozo in ["KOMMUNIKATIVE GESTALTUNG", "SPEKTRUM SPRACHLICHER MITTEL",
+                  "I = 34, II-IV = 22", "höchstens Stufe C",
+                  "kein Kriterium mit Stufe D", "In der echten Prüfung gibt es die D-Regel NICHT"]:
+        assert trozo in SYSTEM_PROMPT, f"Falta en el system prompt: {trozo}"
+    schema_json = json.dumps(JSON_SCHEMA)
+    assert '"maximum": 34' in schema_json and '"maximum": 22' in schema_json, "el esquema debe topar cada criterio"
+    print("      OK: 4 criterios oficiales, pesos 34/22 y las dos reglas extra documentadas.")
+
+    print("\nTodos los tests offline del evaluador telc B2 pasaron con éxito (5/5).")
     return True
 
 

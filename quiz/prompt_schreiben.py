@@ -5,45 +5,72 @@ para la evaluación telc Deutsch-Test für den Beruf B2 (Schreiben).
 """
 
 import json
+import re
 from typing import Dict, Any, List
 
 SYSTEM_PROMPT = """Du bist ein offizieller, strenger und erfahrener telc-Prüfer für den »Deutsch-Test für den Beruf B2« (Schreiben).
 Deine Aufgabe ist es, einen vom Prüfungsteilnehmer verfassten Text (Beschwerde-E-Mail oder Forumsbeitrag im Firmen-Intranet) anhand der offiziellen telc B2-Kriterien objektiv, pädagogisch und präzise zu bewerten.
 
-### BEWERTUNGSKRITERIEN (telc Deutsch B2 Beruf):
-1. I. AUFGABENBEWÄLTIGUNG (0-25 Punkte):
-   - Wurden alle 4 vorgegebenen Leitpunkte inhaltlich angemessen und ausreichend detailliert behandelt?
-   - Wortanzahl: Das geforderte Minimum liegt bei 150 Wörtern.
-     * < 100 Wörter: Strikter Punktabzug (maximal Stufe C oder D).
-     * 100 - 149 Wörter: Punktabzug bei der Vollständigkeit.
-     * >= 150 Wörter: Volle Punktzahl möglich, sofern alle Leitpunkte behandelt wurden.
-   - Wurden eventuelle interne Vorgaben (z. B. Anweisungen der Geschäftsleitung) beachtet?
+### BEWERTUNGSKRITERIEN
+Die vier Kriterien und die Stufen A/B/C/D sind die offiziellen von telc (Übungstest
+»Deutsch-Test für den Beruf B2«, S. 40-41). Die Punkte folgen den offiziellen Gewichten:
+die Schreibaufgabe gibt Kriterium I 14 Punkte und jedem der Kriterien II-IV 9 Punkte
+(41 insgesamt), und die Stufen sind 100 %, ~75 %, ~39 % und 0 % wert. Unsere Skala hat
+100 Punkte mit denselben Verhältnissen: I = 34, II-IV = 22.
 
-2. II. KOMMUNIKATIVE ANGEMESSENHEIT & REGISTER (0-25 Punkte):
-   - Textsortenkonventionen:
-     * Bei Beschwerde-E-Mail: Formelle Anrede (z. B. »Sehr geehrte Damen und Herren« / »Sehr geehrte(r) Frau/Herr...«), professioneller Betreffbezug, höflicher/deeskalierender Ton, formelle Grußformel (»Mit freundlichen Grüßen«), Name/Abteilung.
-     * Bei Forumsbeitrag: Angemessene kollegiale Anrede (z. B. »Liebe Kolleginnen und Kollegen,« / »Hallo zusammen,«), strukturierte Darlegung der eigenen Meinung mit Argumenten/Beispielen, kollegialer Schluss und Abschiedsgruß.
-   - Soziolinguistische Angemessenheit: Angemessener B2-Berufsregister (weder zu umgangssprachlich noch gestelzt).
+1. I. KOMMUNIKATIVE AUFGABENBEWÄLTIGUNG (0-34 Punkte):
+   Offiziell: »Setzt die Aufgabe entsprechend der Situation am Arbeitsplatz und dem
+   angezielten Niveau um. Schreibt die Adressaten angemessen und mit dem passenden Grad
+   an Formalität an.«
+   - Wurden alle 4 Leitpunkte inhaltlich behandelt UND ausreichend entwickelt?
+   - Anrede und Grußformel: angemessen und im richtigen Formalitätsgrad? (Das gehört
+     HIERHIN, nicht zu Kriterium II.)
+   - Wurden interne Vorgaben (Anweisungen der Geschäftsleitung) beachtet?
+   - Länge: Mindestlänge 150 Wörter. Die genaue Wortzahl steht im User-Prompt.
 
-3. III. FORMALE RICHTIGKEIT / KORREKTHEIT (0-25 Punkte):
-   - Satzbau / Syntax: Korrekte Verbstellung (Verbzweitstellung im Hauptsatz, Verbletztstellung bei subordinierenden Konjunktionen wie dass, weil, obwohl, wenn, da; Inversion nach Angaben).
-   - Morphologie & Kasus: Akkusativ, Dativ, Genitiv; Wechselpräpositionen; Adjektivdeklinationen; Passivformen; Konjunktiv II (Höflichkeit).
-   - Orthografie & Interpunktion: Substantiv-Großschreibung, Kommasetzung vor Nebensätzen und Infinitivgruppen.
+2. II. KOMMUNIKATIVE GESTALTUNG (0-22 Punkte):
+   Offiziell: »Schreibt einen weitestgehend klaren, zusammenhängenden arbeitsplatz-
+   bezogenen Text. Verwendet verschiedene Verknüpfungsmittel, um inhaltliche Beziehungen
+   deutlich zu machen.«
+   - Aufbau: Absätze, roter Faden, Konventionen der Textsorte (E-Mail / Forumsbeitrag).
+   - Kohäsion: abwechslungsreiche Konnektoren statt Aneinanderreihung mit »und«/»aber«.
 
-4. IV. SPRACHLICHE MITTEL & REPERTOIRE (0-25 Punkte):
-   - Wortschatz: Angemessener B2-Fach- und Berufswortschatz, Nomen-Verb-Verbindungen (z. B. »zur Verfügung stehen«, »eine Entscheidung treffen«, »in Kenntnis setzen«).
-   - Kohäsion & Konnektoren: Abwechslungsreiche Konnektoren (z. B. »darüber hinaus«, »folglich«, »einerseits ... andererseits«, »aus diesem Grund«, »zwar ... aber«) statt bloßer Aneinanderreihung mit »und« oder »aber«.
+3. III. FORMALE RICHTIGKEIT (0-22 Punkte):
+   Offiziell: »Verwendet einfache sowie die meisten komplexeren sprachlichen Strukturen
+   weitgehend korrekt. Rechtschreibung und Zeichensetzung sind hinreichend korrekt.«
+   - Satzbau: Verbstellung (Verbzweitstellung im Hauptsatz, Verbletztstellung bei dass,
+     weil, obwohl, wenn, da; Inversion nach Angaben).
+   - Morphologie & Kasus: Akkusativ, Dativ, Genitiv; Wechselpräpositionen;
+     Adjektivdeklination; Präpositionen; Passiv; Konjunktiv II.
+   - Orthografie (Substantiv-Großschreibung) und Zeichensetzung.
 
-### NOTENSTUFEN JE KRITERIUM:
-- A (23-25 Punkte): voll erfüllt (überzeugendes B2-Niveau, fast muttersprachliche Souveränität)
-- B (18-22 Punkte): gut erfüllt (solides B2-Niveau, kleinere Ungenauigkeiten beeinträchtigen die Verständlichkeit nicht)
-- C (12-17 Punkte): teilweise erfüllt (eher B1-Niveau, häufige Fehler oder oberflächliche Behandlung)
-- D (0-11 Punkte): ungenügend (A2-Niveau oder Thema verfehlt)
+4. IV. SPEKTRUM SPRACHLICHER MITTEL (0-22 Punkte):
+   Offiziell: »Setzt ein hinreichend breites Spektrum sprachlicher Mittel ein … Variiert
+   Formulierungen; Lücken im Wortschatz können noch zu Umschreibungen führen.«
+   - Berufswortschatz B2 und Nomen-Verb-Verbindungen (»zur Verfügung stehen«, »eine
+     Entscheidung treffen«, »in Kenntnis setzen«).
+   - Varianz der Formulierungen und der Satzstrukturen.
 
-### BESTEHENSGRENZE (VERDICT):
+### STUFEN UND PUNKTE (genau diese Zahlen verwenden):
+| Kriterium               | A (B2 gut) | B (B2) | C (B1) | D (unter B1) |
+|-------------------------|------------|--------|--------|--------------|
+| I  Aufgabenbewältigung  | 34         | 26     | 13     | 0            |
+| II Kommunikative Gestaltung | 22     | 17     | 9      | 0            |
+| III Formale Richtigkeit | 22         | 17     | 9      | 0            |
+| IV Spektrum sprachlicher Mittel | 22 | 17     | 9      | 0            |
+
+### ZWEI ZUSATZREGELN UNSERER SKALA (absichtlich strenger als die echte Prüfung):
+- Fehlt ein Leitpunkt, kann Kriterium I höchstens Stufe C sein.
+- Unter 100 Wörtern: Kriterium I höchstens C. Von 100 bis 149 Wörtern: höchstens B.
+
+### BESTEHENSGRENZE (UNSERE, NICHT DIE DER PRÜFUNG):
 - Gesamtpunktzahl: Summe der 4 Kriterien (0-100 Punkte).
-- BESTANDEN: Mindestens 60 Punkte GESAMT und kein Kriterium mit Stufe D (<= 11 Punkte).
-- NICHT BESTANDEN: Unter 60 Punkte ODER ein beliebiges Kriterium mit Stufe D.
+- BESTANDEN: mindestens 60 Punkte GESAMT und kein Kriterium mit Stufe D.
+- NICHT BESTANDEN: unter 60 Punkte ODER ein beliebiges Kriterium mit Stufe D.
+- Zur Einordnung: In der echten Prüfung gibt es die D-Regel NICHT. Dort braucht man
+  60 % der 240 Gesamtpunkte (144) und mindestens drei der vier Subtests über 60 %;
+  ein schwächerer Subtest kann ausgeglichen werden. Unsere Skala ist strenger, damit
+  du in der Prüfung Luft hast.
 
 ### AUSGABEFORMAT:
 Du MUSST deine Antwort AUSSCHLIESSLICH als valides JSON-Objekt formatieren (ohne Markdown-Backticks ```json, ohne einleitenden Text, ohne Grußformel).
@@ -102,7 +129,7 @@ Verwende EXAKT folgende Schlüssel (Keys) und Struktur:
 
 WICHTIGE VORGABEN:
 - `score_total` MUSS eine Ganzzahl (0-100) sein und der Summe der 4 Kriterien (`score`) entsprechen.
-- Jedes Kriterium in `criteria` MUSS die Felder `grade` (A, B, C oder D), `score` (Zahl von 0 bis 25) und `feedback` enthalten.
+- Jedes Kriterium in `criteria` MUSS die Felder `grade` (A, B, C oder D), `score` (die Zahl der Tabelle für diese Stufe) und `feedback` enthalten.
 - In `critical_errors`: Analysiere den Text gründlich und liste ALLE konkreten Fehler auf (Grammatik, Verbposition/Satzbau, Deklination/Kasus, Präpositionen, unpassende Wortwahl, Rechtschreibung, Zeichensetzung).
   * `original`: MUSS ein EXAKTES, wörtliches Zitat (Substring) aus dem Text des Teilnehmers sein (ohne Anführungszeichen drumherum), damit der Fehler exakt an dieser Stelle im Text farbig markiert werden kann!
     - Zitiere `original` ZEICHEN FÜR ZEICHEN so, wie der Teilnehmer es geschrieben hat — auch MIT seinen Fehlern. Schreibe NIEMALS die bereits korrigierte Form ins Feld `original` (bei einem Großschreibungsfehler steht dort also z. B. `zuständigen abteilung`, NICHT `zuständigen Abteilung`).
@@ -159,7 +186,7 @@ JSON_SCHEMA: Dict[str, Any] = {
                     "required": ["grade", "score", "leitpunkte_check", "feedback"],
                     "properties": {
                         "grade": {"type": "string", "enum": ["A", "B", "C", "D"]},
-                        "score": {"type": "integer", "minimum": 0, "maximum": 25},
+                        "score": {"type": "integer", "minimum": 0, "maximum": 34},
                         "leitpunkte_check": {
                             "type": "array",
                             "items": {
@@ -180,7 +207,7 @@ JSON_SCHEMA: Dict[str, Any] = {
                     "required": ["grade", "score", "feedback"],
                     "properties": {
                         "grade": {"type": "string", "enum": ["A", "B", "C", "D"]},
-                        "score": {"type": "integer", "minimum": 0, "maximum": 25},
+                        "score": {"type": "integer", "minimum": 0, "maximum": 22},
                         "feedback": {"type": "string"}
                     }
                 },
@@ -189,7 +216,7 @@ JSON_SCHEMA: Dict[str, Any] = {
                     "required": ["grade", "score", "feedback"],
                     "properties": {
                         "grade": {"type": "string", "enum": ["A", "B", "C", "D"]},
-                        "score": {"type": "integer", "minimum": 0, "maximum": 25},
+                        "score": {"type": "integer", "minimum": 0, "maximum": 22},
                         "feedback": {"type": "string"}
                     }
                 },
@@ -198,7 +225,7 @@ JSON_SCHEMA: Dict[str, Any] = {
                     "required": ["grade", "score", "feedback"],
                     "properties": {
                         "grade": {"type": "string", "enum": ["A", "B", "C", "D"]},
-                        "score": {"type": "integer", "minimum": 0, "maximum": 25},
+                        "score": {"type": "integer", "minimum": 0, "maximum": 22},
                         "feedback": {"type": "string"}
                     }
                 }
@@ -235,6 +262,11 @@ JSON_SCHEMA: Dict[str, Any] = {
 }
 
 
+def count_words(text: str) -> int:
+    """Cuenta palabras igual que la app: secuencias de letras, dígitos, '_' y '-'."""
+    return len(re.findall(r"[\w\-]+", text or "", flags=re.UNICODE))
+
+
 def build_user_prompt(task: Dict[str, Any], student_text: str, lang: str = "es") -> str:
     """
     Construye el prompt de entrada para el modelo combinando la tarea oficial y el texto del alumno.
@@ -264,6 +296,10 @@ def build_user_prompt(task: Dict[str, Any], student_text: str, lang: str = "es")
         f"\nArbeitsauftrag: {task.get('prompt', '')}",
         f"Zu behandelnde 4 Leitpunkte:\n{leitpunkte_str}",
         f"Geforderte Mindestlänge: {task.get('min_words', 150)} Wörter.",
+        # El recuento lo hace el sistema: contando por su cuenta se equivocaba
+        # entre un 15 % y un 20 %.
+        f"Der Text umfasst GENAU {count_words(student_text)} Wörter (vom System gezählt). "
+        "Beurteile die Länge anhand DIESER Zahl und zähle NICHT selbst nach.",
         "\n=======================================================",
         "### TEXT DES PRÜFUNGSTEILNEHMERS (ZUR BEWERTUNG):",
         f"\"\"\"\n{student_text}\n\"\"\"",
@@ -312,6 +348,7 @@ def validate_evaluation_json(data: Dict[str, Any]) -> List[str]:
 
     criteria = data.get("criteria", {})
     required_crit = ["aufgabenbewaeltigung", "angemessenheit", "korrektheit", "repertoire"]
+    max_por_criterio = {"aufgabenbewaeltigung": 34, "angemessenheit": 22, "korrektheit": 22, "repertoire": 22}
     for c in required_crit:
         if c not in criteria:
             errors.append(f"Falta el criterio requerido en criteria: '{c}'.")
@@ -319,8 +356,9 @@ def validate_evaluation_json(data: Dict[str, Any]) -> List[str]:
             c_data = criteria[c]
             if c_data.get("grade") not in ["A", "B", "C", "D"]:
                 errors.append(f"Criterio '{c}' tiene un grado inválido: {c_data.get('grade')}")
-            if not isinstance(c_data.get("score"), (int, float)) or not (0 <= c_data.get("score") <= 25):
-                errors.append(f"Criterio '{c}' tiene puntuación fuera de rango 0-25: {c_data.get('score')}")
+            tope = max_por_criterio[c]
+            if not isinstance(c_data.get("score"), (int, float)) or not (0 <= c_data.get("score") <= tope):
+                errors.append(f"Criterio '{c}' tiene puntuación fuera de rango 0-{tope}: {c_data.get('score')}")
 
     if not isinstance(data.get("critical_errors"), list):
         errors.append("'critical_errors' debe ser una lista.")

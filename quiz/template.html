@@ -912,6 +912,7 @@ const I18N = {
     verdictPass: "✓ BESTANDEN (APROBADO)",
     verdictFail: "✗ NICHT BESTANDEN (NO APROBADO)",
     totalScore: "Puntuación total: <b>{score} / 100</b>",
+    ourScaleNote: "Vara de práctica: criterios y bandas de telc, con dos reglas nuestras más estrictas que el examen (un criterio en D suspende; faltar un Leitpunkt limita el criterio I a C). En el examen real se aprueba con el 60 % del total y un subtest se puede compensar.",
     annotatedHeadTitle: "📝 Tu texto con análisis y corrección interactiva",
     errorsZero: "✓ 0 errores detectados",
     errorsCountSingle: "⚠ 1 corrección",
@@ -1009,7 +1010,7 @@ const I18N = {
     /* --- textos que antes iban escritos a mano en el código --- */
     cfgNotObject: "no encuentro un objeto { … }",
     cloudLocalTitle: "Modo local: configura Firebase en «Configurar IA» para sincronizar con tu pareja",
-    critFallbackFeedback: "Evaluación de {crit} con calificación {grade} ({score}/25 puntos).",
+    critFallbackFeedback: "Evaluación de {crit} con calificación {grade} ({score} puntos).",
     noText: "(Sin texto)",
     evalBadJson: "La respuesta recibida no es un JSON válido:\n",
     evalProgressGemini: "Consultando a Google Gemini ({model})...",
@@ -1124,6 +1125,7 @@ const I18N = {
     verdictPass: "✓ BESTANDEN (СДАНО)",
     verdictFail: "✗ NICHT BESTANDEN (НЕ СДАНО)",
     totalScore: "Итоговый балл: <b>{score} / 100</b>",
+    ourScaleNote: "Учебная шкала: критерии и уровни telc, но с двумя нашими правилами строже экзамена (оценка D по любому критерию — не сдано; пропущенный пункт ограничивает критерий I оценкой C). На настоящем экзамене нужно 60 % от общего числа баллов, и один субтест можно компенсировать.",
     annotatedHeadTitle: "📝 Текст с анализом и интерактивной коррекцией",
     errorsZero: "✓ 0 ошибок обнаружено",
     errorsCountSingle: "⚠ 1 исправление",
@@ -1221,7 +1223,7 @@ const I18N = {
     /* --- тексты, которые раньше были вписаны прямо в код --- */
     cfgNotObject: "не нахожу объект { … }",
     cloudLocalTitle: "Локальный режим: настрой Firebase в «Настройка ИИ», чтобы синхронизироваться с партнёром",
-    critFallbackFeedback: "Оценка {crit}: балл {grade} ({score}/25 баллов).",
+    critFallbackFeedback: "Оценка {crit}: уровень {grade} ({score} баллов).",
     noText: "(Нет текста)",
     evalBadJson: "Полученный ответ — не корректный JSON:\n",
     evalProgressGemini: "Запрос к Google Gemini ({model})...",
@@ -1437,6 +1439,9 @@ window.aiStatusText = aiStatusText;
 window.errorDeRed = errorDeRed;
 window.DATA = DATA;
 window.getLang = () => currentLang;
+/* RUBRICA es un const declarado más abajo: se expone allí, no aquí (zona muerta). */
+window.puntuarCriterios = puntuarCriterios;
+window.normalizeEvaluationResult = normalizeEvaluationResult;
 
 /* ---------- Sincronización en Tiempo Real (Firebase Firestore) ---------- */
 let fbDb = null;
@@ -1957,8 +1962,10 @@ function renderNav(){
       const ok = (v.items || []).filter(it => state.answers[ansKey(v,it)] === itemAnswerLetter(it)).length;
       let pill = "";
       if(v.kind === "schreiben"){
-        const hasEval = getEval(v.id);
-        pill = hasEval ? (hasEval.verdict === "BESTANDEN" ? t("passedPill") : t("failedPill")) : (v.category === "beschwerde" ? t("pillEmail") : t("pillPost"));
+        /* Se pasa por la vara para que la insignia del menú diga lo mismo que el panel. */
+        const ev = getEval(v.id);
+        const conVara = ev ? normalizeEvaluationResult(ev) : null;
+        pill = conVara ? (conVara.verdict === "BESTANDEN" ? t("passedPill") : t("failedPill")) : (v.category === "beschwerde" ? t("pillEmail") : t("pillPost"));
       } else {
         pill = onlyDoubtful
           ? (nd === 1 ? t("doubtPillSingle") : t("doubtPillPlural", {count: nd}))
@@ -2133,7 +2140,10 @@ function renderPartnerSchreibenView(container, v, data){
   const partnerText = data ? (data[partnerKey + "_text"] || "") : "";
   const partnerWords = data ? (data[partnerKey + "_words"] || countWords(partnerText)) : 0;
   const partnerUpdatedAt = data ? data[partnerKey + "_updated_at"] : null;
-  const partnerEval = data ? data[partnerKey + "_eval"] : null;
+  /* La evaluación de la pareja se pasa por la misma vara: si se guardó con la
+     escala vieja, aquí se ve con la nueva. */
+  const partnerEvalGuardada = data ? data[partnerKey + "_eval"] : null;
+  const partnerEval = partnerEvalGuardada ? normalizeEvaluationResult(partnerEvalGuardada) : null;
 
   const card = document.createElement("div");
   card.className = "partner-card";
@@ -2634,7 +2644,71 @@ function formatGermanLetter(text){
 }
 
 /* ---------- Renderizador del resultado de evaluación telc B2 ---------- */
-function normalizeEvaluationResult(raw){
+/* ---------- Vara de corrección (rúbrica) ----------
+   Los cuatro criterios y las bandas son los de telc (Übungstest DTB B2, pp. 40-41):
+     I   Kommunikative Aufgabenbewältigung   (se juzga por tarea)
+     II  Kommunikative Gestaltung            (texto cohesionado, conectores)
+     III Formale Richtigkeit                 (gramática, ortografía, puntuación)
+     IV  Spektrum sprachlicher Mittel        (variedad léxica y de estructuras)
+   con A = B2 gut erfüllt, B = B2 erfüllt, C = B1 erfüllt, D = unter B1.
+
+   Los PESOS son los oficiales: la tarea de escritura da 14 puntos al criterio I y 9
+   a cada uno de los II-IV (41 en total), y las bandas valen 100 %, ~75 %, ~39 % y 0 %.
+   Nuestra escala es de 100 puntos con esas mismas proporciones: I = 34, II-IV = 22.
+
+   Dos reglas NUESTRAS, más estrictas que el examen y a propósito:
+     - Un criterio en D suspende aunque la suma llegue a 60. En el examen real esa
+       regla no existe: se aprueba con 144/240 y un subtest se puede compensar.
+     - El criterio I no pasa de C si falta un Leitpunkt o el texto baja de 100
+       palabras, y no pasa de B entre 100 y 149.
+
+   El modelo solo JUZGA (banda + motivos). Los puntos los pone la app, para que el
+   mismo juicio dé siempre el mismo número. */
+const RUBRICA = {
+  max: { aufgabenbewaeltigung: 34, angemessenheit: 22, korrektheit: 22, repertoire: 22 },
+  banda: {
+    aufgabenbewaeltigung: { A: 34, B: 26, C: 13, D: 0 },
+    resto:                { A: 22, B: 17, C:  9, D: 0 }
+  },
+  aprobado: 60
+};
+window.RUBRICA = RUBRICA;
+
+function puntosDeBanda(crit, grade){
+  const tabla = (crit === "aufgabenbewaeltigung") ? RUBRICA.banda.aufgabenbewaeltigung : RUBRICA.banda.resto;
+  return tabla[grade] !== undefined ? tabla[grade] : 0;
+}
+
+/* Pone los puntos de cada criterio a partir de su banda, aplica los topes del
+   criterio I y decide el veredicto. `palabras` es el recuento real de la app; si
+   llega 0 (no hay texto que contar) no se aplica el tope de longitud. */
+function puntuarCriterios(c1, c2, c3, c4, palabras){
+  const faltaLeitpunkt = (c1.leitpunkte_check || []).some(lp => lp && lp.covered === false);
+  let tope = "A";
+  if(palabras > 0 && palabras < 100) tope = "C";
+  else if(palabras > 0 && palabras < 150) tope = "B";
+  if(faltaLeitpunkt) tope = "C";
+
+  const nivel = { D: 0, C: 1, B: 2, A: 3 };
+  const actual = nivel[c1.grade] !== undefined ? nivel[c1.grade] : 0;
+  c1.grade = ["D", "C", "B", "A"][Math.min(nivel[tope], actual)];
+
+  const conPuntos = (crit, c) => Object.assign({}, c, { score: puntosDeBanda(crit, c.grade) });
+  const p1 = conPuntos("aufgabenbewaeltigung", c1);
+  const p2 = conPuntos("angemessenheit", c2);
+  const p3 = conPuntos("korrektheit", c3);
+  const p4 = conPuntos("repertoire", c4);
+  const total = p1.score + p2.score + p3.score + p4.score;
+  const hayD = [p1, p2, p3, p4].some(c => c.grade === "D");
+
+  return {
+    criteria: { aufgabenbewaeltigung: p1, angemessenheit: p2, korrektheit: p3, repertoire: p4 },
+    score_total: total,
+    verdict: (total >= RUBRICA.aprobado && !hayD) ? "BESTANDEN" : "NICHT BESTANDEN"
+  };
+}
+
+function normalizeEvaluationResult(raw, studentText){
   if(!raw || typeof raw !== "object"){
     return {
       verdict: "NICHT BESTANDEN",
@@ -2715,7 +2789,7 @@ function normalizeEvaluationResult(raw){
     return {};
   }
 
-  function normalizeCrit(c, defaultGrade, defaultScore, critTitle){
+  function normalizeCrit(crit, c, defaultGrade, critTitle){
     let grade = c.grade || c.note || c.stufe || c.level || c.calificacion || c.bewertung;
     if(grade != null){
       const m = String(grade).toUpperCase().match(/[ABCD]/);
@@ -2725,18 +2799,17 @@ function normalizeEvaluationResult(raw){
     if(score != null) score = Math.round(Number(score));
     if(isNaN(score)) score = null;
 
-    if(score == null && grade){
-      const map = { "A": 24, "B": 20, "C": 14, "D": 6 };
-      if(map[grade] !== undefined) score = map[grade];
-    }
+    if(score == null && grade) score = puntosDeBanda(crit, grade);
     if(!grade && score != null){
-      if(score >= 23) grade = "A";
-      else if(score >= 18) grade = "B";
-      else if(score >= 12) grade = "C";
+      /* Sin banda: se deduce del número, con las proporciones de la rúbrica. */
+      const max = RUBRICA.max[crit] || 22;
+      if(score >= max * 0.85) grade = "A";
+      else if(score >= max * 0.60) grade = "B";
+      else if(score >= max * 0.25) grade = "C";
       else grade = "D";
     }
     if(!grade) grade = defaultGrade;
-    if(score == null) score = defaultScore;
+    if(score == null) score = puntosDeBanda(crit, grade);
 
     let feedback = c.feedback || c.kommentar || c.comment || c.beschreibung || c.begruendung || c.text || c.observaciones || "";
     if(!feedback){
@@ -2763,12 +2836,16 @@ function normalizeEvaluationResult(raw){
   let rawVerdict = raw.verdict || raw.ergebnis || raw.resultado || raw.status;
   const passedHint = (typeof rawVerdict === "string" && rawVerdict.toUpperCase().includes("BESTANDEN") && !rawVerdict.toUpperCase().includes("NICHT"));
   const defGrade = passedHint ? "B" : "C";
-  const defScore = passedHint ? 19 : 14;
 
-  const c1 = normalizeCrit(extractCriterion(["aufgabenbewaeltigung", "aufgabenbewältigung", "aufgaben", "leitpunkte", "task", "i", "1"]), defGrade, defScore, "Aufgabenbewältigung");
-  const c2 = normalizeCrit(extractCriterion(["angemessenheit", "kommunikative_angemessenheit", "angemessen", "register", "stil", "ii", "2"]), defGrade, defScore, "Kommunikative Angemessenheit");
-  const c3 = normalizeCrit(extractCriterion(["korrektheit", "formale_richtigkeit", "richtigkeit", "grammatik", "orthographie", "iii", "3"]), defGrade, defScore, "Formale Richtigkeit");
-  const c4 = normalizeCrit(extractCriterion(["repertoire", "sprachliche_mittel", "wortschatz", "varianz", "iv", "4"]), defGrade, defScore, "Sprachliche Mittel");
+  /* Texto del alumno y recuento real de palabras (el del modelo no es fiable:
+     inflaba entre un 15 % y un 20 %). */
+  const textoFuente = String(studentText || raw.student_text || "");
+  const palabrasReales = textoFuente ? countWords(textoFuente) : 0;
+
+  const c1 = normalizeCrit("aufgabenbewaeltigung", extractCriterion(["aufgabenbewaeltigung", "aufgabenbewältigung", "aufgaben", "leitpunkte", "task", "i", "1"]), defGrade, "Aufgabenbewältigung");
+  const c2 = normalizeCrit("angemessenheit", extractCriterion(["angemessenheit", "kommunikative_angemessenheit", "kommunikative_gestaltung", "angemessen", "register", "stil", "ii", "2"]), defGrade, "Kommunikative Gestaltung");
+  const c3 = normalizeCrit("korrektheit", extractCriterion(["korrektheit", "formale_richtigkeit", "richtigkeit", "grammatik", "orthographie", "iii", "3"]), defGrade, "Formale Richtigkeit");
+  const c4 = normalizeCrit("repertoire", extractCriterion(["repertoire", "sprachliche_mittel", "spektrum", "wortschatz", "varianz", "iv", "4"]), defGrade, "Sprachliche Mittel");
 
   if((!c1.leitpunkte_check || !c1.leitpunkte_check.length) && (raw.leitpunkte_check || raw.leitpunkte)){
     const rootLp = raw.leitpunkte_check || raw.leitpunkte;
@@ -2783,25 +2860,11 @@ function normalizeEvaluationResult(raw){
     }
   }
 
-  // Puntuación total (calculada automáticamente si falta)
-  let scoreTotal = raw.score_total != null ? raw.score_total : (raw.total_score != null ? raw.total_score : (raw.gesamtpunktzahl != null ? raw.gesamtpunktzahl : (raw.gesamtpunkte != null ? raw.gesamtpunkte : (raw.score != null ? raw.score : (raw.points != null ? raw.points : null)))));
-  if(scoreTotal != null) scoreTotal = Math.round(Number(scoreTotal));
-  if(scoreTotal == null || isNaN(scoreTotal)){
-    scoreTotal = (c1.score || 0) + (c2.score || 0) + (c3.score || 0) + (c4.score || 0);
-  }
-  scoreTotal = Math.max(0, Math.min(100, scoreTotal));
-
-  // Veredicto
-  let verdict = rawVerdict;
-  if(typeof verdict === "string"){
-    const uv = verdict.toUpperCase();
-    if(uv.includes("NICHT") || uv.includes("FAIL")) verdict = "NICHT BESTANDEN";
-    else if(uv.includes("BESTANDEN") || uv.includes("PASS")) verdict = "BESTANDEN";
-  }
-  if(verdict !== "BESTANDEN" && verdict !== "NICHT BESTANDEN"){
-    const hasD = (c1.grade === "D" || c2.grade === "D" || c3.grade === "D" || c4.grade === "D");
-    verdict = (scoreTotal >= 60 && !hasD) ? "BESTANDEN" : "NICHT BESTANDEN";
-  }
+  /* Puntos y veredicto: los pone la app a partir de las bandas. El modelo solo
+     juzga (banda + motivos); el número sale siempre de la misma tabla. */
+  const puntuado = puntuarCriterios(c1, c2, c3, c4, palabrasReales);
+  const scoreTotal = puntuado.score_total;
+  const verdict = puntuado.verdict;
 
   // Errores críticos
   let critical_errors = raw.critical_errors || raw.errors || raw.fehler || raw.correcciones || [];
@@ -2846,14 +2909,9 @@ function normalizeEvaluationResult(raw){
   return {
     verdict,
     score_total: scoreTotal,
-    word_count: Number.isFinite(wordCount) && wordCount > 0 ? wordCount : 0,
+    word_count: palabrasReales > 0 ? palabrasReales : (Number.isFinite(wordCount) && wordCount > 0 ? wordCount : 0),
     student_text: raw.student_text || "",
-    criteria: {
-      aufgabenbewaeltigung: c1,
-      angemessenheit: c2,
-      korrektheit: c3,
-      repertoire: c4
-    },
+    criteria: puntuado.criteria,
     critical_errors,
     strengths,
     areas_for_improvement: areas,
@@ -2934,6 +2992,14 @@ function renderEvaluationResult(v, rawRes){
   banner.innerHTML = '<div>' + (isPass ? t("verdictPass") : t("verdictFail")) + '</div>' +
                      '<div>' + t("totalScore", {score: (res.score_total != null ? res.score_total : '-')}) + '</div>';
   card.appendChild(banner);
+
+  /* La vara es nuestra y es más estricta que el examen: que no se confunda con una
+     nota telc. */
+  const notaVara = document.createElement("div");
+  notaVara.className = "micro-block";
+  notaVara.style.marginTop = "6px";
+  notaVara.textContent = t("ourScaleNote");
+  card.appendChild(notaVara);
 
   /* Texto del alumno analizado con errores en colores e interactivos */
   const studentText = res.student_text || getDraft(v.id) || "";
@@ -3318,6 +3384,9 @@ function buildUserPromptClient(task, studentText){
   parts.push("\nArbeitsauftrag: " + (task.prompt || ''));
   parts.push("Zu behandelnde 4 Leitpunkte:\n" + lps);
   parts.push("Geforderte Mindestlänge: " + (task.min_words || 150) + " Wörter.");
+  /* El recuento lo hace la app y se le da hecho: contando por su cuenta se
+     equivocaba entre un 15 % y un 20 %. */
+  parts.push("Der Text umfasst GENAU " + countWords(studentText) + " Wörter (vom System gezählt). Beurteile die Länge anhand DIESER Zahl und zähle NICHT selbst nach.");
   parts.push("\n=======================================================");
   parts.push("### TEXT DES PRÜFUNGSTEILNEHMERS (ZUR BEWERTUNG):");
   parts.push("\"\"\"\n" + studentText + "\n\"\"\"");
@@ -3412,7 +3481,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if(!raw) throw new Error(t("evalGeminiEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw));
+    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText);
 
   } else if(config.provider === "openai_compatible"){
     if(onProgress) onProgress(t("evalProgressCustom", {model: config.customModel, endpoint: config.customEndpoint}));
@@ -3447,7 +3516,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.choices?.[0]?.message?.content;
     if(!raw) throw new Error(t("evalApiEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw));
+    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText);
 
   } else if(config.provider === "ollama"){
     if(onProgress) onProgress(t("evalProgressOllama", {model: config.ollamaModel}));
@@ -3480,7 +3549,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.message?.content;
     if(!raw) throw new Error(t("evalOllamaEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw));
+    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText);
   } else {
     throw new Error(t("evalUnknownProvider", {provider: config.provider}));
   }

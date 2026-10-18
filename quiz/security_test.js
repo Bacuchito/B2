@@ -11,6 +11,7 @@
      S9  el borrador es de cada perfil: cambiar de perfil no mezcla el trabajo
      S10 la nube devuelve tu redacción y tu evaluación si el navegador no las tiene
      S11 una copia local vieja se refresca con la de la nube, sin pisar ediciones sin enviar
+     R1  la vara: bandas y puntos de telc, topes nuestros y veredicto determinista
    Uso: node quiz/security_test.js quiz/B2_quiz.html
 */
 const fs = require("fs");
@@ -518,6 +519,55 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
   check("una copia sin registro que coincide con la nube queda anotada y luego se refresca",
     !!ta && String(ta.value || "") === "version 2 desde otro navegador",
     "editor: " + JSON.stringify(String((ta && ta.value) || "")));
+}
+
+/* R1-R4 · la vara de corrección: bandas, puntos, topes y veredicto */
+{
+  const h = montar("", {}, false);
+  /* Construye una evaluación con esas bandas. Los `score` y el `score_total` van
+     a 99 a propósito: la app debe ignorarlos y recalcularlo todo desde las bandas. */
+  const evaluar = (grados, palabras, leitpunktCubierto) => {
+    const [g1, g2, g3, g4] = grados;
+    const texto = palabras ? Array.from({ length: palabras }, (_, i) => "wort" + i).join(" ") : "";
+    return h.window.normalizeEvaluationResult({
+      verdict: "BESTANDEN", score_total: 99, word_count: 999,
+      criteria: {
+        aufgabenbewaeltigung: { grade: g1, score: 99, feedback: "x", leitpunkte_check: [{ point: "a", covered: leitpunktCubierto !== false }] },
+        angemessenheit: { grade: g2, score: 99, feedback: "x" },
+        korrektheit: { grade: g3, score: 99, feedback: "x" },
+        repertoire: { grade: g4, score: 99, feedback: "x" }
+      },
+      critical_errors: [], strengths: [], areas_for_improvement: [], corrected_version: "x"
+    }, texto);
+  };
+  const total = (g, p, ok) => evaluar(g, p, ok).score_total;
+
+  check("las bandas valen las proporciones de telc: A 100, B 77, C 40, D 0",
+    total(["A","A","A","A"], 200) === 100 && total(["B","B","B","B"], 200) === 77 &&
+    total(["C","C","C","C"], 200) === 40 && total(["D","D","D","D"], 200) === 0,
+    `A=${total(["A","A","A","A"],200)} B=${total(["B","B","B","B"],200)} C=${total(["C","C","C","C"],200)} D=${total(["D","D","D","D"],200)}`);
+
+  check("el número que escriba el modelo se ignora (mismo juicio, mismo número)",
+    total(["C","C","C","C"], 200) === 40 && total(["C","C","C","C"], 200) === 40,
+    "dos evaluaciones con score 99 dan " + total(["C","C","C","C"], 200));
+
+  check("aprobar exige 60 puntos y ningún criterio en D",
+    evaluar(["B","B","B","B"], 200).verdict === "BESTANDEN" &&
+    evaluar(["C","C","C","C"], 200).verdict === "NICHT BESTANDEN" &&
+    evaluar(["A","A","A","D"], 200).verdict === "NICHT BESTANDEN",
+    `B/B/B/B=${evaluar(["B","B","B","B"],200).verdict} · C/C/C/C=${evaluar(["C","C","C","C"],200).verdict} · A/A/A/D (78 puntos)=${evaluar(["A","A","A","D"],200).verdict}`);
+
+  check("faltar un Leitpunkt limita el criterio I a C",
+    total(["A","A","A","A"], 200, false) === 79,
+    "A/A/A/A con un Leitpunkt sin cubrir = " + total(["A","A","A","A"], 200, false));
+
+  check("la longitud limita el criterio I: menos de 100 palabras a C, hasta 149 a B",
+    total(["A","A","A","A"], 80) === 79 && total(["A","A","A","A"], 120) === 92,
+    `80 palabras=${total(["A","A","A","A"],80)} · 120 palabras=${total(["A","A","A","A"],120)}`);
+
+  check("el recuento de palabras lo pone la app, no el modelo",
+    evaluar(["B","B","B","B"], 137).word_count === 137,
+    "el modelo dijo 999; la app dice " + evaluar(["B","B","B","B"], 137).word_count);
 }
 
 /* ---------- informe ---------- */

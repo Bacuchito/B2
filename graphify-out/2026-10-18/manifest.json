@@ -696,15 +696,15 @@
     "semantic_hash": ""
   },
   "quiz/B2_quiz.html": {
-    "mtime": 1792320861.8225336,
-    "seen": 1792320974.4026186,
-    "ast_hash": "bf62ec531c1696eb8cf0041460bff964",
+    "mtime": 1792323974.7240453,
+    "seen": 1792323988.1390617,
+    "ast_hash": "9505a06537aeac46d556d4c3af632da2",
     "semantic_hash": ""
   },
   "quiz/README.md": {
-    "mtime": 1792320881.0937667,
-    "seen": 1792320974.4026186,
-    "ast_hash": "3df1bc8a3a4c21f817ff58595ab90e26",
+    "mtime": 1792322372.1922867,
+    "seen": 1792322412.2188222,
+    "ast_hash": "2da9fd92deb7fbb5e0a9283e95abe265",
     "semantic_hash": ""
   },
   "quiz/SPEC.md": {
@@ -930,9 +930,9 @@
     "semantic_hash": ""
   },
   "quiz/template.html": {
-    "mtime": 1792320858.3865142,
-    "seen": 1792320974.4102035,
-    "ast_hash": "2495e1bd359b57e5212db3e47b5bd214",
+    "mtime": 1792323953.926416,
+    "seen": 1792323988.1516645,
+    "ast_hash": "b618fb16aadf6a361d981a7dc038f214",
     "semantic_hash": ""
   },
   "tools/README.md": {
@@ -1026,9 +1026,9 @@
     "semantic_hash": ""
   },
   "quiz/security_test.js": {
-    "mtime": 1792320817.8879955,
-    "seen": 1792320974.3846166,
-    "ast_hash": "8406cdb7a4f8179b06b6bb2a936334fb",
+    "mtime": 1792323970.3272443,
+    "seen": 1792323988.1141179,
+    "ast_hash": "76254abd2520692e72102e3504cae255",
     "semantic_hash": ""
   },
   "tools/test_pdf2md.py": {

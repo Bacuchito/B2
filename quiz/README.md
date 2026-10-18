@@ -170,6 +170,27 @@ dos idiomas.
   sin merge elimine campos que ya existían. **No separa por usuario**: eso exigiría
   autenticación (login anónimo + `request.auth.uid`).
 
+## Cómo puntúa la escritura (Schreiben)
+
+Los cuatro criterios y las bandas A/B/C/D son los de telc, y los pesos también
+(Übungstest DTB B2, pp. 40-41): la tarea de escritura da 14 puntos al criterio I
+—*Kommunikative Aufgabenbewältigung*— y 9 a cada uno de los II-IV —*Kommunikative
+Gestaltung*, *Formale Richtigkeit*, *Spektrum sprachlicher Mittel*—, con bandas al
+100 %, ~75 %, ~39 % y 0 %.
+
+La app usa una escala de 100 puntos con esas mismas proporciones (**I = 34, II-IV = 22**)
+y añade **dos reglas propias, más estrictas que el examen**: un criterio en D suspende
+aunque la suma llegue a 60, y el criterio I no pasa de C si falta un Leitpunkt o el
+texto baja de 100 palabras (ni de B entre 100 y 149). En el examen real esas reglas no
+existen: se aprueba con el 60 % de 240 puntos y un subtest se puede compensar.
+
+Los puntos los calcula la app a partir de las bandas que da el modelo
+(`puntuarCriterios` en `template.html`), así que el mismo juicio da siempre el mismo
+número y lo que escriba el modelo en `score` se ignora. El recuento de palabras también
+lo hace la app: el modelo lo inflaba entre un 15 % y un 20 %.
+
+---
+
 ## Verificación de las respuestas
 
 Como **no hay clave oficial**, cada respuesta pasa dos filtros:
