@@ -247,6 +247,18 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .segmentado button:active{transform:scale(.96)}
 .segmentado button[aria-pressed="true"]{color:var(--on-acc);background:var(--acc-grad);
   box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
+/* El mando que se desliza entre las opciones. Solo entra cuando se puede medir
+   (clase `con-mando`, puesta por el JavaScript del final): si no, la opción activa
+   se enciende con su propio relleno y nunca se queda sin marca. */
+.segmentado{position:relative}
+.segmentado.con-mando::before{content:"";position:absolute;top:4px;bottom:4px;left:0;
+  width:var(--mando-w,0px);transform:translateX(var(--mando-x,0px));
+  border-radius:var(--r-pill);background:var(--acc-grad);
+  box-shadow:var(--sh-1),var(--bisel),0 4px 14px -4px var(--glow);
+  transition:transform var(--dur-3) var(--muelle),width var(--dur-3) var(--muelle);
+  pointer-events:none;z-index:0}
+.segmentado.con-mando button{position:relative;z-index:1}
+.segmentado.con-mando button[aria-pressed="true"]{background:none;box-shadow:none}
 
 /* Interruptor: pista con el mando redondo y el icono dentro. El mando lleva el
    icono del estado en el que ESTÁS (luna si estás en oscuro, sol si estás en
@@ -722,6 +734,33 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
     pintar(boton.getAttribute('aria-checked') !== 'true');
   });
   pintar(true);
+
+  /* Mando deslizante de los controles segmentados: se mide la opción encendida y
+     el mando se coloca ahí; al cambiar de opción, se desliza. */
+  function colocarMandos(){
+    document.querySelectorAll('.segmentado').forEach(function(caja){
+      const activo = caja.querySelector('[aria-pressed="true"]');
+      if (!activo || !activo.offsetWidth){
+        caja.classList.remove('con-mando');
+        return;
+      }
+      caja.classList.add('con-mando');
+      caja.style.setProperty('--mando-x', activo.offsetLeft + 'px');
+      caja.style.setProperty('--mando-w', activo.offsetWidth + 'px');
+    });
+  }
+  /* En la demo, pulsar una opción la enciende y apaga la otra: así se ve el deslice. */
+  document.querySelectorAll('.segmentado').forEach(function(caja){
+    caja.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click', function(){
+        caja.querySelectorAll('button').forEach(function(o){ o.setAttribute('aria-pressed', 'false'); });
+        b.setAttribute('aria-pressed', 'true');
+        colocarMandos();
+      });
+    });
+  });
+  window.addEventListener('resize', colocarMandos);
+  colocarMandos();
 })();
 </script>
 </body>

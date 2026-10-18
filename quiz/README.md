@@ -156,10 +156,14 @@ alguno quiere cambiarlo en ese momento.
   y a la acción principal. Con desplazamiento, nunca como cerco de desplazamiento cero.
 - **Los controles dicen lo que está encendido.** En un control segmentado (perfil,
   idioma, pestañas de Schreiben) la opción activa se **rellena con el acento** —azul
-  en oscuro, verde en claro—, no con una pastilla clara. Y el tema es un
-  **interruptor**: pista con el mando redondo, el **icono dentro del mando** (luna si
-  estás en oscuro, sol si estás en claro: enseña el estado, no la acción) y la pista
-  encendida cuando el modo oscuro está activo.
+  en oscuro, verde en claro—, no con una pastilla clara, y el relleno es un **mando
+  que se desliza** de una opción a otra con curva de resorte. El JS mide la opción
+  encendida y le pasa su posición y su ancho al CSS (`--mando-x`, `--mando-w`); si no
+  se puede medir, se quita la clase `con-mando` y la opción activa se marca con su
+  propio relleno, así que nunca se queda sin señal. Y el tema es un **interruptor**:
+  pista con el mando redondo, el **icono dentro del mando** (luna si estás en oscuro,
+  sol si estás en claro: enseña el estado, no la acción) y la pista encendida cuando
+  el modo oscuro está activo.
 - **Los formularios sí llevan borde**: un campo necesita un límite definido.
 - **Dos temas por tokens**: el oscuro en `:root` y el claro en
   `[data-theme="paper"]`. El lenguaje de piezas es el mismo; cambian los valores.

@@ -810,6 +810,22 @@
   .user-btn.active{background:var(--acc-grad);color:var(--on-acc);font-weight:700;
             border:0;box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
 
+  /* El mando que se desliza entre las opciones del control segmentado. Solo entra
+     cuando el JS puede medir (clase `con-mando`): si no, la opción activa se marca
+     con su propio relleno y nunca se queda sin señal. */
+  .lang-switch,.user-switch,.tab-pills{position:relative}
+  .lang-switch.con-mando::before,.user-switch.con-mando::before,.tab-pills.con-mando::before{
+    content:"";position:absolute;top:var(--sp-1);bottom:var(--sp-1);left:0;
+    width:var(--mando-w,0px);transform:translateX(var(--mando-x,0px));
+    border-radius:var(--r-pill);background:var(--acc-grad);
+    box-shadow:var(--sh-1),var(--bisel),0 4px 14px -4px var(--glow);
+    transition:transform var(--dur-3) var(--spring),width var(--dur-3) var(--spring);
+    pointer-events:none;z-index:0}
+  .lang-switch.con-mando button,.user-switch.con-mando button,.tab-pills.con-mando button{
+    position:relative;z-index:1}
+  .lang-switch.con-mando .lang-btn.active,.user-switch.con-mando .user-btn.active,
+  .tab-pills.con-mando .tab-pill.active{background:none;box-shadow:none;border-color:transparent}
+
   /* Indicador de sincronización en la nube */
   .cloud-badge{display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-micro);color:var(--dim);
                padding:4px var(--sp-2);border-radius:var(--r-pill);
@@ -1652,6 +1668,9 @@ function updateUserUI() {
   if (btnDiana) btnDiana.className = "user-btn" + (currentUser === "diana" ? " active" : "");
   if (btnSergio) btnSergio.title = t("userSergioTitle");
   if (btnDiana) btnDiana.title = t("userDianaTitle");
+  /* El idioma y el perfil son controles segmentados: recolocar su mando después de
+     cambiar cuál está encendido es lo que hace que se vea el deslice. */
+  colocarMandos();
 }
 
 function setUser(user) {
@@ -2773,13 +2792,16 @@ function renderSchreiben(v, main){
       tabPartnerBtn.classList.remove("active");
       mineContainer.style.display = "block";
       partnerContainer.style.display = "none";
+      colocarMandos();
     };
     tabPartnerBtn.onclick = ()=>{
       tabPartnerBtn.classList.add("active");
       tabMineBtn.classList.remove("active");
       mineContainer.style.display = "none";
       partnerContainer.style.display = "block";
+      colocarMandos();
     };
+    colocarMandos();
   }
 
   /* Conectar eventos del temporizador */
@@ -4270,6 +4292,32 @@ function closeModal(){
 const aiBtn = document.getElementById("btn-ai-config");
 if(aiBtn) aiBtn.onclick = ()=> openAIConfigModal();
 
+/* ---------- Mando deslizante de los controles segmentados ----------
+   Mide la opción encendida y coloca el mando ahí; al cambiar de opción, el mando
+   se desliza con curva de resorte en vez de encenderse y apagarse de golpe.
+   Si no se puede medir (DOM simulado de las pruebas), se quita la clase y la
+   opción activa se marca con su propio relleno: nunca se queda sin señal. */
+function colocarMandos(){
+  if (typeof document.querySelectorAll !== "function") return;
+  const cajas = document.querySelectorAll(".lang-switch, .user-switch, .tab-pills");
+  for (const caja of cajas){
+    const activo = (typeof caja.querySelector === "function")
+      ? caja.querySelector('[aria-pressed="true"], .active') : null;
+    const medible = activo && typeof activo.offsetLeft === "number" && activo.offsetWidth > 0;
+    /* Si la opción activa ha caído en otra fila (el control se partió en móvil),
+       el mando no puede deslizar en línea: se deja el relleno de siempre. */
+    const enLaMismaFila = medible && caja.children.length &&
+      activo.offsetTop === caja.children[0].offsetTop;
+    if (!medible || !enLaMismaFila || !caja.style || typeof caja.style.setProperty !== "function"){
+      toggleClass(caja, "con-mando", false);
+      continue;
+    }
+    toggleClass(caja, "con-mando", true);
+    caja.style.setProperty("--mando-x", activo.offsetLeft + "px");
+    caja.style.setProperty("--mando-w", activo.offsetWidth + "px");
+  }
+}
+
 /* ---------- Renderizador de ítems de preguntas ---------- */
 function detailsPanel(summary, text, abierto){
   const d = document.createElement("details");
@@ -4632,6 +4680,11 @@ if(btnRu) btnRu.onclick = () => setLanguage("ru");
 
 const themeBtn = document.getElementById("theme-btn");
 if(themeBtn) themeBtn.onclick = () => setTheme(currentTheme === "dark" ? "paper" : "dark");
+
+/* El mando de los controles segmentados depende del ancho de cada opción: se
+   recoloca al redimensionar la ventana y una vez al arrancar. */
+if (typeof window.addEventListener === "function") window.addEventListener("resize", colocarMandos);
+colocarMandos();
 
 const navToggle = document.getElementById("nav-toggle");
 if(navToggle) navToggle.onclick = ()=>{
