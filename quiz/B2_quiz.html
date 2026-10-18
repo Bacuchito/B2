@@ -1014,6 +1014,10 @@ const I18N = {
     noText: "(Sin texto)",
     evalBadJson: "La respuesta recibida no es un JSON válido:\n",
     evalProgressGemini: "Consultando a Google Gemini ({model})...",
+    evalProgressPasadas: "{n} pasadas en paralelo",
+    evalProgressCombinando: "Combinando las pasadas y calculando la banda mediana...",
+    critUnstable: "Las pasadas no coincidieron en este criterio ({bands}): está en la frontera. Es el sitio donde más tienes que trabajar.",
+    passesNote: "Banda mediana de {n} pasadas del examinador.",
     evalGeminiEmpty: "Gemini no devolvió texto de respuesta.",
     evalProgressCustom: "Consultando a {model} en {endpoint}...",
     evalApiEmpty: "La API no devolvió contenido.",
@@ -1227,6 +1231,10 @@ const I18N = {
     noText: "(Нет текста)",
     evalBadJson: "Полученный ответ — не корректный JSON:\n",
     evalProgressGemini: "Запрос к Google Gemini ({model})...",
+    evalProgressPasadas: "{n} проходов параллельно",
+    evalProgressCombinando: "Объединяю проходы и считаю медиану...",
+    critUnstable: "Проходы не совпали по этому критерию ({bands}): он на границе. Здесь и нужно работать больше всего.",
+    passesNote: "Медиана по {n} проходам экзаменатора.",
     evalGeminiEmpty: "Gemini не вернул текст ответа.",
     evalProgressCustom: "Запрос к {model} на {endpoint}...",
     evalApiEmpty: "API не вернул содержимого.",
@@ -1442,6 +1450,8 @@ window.getLang = () => currentLang;
 /* RUBRICA es un const declarado más abajo: se expone allí, no aquí (zona muerta). */
 window.puntuarCriterios = puntuarCriterios;
 window.normalizeEvaluationResult = normalizeEvaluationResult;
+window.bandaMediana = bandaMediana;
+window.combinarPasadas = combinarPasadas;
 
 /* ---------- Sincronización en Tiempo Real (Firebase Firestore) ---------- */
 let fbDb = null;
@@ -2848,7 +2858,7 @@ function normalizeEvaluationResult(raw, studentText, totalLeitpunkte){
       leitpunkte_check = [];
     }
 
-    return { grade, score, feedback: String(feedback), leitpunkte_check };
+    return { grade, score, feedback: String(feedback), leitpunkte_check, discrepancia: String(c.discrepancia || "") };
   }
 
   // Pre-verificación para derivar valores coherentes
@@ -2929,6 +2939,7 @@ function normalizeEvaluationResult(raw, studentText, totalLeitpunkte){
     verdict,
     score_total: scoreTotal,
     word_count: palabrasReales > 0 ? palabrasReales : (Number.isFinite(wordCount) && wordCount > 0 ? wordCount : 0),
+    pasadas: Number(raw.pasadas) || 0,
     student_text: raw.student_text || "",
     criteria: puntuado.criteria,
     critical_errors,
@@ -3019,6 +3030,14 @@ function renderEvaluationResult(v, rawRes){
   notaVara.style.marginTop = "6px";
   notaVara.textContent = t("ourScaleNote");
   card.appendChild(notaVara);
+
+  /* Cuántas pasadas se pudieron usar: si fue una sola, el número es más frágil. */
+  if(res.pasadas){
+    const notaPasadas = document.createElement("div");
+    notaPasadas.className = "micro-block";
+    notaPasadas.textContent = t("passesNote", {n: res.pasadas});
+    card.appendChild(notaPasadas);
+  }
 
   /* Texto del alumno analizado con errores en colores e interactivos */
   const studentText = res.student_text || getDraft(v.id) || "";
@@ -3179,6 +3198,16 @@ function renderEvaluationResult(v, rawRes){
                     '<span class="badge ' + gradeColor + '">' + t("gradeLabel", {grade: esc(cData.grade || "-"), score: (cData.score != null ? cData.score : '-'), max: (RUBRICA.max[cn.key] || 22)}) + '</span>' +
                     '</div>' +
                     '<div class="c-body">' + esc(cData.feedback || "") + '</div>';
+
+    /* Si las tres pasadas no coincidieron, ese criterio está en la frontera: es
+       información útil, no ruido. */
+    if(cData.discrepancia){
+      const dud = document.createElement("div");
+      dud.className = "micro-block";
+      dud.style.marginTop = "6px";
+      dud.textContent = t("critUnstable", {bands: cData.discrepancia});
+      box.appendChild(dud);
+    }
 
     if(cData.leitpunkte_check && cData.leitpunkte_check.length){
       const lCheck = document.createElement("div");
@@ -3455,13 +3484,9 @@ function parseEvaluationJson(rawText){
   }
 }
 
-async function evaluateWithLLM(task, studentText, onProgress){
-  const config = getAIConfig();
-  const systemPrompt = DATA.prompt_schreiben?.system_prompt || "";
-  const userPrompt = buildUserPromptClient(task, studentText);
-
+/* Una pasada al proveedor elegido. Devuelve el JSON crudo, sin normalizar. */
+async function evaluarUnaPasada(config, systemPrompt, userPrompt){
   if(config.provider === "gemini"){
-    if(onProgress) onProgress(t("evalProgressGemini", {model: config.geminiModel}));
     const model = config.geminiModel || "gemini-3.5-flash-lite";
     const url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + encodeURIComponent(config.geminiKey);
     const genConfig = {
@@ -3502,10 +3527,9 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if(!raw) throw new Error(t("evalGeminiEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText, (task.leitpunkte || []).length);
+    return parseEvaluationJson(raw);
 
   } else if(config.provider === "openai_compatible"){
-    if(onProgress) onProgress(t("evalProgressCustom", {model: config.customModel, endpoint: config.customEndpoint}));
     let url = (config.customEndpoint || "https://api.deepseek.com").replace(/\/+$/, "");
     if(!url.endsWith("/chat/completions")) url += "/chat/completions";
     const body = {
@@ -3537,10 +3561,9 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.choices?.[0]?.message?.content;
     if(!raw) throw new Error(t("evalApiEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText, (task.leitpunkte || []).length);
+    return parseEvaluationJson(raw);
 
   } else if(config.provider === "ollama"){
-    if(onProgress) onProgress(t("evalProgressOllama", {model: config.ollamaModel}));
     let url = (config.ollamaEndpoint || "http://localhost:11434").replace(/\/+$/, "");
     if(!url.endsWith("/api/chat")) url += "/api/chat";
     const body = {
@@ -3570,10 +3593,86 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.message?.content;
     if(!raw) throw new Error(t("evalOllamaEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText, (task.leitpunkte || []).length);
-  } else {
-    throw new Error(t("evalUnknownProvider", {provider: config.provider}));
+    return parseEvaluationJson(raw);
   }
+  throw new Error(t("evalUnknownProvider", {provider: config.provider}));
+}
+
+/* Tres pasadas y banda MEDIANA por criterio. Una sola pasada oscila: el mismo
+   texto dio 48 y 61 con los mismos cuatro Leitpunkte cubiertos. En paralelo
+   tardan lo mismo que una. */
+const PASADAS = 3;
+const CLAVES_CRITERIO = ["aufgabenbewaeltigung", "angemessenheit", "korrektheit", "repertoire"];
+const NIVEL_BANDA = { D: 0, C: 1, B: 2, A: 3 };
+
+function bandaMediana(bandas){
+  const orden = bandas.slice().sort((a, b) => (NIVEL_BANDA[a] || 0) - (NIVEL_BANDA[b] || 0));
+  return orden[Math.floor(orden.length / 2)];
+}
+
+function combinarPasadas(crudos, studentText, totalLeitpunkte){
+  const normalizadas = crudos.map(c => normalizeEvaluationResult(c, studentText, totalLeitpunkte));
+  const medianas = {}, discrepancia = {};
+  CLAVES_CRITERIO.forEach(k=>{
+    const bandas = normalizadas.map(n => (n.criteria[k] || {}).grade || "D");
+    medianas[k] = bandaMediana(bandas);
+    const distintas = Array.from(new Set(bandas));
+    discrepancia[k] = distintas.length > 1 ? distintas.join("/") : "";
+  });
+
+  /* La pasada que más se acerca a las medianas es la base: así el texto corregido,
+     la lista de errores y el feedback salen de UNA evaluación coherente y no de
+     una mezcla de tres. */
+  let base = normalizadas[0], mejor = Infinity;
+  normalizadas.forEach(n=>{
+    const d = CLAVES_CRITERIO.reduce((s, k) =>
+      s + Math.abs((NIVEL_BANDA[(n.criteria[k] || {}).grade] || 0) - NIVEL_BANDA[medianas[k]]), 0);
+    if(d < mejor){ mejor = d; base = n; }
+  });
+
+  const conMediana = {};
+  CLAVES_CRITERIO.forEach(k=>{
+    conMediana[k] = Object.assign({}, base.criteria[k], { grade: medianas[k], discrepancia: discrepancia[k] });
+  });
+
+  const puntuado = puntuarCriterios(conMediana.aufgabenbewaeltigung, conMediana.angemessenheit,
+                                    conMediana.korrektheit, conMediana.repertoire,
+                                    countWords(studentText), totalLeitpunkte);
+  return Object.assign({}, base, {
+    criteria: puntuado.criteria,
+    score_total: puntuado.score_total,
+    verdict: puntuado.verdict,
+    pasadas: normalizadas.length
+  });
+}
+
+async function evaluateWithLLM(task, studentText, onProgress){
+  const config = getAIConfig();
+  const systemPrompt = DATA.prompt_schreiben?.system_prompt || "";
+  const userPrompt = buildUserPromptClient(task, studentText);
+
+  if(onProgress){
+    const etiqueta = config.provider === "gemini"
+      ? t("evalProgressGemini", {model: config.geminiModel})
+      : (config.provider === "ollama"
+        ? t("evalProgressOllama", {model: config.ollamaModel})
+        : t("evalProgressCustom", {model: config.customModel, endpoint: config.customEndpoint}));
+    onProgress(etiqueta + " · " + t("evalProgressPasadas", {n: PASADAS}));
+  }
+
+  /* allSettled: si una pasada falla (red, cuota), las otras siguen valiendo. Con
+     una sola respuesta se usa esa; sin ninguna, el error. */
+  const resultados = await Promise.allSettled(
+    Array.from({ length: PASADAS }, () => evaluarUnaPasada(config, systemPrompt, userPrompt))
+  );
+  const crudos = resultados.filter(r => r.status === "fulfilled").map(r => r.value);
+  if(!crudos.length){
+    const fallo = resultados.find(r => r.status === "rejected");
+    throw (fallo && fallo.reason) || new Error(t("evalUnknownProvider", {provider: config.provider}));
+  }
+
+  if(onProgress) onProgress(t("evalProgressCombinando"));
+  return combinarPasadas(crudos, studentText, (task.leitpunkte || []).length);
 }
 
 /* ---------- Modal de Configuración de IA ---------- */

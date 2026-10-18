@@ -12,6 +12,7 @@
      S10 la nube devuelve tu redacción y tu evaluación si el navegador no las tiene
      S11 una copia local vieja se refresca con la de la nube, sin pisar ediciones sin enviar
      R1  la vara: bandas y puntos de telc, topes nuestros y veredicto determinista
+     R5  tres pasadas al examinador, banda mediana por criterio y aviso de frontera
    Uso: node quiz/security_test.js quiz/B2_quiz.html
 */
 const fs = require("fs");
@@ -584,6 +585,46 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
   check("el recuento de palabras lo pone la app, no el modelo",
     evaluar(["B","B","B","B"], 137).word_count === 137,
     "el modelo dijo 999; la app dice " + evaluar(["B","B","B","B"], 137).word_count);
+}
+
+/* R5 · tres pasadas y banda mediana por criterio */
+{
+  const h = montar("", {}, false);
+  const med = h.window.bandaMediana;
+  check("la banda mediana se queda con el juicio central",
+    med(["C","C","B"]) === "C" && med(["C","B","B"]) === "B" &&
+    med(["A","D","C"]) === "C" && med(["B","B","B"]) === "B",
+    `CCB=${med(["C","C","B"])} · CBB=${med(["C","B","B"])} · ADC=${med(["A","D","C"])}`);
+
+  const crudo = (g1, g2, g3, g4) => ({
+    verdict: "BESTANDEN", score_total: 99, word_count: 999,
+    criteria: {
+      aufgabenbewaeltigung: { grade: g1, score: 99, feedback: "fb-I-" + g1,
+        leitpunkte_check: [0, 1, 2, 3].map(i => ({ point: "lp" + i, covered: true })) },
+      angemessenheit: { grade: g2, score: 99, feedback: "fb-II-" + g2 },
+      korrektheit: { grade: g3, score: 99, feedback: "fb-III-" + g3 },
+      repertoire: { grade: g4, score: 99, feedback: "fb-IV-" + g4 }
+    },
+    critical_errors: [], strengths: [], areas_for_improvement: [], corrected_version: "x"
+  });
+  const texto = Array.from({ length: 200 }, (_, i) => "wort" + i).join(" ");
+  const comb = h.window.combinarPasadas(
+    [crudo("B","B","C","C"), crudo("C","B","D","C"), crudo("B","B","D","C")], texto, 4);
+
+  check("tres pasadas se combinan por banda mediana y se puntúan desde ella",
+    comb.criteria.aufgabenbewaeltigung.grade === "B" && comb.criteria.korrektheit.grade === "D" &&
+    comb.score_total === 52 && comb.pasadas === 3,
+    `I=${comb.criteria.aufgabenbewaeltigung.grade} · III=${comb.criteria.korrektheit.grade} · total=${comb.score_total} · pasadas=${comb.pasadas}`);
+
+  check("la pasada base es la que más se acerca a la mediana (un texto coherente, no una mezcla)",
+    comb.criteria.korrektheit.feedback === "fb-III-D",
+    "feedback de III: " + comb.criteria.korrektheit.feedback);
+
+  check("se anota en qué criterios no coincidieron las pasadas",
+    comb.criteria.aufgabenbewaeltigung.discrepancia === "B/C" &&
+    comb.criteria.korrektheit.discrepancia === "C/D" &&
+    comb.criteria.angemessenheit.discrepancia === "",
+    `I=${comb.criteria.aufgabenbewaeltigung.discrepancia} · II="${comb.criteria.angemessenheit.discrepancia}" · III=${comb.criteria.korrektheit.discrepancia}`);
 }
 
 /* ---------- informe ---------- */
