@@ -1649,9 +1649,10 @@ function setLp(id, idx, valor){
   if(!state.schreiben_lps[progKey(id)]) state.schreiben_lps[progKey(id)] = {};
   state.schreiben_lps[progKey(id)][idx] = valor;
 }
-/* Último texto que este navegador envió a la nube para esa tarea. Sin registro
-   devuelve undefined; con la cadena vacía significa que aquí se borró a propósito.
-   Sirve para saber si el borrador local tiene algo sin enviar. */
+/* Último texto que este navegador tiene por sincronizado con la nube: el que
+   envió, o el que recibió de ella. Sin registro devuelve undefined; con la cadena
+   vacía significa que aquí se borró a propósito. Sirve para saber si el borrador
+   local tiene algo sin enviar. */
 function getPushed(id){ return state.schreiben_pushed ? state.schreiben_pushed[progKey(id)] : undefined; }
 function setPushed(id, txt){ if(!state.schreiben_pushed) state.schreiben_pushed = {}; state.schreiben_pushed[progKey(id)] = txt; }
 
@@ -2211,18 +2212,22 @@ function renderPartnerSchreibenView(container, v, data){
 /* Trae tu lado desde la nube cuando este navegador no lo tiene, y refresca una
    copia local que se quedó vieja. Nunca pisa ediciones sin enviar.
 
-   Las tres reglas, en orden:
-     1. Editor vacío y la nube con texto: se rellena. Si aquí se borró a propósito
-        (`enviado` es la cadena vacía), no: acabas de vaciarlo tú.
-     2. Editor igual a lo último que se envió (nada sin enviar) y la nube dice otra
-        cosa: manda la nube. Sin esto, una copia vieja se sube encima de una nueva
-        en cuanto tocas una tecla.
-     3. Editor distinto de lo último enviado: hay ediciones sin enviar. No se toca. */
+   `enviado` es el último texto que este navegador tiene por sincronizado. Las
+   reglas, en orden:
+     1. Editor vacío y la nube con texto: se rellena, y queda anotado como
+        sincronizado. Si aquí se borró a propósito (`enviado` es la cadena vacía),
+        no se rellena: acabas de vaciarlo tú.
+     2. Editor igual a la nube: ya coinciden, solo se anota. Es lo que deja
+        protegidas las copias que llegaron antes de existir esta marca.
+     3. Editor igual a lo último sincronizado y la nube distinta: manda la nube.
+        Sin esto, una copia vieja se sube encima de una nueva al primer tecleo.
+     4. Editor distinto de lo último sincronizado: hay ediciones sin enviar. No se
+        toca nada. */
 function hidratarMiLadoDesdeNube(v, datos, textarea, contenedor, badge){
   if(!datos) return;
   const textoNube = datos[currentUser + "_text"] || "";
   const local = getDraft(v.id);
-  const enviado = getPushed(v.id);            // undefined = nunca se envió desde aquí
+  const enviado = getPushed(v.id);            // undefined = sin registro en este navegador
 
   const ponerEnEditor = (txt)=>{
     setDraft(v.id, txt);
@@ -2233,6 +2238,10 @@ function hidratarMiLadoDesdeNube(v, datos, textarea, contenedor, badge){
 
   if(!local && !String(textarea.value || "").trim() && textoNube && enviado !== ""){
     ponerEnEditor(textoNube);
+    setPushed(v.id, textoNube);
+    saveState();
+  } else if(local && textoNube && local === textoNube){
+    if(local !== enviado){ setPushed(v.id, local); saveState(); }
   } else if(local && local === enviado && textoNube && textoNube !== local){
     ponerEnEditor(textoNube);
     setPushed(v.id, textoNube);               // ya no hay nada sin enviar

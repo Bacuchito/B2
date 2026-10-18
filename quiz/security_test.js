@@ -504,6 +504,22 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     "editor: " + JSON.stringify(String((ta && ta.value) || "")));
 }
 
+/* S14 · una copia sin registro que ya coincide con la nube queda anotada como
+   sincronizada, y a partir de ahí una versión nueva de la nube sí se adopta.
+   Es el caso de las copias que llegaron antes de existir esta marca. */
+{
+  const h = montar("?user=sergio&room=sala-prueba",
+    { "b2quiz.v1": JSON.stringify({ answers: {}, schreiben_drafts: { "sergio::schr-b-p66": "version 1" } }) },
+    true, false);
+  abrirSchreiben(h.registro);
+  h.empujarSnapshot({ sergio_text: "version 1" });                       // coinciden: se anota
+  h.empujarSnapshot({ sergio_text: "version 2 desde otro navegador" });  // ahora manda la nube
+  const ta = buscar(h.registro["main"], e => e.tagName === "textarea");
+  check("una copia sin registro que coincide con la nube queda anotada y luego se refresca",
+    !!ta && String(ta.value || "") === "version 2 desde otro navegador",
+    "editor: " + JSON.stringify(String((ta && ta.value) || "")));
+}
+
 /* ---------- informe ---------- */
 let malos = 0;
 for (const c of checks) {
