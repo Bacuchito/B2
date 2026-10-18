@@ -3404,8 +3404,10 @@ function buildUserPromptClient(task, studentText){
   parts.push("Zu behandelnde 4 Leitpunkte:\n" + lps);
   parts.push("Geforderte Mindestlänge: " + (task.min_words || 150) + " Wörter.");
   /* El recuento lo hace la app y se le da hecho: contando por su cuenta se
-     equivocaba entre un 15 % y un 20 %. */
-  parts.push("Der Text umfasst GENAU " + countWords(studentText) + " Wörter (vom System gezählt). Beurteile die Länge anhand DIESER Zahl und zähle NICHT selbst nach.");
+     equivocaba entre un 15 % y un 20 %. Y el castigo por quedarse corto también
+     lo aplica la app: si lo aplica el modelo, la misma banda oscila entre pasadas
+     y la nota baila (pasó: el mismo texto dio 48 y 61). */
+  parts.push("Der Text umfasst GENAU " + countWords(studentText) + " Wörter (vom System gezählt). Zähle NICHT selbst nach, und ziehe für eine zu geringe Länge KEINE Punkte ab: das rechnet die App nach deiner Bewertung.");
   parts.push("\n=======================================================");
   parts.push("### TEXT DES PRÜFUNGSTEILNEHMERS (ZUR BEWERTUNG):");
   parts.push("\"\"\"\n" + studentText + "\n\"\"\"");
