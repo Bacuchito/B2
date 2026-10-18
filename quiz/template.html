@@ -912,7 +912,7 @@ const I18N = {
     verdictPass: "✓ BESTANDEN (APROBADO)",
     verdictFail: "✗ NICHT BESTANDEN (NO APROBADO)",
     totalScore: "Puntuación total: <b>{score} / 100</b>",
-    ourScaleNote: "Vara de práctica: criterios y bandas de telc, con dos reglas nuestras más estrictas que el examen (un criterio en D suspende; faltar un Leitpunkt limita el criterio I a C). En el examen real se aprueba con el 60 % del total y un subtest se puede compensar.",
+    ourScaleNote: "Vara de práctica: criterios y bandas de telc, con dos reglas nuestras más estrictas que el examen (un criterio en D suspende; faltar un Leitpunkt limita el criterio I). En el examen real se aprueba con el 60 % del total y un subtest se puede compensar. El juicio de la IA puede moverse unos puntos entre dos evaluaciones del mismo texto: mira las bandas, no el número.",
     annotatedHeadTitle: "📝 Tu texto con análisis y corrección interactiva",
     errorsZero: "✓ 0 errores detectados",
     errorsCountSingle: "⚠ 1 corrección",
@@ -1125,7 +1125,7 @@ const I18N = {
     verdictPass: "✓ BESTANDEN (СДАНО)",
     verdictFail: "✗ NICHT BESTANDEN (НЕ СДАНО)",
     totalScore: "Итоговый балл: <b>{score} / 100</b>",
-    ourScaleNote: "Учебная шкала: критерии и уровни telc, но с двумя нашими правилами строже экзамена (оценка D по любому критерию — не сдано; пропущенный пункт ограничивает критерий I оценкой C). На настоящем экзамене нужно 60 % от общего числа баллов, и один субтест можно компенсировать.",
+    ourScaleNote: "Учебная шкала: критерии и уровни telc, но с двумя нашими правилами строже экзамена (оценка D по любому критерию — не сдано; пропущенный пункт ограничивает критерий I). На настоящем экзамене нужно 60 % от общего числа баллов, и один субтест можно компенсировать. Оценка ИИ может отличаться на несколько баллов при повторной проверке того же текста: смотрите на уровни, а не на число.",
     annotatedHeadTitle: "📝 Текст с анализом и интерактивной коррекцией",
     errorsZero: "✓ 0 ошибок обнаружено",
     errorsCountSingle: "⚠ 1 исправление",
@@ -1964,7 +1964,7 @@ function renderNav(){
       if(v.kind === "schreiben"){
         /* Se pasa por la vara para que la insignia del menú diga lo mismo que el panel. */
         const ev = getEval(v.id);
-        const conVara = ev ? normalizeEvaluationResult(ev) : null;
+        const conVara = ev ? normalizeEvaluationResult(ev, null, (v.leitpunkte || []).length) : null;
         pill = conVara ? (conVara.verdict === "BESTANDEN" ? t("passedPill") : t("failedPill")) : (v.category === "beschwerde" ? t("pillEmail") : t("pillPost"));
       } else {
         pill = onlyDoubtful
@@ -2143,7 +2143,7 @@ function renderPartnerSchreibenView(container, v, data){
   /* La evaluación de la pareja se pasa por la misma vara: si se guardó con la
      escala vieja, aquí se ve con la nueva. */
   const partnerEvalGuardada = data ? data[partnerKey + "_eval"] : null;
-  const partnerEval = partnerEvalGuardada ? normalizeEvaluationResult(partnerEvalGuardada) : null;
+  const partnerEval = partnerEvalGuardada ? normalizeEvaluationResult(partnerEvalGuardada, null, (v.leitpunkte || []).length) : null;
 
   const card = document.createElement("div");
   card.className = "partner-card";
@@ -2681,15 +2681,34 @@ function puntosDeBanda(crit, grade){
 
 /* Pone los puntos de cada criterio a partir de su banda, aplica los topes del
    criterio I y decide el veredicto. `palabras` es el recuento real de la app; si
-   llega 0 (no hay texto que contar) no se aplica el tope de longitud. */
-function puntuarCriterios(c1, c2, c3, c4, palabras){
-  const faltaLeitpunkt = (c1.leitpunkte_check || []).some(lp => lp && lp.covered === false);
-  let tope = "A";
-  if(palabras > 0 && palabras < 100) tope = "C";
-  else if(palabras > 0 && palabras < 150) tope = "B";
-  if(faltaLeitpunkt) tope = "C";
+   llega 0 (no hay texto que contar) no se aplica el tope de longitud.
+
+   Los topes los aplica SOLO la app: el modelo juzga la banda por los criterios
+   oficiales y no debe descontar ni la longitud ni los Leitpunkte por su cuenta.
+   Si lo hace, la misma banda oscila entre pasadas y el número baila. */
+function puntuarCriterios(c1, c2, c3, c4, palabras, totalLeitpunkte){
+  /* Leitpunkte cubiertos: la banda del criterio I sigue los descriptores oficiales
+     — «voll adäquat» con todos, «überwiegend» con uno menos, «nur teilweise» con dos
+     menos y «nicht adäquat» con tres o más. Se cuenta contra los Leitpunkte que pide
+     la TAREA, no contra los que el modelo se acuerde de listar: lo que no confirma,
+     no está confirmado. Si no devuelve lista, no se aplica tope (no hay información). */
+  const lista = (c1.leitpunkte_check || []).filter(lp => lp && typeof lp.covered === "boolean");
+  const esperados = totalLeitpunkte > 0 ? totalLeitpunkte : lista.length;
+  let topeLeitpunkte = "A";
+  if(lista.length && esperados){
+    const faltan = Math.max(0, esperados - lista.filter(lp => lp.covered).length);
+    if(faltan >= 3) topeLeitpunkte = "D";
+    else if(faltan === 2) topeLeitpunkte = "C";
+    else if(faltan === 1) topeLeitpunkte = "B";
+  }
+
+  /* Longitud, en palabras reales: por debajo de 100 no pasa de C; hasta 149, de B. */
+  let topeLongitud = "A";
+  if(palabras > 0 && palabras < 100) topeLongitud = "C";
+  else if(palabras > 0 && palabras < 150) topeLongitud = "B";
 
   const nivel = { D: 0, C: 1, B: 2, A: 3 };
+  const tope = nivel[topeLeitpunkte] <= nivel[topeLongitud] ? topeLeitpunkte : topeLongitud;
   const actual = nivel[c1.grade] !== undefined ? nivel[c1.grade] : 0;
   c1.grade = ["D", "C", "B", "A"][Math.min(nivel[tope], actual)];
 
@@ -2708,7 +2727,7 @@ function puntuarCriterios(c1, c2, c3, c4, palabras){
   };
 }
 
-function normalizeEvaluationResult(raw, studentText){
+function normalizeEvaluationResult(raw, studentText, totalLeitpunkte){
   if(!raw || typeof raw !== "object"){
     return {
       verdict: "NICHT BESTANDEN",
@@ -2862,7 +2881,7 @@ function normalizeEvaluationResult(raw, studentText){
 
   /* Puntos y veredicto: los pone la app a partir de las bandas. El modelo solo
      juzga (banda + motivos); el número sale siempre de la misma tabla. */
-  const puntuado = puntuarCriterios(c1, c2, c3, c4, palabrasReales);
+  const puntuado = puntuarCriterios(c1, c2, c3, c4, palabrasReales, totalLeitpunkte);
   const scoreTotal = puntuado.score_total;
   const verdict = puntuado.verdict;
 
@@ -2980,7 +2999,7 @@ function findErrorRanges(studentText, errors){
 }
 
 function renderEvaluationResult(v, rawRes){
-  const res = normalizeEvaluationResult(rawRes);
+  const res = normalizeEvaluationResult(rawRes, null, (v.leitpunkte || []).length);
   const card = document.createElement("div");
   card.className = "panel";
   card.style.marginTop = "18px";
@@ -3445,7 +3464,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + encodeURIComponent(config.geminiKey);
     const genConfig = {
       response_mime_type: "application/json",
-      temperature: 0.2
+      temperature: 0
     };
     if(DATA.prompt_schreiben && DATA.prompt_schreiben.json_schema){
       genConfig.response_schema = DATA.prompt_schreiben.json_schema;
@@ -3481,7 +3500,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text;
     if(!raw) throw new Error(t("evalGeminiEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText);
+    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText, (task.leitpunkte || []).length);
 
   } else if(config.provider === "openai_compatible"){
     if(onProgress) onProgress(t("evalProgressCustom", {model: config.customModel, endpoint: config.customEndpoint}));
@@ -3494,7 +3513,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
         { role: "user", content: userPrompt }
       ],
       response_format: { type: "json_object" },
-      temperature: 0.2
+      temperature: 0
     };
     const resp = await fetch(url, {
       method: "POST",
@@ -3516,7 +3535,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.choices?.[0]?.message?.content;
     if(!raw) throw new Error(t("evalApiEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText);
+    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText, (task.leitpunkte || []).length);
 
   } else if(config.provider === "ollama"){
     if(onProgress) onProgress(t("evalProgressOllama", {model: config.ollamaModel}));
@@ -3530,7 +3549,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
       ],
       format: "json",
       stream: false,
-      options: { temperature: 0.2 }
+      options: { temperature: 0 }
     };
     let resp;
     try {
@@ -3549,7 +3568,7 @@ async function evaluateWithLLM(task, studentText, onProgress){
     const data = await resp.json();
     const raw = data?.message?.content;
     if(!raw) throw new Error(t("evalOllamaEmpty"));
-    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText);
+    return normalizeEvaluationResult(parseEvaluationJson(raw), studentText, (task.leitpunkte || []).length);
   } else {
     throw new Error(t("evalUnknownProvider", {provider: config.provider}));
   }

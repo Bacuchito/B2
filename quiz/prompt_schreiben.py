@@ -26,7 +26,8 @@ die Schreibaufgabe gibt Kriterium I 14 Punkte und jedem der Kriterien II-IV 9 Pu
    - Anrede und Grußformel: angemessen und im richtigen Formalitätsgrad? (Das gehört
      HIERHIN, nicht zu Kriterium II.)
    - Wurden interne Vorgaben (Anweisungen der Geschäftsleitung) beachtet?
-   - Länge: Mindestlänge 150 Wörter. Die genaue Wortzahl steht im User-Prompt.
+   - Länge: NICHT selbst bestrafen. Die genaue Wortzahl steht im User-Prompt, damit
+     du sie kennst; den Abzug für einen zu kurzen Text rechnet die App.
 
 2. II. KOMMUNIKATIVE GESTALTUNG (0-22 Punkte):
    Offiziell: »Schreibt einen weitestgehend klaren, zusammenhängenden arbeitsplatz-
@@ -59,9 +60,14 @@ die Schreibaufgabe gibt Kriterium I 14 Punkte und jedem der Kriterien II-IV 9 Pu
 | III Formale Richtigkeit | 22         | 17     | 9      | 0            |
 | IV Spektrum sprachlicher Mittel | 22 | 17     | 9      | 0            |
 
-### ZWEI ZUSATZREGELN UNSERER SKALA (absichtlich strenger als die echte Prüfung):
+### ZWEI ZUSATZREGELN — DIE WENDET DIE APP AN, NICHT DU:
+Wichtig: Diese beiden Regeln rechnet das System NACH deiner Bewertung selbst aus.
+Wende sie NICHT selbst an und ziehe dafür keine Punkte ab. Bewerte die Stufe jedes
+Kriteriums ausschließlich nach den offiziellen Deskriptoren oben.
 - Fehlt ein Leitpunkt, kann Kriterium I höchstens Stufe C sein.
 - Unter 100 Wörtern: Kriterium I höchstens C. Von 100 bis 149 Wörtern: höchstens B.
+Wenn du die Länge zusätzlich selbst bestrafst, schwankt dieselbe Stufe zwischen zwei
+Bewertungen desselben Textes, und mit ihr die Punktzahl.
 
 ### BESTEHENSGRENZE (UNSERE, NICHT DIE DER PRÜFUNG):
 - Gesamtpunktzahl: Summe der 4 Kriterien (0-100 Punkte).
@@ -297,9 +303,11 @@ def build_user_prompt(task: Dict[str, Any], student_text: str, lang: str = "es")
         f"Zu behandelnde 4 Leitpunkte:\n{leitpunkte_str}",
         f"Geforderte Mindestlänge: {task.get('min_words', 150)} Wörter.",
         # El recuento lo hace el sistema: contando por su cuenta se equivocaba
-        # entre un 15 % y un 20 %.
+        # entre un 15 % y un 20 %. Y el castigo por quedarse corto también lo
+        # aplica la app: si lo aplica el modelo, la misma banda oscila.
         f"Der Text umfasst GENAU {count_words(student_text)} Wörter (vom System gezählt). "
-        "Beurteile die Länge anhand DIESER Zahl und zähle NICHT selbst nach.",
+        "Zähle NICHT selbst nach, und ziehe für eine zu geringe Länge KEINE Punkte ab: "
+        "das rechnet die App nach deiner Bewertung.",
         "\n=======================================================",
         "### TEXT DES PRÜFUNGSTEILNEHMERS (ZUR BEWERTUNG):",
         f"\"\"\"\n{student_text}\n\"\"\"",

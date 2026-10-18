@@ -526,21 +526,37 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
   const h = montar("", {}, false);
   /* Construye una evaluación con esas bandas. Los `score` y el `score_total` van
      a 99 a propósito: la app debe ignorarlos y recalcularlo todo desde las bandas. */
-  const evaluar = (grados, palabras, leitpunktCubierto) => {
+  const evaluar = (grados, palabras) => {
     const [g1, g2, g3, g4] = grados;
     const texto = palabras ? Array.from({ length: palabras }, (_, i) => "wort" + i).join(" ") : "";
     return h.window.normalizeEvaluationResult({
       verdict: "BESTANDEN", score_total: 99, word_count: 999,
       criteria: {
-        aufgabenbewaeltigung: { grade: g1, score: 99, feedback: "x", leitpunkte_check: [{ point: "a", covered: leitpunktCubierto !== false }] },
+        aufgabenbewaeltigung: { grade: g1, score: 99, feedback: "x",
+          leitpunkte_check: [0, 1, 2, 3].map(i => ({ point: "lp" + i, covered: true })) },
         angemessenheit: { grade: g2, score: 99, feedback: "x" },
         korrektheit: { grade: g3, score: 99, feedback: "x" },
         repertoire: { grade: g4, score: 99, feedback: "x" }
       },
       critical_errors: [], strengths: [], areas_for_improvement: [], corrected_version: "x"
-    }, texto);
+    }, texto, 4);
   };
-  const total = (g, p, ok) => evaluar(g, p, ok).score_total;
+  const total = (g, p) => evaluar(g, p).score_total;
+
+  /* Con todo en A, el tope del criterio I lo fija el número de Leitpunkte cubiertos. */
+  const conLeitpunkte = (cubiertos) => {
+    const texto = Array.from({ length: 200 }, (_, i) => "wort" + i).join(" ");
+    return h.window.normalizeEvaluationResult({
+      criteria: {
+        aufgabenbewaeltigung: { grade: "A", score: 99, feedback: "x",
+          leitpunkte_check: [0, 1, 2, 3].map(i => ({ point: "lp" + i, covered: i < cubiertos })) },
+        angemessenheit: { grade: "A", score: 99, feedback: "x" },
+        korrektheit: { grade: "A", score: 99, feedback: "x" },
+        repertoire: { grade: "A", score: 99, feedback: "x" }
+      },
+      critical_errors: [], strengths: [], areas_for_improvement: [], corrected_version: "x"
+    }, texto, 4).score_total;
+  };
 
   check("las bandas valen las proporciones de telc: A 100, B 77, C 40, D 0",
     total(["A","A","A","A"], 200) === 100 && total(["B","B","B","B"], 200) === 77 &&
@@ -557,9 +573,9 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     evaluar(["A","A","A","D"], 200).verdict === "NICHT BESTANDEN",
     `B/B/B/B=${evaluar(["B","B","B","B"],200).verdict} · C/C/C/C=${evaluar(["C","C","C","C"],200).verdict} · A/A/A/D (78 puntos)=${evaluar(["A","A","A","D"],200).verdict}`);
 
-  check("faltar un Leitpunkt limita el criterio I a C",
-    total(["A","A","A","A"], 200, false) === 79,
-    "A/A/A/A con un Leitpunkt sin cubrir = " + total(["A","A","A","A"], 200, false));
+  check("los Leitpunkte cubiertos fijan el tope del criterio I (4→A, 3→B, 2→C, 1→D)",
+    conLeitpunkte(4) === 100 && conLeitpunkte(3) === 92 && conLeitpunkte(2) === 79 && conLeitpunkte(1) === 66,
+    `4 cubiertos=${conLeitpunkte(4)} · 3=${conLeitpunkte(3)} · 2=${conLeitpunkte(2)} · 1=${conLeitpunkte(1)}`);
 
   check("la longitud limita el criterio I: menos de 100 palabras a C, hasta 149 a B",
     total(["A","A","A","A"], 80) === 79 && total(["A","A","A","A"], 120) === 92,

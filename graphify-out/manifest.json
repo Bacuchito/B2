@@ -696,9 +696,9 @@
     "semantic_hash": ""
   },
   "quiz/B2_quiz.html": {
-    "mtime": 1792328069.500712,
-    "seen": 1792328093.965605,
-    "ast_hash": "04ac8c1992759eb69cdbae5f5f692e0f",
+    "mtime": 1792330308.0016572,
+    "seen": 1792330340.7336988,
+    "ast_hash": "9044484ae8e078483f64ef4ac65b0e91",
     "semantic_hash": ""
   },
   "quiz/README.md": {
@@ -930,9 +930,9 @@
     "semantic_hash": ""
   },
   "quiz/template.html": {
-    "mtime": 1792328003.3518577,
-    "seen": 1792328093.9756203,
-    "ast_hash": "6e755d70388acfde22447c860652b615",
+    "mtime": 1792330296.493794,
+    "seen": 1792330340.740698,
+    "ast_hash": "27066da13c3fb0682f3f7dd0071fb1dc",
     "semantic_hash": ""
   },
   "tools/README.md": {
@@ -966,9 +966,9 @@
     "semantic_hash": ""
   },
   "quiz/prompt_schreiben.py": {
-    "mtime": 1792327905.713626,
-    "seen": 1792328093.953593,
-    "ast_hash": "a19614dca72192e0d5f8aed4c5125b3e",
+    "mtime": 1792330206.4189508,
+    "seen": 1792330340.71271,
+    "ast_hash": "f0d8c9d3c83c0c069c33415fc47b78db",
     "semantic_hash": ""
   },
   "quiz/test_prompt.py": {
@@ -1026,9 +1026,9 @@
     "semantic_hash": ""
   },
   "quiz/security_test.js": {
-    "mtime": 1792327962.5644836,
-    "seen": 1792328093.953593,
-    "ast_hash": "ad8c3894faac71aa9e81a671d4b33427",
+    "mtime": 1792330303.7452092,
+    "seen": 1792330340.71271,
+    "ast_hash": "68dab0343c361ca2c1d5245d38c75b96",
     "semantic_hash": ""
   },
   "tools/test_pdf2md.py": {
@@ -1041,6 +1041,12 @@
     "mtime": 1792193650.1422236,
     "seen": 1792320974.4026186,
     "ast_hash": "979327d933c224ace8fafc3a9048810b",
+    "semantic_hash": ""
+  },
+  ".dsh-msgC.txt": {
+    "mtime": 1792330321.8599901,
+    "seen": 1792330340.7326992,
+    "ast_hash": "fd06d630571779291b17f5d662f5f003",
     "semantic_hash": ""
   }
 }
