@@ -712,8 +712,8 @@
                        transform var(--dur-1) var(--spring)}
   .tab-pill:hover{color:var(--txt)}
   .tab-pill:active{transform:scale(.97)}
-  .tab-pill.active{background:var(--panel2);color:var(--txt);border-color:var(--line-2);
-            box-shadow:var(--sh-1),var(--bisel)}
+  .tab-pill.active{background:var(--acc-grad);color:var(--on-acc);border-color:transparent;
+            box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
 
   /* Lista de errores: filas de tabla de la referencia —pieza con filo y, al pasar
      por encima, la fila se levanta—. */
@@ -790,8 +790,10 @@
             display:inline-flex;align-items:center;gap:var(--sp-1);line-height:1}
   .lang-btn:hover{color:var(--txt)}
   .lang-btn:active{transform:scale(.96)}
-  .lang-btn.active{background:var(--panel2);color:var(--txt);font-weight:700;
-            box-shadow:var(--sh-1),var(--bisel)}
+  /* La opción activa se rellena con el acento, como la mitad encendida de un
+     interruptor: deja de ser una pastilla clara y pasa a ser «esto está encendido». */
+  .lang-btn.active{background:var(--acc-grad);color:var(--on-acc);font-weight:700;
+            border:0;box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
 
   /* Selector de usuario Sergio / Diana */
   .user-switch{display:inline-flex;align-items:center;background:var(--sunken);
@@ -805,8 +807,8 @@
             display:inline-flex;align-items:center;gap:var(--sp-1);line-height:1}
   .user-btn:hover{color:var(--txt)}
   .user-btn:active{transform:scale(.96)}
-  .user-btn.active{background:var(--panel2);color:var(--txt);font-weight:700;
-            box-shadow:var(--sh-1),var(--bisel)}
+  .user-btn.active{background:var(--acc-grad);color:var(--on-acc);font-weight:700;
+            border:0;box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
 
   /* Indicador de sincronización en la nube */
   .cloud-badge{display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-micro);color:var(--dim);
@@ -845,6 +847,25 @@
                        transform var(--dur-1) var(--spring)}
   .icon-btn:hover{color:var(--txt);box-shadow:var(--sh-2),var(--bisel)}
   .icon-btn:active{transform:scale(.94)}
+  /* Interruptor de tema: pista con el mando redondo y el icono DENTRO del mando.
+     El mando enseña el estado en el que estás (luna en oscuro, sol en claro) y la
+     pista se enciende con el acento cuando el modo oscuro está activo. */
+  .switch-tema{display:inline-flex;align-items:center;border:0;background:none;padding:0;cursor:pointer}
+  .switch-tema .pista-tema{position:relative;width:52px;height:30px;border-radius:var(--r-pill);
+    background:var(--sunken);border:var(--b-std) solid var(--line);box-shadow:var(--hundido);
+    transition:background var(--dur-3) var(--ease),border-color var(--dur-3) var(--ease),
+               box-shadow var(--dur-3) var(--ease)}
+  .switch-tema .mando-tema{position:absolute;top:2px;left:2px;width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:var(--txt);
+    background:linear-gradient(180deg,var(--panel2),var(--panel));
+    box-shadow:var(--sh-1),var(--bisel);
+    transition:transform var(--dur-3) var(--spring),color var(--dur-2) var(--ease)}
+  .switch-tema .mando-tema svg{width:13px;height:13px;display:block}
+  .switch-tema[aria-checked="true"] .pista-tema{background:var(--acc-grad);border-color:transparent;
+    box-shadow:var(--sh-1),var(--bisel),0 4px 14px -4px var(--glow)}
+  .switch-tema[aria-checked="true"] .mando-tema{transform:translateX(22px);color:var(--acc-ink)}
+  .switch-tema:active .mando-tema{transform:scale(.94)}
+  .switch-tema[aria-checked="true"]:active .mando-tema{transform:translateX(22px) scale(.94)}
   .icon-btn:active{transform:scale(.94)}
   .icon-btn svg{width:17px;height:17px;display:block}
   #nav-toggle{display:none;gap:var(--sp-2);width:auto;padding:0 var(--sp-3)}
@@ -869,7 +890,7 @@
     nav button,.sec-toggle,.letters button,.btn,.tab-pill,.lang-btn,.user-btn,.modal-close,
     .copy-btn,.input,.select,.lp-item,.opt,.sec-reset,details.passage summary{min-height:44px}
     #nav-toggle,.icon-btn{min-height:44px}
-    #theme-btn{width:44px}
+    #theme-btn{min-height:44px}
     .letters button{width:44px}
     .btn.sm,.copy-btn{min-height:36px}
   }
@@ -936,8 +957,8 @@
   <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
   <button class="btn ghost" id="desk-toggle" aria-pressed="false" title="Mesa de examen">Mesa de examen</button>
   <button class="btn ghost" id="btn-ai-config" title="Configurar claves de API y sincronización">⚙ Configurar IA</button>
-  <button class="icon-btn" id="theme-btn" type="button" title="Modo noche" aria-label="Modo noche">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  <button class="switch-tema" id="theme-btn" type="button" role="switch" aria-checked="true" title="Modo noche" aria-label="Modo oscuro">
+    <span class="pista-tema"><span class="mando-tema" id="theme-knob"></span></span>
   </button>
   <div class="progress-rule" aria-hidden="true"><span id="progress-fill"></span></div>
 </header>
@@ -1036,6 +1057,7 @@ const I18N = {
     navToggleLabel: "Índice",
     themeToDark: "Modo noche",
     themeToLight: "Modo día",
+    themeSwitch: "Modo oscuro",
     loading: "Cargando…",
     noData: "No hay datos todavía.",
     pagePdf: "Página {page} del PDF",
@@ -1262,6 +1284,7 @@ const I18N = {
     navToggleLabel: "Оглавление",
     themeToDark: "Ночной режим",
     themeToLight: "Дневной режим",
+    themeSwitch: "Тёмная тема",
     loading: "Загрузка…",
     noData: "Данных пока нет.",
     pagePdf: "Страница {page} в PDF",
@@ -1591,21 +1614,28 @@ function updateLangUI() {
   updateUserUI();
 }
 
-/* ---------- Tema de la interfaz: papel / noche ---------- */
-const THEME_SVG = {
-  paper: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',
-  dark:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2"/></svg>'
+/* ---------- Tema de la interfaz: oscuro (taller nocturno) / claro (Calma) ----------
+   El interruptor enseña el icono del estado en el que ESTÁS: luna si estás en
+   oscuro, sol si estás en claro. Antes enseñaba el icono de lo que ibas a hacer,
+   que es lo contrario de lo que promete un interruptor. */
+const ICONO_TEMA = {
+  oscuro: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',
+  claro:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2"/></svg>'
 };
 function applyTheme(){
   const de = document.documentElement;
   if (de && typeof de.setAttribute === "function") de.setAttribute("data-theme", currentTheme);
   const btn = document.getElementById("theme-btn");
-  if (btn) {
-    btn.innerHTML = THEME_SVG[currentTheme] || THEME_SVG.paper;
-    const label = t(currentTheme === "dark" ? "themeToLight" : "themeToDark");
-    btn.title = label;
-    if (typeof btn.setAttribute === "function") btn.setAttribute("aria-label", label);
+  if (!btn) return;
+  const oscuro = currentTheme === "dark";
+  const mando = (typeof btn.querySelector === "function") ? btn.querySelector(".mando-tema") : null;
+  if (mando) mando.innerHTML = oscuro ? ICONO_TEMA.oscuro : ICONO_TEMA.claro;
+  if (typeof btn.setAttribute === "function"){
+    btn.setAttribute("aria-checked", oscuro ? "true" : "false");
+    btn.setAttribute("aria-label", t("themeSwitch"));
   }
+  /* El título dice lo que pasará al pulsar; la etiqueta dice lo que hay ahora. */
+  btn.title = t(oscuro ? "themeToLight" : "themeToDark");
 }
 function setTheme(theme){
   currentTheme = theme === "dark" ? "dark" : "paper";

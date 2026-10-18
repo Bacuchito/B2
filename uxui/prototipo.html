@@ -233,7 +233,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 @keyframes giro{to{transform:rotate(360deg)}}
 .btn.sm{min-height:32px;font-size:13px;padding:0 var(--sp-4)}
 
-/* ============ Segmentados y conmutadores ============ */
+/* ============ Segmentados e interruptores ============ */
+/* La opción activa se RELLENA con el acento (azul en oscuro, verde en claro), como
+   la mitad encendida del interruptor de la referencia: deja de ser una pastilla
+   blanca y pasa a ser la pieza que está encendida. */
 .segmentado{display:inline-flex;gap:var(--sp-1);padding:4px;border-radius:var(--r-pill);
   background:var(--sunken);box-shadow:var(--hundido);border:var(--b-std) solid var(--line)}
 .segmentado button{min-height:32px;padding:0 var(--sp-4);border:0;border-radius:var(--r-pill);
@@ -242,21 +245,31 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
              box-shadow var(--dur-2) var(--ease),transform var(--dur-1) var(--muelle)}
 .segmentado button:hover{color:var(--txt)}
 .segmentado button:active{transform:scale(.96)}
-.segmentado button[aria-pressed="true"]{color:var(--txt);background:var(--surface-2);
-  box-shadow:var(--sh-1),var(--bisel)}
-.interruptor{display:inline-flex;align-items:center;gap:var(--sp-3);font-size:14px;color:var(--dim);cursor:pointer}
-.interruptor input{position:absolute;opacity:0;width:0;height:0}
-.pista{width:52px;height:30px;border-radius:var(--r-pill);background:var(--sunken);
-  box-shadow:var(--hundido);border:var(--b-std) solid var(--line);position:relative;
-  transition:background var(--dur-3) var(--ease),box-shadow var(--dur-3) var(--ease)}
-.pista::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;
-  border-radius:50%;background:var(--mando-grad);
-  box-shadow:var(--sh-1),var(--bisel);transition:transform var(--dur-3) var(--muelle),background var(--dur-3) var(--ease)}
-.interruptor input:checked + .pista{background:linear-gradient(180deg,var(--acc-hi),var(--acc-deep));
-  box-shadow:var(--sh-1),0 0 18px rgba(77,141,246,.45)}
-.interruptor input:checked + .pista::after{transform:translateX(22px);
-  background:linear-gradient(180deg,#fdfeff,#dbe7ff)}
-.interruptor input:focus-visible + .pista{outline:2px solid var(--acc-hi);outline-offset:2px}
+.segmentado button[aria-pressed="true"]{color:var(--on-acc);background:var(--acc-grad);
+  box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
+
+/* Interruptor: pista con el mando redondo y el icono dentro. El mando lleva el
+   icono del estado en el que ESTÁS (luna si estás en oscuro, sol si estás en
+   claro) y la pista se enciende con el acento cuando está activo. */
+.interruptor{display:inline-flex;align-items:center;gap:var(--sp-2);border:0;background:none;
+  cursor:pointer;font:inherit;font-size:13px;font-weight:640;color:var(--dim);padding:0}
+.interruptor-pista{position:relative;width:54px;height:32px;border-radius:var(--r-pill);
+  background:var(--sunken);border:var(--b-std) solid var(--line);box-shadow:var(--hundido);
+  transition:background var(--dur-3) var(--ease),box-shadow var(--dur-3) var(--ease),
+             border-color var(--dur-3) var(--ease)}
+.interruptor-mando{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:13px;line-height:1;
+  background:linear-gradient(180deg,#fdfeff,#e8e4d8);color:#3b3a34;
+  box-shadow:var(--sh-1),var(--bisel);
+  transition:transform var(--dur-3) var(--muelle),color var(--dur-2) var(--ease)}
+.interruptor-mando svg{width:13px;height:13px;display:block}
+.interruptor[aria-checked="true"] .interruptor-pista{background:var(--acc-grad);
+  border-color:transparent;box-shadow:var(--sh-1),var(--bisel),0 4px 14px -4px var(--glow)}
+.interruptor[aria-checked="true"] .interruptor-mando{transform:translateX(22px);
+  color:var(--acc-ink)}
+.interruptor:active .interruptor-mando{transform:translateX(22px) scale(.94)}
+.interruptor[aria-checked="false"]:active .interruptor-mando{transform:scale(.94)}
+.interruptor-texto{user-select:none}
 
 /* ============ Campos ============ */
 .campo{width:100%;min-height:44px;padding:0 var(--sp-4);border-radius:var(--r-2);
@@ -431,10 +444,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
     <button type="button" aria-pressed="true">ES</button>
     <button type="button" aria-pressed="false">RU</button>
   </div>
-  <div class="segmentado" role="group" aria-label="Tema">
-    <button type="button" id="tema-oscuro" aria-pressed="true">Oscuro</button>
-    <button type="button" id="tema-claro" aria-pressed="false">Claro</button>
-  </div>
+  <button class="interruptor" type="button" id="tema-toggle" role="switch" aria-checked="true" aria-label="Modo oscuro">
+    <span class="interruptor-pista"><span class="interruptor-mando" id="tema-icono"></span></span>
+    <span class="interruptor-texto">Modo oscuro</span>
+  </button>
   <div class="hueco"></div>
   <span style="color:var(--dim);font-size:13px;font-variant-numeric:tabular-nums">
     57/358 respondidas · <b style="color:var(--txt)">53</b> correctas · 55 dudosas</span>
@@ -580,8 +593,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
     <h2>Controles</h2>
     <div class="tarjeta pila">
       <div class="fila">
-        <label class="interruptor"><input type="checkbox" checked><span class="pista"></span> Modo noche</label>
-        <label class="interruptor"><input type="checkbox"><span class="pista"></span> Solo dudosas</label>
+        <button class="interruptor" type="button" role="switch" aria-checked="true">
+          <span class="interruptor-pista"><span class="interruptor-mando">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          </span></span>
+          <span class="interruptor-texto">Modo oscuro</span>
+        </button>
+        <button class="interruptor" type="button" role="switch" aria-checked="false">
+          <span class="interruptor-pista"><span class="interruptor-mando"></span></span>
+          <span class="interruptor-texto">Solo dudosas</span>
+        </button>
         <span class="toast"><span class="punto vivo"></span> Sincronizado</span>
         <span class="toast"><span class="punto lento"></span> Sincronizando…</span>
       </div>
@@ -681,20 +702,26 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 </div>
 
 <script>
-/* Todo el JavaScript del prototipo: el conmutador de tema. */
+/* Todo el JavaScript del prototipo: el interruptor de tema. Los iconos son SVG,
+   igual que en la app: un carácter haciendo de icono es justo lo que evitamos. */
 (function(){
   const raiz = document.documentElement;
-  const oscuro = document.getElementById('tema-oscuro');
-  const claro = document.getElementById('tema-claro');
-  function pintar(claroActivo){
-    if (claroActivo) raiz.setAttribute('data-theme', 'claro');
-    else raiz.removeAttribute('data-theme');
-    oscuro.setAttribute('aria-pressed', claroActivo ? 'false' : 'true');
-    claro.setAttribute('aria-pressed', claroActivo ? 'true' : 'false');
+  const boton = document.getElementById('tema-toggle');
+  const icono = document.getElementById('tema-icono');
+  const SVG = {
+    oscuro: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',
+    claro:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2"/></svg>'
+  };
+  function pintar(oscuro){
+    if (oscuro) raiz.removeAttribute('data-theme');
+    else raiz.setAttribute('data-theme', 'claro');
+    boton.setAttribute('aria-checked', oscuro ? 'true' : 'false');
+    icono.innerHTML = oscuro ? SVG.oscuro : SVG.claro;
   }
-  oscuro.addEventListener('click', function(){ pintar(false); });
-  claro.addEventListener('click', function(){ pintar(true); });
-  pintar(false);
+  boton.addEventListener('click', function(){
+    pintar(boton.getAttribute('aria-checked') !== 'true');
+  });
+  pintar(true);
 })();
 </script>
 </body>
