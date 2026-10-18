@@ -134,6 +134,14 @@ dos idiomas.
 
 - **La sincronización es opcional.** Sin configurar Firebase la app funciona en local
   y no sale nada del navegador.
+- **El progreso de redacción es de cada perfil.** El borrador, la evaluación y los
+  Leitpunkte se guardan con el perfil dentro de la clave (`sergio::schr-b-p66`), así
+  que cambiar de perfil en el mismo navegador no mezcla el trabajo de los dos. Lo
+  guardado con la clave antigua (solo el id) se migra solo al abrir la app, y se le
+  asigna al perfil que estuviera abierto en ese momento.
+- **Abrir la app en otro navegador recupera tu lado desde la nube.** Si este navegador
+  no tiene tu borrador ni tu evaluación y la sala sí los tiene, la app los trae y los
+  pinta. Solo rellena lo que está vacío: nunca pisa un texto que ya tengas en local.
 - **La sala es el único secreto.** Al abrir la app por primera vez se genera un
   identificador aleatorio (`b2-…`) y se guarda en el navegador; el fichero `index.html`
   de la raíz permite compartir el enlace corto `…/<repo>/?user=diana&room=b2-…`.

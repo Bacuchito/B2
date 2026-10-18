@@ -1608,9 +1608,48 @@ function queueSchreibenSync(taskId, text) {
   }, 900);
 }
 
+/* ---------- Progreso de redacción: una clave por perfil ----------
+   El mismo navegador puede estar en el perfil de Sergio o en el de Diana. Cada
+   perfil necesita su borrador, su evaluación y sus Leitpunkte. Antes la clave era
+   solo el id de la tarea, así que al cambiar de perfil el editor cargaba el texto
+   del otro y podía publicarlo como suyo. Ahora la clave lleva el perfil delante:
+   "sergio::schr-b-p66". */
+function progKey(id){ return currentUser + "::" + id; }
+
+/* Los progresos guardados antes de existir la clave con perfil traen la clave
+   antigua (solo el id). Se convierten una sola vez, y se asignan al perfil que
+   estaba abierto. Lo mismo con los ficheros de progreso exportados entonces. */
+function migrarClavesDeProgreso(s, dueno){
+  const destinatario = (dueno === "sergio" || dueno === "diana") ? dueno : currentUser;
+  ["schreiben_drafts", "schreiben_evals", "schreiben_lps"].forEach((campo)=>{
+    const mapa = s && s[campo];
+    if(!mapa) return;
+    Object.keys(mapa).forEach((k)=>{
+      if(k.indexOf("::") !== -1) return;              // ya lleva perfil
+      const nuevo = destinatario + "::" + k;
+      if(!(nuevo in mapa)) mapa[nuevo] = mapa[k];
+      delete mapa[k];
+    });
+  });
+  return s;
+}
+
+function getDraft(id){ return (state.schreiben_drafts && state.schreiben_drafts[progKey(id)]) || ""; }
+function setDraft(id, val){ if(!state.schreiben_drafts) state.schreiben_drafts = {}; state.schreiben_drafts[progKey(id)] = val; }
+function delDraft(id){ if(state.schreiben_drafts) delete state.schreiben_drafts[progKey(id)]; }
+function getEval(id){ return (state.schreiben_evals && state.schreiben_evals[progKey(id)]) || null; }
+function setEval(id, res){ if(!state.schreiben_evals) state.schreiben_evals = {}; state.schreiben_evals[progKey(id)] = res; }
+function delEval(id){ if(state.schreiben_evals) delete state.schreiben_evals[progKey(id)]; }
+function getLps(id){ return (state.schreiben_lps && state.schreiben_lps[progKey(id)]) || {}; }
+function setLp(id, idx, valor){
+  if(!state.schreiben_lps) state.schreiben_lps = {};
+  if(!state.schreiben_lps[progKey(id)]) state.schreiben_lps[progKey(id)] = {};
+  state.schreiben_lps[progKey(id)][idx] = valor;
+}
+
 function loadState(){
   try {
-    const s = JSON.parse(localStorage.getItem(LS)) || {};
+    const s = migrarClavesDeProgreso(JSON.parse(localStorage.getItem(LS)) || {});
     if (!s.answers) s.answers = {};
     if (!s.schreiben_drafts) s.schreiben_drafts = {};
     if (!s.schreiben_evals) s.schreiben_evals = {};
@@ -1655,13 +1694,17 @@ function exportProgress(){
 
 /* Sustituye el progreso actual por el del fichero y reengancha window.quizState
    (si no, el puntero global se queda apuntando al objeto viejo). */
-function aplicarProgreso(prog){
+function aplicarProgreso(prog, dueno){
   state = {
     answers: prog.answers || {},
     schreiben_drafts: prog.schreiben_drafts || {},
     schreiben_evals: prog.schreiben_evals || {},
     schreiben_lps: prog.schreiben_lps || {}
   };
+  /* Un fichero exportado antes de existir la clave con perfil trae la clave
+     antigua. Se asigna al perfil que lo exportó (datos.usuario), no al que
+     lo importa. */
+  migrarClavesDeProgreso(state, dueno);
   window.quizState = state;
   saveState();
   render();
@@ -1903,7 +1946,7 @@ function renderNav(){
       const ok = (v.items || []).filter(it => state.answers[ansKey(v,it)] === itemAnswerLetter(it)).length;
       let pill = "";
       if(v.kind === "schreiben"){
-        const hasEval = state.schreiben_evals && state.schreiben_evals[v.id];
+        const hasEval = getEval(v.id);
         pill = hasEval ? (hasEval.verdict === "BESTANDEN" ? t("passedPill") : t("failedPill")) : (v.category === "beschwerde" ? t("pillEmail") : t("pillPost"));
       } else {
         pill = onlyDoubtful
@@ -2155,6 +2198,27 @@ function renderPartnerSchreibenView(container, v, data){
   }
 }
 
+/* Trae tu lado desde la nube cuando este navegador no lo tiene. Abrir la app en
+   otro dispositivo debe devolverte tu redacción y tu evaluación. Solo rellena un
+   hueco vacío: si ya tienes texto local, no lo toca. */
+function hidratarMiLadoDesdeNube(v, datos, textarea, contenedor, badge){
+  if(!datos) return;
+  const textoNube = datos[currentUser + "_text"] || "";
+  if(textoNube && !getDraft(v.id) && !String(textarea.value || "").trim()){
+    setDraft(v.id, textoNube);
+    textarea.value = textoNube;
+    updateWordBadge(badge, countWords(textoNube));
+    saveState();
+  }
+  const evalNube = datos[currentUser + "_eval"];
+  if(evalNube && !getEval(v.id)){
+    setEval(v.id, evalNube);
+    saveState();
+    contenedor.appendChild(renderEvaluationResult(v, evalNube));
+    renderNav();   // la insignia del menú (✓ Aprobado) también vuelve
+  }
+}
+
 function renderSchreiben(v, main){
   const layout = document.createElement("div");
   layout.className = "schreiben-layout";
@@ -2206,7 +2270,7 @@ function renderSchreiben(v, main){
     lpH.innerHTML = '<div class="lp-head">' + t("leitpunkteTitle") + '</div>';
     const ul = document.createElement("ul");
     ul.className = "lp-list";
-    const savedLps = state.schreiben_lps?.[v.id] || {};
+    const savedLps = getLps(v.id);
     v.leitpunkte.forEach((lp, idx)=>{
       const li = document.createElement("li");
       li.className = "lp-item";
@@ -2218,9 +2282,7 @@ function renderSchreiben(v, main){
                      '</label>';
       const cb = li.querySelector('input');
       cb.onchange = (e)=>{
-        if(!state.schreiben_lps) state.schreiben_lps = {};
-        if(!state.schreiben_lps[v.id]) state.schreiben_lps[v.id] = {};
-        state.schreiben_lps[v.id][idx] = e.target.checked;
+        setLp(v.id, idx, e.target.checked);
         saveState();
       };
       ul.appendChild(li);
@@ -2287,7 +2349,7 @@ function renderSchreiben(v, main){
   toolbar.className = "editor-toolbar";
 
   /* Contador dinámico de palabras */
-  const draftText = (state.schreiben_drafts && state.schreiben_drafts[v.id]) || "";
+  const draftText = getDraft(v.id);
   const initialWords = countWords(draftText);
   const wordBadge = document.createElement("span");
   wordBadge.id = "word-badge";
@@ -2314,8 +2376,7 @@ function renderSchreiben(v, main){
 
   textarea.oninput = (e)=>{
     const val = e.target.value;
-    if(!state.schreiben_drafts) state.schreiben_drafts = {};
-    state.schreiben_drafts[v.id] = val;
+    setDraft(v.id, val);
     saveState();
     const words = countWords(val);
     updateWordBadge(document.getElementById("word-badge"), words);
@@ -2339,7 +2400,7 @@ function renderSchreiben(v, main){
   bClearDraft.onclick = ()=>{
     if(confirm(t("confirmClearDraft"))){
       textarea.value = "";
-      if(state.schreiben_drafts) delete state.schreiben_drafts[v.id];
+      delDraft(v.id);
       saveState();
       updateWordBadge(document.getElementById("word-badge"), 0);
       pushSchreibenToFirestore(v.id, "", undefined);
@@ -2359,7 +2420,7 @@ function renderSchreiben(v, main){
   mineContainer.appendChild(editorCard);
 
   /* 3. Panel de Resultados (si ya fue evaluado por el usuario actual) */
-  const existingEval = state.schreiben_evals && state.schreiben_evals[v.id];
+  const existingEval = getEval(v.id);
   if(existingEval){
     mineContainer.appendChild(renderEvaluationResult(v, existingEval));
   }
@@ -2368,15 +2429,17 @@ function renderSchreiben(v, main){
   layout.appendChild(partnerContainer);
   main.appendChild(layout);
 
-  /* Cargar y escuchar datos de la pareja en tiempo real */
+  /* Cargar y escuchar los datos de la nube: los de la pareja para pintarlos y los
+     tuyos para recuperarlos si este navegador no los tiene. */
   const cachedPartnerData = cloudSchreibenCache[v.id] || null;
   renderPartnerSchreibenView(partnerContainer, v, cachedPartnerData);
   startListeningToTask(v.id, (freshData)=>{
     renderPartnerSchreibenView(partnerContainer, v, freshData);
+    hidratarMiLadoDesdeNube(v, freshData, textarea, mineContainer, wordBadge);
     /* Si se escribió sin conexión, el borrador se quedó en localStorage: lo subimos al
        abrir la tarea, pero solo si la nube no tiene ya nada nuestro (nunca pisamos un
        texto que sí llegó). */
-    const localDraft = (state.schreiben_drafts && state.schreiben_drafts[v.id]) || "";
+    const localDraft = getDraft(v.id);
     if(localDraft && !freshData[currentUser + "_text"]) pushSchreibenToFirestore(v.id, localDraft);
   });
 
@@ -2461,8 +2524,7 @@ function renderSchreiben(v, main){
     try {
       const result = await evaluateWithLLM(v, textToEval, (msg)=>{ statusMsg.textContent = msg; });
       result.student_text = textToEval;
-      if(!state.schreiben_evals) state.schreiben_evals = {};
-      state.schreiben_evals[v.id] = result;
+      setEval(v.id, result);
       saveState();
       pushSchreibenToFirestore(v.id, textToEval, result);
       statusMsg.textContent = t("statusCompleted");
@@ -2836,7 +2898,7 @@ function renderEvaluationResult(v, rawRes){
   card.appendChild(banner);
 
   /* Texto del alumno analizado con errores en colores e interactivos */
-  const studentText = res.student_text || (state.schreiben_drafts && state.schreiben_drafts[v.id]) || "";
+  const studentText = res.student_text || getDraft(v.id) || "";
   const errorsList = res.critical_errors || [];
   const errorRanges = findErrorRanges(studentText, errorsList);
 
@@ -3129,7 +3191,7 @@ function renderEvaluationResult(v, rawRes){
   bDelEval.textContent = t("btnDeleteEval");
   bDelEval.onclick = ()=>{
     if(confirm(t("confirmDeleteEval"))){
-      delete state.schreiben_evals[v.id];
+      delEval(v.id);
       saveState();
       pushSchreibenToFirestore(v.id, undefined, null);
       render();
@@ -3626,7 +3688,7 @@ function openAIConfigModal(alertNotice){
         const n = Object.keys(prog.answers).length;
         const d = Object.keys(prog.schreiben_drafts || {}).length;
         if(!confirm(t("importConfirm", { n: n, d: d }))) return;
-        const r = aplicarProgreso(prog);
+        const r = aplicarProgreso(prog, datos && datos.usuario);
         if(res) res.innerHTML = '<span class="em-ok">' + t("importOk", { n: r.respuestas, d: r.borradores }) + '</span>';
       } catch(e){
         if(res) res.innerHTML = '<span class="em-bad">' + t("importError", { error: esc(e.message) }) + '</span>';

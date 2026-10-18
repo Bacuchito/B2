@@ -8,6 +8,8 @@
      S1  la sala por defecto es aleatoria, nunca la constante "sergio-diana"
      S2  si la escritura falla, la insignia lo dice en vez de mentir
      S3  un borrador escrito sin conexión se sube al abrir la tarea
+     S9  el borrador es de cada perfil: cambiar de perfil no mezcla el trabajo
+     S10 la nube devuelve tu redacción y tu evaluación si el navegador no las tiene
    Uso: node quiz/security_test.js quiz/B2_quiz.html
 */
 const fs = require("fs");
@@ -208,10 +210,18 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
   const s = h.window.quizState;
   check("importar progreso sustituye los datos y reengancha quizState",
     !error && s !== antes && s.answers["t1-v1"] === "a" &&
-    s.schreiben_drafts["schr-b-p66"] === "texto importado" && !s.schreiben_drafts["basura"] && r && r.respuestas === 1,
+    s.schreiben_drafts["sergio::schr-b-p66"] === "texto importado" && !s.schreiben_drafts["basura"] && r && r.respuestas === 1,
     error ? error.message : "respuestas=" + Object.keys(s.answers).length + " borradores=" + Object.keys(s.schreiben_drafts).length);
   check("tras importar, el progreso queda guardado en localStorage",
     /texto importado/.test(h.store["b2quiz.v1"] || ""), (h.store["b2quiz.v1"] || "").slice(0, 60));
+
+  /* Una exportación antigua (clave sin perfil) se le asigna a quien la exportó,
+     aunque la importe el otro perfil. */
+  const h2 = montar("?user=diana", {}, false);
+  h2.window.aplicarProgreso({ answers: {}, schreiben_drafts: { "schr-b-p66": "de Sergio" } }, "sergio");
+  const claves2 = Object.keys(h2.window.quizState.schreiben_drafts);
+  check("una exportación antigua se queda con el perfil que la exportó",
+    claves2.length === 1 && claves2[0] === "sergio::schr-b-p66", "claves: " + claves2.join(","));
 }
 
 /* S6 · no hay «Reiniciar» global: borrar todo vive dentro de ⚙ Configurar IA */
@@ -221,7 +231,7 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
 
   const h = montar("", {}, false);
   h.window.quizState.answers["t1-v1"] = "a";
-  h.window.quizState.schreiben_drafts["schr-b-p66"] = "un borrador";
+  h.window.quizState.schreiben_drafts["sergio::schr-b-p66"] = "un borrador";
   const abrir = h.registro["btn-ai-config"];
   if (abrir && abrir.onclick) abrir.onclick();
   const borrar = h.registro["btn-delete-all-progress"];
@@ -292,9 +302,9 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
 {
   const RUIDO = "Xylophonpruefgeraet";   // no aparece ni en el enunciado ni en los Redemittel
   const h = montar("", {}, false);
-  h.window.quizState.schreiben_drafts["schr-b-p66"] =
+  h.window.quizState.schreiben_drafts["sergio::schr-b-p66"] =
     "Sehr geehrte Damen und Herren, darum sie sind früher gegangen. Mit freundlichen Grüßen";
-  h.window.quizState.schreiben_evals["schr-b-p66"] = {
+  h.window.quizState.schreiben_evals["sergio::schr-b-p66"] = {
     verdict: "BESTANDEN", score_total: 80,
     critical_errors: [
       { original: "darum sie sind", correction: "deshalb sind sie", rule_es: "Verbos", type: "Grammatik" },
@@ -309,8 +319,8 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     "real: " + /Verbos/.test(texto) + " · idéntica: " + texto.includes(RUIDO) + " · espacios: " + /Espacios/.test(texto));
 
   const h2 = montar("", {}, false);
-  h2.window.quizState.schreiben_drafts["schr-b-p66"] = "… unserer zuständigen abteilung geschrieben.";
-  h2.window.quizState.schreiben_evals["schr-b-p66"] = {
+  h2.window.quizState.schreiben_drafts["sergio::schr-b-p66"] = "… unserer zuständigen abteilung geschrieben.";
+  h2.window.quizState.schreiben_evals["sergio::schr-b-p66"] = {
     verdict: "BESTANDEN", score_total: 80,
     critical_errors: [
       { original: "zuständigen abteilung", correction: "zuständigen Abteilung", rule_es: "Mayúsculas", type: "Rechtschreibung" }
@@ -343,9 +353,9 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
 {
   const h = montar("", {}, false);
   h.window.quizState.schreiben_evals = {
-    "schr-b-p66": { verdict: "BESTANDEN", score_total: 88, critical_errors: [null] },
+    "sergio::schr-b-p66": { verdict: "BESTANDEN", score_total: 88, critical_errors: [null] },
   };
-  h.window.quizState.schreiben_drafts = { "schr-b-p66": "Sehr geehrte Damen und Herren, ein Text." };
+  h.window.quizState.schreiben_drafts = { "sergio::schr-b-p66": "Sehr geehrte Damen und Herren, ein Text." };
   let excepcion = null;
   try { abrirSchreiben(h.registro); } catch (e) { excepcion = e; }
   const main = h.registro["main"] || new El("div");
@@ -366,7 +376,7 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
     !/Sincronizado en la nube/.test(badge) && /sincroniz/i.test(badge), badge.slice(0, 90));
 }
 
-/* S3 · borrador pendiente de subir */
+/* S3 · borrador pendiente de subir (y con la clave antigua, ya migrada) */
 {
   const h = montar("?user=sergio&room=sala-prueba",
     { "b2quiz.v1": JSON.stringify({ answers: {}, schreiben_drafts: { "schr-b-p66": "texto escrito sin conexión" } }) },
@@ -376,6 +386,71 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
   const subido = h.escritos.some(p => p.sergio_text === "texto escrito sin conexión");
   check("un borrador escrito sin conexión se sube al abrir la tarea",
     subido, "escrituras: " + JSON.stringify(h.escritos).slice(0, 110));
+
+  const claves = Object.keys(h.window.quizState.schreiben_drafts || {});
+  check("un progreso guardado con la clave antigua se migra a la clave con perfil",
+    claves.length === 1 && claves[0] === "sergio::schr-b-p66", "claves: " + claves.join(","));
+}
+
+/* S9 · el borrador es de cada perfil: cambiar de perfil no mezcla el trabajo */
+{
+  const h = montar("?user=sergio&room=sala-prueba", {}, false);
+  const editor = () => buscar(h.registro["main"], e => e.tagName === "textarea");
+  abrirSchreiben(h.registro);
+  const ta = editor();
+  if (ta && ta.oninput) ta.oninput({ target: { value: "Mein Text als Sergio" } });
+
+  const claves = Object.keys(h.window.quizState.schreiben_drafts || {});
+  check("el borrador se guarda con el perfil dentro de la clave",
+    claves.length === 1 && claves[0] === "sergio::schr-b-p66", "claves: " + claves.join(","));
+
+  h.window.setUser("diana");
+  h.window.setLanguage("es");   // el idioma no debe decidir qué borrador se carga
+  abrirSchreiben(h.registro);
+  const taDiana = editor();
+  check("al pasar al perfil de Diana el editor no trae el texto de Sergio",
+    !!taDiana && String(taDiana.value || "") === "",
+    "editor de Diana: " + JSON.stringify(String((taDiana && taDiana.value) || "")));
+
+  h.window.setUser("sergio");
+  h.window.setLanguage("es");
+  abrirSchreiben(h.registro);
+  const taVuelta = editor();
+  check("al volver al perfil de Sergio su borrador sigue intacto",
+    !!taVuelta && taVuelta.value === "Mein Text als Sergio",
+    "editor de Sergio: " + JSON.stringify(String((taVuelta && taVuelta.value) || "")));
+}
+
+/* S10 · la nube devuelve tu redacción y tu evaluación si este navegador no las tiene */
+{
+  const h = montar("?user=sergio&room=sala-prueba", {}, true);
+  abrirSchreiben(h.registro);
+  h.empujarSnapshot({
+    sergio_text: "Sehr geehrte Damen und Herren, hier ist mein Text aus der Cloud.",
+    sergio_words: 12, sergio_updated_at: Date.now(),
+    sergio_eval: { verdict: "BESTANDEN", score_total: 81, critical_errors: [] },
+    diana_text: "Text der Partnerin", diana_words: 3, diana_updated_at: Date.now()
+  });
+  const ta = buscar(h.registro["main"], e => e.tagName === "textarea");
+  const claves = Object.keys(h.window.quizState.schreiben_drafts || {});
+  check("sin borrador local, la nube rellena el editor",
+    !!ta && /aus der Cloud/.test(String(ta.value || "")) && claves[0] === "sergio::schr-b-p66",
+    "editor: " + JSON.stringify(String((ta && ta.value) || "").slice(0, 45)) + " | claves: " + claves.join(","));
+  const clavesEval = Object.keys(h.window.quizState.schreiben_evals || {});
+  check("sin evaluación local, la nube devuelve tu evaluación",
+    clavesEval.length === 1 && clavesEval[0] === "sergio::schr-b-p66", "claves: " + clavesEval.join(","));
+  check("lo que la nube te devuelve no se le devuelve a la nube (sin eco)",
+    h.escritos.length === 0, "escrituras: " + JSON.stringify(h.escritos).slice(0, 90));
+
+  const h2 = montar("?user=sergio&room=sala-prueba",
+    { "b2quiz.v1": JSON.stringify({ answers: {}, schreiben_drafts: { "sergio::schr-b-p66": "Mi texto local" } }) },
+    true, false);
+  abrirSchreiben(h2.registro);
+  h2.empujarSnapshot({ sergio_text: "Texto de la nube" });
+  const ta2 = buscar(h2.registro["main"], e => e.tagName === "textarea");
+  check("con borrador local, la nube no lo pisa",
+    !!ta2 && String(ta2.value || "") === "Mi texto local",
+    "editor: " + JSON.stringify(String((ta2 && ta2.value) || "")));
 }
 
 /* ---------- informe ---------- */

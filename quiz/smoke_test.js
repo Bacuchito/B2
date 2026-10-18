@@ -224,7 +224,8 @@ if (aiConfigBtn && typeof aiConfigBtn.onclick === "function") {
 /* ---------- comprobación de renderizado de resultados de evaluación ---------- */
 try {
   const mockEval = {
-    "schr-b-p66": {
+    /* La clave lleva el perfil delante: cada perfil tiene su propia evaluación. */
+    "sergio::schr-b-p66": {
       verdict: "BESTANDEN",
       score_total: 88,
       word_count: 172,
