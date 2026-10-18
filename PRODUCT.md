@@ -1,0 +1,101 @@
+# Product
+
+<!-- impeccable:product-schema 1 -->
+
+## Platform
+
+web
+
+## Users
+
+Dos personas concretas, Sergio y Diana, que preparan el examen **telc Deutsch-Test
+für den Beruf B2** y practican juntas en el portátil. Diana lee en ruso y Sergio en
+español, de ahí los dos perfiles del encabezado. No hay público anónimo ni cuentas
+de terceros.
+
+## Product Purpose
+
+Presentar las preguntas de exámenes reales recopilados (Lesen, Hören,
+Sprachbausteine y Schreiben), dejar responderlas y corregirlas con la respuesta
+deducida, la cita literal que la justifica y un nivel de confianza; y evaluar las
+redacciones con los cuatro criterios de telc. Existe porque el documento de origen
+**no trae clave de respuestas**.
+
+## Positioning
+
+Una clave de respuestas que no existe en el original: cada respuesta se publica con
+su evidencia (la frase literal del texto), su grado de duda y una marca de segunda
+lectura independiente. La app enseña la duda en lugar de esconderla. Ningún producto
+de plantilla podría copiar eso sin hacer antes el mismo trabajo de deducción.
+
+## Operating Context
+
+- Sesiones de estudio en portátil. La app se abre con doble clic como fichero local
+  o desde el enlace de GitHub Pages: son dos almacenes distintos.
+- Con la ventana ancha (**≥1280 px**) se activa el **modo mesa de examen**: la
+  referencia (los anuncios o el texto) queda fija en la columna izquierda y la hoja
+  de preguntas en la derecha, para responder sin subir y bajar. El conmutador de la
+  cabecera lo fuerza o lo apaga y recuerda la elección.
+- 358 ítems de opción y 111 tareas de escritura (13 Beschwerde, 98 Forumsbeitrag).
+- El progreso vive en `localStorage`, por perfil. La sincronización con Firebase es
+  opcional y solo sirve para compartir las redacciones entre los dos.
+- La evaluación de Schreiben la hace un LLM con la clave de API propia de cada uno
+  (en `localStorage`, viaja directa al proveedor elegido).
+
+## Capabilities and Constraints
+
+- **Sin clave oficial.** Cada respuesta lleva `quote` literal, `confidence`
+  (`hoch`/`mittel`/`niedrig`) y, si pasó la segunda lectura, la insignia «✓ 2ª
+  lectura» (`verified.json`). El botón «Solo dudosas» filtra lo que hay que revisar.
+- **Regla de idioma:** lo que es examen va en alemán verbatim; lo que es ayuda va
+  traducido (ES/RU). `smoke_test.js` falla si el diccionario está incompleto en un
+  idioma.
+- **Hören no tiene audio**, solo transcripciones. Las dos variantes sin transcripción
+  quedan fuera en lugar de ofrecerse inventadas.
+- El entregable es **un único HTML autocontenido** generado por `build.py` desde
+  `template.html`; los datos viven en `quiz/data/*.json` bajo el contrato de
+  `SPEC.md`.
+- **Controles obligatorios** antes de dar algo por bueno: `build.py` (valida y no
+  escribe si hay errores), `smoke_test.js`, `security_test.js`, `design_audit.js`.
+- El documento fuente tiene huecos y erratas conocidas, documentados en
+  `quiz/README.md`; no se rellenan con invenciones.
+- **Vinculante por decisión del usuario:** el bilingüismo ES/RU y el contrato de
+  datos con sus tests. **No declarado vinculante** (queda abierto a cambio): el
+  empaquetado en un solo fichero y el mundo visual de hoja de examen.
+
+## Brand Commitments
+
+- Nombre en uso: «B2 Beruf — Test».
+- Voz: honesta sobre la incertidumbre; alemán para el material de examen, español y
+  ruso para la ayuda.
+- No hay logotipo, marca registrada ni material de terceros que condicione el
+  aspecto, y el usuario no ha declarado vinculante la dirección visual actual.
+
+## Evidence on Hand
+
+- `out/B2_ohne_antworten.md`: el PDF convertido a Markdown, sin respuestas (fuente).
+- `quiz/data/*.json`: ítems con `quote`, `explain`, `confidence`; `explain_ru` y
+  `note_ru` para el ruso.
+- `quiz/verified.json`: las respuestas confirmadas por la segunda lectura.
+- `quiz/sprachbausteine_respuestas.json` y `quiz/_resp_*.json`: las 132 respuestas
+  deducidas de los huecos.
+- `quiz/README.md` y `quiz/SPEC.md`: contrato de datos y sistema de diseño
+  documentado.
+- `AUDITORIA_B2.md`: auditoría interna, en disco y fuera del repositorio público.
+- **Ausencias que no se deben inventar:** no hay clave oficial, no hay audio de
+  Hören, no hay usuarias ni testimonios externos.
+
+## Product Principles
+
+1. La duda se muestra, nunca se disimula: toda respuesta lleva su cita, su confianza
+   y, cuando la hay, su segunda lectura.
+2. El examen manda: alemán verbatim para el contenido, traducción solo para la ayuda.
+3. Se abre y ya está: sin servidor, sin cuenta y sin instalar nada.
+4. El progreso es de quien estudia y sobrevive al cierre, separado por perfil.
+5. Nada entra en el entregable sin pasar validación, humo, seguridad y diseño.
+
+## Accessibility & Inclusion
+
+`design_audit.js` exige contraste ≥4.5:1, espaciado múltiplo de 4 px, áreas táctiles
+de 28/44 px, foco visible y respeto a `prefers-reduced-motion`. Diana estudia en
+ruso: la ayuda debe seguir existiendo en los dos idiomas, no solo en español.

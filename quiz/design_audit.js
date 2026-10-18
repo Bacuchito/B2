@@ -103,36 +103,41 @@ function colorOf(spec) {
   return spec.over ? over(c, baseBg) : c;
 }
 
+/* Los pares de contraste se miden contra la superficie REAL sobre la que se pinta
+   cada texto. Desde que la app dejó de ser cajas apiladas, casi todo vive en el
+   plano de la página (--bg) o sobre la hoja (--q-sheet); solo las insignias y los
+   estados conservan relleno propio. Los tintes translúcidos se componen con
+   `over: true` sobre el fondo real, como manda el método de esta auditoría. */
 const contrastChecks = [
   ["Texto principal sobre el fondo", { sel: "body", prop: "color" }, { token: "--bg" }],
-  ["Texto secundario sobre panel (.ad .body)", { sel: ".ad .body", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
-  ["Micro-etiqueta sobre panel (.panel h3)", { sel: ".panel h3", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
+  ["Texto secundario sobre el plano (.ad .body)", { sel: ".ad .body", prop: "color" }, { token: "--bg" }],
+  ["Micro-etiqueta sobre el plano (.panel h3)", { sel: ".panel h3", prop: "color" }, { token: "--bg" }],
   ["Micro-texto sobre superficie hundida (.micro)", { sel: ".micro", prop: "color" }, { token: "--panel3" }],
   ["Texto terciario sobre panel (.empty)", { sel: ".empty", prop: "color" }, { token: "--bg" }],
-  ["Acento claro sobre panel (.card-label)", { sel: ".card-label", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
+  ["Acento claro sobre el plano (.card-label)", { sel: ".card-label", prop: "color" }, { token: "--bg" }],
   ["Blanco sobre relleno de acento (.btn)", { sel: ".btn", prop: "color" }, { token: "--acc-fill-1" }],
   ["Blanco sobre relleno oscuro del degradado", { literal: "#ffffff" }, { token: "--acc-fill-2" }],
-  ["Menú activo (nav button.active)", { sel: "nav button.active", prop: "color" }, { sel: "nav button.active", prop: "background", over: true }],
+  ["Menú activo (nav button.active)", { sel: "nav button.active", prop: "color" }, { sel: "nav", prop: "background", over: true }],
   ["Menú inactivo (nav button)", { sel: "nav button", prop: "color" }, { sel: "nav", prop: "background", over: true }],
   ["Estadística de cabecera (.stat)", { sel: ".stat", prop: "color" }, { sel: "header", prop: "background", over: true }],
-  ["Opción de respuesta (.opt)", { token: "--txt" }, { sel: ".opt", prop: "background", over: true }],
-  ["Letra seleccionada (.letters button.sel)", { sel: ".letters button.sel", prop: "color" }, { token: "--acc-fill-1" }],
-  ["Letra corregida (.letters button.correct)", { sel: ".letters button.correct", prop: "color" }, { sel: ".letters button.correct", prop: "background" }],
-  ["Letra fallada (.letters button.wrong)", { sel: ".letters button.wrong", prop: "color" }, { sel: ".letters button.wrong", prop: "background" }],
+  ["Opción de respuesta (.opt)", { token: "--txt" }, { sel: ".q-sheet", prop: "background", over: true }],
+  ["Letra ya asignada a otro enunciado (.letters button.taken)", { sel: ".letters button.taken", prop: "color" }, { sel: ".q-sheet", prop: "background", over: true }],
+  ["Letra corregida (.letters button.correct)", { sel: ".letters button.correct", prop: "color" }, { sel: ".letters button.correct", prop: "background", over: true }],
+  ["Letra fallada (.letters button.wrong)", { sel: ".letters button.wrong", prop: "color" }, { sel: ".letters button.wrong", prop: "background", over: true }],
   ["Insignia confianza alta (.badge.hoch)", { sel: ".badge.hoch", prop: "color" }, { sel: ".badge.hoch", prop: "background", over: true }],
   ["Insignia confianza media (.badge.mittel)", { sel: ".badge.mittel", prop: "color" }, { sel: ".badge.mittel", prop: "background", over: true }],
   ["Insignia confianza baja (.badge.niedrig)", { sel: ".badge.niedrig", prop: "color" }, { sel: ".badge.niedrig", prop: "background", over: true }],
   ["Insignia 2ª lectura (.badge.ok)", { sel: ".badge.ok", prop: "color" }, { sel: ".badge.ok", prop: "background", over: true }],
   ["Insignia neutra (.badge.tag)", { sel: ".badge.tag", prop: "color" }, { sel: ".badge.tag", prop: "background", over: true }],
-  ["Aviso amarillo (.note)", { sel: ".note", prop: "color" }, { sel: ".note", prop: "background", over: true }],
+  ["Aviso amarillo (.note)", { sel: ".note", prop: "color" }, { token: "--bg" }],
   ["Banner aprobado (.eval-banner.pass)", { sel: ".eval-banner.pass", prop: "color" }, { sel: ".eval-banner.pass", prop: "background", over: true }],
   ["Banner suspenso (.eval-banner.fail)", { sel: ".eval-banner.fail", prop: "color" }, { sel: ".eval-banner.fail", prop: "background", over: true }],
   ["Regla del popover (.err-popover-rule)", { sel: ".err-popover-rule", prop: "color" }, { sel: ".err-popover", prop: "background", over: true }],
   ["Texto de la pareja (.partner-body)", { sel: ".partner-body", prop: "color" }, { sel: ".partner-body", prop: "background", over: true }],
-  ["Leyenda de errores (.legend-chip)", { sel: ".legend-chip", prop: "color" }, { sel: ".legend-chip", prop: "background", over: true }],
-  ["Insignia de nube (.cloud-badge)", { sel: ".cloud-badge", prop: "color" }, { sel: ".cloud-badge", prop: "background", over: true }],
+  ["Leyenda de errores (.legend-chip)", { sel: ".legend-chip", prop: "color" }, { token: "--bg" }],
+  ["Insignia de nube (.cloud-badge)", { sel: ".cloud-badge", prop: "color" }, { sel: "header", prop: "background", over: true }],
   ["Ayuda del formulario (.form-group small)", { sel: ".form-group small", prop: "color" }, { sel: ".modal", prop: "background", over: true }],
-  ["Cronómetro en aviso (.timer-display.warn)", { sel: ".timer-display.warn", prop: "color" }, { sel: ".editor-card", prop: "background", over: true }],
+  ["Cronómetro en aviso (.timer-display.warn)", { sel: ".timer-display.warn", prop: "color" }, { token: "--bg" }],
 ];
 
 /* ---------- 3. Comprobaciones ---------- */

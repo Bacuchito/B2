@@ -24,11 +24,18 @@ necesita servidor, ni Internet, ni instalar nada. Los datos van incrustados.
   asignado salen en azul con `✓` y el resumen cuenta cuántos llevas; los libres,
   en ámbar. Ese estado es tu progreso, nunca la solución: la app no dice qué
   anuncios son correctos hasta que respondes.
-- En una pantalla ancha (**≥1500px**) la app se pone en modo *mesa de examen*: la
+- Con la ventana ancha (**≥1280px**) la app se pone en modo *mesa de examen*: la
   referencia —los anuncios o el texto de lectura— se queda en la columna
   izquierda, fija y con su propio scroll, y la hoja de preguntas pasa a la
   derecha. Se responde sin subir y bajar a mirar el anuncio. Por debajo de ese
-  ancho sigue siendo una sola columna.
+  ancho sigue siendo una sola columna, y el botón **Mesa de examen** de la
+  cabecera lo fuerza o lo apaga cuando el ancho no compensa (se recuerda).
+- En el modo mesa, pasar el ratón (o el foco) por una letra enciende su anuncio y
+  escribe debajo cuál es. Las letras que ya tiene asignadas **otro** enunciado
+  salen con el filete discontinuo.
+- Se responde con ratón o con teclado: Tab entra en la fila de letras y las
+  flechas recorren y eligen. Bajo cada respuesta corregida hay **Borrar esta
+  respuesta**, para deshacerla sin borrar el ejercicio entero.
 - En **Lesen Teil 2** el texto de lectura está en un panel plegable.
 - Al responder aparece la corrección con la cita y la confianza.
 - El progreso se guarda en el navegador (`localStorage`). «Reiniciar» lo borra.
@@ -109,9 +116,35 @@ componentes**: basta el bloque `:root`.
 | Espaciado | `--sp-1` … `--sp-8` (4, 8, 12, 16, 24, 32, 48, 64) | Rejilla de 4/8pt |
 | Tipografía | `--fs-micro` … `--fs-h2` (11, 12, 13, 15, 17, 20, 27) | Seis pasos, sin tallas sueltas |
 | Movimiento | `--dur-1/2/3`, `--ease`, `--spring` | Duraciones y curvas elásticas |
-| Elevación | `--sh-1/2/3`, `--lit` | Sombra amplia + corta, borde de luz |
+| Elevación | `--sh-1/2/3`, `--lit` | Sombra amplia + corta. Solo para lo que flota de verdad: modal, popover de error y enlace de salto |
+| Radios | `--r-1` … `--r-4`, `--r-pill` | Casi rectos (2-3px): papel, no burbuja. Lo redondo es solo lo que significa algo |
 | Estructura | `--header-h`, `--nav-w`, `--read-w` | Alto de cabecera, ancho del índice y medida de lectura |
-| Mesa de examen | `--desk-ref`, `--desk-work` | Ancho de la columna de referencia y tope de la hoja de preguntas a partir de 1500px |
+| Mesa de examen | `--desk-ref`, `--desk-work` | Ancho máximo de la columna de referencia (fluida con `clamp`) y tope de la hoja de preguntas a partir de 1280px |
+
+### De tarjetas a hoja impresa
+
+Nada que sea contenido lleva caja. La estructura sale de tres mecanismos, y cada
+bloque usa **uno solo** — dos fronteras duras juntas (un filete sobre un cambio de
+fondo, por ejemplo) ensucian la página:
+
+| Mecanismo | Dónde vive |
+|---|---|
+| Filete de 1px: fila o cabecera de sección | `.panel`, `.opt`, `.ad`, `.bank .ad`, `.lp-item`, `.crit-box`, `.err-card`, `.tab-pills` |
+| Filete de margen (solo a la izquierda) para lo citado | `.fb .quote` |
+| Banda con tinte y sin filete, para el estado | `.fb.good`, `.fb.bad`, `.badge.*`, `.eval-banner.*` |
+
+- **Una sola superficie elevada**: el modal. Fuera de eso, la app no tiene ni una
+  sombra (se comprueba: cero `box-shadow` dentro de `main`).
+- **Dos superficies planas, y ya**: la hoja de examen (`--panel`) y las hojas de
+  documento —carta recibida, texto de lectura, redacción propia y de la pareja y
+  redacción modelo— (`--sheet`).
+- **Excepciones con borde, a propósito**: los campos de formulario (`.input`,
+  `.select`, `.editor-textarea`) porque un campo necesita un límite definido, y la
+  insignia de evaluación, que es un sello.
+- Los estados se marcan con **tinta más palabra o marca** (`✓`, `✗`, «Correcto»,
+  «confianza: alta»), nunca con una píldora rellena ni solo con color.
+- El aviso amarillo es una banda con filetes, sin caja, y **como mucho uno por
+  pantalla**: repetido pierde su fuerza.
 
 Las tres familias tipográficas son del sistema (`--font-ui`, `--font-read` serif
 para textos largos y `--font-mono`): la app sigue funcionando sin conexión y sin

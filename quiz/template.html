@@ -64,7 +64,9 @@
 
     /* --- Radios --- */
     --radius:12px;
-    --r-1:6px; --r-2:10px; --r-3:12px; --r-4:16px; --r-pill:999px;
+    /* Radios casi rectos: papel, no burbuja. Lo único redondo que queda es lo que
+     significa algo (el número del ítem, que va aparte con border-radius:50%). */
+    --r-1:2px; --r-2:2px; --r-3:2px; --r-4:3px; --r-pill:2px;
 
     /* --- Tipografía --- */
     --font-ui:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -145,6 +147,18 @@
   /* Foco visible en TODO lo interactivo. */
   :focus-visible{outline:2px solid var(--ring);outline-offset:2px;border-radius:var(--r-1)}
 
+  /* Avisos de estado solo para lectores de pantalla: sin ruido visual. */
+  .sr-only{position:absolute;width:1px;height:1px;margin:0;padding:0;overflow:hidden;
+           clip-path:inset(50%);white-space:nowrap;border:0}
+  /* Enlace de salto: fuera de pantalla hasta que se tabula. Evita atravesar la
+     cabecera y las diez secciones del índice antes de llegar a la primera pregunta.
+     Elevación declarada una sola vez (sombra, sin borde), como el resto de hojas. */
+  .skip-link{position:absolute;left:var(--sp-3);top:-120px;z-index:60;
+             background:var(--panel);color:var(--txt);
+             border-radius:var(--r-2);padding:var(--sp-2) var(--sp-3);font-weight:640;
+             box-shadow:var(--sh-2);transition:top var(--dur-2) var(--ease)}
+  .skip-link:focus{top:var(--sp-3)}
+
   /* Barra de desplazamiento con la tinta del papel. */
   *{scrollbar-width:thin;scrollbar-color:var(--scroll) transparent}
   ::-webkit-scrollbar{width:10px;height:10px}
@@ -209,12 +223,12 @@
   /* El display:flex de los botones gana al [hidden] del navegador: se apaga a mano. */
   nav button[hidden]{display:none}
   nav button.sec-reset{display:inline-flex;align-items:center;width:auto;min-height:28px;
-           padding:var(--sp-1) var(--sp-2);border:1px solid var(--line);
-           border-radius:var(--r-1);font-size:var(--fs-micro);font-weight:700;letter-spacing:.02em;
-           color:var(--dim);text-transform:none;line-height:1.4;background:var(--panel3);
-           transition:background var(--dur-1) var(--ease),color var(--dur-1) var(--ease),
-                      border-color var(--dur-1) var(--ease)}
-  nav button.sec-reset:hover{background:var(--chip-hover);color:var(--txt);border-color:var(--line-2)}
+           padding:0;border:0;border-bottom:1px solid var(--line-2);
+           border-radius:0;font-size:var(--fs-micro);font-weight:700;letter-spacing:.02em;
+           color:var(--dim);text-transform:none;line-height:1.4;background:none;
+           transition:color var(--dur-1) var(--ease),border-color var(--dur-1) var(--ease),
+                      transform var(--dur-1) var(--spring)}
+  nav button.sec-reset:hover{background:none;color:var(--txt);border-bottom-color:var(--acc)}
   nav button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:var(--sp-2);
              text-align:left;background:none;border:1px solid transparent;color:var(--dim);
              min-height:40px;padding:var(--sp-2) var(--sp-3);border-radius:var(--r-2);cursor:pointer;
@@ -223,8 +237,9 @@
                         transform var(--dur-1) var(--spring),box-shadow var(--dur-2) var(--ease)}
   nav button:hover{background:var(--tint-neutral);color:var(--txt)}
   nav button:active{transform:scale(.985)}
-  nav button.active{background:var(--panel);color:var(--txt);font-weight:640;
-             border-color:var(--line);box-shadow:var(--sh-1);
+  /* Activo: tinta y peso, con la marca de acento en el margen. Sin caja. */
+  nav button.active{background:none;color:var(--txt);font-weight:640;
+             border-color:transparent;box-shadow:none;
              padding-left:calc(var(--sp-3) + 16px)}
   nav button.active::before{content:"";position:absolute;left:var(--sp-3);top:50%;
              transform:translateY(-50%);
@@ -244,14 +259,14 @@
      font-variant-numeric:tabular-nums}
   h2 + .sub b{color:var(--txt);font-weight:700}
 
-  /* Superficie hoja: sombra cálida, sin borde (elevación declarada una vez). */
-  .panel{background:var(--panel);border-radius:var(--r-3);
-         padding:var(--sp-4) var(--sp-5);margin-bottom:var(--sp-4);
-         box-shadow:var(--sh-1)}
-  /* Etiqueta de panel: casilla de formulario, no eyebrow decorativo */
-  .panel h3{display:inline-block;margin:0 0 var(--sp-4);font-size:10px;letter-spacing:.12em;
+  /* Sección, no tarjeta: la separa un filete y el aire, nunca una caja. */
+  .panel{background:none;border:0;border-top:1px solid var(--line);
+         border-radius:0;padding:var(--sp-4) 0 0;margin-bottom:var(--sp-6);
+         box-shadow:none}
+  /* Rótulo de sección: versalitas sobre filete, como el encabezado de un impreso. */
+  .panel h3{display:block;margin:0 0 var(--sp-3);font-size:var(--fs-micro);letter-spacing:.10em;
             text-transform:uppercase;color:var(--dim-2);font-weight:700;
-            border:1px solid var(--line-2);border-radius:var(--r-1);padding:4px var(--sp-2)}
+            border:0;border-radius:0;padding:0 0 var(--sp-2)}
   .intro-text{font-family:var(--font-read);font-size:var(--fs-lead);line-height:1.7;
               color:var(--txt);max-width:var(--read-w)}
 
@@ -289,16 +304,22 @@
   .ad.used .k{color:var(--acc-ink)}
   .ad.unused .k{color:var(--warn-ink)}
   .ad.used .t::after{content:" ✓";color:var(--ok-ink);font-weight:700}
+  /* Peek: al pasar por encima o enfocar una letra, su anuncio se enciende. El
+     fondo solo no basta (ya hay hover propio), así que la letra se rellena. */
+  .ad.peek{background:var(--tint-acc)}
+  .ad.peek .k{background:var(--acc);color:var(--on-acc);border-radius:var(--r-1);
+              padding:0 var(--sp-1);text-decoration:none}
 
   /* Banco de palabras (Sprachbausteine Teil 1). Las opciones son UNA palabra, así
      que la tarjeta alta de los anuncios no tiene sentido: en rejilla caben las diez
      de un vistazo y los huecos no se van media pantalla más abajo. Se declara desde
      el dato con `optionsLayout: "bank"`, no por heurística de longitud. */
-  .bank{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--sp-2)}
-  .bank .ad{border:1px solid var(--line);border-top:1px solid var(--line);border-radius:var(--r-2);
-            padding:var(--sp-2) var(--sp-3);display:flex;align-items:baseline;gap:var(--sp-2);
-            background:var(--sheet)}
-  .bank .ad:first-child{border-top:1px solid var(--line)}
+  /* Banco de palabras: lista de glosario (letra + palabra) con filetes, no cajas. */
+  .bank{display:block}
+  .bank .ad{border:0;border-top:1px solid var(--line);border-radius:0;
+            padding:var(--sp-2) 0;display:flex;align-items:baseline;gap:var(--sp-2);
+            background:none}
+  .bank .ad:first-child{border-top:0}
   .bank .ad .body{margin-top:0;color:var(--txt);max-width:none}
   .bank .ad.used .body::after{content:" ✓";color:var(--ok-ink);font-weight:700}
 
@@ -311,8 +332,10 @@
 
   /* Hoja de examen continua: las preguntas NO son tarjetas apiladas, son filas
      de una sola hoja, con filete de margen rojo como en el papel del examen. */
-  .q-sheet{position:relative;background:var(--panel);border-radius:var(--r-3);
-           box-shadow:var(--sh-1);padding:var(--sp-2) var(--sp-5) var(--sp-3) 56px;
+  /* La hoja: la ÚNICA superficie de la app, y plana. Un papel sobre la mesa no
+     lleva sombra ni borde: se distingue por el tono y por su regla de margen. */
+  .q-sheet{position:relative;background:var(--panel);border-radius:0;
+           padding:var(--sp-2) var(--sp-5) var(--sp-3) 56px;
            margin-bottom:var(--sp-4)}
   .q-sheet::before{content:"";position:absolute;top:var(--sp-4);bottom:var(--sp-4);left:36px;
            width:1px;background:var(--bad);opacity:.45}
@@ -321,98 +344,126 @@
      border-top:1px solid var(--line)}
   .q:first-child{border-top:0}
   .q .num{display:inline-flex;align-items:center;justify-content:center;
-          min-width:28px;height:28px;background:var(--sheet);border:1px solid var(--line-2);
+          min-width:28px;height:28px;background:none;border:1px solid var(--line-2);
           border-radius:50%;font-size:var(--fs-xs);font-weight:700;margin-right:var(--sp-3);
           color:var(--txt);font-variant-numeric:tabular-nums;vertical-align:middle;
           font-family:var(--font-read)}
   .q .prompt{font-size:var(--fs-lead);line-height:1.55;font-weight:640;margin-bottom:var(--sp-3);display:inline}
-  .opts{display:flex;flex-direction:column;gap:var(--sp-2);margin-top:var(--sp-3)}
-  .opt{display:flex;gap:var(--sp-3);align-items:flex-start;min-height:44px;border:1px solid var(--line);
-       border-radius:var(--r-2);padding:var(--sp-3) var(--sp-4);cursor:pointer;
-       background:var(--chip);position:relative;
+  .opts{display:flex;flex-direction:column;gap:0;margin-top:var(--sp-3)}
+  /* La opción es un <button> de verdad: se alcanza con Tab y se recorre con las
+     flechas dentro del grupo (role="radio"). Los resets evitan que el navegador
+     imponga su fuente, su color y su fondo: aquí manda el papel.
+     Y es una FILA con filete, no una caja: la lista se lee como una tabla. */
+  .opt{display:flex;gap:var(--sp-3);align-items:flex-start;width:100%;min-height:44px;
+       border:0;border-top:1px solid var(--line);
+       border-radius:0;padding:var(--sp-3) 0;cursor:pointer;
+       text-align:left;font-family:inherit;font-size:var(--fs-base);color:var(--txt);
+       background:none;position:relative;
        transition:background var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
-                  transform var(--dur-1) var(--spring),box-shadow var(--dur-2) var(--ease)}
-  .opt:hover{border-color:var(--line-2);background:var(--chip-hover);
-             transform:translateY(-1px);box-shadow:var(--sh-1)}
+                  transform var(--dur-1) var(--spring)}
+  .opt:hover{border-top-color:var(--line-2);background:var(--tint-neutral)}
   .opt:active{transform:scale(.995)}
   .opt .key{font-weight:700;min-width:20px;color:var(--acc-ink);font-variant-numeric:tabular-nums}
-  .opt.sel{border-color:var(--acc);background:var(--sheet);
-           box-shadow:0 0 0 3px var(--tint-acc)}
-  .opt.correct{border-color:rgba(46,110,73,.55);background:var(--tint-ok)}
-  .opt.wrong{border-color:rgba(176,54,42,.55);background:var(--tint-bad)}
+  .opt.correct{border-top-color:var(--ok-ink);background:var(--tint-ok)}
+  .opt.wrong{border-top-color:var(--bad-ink);background:var(--tint-bad)}
   .opt.correct .key{color:var(--ok-ink)}
   .opt.wrong .key{color:var(--bad-ink)}
   /* El estado no depende solo del color: marca textual a la derecha. */
-  .opt.correct::after,.opt.wrong::after{position:absolute;right:var(--sp-4);top:50%;
+  .opt.correct::after,.opt.wrong::after{position:absolute;right:0;top:50%;
        transform:translateY(-50%);font-weight:700;font-size:var(--fs-base)}
   .opt.correct::after{content:"✓";color:var(--ok-ink)}
   .opt.wrong::after{content:"✗";color:var(--bad-ink)}
 
-  .letters{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-3)}
-  .letters button{width:44px;height:44px;border-radius:var(--r-2);border:1px solid var(--line);
-                  background:var(--sheet);color:var(--txt);font-weight:700;cursor:pointer;
-                  font-size:var(--fs-base);font-family:var(--font-read);
-                  transition:background var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
-                             transform var(--dur-1) var(--spring),box-shadow var(--dur-2) var(--ease)}
-  .letters button:hover{border-color:var(--line-2);transform:translateY(-1px);box-shadow:var(--sh-1)}
+  /* Las letras dejan de ser ocho cuadrados: son campos de un impreso, apoyados en
+     una línea base. El área de toque sigue siendo 44×44. */
+  .letters{display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-2)}
+  .letters button{width:44px;height:44px;border-radius:0;border:0;
+                  border-bottom:2px solid var(--line-2);
+                  background:none;color:var(--txt);font-weight:700;cursor:pointer;
+                  font-size:var(--fs-lead);font-family:var(--font-read);
+                  transition:color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
+                             background var(--dur-2) var(--ease),transform var(--dur-1) var(--spring)}
+  .letters button:hover{border-bottom-color:var(--acc);color:var(--acc-ink)}
   .letters button:active{transform:scale(.96)}
-  .letters button.sel{background:var(--acc-fill-1);border-color:var(--acc-fill-2);
-                      color:var(--on-acc);box-shadow:var(--sh-1)}
-  .letters button.correct{background:#dcecdf;border-color:rgba(46,110,73,.5);color:#1c5638}
-  .letters button.wrong{background:#f4dcd7;border-color:rgba(176,54,42,.5);color:#8f2a20}
-  [data-theme="dark"] .letters button.correct{background:#24402f;border-color:rgba(79,174,125,.5);color:#a5dfbe}
-  [data-theme="dark"] .letters button.wrong{background:#46261f;border-color:rgba(215,106,92,.5);color:#f2aea3}
+  /* Letra ya asignada a otro enunciado: sigue pulsable (puedes reasignarla),
+     pero se ve que está cogida. Se distingue por la tinta y el filete discontinuo,
+     no bajando la opacidad: el contraste tiene que seguir cumpliendo. */
+  .letters button.taken{color:var(--dim-2);border-bottom-style:dashed}
+  /* Qué anuncio hay detrás de cada letra, sin depender del tooltip del ratón.
+     Una sola línea con puntos suspensivos: si creciera, movería la fila de abajo
+     cada vez que pasas por encima. */
+  .letters-peek{margin-top:var(--sp-2);min-height:1.3em;font-size:var(--fs-xs);
+                color:var(--dim-2);font-family:var(--font-read);
+                white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:var(--read-w)}
+  .letters-peek b{color:var(--txt);font-weight:640}
+  /* Corregida: tinta y relleno tenue sobre la línea base, más la marca textual
+     (✓ / ✗) para no depender solo del color. */
+  .letters button.correct{background:var(--tint-ok);border-bottom-color:var(--ok-ink);color:var(--ok-ink)}
+  .letters button.wrong{background:var(--tint-bad);border-bottom-color:var(--bad-ink);color:var(--bad-ink)}
+  .letters button.correct::after{content:"✓";font-size:var(--fs-micro);vertical-align:super}
+  .letters button.wrong::after{content:"✗";font-size:var(--fs-micro);vertical-align:super}
 
-  .fb{margin-top:var(--sp-4);border-radius:var(--r-2);padding:var(--sp-3) var(--sp-4);
-      font-size:var(--fs-base);display:none;border:1px solid transparent}
+  /* Corrección: banda con tinte y SIN filete. Una sola técnica por bloque: el
+     cambio de fondo ya es la frontera; añadirle una raya sería la doble frontera
+     dura que ensucia (y ya no hay caja dentro de la hoja). */
+  .fb{margin-top:var(--sp-4);border-radius:0;padding:var(--sp-3) var(--sp-4);
+      font-size:var(--fs-base);display:none;border:0}
   .fb.show{display:block;animation:pop var(--dur-2) var(--spring)}
-  .fb.good{background:var(--tint-ok);border-color:rgba(46,110,73,.34)}
-  .fb.bad{background:var(--tint-bad);border-color:rgba(176,54,42,.34)}
+  .fb.good{background:var(--tint-ok)}
+  .fb.bad{background:var(--tint-bad)}
   .fb .verdict{font-weight:650;margin-bottom:var(--sp-2);display:flex;align-items:center;
                gap:var(--sp-2);flex-wrap:wrap}
-  .fb .quote{font-family:var(--font-read);font-style:italic;color:var(--dim);font-size:var(--fs-base);
+  /* La cita: bloque sangrado con filete de margen (el patrón del «inset text»).
+     Sin cursiva: ya la separan el filete, el cuerpo serif y las comillas. */
+  .fb .quote{font-family:var(--font-read);color:var(--dim);font-size:var(--fs-base);
              border-left:1px solid var(--acc);padding:var(--sp-1) 0 var(--sp-1) var(--sp-3);
              margin:var(--sp-2) 0;max-width:var(--read-w)}
 
-  .badge{font-size:var(--fs-micro);font-weight:700;padding:4px var(--sp-2);border-radius:var(--r-pill);
-         letter-spacing:.02em;white-space:nowrap;border:1px solid transparent}
-  .badge.hoch{background:var(--tint-ok);color:var(--ok-ink);border-color:rgba(46,110,73,.38)}
-  .badge.mittel{background:var(--tint-warn);color:var(--warn-ink);border-color:rgba(138,100,20,.38)}
-  .badge.niedrig{background:var(--tint-bad);color:var(--bad-ink);border-color:rgba(176,54,42,.38)}
-  .badge.ok{background:var(--tint-acc);color:var(--acc-ink);border-color:rgba(44,77,143,.38)}
-  .badge.tag{background:var(--tint-neutral);color:var(--dim);border-color:var(--line)}
+  /* Insignias: sello de tinta, no píldora. Sin borde ni radio, y en minúscula:
+     en versalitas un estado se lee peor (lo midió GOV.UK con sus task list). */
+  .badge{font-size:var(--fs-micro);font-weight:700;padding:4px var(--sp-2);border-radius:0;
+         letter-spacing:.02em;white-space:nowrap;border:0;text-transform:none}
+  .badge.hoch{background:var(--tint-ok);color:var(--ok-ink)}
+  .badge.mittel{background:var(--tint-warn);color:var(--warn-ink)}
+  .badge.niedrig{background:var(--tint-bad);color:var(--bad-ink)}
+  .badge.ok{background:var(--tint-acc);color:var(--acc-ink)}
+  .badge.tag{background:var(--tint-neutral);color:var(--dim)}
 
   .row{display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center}
+  /* Botón principal: relleno plano, sin borde ni sombra. La elevación se reserva a
+     lo que de verdad flota: el modal y el popover de error. */
   .btn{background:var(--acc-fill-1);color:var(--on-acc);
-       border:1px solid var(--acc-fill-2);border-radius:var(--r-2);
+       border:0;border-radius:var(--r-2);
        padding:0 var(--sp-4);min-height:40px;cursor:pointer;font-size:var(--fs-base);font-weight:600;
        font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);
-       box-shadow:var(--sh-1);
        transition:filter var(--dur-1) var(--ease),transform var(--dur-1) var(--spring),
-                  background var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
+                  background var(--dur-2) var(--ease),
                   color var(--dur-2) var(--ease)}
   .btn:hover{filter:brightness(1.08)}
   .btn:active{transform:scale(.97)}
   .btn:disabled{opacity:.5;cursor:not-allowed;transform:none;filter:none}
-  .btn.ghost{background:transparent;border:1px solid var(--line-2);color:var(--dim);
-             box-shadow:none;text-transform:uppercase;letter-spacing:.07em;
-             font-size:var(--fs-micro);font-weight:700}
-  .btn.ghost:hover{background:var(--sheet);color:var(--txt);border-color:var(--line-2);
-                   filter:none;box-shadow:var(--sh-1)}
-  .btn.danger{background:var(--tint-bad);border:1px solid rgba(176,54,42,.42);color:var(--bad-ink);
+  /* Acción secundaria: texto subrayado, no una pastilla con borde. El subrayado
+     afirma que se puede pulsar; el estado activo lo pasa a tinta y a filete de acento. */
+  .btn.ghost{background:none;border:0;border-bottom:1px solid var(--line-2);border-radius:0;
+             color:var(--dim);box-shadow:none;text-transform:none;letter-spacing:0;
+             font-size:var(--fs-sm);font-weight:640;padding:0 var(--sp-1)}
+  .btn.ghost:hover{background:none;color:var(--txt);border-bottom-color:var(--acc);filter:none}
+  .btn.danger{background:var(--tint-bad);border:0;color:var(--bad-ink);
               box-shadow:none}
   .btn.danger:hover{background:rgba(176,54,42,.16);filter:none}
-  .btn.success{background:var(--tint-ok);border:1px solid rgba(46,110,73,.42);color:var(--ok-ink);
+  .btn.success{background:var(--tint-ok);border:0;color:var(--ok-ink);
                box-shadow:none}
   .btn.success:hover{background:rgba(46,110,73,.16);filter:none}
-  .btn.sm{min-height:28px;padding:0 var(--sp-3);font-size:var(--fs-xs);border-radius:var(--r-1)}
+  .btn.sm{min-height:28px;padding:0 var(--sp-3);font-size:var(--fs-xs)}
 
-  .note{background:var(--tint-warn);border:1px solid rgba(138,100,20,.34);
-        color:var(--warn-ink);padding:var(--sp-3) var(--sp-4);
-        border-radius:var(--r-2);font-size:var(--fs-sm);margin-bottom:var(--sp-4)}
+  /* Aviso del sistema: banda a sangre con filetes arriba y abajo, sin caja. */
+  .note{background:none;border:0;border-top:1px solid rgba(138,100,20,.45);
+        border-bottom:1px solid var(--line);
+        color:var(--warn-ink);padding:var(--sp-3) 0;
+        border-radius:0;font-size:var(--fs-sm);margin-bottom:var(--sp-5)}
   .empty{color:var(--dim-2);padding:var(--sp-8) 0;text-align:center;font-size:var(--fs-base)}
   code{background:var(--panel3);padding:4px var(--sp-1);border-radius:var(--r-1);
-       font-family:var(--font-mono);font-size:var(--fs-xs);border:1px solid var(--line)}
+       font-family:var(--font-mono);font-size:var(--fs-xs);border:0}
 
   /* --- Etiquetas y avisos reutilizables (sustituyen estilos en línea del JS) --- */
   .card-label{font-weight:640;font-size:var(--fs-sm);color:var(--acc-ink);margin-bottom:var(--sp-1)}
@@ -452,37 +503,42 @@
 
   /* Schreiben UI & Editor */
   .schreiben-layout{display:flex;flex-direction:column;gap:var(--sp-5)}
-  .memo-card{background:var(--tint-warn);border:1px solid rgba(138,100,20,.34);
-             padding:var(--sp-3) var(--sp-4);
-             border-radius:var(--r-2);margin:var(--sp-3) 0;font-size:var(--fs-base);line-height:1.6}
+  /* Aviso interno: banda con filete, sin caja. */
+  .memo-card{background:none;border:0;border-top:1px solid rgba(138,100,20,.45);
+             border-bottom:1px solid var(--line);
+             padding:var(--sp-3) 0;
+             border-radius:0;margin:var(--sp-4) 0;font-size:var(--fs-base);line-height:1.6}
   .memo-card b{color:var(--warn-ink)}
-  .letter-card{background:var(--panel2);border:1px solid var(--line);
+  /* La carta recibida es un documento: superficie de hoja, sin borde ni sombra. */
+  .letter-card{background:var(--sheet);border:0;
                padding:var(--sp-4) var(--sp-5);
                border-radius:var(--r-2);margin:var(--sp-3) 0;white-space:pre-wrap;
                font-family:var(--font-read);font-size:var(--fs-base);line-height:1.7;color:var(--txt);
                max-width:var(--read-w)}
-  .lp-list{list-style:none;padding:0;margin:var(--sp-3) 0;display:flex;flex-direction:column;gap:var(--sp-2)}
-  .lp-item{display:flex;align-items:flex-start;gap:var(--sp-3);min-height:44px;background:var(--chip);
-           padding:var(--sp-3) var(--sp-4);border-radius:var(--r-2);font-size:var(--fs-base);
-           border:1px solid var(--line);transition:border-color var(--dur-2) var(--ease),
-           background var(--dur-2) var(--ease)}
-  .lp-item:hover{border-color:var(--line-2);background:var(--chip-hover)}
+  .lp-list{list-style:none;padding:0;margin:var(--sp-3) 0;display:flex;flex-direction:column;gap:0}
+  .lp-item{display:flex;align-items:flex-start;gap:var(--sp-3);min-height:44px;background:none;
+           padding:var(--sp-3) 0;border-radius:0;font-size:var(--fs-base);
+           border:0;border-top:1px solid var(--line);
+           transition:background var(--dur-2) var(--ease)}
+  .lp-item:hover{background:var(--tint-neutral)}
   .lp-item input[type="checkbox"]{margin-top:4px;cursor:pointer;accent-color:var(--acc);
            width:16px;height:16px;flex:0 0 16px}
   .lp-item .lp-num{min-width:24px;height:24px;flex:0 0 24px;background:var(--acc-fill-1);
            color:var(--on-acc);border-radius:50%;display:flex;align-items:center;justify-content:center;
            font-size:var(--fs-micro);font-weight:700}
 
-  .editor-card{background:var(--panel);border-radius:var(--r-3);
-               padding:var(--sp-5);box-shadow:var(--sh-1)}
+  .editor-card{background:none;border-radius:0;
+               padding:var(--sp-5) 0 0;box-shadow:none;border-top:1px solid var(--line)}
   .editor-toolbar{display:flex;align-items:center;justify-content:space-between;
                   margin-bottom:var(--sp-4);flex-wrap:wrap;gap:var(--sp-3)}
-  .editor-textarea{width:100%;min-height:300px;background:var(--sheet);border:1px solid var(--line);
+  /* Un campo de escritura SÍ lleva borde: es la excepción legítima. Un solo límite
+     definido (nada de borde + sombra), cuadrado, y el foco cambia la tinta. */
+  .editor-textarea{width:100%;min-height:300px;background:var(--sheet);border:1px solid var(--line-2);
            border-radius:var(--r-2);padding:var(--sp-4) var(--sp-5);color:var(--txt);
            font-size:var(--fs-base);line-height:1.7;font-family:var(--font-ui);resize:vertical;
            caret-color:var(--acc);outline:none;box-sizing:border-box;
-           transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
-  .editor-textarea:focus{border-color:var(--acc);box-shadow:0 0 0 4px var(--tint-acc)}
+           transition:border-color var(--dur-2) var(--ease)}
+  .editor-textarea:focus{border-color:var(--acc)}
   .timer-box{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-sm);color:var(--dim)}
   .timer-display{font-size:var(--fs-base);font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
   .timer-display.warn{color:var(--bad-ink)}
@@ -501,17 +557,18 @@
   .eval-banner.pass{background:var(--tint-ok);border-color:rgba(46,110,73,.55);color:var(--ok-ink)}
   .eval-banner.fail{background:var(--tint-bad);border-color:rgba(176,54,42,.55);color:var(--bad-ink)}
   .crit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-             gap:var(--sp-3);margin:var(--sp-4) 0}
-  .crit-box{background:var(--chip);border:1px solid var(--line);border-radius:var(--r-2);
-            padding:var(--sp-3) var(--sp-4)}
+             gap:0 var(--sp-5);margin:var(--sp-4) 0}
+  /* Los cuatro criterios de telc: celdas de una tabla, no cuatro tarjetas. */
+  .crit-box{background:none;border:0;border-top:1px solid var(--line);border-radius:0;
+            padding:var(--sp-3) 0}
   .crit-box .ch{display:flex;justify-content:space-between;align-items:center;
                 margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm)}
   .crit-box .c-body{font-size:var(--fs-sm);color:var(--dim);line-height:1.55}
-  .annotated-card{background:var(--panel);border-radius:var(--r-3);
-            padding:var(--sp-5);margin:var(--sp-4) 0;box-shadow:var(--sh-1)}
+  .annotated-card{background:none;border-radius:0;border-top:1px solid var(--line);
+            padding:var(--sp-5) 0 0;margin:var(--sp-5) 0;box-shadow:none}
   .annotated-head{display:flex;justify-content:space-between;align-items:center;
             margin-bottom:var(--sp-3);flex-wrap:wrap;gap:var(--sp-3)}
-  .annotated-text-box{background:var(--sheet);border:1px solid var(--line);
+  .annotated-text-box{background:var(--sheet);border:0;
             border-radius:var(--r-2);padding:var(--sp-5);
             font-family:var(--font-read);font-size:var(--fs-base);line-height:1.95;white-space:pre-wrap;
             color:var(--txt);word-break:break-word}
@@ -529,11 +586,12 @@
   .err-highlight.err-stil:hover,.err-highlight.err-stil.active{background:rgba(107,74,158,.22);box-shadow:0 0 0 2px var(--tint-violet)}
 
   .err-badge-num{font-size:var(--fs-micro);font-weight:700;vertical-align:super;padding:0 var(--sp-1);
-                 border-radius:var(--r-pill);margin-left:var(--sp-1);background:var(--panel);
-                 border:1px solid currentColor;opacity:.95}
+                 border-radius:0;margin-left:var(--sp-1);background:var(--panel);
+                 border:0;opacity:.95}
 
+  /* El popover SÍ flota: conserva la sombra y pierde el borde (una sola elevación). */
   .err-popover{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);
-               background:var(--panel2);border:1px solid var(--line-2);box-shadow:var(--sh-3);
+               background:var(--panel2);border:0;box-shadow:var(--sh-3);
                border-radius:var(--r-2);
                padding:var(--sp-3) var(--sp-4);min-width:250px;max-width:340px;z-index:40;display:none;
                font-size:var(--fs-sm);line-height:1.5;pointer-events:auto;text-align:left;
@@ -549,8 +607,8 @@
   .err-popover-rule{color:var(--dim);font-size:var(--fs-xs);display:block;line-height:1.5}
 
   .err-legend{display:flex;gap:var(--sp-2);flex-wrap:wrap;align-items:center;font-size:var(--fs-xs)}
-  .legend-chip{display:inline-flex;align-items:center;gap:var(--sp-1);padding:var(--sp-1) var(--sp-2);
-               border-radius:var(--r-pill);background:var(--chip);border:1px solid var(--line);
+  .legend-chip{display:inline-flex;align-items:center;gap:var(--sp-1);padding:0;
+               border-radius:0;background:none;border:0;
                color:var(--dim)}
   .legend-chip .dot{width:8px;height:8px;border-radius:50%}
   .legend-chip.gram .dot{background:var(--bad-ink)}
@@ -558,45 +616,49 @@
   .legend-chip.zeichen .dot{background:var(--acc-ink)}
   .legend-chip.stil .dot{background:var(--violet-ink)}
 
-  .tab-pills{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin:var(--sp-3) 0}
+  /* Pestañas: subrayado de documento, no pastillas. */
+  .tab-pills{display:flex;gap:var(--sp-4);flex-wrap:wrap;margin:var(--sp-3) 0;
+             border-bottom:1px solid var(--line)}
   .tab-pills.flush{margin:0}
-  .tab-pill{background:var(--chip);border:1px solid var(--line);color:var(--dim);
-            padding:0 var(--sp-4);min-height:36px;display:inline-flex;align-items:center;
-            border-radius:var(--r-pill);font-size:var(--fs-sm);font-weight:600;cursor:pointer;
+  .tab-pill{background:none;border:0;border-bottom:2px solid transparent;color:var(--dim);
+            padding:0 var(--sp-1);min-height:36px;display:inline-flex;align-items:center;
+            border-radius:0;font-size:var(--fs-sm);font-weight:640;cursor:pointer;
             font-family:inherit;
-            transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
-                       border-color var(--dur-2) var(--ease),transform var(--dur-1) var(--spring)}
-  .tab-pill:hover{color:var(--txt);background:var(--chip-hover);transform:translateY(-1px)}
+            transition:color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
+                       transform var(--dur-1) var(--spring)}
+  .tab-pill:hover{color:var(--txt)}
   .tab-pill:active{transform:scale(.97)}
-  .tab-pill.active{background:var(--acc-fill-1);color:var(--on-acc);
-            border-color:var(--acc-fill-2);box-shadow:var(--sh-1)}
+  .tab-pill.active{background:none;color:var(--txt);
 
-  .err-card{background:var(--chip);border:1px solid var(--line);
-            border-radius:var(--r-2);padding:var(--sp-3) var(--sp-4);margin-bottom:var(--sp-3);
+            border-bottom-color:var(--acc);box-shadow:none}
+
+  /* Lista de errores: filas con filete, pulsables. */
+  .err-card{background:none;border:0;border-top:1px solid var(--line);
+            border-radius:0;padding:var(--sp-3) 0;margin-bottom:0;
             cursor:pointer;
-            transition:box-shadow var(--dur-2) var(--ease),transform var(--dur-2) var(--spring),
-                       border-color var(--dur-2) var(--ease),background var(--dur-2) var(--ease)}
-  .err-card:hover{transform:translateY(-1px);border-color:var(--acc);box-shadow:var(--sh-1)}
-  .err-card.pulse{box-shadow:0 0 0 3px var(--ring);border-color:var(--acc)}
+            transition:background var(--dur-2) var(--ease),transform var(--dur-2) var(--spring)}
+  .err-card:hover{transform:none;background:var(--tint-neutral)}
+  .err-card.pulse{box-shadow:none;background:var(--tint-acc)}
   .err-card .orig{color:var(--bad-ink);text-decoration:line-through;margin-bottom:var(--sp-1);font-size:var(--fs-sm)}
   .err-card .corr{color:var(--ok-ink);font-weight:640;margin-bottom:var(--sp-1);font-size:var(--fs-base)}
   .err-card .rule{font-size:var(--fs-sm);color:var(--dim);line-height:1.5}
-  .model-text{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r-2);
+  .model-text{background:var(--sheet);border:0;border-radius:var(--r-2);
               padding:var(--sp-4) var(--sp-5);font-family:var(--font-read);font-size:var(--fs-base);
               line-height:1.7;white-space:pre-wrap;color:var(--txt);max-width:var(--read-w)}
-  .copy-btn{font-size:var(--fs-xs);padding:0 var(--sp-3);min-height:32px;border-radius:var(--r-1);
-            cursor:pointer;background:transparent;border:1px solid var(--line-2);
+  .copy-btn{font-size:var(--fs-xs);padding:0 var(--sp-1);min-height:32px;border-radius:0;
+            cursor:pointer;background:none;border:0;border-bottom:1px solid var(--line-2);
             color:var(--dim);font-family:inherit;
-            transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
+            transition:color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
                        transform var(--dur-1) var(--spring)}
-  .copy-btn:hover{background:var(--sheet);color:var(--txt)}
+  .copy-btn:hover{background:none;color:var(--txt);border-bottom-color:var(--acc)}
   .copy-btn:active{transform:scale(.97)}
 
   /* Modal de Configuración: hoja sobre velo cálido (sin cristal). */
   .modal-backdrop{position:fixed;inset:0;background:var(--scrim);
                   z-index:100;display:flex;align-items:center;justify-content:center;padding:var(--sp-4)}
+  /* El modal es lo único que flota sobre la página: sombra, sin borde. */
   .modal{background:var(--panel);
-         border:1px solid var(--line);border-radius:var(--r-4);width:100%;max-width:560px;
+         border:0;border-radius:var(--r-4);width:100%;max-width:560px;
          box-shadow:var(--sh-3);overflow:hidden;animation:pop var(--dur-3) var(--spring)}
   @keyframes pop{from{transform:scale(.965);opacity:0}to{transform:scale(1);opacity:1}}
   .modal-head{padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--line);
@@ -613,23 +675,26 @@
   .modal-foot{padding:var(--sp-3) var(--sp-5);border-top:1px solid var(--line);
               display:flex;justify-content:flex-end;gap:var(--sp-3);background:var(--panel2)}
   .ai-status{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
-             flex-wrap:wrap;background:var(--chip);border:1px solid var(--line);
-             border-radius:var(--r-2);padding:var(--sp-2) var(--sp-3);margin-bottom:var(--sp-4);
+             flex-wrap:wrap;background:none;border:0;border-top:1px solid var(--line);
+             border-bottom:1px solid var(--line);
+             border-radius:0;padding:var(--sp-2) 0;margin-bottom:var(--sp-4);
              font-size:var(--fs-xs);color:var(--dim)}
   .form-group{margin-bottom:var(--sp-4)}
   .form-group label{display:block;font-size:var(--fs-sm);font-weight:640;margin-bottom:var(--sp-2);color:var(--txt)}
   .form-group small{display:block;font-size:var(--fs-xs);color:var(--dim);margin-top:var(--sp-1);line-height:1.45}
-  .input,.select{width:100%;background:var(--sheet);border:1px solid var(--line);
-                 border-radius:var(--r-2);padding:0 var(--sp-3);min-height:42px;color:var(--txt);
+  /* Campos con un solo límite definido: borde, sin radio grande y sin halo. */
+  .input,.select{width:100%;background:var(--sheet);border:1px solid var(--line-2);
+                 border-radius:var(--r-1);padding:0 var(--sp-3);min-height:42px;color:var(--txt);
                  font-size:var(--fs-sm);font-family:inherit;outline:none;box-sizing:border-box;
                  caret-color:var(--acc);
-                 transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+                 transition:border-color var(--dur-2) var(--ease)}
   .input::placeholder{color:var(--dim-2)}
-  .input:focus,.select:focus{border-color:var(--acc);box-shadow:0 0 0 4px var(--tint-acc)}
+  .input:focus,.select:focus{border-color:var(--acc)}
 
   /* Selector bilingüe ES / RU: control segmentado, hoja seleccionada (sin píldora azul). */
+  /* Control segmentado: la superficie hundida lo define; sin borde. */
   .lang-switch{display:inline-flex;align-items:center;background:var(--panel3);
-               border:1px solid var(--line);border-radius:var(--r-pill);padding:4px;gap:var(--sp-1)}
+               border:0;border-radius:var(--r-1);padding:4px;gap:var(--sp-1)}
   .lang-btn{background:transparent;border:0;color:var(--dim);font-size:var(--fs-xs);font-weight:640;
             padding:0 var(--sp-3);min-height:32px;border-radius:var(--r-pill);cursor:pointer;
             font-family:inherit;
@@ -639,11 +704,11 @@
   .lang-btn:hover{color:var(--txt)}
   .lang-btn:active{transform:scale(.96)}
   .lang-btn.active{background:var(--sheet);color:var(--txt);font-weight:700;
-            box-shadow:var(--sh-1)}
+            box-shadow:none}
 
   /* Selector de usuario Sergio / Diana */
   .user-switch{display:inline-flex;align-items:center;background:var(--panel3);
-               border:1px solid var(--line);border-radius:var(--r-pill);padding:4px;gap:var(--sp-1)}
+               border:0;border-radius:var(--r-1);padding:4px;gap:var(--sp-1)}
   .user-btn{background:transparent;border:0;color:var(--dim);font-size:var(--fs-xs);font-weight:640;
             padding:0 var(--sp-3);min-height:32px;border-radius:var(--r-pill);cursor:pointer;
             font-family:inherit;
@@ -653,12 +718,12 @@
   .user-btn:hover{color:var(--txt)}
   .user-btn:active{transform:scale(.96)}
   .user-btn.active{background:var(--sheet);color:var(--txt);font-weight:700;
-            box-shadow:var(--sh-1)}
+            box-shadow:none}
 
   /* Indicador de sincronización en la nube */
   .cloud-badge{display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-micro);color:var(--dim);
-               padding:var(--sp-1) var(--sp-2);border-radius:var(--r-pill);
-               background:var(--tint-neutral);border:1px solid var(--line)}
+               padding:0;border-radius:0;
+               background:none;border:0}
   .cloud-dot{width:8px;height:8px;border-radius:50%;background:#6b7684;flex:0 0 8px}
   .cloud-dot.online{background:var(--ok)}
   .cloud-dot.syncing{background:var(--warn);
@@ -667,30 +732,32 @@
   @keyframes pulse-sync{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}
 
   /* Tarjeta de redacción comparativa del compañero (Diana / Sergio) */
-  .partner-card{background:var(--panel);border-radius:var(--r-3);
-                padding:var(--sp-4) var(--sp-5);margin-bottom:var(--sp-4);
-                box-shadow:var(--sh-1)}
+  .partner-card{background:none;border-radius:0;border-top:1px solid var(--line);
+                padding:var(--sp-4) 0 0;margin-bottom:var(--sp-4);
+                box-shadow:none}
   .partner-head{display:flex;justify-content:space-between;align-items:center;
                 margin-bottom:var(--sp-3);flex-wrap:wrap;gap:var(--sp-2)}
   .partner-title{font-size:var(--fs-base);font-weight:650;color:var(--txt);display:flex;align-items:center;gap:var(--sp-2)}
   .partner-meta{font-size:var(--fs-xs);color:var(--dim-2);display:flex;align-items:center;gap:var(--sp-2)}
-  .partner-body{background:var(--sheet);border:1px solid var(--line);border-radius:var(--r-2);
+  .partner-body{background:var(--sheet);border:0;border-radius:var(--r-2);
                 padding:var(--sp-3) var(--sp-4);font-family:var(--font-read);font-size:var(--fs-base);
                 line-height:1.7;white-space:pre-wrap;color:var(--txt);min-height:96px;
                 max-width:var(--read-w)}
   .partner-empty{color:var(--dim-2);font-style:italic;padding:var(--sp-6) var(--sp-3);text-align:center}
 
   /* Conmutador de tema (luna/sol) y botón de índice en móvil */
-  .icon-btn{background:transparent;border:1px solid var(--line-2);color:var(--dim);
-            width:32px;min-height:32px;padding:0;border-radius:var(--r-1);cursor:pointer;
+  .icon-btn{background:none;border:0;color:var(--dim);
+            width:32px;min-height:32px;padding:0;border-radius:0;cursor:pointer;
             display:inline-flex;align-items:center;justify-content:center;
-            transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
+            transition:color var(--dur-2) var(--ease),
                        transform var(--dur-1) var(--spring)}
-  .icon-btn:hover{background:var(--sheet);color:var(--txt)}
+  .icon-btn:hover{background:none;color:var(--txt)}
   .icon-btn:active{transform:scale(.94)}
   .icon-btn svg{width:17px;height:17px;display:block}
   #nav-toggle{display:none;gap:var(--sp-2);width:auto;padding:0 var(--sp-3)}
   #nav-toggle svg{width:16px;height:16px;flex:0 0 16px}
+  /* El conmutador de mesa solo existe donde la mesa cabe (≥1280px). */
+  #desk-toggle{display:none}
 
   /* --- Móvil: índice plegado, cabecera compacta y TODO control a 44px --- */
   @media(max-width:860px){
@@ -714,16 +781,24 @@
     .btn.sm,.copy-btn{min-height:36px}
   }
 
-  /* --- Escritorio ancho (≥1500px): la mesa de examen, en dos columnas ---
+  /* --- Escritorio ancho (≥1280px): la mesa de examen, en dos columnas ---
      A 1920px una columna de 960px dejaba media pantalla vacía a la derecha. Aquí
      la referencia —los anuncios de Lesen 1 y 3 o el texto de lectura— se queda a
      la izquierda, fija y con su propio scroll, y la hoja de preguntas ocupa la
      derecha: se responde sin subir y bajar a consultar el anuncio.
+     La puerta estaba en 1500px y un portátil de 1440 se quedaba fuera: el panel
+     de anuncios mide 1366px de alto y la primera fila de letras cae en y≈1815, así
+     que había que sostener ocho anuncios alemanes en la memoria mientras se
+     respondía. Ahora entra desde 1280 y la columna de referencia es fluida
+     (clamp) en vez de 600px fijos: a 1280 deja 384px de referencia y algo más de
+     460px de hoja, que es lo justo para que las ocho letras quepan en una fila.
      Solo se activa si la variante tiene referencia; por eso la clase la pone el
-     render (main.desk), no un :has() ni un ancho fijo. */
-  @media(min-width:1500px){
+     render (main.desk), no un :has() ni un ancho fijo, y hay un conmutador en la
+     cabecera para forzar una columna cuando el ancho no compensa. */
+  @media(min-width:1280px){
+    #desk-toggle{display:inline-flex}
     main.desk{max-width:none;display:grid;align-items:start;column-gap:var(--sp-6);
-              grid-template-columns:minmax(0,var(--desk-ref)) minmax(0,1fr)}
+              grid-template-columns:minmax(0,clamp(300px,30vw,var(--desk-ref))) minmax(0,1fr)}
     main.desk > *{grid-column:1 / -1}
     main.desk > details.passage{grid-column:1;position:sticky;
               top:calc(var(--header-h) + var(--sp-5));
@@ -732,8 +807,8 @@
     /* El rótulo del panel no se va con el scroll: sigue diciendo qué miras y
        cuántos anuncios llevas asignados. */
     main.desk > details.passage > summary{position:sticky;top:0;z-index:2;
-              background:var(--panel);padding-top:var(--sp-4);
-              border-radius:var(--r-3) var(--r-3) 0 0}
+              background:var(--bg);padding-top:var(--sp-4);
+              border-radius:0}
     /* Un solo scroll (el del panel), no dos anidados. */
     main.desk > details.passage .passage-body{max-height:none;overflow:visible}
     main.desk > .q-sheet,main.desk > .row{grid-column:2;width:100%;max-width:var(--desk-work)}
@@ -748,6 +823,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" id="skip-link" href="#main">Saltar al contenido</a>
 <header>
   <h1 id="header-title">B2 Beruf — Test</h1>
   <div class="user-switch" role="group" aria-label="Perfil / Профиль">
@@ -765,6 +841,7 @@
   <div class="spacer"></div>
   <div class="stat" id="stats"></div>
   <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
+  <button class="btn ghost" id="desk-toggle" aria-pressed="false" title="Mesa de examen">Mesa de examen</button>
   <button class="btn ghost" id="btn-ai-config" title="Configurar claves de API y sincronización">⚙ Configurar IA</button>
   <button class="icon-btn" id="theme-btn" type="button" title="Modo noche" aria-label="Modo noche">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
@@ -774,9 +851,12 @@
 
 <div class="layout">
   <nav id="nav"></nav>
-  <main id="main"><div class="empty">…</div></main>
+  <main id="main" tabindex="-1"><div class="empty">…</div></main>
 </div>
 <div id="modal-container"></div>
+<!-- Aviso de estado para lectores de pantalla: vive fuera de #main porque el
+     render vacía #main entero y una región viva que se destruye no se anuncia. -->
+<p id="sr-status" class="sr-only" role="status" aria-live="polite"></p>
 
 <script>
 const DATA = /*__DATA__*/;
@@ -880,6 +960,15 @@ const I18N = {
     reviewModeNoDoubt: "Esta variante no tiene respuestas dudosas: todas son de confianza alta.",
     btnShowAllAnswers: "Mostrar todas las respuestas",
     btnClearVariantAnswers: "Borrar respuestas de este ejercicio",
+    clearItem: "Borrar esta respuesta",
+    deskToggle: "Mesa de examen",
+    deskToggleTitle: "Poner la referencia (los anuncios o el texto) fija al lado de las preguntas. En una sola columna queda debajo.",
+    skipToContent: "Saltar al contenido",
+    takenBy: "ya asignada al enunciado {n}",
+    srRight: "Correcto.",
+    srWrong: "Incorrecto. La respuesta correcta es {letter}.",
+    srRevealed: "Respuesta revelada. La respuesta correcta es {letter}.",
+    srCleared: "Respuesta borrada. Puedes volver a contestarla.",
     btnResetSection: "↺ Reiniciar",
     secToggleExpand: "Desplegar {title}",
     secToggleCollapse: "Plegar {title}",
@@ -1097,6 +1186,15 @@ const I18N = {
     reviewModeNoDoubt: "В этом варианте нет сомнительных ответов: все с высокой уверенностью.",
     btnShowAllAnswers: "Показать все ответы",
     btnClearVariantAnswers: "Очистить ответы этого задания",
+    clearItem: "Удалить этот ответ",
+    deskToggle: "Экзаменационный стол",
+    deskToggleTitle: "Закрепить материал (объявления или текст) рядом с вопросами. В одну колонку он оказывается под ними.",
+    skipToContent: "Перейти к содержанию",
+    takenBy: "уже назначена заданию {n}",
+    srRight: "Верно.",
+    srWrong: "Неверно. Правильный ответ: {letter}.",
+    srRevealed: "Ответ показан. Правильный ответ: {letter}.",
+    srCleared: "Ответ удалён. Можно ответить снова.",
     btnResetSection: "↺ Сбросить",
     secToggleExpand: "Развернуть {title}",
     secToggleCollapse: "Свернуть {title}",
@@ -1391,6 +1489,10 @@ function updateLangUI() {
   if (navLabel) navLabel.textContent = t("navToggleLabel");
   const navToggle = document.getElementById("nav-toggle");
   if (navToggle) navToggle.title = t("navToggleLabel");
+
+  const skip = document.getElementById("skip-link");
+  if (skip) skip.textContent = t("skipToContent");
+  updateDeskUI();
 
   applyTheme();
   updateUserUI();
@@ -2028,6 +2130,7 @@ function formatTimer(sec){
 function render(){
   try {
     renderMain();
+    restaurarFoco();
   } catch(e){
     console.warn("Error al renderizar:", e);
     const main = document.getElementById("main");
@@ -2042,13 +2145,18 @@ function renderMain(){
   const main = document.getElementById("main");
   if(!main) return;
   const v = allVariants.find(x=>x.id===current);
-  if(!v){ main.className = ""; main.innerHTML = '<div class="empty">' + t("noData") + '</div>'; return; }
+  if(!v){ main.className = ""; main.innerHTML = '<div class="empty">' + t("noData") + '</div>'; updateDeskUI(); return; }
   main.innerHTML = "";
-  /* Mesa de examen a dos columnas (CSS ≥1500px): solo si hay referencia que
-     poner al lado —anuncios de zuordnung o texto de lectura—. Sin ella, una
-     columna; la clase se quita siempre para no arrastrarla entre variantes. */
-  main.className = (v.kind !== "schreiben" && (v.passage || (v.options && v.options.length)))
-    ? "desk" : "";
+  /* Índice letra → anuncio del panel de referencia, para el «peek». */
+  adNodes = {};
+  /* Mesa de examen a dos columnas (CSS ≥1280px): solo si hay referencia que poner
+     al lado —anuncios de zuordnung o texto de lectura—; sin ella la mesa no tiene
+     sentido, y la clase se quita siempre para no arrastrarla entre variantes. El
+     conmutador de la cabecera manda sobre lo automático y se recuerda. */
+  const hayReferencia = v.kind !== "schreiben" && !!(v.passage || (v.options && v.options.length));
+  const deskOn = state.deskOn === undefined ? hayReferencia : (hayReferencia && !!state.deskOn);
+  main.className = deskOn ? "desk" : "";
+  updateDeskUI();
 
   /* Encabezado */
   const h2 = document.createElement("h2");
@@ -2112,9 +2220,13 @@ function renderMain(){
     const enBanco = v.optionsLayout === "bank";
     if(enBanco) body.className = "bank";
     v.options.forEach(o=>{
-      const isUsed = used.has(String(o.key).toLowerCase());
+      const letraAd = String(o.key).toLowerCase();
+      const isUsed = used.has(letraAd);
       const div = document.createElement("div");
       div.className = "ad " + (isUsed ? "used" : "unused");
+      /* El panel es la referencia del «peek»: la letra de abajo enciende su anuncio. */
+      adNodes[letraAd] = div;
+      setAttr(div, "data-ad", letraAd);
       div.innerHTML = enBanco
         ? '<span class="k">' + esc(o.key) + ')</span>' +
           '<span class="body">' + esc(o.text || o.title || "") + '</span>'
@@ -4058,50 +4170,111 @@ function renderItem(v, it){
   const div = document.createElement("div");
   div.className = "q";
 
+  const promptId = "p-" + String(key).replace(/[^A-Za-z0-9_-]/g, "-");
   const head = document.createElement("div");
   head.innerHTML = '<span class="num">' + (it._label || it.n) + '</span>' +
-                   '<span class="prompt">' + conHuecos(it.prompt) + '</span>';
+                   '<span class="prompt" id="' + promptId + '">' + conHuecos(it.prompt) + '</span>';
   div.appendChild(head);
 
   const isMatching = v.kind === "zuordnung";
 
+  /* Letras ya gastadas por OTRO enunciado de esta variante. Se leen del estado del
+     usuario, nunca de la clave: el panel sigue sin decir cuál es la respuesta. */
+  const gastadas = {};
+  (v.items || []).forEach(o=>{
+    if(o === it) return;
+    const a = state.answers[ansKey(v, o)];
+    if(a !== undefined && a !== "__revealed__") gastadas[String(a).toLowerCase()] = o;
+  });
+
   if(isMatching){
     const letters = document.createElement("div");
     letters.className = "letters";
+    setAttr(letters, "role", "radiogroup");
+    setAttr(letters, "aria-labelledby", promptId);
+    /* La misma información que el tooltip, visible y alcanzable con el teclado. */
+    const peek = document.createElement("div");
+    peek.className = "letters-peek";
+    peek.innerHTML = "";
+    setAttr(peek, "aria-hidden", "true");
     const opts = v.options||[];
-    opts.forEach(o=>{
+    const botones = [];
+    opts.forEach((o, i)=>{
       const k = String(o.key);
+      const bajo = k.toLowerCase();
       const b = document.createElement("button");
+      b.type = "button";
       b.textContent = k;
-      b.title = k + ") " + (o.title ? o.title + " — " : "") + (o.text || "").slice(0, 140);
+      const titulo = ((o.title ? o.title + " — " : "") + (o.text || "")).trim();
+      b.title = k + ") " + titulo.slice(0, 140);
+      /* El nombre accesible dice la letra Y de qué anuncio es: «a» no dice nada. */
+      setAttr(b, "aria-label", k + ") " + titulo.slice(0, 120) +
+        (gastadas[bajo] ? " · " + t("takenBy", {n: (gastadas[bajo]._label || gastadas[bajo].n)}) : ""));
+      setAttr(b, "role", "radio");
+      setAttr(b, "aria-checked", String(chosen||"").toLowerCase() === bajo ? "true" : "false");
+      setAttr(b, "data-key", key + ":" + bajo);
       b.className = "";
-      if(answered && String(chosen).toLowerCase() === k.toLowerCase()){
-        b.className = (k.toLowerCase()===correctLetter) ? "correct" : "wrong";
+      if(answered && String(chosen).toLowerCase() === bajo){
+        b.className = (bajo===correctLetter) ? "correct" : "wrong";
       }
-      if((answered||revealed) && k.toLowerCase()===correctLetter) b.className = "correct";
-      if(!answered && !revealed && String(chosen||"").toLowerCase()===k.toLowerCase()) b.className = "sel";
-      b.onclick = ()=>{ state.answers[key] = k; saveState(); render(); };
+      if((answered||revealed) && bajo===correctLetter) b.className = "correct";
+      /* Estado que antes no existía y que el CSS declaraba sin que nadie pudiera
+         verlo: la letra ya cogida por otro enunciado. Sigue siendo pulsable
+         (puedes reasignarla), pero se ve. */
+      if(!answered && !revealed && gastadas[bajo]) b.className = "taken";
+      /* Roving tabindex: un tabulador por fila y las flechas para recorrerla; en
+         vez de ocho tabulaciones por enunciado. Siempre hay exactamente uno. */
+      b.tabIndex = (String(chosen||"").toLowerCase() === bajo ||
+                    (chosen === undefined && i === 0) ||
+                    (revealed && bajo === correctLetter)) ? 0 : -1;
+      b.onclick = ()=> commitAnswer(key, it, bajo);
+      /* Peek: la letra enciende su anuncio y escribe debajo cuál es. */
+      const mostrar = ()=>{
+        peekAd(bajo);
+        peek.innerHTML = '<b>' + esc(k) + ')</b> ' + esc(titulo.slice(0, 160));
+      };
+      const ocultar = ()=>{ clearPeek(); peek.innerHTML = ""; };
+      b.onmouseenter = mostrar;
+      b.onmouseleave = ocultar;
+      b.onfocus = mostrar;
+      b.onblur = ocultar;
+      b.onkeydown = (e)=> teclasGrupo(e, botones, i);
+      botones.push(b);
       letters.appendChild(b);
     });
     div.appendChild(letters);
+    div.appendChild(peek);
   } else {
     const opts = document.createElement("div");
     opts.className = "opts";
-    (it.options||[]).forEach(o=>{
+    setAttr(opts, "role", "radiogroup");
+    setAttr(opts, "aria-labelledby", promptId);
+    const botones = [];
+    (it.options||[]).forEach((o, i)=>{
       const k = String(o.key);
       const tf = it.type === "truefalse" || /^(richtig|falsch)$/i.test(k);
       const isCorrect = k.toLowerCase() === correctLetter;
       const isChosen = answered && String(chosen).toLowerCase() === k.toLowerCase();
-      const el = document.createElement("div");
+      /* Botón de verdad: antes era un <div onclick> sin tabindex ni role, así que
+         ningún ítem que no fuera de emparejar se podía contestar con el teclado. */
+      const el = document.createElement("button");
+      el.type = "button";
+      setAttr(el, "role", "radio");
+      setAttr(el, "aria-checked", isChosen ? "true" : "false");
+      setAttr(el, "data-key", key + ":" + k.toLowerCase());
       el.className = "opt";
       if(answered || revealed){
         if(isCorrect) el.className += " correct";
         else if(isChosen) el.className += " wrong";
-      } else if(isChosen) el.className += " sel";
+      }
+      el.tabIndex = (isChosen || (chosen === undefined && i === 0) ||
+                     (revealed && isCorrect)) ? 0 : -1;
       el.innerHTML = tf
         ? '<span class="key">' + (isCorrect && (answered||revealed) ? "✓" : "•") + '</span><span>' + esc(o.text||k) + '</span>'
         : '<span class="key">' + esc(k) + ')</span><span>' + esc(o.text||"") + '</span>';
-      el.onclick = ()=>{ state.answers[key] = k; saveState(); render(); };
+      el.onclick = ()=> commitAnswer(key, it, k);
+      el.onkeydown = (e)=> teclasGrupo(e, botones, i);
+      botones.push(el);
       opts.appendChild(el);
     });
     div.appendChild(opts);
@@ -4136,6 +4309,20 @@ function renderItem(v, it){
       (it.quote ? '<div class="quote">„' + conHuecos(it.quote) + '“</div>' : '') +
       '<div>' + esc(explainOf(it)) + '</div>';
     div.appendChild(fb);
+    /* Deshacer por ítem: contestar sigue siendo de un clic, pero deja de ser
+       irreversible salvo borrando el ejercicio entero. */
+    const borrar = document.createElement("button");
+    borrar.type = "button";
+    borrar.className = "btn ghost sm";
+    borrar.textContent = t("clearItem");
+    borrar.onclick = ()=>{
+      delete state.answers[key];
+      saveState();
+      focusTrasRender = null;
+      render();
+      announce(t("srCleared"));
+    };
+    div.appendChild(borrar);
   }
   return div;
 }
@@ -4144,6 +4331,130 @@ function esc(s){
   return String(s==null?"":s)
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
+}
+
+/* ---------- Utilidades de DOM ----------
+   Las pruebas de humo y de seguridad ejecutan este script con un DOM mínimo que
+   no implementa classList, setAttribute, focus, getAttribute ni matchMedia. Todo
+   lo que dependa de esas APIs pasa por aquí: la app se comporta igual en el
+   navegador y en las pruebas, sin ramas de «modo test» dentro del render. */
+function setAttr(el, name, value){
+  if(el && typeof el.setAttribute === "function") el.setAttribute(name, value);
+}
+function getAttr(el, name){
+  if(el && typeof el.getAttribute === "function") return el.getAttribute(name);
+  return undefined;
+}
+function hasClass(el, cls){
+  return String((el && el.className) || "").split(/\s+/).indexOf(cls) !== -1;
+}
+function toggleClass(el, cls, on){
+  if(!el) return;
+  if(el.classList && typeof el.classList.add === "function"){
+    if(on) el.classList.add(cls); else el.classList.remove(cls);
+    return;
+  }
+  const partes = String(el.className || "").split(/\s+/).filter(Boolean).filter(c => c !== cls);
+  if(on) partes.push(cls);
+  el.className = partes.join(" ");
+}
+function focusEl(el){
+  if(el && typeof el.focus === "function"){ try { el.focus({preventScroll:true}); } catch(e){ el.focus(); } }
+}
+function announce(texto){
+  const n = document.getElementById("sr-status");
+  if(n) n.textContent = texto;
+}
+function prefiereMenosMovimiento(){
+  try {
+    return typeof window.matchMedia === "function" &&
+           window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  } catch(e){ return false; }
+}
+
+/* ---------- Mesa de examen: conmutador y «peek» del anuncio ----------
+   `adNodes` guarda letra → anuncio del panel de referencia para encender el que
+   corresponde a la letra que tienes debajo del ratón o del foco. Es un índice en
+   memoria, no una consulta al documento, porque el DOM de las pruebas no tiene
+   querySelector. Se rehace en cada render. */
+let adNodes = {};
+function clearPeek(){
+  Object.keys(adNodes).forEach(k => toggleClass(adNodes[k], "peek", false));
+}
+function peekAd(letra){
+  const clave = String(letra || "").toLowerCase();
+  Object.keys(adNodes).forEach(k => toggleClass(adNodes[k], "peek", k === clave));
+  const ad = adNodes[clave];
+  if(!ad) return;
+  /* Si el anuncio queda fuera del panel (que tiene su propio scroll), se acerca
+     lo mínimo: `nearest` y respetando a quien pidió menos movimiento. */
+  const panel = ad.parentNode;
+  if(typeof ad.getBoundingClientRect !== "function" || typeof ad.scrollIntoView !== "function") return;
+  if(!panel || typeof panel.getBoundingClientRect !== "function") return;
+  const a = ad.getBoundingClientRect(), p = panel.getBoundingClientRect();
+  if(a.top < p.top || a.bottom > p.bottom){
+    try {
+      ad.scrollIntoView({block:"nearest", behavior: prefiereMenosMovimiento() ? "auto" : "smooth"});
+    } catch(e){}
+  }
+}
+function updateDeskUI(){
+  const b = document.getElementById("desk-toggle");
+  if(!b) return;
+  const on = hasClass(document.getElementById("main"), "desk");
+  b.textContent = t("deskToggle");
+  b.title = t("deskToggleTitle");
+  b.className = on ? "btn" : "btn ghost";
+  setAttr(b, "aria-pressed", on ? "true" : "false");
+}
+
+/* ---------- Foco y avisos al contestar ----------
+   El render vacía #main entero, así que el control pulsado desaparecía y el foco
+   caía al <body>: para la siguiente pregunta había que tabular desde la cabecera.
+   `focusTrasRender` recuerda qué control devolver al foco y `restaurarFoco` lo
+   busca recorriendo hijos (sin querySelector, que el DOM de las pruebas no tiene). */
+let focusTrasRender = null;
+function restaurarFoco(){
+  if(!focusTrasRender) return;
+  const clave = focusTrasRender;
+  focusTrasRender = null;
+  const main = document.getElementById("main");
+  if(!main || !main.children) return;
+  const pila = [main];
+  let encontrado = null;
+  while(pila.length && !encontrado){
+    const el = pila.pop();
+    if(getAttr(el, "data-key") === clave) encontrado = el;
+    if(el && el.children) for(const c of el.children) pila.push(c);
+  }
+  focusEl(encontrado);
+}
+/* Contestar: guarda, repinta, devuelve el foco y cuenta lo que ha pasado por la
+   región viva (los veredictos llevan <b>, así que el aviso usa frases propias). */
+function commitAnswer(clave, item, valor){
+  const cambio = state.answers[clave] !== valor;
+  state.answers[clave] = valor;
+  saveState();
+  focusTrasRender = clave + ":" + String(valor).toLowerCase();
+  render();
+  if(!cambio) return;
+  const letra = itemAnswerLetter(item);
+  announce(String(valor).toLowerCase() === letra ? t("srRight") : t("srWrong", {letter: letra}));
+}
+/* Un radiogroup se recorre con las flechas, no con ocho Tabs. Elegir confirma,
+   que es exactamente lo que promete role="radio". */
+function teclasGrupo(e, botones, i){
+  if(!e || !botones || botones.length < 2) return;
+  const n = botones.length;
+  let destino = null;
+  if(e.key === "ArrowRight" || e.key === "ArrowDown") destino = (i + 1) % n;
+  else if(e.key === "ArrowLeft" || e.key === "ArrowUp") destino = (i - 1 + n) % n;
+  else if(e.key === "Home") destino = 0;
+  else if(e.key === "End") destino = n - 1;
+  else return;
+  if(typeof e.preventDefault === "function") e.preventDefault();
+  const b = botones[destino];
+  if(b && typeof b.onclick === "function") b.onclick(); else focusEl(b);
 }
 
 /* Los huecos de los Sprachbausteine se guardan como «46 ( )», para que las citas
@@ -4169,6 +4480,17 @@ if(doubtBtn){
     }
     render();
     window.scrollTo(0,0);
+  };
+}
+
+/* Conmutador de la mesa de examen: manda sobre lo que decide el render y se
+   recuerda. Apagarlo deja una sola columna, con la referencia encima. */
+const deskBtn = document.getElementById("desk-toggle");
+if(deskBtn){
+  deskBtn.onclick = ()=>{
+    state.deskOn = !hasClass(document.getElementById("main"), "desk");
+    saveState();
+    render();
   };
 }
 
