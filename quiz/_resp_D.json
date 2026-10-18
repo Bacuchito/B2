@@ -1,0 +1,178 @@
+{
+  "sb2-v1": {
+    "52": {
+      "answer": "b",
+      "confidence": "mittel",
+      "quote": "nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine.",
+      "explain": "La colocación correcta es «die Bestellung von etwas» (pedido de mercancía), y el texto retoma después «unsere Bestellung». «der Auftrag» exigiría la preposición «über» (ein Auftrag über zwei Kaffeevollautomaten), y «die Anforderung» significa 'requerimiento/petición', no una compra.",
+      "explain_ru": "Устойчивое сочетание — «die Bestellung von etwas» (заказ чего-либо); далее в тексте снова стоит «unsere Bestellung». «Der Auftrag» требует предлога «über» (ein Auftrag über zwei Kaffeevollautomaten), а «die Anforderung» означает 'запрос/требование', а не покупку."
+    },
+    "53": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16.",
+      "explain": "Solo «erhielten daraufhin» concuerda con el pretérito del contexto («erfolgte in KW 12») y marca la consecuencia temporal ('acto seguido recibimos'). «bekommen» está en presente y «bestellten ... eine Auftragsbestätigung» no tiene sentido: una confirmación de pedido no se encarga.",
+      "explain_ru": "Только «erhielten daraufhin» согласуется с претеритумом контекста («erfolgte in KW 12») и выражает временную последовательность ('вслед за этим получили'). «Bekommen» — презенс, а «bestellten … eine Auftragsbestätigung» лишено смысла: подтверждение заказа не заказывают."
+    },
+    "54": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "54 ( ) der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich darauf hingewiesen, dass wir die Maschinen dringend benötigen.",
+      "explain": "Solo «Nach Ablauf» forma la expresión fija «nach Ablauf der Lieferfrist» (tras expirar el plazo). «Beim Verlauf» no existe como colocación y «Vor dem Zulauf» es un falso amigo: «Zulauf» es 'afluencia', no 'plazo'.",
+      "explain_ru": "Только «Nach Ablauf» образует устойчивое выражение «nach Ablauf der Lieferfrist» ('по истечении срока поставки'). «Beim Verlauf» — ложное сочетание, а «Vor dem Zulauf» — ложный друг: «Zulauf» значит 'приток', а не 'срок'."
+    },
+    "55": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.",
+      "explain": "«sich befinden» es el verbo que indica en qué punto estamos («wir befinden uns in KW 18»). «haben» y «sind» no pueden regir el reflexivo «uns» con ese significado.",
+      "explain_ru": "«Sich befinden» — глагол, указывающий, на каком этапе/в какой точке мы находимся («wir befinden uns in KW 18»). «Haben» и «sind» не сочетаются с возвратным «uns» в этом значении."
+    },
+    "56": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung.",
+      "explain": "Con «die Ware» el verbo adecuado es «eintreffen» (llegar): «die Ware ist nicht eingetroffen». «erhalten» es transitivo (alguien recibe la mercancía), así que «ist ... erhalten» no funciona, y «erbringen» se usa con servicios o rendimientos, no con mercancía.",
+      "explain_ru": "С «die Ware» употребляется «eintreffen» (прибывать): «die Ware ist nicht eingetroffen». «Erhalten» — переходный глагол (кто-то получает товар), поэтому «ist … erhalten» невозможно, а «erbringen» используется с услугами, а не с товаром."
+    },
+    "57": {
+      "answer": "c",
+      "confidence": "niedrig",
+      "quote": "Bitte schicken Sie uns umgehend eine 57 ( ).",
+      "explain": "La carta pide una reacción escrita del proveedor por el retraso, de ahí «schriftliche Stellungnahme». «Kündigung» sería una resolución hecha por la parte equivocada (el cliente es quien cancela) y «Auftragsbestätigung» ya aparece en el hueco 53, así que pedirla otra vez resulta contradictorio. Duda real: si se entendiera como confirmación escrita del nuevo plazo (KW 20), la opción a también sería defendible.",
+      "explain_ru": "Письмо требует письменной реакции поставщика на просрочку, отсюда «schriftliche Stellungnahme». «Kündigung» — расторжение не с той стороны (расторгает клиент), а «Auftragsbestätigung» уже упомянуто в пропуске 53, поэтому просить её снова противоречиво. Реальное сомнение: если понимать это как письменное подтверждение нового срока (KW 20), вариант a) тоже защитим."
+    }
+  },
+  "sb2-v1-0720": {
+    "52": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine.",
+      "explain": "«sich für den Erwerb von etwas entscheiden» es la colocación correcta (Erwerb = adquisición/compra). «Verkauf» invertiría los papeles (la empresa sería la vendedora) y «Verleih» (alquiler) contradice que se trate de una compra.",
+      "explain_ru": "«Sich für den Erwerb von etwas entscheiden» — устойчивое сочетание («Erwerb» — приобретение/покупка). «Verkauf» меняет роли (продавала бы фирма), а «Verleih» (прокат) противоречит покупке."
+    },
+    "53": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16.",
+      "explain": "Solo «erhielten daraufhin» concuerda con el pretérito del contexto y marca la consecuencia temporal. «bekommen» está en presente (habría que decir «bekamen») y «bestellten ... eine Auftragsbestätigung» carece de sentido.",
+      "explain_ru": "Только «erhielten daraufhin» согласуется с претеритумом контекста и выражает последовательность. «Bekommen» — презенс (нужно было бы «bekamen»), а «bestellten … eine Auftragsbestätigung» бессмысленно."
+    },
+    "54": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Nach Ablauf der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich 54 ( ), dass wir die Maschinen dringend benötigen.",
+      "explain": "«hinweisen» se construye con «auf» + «dass»: «wir haben Sie darauf hingewiesen, dass ...», que es justo lo que pide el hueco. «davor gewarnt» es gramatical pero significaría 'advertir de un peligro' (otro sentido), y «gefragt» no admite aquí una oración con «dass» (se pregunta «ob»).",
+      "explain_ru": "«Hinweisen» управляет «auf» + «dass»: «wir haben Sie darauf hingewiesen, dass …» — именно это требует пропуск. «Davor gewarnt» грамматически возможно, но значит 'предупреждать об опасности' (другой смысл), а «gefragt» не управляет придаточным с «dass» (спрашивают «ob»)."
+    },
+    "55": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.",
+      "explain": "«sich befinden» es el único verbo que encaja con el reflexivo y con la indicación temporal: «Mittlerweile befinden wir uns in KW 18». «haben» y «sind» no funcionan con «uns» en este sentido.",
+      "explain_ru": "«Sich befinden» — единственный глагол, подходящий с возвратным «uns» и указанием времени: «Mittlerweile befinden wir uns in KW 18». «Haben» и «sind» здесь с «uns» не работают."
+    },
+    "56": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung.",
+      "explain": "La mercancía 'llega': «die Ware ist nicht eingetroffen». «erhalten» es transitivo y «erbracht» se predica de servicios, no de mercancía.",
+      "explain_ru": "Товар 'прибывает': «die Ware ist nicht eingetroffen». «Erhalten» — переходный глагол, а «erbracht» относится к услугам, а не к товару."
+    },
+    "57": {
+      "answer": "c",
+      "confidence": "niedrig",
+      "quote": "Bitte schicken Sie uns umgehend eine 57 ( ).",
+      "explain": "Igual que en sb2-v1: lo coherente tras la stornierung es pedir una «schriftliche Stellungnahme» (una reacción escrita del proveedor); «Kündigung» estaría en la dirección equivocada y «Auftragsbestätigung» ya se ha mencionado en el hueco 53. Duda: la opción a sería defendible si se lee como confirmación escrita del nuevo plazo de entrega.",
+      "explain_ru": "Как и в sb2-v1: после сторнирования логично просить «schriftliche Stellungnahme» (письменную реакцию поставщика); «Kündigung» — не с той стороны, а «Auftragsbestätigung» уже упомянуто в пропуске 53. Сомнение: вариант a) защитим, если понимать это как письменное подтверждение нового срока поставки."
+    }
+  },
+  "sb2-v2": {
+    "52": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Wir haben 52 ( ) und teilen Ihre Ansicht.",
+      "explain": "La carta responde a la reclamación del cliente por la couch dañada: solo «Ihre Reklamation geprüft» es coherente con «teilen Ihre Ansicht» (le damos la razón). Aceptar un pedido o haber recibido una orden no tiene ningún sentido en este contexto.",
+      "explain_ru": "Письмо — ответ на рекламацию клиента о повреждённом диване: только «Ihre Reklamation geprüft» согласуется с «teilen Ihre Ansicht» (фирма согласна с клиентом). Принять заказ или получить заказ в этом контексте бессмысленно."
+    },
+    "53": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden.",
+      "explain": "El sujeto del pasivo es «der Mangel»: «der Mangel ist übersehen worden» (el defecto pasó desapercibido). «das Problem unbemerkt» no funciona porque «unbemerkt» no es participio, y «der Schaden behoben» contradiría la carta: el daño sigue existiendo.",
+      "explain_ru": "Подлежащее пассива — «der Mangel»: «der Mangel ist übersehen worden» ('дефект был пропущен'). «Das Problem unbemerkt» не работает, так как «unbemerkt» — не причастие, а «der Schaden behoben» противоречит письму: повреждение осталось."
+    },
+    "54": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "54 ( ) hätte die Couch nicht ausgeliefert werden dürfen.",
+      "explain": "«In diesem Zustand» ('en este estado') es lo único que da sentido: el sofá no debería haberse enviado dañado. «Auf dieser Stelle» es agramatical (sería «an dieser Stelle») y «Mit dieser Position» no significa nada referido a un mueble.",
+      "explain_ru": "«In diesem Zustand» ('в таком состоянии') — единственный осмысленный вариант: диван не следовало отправлять повреждённым. «Auf dieser Stelle» грамматически неверно (нужно «an dieser Stelle»), а «Mit dieser Position» о мебели ничего не значит."
+    },
+    "55": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Wir bitten Sie, die entstandenen 55( ), und wünschen Ihnen viel Vergnügen mit Ihrem neuen Sitzmöbel.",
+      "explain": "Colocación fija «Unannehmlichkeiten entschuldigen»: «Wir bitten Sie, die entstandenen Unannehmlichkeiten zu entschuldigen». «Fehler beanstanden» invertiría los papeles (quien protesta es el cliente) y «Probleme berücksichtigen» no es algo que una empresa pida a su cliente.",
+      "explain_ru": "Устойчивое сочетание «Unannehmlichkeiten entschuldigen»: «Wir bitten Sie, die entstandenen Unannehmlichkeiten zu entschuldigen». «Fehler beanstanden» меняет роли (жалуется клиент), а «Probleme berücksichtigen» — не то, о чём фирма просит клиента."
+    },
+    "56": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Als kleines Dankeschön für Ihr Verständnis finden Sie anbei einen Gutschein 56 ( ) 50 Euro für Ihren nächsten Besuch in unserem Haus.",
+      "explain": "«in Höhe von 50 Euro» es la fórmula fija para el importe de un vale o de una factura. «für den Betrag von» y «zum Preis von» se usan con precios de compra, no con un Gutschein.",
+      "explain_ru": "«In Höhe von 50 Euro» — устойчивая формула для суммы ваучера или счёта. «Für den Betrag von» и «zum Preis von» употребляются с ценой покупки, но не с ваучером."
+    },
+    "57": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).",
+      "explain": "Fórmula de cortesía para cerrar una carta comercial: «jemanden begrüßen dürfen» ('poder recibir/saludar a alguien'). «beobachten» (observar) y «besuchen» (visitar) no encajan ni con la fórmula ni con la relación comercial.",
+      "explain_ru": "Вежливая формула для завершения делового письма: «jemanden begrüßen dürfen» ('иметь честь приветствовать кого-либо'). «Beobachten» ('наблюдать') и «besuchen» ('посещать') не сочетаются ни с формулой, ни с деловыми отношениями."
+    }
+  },
+  "sb2-v2-b": {
+    "52": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Offensichtlich ist bei unserer Qualitätskontrolle 52 ( ) worden.",
+      "explain": "El pasivo exige «der Mangel»: «der Mangel ist übersehen worden» (el defecto pasó desapercibido). «das Problem verursacht» no tiene sentido (el control de calidad no causa el daño) y «der Schaden behoben» contradiría la carta.",
+      "explain_ru": "Пассив требует «der Mangel»: «der Mangel ist übersehen worden». «Das Problem verursacht» бессмысленно (контроль качества не вызывает повреждение), а «der Schaden behoben» противоречит письму."
+    },
+    "53": {
+      "answer": "b",
+      "confidence": "mittel",
+      "quote": "Die Couch hätte 53 ( ) nicht ausgeliefert werden dürfen.",
+      "explain": "Se deduce por el sentido: la carta trata de un sofá dañado, así que «in diesem Zustand» ('en este estado') es lo correcto, igual que en sb2-v2. «zu diesem Zeitpunkt» es gramaticalmente posible, pero en el texto no hay ningún problema de fechas, y «an diesen Ort» no está motivado por el contexto.",
+      "explain_ru": "Вывод по смыслу: речь о повреждённом диване, поэтому верно «in diesem Zustand» ('в таком состоянии'), как и в sb2-v2. «Zu diesem Zeitpunkt» грамматически возможно, но в тексте нет проблемы со сроками, а «an diesen Ort» контекстом не мотивировано."
+    },
+    "54": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Wir bitten Sie, die entstandenen 54 ( ).",
+      "explain": "Colocación fija «Unannehmlichkeiten entschuldigen» (disculpar las molestias causadas). «Fehler zu beanstanden» invertiría los papeles (el que protesta es el cliente) y «Probleme zu berücksichtigen» no es lo que la empresa pide al cliente en una carta de disculpa.",
+      "explain_ru": "Устойчивое сочетание «Unannehmlichkeiten entschuldigen» ('извиниться за причинённые неудобства'). «Fehler zu beanstanden» меняет роли (жалуется клиент), а «Probleme zu berücksichtigen» — не то, о чём фирма просит клиента в письме с извинениями."
+    },
+    "55": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Rufen Sie uns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue 55 ( ) sollen.",
+      "explain": "La carta acaba de anunciar el producto de sustitución, así que lo que se concierta es la entrega: «die Lieferung veranlassen» ('gestionar la entrega'), compatible con «zu welchem Termin». «Bestellung aufnehmen» (tomar el pedido) ya no procede y «Bettcouch abholen» se referiría a recoger el sofá nuevo, que es precisamente lo que no toca.",
+      "explain_ru": "Письмо только что сообщает о замене товара, поэтому согласуют доставку: «die Lieferung veranlassen» ('организовать доставку'), что сочетается с «zu welchem Termin». «Bestellung aufnehmen» уже неуместно, а «Bettcouch abholen» означало бы 'забрать новый диван', что как раз неверно."
+    },
+    "56": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro.",
+      "explain": "«in Höhe von 50 Euro» es la fórmula fija para el importe de un vale. «für den Betrag von» y «zum Preis von» corresponden a precios de compra, no a un Gutschein.",
+      "explain_ru": "«In Höhe von 50 Euro» — устойчивая формула для суммы ваучера. «Für den Betrag von» и «zum Preis von» относятся к цене покупки, а не к ваучеру."
+    },
+    "57": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).",
+      "explain": "Fórmula fija de despedida en cartas comerciales: «jemanden begrüßen dürfen». «beobachten» (observar) y «besuchen» (visitar) son incompatibles con la fórmula de cortesía.",
+      "explain_ru": "Устойчивая формула прощания в деловом письме: «jemanden begrüßen dürfen». «Beobachten» ('наблюдать') и «besuchen» ('посещать') несовместимы с этой вежливой формулой."
+    }
+  }
+}

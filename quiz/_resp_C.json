@@ -1,0 +1,178 @@
+{
+ "sb1-v5": {
+  "46": {
+   "answer": "j",
+   "confidence": "hoch",
+   "quote": "habe und Sie mich 46 ( ) Probearbeiten einladen.",
+   "explain": "Colocación fija «jemanden zum Probearbeiten einladen»: «zu» + Dativ contraído en «zum». Es el único complemento preposicional posible con «einladen» para una actividad; «in», «unter» o «worüber» no rigen este verbo.",
+   "explain_ru": "Устойчивое выражение «jemanden zum Probearbeiten einladen»: предлог «zu» + Dativ, слитная форма «zum». Это единственное управление, возможное при «einladen» для названия мероприятия; «in», «unter», «worüber» с этим глаголом не сочетаются."
+  },
+  "47": {
+   "answer": "g",
+   "confidence": "hoch",
+   "quote": "meine Fähigkeiten 47 ( ) Beweis zu stellen.",
+   "explain": "Fórmula fija «etwas unter Beweis stellen» (demostrar algo), con «unter» + Akkusativ. «In Beweis» o «zum Beweis stellen» no existen en alemán; «zum Beweis» solo funciona como «como prueba», nunca con «stellen».",
+   "explain_ru": "Устойчивое словосочетание «etwas unter Beweis stellen» (доказать что-либо) требует «unter» + Akkusativ. Сочетаний «in Beweis stellen» или «zum Beweis stellen» не существует; «zum Beweis» значит «в доказательство» и с «stellen» не употребляется."
+  },
+  "48": {
+   "answer": "f",
+   "confidence": "hoch",
+   "quote": "Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.",
+   "explain": "«Sich freuen auf» + Akkusativ rige la preposición «auf»; como lo que se anticipa es toda una oración con «zu» (… zu bekommen), el alemán usa el adverbio pronominal «darauf». «Worüber» pertenece a «sich freuen über» (algo pasado), que no encaja con un hecho futuro.",
+   "explain_ru": "Глагол «sich freuen» с предлогом «auf» + Akkusativ; поскольку вперёд выносится целое придаточное с «zu» (… zu bekommen), используется местоименное наречие «darauf». «Worüber» относится к «sich freuen über» (о прошедшем) и здесь не подходит."
+  },
+  "49": {
+   "answer": "b",
+   "confidence": "mittel",
+   "quote": "Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.",
+   "explain": "El hueco pide el adverbio que marca que ya en esa ocasión tendrá un primer contacto: «schon/bereits einen ersten Einblick … bekommen». «Noch» quedaría mal («noch einen ersten Einblick» = otro más) y «eventuell/manchmal» cambiarían el sentido; se deduce por el sentido, no por la gramática.",
+   "explain_ru": "Здесь нужно наречие, показывающее, что уже при этом случае она получит первое представление: «schon/bereits einen ersten Einblick … bekommen». «Noch» звучало бы неверно («noch einen ersten Einblick» = ещё одно), а «eventuell/manchmal» меняют смысл. Вывод сделан по смыслу, а не по грамматике."
+  },
+  "50": {
+   "answer": "h",
+   "confidence": "hoch",
+   "quote": "Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss?",
+   "explain": "Tras el indefinido «irgendwas» el pronombre relativo es «was» («irgendwas, was ich … besorgen muss»). «Worüber» exigiría un verbo con preposición («worüber ich mir Sorgen mache») y «darauf» no puede ser sujeto/objeto de «besorgen».",
+   "explain_ru": "После неопределённого местоимения «irgendwas» относительное местоимение имеет форму «was» («irgendwas, was ich … besorgen muss»). «Worüber» требовало бы глагола с предлогом («worüber ich mir Sorgen mache»), а «darauf» не может быть дополнением при «besorgen»."
+  },
+  "51": {
+   "answer": "c",
+   "confidence": "mittel",
+   "quote": "Brauche ich 51 ( ) noch eine ärztliche Bescheinigung vom Gesundheitsamt?",
+   "explain": "Por eliminación: el texto ya lleva «noch» detrás del hueco, así que «noch» no puede ser la respuesta; «eventuell» es el único adverbio restante que matiza una pregunta de forma natural («¿necesito quizá todavía…?»).",
+   "explain_ru": "Методом исключения: после пропуска в тексте уже стоит «noch», поэтому «noch» ответом быть не может; «eventuell» — единственное оставшееся наречие, которое естественно звучит в вопросе («нужна ли мне, возможно, ещё одна справка?»)."
+  }
+ },
+ "sb1-v6": {
+  "46": {
+   "answer": "k",
+   "confidence": "hoch",
+   "quote": "dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement im August in Ihrem Unternehmen beginnen kann.",
+   "explain": "«Die Ausbildung zur Kauffrau für Büromanagement»: el nombre del puesto es femenino singular y exige «zu» + Dativ con artículo → «zur». «Zum» serviría para masculino o neutro, y «zu» sin artículo no admite el sustantivo con artículo.",
+   "explain_ru": "«Die Ausbildung zur Kauffrau für Büromanagement»: название профессии женского рода требует «zu» + Dativ с артиклем → «zur». «Zum» возможно только для мужского или среднего рода, а «zu» без артикля с этим существительным не употребляется."
+  },
+  "47": {
+   "answer": "g",
+   "confidence": "hoch",
+   "quote": "Ich würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist.",
+   "explain": "Pregunta indirecta por el modo en que algo está organizado: «wie … organisiert ist». «Ob» preguntaría sí/no, «dass» sería una declaración y «weil» daría una causa; ninguno responde a «¿cómo?».",
+   "explain_ru": "Косвенный вопрос об образе действия: «wie … organisiert ist». «Ob» вводило бы вопрос «да/нет», «dass» — утверждение, «weil» — причину; ни один из них не отвечает на вопрос «как?»."
+  },
+  "48": {
+   "answer": "j",
+   "confidence": "hoch",
+   "quote": "Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten.",
+   "explain": "«Im Gegensatz zu» + Dativ: «zu dem praktischen Block» se contrae en «zum». La preposición la impone la locución «im Gegensatz»; «während» o «innerhalb» no forman parte de ella.",
+   "explain_ru": "«Im Gegensatz zu» + Dativ: «zu dem praktischen Block» стягивается в «zum». Предлог задан устойчивым выражением «im Gegensatz»; «während» и «innerhalb» в него не входят."
+  },
+  "49": {
+   "answer": "b",
+   "confidence": "hoch",
+   "quote": "49 ( ) wäre es wichtig, so schnell wie möglich die Termine zu wissen.",
+   "explain": "El hueco ocupa la posición 1 y le sigue el verbo conjugado con inversión («wäre es»): solo un adverbio como «deshalb» permite esa estructura de oración principal. «Weil», «dass» u «ob» exigirían el verbo al final del enunciado.",
+   "explain_ru": "Пропуск стоит на первом месте, за ним идёт спрягаемый глагол с инверсией («wäre es»): такую структуру главного предложения допускает только наречие «deshalb». «Weil», «dass», «ob» требовали бы глагола в конце предложения."
+  },
+  "50": {
+   "answer": "d",
+   "confidence": "hoch",
+   "quote": "In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die Miete bezahlt.",
+   "explain": "«Nachfragen, ob …»: la interrogativa indirecta de sí/no se introduce con «ob». «Dass» afirmaría en lugar de preguntar y «wie» pediría un modo concreto, que aquí no se da.",
+   "explain_ru": "«Nachfragen, ob …»: косвенный вопрос «да/нет» вводится союзом «ob». «Dass» превратило бы вопрос в утверждение, а «wie» требовало бы конкретного способа действия."
+  },
+  "51": {
+   "answer": "e",
+   "confidence": "mittel",
+   "quote": "Außerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der Ausbildung sein wird.",
+   "explain": "«Ansprechpartner während des praktischen Teils»: «während» + Genitiv es la colocación idiomática para una persona de contacto a lo largo de una fase. «Innerhalb» también rige genitivo y sería gramaticalmente posible, pero suena menos natural referido a una persona (se diría «für den praktischen Teil»).",
+   "explain_ru": "«Ansprechpartner während des praktischen Teils»: «während» + Genitiv — идиоматичное сочетание для контактного лица на протяжении этапа. «Innerhalb» тоже управляет генитивом и грамматически возможно, но звучит менее естественно применительно к человеку (скорее «für den praktischen Teil»)."
+  }
+ },
+ "sb1-v7": {
+  "46": {
+   "answer": "h",
+   "confidence": "hoch",
+   "quote": "46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April dorthin umziehen wird.",
+   "explain": "«Mit einer Tätigkeit beginnen»: el verbo «beginnen» rige aquí «mit» + Dativ («mit einer neuen Tätigkeit»). «Zu» o «bis» no son complementos de «beginnen», y el dativo «einer neuen Tätigkeit» exige una preposición.",
+   "explain_ru": "«Mit einer Tätigkeit beginnen»: глагол «beginnen» управляет здесь предлогом «mit» + Dativ («mit einer neuen Tätigkeit»). «Zu» и «bis» при «beginnen» невозможны, а форма Dativ «einer neuen Tätigkeit» требует предлога."
+  },
+  "47": {
+   "answer": "i",
+   "confidence": "mittel",
+   "quote": "Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig.",
+   "explain": "«Nämlich» introduce en el Mittelfeld la justificación de lo afirmado antes («no me resulta fácil»): la causa es que siempre trabajó a gusto aquí. Va siempre detrás del verbo conjugado y nunca en posición 1. «Deshalb» expresaría consecuencia (no causa) y «außerdem» solo añadiría otro punto sin explicar la dificultad.",
+   "explain_ru": "«Nämlich» стоит в середине предложения и обосновывает уже сказанное («мне это нелегко»): причина в том, что она всегда работала здесь с удовольствием. Оно никогда не стоит на первом месте. «Deshalb» выражало бы следствие, а не причину, «außerdem» лишь добавляло бы ещё один пункт, не объясняя трудность."
+  },
+  "48": {
+   "answer": "j",
+   "confidence": "hoch",
+   "quote": "Ich habe noch einige Fragen 48 ( ) den Formalitäten:",
+   "explain": "«Fragen zu etwas» + Dativ plural: «zu den Formalitäten». Es el régimen fijo de «Fragen»; «mit den Formalitäten» o «in den Formalitäten» no expresan el tema sobre el que se pregunta.",
+   "explain_ru": "«Fragen zu etwas» + Dativ множественного числа: «zu den Formalitäten». Это устойчивое управление существительного «Fragen»; «mit» или «in» не передают тему вопроса."
+  },
+  "49": {
+   "answer": "b",
+   "confidence": "mittel",
+   "quote": "49 ( ) bitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue Stelle bewerben möchte",
+   "explain": "La petición del certificado se suma a las gestiones ya enumeradas (coche de empresa, portátil): «Außerdem bitte ich Sie um…». «Deshalb» es la alternativa tentadora, pero la causa ya la introduce la subordinada «da ich mich … bewerben möchte», con lo que resultaría redundante; «nämlich» no puede ir en posición 1.",
+   "explain_ru": "Просьба о промежуточном свидетельстве добавляется к уже перечисленным делам (служебная машина, ноутбук): «Außerdem bitte ich Sie um…». «Deshalb» — соблазнительная альтернатива, но причина уже введена придаточным «da ich mich … bewerben möchte», поэтому получилась бы тавтология; «nämlich» на первом месте стоять не может."
+  },
+  "50": {
+   "answer": "f",
+   "confidence": "hoch",
+   "quote": "oder 50 ( ) Nachhinein zugeschickt wird?",
+   "explain": "Locución fija «im Nachhinein» (= a posteriori), de «in» + Dativ contraído: «oder im Nachhinein zugeschickt wird». Ninguna otra preposición del banco forma esa expresión temporal.",
+   "explain_ru": "Устойчивое выражение «im Nachhinein» (= задним числом), «in» + Dativ в слитной форме: «oder im Nachhinein zugeschickt wird». Другие предлоги из банка такого временного выражения не образуют."
+  },
+  "51": {
+   "answer": "g",
+   "confidence": "hoch",
+   "quote": "Ich bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare Zusammenarbeit.",
+   "explain": "«Sich bei jemandem für etwas bedanken»: el verbo es reflexivo en acusativo, así que «mich» es obligatorio. «Ihnen» sería el dativo del complemento con «bei», que en esta frase no aparece.",
+   "explain_ru": "«Sich bei jemandem für etwas bedanken»: глагол возвратный, поэтому обязательна форма Akkusativ «mich». «Ihnen» — это Dativ дополнения с «bei», которого в этом предложении нет."
+  }
+ },
+ "sb1-v8": {
+  "46": {
+   "answer": "g",
+   "confidence": "hoch",
+   "quote": "mit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum 31.12.20xx.",
+   "explain": "«Mit diesem Schreiben»: «Schreiben» es neutro singular y tras «mit» va el dativo, que en «dieses» es «diesem». «Den» sería dativo plural (varios escritos) y «der» no concuerda con «mit».",
+   "explain_ru": "«Mit diesem Schreiben»: «Schreiben» — среднего рода, единственное число, после «mit» нужен Dativ, у «dieses» это «diesem». «Den» — Dativ множественного числа (несколько писем), «der» с «mit» не согласуется."
+  },
+  "47": {
+   "answer": "c",
+   "confidence": "hoch",
+   "quote": "Ich habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe.",
+   "explain": "El enunciado es una subordinada con el verbo al final («… gearbeitet habe»): la conjunción causal del banco es «da». «Wenn» introduciría una condición y «wie» una comparación o un modo.",
+   "explain_ru": "Это придаточное предложение с глаголом в конце («… gearbeitet habe»): причинный союз из банка — «da». «Wenn» вводило бы условие, «wie» — сравнение или образ действия."
+  },
+  "48": {
+   "answer": "a",
+   "confidence": "hoch",
+   "quote": "48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich weiterzuentwickeln, und habe mich deshalb dazu entschlossen, eine Stelle in einem größeren Unternehmen anzunehmen.",
+   "explain": "El hueco abre la oración y le sigue el verbo conjugado con inversión («sehe ich»): «Aber leider sehe ich…» funciona como contraste entre lo dicho antes y lo que sigue. «Dennoch» exigiría otro orden («Dennoch sehe ich leider…»), no «dennoch leider sehe ich».",
+   "explain_ru": "Пропуск открывает предложение, за ним идёт спрягаемый глагол с инверсией («sehe ich»): «Aber leider sehe ich…» выражает контраст с предыдущим. «Dennoch» потребовало бы другого порядка слов («Dennoch sehe ich leider…»), а не «dennoch leider sehe ich»."
+  },
+  "49": {
+   "answer": "j",
+   "confidence": "hoch",
+   "quote": "Mir stehen noch vier Tage Resturlaub 49 ( ).",
+   "explain": "Verbo separable «zustehen» (corresponder): el prefijo «zu» se coloca al final del enunciado («Mir stehen noch vier Tage Resturlaub zu»). El dativo «mir» ya anuncia ese régimen.",
+   "explain_ru": "Глагол с отделяемой приставкой «zustehen» (полагаться): приставка «zu» выносится в конец («Mir stehen noch vier Tage Resturlaub zu»). Dativ «mir» уже указывает на это управление."
+  },
+  "50": {
+   "answer": "f",
+   "confidence": "hoch",
+   "quote": "da 50 ( ) 31.12.20xx auf einen Samstag fällt.",
+   "explain": "La fecha es el sujeto de «fällt», así que va en nominativo: «der 31.12.20xx fällt auf einen Samstag». «Den» sería acusativo y no puede desempeñar esa función.",
+   "explain_ru": "Дата — подлежащее при «fällt», значит нужен Nominativ: «der 31.12.20xx fällt auf einen Samstag». «Den» — Akkusativ, в роли подлежащего невозможен."
+  },
+  "51": {
+   "answer": "i",
+   "confidence": "hoch",
+   "quote": "Bescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen.",
+   "explain": "«Verfahren mit etwas» rige «mit» y la interrogativa indirecta pregunta por el modo de proceder: «wie wir … verfahren sollen». «Wenn» sería condicional y «ob» no está en el banco.",
+   "explain_ru": "«Verfahren mit etwas» управляет предлогом «mit», а косвенный вопрос спрашивает об образе действия: «wie wir … verfahren sollen». «Wenn» вводило бы условие, «ob» в банке отсутствует."
+  }
+ }
+}

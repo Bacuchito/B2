@@ -1,44 +1,336 @@
 {
-  "_comentario": "Respuestas confirmadas por una segunda lectura independiente (verificador adversarial que resuelve el ejercicio por su cuenta ANTES de ver el JSON). Clave = id de variante, valor = lista de números de ítem confirmados. build.py añade el campo 'verified' a esos ítems y la app muestra la insignia '2ª lectura'. Los ítems ausentes de una lista NO están refutados: simplemente no han pasado esta comprobación.",
-
-  "t1-v1": [1, 2, 3, 4, 5],
-
-  "t1_a2-p9": [1, 2, 3, 4, 5],
-  "t1_a2-p10": [1, 2, 3, 4, 5],
-
-  "t1_b-p11": [1, 2, 3, 4, 5],
-  "t1_b-p12": [1, 2, 3, 4, 5],
-  "t1_b-p13": [1, 2, 3, 4, 5],
-
-  "t1_c-p14": [1, 2, 3, 4, 5],
-  "t1_c-p15": [1, 2, 3, 4, 5],
-
-  "t1_d-p16": [1, 2, 3, 4, 5],
-  "t1_d-p17": [1, 2, 3, 4, 5],
-  "t1_d-p18": [1, 2, 3, 4, 5],
-
-  "t2_a-p19a": [6, 7],
-  "t2_a-p19b": [6],
-  "t2_a-p20a": [6, 7],
-  "t2_a-p20b": [6, 7],
-  "t2_a-p21a": [6, 7],
-  "t2_a-p21b": [6, 7],
-
-  "t2_b-p22": [6, 7],
-  "t2_b-p23": [6, 7],
-  "t2_b-p24a": [6, 7],
-  "t2_b-p24b": [6, 7],
-
-  "t2_c-p25a": [8, 9],
-  "t2_c-p25b": [8, 9],
-  "t2_c-p26a": [8, 9],
-  "t2_c-p26b": [8, 9],
-  "t2_c-p27a": [8, 9],
-  "t2_c-p27b": [8, 9],
-  "t2_c-p27c": [8, 9],
-  "t2_c-p28": [8, 9],
-
-  "t2_d-p29": [8, 9],
-  "t2_d-p30": [8, 9],
-  "t2_d-p31": [8, 9]
+ "_comentario": "Respuestas confirmadas por una segunda lectura independiente (verificador adversarial que resuelve el ejercicio por su cuenta ANTES de ver el JSON). Clave = id de variante, valor = lista de números de ítem confirmados. build.py añade el campo 'verified' a esos ítems y la app muestra la insignia '2ª lectura'. Los ítems ausentes de una lista NO están refutados: simplemente no han pasado esta comprobación.",
+ "sb1-v1": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v1-0820": [
+  46,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v2": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v3": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v3-07022025": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v3-b": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v4": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v4-0404": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v5": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v6": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v7": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb1-v8": [
+  46,
+  47,
+  48,
+  49,
+  50,
+  51
+ ],
+ "sb2-v1": [
+  52,
+  53,
+  54,
+  55,
+  56
+ ],
+ "sb2-v1-0720": [
+  52,
+  53,
+  54,
+  55,
+  56
+ ],
+ "sb2-v2": [
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+ ],
+ "sb2-v2-b": [
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+ ],
+ "sb2-v3": [
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+ ],
+ "sb2-v4": [
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+ ],
+ "sb2-v5": [
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+ ],
+ "sb2-v5-b": [
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+ ],
+ "sb2-v6": [
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+ ],
+ "sb2-v7": [
+  52,
+  53,
+  54,
+  55,
+  56,
+  57
+ ],
+ "t1-v1": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_a2-p10": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_a2-p9": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_b-p11": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_b-p12": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_b-p13": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_c-p14": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_c-p15": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_d-p16": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_d-p17": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t1_d-p18": [
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "t2_a-p19a": [
+  6,
+  7
+ ],
+ "t2_a-p19b": [
+  6
+ ],
+ "t2_a-p20a": [
+  6,
+  7
+ ],
+ "t2_a-p20b": [
+  6,
+  7
+ ],
+ "t2_a-p21a": [
+  6,
+  7
+ ],
+ "t2_a-p21b": [
+  6,
+  7
+ ],
+ "t2_b-p22": [
+  6,
+  7
+ ],
+ "t2_b-p23": [
+  6,
+  7
+ ],
+ "t2_b-p24a": [
+  6,
+  7
+ ],
+ "t2_b-p24b": [
+  6,
+  7
+ ],
+ "t2_c-p25a": [
+  8,
+  9
+ ],
+ "t2_c-p25b": [
+  8,
+  9
+ ],
+ "t2_c-p26a": [
+  8,
+  9
+ ],
+ "t2_c-p26b": [
+  8,
+  9
+ ],
+ "t2_c-p27a": [
+  8,
+  9
+ ],
+ "t2_c-p27b": [
+  8,
+  9
+ ],
+ "t2_c-p27c": [
+  8,
+  9
+ ],
+ "t2_c-p28": [
+  8,
+  9
+ ],
+ "t2_d-p29": [
+  8,
+  9
+ ],
+ "t2_d-p30": [
+  8,
+  9
+ ],
+ "t2_d-p31": [
+  8,
+  9
+ ]
 }

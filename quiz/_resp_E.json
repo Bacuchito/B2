@@ -1,0 +1,178 @@
+{
+  "sb2-v3": {
+    "52": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Da wir 52 ( ) gehört haben, gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war.",
+      "explain": "«Nichts Gegenteiliges hören» es la fórmula fija que significa «no oír nada en contra» y es la única compatible con la consecuencia «gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war». «Nur Anderes» y «viel Negatives» contradicen esa conclusión.",
+      "explain_ru": "«Nichts Gegenteiliges hören» — устойчивое выражение со значением «не слышать ничего противоречащего»; только оно согласуется со следствием «alles zu Ihrer Zufriedenheit war». «Nur Anderes» и «viel Negatives» противоречат этому выводу."
+    },
+    "53": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Allerdings ist bislang für unsere Rechnung Nr. 2008/123 in Höhe von 2.746,- Euro leider keine 53 ( )",
+      "explain": "La colocación correcta para el dinero que llega a la cuenta es «eine Zahlung ist eingegangen» (perfecto de estado: «ist ... eingegangen»). «Auszahlung veranlassen» invertiría la dirección del pago (lo haría el deudor o el banco) y «Einzahlung machen» no es la colocación habitual al reclamar una factura impagada.",
+      "explain_ru": "Правильное устойчивое сочетание — «eine Zahlung ist eingegangen» (перфект состояния: «ist ... eingegangen»). «Auszahlung veranlassen» меняет направление платежа (его инициировал бы должник или банк), а «Einzahlung machen» не употребляется при напоминании о неоплаченном счёте."
+    },
+    "54": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Für den Fall, dass die Rechnung bei Ihnen verloren gegangen ist, senden wir Ihnen anbei eine neue mit der Bitte um 54 ( )",
+      "explain": "«Mit der Bitte um» exige un sustantivo que nombre la acción esperada del cliente, y aquí lo lógico es «schnellstmögliche Überweisung» (transferencia lo antes posible). «Nachfolgenden Betrag» no es nada que se pueda pedir y «zeitnahe Korrektur» no tiene sentido con una factura reenviada.",
+      "explain_ru": "Конструкция «mit der Bitte um» требует существительного, называющего ожидаемое действие клиента; по смыслу это «schnellstmögliche Überweisung» (перевод в кратчайший срок). «Nachfolgenden Betrag» нельзя «попросить», а «zeitnahe Korrektur» не имеет смысла при повторно отправленном счёте."
+    },
+    "55": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( )",
+      "explain": "De una suma o de una factura se dice «fällig sein» (vencida, exigible): «der Betrag war am 31. Oktober fällig». «Abgelaufen» se predica de plazos (eine Frist läuft ab), no de un importe, y «verspätet» no funciona como adjetivo predicativo con «war» en este sentido.",
+      "explain_ru": "О сумме и счёте говорят «fällig sein» (наступил срок оплаты): «der Betrag war am 31. Oktober fällig». «Abgelaufen» относится к сроку (eine Frist läuft ab), а не к сумме, а «verspätet» не употребляется как именная часть сказуемого с «war» в этом значении."
+    },
+    "56": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( )",
+      "explain": "Nomen-Verb-Verbindung: «Skonto gewähren» (conceder el descuento por pronto pago). «Leisten» se combina con servicios o pagos (eine Zahlung leisten) y «überreichen» solo con objetos que se entregan en mano.",
+      "explain_ru": "Устойчивое сочетание (Nomen-Verb-Verbindung) — «Skonto gewähren» (предоставлять скидку за досрочную оплату). «Leisten» сочетается с услугами и платежами (eine Zahlung leisten), а «überreichen» — с предметами, вручаемыми из рук в руки."
+    },
+    "57": {
+      "answer": "c",
+      "confidence": "mittel",
+      "quote": "Sollten Sie die Rechnung 57 ( ) bezahlt haben, betrachten Sie dieses Schreiben bitte als gegenstandslos.",
+      "explain": "«Zwischenzeitlich» significa «entretanto, mientras tanto» y es el adverbio habitual en la correspondencia comercial. «Währenddessen» también es temporal y gramaticalmente encajaría, pero pertenece al relato y no a este registro; por eso dejo la confianza en «mittel». «Infolgedessen» es causal y rompe el sentido.",
+      "explain_ru": "«Zwischenzeitlich» — «тем временем, за это время»; это обычное наречие деловой переписки. «Währenddessen» тоже временное и грамматически возможно, но принадлежит повествованию, а не деловому стилю, поэтому уверенность «mittel». «Infolgedessen» выражает причину и не подходит по смыслу."
+    }
+  },
+  "sb2-v4": {
+    "52": {
+      "answer": "b",
+      "confidence": "mittel",
+      "quote": "Für den regelmäßigen Reinigungsservice Ihres Restaurants hatten wir Ihnen am 24.11. ein Angebot 52 ( ) unterbreitet.",
+      "explain": "Las tres opciones son gramaticalmente posibles con «gemäß/laut/aufgrund» + dativo, así que decide el sentido: la oferta se preparó «gemäß Ihren Wünschen» (según sus deseos, dativo plural «Wünschen»). «Aufgrund Ihrer Erfahrung» (por su experiencia) no motiva una oferta y «laut Ihrer Zusage» presupone una aceptación que aún no existe.",
+      "explain_ru": "Все три варианта грамматически возможны («gemäß/laut/aufgrund» + датив), поэтому решает смысл: предложение составлено «gemäß Ihren Wünschen» (согласно Вашим пожеланиям, датив мн. ч. «Wünschen»). «Aufgrund Ihrer Erfahrung» не мотивирует предложение, а «laut Ihrer Zusage» предполагает согласие, которого ещё нет."
+    },
+    "53": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Hatten Sie schon die Möglichkeit, 53 ( )?",
+      "explain": "La colocación esperada es «die Möglichkeit haben, etwas zu prüfen»: se pregunta si el cliente ya ha podido revisar la oferta. «Die Chancen zu nutzen» no tiene antecedente al que referirse y «die Gelegenheit zu bieten» invierte los papeles, porque aquí sería la empresa quien ofrece algo.",
+      "explain_ru": "Ожидаемое сочетание — «die Möglichkeit haben, etw. zu prüfen»: спрашивают, успел ли клиент просмотреть предложение. «Die Chancen zu nutzen» не имеет антецедента, а «die Gelegenheit zu bieten» меняет роли: здесь предлагает как раз фирма."
+    },
+    "54": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Bitte denken Sie daran, dass die erwähnte Rabattaktion nur noch bis Ende des Jahres 54 ( )",
+      "explain": "De una acción promocional se dice que «ist gültig» (es válida hasta finales de año). «Einlösbar» se predica de vales y cupones, no de una «Aktion», y «anerkannt wird» no expresa vigencia temporal.",
+      "explain_ru": "Об акции говорят «gültig sein» (действует до конца года). «Einlösbar» относится к купонам и ваучерам, а не к акции, а «anerkannt wird» не выражает срока действия."
+    },
+    "55": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 ( )",
+      "explain": "El reflexivo «sich» obliga a «sich mit jemandem in Verbindung setzen» (ponerse en contacto con alguien). «In Kontakt treten» no es reflexivo (*sich in Kontakt treten) y «sich zur Verfügung stellen» significa ofrecerse, lo que no funciona con «mit uns».",
+      "explain_ru": "Возвратное «sich» требует «sich mit jemandem in Verbindung setzen» (связаться с кем-либо). «In Kontakt treten» — невозвратный глагол (*sich in Kontakt treten), а «sich zur Verfügung stellen» («предложить себя») не сочетается с «mit uns»."
+    },
+    "56": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Unsere Mitarbeiter im Kundenservice 56 ( ) Ihnen gerne jederzeit zur Verfügung.",
+      "explain": "Locución fija «jemandem zur Verfügung stehen» (estar a disposición de alguien). «Sind» no puede regir «zur Verfügung» y «stellen» exigiría un objeto directo (alguien pone algo a disposición de otro), no un dativo de persona.",
+      "explain_ru": "Устойчивое сочетание — «jemandem zur Verfügung stehen» (быть в распоряжении кого-либо). «Sind» не управляет «zur Verfügung», а «stellen» требует прямого дополнения (кто-то предоставляет что-то другому)."
+    },
+    "57": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Wir freuen uns, Sie zukünftig 57 ( ) zu können.",
+      "explain": "«Jemanden zu unseren Kunden zählen» (contar a alguien entre nuestros clientes) es la única que encaja con la carta de captación de clientes. «Bei unseren Kunden besuchen» no tiene sentido y «mit unseren Kunden begrüßen» cambia el significado, porque el cliente no saluda junto con la empresa.",
+      "explain_ru": "«Jemanden zu unseren Kunden zählen» (считать кого-либо нашим клиентом) — единственный вариант, подходящий к письму о привлечении клиентов. «Bei unseren Kunden besuchen» бессмысленно, а «mit unseren Kunden begrüßen» искажает смысл: клиент не приветствует вместе с фирмой."
+    }
+  },
+  "sb2-v5": {
+    "52": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "an die von 52 ( ) Lieferadresse.",
+      "explain": "«Die von Ihnen angegebene Lieferadresse»: «angeben» (indicar) es el verbo correcto para datos y el participio atributivo concuerda con «Lieferadresse»; «Ihnen» es el dativo que exige «von» con el agente. «ihr angeordnete» usa minúscula y «anordnen» (disponer) no rige direcciones, y «mir angeführte» cambia de persona.",
+      "explain_ru": "«Die von Ihnen angegebene Lieferadresse»: «angeben» (указывать) — правильный глагол для данных, причастие согласуется с «Lieferadresse», а «Ihnen» — датив, требуемый предлогом «von» с исполнителем. «ihr angeordnete» написано со строчной буквы, а «anordnen» здесь не употребляется; «mir angeführte» — другое лицо."
+    },
+    "53": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( )",
+      "explain": "«Skonto gewähren» es la colocación comercial: quien vende concede el descuento por pago rápido. «Ermäßigung bezahlen» y «Rabatt wünschen» invierten los papeles, porque el cliente sería quien paga o quien desea el descuento.",
+      "explain_ru": "«Skonto gewähren» — торговое устойчивое сочетание: скидку за быструю оплату предоставляет продавец. «Ermäßigung bezahlen» и «Rabatt wünschen» меняют роли: платил бы или желал бы скидку клиент."
+    },
+    "54": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( )",
+      "explain": "Con «Rechnungsbetrag» el verbo adecuado es «begleichen» (saldar la factura), aquí en pasiva: «muss ... beglichen werden». «Dokumentiert» y «verhandelt» no se predican de un importe de factura.",
+      "explain_ru": "С «Rechnungsbetrag» сочетается «begleichen» (оплатить счёт), здесь в пассиве: «muss ... beglichen werden». «Dokumentiert» и «verhandelt» с суммой счёта не употребляются."
+    },
+    "55": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Die detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen auf der Rückseite dieser Auftragsbestätigung.",
+      "explain": "«Etwas einer Sache entnehmen» rige dativo, y aquí «unseren allgemeinen Geschäftsbedingungen» es ese dativo, sin preposición. «Erfahren» necesitaría «aus» y «finden» necesitaría «in», preposición que en esta versión del texto no aparece.",
+      "explain_ru": "«Etwas einer Sache entnehmen» управляет дативом, и «unseren allgemeinen Geschäftsbedingungen» — как раз этот датив, без предлога. «Erfahren» требовало бы «aus», а «finden» — предлога «in», которого в этой версии текста нет."
+    },
+    "56": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Bitte halten Sie hierzu Ihre 56 ( )",
+      "explain": "«Bereithalten» es separable: «halten Sie Ihre Auftragsnummer bereit» (tenga a mano su número de pedido). «Festhalten» (Kundennummer fest) y «anhalten» (Rechnungsnummer an) no se usan con este objeto ni en esta situación.",
+      "explain_ru": "«Bereithalten» — глагол с отделяемой приставкой: «halten Sie Ihre Auftragsnummer bereit» (держите под рукой номер заказа). «Festhalten» (Kundennummer fest) и «anhalten» (Rechnungsnummer an) с этим дополнением в данной ситуации не употребляются."
+    },
+    "57": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.",
+      "explain": "En una confirmación de pedido se promete la «Ausführung des Auftrags» (la ejecución del pedido ya confirmado). «Bearbeitung Ihrer Anfrage» remite a una consulta previa, y «Durchführung Ihrer Arbeit» trasladaría el trabajo al cliente.",
+      "explain_ru": "В подтверждении заказа обещают «Ausführung Ihres Auftrags» (исполнение заказа). «Bearbeitung Ihrer Anfrage» относится к предварительному запросу, а «Durchführung Ihrer Arbeit» перекладывает работу на клиента."
+    }
+  },
+  "sb2-v5-b": {
+    "52": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "an die von 52 ( ) Lieferadresse.",
+      "explain": "«Die von Ihnen angegebene Lieferadresse»: «angeben» (indicar) es el verbo correcto para datos y el participio atributivo concuerda con «Lieferadresse»; «Ihnen» es el dativo que exige «von» con el agente. «ihr angeordnete» usa minúscula y «anordnen» (disponer) no rige direcciones, y «mir angeführte» cambia de persona.",
+      "explain_ru": "«Die von Ihnen angegebene Lieferadresse»: «angeben» (указывать) — правильный глагол для данных, причастие согласуется с «Lieferadresse», а «Ihnen» — датив, требуемый предлогом «von» с исполнителем. «ihr angeordnete» написано со строчной буквы, а «anordnen» здесь не употребляется; «mir angeführte» — другое лицо."
+    },
+    "53": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( )",
+      "explain": "«Skonto gewähren» es la colocación comercial: quien vende concede el descuento por pago rápido. «Ermäßigung bezahlen» y «Rabatt wünschen» invierten los papeles, porque el cliente sería quien paga o quien desea el descuento.",
+      "explain_ru": "«Skonto gewähren» — торговое устойчивое сочетание: скидку за быструю оплату предоставляет продавец. «Ermäßigung bezahlen» и «Rabatt wünschen» меняют роли: платил бы или желал бы скидку клиент."
+    },
+    "54": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( )",
+      "explain": "Con «Rechnungsbetrag» el verbo adecuado es «begleichen» (saldar la factura), aquí en pasiva: «muss ... beglichen werden». «Dokumentiert» y «verhandelt» no se predican de un importe de factura.",
+      "explain_ru": "С «Rechnungsbetrag» сочетается «begleichen» (оплатить счёт), здесь в пассиве: «muss ... beglichen werden». «Dokumentiert» и «verhandelt» с суммой счёта не употребляются."
+    },
+    "55": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Die detaillierten Konditionen 55 ( ) in unseren allgemeinen Geschäftsbedingungen auf der Rückseite unserer Auftragsbestätigung.",
+      "explain": "Con la preposición «in» solo funciona «finden»: «Die Konditionen finden Sie in unseren Geschäftsbedingungen» (encontrará las condiciones en...). «erklären Sie» y «schreiben Sie» no rigen «in» + dativo con este sujeto y no tienen sentido en una confirmación de pedido.",
+      "explain_ru": "С предлогом «in» подходит только «finden»: «Die Konditionen finden Sie in unseren Geschäftsbedingungen». «erklären Sie» и «schreiben Sie» не управляют «in» + датив при таком подлежащем и не имеют смысла в подтверждении заказа."
+    },
+    "56": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Bitte halten Sie hierzu Ihre 56 ( )",
+      "explain": "«Bereithalten» es separable: «halten Sie Ihre Auftragsnummer bereit» (tenga a mano su número de pedido). «Festhalten» (Kundennummer fest) y «anhalten» (Rechnungsnummer an) no se usan con este objeto ni en esta situación.",
+      "explain_ru": "«Bereithalten» — глагол с отделяемой приставкой: «halten Sie Ihre Auftragsnummer bereit» (держите под рукой номер заказа). «Festhalten» (Kundennummer fest) и «anhalten» (Rechnungsnummer an) с этим дополнением в данной ситуации не употребляются."
+    },
+    "57": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.",
+      "explain": "En una confirmación de pedido se promete la «Ausführung des Auftrags» (la ejecución del pedido ya confirmado). «Bearbeitung Ihrer Anfrage» remite a una consulta previa, y «Durchführung Ihrer Arbeit» trasladaría el trabajo al cliente.",
+      "explain_ru": "В подтверждении заказа обещают «Ausführung Ihres Auftrags» (исполнение заказа). «Bearbeitung Ihrer Anfrage» относится к предварительному запросу, а «Durchführung Ihrer Arbeit» перекладывает работу на клиента."
+    }
+  }
+}

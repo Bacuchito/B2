@@ -1,0 +1,90 @@
+{
+  "sb2-v6": {
+    "52": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "wir danken Ihnen für Ihre Anfrage vom 08.12.20xx und unterbreiten Ihnen 52 ( ) acht",
+      "explain": "«Jemandem ein Angebot unterbreiten» es la colocación fija (Nomen-Verb-Verbindung) para presentar una oferta, y exige el neutro «folgendes Angebot». Ni «Ergebnis» ni «Informationen» se combinan con «unterbreiten» en una carta comercial de oferta.",
+      "explain_ru": "Устойчивое сочетание «jemandem ein Angebot unterbreiten» (предложить оферту); глагол требует винительного падежа среднего рода — «folgendes Angebot». С «Ergebnis» и «Informationen» этот глагол в коммерческом письме не употребляется."
+    },
+    "53": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "ansonsten fällt eine Lieferpauschale 53 ( ) von",
+      "explain": "«In Höhe von» es la fórmula fija para indicar un importe: «eine Lieferpauschale in Höhe von 39,00 Euro». «In Absprache» (de común acuerdo) y «in Bezug» (con referencia a) existen, pero significan otra cosa y no introducen una cantidad.",
+      "explain_ru": "Устойчивое сочетание «in Höhe von + сумма» (в размере). «In Absprache» (по договорённости) и «in Bezug» (в отношении) имеют другой смысл и не вводят сумму."
+    },
+    "54": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Die Kosten für den Aufbau 54 ( ) nach",
+      "explain": "El verbo adecuado es «sich richten nach» (regirse por, depender de): los costes se rigen por el valor de la mercancía. «Sich belaufen» exige «auf» y «sich ergeben» exige «aus», así que ninguna de las otras dos encaja con «nach».",
+      "explain_ru": "Управление глагола: «sich richten nach + Dativ» (зависеть от чего-либо). «Sich belaufen» требует «auf», «sich ergeben» — «aus», поэтому с предлогом «nach» они невозможны."
+    },
+    "55": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Natürlich besteht auch 55 ( ) die",
+      "explain": "«Es besteht die Option, etwas zu tun» expresa una posibilidad que se le ofrece al cliente, y encaja con el infinitivo final «abzuholen und selbst aufzubauen». «Die Absicht» (intención) y «die Verpflichtung» (obligación) contradicen el sentido: aquí se ofrece una alternativa voluntaria.",
+      "explain_ru": "Конструкция «es besteht die Option, ... zu + Infinitiv» выражает предлагаемую возможность. «Die Absicht» (намерение) и «die Verpflichtung» (обязанность) искажают смысл: речь о варианте на выбор клиента."
+    },
+    "56": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "56 ( ) ist 14 Tage bindend.",
+      "explain": "El documento es un «Angebot» y solo la oferta puede ser vinculante durante 14 días. «Anfrage» (consulta) y «Bestellung» (pedido) son otros actos de la negociación y no es la empresa la que fija su plazo de validez.",
+      "explain_ru": "Текст — это оферта (Angebot), поэтому «Dieses Angebot ist 14 Tage bindend» (действует 14 дней). «Anfrage» и «Bestellung» — другие этапы сделки, к ним этот срок не относится."
+    },
+    "57": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Wir würden uns sehr freuen, 57 ( ) zu",
+      "explain": "Tras ofrecer el producto, la empresa espera el pedido: «Wir würden uns freuen, Ihren Auftrag zu erhalten». «Wünsche» y «Verständnis» no se «erhalten» en una carta de oferta (además «Ihre Wünsche» sería acusativo plural y rompería la concordancia del sentido).",
+      "explain_ru": "Смысл письма — получить заказ: «Ihren Auftrag erhalten» (получить Ваш заказ). «Wünsche» и «Verständnis» с глаголом «erhalten» в оферте не сочетаются."
+    }
+  },
+  "sb2-v7": {
+    "52": {
+      "answer": "c",
+      "confidence": "mittel",
+      "quote": "Weiß bestellt. 52 ( ) Sie zehn Tische und für jede Sitzeinheit drei Stühle in",
+      "explain": "«Dazu» añade un elemento más al pedido ya mencionado (las diez bancas): además, la empresa debía entregar diez mesas y tres sillas por unidad. «Daher konnten» (por eso pudieron) no tiene lógica en un pedido, y «Dafür mussten» repetiría el «Für die Einrichtung» anterior y suena forzado, aunque no es agramatical.",
+      "explain_ru": "«Dazu» = вдобавок к уже названному заказу (десять скамеек): «Dazu sollten Sie ... liefern» — «дополнительно вы должны были поставить...». «Daher konnten» (поэтому могли) лишено логики, «Dafür mussten» дублирует «Für die Einrichtung» и звучит натянуто, хотя грамматически возможно."
+    },
+    "53": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Leider entspricht die Lieferung nicht 53 ( ). Zwei von den zehn Sitzeckbänken",
+      "explain": "«Entsprechen» rige dativo y el parámetro de comparación es lo pedido: la entrega no corresponde a nuestro pedido. La opción b es agramatical porque «Vorschriften» es plural y exigiría «unseren Vorschriften»; «Angebot» no es el referente de la entrega.",
+      "explain_ru": "«Entsprechen + Dativ»: поставка не соответствует нашему заказу. Вариант b аграмматичен: plural «Vorschriften» требует формы «unseren Vorschriften». «Angebot» здесь не является эталоном для сравнения."
+    },
+    "54": {
+      "answer": "b",
+      "confidence": "mittel",
+      "quote": "bitten Sie, die reklamierten Möbelstücke 54 ( ).",
+      "explain": "El defecto es el color equivocado, así que lo coherente es pedir el cambio («auszutauschen»); la frase siguiente confirma que solo se quedarían las mesas rayadas. «Reparieren» no resuelve un color erróneo y «zurückschicken» dejaría al cliente sin la mercancía que necesita, aunque la frase sería gramatical.",
+      "explain_ru": "Речь о неверном цвете, поэтому логично просить замену («austauschen»); далее сказано, что оставить готовы только столы с царапинами. «Reparieren» для цвета не подходит, а «zurückschicken» означало бы отказ от нужной мебели, хотя грамматически фраза возможна."
+    },
+    "55": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "trotzdem behalten, wenn Sie dafür einen entsprechenden 55 ( ) .",
+      "explain": "El cliente se queda con las mesas dañadas solo si la empresa concede una rebaja de precio: «einen Preisnachlass gewähren». «Aufpreis» sería un recargo (justo lo contrario) y «Rabatt fordern» lo haría el cliente, no el proveedor al que se dirige el «Sie».",
+      "explain_ru": "Клиент готов оставить столы с царапинами, если фирма предоставит скидку с цены: «Preisnachlass gewähren». «Aufpreis» — доплата, то есть противоположное; «Rabatt fordern» — требовать скидку, это действие покупателя, а не продавца."
+    },
+    "56": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Könnten Sie uns hierfür 56 ( )?",
+      "explain": "«Jemandem ein Angebot unterbreiten» es la colocación fija para pedir una oferta; aquí se pide el nuevo precio con la rebaja. «Ein Gutachten erstellen» (un peritaje) y «eine Empfehlung geben» (una recomendación) no responden a la petición de descuento.",
+      "explain_ru": "Устойчивое сочетание «jemandem ein Angebot unterbreiten» (сделать предложение). Здесь просят предложение о цене со скидкой. «Ein Gutachten erstellen» (экспертиза) и «eine Empfehlung geben» не связаны с запросом скидки."
+    },
+    "57": {
+      "answer": "c",
+      "confidence": "hoch",
+      "quote": "Wir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur Verfügung.",
+      "explain": "Una reclamación se cierra pidiendo una respuesta rápida: «Wir bitten um umgehende Antwort». «Um etwas bitten» rige acusativo de un sustantivo abstracto, y ni «Bezahlung» (es el cliente quien paga) ni «Stornierung» (no quiere cancelar) tienen sentido aquí.",
+      "explain_ru": "Письмо-рекламация завершается просьбой о быстром ответе: «um etwas bitten» + абстрактное существительное «umgehende Antwort». «Bezahlung» (платит сам клиент) и «Stornierung» (он не хочет отменять заказ) здесь бессмысленны."
+    }
+  }
+}

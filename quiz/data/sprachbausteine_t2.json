@@ -1,0 +1,1551 @@
+{
+ "block": "sprachbausteine_t2",
+ "section": "sprachbausteine-t2",
+ "variants": [
+  {
+   "id": "sb2-v1",
+   "label": "Variante 1",
+   "page": 86,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Stornierung des Auftrages mit Nr. RB 2876/20\n\nSehr geehrte Damen und Herren,\nnach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei\nKaffeevollautomaten für unsere Krankenhauskantine.\nUnsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit\nLiefertermin in KW 16.\n54 ( ) der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich darauf hingewiesen, dass wir die Maschinen dringend benötigen.\n55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.\nWir räumen Ihnen letztmalig eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin\n56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung. Wir bitten um Ihr Verständnis.\nBitte schicken Sie uns umgehend eine 57 ( ).\nMit freundlichen Grüßen\nEva Al Hossan",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "Herren, nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine. Unsere",
+     "options": [
+      {
+       "key": "a",
+       "text": "einen Auftrag"
+      },
+      {
+       "key": "b",
+       "text": "eine Bestellung"
+      },
+      {
+       "key": "c",
+       "text": "eine Anforderung"
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine.",
+     "explain": "La colocación correcta es «die Bestellung von etwas» (pedido de mercancía), y el texto retoma después «unsere Bestellung». «der Auftrag» exigiría la preposición «über» (ein Auftrag über zwei Kaffeevollautomaten), y «die Anforderung» significa 'requerimiento/petición', no una compra.",
+     "explain_ru": "Устойчивое сочетание — «die Bestellung von etwas» (заказ чего-либо); далее в тексте снова стоит «unsere Bestellung». «Der Auftrag» требует предлога «über» (ein Auftrag über zwei Kaffeevollautomaten), а «die Anforderung» означает 'запрос/требование', а не покупку."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "für unsere Krankenhauskantine. Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16. 54 ( ) der Lieferfrist",
+     "options": [
+      {
+       "key": "a",
+       "text": "bekommen danach"
+      },
+      {
+       "key": "b",
+       "text": "bestellten dann"
+      },
+      {
+       "key": "c",
+       "text": "erhielten daraufhin"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16.",
+     "explain": "Solo «erhielten daraufhin» concuerda con el pretérito del contexto («erfolgte in KW 12») y marca la consecuencia temporal ('acto seguido recibimos'). «bekommen» está en presente y «bestellten ... eine Auftragsbestätigung» no tiene sentido: una confirmación de pedido no se encarga.",
+     "explain_ru": "Только «erhielten daraufhin» согласуется с претеритумом контекста («erfolgte in KW 12») и выражает временную последовательность ('вслед за этим получили'). «Bekommen» — презенс, а «bestellten … eine Auftragsbestätigung» лишено смысла: подтверждение заказа не заказывают."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16. 54 ( ) der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich darauf",
+     "options": [
+      {
+       "key": "a",
+       "text": "Beim Verlauf"
+      },
+      {
+       "key": "b",
+       "text": "Nach Ablauf"
+      },
+      {
+       "key": "c",
+       "text": "Vor dem Zulauf"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "54 ( ) der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich darauf hingewiesen, dass wir die Maschinen dringend benötigen.",
+     "explain": "Solo «Nach Ablauf» forma la expresión fija «nach Ablauf der Lieferfrist» (tras expirar el plazo). «Beim Verlauf» no existe como colocación y «Vor dem Zulauf» es un falso amigo: «Zulauf» es 'afluencia', no 'plazo'.",
+     "explain_ru": "Только «Nach Ablauf» образует устойчивое выражение «nach Ablauf der Lieferfrist» ('по истечении срока поставки'). «Beim Verlauf» — ложное сочетание, а «Vor dem Zulauf» — ложный друг: «Zulauf» значит 'приток', а не 'срок'."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "eindringlich darauf hingewiesen, dass wir die Maschinen dringend benötigen. 55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten. Wir räumen",
+     "options": [
+      {
+       "key": "a",
+       "text": "Mittlerweile befinden"
+      },
+      {
+       "key": "b",
+       "text": "Zurzeit haben"
+      },
+      {
+       "key": "c",
+       "text": "Zwischenzeitlich sind"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.",
+     "explain": "«sich befinden» es el verbo que indica en qué punto estamos («wir befinden uns in KW 18»). «haben» y «sind» no pueden regir el reflexivo «uns» con ese significado.",
+     "explain_ru": "«Sich befinden» — глагол, указывающий, на каком этапе/в какой точке мы находимся («wir befinden uns in KW 18»). «Haben» и «sind» не сочетаются с возвратным «uns» в этом значении."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere",
+     "options": [
+      {
+       "key": "a",
+       "text": "nicht eingetroffen"
+      },
+      {
+       "key": "b",
+       "text": "nicht erbracht"
+      },
+      {
+       "key": "c",
+       "text": "nicht erhalten"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung.",
+     "explain": "Con «die Ware» el verbo adecuado es «eintreffen» (llegar): «die Ware ist nicht eingetroffen». «erhalten» es transitivo (alguien recibe la mercancía), así que «ist ... erhalten» no funciona, y «erbringen» se usa con servicios o rendimientos, no con mercancía.",
+     "explain_ru": "С «die Ware» употребляется «eintreffen» (прибывать): «die Ware ist nicht eingetroffen». «Erhalten» — переходный глагол (кто-то получает товар), поэтому «ist … erhalten» невозможно, а «erbringen» используется с услугами, а не с товаром."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Wir bitten um Ihr Verständnis. Bitte schicken Sie uns umgehend eine 57 ( ). Mit freundlichen Grüßen Eva Al Hossan",
+     "options": [
+      {
+       "key": "a",
+       "text": "schriftliche Auftragsbestätigung"
+      },
+      {
+       "key": "b",
+       "text": "schriftliche Kündigung"
+      },
+      {
+       "key": "c",
+       "text": "schriftliche Stellungnahme"
+      }
+     ],
+     "answer": "c",
+     "confidence": "niedrig",
+     "quote": "Bitte schicken Sie uns umgehend eine 57 ( ).",
+     "explain": "La carta pide una reacción escrita del proveedor por el retraso, de ahí «schriftliche Stellungnahme». «Kündigung» sería una resolución hecha por la parte equivocada (el cliente es quien cancela) y «Auftragsbestätigung» ya aparece en el hueco 53, así que pedirla otra vez resulta contradictorio. Duda real: si se entendiera como confirmación escrita del nuevo plazo (KW 20), la opción a también sería defendible.",
+     "explain_ru": "Письмо требует письменной реакции поставщика на просрочку, отсюда «schriftliche Stellungnahme». «Kündigung» — расторжение не с той стороны (расторгает клиент), а «Auftragsbestätigung» уже упомянуто в пропуске 53, поэтому просить её снова противоречиво. Реальное сомнение: если понимать это как письменное подтверждение нового срока (KW 20), вариант a) тоже защитим."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v1-0720",
+   "label": "Variante 1 (nueva versión test 07.2024, 07.02.2025)",
+   "page": 87,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Verspätete Lieferung des Auftrages mit Nr. RB 2876/20\n\nSehr geehrte Damen und Herren,\nnach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei\nKaffeevollautomaten für unsere Krankenhauskantine.\nUnsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung\nmit Liefertermin in KW 16.\nNach Ablauf der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich 54 ( ),\ndass wir die Maschinen dringend benötigen.\n55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.\nWir räumen Ihnen letztmalig eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin\n56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung. Wir bitten um Ihr Verständnis.\nBitte schicken Sie uns umgehend eine 57 ( ).\nMit freundlichen Grüßen\nEva Al Hossan",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "Herren, nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine. Unsere",
+     "options": [
+      {
+       "key": "a",
+       "text": "den Erwerb"
+      },
+      {
+       "key": "b",
+       "text": "den Verkauf"
+      },
+      {
+       "key": "c",
+       "text": "den Verleih"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "nach dem Besuch Ihres Vertriebsmitarbeiters entschieden wir uns für 52 ( ) von zwei Kaffeevollautomaten für unsere Krankenhauskantine.",
+     "explain": "«sich für den Erwerb von etwas entscheiden» es la colocación correcta (Erwerb = adquisición/compra). «Verkauf» invertiría los papeles (la empresa sería la vendedora) y «Verleih» (alquiler) contradice que se trate de una compra.",
+     "explain_ru": "«Sich für den Erwerb von etwas entscheiden» — устойчивое сочетание («Erwerb» — приобретение/покупка). «Verkauf» меняет роли (продавала бы фирма), а «Verleih» (прокат) противоречит покупке."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "für unsere Krankenhauskantine. Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16. Nach Ablauf der",
+     "options": [
+      {
+       "key": "a",
+       "text": "bekommen danach"
+      },
+      {
+       "key": "b",
+       "text": "bestellten dann"
+      },
+      {
+       "key": "c",
+       "text": "erhielten daraufhin"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Unsere Auftragserteilung erfolgte in KW 12. Wir 53 ( ) eine Auftragsbestätigung mit Liefertermin in KW 16.",
+     "explain": "Solo «erhielten daraufhin» concuerda con el pretérito del contexto y marca la consecuencia temporal. «bekommen» está en presente (habría que decir «bekamen») y «bestellten ... eine Auftragsbestätigung» carece de sentido.",
+     "explain_ru": "Только «erhielten daraufhin» согласуется с претеритумом контекста и выражает последовательность. «Bekommen» — презенс (нужно было бы «bekamen»), а «bestellten … eine Auftragsbestätigung» бессмысленно."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Nach Ablauf der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich 54 ( ), dass wir die Maschinen dringend benötigen. 55 ( ) wir uns in KW 18 und haben",
+     "options": [
+      {
+       "key": "a",
+       "text": "darauf hingewiesen"
+      },
+      {
+       "key": "b",
+       "text": "davor gewarnt"
+      },
+      {
+       "key": "c",
+       "text": "diesbezüglich gefragt"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Nach Ablauf der Lieferfrist haben wir Sie telefonisch mehrmals eindringlich 54 ( ), dass wir die Maschinen dringend benötigen.",
+     "explain": "«hinweisen» se construye con «auf» + «dass»: «wir haben Sie darauf hingewiesen, dass ...», que es justo lo que pide el hueco. «davor gewarnt» es gramatical pero significaría 'advertir de un peligro' (otro sentido), y «gefragt» no admite aquí una oración con «dass» (se pregunta «ob»).",
+     "explain_ru": "«Hinweisen» управляет «auf» + «dass»: «wir haben Sie darauf hingewiesen, dass …» — именно это требует пропуск. «Davor gewarnt» грамматически возможно, но значит 'предупреждать об опасности' (другой смысл), а «gefragt» не управляет придаточным с «dass» (спрашивают «ob»)."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "mehrmals eindringlich 54 ( ), dass wir die Maschinen dringend benötigen. 55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten. Wir räumen",
+     "options": [
+      {
+       "key": "a",
+       "text": "Mittlerweile befinden"
+      },
+      {
+       "key": "b",
+       "text": "Zurzeit haben"
+      },
+      {
+       "key": "c",
+       "text": "Zwischenzeitlich sind"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "55 ( ) wir uns in KW 18 und haben die Lieferung immer noch nicht erhalten.",
+     "explain": "«sich befinden» es el único verbo que encaja con el reflexivo y con la indicación temporal: «Mittlerweile befinden wir uns in KW 18». «haben» y «sind» no funcionan con «uns» en este sentido.",
+     "explain_ru": "«Sich befinden» — единственный глагол, подходящий с возвратным «uns» и указанием времени: «Mittlerweile befinden wir uns in KW 18». «Haben» и «sind» здесь с «uns» не работают."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "eine Lieferfrist bis Ablauf der KW 20 ein. Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere",
+     "options": [
+      {
+       "key": "a",
+       "text": "nicht eingetroffen"
+      },
+      {
+       "key": "b",
+       "text": "nicht erbracht"
+      },
+      {
+       "key": "c",
+       "text": "nicht erhalten"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Sollte die Ware bis dahin 56 ( ) sein, machen wir von unserem Widerrufsrecht Gebrauch und stornieren unsere Bestellung.",
+     "explain": "La mercancía 'llega': «die Ware ist nicht eingetroffen». «erhalten» es transitivo y «erbracht» se predica de servicios, no de mercancía.",
+     "explain_ru": "Товар 'прибывает': «die Ware ist nicht eingetroffen». «Erhalten» — переходный глагол, а «erbracht» относится к услугам, а не к товару."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Wir bitten um Ihr Verständnis. Bitte schicken Sie uns umgehend eine 57 ( ). Mit freundlichen Grüßen Eva Al Hossan",
+     "options": [
+      {
+       "key": "a",
+       "text": "schriftliche Auftragsbestätigung"
+      },
+      {
+       "key": "b",
+       "text": "schriftliche Kündigung"
+      },
+      {
+       "key": "c",
+       "text": "schriftliche Stellungnahme"
+      }
+     ],
+     "answer": "c",
+     "confidence": "niedrig",
+     "quote": "Bitte schicken Sie uns umgehend eine 57 ( ).",
+     "explain": "Igual que en sb2-v1: lo coherente tras la stornierung es pedir una «schriftliche Stellungnahme» (una reacción escrita del proveedor); «Kündigung» estaría en la dirección equivocada y «Auftragsbestätigung» ya se ha mencionado en el hueco 53. Duda: la opción a sería defendible si se lee como confirmación escrita del nuevo plazo de entrega.",
+     "explain_ru": "Как и в sb2-v1: после сторнирования логично просить «schriftliche Stellungnahme» (письменную реакцию поставщика); «Kündigung» — не с той стороны, а «Auftragsbestätigung» уже упомянуто в пропуске 53. Сомнение: вариант a) защитим, если понимать это как письменное подтверждение нового срока поставки."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v2",
+   "label": "Variante 2",
+   "page": 88,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Ihre Beschwerde bezüglich des beschädigten Produktes\n\nSehr geehrte Frau Janiashvilli,\nwir danken Ihnen für Ihr Schreiben, mit dem Sie uns auf die Schäden an der Bettcouch aufmerksam machen, die Sie bei uns gekauft haben. Wir haben 52 ( ) und teilen Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden. 54 ( ) hätte\ndie Couch nicht ausgeliefert werden dürfen.\nHeute erhalten Sie das Ersatzprodukt, das beschädigte Möbelstück wird dann kostenlos mitgenommen. Wir bitten Sie, die entstandenen 55( ), und wünschen Ihnen viel Vergnügen\nmit Ihrem neuen Sitzmöbel. Ihre Reklamation haben wir an die Abteilung für Qualitätssicherung\nweitergegeben, um sicherzustellen, dass solche Fehler zukünftig vermieden werden. Als kleines\nDankeschön für Ihr Verständnis finden Sie anbei einen Gutschein 56 ( ) 50 Euro für Ihren\nnächsten Besuch in unserem Haus.\nWir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).\nMit freundlichen Grüßen\nLudmilla Dombrowski Leiterin Kundenservice",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "an der Bettcouch aufmerksam machen, die Sie bei uns gekauft haben. Wir haben 52 ( ) und teilen Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihren Auftrag angenommen"
+      },
+      {
+       "key": "b",
+       "text": "Ihre Bestellung erhalten"
+      },
+      {
+       "key": "c",
+       "text": "Ihre Reklamation geprüft"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wir haben 52 ( ) und teilen Ihre Ansicht.",
+     "explain": "La carta responde a la reclamación del cliente por la couch dañada: solo «Ihre Reklamation geprüft» es coherente con «teilen Ihre Ansicht» (le damos la razón). Aceptar un pedido o haber recibido una orden no tiene ningún sentido en este contexto.",
+     "explain_ru": "Письмо — ответ на рекламацию клиента о повреждённом диване: только «Ihre Reklamation geprüft» согласуется с «teilen Ihre Ansicht» (фирма согласна с клиентом). Принять заказ или получить заказ в этом контексте бессмысленно."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "( ) und teilen Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden. 54 ( ) hätte die Couch nicht ausgeliefert werden dürfen. Heute",
+     "options": [
+      {
+       "key": "a",
+       "text": "das Problem unbemerkt"
+      },
+      {
+       "key": "b",
+       "text": "der Mangel übersehen"
+      },
+      {
+       "key": "c",
+       "text": "der Schaden behoben"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden.",
+     "explain": "El sujeto del pasivo es «der Mangel»: «der Mangel ist übersehen worden» (el defecto pasó desapercibido). «das Problem unbemerkt» no funciona porque «unbemerkt» no es participio, y «der Schaden behoben» contradiría la carta: el daño sigue existiendo.",
+     "explain_ru": "Подлежащее пассива — «der Mangel»: «der Mangel ist übersehen worden» ('дефект был пропущен'). «Das Problem unbemerkt» не работает, так как «unbemerkt» — не причастие, а «der Schaden behoben» противоречит письму: повреждение осталось."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Ihre Ansicht. Offensichtlich ist bei unserer Qualitätskontrolle 53 ( ) worden. 54 ( ) hätte die Couch nicht ausgeliefert werden dürfen. Heute erhalten Sie das",
+     "options": [
+      {
+       "key": "a",
+       "text": "Auf dieser Stelle"
+      },
+      {
+       "key": "b",
+       "text": "In diesem Zustand"
+      },
+      {
+       "key": "c",
+       "text": "Mit dieser Position"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "54 ( ) hätte die Couch nicht ausgeliefert werden dürfen.",
+     "explain": "«In diesem Zustand» ('en este estado') es lo único que da sentido: el sofá no debería haberse enviado dañado. «Auf dieser Stelle» es agramatical (sería «an dieser Stelle») y «Mit dieser Position» no significa nada referido a un mueble.",
+     "explain_ru": "«In diesem Zustand» ('в таком состоянии') — единственный осмысленный вариант: диван не следовало отправлять повреждённым. «Auf dieser Stelle» грамматически неверно (нужно «an dieser Stelle»), а «Mit dieser Position» о мебели ничего не значит."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "Möbelstück wird dann kostenlos mitgenommen. Wir bitten Sie, die entstandenen 55( ), und wünschen Ihnen viel Vergnügen mit Ihrem neuen Sitzmöbel. Ihre Reklamation",
+     "options": [
+      {
+       "key": "a",
+       "text": "Fehler zu beanstanden"
+      },
+      {
+       "key": "b",
+       "text": "Probleme zu berücksichtigen"
+      },
+      {
+       "key": "c",
+       "text": "Unannehmlichkeiten zu entschuldigen"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wir bitten Sie, die entstandenen 55( ), und wünschen Ihnen viel Vergnügen mit Ihrem neuen Sitzmöbel.",
+     "explain": "Colocación fija «Unannehmlichkeiten entschuldigen»: «Wir bitten Sie, die entstandenen Unannehmlichkeiten zu entschuldigen». «Fehler beanstanden» invertiría los papeles (quien protesta es el cliente) y «Probleme berücksichtigen» no es algo que una empresa pida a su cliente.",
+     "explain_ru": "Устойчивое сочетание «Unannehmlichkeiten entschuldigen»: «Wir bitten Sie, die entstandenen Unannehmlichkeiten zu entschuldigen». «Fehler beanstanden» меняет роли (жалуется клиент), а «Probleme berücksichtigen» — не то, о чём фирма просит клиента."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "Als kleines Dankeschön für Ihr Verständnis finden Sie anbei einen Gutschein 56 ( ) 50 Euro für Ihren nächsten Besuch in unserem Haus. Wir würden uns freuen, Sie",
+     "options": [
+      {
+       "key": "a",
+       "text": "für den Betrag von"
+      },
+      {
+       "key": "b",
+       "text": "in Höhe von"
+      },
+      {
+       "key": "c",
+       "text": "zum Preis von"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Als kleines Dankeschön für Ihr Verständnis finden Sie anbei einen Gutschein 56 ( ) 50 Euro für Ihren nächsten Besuch in unserem Haus.",
+     "explain": "«in Höhe von 50 Euro» es la fórmula fija para el importe de un vale o de una factura. «für den Betrag von» y «zum Preis von» se usan con precios de compra, no con un Gutschein.",
+     "explain_ru": "«In Höhe von 50 Euro» — устойчивая формула для суммы ваучера или счёта. «Für den Betrag von» и «zum Preis von» употребляются с ценой покупки, но не с ваучером."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "unserem Haus. Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ). Mit freundlichen Grüßen Ludmilla Dombrowski Leiterin Kundenservice",
+     "options": [
+      {
+       "key": "a",
+       "text": "begrüßen zu dürfen"
+      },
+      {
+       "key": "b",
+       "text": "beobachten zu dürfen"
+      },
+      {
+       "key": "c",
+       "text": "besuchen zu dürfen"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).",
+     "explain": "Fórmula de cortesía para cerrar una carta comercial: «jemanden begrüßen dürfen» ('poder recibir/saludar a alguien'). «beobachten» (observar) y «besuchen» (visitar) no encajan ni con la fórmula ni con la relación comercial.",
+     "explain_ru": "Вежливая формула для завершения делового письма: «jemanden begrüßen dürfen» ('иметь честь приветствовать кого-либо'). «Beobachten» ('наблюдать') и «besuchen» ('посещать') не сочетаются ни с формулой, ни с деловыми отношениями."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v2-b",
+   "label": "Variante 2 (nueva versión)",
+   "page": 89,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Ihre Beschwerde\n\nSehr geehrte Frau Janiashvilli,\nvielen Dank für Ihr Schreiben, in dem Sie uns auf die Schäden an der bei uns bestellten\nBettcouch hinweisen. Wir haben Ihre Reklamation anhand Ihrer mitgeschickten Fotos geprüft. Offensichtlich ist bei unserer Qualitätskontrolle 52 ( ) worden. Die\nCouch hätte 53 ( ) nicht ausgeliefert werden dürfen.\nSelbstverständlich erhalten Sie ein Ersatzprodukt, das beschädigte Möbelstück wird dann\nkostenlos mitgenommen. Wir bitten Sie, die entstandenen 54 ( ). Rufen Sie\nuns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue 55 ( )\nsollen. Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro.\nWir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).\nMit freundlichen Grüßen\nLudmilla Dombrowski",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "Fotos geprüft. Offensichtlich ist bei unserer Qualitätskontrolle 52 ( ) worden. Die Couch hätte 53 ( ) nicht ausgeliefert werden dürfen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "das Problem verursacht"
+      },
+      {
+       "key": "b",
+       "text": "der Mangel übersehen"
+      },
+      {
+       "key": "c",
+       "text": "der Schaden behoben"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Offensichtlich ist bei unserer Qualitätskontrolle 52 ( ) worden.",
+     "explain": "El pasivo exige «der Mangel»: «der Mangel ist übersehen worden» (el defecto pasó desapercibido). «das Problem verursacht» no tiene sentido (el control de calidad no causa el daño) y «der Schaden behoben» contradiría la carta.",
+     "explain_ru": "Пассив требует «der Mangel»: «der Mangel ist übersehen worden». «Das Problem verursacht» бессмысленно (контроль качества не вызывает повреждение), а «der Schaden behoben» противоречит письму."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "ist bei unserer Qualitätskontrolle 52 ( ) worden. Die Couch hätte 53 ( ) nicht ausgeliefert werden dürfen. Selbstverständlich erhalten Sie ein",
+     "options": [
+      {
+       "key": "a",
+       "text": "an diesen Ort"
+      },
+      {
+       "key": "b",
+       "text": "in diesem Zustand"
+      },
+      {
+       "key": "c",
+       "text": "zu diesem Zeitpunkt"
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Die Couch hätte 53 ( ) nicht ausgeliefert werden dürfen.",
+     "explain": "Se deduce por el sentido: la carta trata de un sofá dañado, así que «in diesem Zustand» ('en este estado') es lo correcto, igual que en sb2-v2. «zu diesem Zeitpunkt» es gramaticalmente posible, pero en el texto no hay ningún problema de fechas, y «an diesen Ort» no está motivado por el contexto.",
+     "explain_ru": "Вывод по смыслу: речь о повреждённом диване, поэтому верно «in diesem Zustand» ('в таком состоянии'), как и в sb2-v2. «Zu diesem Zeitpunkt» грамматически возможно, но в тексте нет проблемы со сроками, а «an diesen Ort» контекстом не мотивировано."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Möbelstück wird dann kostenlos mitgenommen. Wir bitten Sie, die entstandenen 54 ( ). Rufen Sie uns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue",
+     "options": [
+      {
+       "key": "a",
+       "text": "Fehler zu beanstanden"
+      },
+      {
+       "key": "b",
+       "text": "Probleme zu berücksichtigen"
+      },
+      {
+       "key": "c",
+       "text": "Unannehmlichkeiten zu entschuldigen"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wir bitten Sie, die entstandenen 54 ( ).",
+     "explain": "Colocación fija «Unannehmlichkeiten entschuldigen» (disculpar las molestias causadas). «Fehler zu beanstanden» invertiría los papeles (el que protesta es el cliente) y «Probleme zu berücksichtigen» no es lo que la empresa pide al cliente en una carta de disculpa.",
+     "explain_ru": "Устойчивое сочетание «Unannehmlichkeiten entschuldigen» ('извиниться за причинённые неудобства'). «Fehler zu beanstanden» меняет роли (жалуется клиент), а «Probleme zu berücksichtigen» — не то, о чём фирма просит клиента в письме с извинениями."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "Rufen Sie uns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue 55 ( ) sollen. Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro.",
+     "options": [
+      {
+       "key": "a",
+       "text": "Bestellung aufnehmen"
+      },
+      {
+       "key": "b",
+       "text": "Bettcouch abholen"
+      },
+      {
+       "key": "c",
+       "text": "Lieferung veranlassen"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Rufen Sie uns gerne an und teilen Sie uns mit, zu welchem Termin wir die neue 55 ( ) sollen.",
+     "explain": "La carta acaba de anunciar el producto de sustitución, así que lo que se concierta es la entrega: «die Lieferung veranlassen» ('gestionar la entrega'), compatible con «zu welchem Termin». «Bestellung aufnehmen» (tomar el pedido) ya no procede y «Bettcouch abholen» se referiría a recoger el sofá nuevo, que es precisamente lo que no toca.",
+     "explain_ru": "Письмо только что сообщает о замене товара, поэтому согласуют доставку: «die Lieferung veranlassen» ('организовать доставку'), что сочетается с «zu welchem Termin». «Bestellung aufnehmen» уже неуместно, а «Bettcouch abholen» означало бы 'забрать новый диван', что как раз неверно."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "die neue 55 ( ) sollen. Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro. Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 (",
+     "options": [
+      {
+       "key": "a",
+       "text": "für den Betrag von"
+      },
+      {
+       "key": "b",
+       "text": "in Höhe von"
+      },
+      {
+       "key": "c",
+       "text": "zum Preis von"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Als Entschuldigung finden Sie anbei einen Gutschein 56 ( ) 50 Euro.",
+     "explain": "«in Höhe von 50 Euro» es la fórmula fija para el importe de un vale. «für den Betrag von» y «zum Preis von» corresponden a precios de compra, no a un Gutschein.",
+     "explain_ru": "«In Höhe von 50 Euro» — устойчивая формула для суммы ваучера. «Für den Betrag von» и «zum Preis von» относятся к цене покупки, а не к ваучеру."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "( ) 50 Euro. Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ). Mit freundlichen Grüßen Ludmilla Dombrowski",
+     "options": [
+      {
+       "key": "a",
+       "text": "begrüßen zu dürfen"
+      },
+      {
+       "key": "b",
+       "text": "beobachten zu dürfen"
+      },
+      {
+       "key": "c",
+       "text": "besuchen zu dürfen"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Wir würden uns freuen, Sie bald wieder in einer unserer Filialen 57 ( ).",
+     "explain": "Fórmula fija de despedida en cartas comerciales: «jemanden begrüßen dürfen». «beobachten» (observar) y «besuchen» (visitar) son incompatibles con la fórmula de cortesía.",
+     "explain_ru": "Устойчивая формула прощания в деловом письме: «jemanden begrüßen dürfen». «Beobachten» ('наблюдать') и «besuchen» ('посещать') несовместимы с этой вежливой формулой."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v3",
+   "label": "Variante 3",
+   "page": 90,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Zahlungserinnerung\n\nSehr geehrter Herr Batic,\nIn Oktober haben wir in Ihrem Firmengebäude an der Heizungsanlage Reparaturarbeiten ausgeführt. Da wir 52 ( ) gehört haben, gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war. Allerdings ist bislang für unsere Rechnung Nr. 2008/123 in Höhe von 2.746,- Euro\nleider keine 53 ( ).\nFür den Fall, dass die Rechnung bei Ihnen verloren gegangen ist, senden wir Ihnen anbei eine\nneue mit der Bitte um 54 ( ).\nDa der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten\nSkonto von 2% leider nicht mehr 56 ( ). Wir bitten um Verständnis.\nSollten Sie die Rechnung 57 ( ) bezahlt haben, betrachten Sie dieses Schreiben bitte\nals gegenstandslos.\nMit freundlichen Grüßen\nIlka Desgrane (Heizung und Sanitär Resch)",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "Ihrem Firmengebäude an der Heizungsanlage Reparaturarbeiten ausgeführt. Da wir 52 ( ) gehört haben, gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war.",
+     "options": [
+      {
+       "key": "a",
+       "text": "nichts Gegenteiliges"
+      },
+      {
+       "key": "b",
+       "text": "nur Anderes"
+      },
+      {
+       "key": "c",
+       "text": "viel Negatives"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Da wir 52 ( ) gehört haben, gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war.",
+     "explain": "«Nichts Gegenteiliges hören» es la fórmula fija que significa «no oír nada en contra» y es la única compatible con la consecuencia «gehen wir davon aus, dass alles zu Ihrer Zufriedenheit war». «Nur Anderes» y «viel Negatives» contradicen esa conclusión.",
+     "explain_ru": "«Nichts Gegenteiliges hören» — устойчивое выражение со значением «не слышать ничего противоречащего»; только оно согласуется со следствием «alles zu Ihrer Zufriedenheit war». «Nur Anderes» и «viel Negatives» противоречат этому выводу."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "bislang für unsere Rechnung Nr. 2008/123 in Höhe von 2.746,- Euro leider keine 53 ( ). Für den Fall, dass die Rechnung bei Ihnen verloren gegangen ist, senden wir",
+     "options": [
+      {
+       "key": "a",
+       "text": "Auszahlung veranlasst"
+      },
+      {
+       "key": "b",
+       "text": "Einzahlung gemacht"
+      },
+      {
+       "key": "c",
+       "text": "Zahlung eingegangen"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Allerdings ist bislang für unsere Rechnung Nr. 2008/123 in Höhe von 2.746,- Euro leider keine 53 ( )",
+     "explain": "La colocación correcta para el dinero que llega a la cuenta es «eine Zahlung ist eingegangen» (perfecto de estado: «ist ... eingegangen»). «Auszahlung veranlassen» invertiría la dirección del pago (lo haría el deudor o el banco) y «Einzahlung machen» no es la colocación habitual al reclamar una factura impagada.",
+     "explain_ru": "Правильное устойчивое сочетание — «eine Zahlung ist eingegangen» (перфект состояния: «ist ... eingegangen»). «Auszahlung veranlassen» меняет направление платежа (его инициировал бы должник или банк), а «Einzahlung machen» не употребляется при напоминании о неоплаченном счёте."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Ihnen verloren gegangen ist, senden wir Ihnen anbei eine neue mit der Bitte um 54 ( ). Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den",
+     "options": [
+      {
+       "key": "a",
+       "text": "nachfolgenden Betrag"
+      },
+      {
+       "key": "b",
+       "text": "schnellstmögliche Überweisung"
+      },
+      {
+       "key": "c",
+       "text": "zeitnahe Korrektur"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Für den Fall, dass die Rechnung bei Ihnen verloren gegangen ist, senden wir Ihnen anbei eine neue mit der Bitte um 54 ( )",
+     "explain": "«Mit der Bitte um» exige un sustantivo que nombre la acción esperada del cliente, y aquí lo lógico es «schnellstmögliche Überweisung» (transferencia lo antes posible). «Nachfolgenden Betrag» no es nada que se pueda pedir y «zeitnahe Korrektur» no tiene sentido con una factura reenviada.",
+     "explain_ru": "Конструкция «mit der Bitte um» требует существительного, называющего ожидаемое действие клиента; по смыслу это «schnellstmögliche Überweisung» (перевод в кратчайший срок). «Nachfolgenden Betrag» нельзя «попросить», а «zeitnahe Korrektur» не имеет смысла при повторно отправленном счёте."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "anbei eine neue mit der Bitte um 54 ( ). Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( ).",
+     "options": [
+      {
+       "key": "a",
+       "text": "abgelaufen"
+      },
+      {
+       "key": "b",
+       "text": "fällig"
+      },
+      {
+       "key": "c",
+       "text": "verspätet"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( )",
+     "explain": "De una suma o de una factura se dice «fällig sein» (vencida, exigible): «der Betrag war am 31. Oktober fällig». «Abgelaufen» se predica de plazos (eine Frist läuft ab), no de un importe, y «verspätet» no funciona como adjetivo predicativo con «war» en este sentido.",
+     "explain_ru": "О сумме и счёте говорят «fällig sein» (наступил срок оплаты): «der Betrag war am 31. Oktober fällig». «Abgelaufen» относится к сроку (eine Frist läuft ab), а не к сумме, а «verspätet» не употребляется как именная часть сказуемого с «war» в этом значении."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( ). Wir bitten um Verständnis. Sollten Sie die Rechnung 57 ( ) bezahlt haben,",
+     "options": [
+      {
+       "key": "a",
+       "text": "gewähren"
+      },
+      {
+       "key": "b",
+       "text": "leisten"
+      },
+      {
+       "key": "c",
+       "text": "überreichen"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Da der Betrag bereits am 31. Oktober 55 ( ) war, können wir Ihnen den eingeräumten Skonto von 2% leider nicht mehr 56 ( )",
+     "explain": "Nomen-Verb-Verbindung: «Skonto gewähren» (conceder el descuento por pronto pago). «Leisten» se combina con servicios o pagos (eine Zahlung leisten) y «überreichen» solo con objetos que se entregan en mano.",
+     "explain_ru": "Устойчивое сочетание (Nomen-Verb-Verbindung) — «Skonto gewähren» (предоставлять скидку за досрочную оплату). «Leisten» сочетается с услугами и платежами (eine Zahlung leisten), а «überreichen» — с предметами, вручаемыми из рук в руки."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "leider nicht mehr 56 ( ). Wir bitten um Verständnis. Sollten Sie die Rechnung 57 ( ) bezahlt haben, betrachten Sie dieses Schreiben bitte als gegenstandslos. Mit",
+     "options": [
+      {
+       "key": "a",
+       "text": "infolgedessen"
+      },
+      {
+       "key": "b",
+       "text": "währenddessen"
+      },
+      {
+       "key": "c",
+       "text": "zwischenzeitlich"
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Sollten Sie die Rechnung 57 ( ) bezahlt haben, betrachten Sie dieses Schreiben bitte als gegenstandslos.",
+     "explain": "«Zwischenzeitlich» significa «entretanto, mientras tanto» y es el adverbio habitual en la correspondencia comercial. «Währenddessen» también es temporal y gramaticalmente encajaría, pero pertenece al relato y no a este registro; por eso dejo la confianza en «mittel». «Infolgedessen» es causal y rompe el sentido.",
+     "explain_ru": "«Zwischenzeitlich» — «тем временем, за это время»; это обычное наречие деловой переписки. «Währenddessen» тоже временное и грамматически возможно, но принадлежит повествованию, а не деловому стилю, поэтому уверенность «mittel». «Infolgedessen» выражает причину и не подходит по смыслу."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v4",
+   "label": "Variante 4",
+   "page": 91,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Sehr geehrte Damen und Herren,\nvielen Dank für Ihr Interesse an unseren Leistungen. Für den regelmäßigen Reinigungsservice Ihres Restaurants hatten wir Ihnen am 24.11. ein Angebot 52 ( ) unterbreitet. Wie\naus der Übersicht auf der zweiten Seite hervorgeht, ist eine Reinigung Ihrer Räumlichkeiten auch\nam frühen Sonntagmorgen für uns selbstverständlich ohne Probleme machbar. Für diesen Service\nberechnen wir im Rahmen unserer Rabattaktion keinen Wochenendzuschlag. Hatten Sie schon\ndie Möglichkeit, 53 ( )? Bitte denken Sie daran, dass die erwähnte Rabattaktion\nnur noch bis Ende des Jahres 54 ( ). Sollten Sie dazu noch Fragen haben, zögern Sie\nbitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice 56 (\n) Ihnen gerne jederzeit zur Verfügung. Wir freuen uns, Sie zukünftig 57 ( ) zu\nkönnen.\nMit freundlichen Grüßen\nHelmuth Heidinger („Tiptop-Service \")",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "Reinigungsservice Ihres Restaurants hatten wir Ihnen am 24.11. ein Angebot 52 ( ) unterbreitet. Wie aus der Übersicht auf der zweiten Seite hervorgeht, ist eine",
+     "options": [
+      {
+       "key": "a",
+       "text": "aufgrund Ihrer Erfahrung"
+      },
+      {
+       "key": "b",
+       "text": "gemäß Ihren Wünschen"
+      },
+      {
+       "key": "c",
+       "text": "laut Ihrer Zusage"
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Für den regelmäßigen Reinigungsservice Ihres Restaurants hatten wir Ihnen am 24.11. ein Angebot 52 ( ) unterbreitet.",
+     "explain": "Las tres opciones son gramaticalmente posibles con «gemäß/laut/aufgrund» + dativo, así que decide el sentido: la oferta se preparó «gemäß Ihren Wünschen» (según sus deseos, dativo plural «Wünschen»). «Aufgrund Ihrer Erfahrung» (por su experiencia) no motiva una oferta y «laut Ihrer Zusage» presupone una aceptación que aún no existe.",
+     "explain_ru": "Все три варианта грамматически возможны («gemäß/laut/aufgrund» + датив), поэтому решает смысл: предложение составлено «gemäß Ihren Wünschen» (согласно Вашим пожеланиям, датив мн. ч. «Wünschen»). «Aufgrund Ihrer Erfahrung» не мотивирует предложение, а «laut Ihrer Zusage» предполагает согласие, которого ещё нет."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "Rabattaktion keinen Wochenendzuschlag. Hatten Sie schon die Möglichkeit, 53 ( )? Bitte denken Sie daran, dass die erwähnte Rabattaktion nur noch bis Ende des",
+     "options": [
+      {
+       "key": "a",
+       "text": "das Angebot zu prüfen"
+      },
+      {
+       "key": "b",
+       "text": "die Chancen zu nutzen"
+      },
+      {
+       "key": "c",
+       "text": "die Gelegenheit zu bieten"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Hatten Sie schon die Möglichkeit, 53 ( )?",
+     "explain": "La colocación esperada es «die Möglichkeit haben, etwas zu prüfen»: se pregunta si el cliente ya ha podido revisar la oferta. «Die Chancen zu nutzen» no tiene antecedente al que referirse y «die Gelegenheit zu bieten» invierte los papeles, porque aquí sería la empresa quien ofrece algo.",
+     "explain_ru": "Ожидаемое сочетание — «die Möglichkeit haben, etw. zu prüfen»: спрашивают, успел ли клиент просмотреть предложение. «Die Chancen zu nutzen» не имеет антецедента, а «die Gelegenheit zu bieten» меняет роли: здесь предлагает как раз фирма."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "denken Sie daran, dass die erwähnte Rabattaktion nur noch bis Ende des Jahres 54 ( ). Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 (",
+     "options": [
+      {
+       "key": "a",
+       "text": "gültig ist"
+      },
+      {
+       "key": "b",
+       "text": "anerkannt wird"
+      },
+      {
+       "key": "c",
+       "text": "einlösbar bleibt"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Bitte denken Sie daran, dass die erwähnte Rabattaktion nur noch bis Ende des Jahres 54 ( )",
+     "explain": "De una acción promocional se dice que «ist gültig» (es válida hasta finales de año). «Einlösbar» se predica de vales y cupones, no de una «Aktion», y «anerkannt wird» no expresa vigencia temporal.",
+     "explain_ru": "Об акции говорят «gültig sein» (действует до конца года). «Einlösbar» относится к купонам и ваучерам, а не к акции, а «anerkannt wird» не выражает срока действия."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "( ). Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice 56 ( ) Ihnen gerne jederzeit zur",
+     "options": [
+      {
+       "key": "a",
+       "text": "in Kontakt zu treten"
+      },
+      {
+       "key": "b",
+       "text": "in Verbindung zu setzen"
+      },
+      {
+       "key": "c",
+       "text": "zur Verfügung zu stellen"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Sollten Sie dazu noch Fragen haben, zögern Sie bitte nicht, sich mit uns 55 ( )",
+     "explain": "El reflexivo «sich» obliga a «sich mit jemandem in Verbindung setzen» (ponerse en contacto con alguien). «In Kontakt treten» no es reflexivo (*sich in Kontakt treten) y «sich zur Verfügung stellen» significa ofrecerse, lo que no funciona con «mit uns».",
+     "explain_ru": "Возвратное «sich» требует «sich mit jemandem in Verbindung setzen» (связаться с кем-либо). «In Kontakt treten» — невозвратный глагол (*sich in Kontakt treten), а «sich zur Verfügung stellen» («предложить себя») не сочетается с «mit uns»."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "Sie bitte nicht, sich mit uns 55 ( ) .Unsere Mitarbeiter im Kundenservice 56 ( ) Ihnen gerne jederzeit zur Verfügung. Wir freuen uns, Sie zukünftig 57 ( ) zu",
+     "options": [
+      {
+       "key": "a",
+       "text": "sind"
+      },
+      {
+       "key": "b",
+       "text": "stehen"
+      },
+      {
+       "key": "c",
+       "text": "stellen"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Unsere Mitarbeiter im Kundenservice 56 ( ) Ihnen gerne jederzeit zur Verfügung.",
+     "explain": "Locución fija «jemandem zur Verfügung stehen» (estar a disposición de alguien). «Sind» no puede regir «zur Verfügung» y «stellen» exigiría un objeto directo (alguien pone algo a disposición de otro), no un dativo de persona.",
+     "explain_ru": "Устойчивое сочетание — «jemandem zur Verfügung stehen» (быть в распоряжении кого-либо). «Sind» не управляет «zur Verfügung», а «stellen» требует прямого дополнения (кто-то предоставляет что-то другому)."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "56 ( ) Ihnen gerne jederzeit zur Verfügung. Wir freuen uns, Sie zukünftig 57 ( ) zu können. Mit freundlichen Grüßen Helmuth Heidinger („Tiptop-Service \")",
+     "options": [
+      {
+       "key": "a",
+       "text": "bei unseren Kunden besuchen"
+      },
+      {
+       "key": "b",
+       "text": "mit unseren Kunden begrüßen"
+      },
+      {
+       "key": "c",
+       "text": "zu unseren Kunden zählen"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wir freuen uns, Sie zukünftig 57 ( ) zu können.",
+     "explain": "«Jemanden zu unseren Kunden zählen» (contar a alguien entre nuestros clientes) es la única que encaja con la carta de captación de clientes. «Bei unseren Kunden besuchen» no tiene sentido y «mit unseren Kunden begrüßen» cambia el significado, porque el cliente no saluda junto con la empresa.",
+     "explain_ru": "«Jemanden zu unseren Kunden zählen» (считать кого-либо нашим клиентом) — единственный вариант, подходящий к письму о привлечении клиентов. «Bei unseren Kunden besuchen» бессмысленно, а «mit unseren Kunden begrüßen» искажает смысл: клиент не приветствует вместе с фирмой."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v5",
+   "label": "Variante 5",
+   "page": 92,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Auftragsbestätigung\n\nSehr geehrte Frau Mackbock,\nich danke Ihnen für Ihre Bestellung und bestätige hiermit die Zustellung des PKW Bulldog zum\nPreis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre\nRechnungsadresse nicht mit der Lieferadresse übereinstimmen, teilen Sie uns dies bitte bis spätestens 07.07 schriftlich mit.\nDie Rechnungszustellung erfolgt per Post. Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der\nRechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ).\nDie detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen\nauf der Rückseite dieser Auftragsbestätigung.\nBei Rückfragen steht Ihnen unser 24-Stunden-Service unter der Rufnummer 0175 545621 zur\nVerfügung. Bitte halten Sie hierzu Ihre 56 ( ).\nWir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.\nMit freundlichen Grüßen\nChristoph Sellert",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "die Zustellung des PKW Bulldog zum Preis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre Rechnungsadresse nicht mit der Lieferadresse",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihnen angegebene"
+      },
+      {
+       "key": "b",
+       "text": "ihr angeordnete"
+      },
+      {
+       "key": "c",
+       "text": "mir angeführte"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "an die von 52 ( ) Lieferadresse.",
+     "explain": "«Die von Ihnen angegebene Lieferadresse»: «angeben» (indicar) es el verbo correcto para datos y el participio atributivo concuerda con «Lieferadresse»; «Ihnen» es el dativo que exige «von» con el agente. «ihr angeordnete» usa minúscula y «anordnen» (disponer) no rige direcciones, y «mir angeführte» cambia de persona.",
+     "explain_ru": "«Die von Ihnen angegebene Lieferadresse»: «angeben» (указывать) — правильный глагол для данных, причастие согласуется с «Lieferadresse», а «Ihnen» — датив, требуемый предлогом «von» с исполнителем. «ihr angeordnete» написано со строчной буквы, а «anordnen» здесь не употребляется; «mir angeführte» — другое лицо."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die",
+     "options": [
+      {
+       "key": "a",
+       "text": "drei Prozent Ermäßigung bezahlen"
+      },
+      {
+       "key": "b",
+       "text": "drei Prozent Rabatt wünschen"
+      },
+      {
+       "key": "c",
+       "text": "drei Prozent Skonto gewähren"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( )",
+     "explain": "«Skonto gewähren» es la colocación comercial: quien vende concede el descuento por pago rápido. «Ermäßigung bezahlen» y «Rabatt wünschen» invierten los papeles, porque el cliente sería quien paga o quien desea el descuento.",
+     "explain_ru": "«Skonto gewähren» — торговое устойчивое сочетание: скидку за быструю оплату предоставляет продавец. «Ermäßigung bezahlen» и «Rabatt wünschen» меняют роли: платил бы или желал бы скидку клиент."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen",
+     "options": [
+      {
+       "key": "a",
+       "text": "beglichen werden"
+      },
+      {
+       "key": "b",
+       "text": "dokumentiert werden"
+      },
+      {
+       "key": "c",
+       "text": "verhandelt werden"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( )",
+     "explain": "Con «Rechnungsbetrag» el verbo adecuado es «begleichen» (saldar la factura), aquí en pasiva: «muss ... beglichen werden». «Dokumentiert» y «verhandelt» no se predican de un importe de factura.",
+     "explain_ru": "С «Rechnungsbetrag» сочетается «begleichen» (оплатить счёт), здесь в пассиве: «muss ... beglichen werden». «Dokumentiert» и «verhandelt» с суммой счёта не употребляются."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen auf der Rückseite dieser",
+     "options": [
+      {
+       "key": "a",
+       "text": "entnehmen Sie bitte"
+      },
+      {
+       "key": "b",
+       "text": "erfahren Sie direkt"
+      },
+      {
+       "key": "c",
+       "text": "finden Sie gerne"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Die detaillierten Konditionen 55 ( ) unseren allgemeinen Geschäftsbedingungen auf der Rückseite dieser Auftragsbestätigung.",
+     "explain": "«Etwas einer Sache entnehmen» rige dativo, y aquí «unseren allgemeinen Geschäftsbedingungen» es ese dativo, sin preposición. «Erfahren» necesitaría «aus» y «finden» necesitaría «in», preposición que en esta versión del texto no aparece.",
+     "explain_ru": "«Etwas einer Sache entnehmen» управляет дативом, и «unseren allgemeinen Geschäftsbedingungen» — как раз этот датив, без предлога. «Erfahren» требовало бы «aus», а «finden» — предлога «in», которого в этой версии текста нет."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "unter der Rufnummer 0175 545621 zur Verfügung. Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit",
+     "options": [
+      {
+       "key": "a",
+       "text": "Auftragsnummer bereit"
+      },
+      {
+       "key": "b",
+       "text": "Kundennummer fest"
+      },
+      {
+       "key": "c",
+       "text": "Rechnungsnummer an"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Bitte halten Sie hierzu Ihre 56 ( )",
+     "explain": "«Bereithalten» es separable: «halten Sie Ihre Auftragsnummer bereit» (tenga a mano su número de pedido). «Festhalten» (Kundennummer fest) y «anhalten» (Rechnungsnummer an) no se usan con este objeto ni en esta situación.",
+     "explain_ru": "«Bereithalten» — глагол с отделяемой приставкой: «halten Sie Ihre Auftragsnummer bereit» (держите под рукой номер заказа). «Festhalten» (Kundennummer fest) и «anhalten» (Rechnungsnummer an) с этим дополнением в данной ситуации не употребляются."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden. Mit",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ausführung Ihres Auftrags"
+      },
+      {
+       "key": "b",
+       "text": "Bearbeitung Ihrer Anfrage"
+      },
+      {
+       "key": "c",
+       "text": "Durchführung Ihrer Arbeit"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.",
+     "explain": "En una confirmación de pedido se promete la «Ausführung des Auftrags» (la ejecución del pedido ya confirmado). «Bearbeitung Ihrer Anfrage» remite a una consulta previa, y «Durchführung Ihrer Arbeit» trasladaría el trabajo al cliente.",
+     "explain_ru": "В подтверждении заказа обещают «Ausführung Ihres Auftrags» (исполнение заказа). «Bearbeitung Ihrer Anfrage» относится к предварительному запросу, а «Durchführung Ihrer Arbeit» перекладывает работу на клиента."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v5-b",
+   "label": "Variante 5 (nueva versión)",
+   "page": 93,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Auftragsbestätigung\n\nSehr geehrte Frau Mackbock,\nich danke Ihnen für Ihre Bestellung und bestätige hiermit die Zustellung des PKW Bulldog zum\nPreis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre\nRechnungsadresse nicht mit der Lieferadresse übereinstimmen, teilen Sie uns dies bitte bis spätestens 07.07 schriftlich mit.\nDie Rechnungszustellung erfolgt per Post. Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ).\nDie detaillierten Konditionen 55 ( ) in unseren allgemeinen Geschäftsbedingungen\nauf der Rückseite unserer Auftragsbestätigung.\nBei Rückfragen steht Ihnen unser 24-Stunden-Service unter der Rufnummer 0175 345621 zur\nVerfügung. Bitte halten Sie hierzu Ihre 56 ( ).\nWir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.\nMit freundlichen Grüßen\nChristoph Sellert",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "die Zustellung des PKW Bulldog zum Preis von 1078 Euro zzgl. MwSt. an die von 52 ( ) Lieferadresse. Sollte die Ihre Rechnungsadresse nicht mit der Lieferadresse",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihnen angegebene"
+      },
+      {
+       "key": "b",
+       "text": "ihr angeordnete"
+      },
+      {
+       "key": "c",
+       "text": "mir angeführte"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "an die von 52 ( ) Lieferadresse.",
+     "explain": "«Die von Ihnen angegebene Lieferadresse»: «angeben» (indicar) es el verbo correcto para datos y el participio atributivo concuerda con «Lieferadresse»; «Ihnen» es el dativo que exige «von» con el agente. «ihr angeordnete» usa minúscula y «anordnen» (disponer) no rige direcciones, y «mir angeführte» cambia de persona.",
+     "explain_ru": "«Die von Ihnen angegebene Lieferadresse»: «angeben» (указывать) — правильный глагол для данных, причастие согласуется с «Lieferadresse», а «Ihnen» — датив, требуемый предлогом «von» с исполнителем. «ihr angeordnete» написано со строчной буквы, а «anordnen» здесь не употребляется; «mir angeführte» — другое лицо."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die",
+     "options": [
+      {
+       "key": "a",
+       "text": "3% Ermäßigung bezahlen"
+      },
+      {
+       "key": "b",
+       "text": "3% Rabatt wünschen"
+      },
+      {
+       "key": "c",
+       "text": "3% Skonto gewähren"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Bitte beachten Sie, dass wir bei Zahlung des Kaufpreises innerhalb von sieben Tagen nach Lieferung 53 ( )",
+     "explain": "«Skonto gewähren» es la colocación comercial: quien vende concede el descuento por pago rápido. «Ermäßigung bezahlen» y «Rabatt wünschen» invierten los papeles, porque el cliente sería quien paga o quien desea el descuento.",
+     "explain_ru": "«Skonto gewähren» — торговое устойчивое сочетание: скидку за быструю оплату предоставляет продавец. «Ermäßigung bezahlen» и «Rabatt wünschen» меняют роли: платил бы или желал бы скидку клиент."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "53 ( ). Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) in unseren allgemeinen",
+     "options": [
+      {
+       "key": "a",
+       "text": "beglichen werden"
+      },
+      {
+       "key": "b",
+       "text": "dokumentiert werden"
+      },
+      {
+       "key": "c",
+       "text": "verhandelt werden"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Ansonsten muss der Rechnungsbetrag bis 30 Tagen nach Wareneingang 54 ( )",
+     "explain": "Con «Rechnungsbetrag» el verbo adecuado es «begleichen» (saldar la factura), aquí en pasiva: «muss ... beglichen werden». «Dokumentiert» y «verhandelt» no se predican de un importe de factura.",
+     "explain_ru": "С «Rechnungsbetrag» сочетается «begleichen» (оплатить счёт), здесь в пассиве: «muss ... beglichen werden». «Dokumentiert» и «verhandelt» с суммой счёта не употребляются."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "bis 30 Tagen nach Wareneingang 54 ( ). Die detaillierten Konditionen 55 ( ) in unseren allgemeinen Geschäftsbedingungen auf der Rückseite unserer",
+     "options": [
+      {
+       "key": "a",
+       "text": "erklären Sie"
+      },
+      {
+       "key": "b",
+       "text": "schreiben Sie"
+      },
+      {
+       "key": "c",
+       "text": "finden Sie gerne"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Die detaillierten Konditionen 55 ( ) in unseren allgemeinen Geschäftsbedingungen auf der Rückseite unserer Auftragsbestätigung.",
+     "explain": "Con la preposición «in» solo funciona «finden»: «Die Konditionen finden Sie in unseren Geschäftsbedingungen» (encontrará las condiciones en...). «erklären Sie» y «schreiben Sie» no rigen «in» + dativo con este sujeto y no tienen sentido en una confirmación de pedido.",
+     "explain_ru": "С предлогом «in» подходит только «finden»: «Die Konditionen finden Sie in unseren Geschäftsbedingungen». «erklären Sie» и «schreiben Sie» не управляют «in» + датив при таком подлежащем и не имеют смысла в подтверждении заказа."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "unter der Rufnummer 0175 345621 zur Verfügung. Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit",
+     "options": [
+      {
+       "key": "a",
+       "text": "Auftragsnummer bereit"
+      },
+      {
+       "key": "b",
+       "text": "Kundennummer fest"
+      },
+      {
+       "key": "c",
+       "text": "Rechnungsnummer an"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Bitte halten Sie hierzu Ihre 56 ( )",
+     "explain": "«Bereithalten» es separable: «halten Sie Ihre Auftragsnummer bereit» (tenga a mano su número de pedido). «Festhalten» (Kundennummer fest) y «anhalten» (Rechnungsnummer an) no se usan con este objeto ni en esta situación.",
+     "explain_ru": "«Bereithalten» — глагол с отделяемой приставкой: «halten Sie Ihre Auftragsnummer bereit» (держите под рукой номер заказа). «Festhalten» (Kundennummer fest) и «anhalten» (Rechnungsnummer an) с этим дополнением в данной ситуации не употребляются."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Bitte halten Sie hierzu Ihre 56 ( ). Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden. Mit",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ausführung Ihres Auftrags"
+      },
+      {
+       "key": "b",
+       "text": "Bearbeitung Ihrer Anfrage"
+      },
+      {
+       "key": "c",
+       "text": "Durchführung Ihrer Arbeit"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Wir versprechen Ihnen eine zuverlässige 57 ( ) und sind sicher, dass Sie mit unserem Produkt zufrieden sein werden.",
+     "explain": "En una confirmación de pedido se promete la «Ausführung des Auftrags» (la ejecución del pedido ya confirmado). «Bearbeitung Ihrer Anfrage» remite a una consulta previa, y «Durchführung Ihrer Arbeit» trasladaría el trabajo al cliente.",
+     "explain_ru": "В подтверждении заказа обещают «Ausführung Ihres Auftrags» (исполнение заказа). «Bearbeitung Ihrer Anfrage» относится к предварительному запросу, а «Durchführung Ihrer Arbeit» перекладывает работу на клиента."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v6",
+   "label": "Variante 6 (test 150321, 150301)",
+   "page": 94,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Angebot\n\nSehr geehrte Damen und Herren,\nwir danken Ihnen für Ihre Anfrage vom 08.12.20xx und unterbreiten Ihnen 52 ( ) acht\nSchreibtischcontainer MV 17 WW weiß zum Preis von je 156,99 Euro netto. Ab einem Auftragswert von 900,00 Euro liefern wir frei Haus, ansonsten fällt eine Lieferpauschale 53 ( ) von\n39,00 Euro an.\nGerne montieren wir die Möbel auch vor Ort. Die Kosten für den Aufbau 54 ( ) nach\ndem Warenwert und betragen 20% des Nettopreises. Natürlich besteht auch 55 ( ) die\nWare in unserem Lager abzuholen und selbst aufzubauen.\n56 ( ) ist 14 Tage bindend. Wir würden uns sehr freuen, 57 ( ) zu\nerhalten. Sollten Sie noch Fragen haben, stehen wir Ihnen gerne jederzeit zur Verfügung.\nMit freundlichen Grüßen\nLars Walter",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "wir danken Ihnen für Ihre Anfrage vom 08.12.20xx und unterbreiten Ihnen 52 ( ) acht Schreibtischcontainer MV 17 WW weiß zum Preis von je 156,99 Euro netto.",
+     "options": [
+      {
+       "key": "a",
+       "text": "folgendes Angebot"
+      },
+      {
+       "key": "b",
+       "text": "folgendes Ergebnis"
+      },
+      {
+       "key": "c",
+       "text": "folgende Informationen"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "wir danken Ihnen für Ihre Anfrage vom 08.12.20xx und unterbreiten Ihnen 52 ( ) acht",
+     "explain": "«Jemandem ein Angebot unterbreiten» es la colocación fija (Nomen-Verb-Verbindung) para presentar una oferta, y exige el neutro «folgendes Angebot». Ni «Ergebnis» ni «Informationen» se combinan con «unterbreiten» en una carta comercial de oferta.",
+     "explain_ru": "Устойчивое сочетание «jemandem ein Angebot unterbreiten» (предложить оферту); глагол требует винительного падежа среднего рода — «folgendes Angebot». С «Ergebnis» и «Informationen» этот глагол в коммерческом письме не употребляется."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "von 900,00 Euro liefern wir frei Haus, ansonsten fällt eine Lieferpauschale 53 ( ) von 39,00 Euro an. Gerne montieren wir die Möbel auch vor Ort. Die Kosten für",
+     "options": [
+      {
+       "key": "a",
+       "text": "in Absprache"
+      },
+      {
+       "key": "b",
+       "text": "in Bezug"
+      },
+      {
+       "key": "c",
+       "text": "in Höhe"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "ansonsten fällt eine Lieferpauschale 53 ( ) von",
+     "explain": "«In Höhe von» es la fórmula fija para indicar un importe: «eine Lieferpauschale in Höhe von 39,00 Euro». «In Absprache» (de común acuerdo) y «in Bezug» (con referencia a) existen, pero significan otra cosa y no introducen una cantidad.",
+     "explain_ru": "Устойчивое сочетание «in Höhe von + сумма» (в размере). «In Absprache» (по договорённости) и «in Bezug» (в отношении) имеют другой смысл и не вводят сумму."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Euro an. Gerne montieren wir die Möbel auch vor Ort. Die Kosten für den Aufbau 54 ( ) nach dem Warenwert und betragen 20% des Nettopreises. Natürlich besteht auch",
+     "options": [
+      {
+       "key": "a",
+       "text": "belaufen sich"
+      },
+      {
+       "key": "b",
+       "text": "ergeben sich"
+      },
+      {
+       "key": "c",
+       "text": "richten sich"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Die Kosten für den Aufbau 54 ( ) nach",
+     "explain": "El verbo adecuado es «sich richten nach» (regirse por, depender de): los costes se rigen por el valor de la mercancía. «Sich belaufen» exige «auf» y «sich ergeben» exige «aus», así que ninguna de las otras dos encaja con «nach».",
+     "explain_ru": "Управление глагола: «sich richten nach + Dativ» (зависеть от чего-либо). «Sich belaufen» требует «auf», «sich ergeben» — «aus», поэтому с предлогом «nach» они невозможны."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": ") nach dem Warenwert und betragen 20% des Nettopreises. Natürlich besteht auch 55 ( ) die Ware in unserem Lager abzuholen und selbst aufzubauen. 56 ( ) ist 14 Tage",
+     "options": [
+      {
+       "key": "a",
+       "text": "die Absicht"
+      },
+      {
+       "key": "b",
+       "text": "die Option"
+      },
+      {
+       "key": "c",
+       "text": "die Verpflichtung"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Natürlich besteht auch 55 ( ) die",
+     "explain": "«Es besteht die Option, etwas zu tun» expresa una posibilidad que se le ofrece al cliente, y encaja con el infinitivo final «abzuholen und selbst aufzubauen». «Die Absicht» (intención) y «die Verpflichtung» (obligación) contradicen el sentido: aquí se ofrece una alternativa voluntaria.",
+     "explain_ru": "Конструкция «es besteht die Option, ... zu + Infinitiv» выражает предлагаемую возможность. «Die Absicht» (намерение) и «die Verpflichtung» (обязанность) искажают смысл: речь о варианте на выбор клиента."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "besteht auch 55 ( ) die Ware in unserem Lager abzuholen und selbst aufzubauen. 56 ( ) ist 14 Tage bindend. Wir würden uns sehr freuen, 57 ( ) zu erhalten. Sollten",
+     "options": [
+      {
+       "key": "a",
+       "text": "Diese Anfrage"
+      },
+      {
+       "key": "b",
+       "text": "Dieses Angebot"
+      },
+      {
+       "key": "c",
+       "text": "Diese Bestellung"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "56 ( ) ist 14 Tage bindend.",
+     "explain": "El documento es un «Angebot» y solo la oferta puede ser vinculante durante 14 días. «Anfrage» (consulta) y «Bestellung» (pedido) son otros actos de la negociación y no es la empresa la que fija su plazo de validez.",
+     "explain_ru": "Текст — это оферта (Angebot), поэтому «Dieses Angebot ist 14 Tage bindend» (действует 14 дней). «Anfrage» и «Bestellung» — другие этапы сделки, к ним этот срок не относится."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "und selbst aufzubauen. 56 ( ) ist 14 Tage bindend. Wir würden uns sehr freuen, 57 ( ) zu erhalten. Sollten Sie noch Fragen haben, stehen wir Ihnen gerne jederzeit",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihren Auftrag"
+      },
+      {
+       "key": "b",
+       "text": "Ihre Wünsche"
+      },
+      {
+       "key": "c",
+       "text": "Ihr Verständnis"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Wir würden uns sehr freuen, 57 ( ) zu",
+     "explain": "Tras ofrecer el producto, la empresa espera el pedido: «Wir würden uns freuen, Ihren Auftrag zu erhalten». «Wünsche» y «Verständnis» no se «erhalten» en una carta de oferta (además «Ihre Wünsche» sería acusativo plural y rompería la concordancia del sentido).",
+     "explain_ru": "Смысл письма — получить заказ: «Ihren Auftrag erhalten» (получить Ваш заказ). «Wünsche» и «Verständnis» с глаголом «erhalten» в оферте не сочетаются."
+    }
+   ]
+  },
+  {
+   "id": "sb2-v7",
+   "label": "Variante 7 (test 140321, 140301)",
+   "page": 95,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welche Lösung (a, b oder c) passt in jede Lücke (52-57)?",
+   "passage": "Fehlerhafte Lieferung\n\nSehr geehrter Herr Sonneberg,\nvielen Dank für die schnelle Bearbeitung unserer Bestellung vom 29.10.\nFür die Einrichtung unserer Pausenräume hatten wir zehn Sitzeckbänken in der Farbe\nWeiß bestellt. 52 ( ) Sie zehn Tische und für jede Sitzeinheit drei Stühle in\nder gleichen Farbe liefern.\nLeider entspricht die Lieferung nicht 53 ( ). Zwei von den zehn Sitzeckbänken\nwurden in Braun geliefert. Von den 30 Stühlen haben ebenfalls fünf die falsche Farbe. Wir\nbitten Sie, die reklamierten Möbelstücke 54 ( ).\nAußerdem weisen zwei Tische Kratzer an der Oberfläche auf. Wir würden die Tische\ntrotzdem behalten, wenn Sie dafür einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )?\nWir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur Verfügung.\nMit freundlichen Grüßen\nSonja Schmidt",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "unserer Pausenräume hatten wir zehn Sitzeckbänken in der Farbe Weiß bestellt. 52 ( ) Sie zehn Tische und für jede Sitzeinheit drei Stühle in der gleichen Farbe",
+     "options": [
+      {
+       "key": "a",
+       "text": "Dafür mussten"
+      },
+      {
+       "key": "b",
+       "text": "Daher konnten"
+      },
+      {
+       "key": "c",
+       "text": "Dazu sollten"
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Weiß bestellt. 52 ( ) Sie zehn Tische und für jede Sitzeinheit drei Stühle in",
+     "explain": "«Dazu» añade un elemento más al pedido ya mencionado (las diez bancas): además, la empresa debía entregar diez mesas y tres sillas por unidad. «Daher konnten» (por eso pudieron) no tiene lógica en un pedido, y «Dafür mussten» repetiría el «Für die Einrichtung» anterior y suena forzado, aunque no es agramatical.",
+     "explain_ru": "«Dazu» = вдобавок к уже названному заказу (десять скамеек): «Dazu sollten Sie ... liefern» — «дополнительно вы должны были поставить...». «Daher konnten» (поэтому могли) лишено логики, «Dafür mussten» дублирует «Für die Einrichtung» и звучит натянуто, хотя грамматически возможно."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "Stühle in der gleichen Farbe liefern. Leider entspricht die Lieferung nicht 53 ( ). Zwei von den zehn Sitzeckbänken wurden in Braun geliefert. Von den 30 Stühlen",
+     "options": [
+      {
+       "key": "a",
+       "text": "unserem Angebot"
+      },
+      {
+       "key": "b",
+       "text": "unserem Vorschriften"
+      },
+      {
+       "key": "c",
+       "text": "unserer Bestellung"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Leider entspricht die Lieferung nicht 53 ( ). Zwei von den zehn Sitzeckbänken",
+     "explain": "«Entsprechen» rige dativo y el parámetro de comparación es lo pedido: la entrega no corresponde a nuestro pedido. La opción b es agramatical porque «Vorschriften» es plural y exigiría «unseren Vorschriften»; «Angebot» no es el referente de la entrega.",
+     "explain_ru": "«Entsprechen + Dativ»: поставка не соответствует нашему заказу. Вариант b аграмматичен: plural «Vorschriften» требует формы «unseren Vorschriften». «Angebot» здесь не является эталоном для сравнения."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "ebenfalls fünf die falsche Farbe. Wir bitten Sie, die reklamierten Möbelstücke 54 ( ). Außerdem weisen zwei Tische Kratzer an der Oberfläche auf. Wir würden die",
+     "options": [
+      {
+       "key": "a",
+       "text": "gleich zurückzuschicken"
+      },
+      {
+       "key": "b",
+       "text": "schnellstmöglich auszutauschen"
+      },
+      {
+       "key": "c",
+       "text": "sofort zu reparieren"
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "bitten Sie, die reklamierten Möbelstücke 54 ( ).",
+     "explain": "El defecto es el color equivocado, así que lo coherente es pedir el cambio («auszutauschen»); la frase siguiente confirma que solo se quedarían las mesas rayadas. «Reparieren» no resuelve un color erróneo y «zurückschicken» dejaría al cliente sin la mercancía que necesita, aunque la frase sería gramatical.",
+     "explain_ru": "Речь о неверном цвете, поэтому логично просить замену («austauschen»); далее сказано, что оставить готовы только столы с царапинами. «Reparieren» для цвета не подходит, а «zurückschicken» означало бы отказ от нужной мебели, хотя грамматически фраза возможна."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "Wir würden die Tische trotzdem behalten, wenn Sie dafür einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )? Wir bitten um 57 ( ). Für Rückfragen stehen",
+     "options": [
+      {
+       "key": "a",
+       "text": "Aufpreis anbieten"
+      },
+      {
+       "key": "b",
+       "text": "Preisnachlass gewähren"
+      },
+      {
+       "key": "c",
+       "text": "Rabatt fordern"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "trotzdem behalten, wenn Sie dafür einen entsprechenden 55 ( ) .",
+     "explain": "El cliente se queda con las mesas dañadas solo si la empresa concede una rebaja de precio: «einen Preisnachlass gewähren». «Aufpreis» sería un recargo (justo lo contrario) y «Rabatt fordern» lo haría el cliente, no el proveedor al que se dirige el «Sie».",
+     "explain_ru": "Клиент готов оставить столы с царапинами, если фирма предоставит скидку с цены: «Preisnachlass gewähren». «Aufpreis» — доплата, то есть противоположное; «Rabatt fordern» — требовать скидку, это действие покупателя, а не продавца."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "behalten, wenn Sie dafür einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )? Wir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur",
+     "options": [
+      {
+       "key": "a",
+       "text": "ein Angebot unterbreiten"
+      },
+      {
+       "key": "b",
+       "text": "ein Gutachten erstellen"
+      },
+      {
+       "key": "c",
+       "text": "eine Empfehlung geben"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Könnten Sie uns hierfür 56 ( )?",
+     "explain": "«Jemandem ein Angebot unterbreiten» es la colocación fija para pedir una oferta; aquí se pide el nuevo precio con la rebaja. «Ein Gutachten erstellen» (un peritaje) y «eine Empfehlung geben» (una recomendación) no responden a la petición de descuento.",
+     "explain_ru": "Устойчивое сочетание «jemandem ein Angebot unterbreiten» (сделать предложение). Здесь просят предложение о цене со скидкой. «Ein Gutachten erstellen» (экспертиза) и «eine Empfehlung geben» не связаны с запросом скидки."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "einen entsprechenden 55 ( ) . Könnten Sie uns hierfür 56 ( )? Wir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur Verfügung. Mit freundlichen",
+     "options": [
+      {
+       "key": "a",
+       "text": "baldige Bezahlung"
+      },
+      {
+       "key": "b",
+       "text": "gleichzeitige Stornierung"
+      },
+      {
+       "key": "c",
+       "text": "umgehende Antwort"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wir bitten um 57 ( ). Für Rückfragen stehen wir Ihnen jederzeit zur Verfügung.",
+     "explain": "Una reclamación se cierra pidiendo una respuesta rápida: «Wir bitten um umgehende Antwort». «Um etwas bitten» rige acusativo de un sustantivo abstracto, y ni «Bezahlung» (es el cliente quien paga) ni «Stornierung» (no quiere cancelar) tienen sentido aquí.",
+     "explain_ru": "Письмо-рекламация завершается просьбой о быстром ответе: «um etwas bitten» + абстрактное существительное «umgehende Antwort». «Bezahlung» (платит сам клиент) и «Stornierung» (он не хочет отменять заказ) здесь бессмысленны."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "p. 91-94: las letras de opción venían a veces con homóglifos cirílicos («а)», «с)»); normalizadas a latinas.",
+  "Se han unido las palabras que el PDF partía al final de línea («Ausbildungs-\\nkonzept»).",
+  "sb2-v8: descartada; el original no trae las tres opciones en todos los huecos."
+ ]
+}

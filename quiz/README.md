@@ -1,9 +1,10 @@
-# Test B2 Beruf — Lesen y Hören
+# Test B2 Beruf — Lesen, Hören, Sprachbausteine y Schreiben
 
 Aplicación web **offline** para practicar el examen **telc Deutsch-Test für den
 Beruf B2**. Presenta las preguntas, permite responderlas y muestra la respuesta
 correcta con explicación, la **frase del texto que la justifica** y un **nivel de
-confianza**.
+confianza**. Incluye además el módulo de **Schreiben** con evaluación por IA y los
+ejercicios de huecos de **Sprachbausteine** (Teil 1 y Teil 2).
 
 > ⚠ **Las respuestas correctas no existen en el documento original.** Las he
 > deducido leyendo el texto. Por eso cada respuesta lleva la cita literal que la
@@ -43,6 +44,10 @@ quiz/
 ├─ build.py              ← valida los datos y genera B2_quiz.html
 ├─ SPEC.md               ← contrato de datos que siguen los extractores
 ├─ make_quiz_sources.py  ← parte el Markdown en bloques por página
+├─ make_sprachbausteine.py  ← extrae los Sprachbausteine (Teil 1 y 2)
+├─ merge_sprachbausteine_respuestas.py  ← funde las respuestas deducidas
+├─ sprachbausteine_respuestas.json  ← respuestas de los Sprachbausteine (a mano)
+├─ _resp_*.json          ← deducción por grupos; el merge los funde en el anterior
 ├─ smoke_test.js         ← ejecuta el visor con un DOM simulado
 ├─ design_audit.js       ← audita el diseño: contraste WCAG, rejilla de 4pt, áreas táctiles, foco, físicas
 ├─ verified.json         ← respuestas confirmadas por una 2ª lectura
@@ -59,6 +64,8 @@ $node = "C:\Users\sergi\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\
 & $py quiz\make_quiz_sources.py out\B2_ohne_antworten.md quiz\src
 & $py quiz\make_schreiben.py
 & $py quiz\make_full_forums.py
+& $py quiz\merge_sprachbausteine_respuestas.py quiz
+& $py quiz\make_sprachbausteine.py out\B2_ohne_antworten.md quiz
 & $py quiz\build.py quiz\data quiz\template.html quiz\B2_quiz.html
 & $node quiz\smoke_test.js quiz\B2_quiz.html
 & $node quiz\security_test.js quiz\B2_quiz.html
@@ -201,6 +208,14 @@ Como **no hay clave oficial**, cada respuesta pasa dos filtros:
    coinciden se anotan en `verified.json` y la app las marca con la insignia
    **«✓ 2ª lectura»**.
 
+Esto vale también para los **Sprachbausteine**: el documento tampoco trae su clave
+(lo dice `GUIA_B2.md`), así que sus 132 huecos se deducen del alemán y viven en
+`quiz/sprachbausteine_respuestas.json`. `merge_sprachbausteine_respuestas.py` comprueba
+lo comprobable —respuesta dentro de las opciones, cita literal, sin repetir letras en
+el Teil 1— y lo que no puede comprobar es la gramática: eso es la marca de confianza.
+Las variantes que el PDF dejó incompletas (la 8 del Teil 2, sin las opciones b y c) se
+descartan en vez de ofrecerse mal.
+
 El botón **«Solo dudosas»** filtra las respuestas de confianza media o baja para
 revisarlas contra el texto original.
 
@@ -223,6 +238,13 @@ revisarlas contra el texto original.
 - **Orden del bloque Forumsbeitrag**: el menú se ordena por (página, `num`), y
   `num` es la posición en la tabla del PDF (pp. 98-106). Un `num` repetido, con
   huecos o ausente detiene el build.
+- **Ejercicios de huecos (Sprachbausteine)**: la respuesta tiene que estar en el banco
+  de palabras (Teil 1) o entre las tres opciones del hueco (Teil 2), y en el Teil 1
+  las seis respuestas han de ser **letras distintas**, porque cada palabra se usa una
+  sola vez.
+- **Citas literales**: la `quote` tiene que aparecer en el `passage` del que sale. En
+  los huecos del Teil 1 vale la frase del texto con el hueco marcado, porque ahí la
+  opción es una sola palabra y no puede contener la cita.
 - **Coherencia entre variantes**: si el mismo enunciado lleva respuestas distintas,
   distingue tres casos — conflicto real (mismo texto y mismas opciones → aviso),
   cambio de versión del texto (informativo) y opciones distintas (informativo).

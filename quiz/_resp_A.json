@@ -1,0 +1,134 @@
+{
+  "sb1-v1": {
+    "46": {
+      "answer": "e",
+      "confidence": "hoch",
+      "quote": "informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können.",
+      "explain": "«bin sicher» es una construcción fija: «sicher sein + Infinitiv mit zu» (estar seguro de poder...). «bestimmt» es un adverbio y no completa «bin ___»; «über» o «für» exigirían otro régimen verbal y no encajan con el «zu»-Infinitiv.",
+      "explain_ru": "«bin sicher» — устойчивая конструкция «sicher sein + zu-Infinitiv» (быть уверенным, что сможешь...). «bestimmt» — наречие, оно не дополняет «bin ___»; предлоги «über/für» требовали бы другого управления и не сочетаются с «zu»-инфинитивом."
+    },
+    "47": {
+      "answer": "d",
+      "confidence": "hoch",
+      "quote": "Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung.",
+      "explain": "El verbo «sich interessieren» rige «für» + acusativo: «interessiere mich für die Abläufe». «über» pertenece a «sich informieren» (que ya aparece antes en la carta) y «um» a «sich kümmern um».",
+      "explain_ru": "Глагол «sich interessieren» управляет предлогом «für» + Akkusativ: «für die Abläufe». «über» относится к «sich informieren», а «um» — к «sich kümmern um»; с «interessieren» они не употребляются."
+    },
+    "48": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe.",
+      "explain": "Tras la coma hace falta una conjunción causal que abra una subordinada con verbo al final: «da ich ... sehe». «damit» y «um» expresan finalidad y «wie» comparación; ninguno admite aquí la oración con verbo conjugado al final.",
+      "explain_ru": "После запятой нужен причинный союз, открывающий придаточное с глаголом в конце: «da ich ... sehe». «damit» и «um» выражают цель, «wie» — сравнение; ни один из них не вводит здесь придаточное с глаголом в конце."
+    },
+    "49": {
+      "answer": "f",
+      "confidence": "hoch",
+      "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe.",
+      "explain": "La correlación «nicht nur ... sondern auch» es fija, y «sondern» es la única palabra del banco que la completa. Además, tras «sondern» la posición del sujeto («auch im Planen ... sehe») encaja sin cambios de orden.",
+      "explain_ru": "Парная конструкция «nicht nur ... sondern auch» устойчива, и «sondern» — единственное слово из банка, которое её завершает. Порядок слов после «sondern» тоже корректен."
+    },
+    "50": {
+      "answer": "g",
+      "confidence": "hoch",
+      "quote": "Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein.",
+      "explain": "Finalidad con infinitivo: «um ... zu + Infinitiv» («um mir dann ... sicher zu sein»). «damit» exigiría una oración con sujeto y verbo conjugado, no un infinitivo con «zu»; «wie» no expresa finalidad.",
+      "explain_ru": "Целевой оборот «um ... zu + Infinitiv» («um mir dann ... sicher zu sein»). «damit» требует придаточного с подлежащим и спрягаемым глаголом, а не «zu»-инфинитива; «wie» цели не выражает."
+    },
+    "51": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "51 ( ) überzeuge ich Sie in einem persönlichen Gespräch.",
+      "explain": "«bestimmt» (sin duda / seguro que) funciona como adverbio oracional en el Vorfeld: «Bestimmt überzeuge ich Sie ...», con el verbo en segunda posición. «sicher» ya está usado como adjetivo predicativo en 46 y las preposiciones «für/wegen/über» no pueden abrir así la frase.",
+      "explain_ru": "«bestimmt» — модальное наречие в Vorfeld: «Bestimmt überzeuge ich Sie ...», глагол на втором месте. «sicher» уже занято в 46 как именная часть сказуемого, а предлоги не могут стоять в начале такого предложения."
+    }
+  },
+  "sb1-v1-0820": {
+    "46": {
+      "answer": "h",
+      "confidence": "hoch",
+      "quote": "46 ( ) besprochen übersende ich Ihnen meine Bewerbungsunterlagen.",
+      "explain": "Fórmula fija «wie besprochen» (= como acordamos), con «wie» + participio al inicio de la frase e inversión («übersende ich»). «bereits» y «gerne» son adverbios y no introducen ese participio; «wegen» + genitivo daría otro sentido.",
+      "explain_ru": "Устойчивый оборот «wie besprochen» (как договорились): «wie» + причастие в начале предложения с инверсией («übersende ich»). «bereits/gerne» — наречия и причастие так не вводят; «wegen» + Genitiv меняет смысл."
+    },
+    "47": {
+      "answer": "i",
+      "confidence": "hoch",
+      "quote": "Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können.",
+      "explain": "«sich über etwas informieren» ya aporta la preposición «über», que aparece en el texto, así que el hueco solo admite un adverbio: «bereits» (ya me he informado). «gerne» sería teóricamente posible, pero es la pieza que cierra la carta en 51 («Gerne überzeuge ich Sie»).",
+      "explain_ru": "«sich über etwas informieren» уже содержит предлог «über», поэтому в пробеле возможно только наречие — «bereits» (уже). «gerne» теоретически возможно, но оно нужно для 51 («Gerne überzeuge ich Sie»)."
+    },
+    "48": {
+      "answer": "d",
+      "confidence": "hoch",
+      "quote": "Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in der Hotelverwaltung.",
+      "explain": "«sich interessieren» rige «für» + acusativo: «für die Abläufe». «über» va con «sich informieren» (usado en 47) y «wegen» pide genitivo y no expresa interés.",
+      "explain_ru": "«sich interessieren» управляет «für» + Akkusativ: «für die Abläufe». «über» сочетается с «sich informieren» (задействовано в 47), а «wegen» требует Genitiv и не выражает интерес."
+    },
+    "49": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich nicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren meine großen Stärken sehe.",
+      "explain": "Conjunción causal «da» + subordinada con verbo al final («da ich ... sehe»). «damit» (final) y «wie» (comparativo) no pueden introducir esta oración causal; «um» exigiría un infinitivo con «zu».",
+      "explain_ru": "Причинный союз «da» + придаточное с глаголом в конце («da ich ... sehe»). «damit» (цель) и «wie» (сравнение) такое придаточное не вводят; «um» требовало бы «zu»-инфинитива."
+    },
+    "50": {
+      "answer": "e",
+      "confidence": "hoch",
+      "quote": "Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein.",
+      "explain": "Otra vez finalidad con infinitivo: «um ... zu + Infinitiv». «damit» necesitaría sujeto y verbo conjugado; «dass» (que no está en este banco) o «wie» no encajan.",
+      "explain_ru": "Снова целевой оборот «um ... zu + Infinitiv». «damit» требует подлежащего и спрягаемого глагола, а не инфинитива с «zu»."
+    },
+    "51": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "51 ( ) überzeuge ich Sie in einem persönlichen Gespräch.",
+      "explain": "«gerne» (con mucho gusto) es el adverbio de cortesía típico en el Vorfeld: «Gerne überzeuge ich Sie ...», con inversión (verbo en 2.ª posición). Los demás restos («damit», «über», «wegen») son conjunción o preposiciones y no encajan aquí.",
+      "explain_ru": "«gerne» — вежливое наречие в Vorfeld: «Gerne überzeuge ich Sie ...» с инверсией (глагол на втором месте). Остальные варианты («damit», «über», «wegen») — союз или предлоги, здесь они невозможны."
+    }
+  },
+  "sb1-v2": {
+    "46": {
+      "answer": "c",
+      "confidence": "mittel",
+      "quote": "Ich habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben.",
+      "explain": "«dabei» retoma la acción anterior («al revisarlo») y es la opción idiomática en este contexto. «da» también sería gramaticalmente posible, pero la letra b se necesita obligatoriamente en 50, donde es la única conjunción causal que encaja; por eso aquí queda «dabei».",
+      "explain_ru": "«dabei» отсылает к предыдущему действию («при этом, при проверке») — идиоматичный вариант. «da» тоже грамматически возможно, но буква b необходима в 50 — там это единственный подходящий причинный союз; следовательно, здесь остаётся «dabei»."
+    },
+    "47": {
+      "answer": "d",
+      "confidence": "mittel",
+      "quote": "Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen?",
+      "explain": "El verbo «rechnen» rige «mit + dativo»; cuando el complemento se anticipa se usa el adverbio pronominal «damit». Es cierto que después vuelve a aparecer «mit dieser Zusatzleistung» (cierta redundancia), pero «dabei/da» no expresan ese régimen verbal y «da» ya está reservado para 50.",
+      "explain_ru": "Глагол «rechnen» управляет «mit + Dativ»; при отсылке вперёд используется местоименное наречие «damit». Да, далее снова стоит «mit dieser Zusatzleistung» (некоторая избыточность), но «dabei/da» не выражают управления этого глагола, а «da» зарезервировано для 50."
+    },
+    "48": {
+      "answer": "e",
+      "confidence": "hoch",
+      "quote": "Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf auch an einem anderen Ort in Deutschland eingesetzt werden können.",
+      "explain": "«Im Vertrag steht» introduce una subordinada completiva con «dass» y verbo al final («eingesetzt werden können»). «ob» sería una interrogativa indirecta, pero el contrato sí afirma ese punto; la duda de la autora es si se aplica a su puesto, no si está escrito.",
+      "explain_ru": "«Im Vertrag steht» вводит придаточное дополнительное с «dass» и глаголом в конце («eingesetzt werden können»). «ob» — косвенный вопрос, но в договоре это действительно сказано; сомнение автора лишь в том, относится ли это к её должности."
+    },
+    "49": {
+      "answer": "a",
+      "confidence": "hoch",
+      "quote": "Das war mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig.",
+      "explain": "«aufgrund» rige genitivo: «aufgrund meiner familiären Situation». El resto del banco son conjunciones («dass», «ob», «obwohl», «indem», «sobald») o adverbios («dabei», «damit», «dennoch») y ninguno puede regir un sintagma nominal en genitivo.",
+      "explain_ru": "«aufgrund» управляет Genitiv: «aufgrund meiner familiären Situation». Остальные слова — союзы («dass», «ob», «obwohl», «indem», «sobald») или наречия («dabei», «damit», «dennoch») и не могут управлять именной группой в генитиве."
+    },
+    "50": {
+      "answer": "b",
+      "confidence": "hoch",
+      "quote": "50 ( ) ich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für meine Familie nicht möglich.",
+      "explain": "Subordinada causal antepuesta: «Da ich ... habe, wäre ein Umzug ... nicht möglich» (verbo al final en la subordinada, inversión en la principal). «obwohl» sería concesivo y contradiría el sentido: precisamente porque tiene hijos escolarizados el traslado no es posible.",
+      "explain_ru": "Придаточное причины на первом месте: «Da ich ... habe, wäre ein Umzug ... nicht möglich» (в придаточном глагол в конце, в главном — инверсия). «obwohl» — уступка, она противоречит смыслу: именно из-за детей-школьников переезд невозможен."
+    },
+    "51": {
+      "answer": "j",
+      "confidence": "hoch",
+      "quote": "Ich freue mich auf Ihre Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück, 51 ( ) diese Punkte geklärt sind.",
+      "explain": "«sobald» (en cuanto) introduce una subordinada temporal; con valor de futuro se usa el presente («geklärt sind»). «damit» expresaría finalidad y ya se usa en 47; «indem» indicaría el medio, no el momento.",
+      "explain_ru": "«sobald» (как только) вводит придаточное времени; при значении будущего употребляется Präsens («geklärt sind»). «damit» выражало бы цель (уже занято в 47), «indem» — способ действия."
+    }
+  }
+}

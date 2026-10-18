@@ -33,6 +33,8 @@ SECTIONS = {
     "lesen-t3": "Lesen Teil 3",
     "lesen-t4": "Lesen Teil 4",
     "lesen-us": "Lesen und Schreiben (Lesen)",
+    "sprachbausteine-t1": "Sprachbausteine Teil 1",
+    "sprachbausteine-t2": "Sprachbausteine Teil 2",
     "schreiben-beschwerde": "Schreiben: Beschwerde-E-Mail",
     "schreiben-forum": "Schreiben: Forumsbeitrag",
     "hoeren-t1": "Hören Teil 1",
@@ -139,13 +141,17 @@ def validate(variant, errors, warns, infos):
         pool = {str(o.get("key", "")).lower():
                 norm_ws((o.get("title") or "") + " " + (o.get("text") or ""))
                 for o in (variant.get("options") or [])}
+        pas = norm_ws(variant.get("passage"))
         for it in items:
             q = norm_ws(it.get("quote"))
             ans = str(it.get("answer", "")).lower()
             base = pool.get(ans)
-            if q and base and q not in base:
-                warn(f"ítem {it.get('n')}: la cita NO aparece en la opción "
-                     f"{ans} que se le asigna: «{q[:70]}…»")
+            # En un ejercicio de huecos (Sprachbausteine Teil 1) la opción es UNA
+            # palabra, así que la cita no puede estar dentro de ella: la cita es la
+            # frase del texto, con el hueco marcado. Se aceptan las dos formas.
+            if q and not ((base and q in base) or (pas and q in pas)):
+                warn(f"ítem {it.get('n')}: la cita NO aparece ni en la opción "
+                     f"{ans} que se le asigna ni en el texto: «{q[:70]}…»")
 
     # --- items ---
     for it in items:
@@ -238,6 +244,19 @@ def main():
         return tuple(sorted(norm(o.get("text") or o.get("key"))
                             for o in (it.get("options") or [])))
 
+    def palabra_respuesta(v, it):
+        """Palabra que señala la respuesta.
+
+        Hace falta porque una misma versión puede traer el banco con las letras
+        renumeradas: entonces la respuesta es la misma palabra con otra letra, y
+        comparar letras daría un «conflicto» que no existe.
+        """
+        ans = str(it.get("answer", "")).lower()
+        for o in list(it.get("options") or []) + list(v.get("options") or []):
+            if str(o.get("key", "")).lower() == ans:
+                return norm(o.get("text") or "")
+        return ans
+
     seen_prompt = {}
     for sec_variants in by_section.values():
         for v in sec_variants:
@@ -247,7 +266,7 @@ def main():
                 if len(p) < 12:
                     continue
                 a = str(it.get("answer", "")).lower()
-                cur = (a, v.get("id"), opt_sig(it), passage)
+                cur = (a, v.get("id"), opt_sig(it), passage, palabra_respuesta(v, it))
                 if p not in seen_prompt:
                     seen_prompt[p] = cur
                     continue
@@ -257,7 +276,9 @@ def main():
                 same_opts = prev[2] == cur[2]
                 same_text = prev[3] == cur[3] and prev[3] != ""
                 where = f"«{p[:58]}…» → {prev[0]} ({prev[1]}) vs {a} ({cur[1]})"
-                if same_opts and same_text:
+                if same_opts and same_text and prev[4] == cur[4] and prev[4]:
+                    infos.append("misma respuesta con otra letra (banco renumerado): " + where)
+                elif same_opts and same_text:
                     warns.append("CONFLICTO probable, mismo texto y opciones: " + where)
                 elif same_opts:
                     infos.append("mismo enunciado y opciones, distinto texto "

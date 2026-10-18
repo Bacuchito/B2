@@ -1,0 +1,1362 @@
+{
+ "block": "sprachbausteine_t1",
+ "section": "sprachbausteine-t1",
+ "variants": [
+  {
+   "id": "sb1-v1",
+   "label": "Variante 1",
+   "page": 80,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Bewerbung um ein Praktikum\n\nSehr geehrte Damen und Herren,\nzunächst bedanke ich mich für das freundliche, informative Telefonat. Wie besprochen übersende ich\nIhnen meine Bewerbungsunterlagen. Auf Ihrer Homepage habe ich mich bereits über das Ausbildungskonzept Ihrer Hotelkette informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit\neines Hotelkaufmannes erhalten zu können.\nIch arbeite sehr gerne mit Menschen zusammen. Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( )\nauch im Planen und Organisieren meine großen Stärken sehe.\nIch erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde ich mich sehr freuen.\nMit freundlichen Grüßen\nAlexander Thiel",
+   "options": [
+    {
+     "key": "a",
+     "text": "BESTIMMT"
+    },
+    {
+     "key": "b",
+     "text": "DA"
+    },
+    {
+     "key": "c",
+     "text": "DAMIT"
+    },
+    {
+     "key": "d",
+     "text": "FÜR"
+    },
+    {
+     "key": "e",
+     "text": "SICHER"
+    },
+    {
+     "key": "f",
+     "text": "SONDERN"
+    },
+    {
+     "key": "g",
+     "text": "UM"
+    },
+    {
+     "key": "h",
+     "text": "ÜBER"
+    },
+    {
+     "key": "i",
+     "text": "WEGEN"
+    },
+    {
+     "key": "j",
+     "text": "WIE"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "mich bereits über das Ausbildungskonzept Ihrer Hotelkette informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "informiert und bin 46 ( ), in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können.",
+     "explain": "«bin sicher» es una construcción fija: «sicher sein + Infinitiv mit zu» (estar seguro de poder...). «bestimmt» es un adverbio y no completa «bin ___»; «über» o «für» exigirían otro régimen verbal y no encajan con el «zu»-Infinitiv.",
+     "explain_ru": "«bin sicher» — устойчивая конструкция «sicher sein + zu-Infinitiv» (быть уверенным, что сможешь...). «bestimmt» — наречие, оно не дополняет «bin ___»; предлоги «über/für» требовали бы другого управления и не сочетаются с «zu»-инфинитивом."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 47 ( ) die Abläufe in der Hotelverwaltung.",
+     "explain": "El verbo «sich interessieren» rige «für» + acusativo: «interessiere mich für die Abläufe». «über» pertenece a «sich informieren» (que ya aparece antes en la carta) y «um» a «sich kümmern um».",
+     "explain_ru": "Глагол «sich interessieren» управляет предлогом «für» + Akkusativ: «für die Abläufe». «über» относится к «sich informieren», а «um» — к «sich kümmern um»; с «interessieren» они не употребляются."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe.",
+     "explain": "Tras la coma hace falta una conjunción causal que abra una subordinada con verbo al final: «da ich ... sehe». «damit» y «um» expresan finalidad y «wie» comparación; ninguno admite aquí la oración con verbo conjugado al final.",
+     "explain_ru": "После запятой нужен причинный союз, открывающий придаточное с глаголом в конце: «da ich ... sehe». «damit» и «um» выражают цель, «wie» — сравнение; ни один из них не вводит здесь придаточное с глаголом в конце."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe. Ich erwarte von",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 48 ( ) ich nicht nur im Umgang mit Menschen, 49 ( ) auch im Planen und Organisieren meine großen Stärken sehe.",
+     "explain": "La correlación «nicht nur ... sondern auch» es fija, y «sondern» es la única palabra del banco que la completa. Además, tras «sondern» la posición del sujeto («auch im Planen ... sehe») encaja sin cambios de orden.",
+     "explain_ru": "Парная конструкция «nicht nur ... sondern auch» устойчива, и «sondern» — единственное слово из банка, которое её завершает. Порядок слов после «sondern» тоже корректен."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein.",
+     "explain": "Finalidad con infinitivo: «um ... zu + Infinitiv» («um mir dann ... sicher zu sein»). «damit» exigiría una oración con sujeto y verbo conjugado, no un infinitivo con «zu»; «wie» no expresa finalidad.",
+     "explain_ru": "Целевой оборот «um ... zu + Infinitiv» («um mir dann ... sicher zu sein»). «damit» требует придаточного с подлежащим и спрягаемым глаголом, а не «zu»-инфинитива; «wie» цели не выражает."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "51 ( ) überzeuge ich Sie in einem persönlichen Gespräch.",
+     "explain": "«bestimmt» (sin duda / seguro que) funciona como adverbio oracional en el Vorfeld: «Bestimmt überzeuge ich Sie ...», con el verbo en segunda posición. «sicher» ya está usado como adjetivo predicativo en 46 y las preposiciones «für/wegen/über» no pueden abrir así la frase.",
+     "explain_ru": "«bestimmt» — модальное наречие в Vorfeld: «Bestimmt überzeuge ich Sie ...», глагол на втором месте. «sicher» уже занято в 46 как именная часть сказуемого, а предлоги не могут стоять в начале такого предложения."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v1-0820",
+   "label": "Variante 1 (nueva versión 08.2024)",
+   "page": 80,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Bewerbung um ein Praktikum\n\nSehr geehrte Damen und Herren,\nzunächst bedanke ich mich für das freundliche, informative Telefonat. 46 ( ) besprochen übersende\nich Ihnen meine Bewerbungsunterlagen. Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können. Ich arbeite sehr gerne mit Menschen zusammen. Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in\nder Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich\nnicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren meine großen Stärken\nsehe.\nIch erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde ich mich sehr freuen.\nMit freundlichen Grüßen\nAlexander Thiel",
+   "options": [
+    {
+     "key": "a",
+     "text": "GERNE"
+    },
+    {
+     "key": "b",
+     "text": "DA"
+    },
+    {
+     "key": "c",
+     "text": "DAMIT"
+    },
+    {
+     "key": "d",
+     "text": "FÜR"
+    },
+    {
+     "key": "e",
+     "text": "UM"
+    },
+    {
+     "key": "f",
+     "text": "ÜBER"
+    },
+    {
+     "key": "g",
+     "text": "WEGEN"
+    },
+    {
+     "key": "h",
+     "text": "WIE"
+    },
+    {
+     "key": "i",
+     "text": "BEREITS"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "Herren, zunächst bedanke ich mich für das freundliche, informative Telefonat. 46 ( ) besprochen übersende ich Ihnen meine Bewerbungsunterlagen. Auf Ihrer Homepage",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "46 ( ) besprochen übersende ich Ihnen meine Bewerbungsunterlagen.",
+     "explain": "Fórmula fija «wie besprochen» (= como acordamos), con «wie» + participio al inicio de la frase e inversión («übersende ich»). «bereits» y «gerne» son adverbios y no introducen ese participio; «wegen» + genitivo daría otro sentido.",
+     "explain_ru": "Устойчивый оборот «wie besprochen» (как договорились): «wie» + причастие в начале предложения с инверсией («übersende ich»). «bereits/gerne» — наречия и причастие так не вводят; «wegen» + Genitiv меняет смысл."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "ich Ihnen meine Bewerbungsunterlagen. Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in",
+     "answer": "i",
+     "confidence": "hoch",
+     "quote": "Auf Ihrer Homepage habe ich mich 47 ( ) über das Ausbildungskonzept Ihrer Hotelkette informiert und bin sicher, in Ihrem Haus vielfältige Einblicke in die Arbeit eines Hotelkaufmannes erhalten zu können.",
+     "explain": "«sich über etwas informieren» ya aporta la preposición «über», que aparece en el texto, así que el hueco solo admite un adverbio: «bereits» (ya me he informado). «gerne» sería teóricamente posible, pero es la pieza que cierra la carta en 51 («Gerne überzeuge ich Sie»).",
+     "explain_ru": "«sich über etwas informieren» уже содержит предлог «über», поэтому в пробеле возможно только наречие — «bereits» (уже). «gerne» теоретически возможно, но оно нужно для 51 («Gerne überzeuge ich Sie»)."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in der Hotelverwaltung. Ein Praktikum in der Hotelbranche möchte",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Teamfähigkeit und Flexibilität bringe ich als Voraussetzung mit und interessiere mich 48 ( ) die Abläufe in der Hotelverwaltung.",
+     "explain": "«sich interessieren» rige «für» + acusativo: «für die Abläufe». «über» va con «sich informieren» (usado en 47) y «wegen» pide genitivo y no expresa interés.",
+     "explain_ru": "«sich interessieren» управляет «für» + Akkusativ: «für die Abläufe». «über» сочетается с «sich informieren» (задействовано в 47), а «wegen» требует Genitiv и не выражает интерес."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich nicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Ein Praktikum in der Hotelbranche möchte ich deshalb absolvieren, 49 ( ) ich nicht nur im Umgang mit Menschen, sondern auch im Planen und Organisieren meine großen Stärken sehe.",
+     "explain": "Conjunción causal «da» + subordinada con verbo al final («da ich ... sehe»). «damit» (final) y «wie» (comparativo) no pueden introducir esta oración causal; «um» exigiría un infinitivo con «zu».",
+     "explain_ru": "Причинный союз «da» + придаточное с глаголом в конце («da ich ... sehe»). «damit» (цель) и «wie» (сравнение) такое придаточное не вводят; «um» требовало бы «zu»-инфинитива."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Ich erwarte von diesem Praktikum, mein theoretisches Wissen durch praktische Erfahrung weiter vertiefen zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein.",
+     "explain": "Otra vez finalidad con infinitivo: «um ... zu + Infinitiv». «damit» necesitaría sujeto y verbo conjugado; «dass» (que no está en este banco) o «wie» no encajan.",
+     "explain_ru": "Снова целевой оборот «um ... zu + Infinitiv». «damit» требует подлежащего и спрягаемого глагола, а не инфинитива с «zu»."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "zu können, 50 ( ) mir dann mit meiner Berufswahl endgültig sicher zu sein. 51 ( ) überzeuge ich Sie in einem persönlichen Gespräch. Über eine Einladung würde",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "51 ( ) überzeuge ich Sie in einem persönlichen Gespräch.",
+     "explain": "«gerne» (con mucho gusto) es el adverbio de cortesía típico en el Vorfeld: «Gerne überzeuge ich Sie ...», con inversión (verbo en 2.ª posición). Los demás restos («damit», «über», «wegen») son conjunción o preposiciones y no encajan aquí.",
+     "explain_ru": "«gerne» — вежливое наречие в Vorfeld: «Gerne überzeuge ich Sie ...» с инверсией (глагол на втором месте). Остальные варианты («damit», «über», «wegen») — союз или предлоги, здесь они невозможны."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v2",
+   "label": "Variante 2",
+   "page": 81,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Arbeitsvertrag\n\nSehr geehrter Herr Salzmann,\nmeinen Arbeitsvertrag habe ich heute mit der Post erhalten und möchte mich hiermit herzlich bedanken.\nIch habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben.\nBei meinem Vorstellungsgespräch hatte Frau Ott mir mündlich ein Jobticket zugesagt, das im Vertrag\nnicht erwähnt wird. Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen?\nMeine zweite Frage bezieht sich auf den Arbeitsort. Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf\nauch an einem anderen Ort in Deutschland eingesetzt werden können. Gilt das auch für meine Stelle? Das\nwar mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig. 50 ( )\nich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für meine Familie nicht möglich.\nIch freue mich auf Ihre Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück,\n51 ( ) diese Punkte geklärt sind.\nIch freue mich auf meinen Arbeitsbeginn am 1. Juli.\nMit freundlichen Grüßen\nIrina Lopez",
+   "options": [
+    {
+     "key": "a",
+     "text": "AUFGRUND"
+    },
+    {
+     "key": "b",
+     "text": "DA"
+    },
+    {
+     "key": "c",
+     "text": "DABEI"
+    },
+    {
+     "key": "d",
+     "text": "DAMIT"
+    },
+    {
+     "key": "e",
+     "text": "DASS"
+    },
+    {
+     "key": "f",
+     "text": "DENNOCH"
+    },
+    {
+     "key": "g",
+     "text": "INDEM"
+    },
+    {
+     "key": "h",
+     "text": "OB"
+    },
+    {
+     "key": "i",
+     "text": "OBWOHL"
+    },
+    {
+     "key": "j",
+     "text": "SOBALD"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "möchte mich hiermit herzlich bedanken. Ich habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben. Bei meinem Vorstellungsgespräch hatte",
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Ich habe ihn ausführlich geprüft und 46 ( ) haben sich noch einige Fragen ergeben.",
+     "explain": "«dabei» retoma la acción anterior («al revisarlo») y es la opción idiomática en este contexto. «da» también sería gramaticalmente posible, pero la letra b se necesita obligatoriamente en 50, donde es la única conjunción causal que encaja; por eso aquí queda «dabei».",
+     "explain_ru": "«dabei» отсылает к предыдущему действию («при этом, при проверке») — идиоматичный вариант. «da» тоже грамматически возможно, но буква b необходима в 50 — там это единственный подходящий причинный союз; следовательно, здесь остаётся «dabei»."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "mündlich ein Jobticket zugesagt, das im Vertrag nicht erwähnt wird. Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen? Meine zweite Frage bezieht sich auf",
+     "answer": "d",
+     "confidence": "mittel",
+     "quote": "Kann ich 47 ( ) fest mit dieser Zusatzleistung rechnen?",
+     "explain": "El verbo «rechnen» rige «mit + dativo»; cuando el complemento se anticipa se usa el adverbio pronominal «damit». Es cierto que después vuelve a aparecer «mit dieser Zusatzleistung» (cierta redundancia), pero «dabei/da» no expresan ese régimen verbal y «da» ya está reservado para 50.",
+     "explain_ru": "Глагол «rechnen» управляет «mit + Dativ»; при отсылке вперёд используется местоименное наречие «damit». Да, далее снова стоит «mit dieser Zusatzleistung» (некоторая избыточность), но «dabei/da» не выражают управления этого глагола, а «da» зарезервировано для 50."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "rechnen? Meine zweite Frage bezieht sich auf den Arbeitsort. Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf auch an einem anderen Ort in Deutschland eingesetzt",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Im Vertrag steht, 48 ( ) Mitarbeiter bei Bedarf auch an einem anderen Ort in Deutschland eingesetzt werden können.",
+     "explain": "«Im Vertrag steht» introduce una subordinada completiva con «dass» y verbo al final («eingesetzt werden können»). «ob» sería una interrogativa indirecta, pero el contrato sí afirma ese punto; la duda de la autora es si se aplica a su puesto, no si está escrito.",
+     "explain_ru": "«Im Vertrag steht» вводит придаточное дополнительное с «dass» и глаголом в конце («eingesetzt werden können»). «ob» — косвенный вопрос, но в договоре это действительно сказано; сомнение автора лишь в том, относится ли это к её должности."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "können. Gilt das auch für meine Stelle? Das war mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig. 50 ( ) ich, wie Sie wissen,",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Das war mir nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig.",
+     "explain": "«aufgrund» rige genitivo: «aufgrund meiner familiären Situation». El resto del banco son conjunciones («dass», «ob», «obwohl», «indem», «sobald») o adverbios («dabei», «damit», «dennoch») y ninguno puede regir un sintagma nominal en genitivo.",
+     "explain_ru": "«aufgrund» управляет Genitiv: «aufgrund meiner familiären Situation». Остальные слова — союзы («dass», «ob», «obwohl», «indem», «sobald») или наречия («dabei», «damit», «dennoch») и не могут управлять именной группой в генитиве."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "nicht bewusst und wäre 49 ( ) meiner familiären Situation momentan schwierig. 50 ( ) ich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "50 ( ) ich, wie Sie wissen, zwei schulpflichtige Kinder habe, wäre ein Umzug für meine Familie nicht möglich.",
+     "explain": "Subordinada causal antepuesta: «Da ich ... habe, wäre ein Umzug ... nicht möglich» (verbo al final en la subordinada, inversión en la principal). «obwohl» sería concesivo y contradiría el sentido: precisamente porque tiene hijos escolarizados el traslado no es posible.",
+     "explain_ru": "Придаточное причины на первом месте: «Da ich ... habe, wäre ein Umzug ... nicht möglich» (в придаточном глагол в конце, в главном — инверсия). «obwohl» — уступка, она противоречит смыслу: именно из-за детей-школьников переезд невозможен."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück, 51 ( ) diese Punkte geklärt sind. Ich freue mich auf meinen Arbeitsbeginn am 1. Juli.",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "Ich freue mich auf Ihre Rückmeldung und schicke Ihnen den Vertrag unverzüglich unterschrieben zurück, 51 ( ) diese Punkte geklärt sind.",
+     "explain": "«sobald» (en cuanto) introduce una subordinada temporal; con valor de futuro se usa el presente («geklärt sind»). «damit» expresaría finalidad y ya se usa en 47; «indem» indicaría el medio, no el momento.",
+     "explain_ru": "«sobald» (как только) вводит придаточное времени; при значении будущего употребляется Präsens («geklärt sind»). «damit» выражало бы цель (уже занято в 47), «indem» — способ действия."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v3",
+   "label": "Variante 3",
+   "page": 81,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingosbergr,\nvielen Dank für die positive Nachricht, bereits ab dem ersten März bei Ihnen anfangen zu dürfen. 46 ( )\nfreue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag zurück.\nNun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz.\nAber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine\nneue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit\n48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.\nBei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen.\nBenötigen Sie 50 ( ) meine Kleider- und Schuhgröße ? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.\nSollten Sie sonst irgendetwas von mir benötigten, können Sie mich natürlich gern kontaktieren.\nMit freundlichen Grüßen",
+   "options": [
+    {
+     "key": "a",
+     "text": "ANSONSTEN"
+    },
+    {
+     "key": "b",
+     "text": "DAFÜR"
+    },
+    {
+     "key": "c",
+     "text": "DAHIN"
+    },
+    {
+     "key": "d",
+     "text": "DAVON"
+    },
+    {
+     "key": "e",
+     "text": "DEREN"
+    },
+    {
+     "key": "f",
+     "text": "DESSEN"
+    },
+    {
+     "key": "g",
+     "text": "HIERÜBER"
+    },
+    {
+     "key": "h",
+     "text": "WAS"
+    },
+    {
+     "key": "i",
+     "text": "WIE"
+    },
+    {
+     "key": "j",
+     "text": "ANBEI"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "positive Nachricht, bereits ab dem ersten März bei Ihnen anfangen zu dürfen. 46 ( ) freue ich mich wirklich sehr. In der Anlage sende ich Ihnen den",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "46 ( ) freue ich mich wirklich sehr.",
+     "explain": "«Sich freuen über» rige acusativo y, para remitir a toda una idea (poder empezar el 1 de marzo), el alemán usa el adverbio pronominal «hierüber». Ninguna otra opción del banco completa ese verbo: «dafür», «davon» o «dahin» no son complementos de «sich freuen».",
+     "explain_ru": "«Sich freuen» управляется предлогом «über» + Akkusativ; отсылка к целому высказыванию передаётся местоименным наречием «hierüber» (= «darüber»). Остальные варианты — «dafür», «davon», «dahin» — с этим глаголом не сочетаются."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
+     "explain": "«Bis dahin» significa «hasta entonces» y remite al 1 de marzo ya mencionado. La preposición «bis» exige un punto temporal, y solo «dahin» lo aporta; «davon»/«dafür» no son temporales.",
+     "explain_ru": "«Bis dahin» — «до тех пор», отсылка к уже названному сроку (1 марта). Предлог «bis» требует временной точки; только «dahin» её даёт, а «davon»/«dafür» временного значения не имеют."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
+     "explain": "El antecedente «Internetseiten» es plural femenino; el relativo en genitivo plural es «deren» («con cuya ayuda»). «Dessen» solo valdría para masculino o neutro singular, y el resto de opciones no son relativos en genitivo.",
+     "explain_ru": "Антецедент «Internetseiten» — множественное число; относительное местоимение в генитиве мн. ч. имеет форму «deren» («mit deren Hilfe»). «Dessen» возможно только для мужского или среднего рода единственного числа."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen. Benötigen Sie 50 ( )",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen.",
+     "explain": "«Sprechen von etwas» exige la preposición «von»; la oración con «dass» se anticipa con el adverbio pronominal «davon». «Dafür» o «hierüber» no son complementos de «sprechen» en este sentido.",
+     "explain_ru": "Глагол «sprechen» в значении «говорить о чём-либо» управляет предлогом «von»; придаточное с «dass» вводится местоименным наречием «davon». «Dafür»/«hierüber» здесь невозможны."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgröße ? Das erforderliche ärztliche Attest vom",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgröße ?",
+     "explain": "«Dafür» remite a lo dicho antes, la ropa de trabajo que la empresa pone a disposición: «¿necesita usted para eso mis tallas?». Las demás opciones no pueden expresar esa referencia a un propósito ya mencionado.",
+     "explain_ru": "«Dafür» отсылает к сказанному ранее — к спецодежде, которую предоставляет фирма: «нужны ли Вам для этого мои размеры?». Остальные варианты такой отсылки к цели не выражают."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "Schuhgröße ? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir",
+     "answer": "i",
+     "confidence": "hoch",
+     "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
+     "explain": "Fórmula fija «wie besprochen» = «como acordamos». «Wie» introduce la comparación con lo pactado; «was besprochen» no existe como fórmula y las preposiciones del banco no encajan en ese inciso.",
+     "explain_ru": "Устойчивое выражение «wie besprochen» — «как договорились». «Wie» вводит сравнение с договорённостью; «was besprochen» как формула не употребляется, а предлоги из банка в эту вставку не подходят."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v3-b",
+   "label": "Variante 3 (nueva versión)",
+   "page": 82,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingenberg,\nvielen Dank für die positive Nachricht, bereits zum ersten März bei Ihnen anfangen zu dürfen. Hierüber\nfreue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).\nNun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz.\nAber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine\nneue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit\n48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.\nBei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?\nDas erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.\nSollten Sie sonst irgendetwas von mir benötigen, können Sie mich natürlich gern kontaktieren.\nMit freundlichen Grüßen\nPhilipp Kunz",
+   "options": [
+    {
+     "key": "a",
+     "text": "ANSONSTEN"
+    },
+    {
+     "key": "b",
+     "text": "DAFÜR"
+    },
+    {
+     "key": "c",
+     "text": "DAHIN"
+    },
+    {
+     "key": "d",
+     "text": "DAVON"
+    },
+    {
+     "key": "e",
+     "text": "DEREN"
+    },
+    {
+     "key": "f",
+     "text": "DESSEN"
+    },
+    {
+     "key": "g",
+     "text": "ZURÜCK"
+    },
+    {
+     "key": "h",
+     "text": "WAS"
+    },
+    {
+     "key": "i",
+     "text": "WIE"
+    },
+    {
+     "key": "j",
+     "text": "ANBEI"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ). Nun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).",
+     "explain": "«Zurücksenden» es un verbo separable: el prefijo «zurück» se coloca al final de la frase («sende ich Ihnen … zurück»). Ninguna otra palabra del banco es prefijo separable de «senden».",
+     "explain_ru": "«Zurücksenden» — глагол с отделяемой приставкой: «zurück» стоит в конце предложения («sende ich Ihnen … zurück»). Ни один другой вариант не является отделяемой приставкой к «senden»."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
+     "explain": "«Bis dahin» = «hasta entonces», referido al 1 de marzo ya nombrado. «Bis» needs un punto temporal y solo «dahin» lo ofrece; «davon» y «dafür» no son temporales.",
+     "explain_ru": "«Bis dahin» — «до тех пор», отсылка к названному ранее 1 марта. «Bis» требует временнóй точки, и только «dahin» её даёт; «davon»/«dafür» временного значения не имеют."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
+     "explain": "«Internetseiten» es plural; el relativo en genitivo plural es «deren» («con cuya ayuda»). «Dessen» solo sirve para masculino/neutro singular, y el hueco exige concordancia con el plural.",
+     "explain_ru": "«Internetseiten» — множественное число; относительное местоимение в генитиве мн. ч. — «deren» («mit deren Hilfe»). «Dessen» возможно только для мужского или среднего рода единственного числа."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider-",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen.",
+     "explain": "«Sprechen von etwas» rige «von»; el «dass» siguiente pide el adverbio pronominal «davon». «Dafür» no es complemento de «sprechen» y «dahin» es temporal.",
+     "explain_ru": "«Sprechen» в значении «говорить о чём-то» управляет предлогом «von»; придаточное с «dass» вводится наречием «davon». «Dafür» с этим глаголом не сочетается."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ? Das erforderliche ärztliche Attest vom",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?",
+     "explain": "«Dafür» remite a la ropa de trabajo mencionada en la frase anterior: «¿necesita para eso mis tallas?». Las demás opciones no expresan esa referencia a un propósito previo.",
+     "explain_ru": "«Dafür» отсылает к спецодежде из предыдущего предложения: «нужны ли Вам для этого мои размеры?». Прочие варианты такой отсылки к цели не выражают."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir",
+     "answer": "i",
+     "confidence": "hoch",
+     "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
+     "explain": "Locución fija «wie besprochen» = «como acordamos». «Wie» es la única partícula del banco que puede introducir ese inciso comparativo.",
+     "explain_ru": "Устойчивое выражение «wie besprochen» — «как договорились»; «wie» — единственная подходящая частица из банка для этой вставки."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v3-07022025",
+   "label": "Variante 3 (nueva versión 07.02.2025)",
+   "page": 82,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Arbeitsvertrag\n\nSehr geehrte Frau Klingenberg,\nvielen Dank für die positive Nachricht, bereits zum ersten März bei Ihnen anfangen zu dürfen. Hierüber\nfreue ich mich wirklich sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).\nNun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz.\nAber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine\nneue Tätigkeit vorbereiten kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit\n48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.\nBei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?\nDas erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.\nSollten Sie sonst irgendetwas von mir benötigen, können Sie mich natürlich gern kontaktieren.\nMit freundlichen Grüßen\nPhilipp Kunz",
+   "options": [
+    {
+     "key": "a",
+     "text": "ANBEI"
+    },
+    {
+     "key": "b",
+     "text": "ANSONSTEN"
+    },
+    {
+     "key": "c",
+     "text": "DAFÜR"
+    },
+    {
+     "key": "d",
+     "text": "DAHIN"
+    },
+    {
+     "key": "e",
+     "text": "DAVON"
+    },
+    {
+     "key": "f",
+     "text": "DEREN"
+    },
+    {
+     "key": "g",
+     "text": "DESSEN"
+    },
+    {
+     "key": "h",
+     "text": "WAS"
+    },
+    {
+     "key": "i",
+     "text": "WIE"
+    },
+    {
+     "key": "j",
+     "text": "ZURÜCK"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "sehr. In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ). Nun bin ich gespannt auf die zukünftige Arbeit und den ersten Tag an meinem",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).",
+     "explain": "«Zurücksenden» es separable: «zurück» va al final del enunciado («sende ich Ihnen … zurück»). La colocación de «zurück» al final es lo que prueba que es el prefijo del verbo.",
+     "explain_ru": "«Zurücksenden» — глагол с отделяемой приставкой: «zurück» выносится в конец («sende ich Ihnen … zurück»). Именно позиция в конце доказывает, что это приставка глагола."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "zukünftige Arbeit und den ersten Tag an meinem neuen Arbeitsplatz. Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
+     "explain": "«Bis dahin» = «hasta entonces», referido al inicio de marzo. «Bis» exige un punto en el tiempo y solo «dahin» lo aporta; «davon»/«dafür» no encajan.",
+     "explain_ru": "«Bis dahin» — «до тех пор», отсылка к началу марта. «Bis» требует указания времени, и только «dahin» его даёт; «davon»/«dafür» не подходят."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "kann. Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann. Bei dem",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
+     "explain": "Con «Internetseiten» (plural) el relativo en genitivo es «deren»: «mit deren Hilfe». «Dessen» corresponde a masculino/neutro singular y rompería la concordancia.",
+     "explain_ru": "При «Internetseiten» (мн. ч.) относительное местоимение в генитиве — «deren»: «mit deren Hilfe». «Dessen» относится к мужскому/среднему роду ед. ч. и нарушило бы согласование."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "den Produkten vertraut machen kann. Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider-",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen.",
+     "explain": "«Sprechen von etwas» rige «von», y la subordinada con «dass» se anuncia con «davon». «Dafür» y «dahin» no son complementos preposicionales de «sprechen».",
+     "explain_ru": "«Sprechen» в значении «говорить о» управляет предлогом «von», а придаточное с «dass» вводится наречием «davon». «Dafür»/«dahin» не являются его предложными дополнениями."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen. Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ? Das erforderliche ärztliche Attest vom",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?",
+     "explain": "«Dafür» retoma la ropa de trabajo del enunciado anterior: «¿necesita para eso mis tallas?». El resto del banco no puede referirse a ese propósito ya mencionado.",
+     "explain_ru": "«Dafür» отсылает к спецодежде из предыдущего предложения: «нужны ли Вам для этого мои размеры?». Остальные варианты не выражают отсылку к цели."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "? Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit. Sollten Sie sonst irgendetwas von mir",
+     "answer": "i",
+     "confidence": "hoch",
+     "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
+     "explain": "Fórmula fija «wie besprochen» = «como acordamos»; solo «wie» puede encabezar ese inciso comparativo dentro del banco.",
+     "explain_ru": "Устойчивое выражение «wie besprochen» — «как договорились»; только «wie» из банка может вводить такую сравнительную вставку."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v4",
+   "label": "Variante 4",
+   "page": 83,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Kündigung\n\nSehr geehrter Herr Dr. Reinicke,\nhiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( )\nnächstmöglichen Datum.\nWie ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung nicht leicht\ngemacht. Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie\nso bald wie 47 ( ) umziehen. Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe,\naber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.\nFür die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich\nhabe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich\nstets in der Firma erfahren habe.\nBitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.\nMit freundlichen Grüßen\nIrina Kaspercik",
+   "options": [
+    {
+     "key": "a",
+     "text": "ANHALTENDE"
+    },
+    {
+     "key": "b",
+     "text": "AUSDRÜCKLICH"
+    },
+    {
+     "key": "c",
+     "text": "MÖGLICH"
+    },
+    {
+     "key": "d",
+     "text": "NÖTIG"
+    },
+    {
+     "key": "e",
+     "text": "NUR"
+    },
+    {
+     "key": "f",
+     "text": "SOWIE"
+    },
+    {
+     "key": "g",
+     "text": "SPÄTERE"
+    },
+    {
+     "key": "h",
+     "text": "VORZEITIGE"
+    },
+    {
+     "key": "i",
+     "text": "WEGEN"
+    },
+    {
+     "key": "j",
+     "text": "ZUM"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum. Wie ich Ihnen in unserem persönlichen Gespräch erklärt",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum.",
+     "explain": "«Zum nächstmöglichen Datum» es la fórmula fija para la fecha de efectos (= «zu» + dativo contraído). «Wegen» exigiría genitivo («nächstmöglichen Datums») y no indica la fecha de efectos del despido.",
+     "explain_ru": "«Zum nächstmöglichen Datum» — устойчивая формула даты вступления в силу («zu» + Dativ, слитная форма). «Wegen» требовал бы генитива («nächstmöglichen Datums») и не обозначает дату."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie 47 ( ) umziehen. Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe,",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie 47 ( ) umziehen.",
+     "explain": "La comparación fija es «so bald wie möglich» («lo antes posible»): tras «so bald wie» se usa obligatoriamente el positivo del adjetivo, y «möglich» completa la fórmula. Ninguna otra opción es un adjetivo en grado positivo.",
+     "explain_ru": "Устойчивое сравнение «so bald wie möglich» («как можно скорее»): после «so bald wie» обязательна положительная степень прилагательного, и «möglich» образует формулу. Другие варианты не подходят морфологически."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats. Für die lange Zeit, die ich in",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.",
+     "explain": "Pide una liberación de sus obligaciones antes de que venza el preaviso de tres meses: ese adelanto es «vorzeitig». «Spätere» diría lo contrario y «nötige» no expresa la anticipación.",
+     "explain_ru": "Она просит освободить её от работы раньше окончания трёхмесячного срока — это «vorzeitig» («досрочный»). «Spätere» означало бы обратное, «nötige» не передаёт досрочность."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "Monats. Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen",
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken.",
+     "explain": "El hueco exige un adverbio que modifique el agradecimiento: «sich ausdrücklich bedanken» = agradecer de forma expresa. «Nur» cambiaría el sentido («solo a usted») y crearía un contraste que el contexto no pide.",
+     "explain_ru": "Нужно наречие при «bedanken»: «sich ausdrücklich bedanken» — «выразить благодарность». «Nur» изменило бы смысл («только Вам») и создало бы контраст, которого нет в тексте."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe. Bitte bestätigen Sie",
+     "answer": "a",
+     "confidence": "mittel",
+     "quote": "Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe.",
+     "explain": "«Anhaltende Unterstützung» = apoyo continuado, coherente con «stets erfahren habe». «Nötige» significa «necesaria» y «spätere» («posterior») contradice el «stets» de la relativa.",
+     "explain_ru": "«Anhaltende Unterstützung» — «постоянная поддержка», что согласуется с «stets erfahren habe». «Nötige» значит «необходимая», а «spätere» («более поздняя») противоречит «stets»."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "der Firma erfahren habe. Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet. Mit freundlichen Grüßen Irina",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.",
+     "explain": "«Sowie» (= «así como») coordina los dos objetos de «bestätigen»: el recibo de la carta y la fecha de finalización. «Wegen» no coordina complementos y el resto de palabras no pueden enlazar dos objetos.",
+     "explain_ru": "«Sowie» («а также») соединяет два дополнения при «bestätigen»: получение письма и дату окончания договора. «Wegen» не сочинительный союз, остальные варианты тоже не связывают два дополнения."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v4-0404",
+   "label": "Variante 4 (nueva versión)",
+   "page": 83,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Sehr geehrter Herr Dr. Reinicke,\nhiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( )\nnächstmöglichen Datum.\n47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung\nnicht leicht gemacht. Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie möglich umziehen. Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.\nFür die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich\nhabe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets\nin der Firma erfahren habe.\nBitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag\nendet.\nMit freundlichen Grüßen\nIrina Kaspercik",
+   "options": [
+    {
+     "key": "a",
+     "text": "ANHALTENDE"
+    },
+    {
+     "key": "b",
+     "text": "AUSDRÜCKLICH"
+    },
+    {
+     "key": "c",
+     "text": "WIE"
+    },
+    {
+     "key": "d",
+     "text": "NÖTIG"
+    },
+    {
+     "key": "e",
+     "text": "NUR"
+    },
+    {
+     "key": "f",
+     "text": "SOWIE"
+    },
+    {
+     "key": "g",
+     "text": "SPÄTERE"
+    },
+    {
+     "key": "h",
+     "text": "VORZEITIGE"
+    },
+    {
+     "key": "i",
+     "text": "WEGEN"
+    },
+    {
+     "key": "j",
+     "text": "ZUM"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum. 47 ( ) ich Ihnen in unserem persönlichen Gespräch",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum.",
+     "explain": "«Zum nächstmöglichen Datum» es la fórmula fija de la fecha de efectos («zu» + dativo, contraído en «zum»). «Wegen» exigiría genitivo («nächstmöglichen Datums») y no sirve para fijar la fecha del despido.",
+     "explain_ru": "«Zum nächstmöglichen Datum» — устойчивая формула даты вступления в силу («zu» + Dativ, слитно «zum»). «Wegen» требует генитива («nächstmöglichen Datums») и не указывает дату."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum. 47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung nicht leicht gemacht.",
+     "explain": "El hueco abre una subordinada con el verbo al final («… erklärt habe»), así que debe ser una conjunción, no una preposición; el sentido es «tal como le expliqué» = «wie». «Wegen» es preposición con genitivo y no puede encabezar esa oración.",
+     "explain_ru": "Пробел открывает придаточное с глаголом в конце («… erklärt habe»), значит нужна не предлог, а союз; смысл — «как я Вам объяснил» = «wie». «Wegen» — предлог с генитивом, придаточное он вводить не может."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats. Für die lange Zeit, die ich in",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.",
+     "explain": "Pide la liberación de sus obligaciones antes de que acabe el preaviso de tres meses: eso es una «vorzeitige Freistellung». «Spätere» diría lo contrario y «nötige» no expresa el adelanto.",
+     "explain_ru": "Просьба — освободить её от работы раньше окончания трёхмесячного срока, то есть «vorzeitige Freistellung» («досрочное освобождение»). «Spätere» означало бы обратное, «nötige» не передаёт досрочность."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "Monats. Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen",
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken.",
+     "explain": "El hueco es un adverbio que modifica «bedanken»: «sich ausdrücklich bedanken» = agradecer de forma expresa. «Nur» sería gramatical pero cambiaría el sentido («solo a usted») e introduciría un contraste que el texto no tiene.",
+     "explain_ru": "Нужно наречие при «bedanken»: «sich ausdrücklich bedanken» — «выразить благодарность». «Nur» грамматически возможно, но меняло бы смысл («только Вам») и вводило бы контраст, которого в тексте нет."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "bedanken. Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe. Bitte bestätigen Sie",
+     "answer": "a",
+     "confidence": "mittel",
+     "quote": "Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe.",
+     "explain": "«Anhaltende Unterstützung» = apoyo continuado, que concuerda con «stets erfahren habe» de la relativa. «Nötige» («necesaria») no armoniza con «stets» y «spätere» («posterior») lo contradice.",
+     "explain_ru": "«Anhaltende Unterstützung» — «постоянная/непрерывная поддержка», что согласуется с «stets erfahren habe». «Nötige» («необходимая») не сочетается с «stets», а «spätere» («более поздняя») ему противоречит."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "der Firma erfahren habe. Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet. Mit freundlichen Grüßen Irina",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.",
+     "explain": "«Sowie» (= «así como») une los dos objetos de «bestätigen»: el recibo y la fecha de finalización. «Wegen» no es conjunción y el resto del banco no puede enlazar dos complementos.",
+     "explain_ru": "«Sowie» («а также») соединяет два дополнения при «bestätigen»: получение письма и дату окончания. «Wegen» не союз, остальные варианты тоже не связывают два дополнения."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v5",
+   "label": "Variante 5",
+   "page": 84,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Probearbeiten\n\nSehr geehrte Fran Sabani,\nes freut mich sehr, dass ich in meinem Vorstellungsgespräch einen ersten positiven Eindruck hinterlassen\nhabe und Sie mich 46 ( ) Probearbeiten einladen. Natürlich nutze ich sehr gern diese Gelegenheit,\nmeine Fähigkeiten 47 ( ) Beweis zu stellen. Von den beiden Terminvorschlägen, die Sie mir geschickt haben, passt mir der nächste Dienstag am besten. Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.\nStellen Sie mir die Arbeitskleidung für diesen Tag zur Verfügung oder soll ich selbst spezielle Kleidung\nmitbringen? Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss? Brauche ich 51 ( )\nnoch eine ärztliche Bescheinigung vom Gesundheitsamt?\nDanke im Voraus für eine kurze Beantwortung meiner Fragen.",
+   "options": [
+    {
+     "key": "a",
+     "text": "WORÜBER"
+    },
+    {
+     "key": "b",
+     "text": "BEREITS / SCHON"
+    },
+    {
+     "key": "c",
+     "text": "EVENTUELL"
+    },
+    {
+     "key": "d",
+     "text": "IN"
+    },
+    {
+     "key": "e",
+     "text": "MANCHMAL"
+    },
+    {
+     "key": "f",
+     "text": "DARAUF"
+    },
+    {
+     "key": "g",
+     "text": "UNTER"
+    },
+    {
+     "key": "h",
+     "text": "WAS"
+    },
+    {
+     "key": "i",
+     "text": "NOCH"
+    },
+    {
+     "key": "j",
+     "text": "ZUM"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "einen ersten positiven Eindruck hinterlassen habe und Sie mich 46 ( ) Probearbeiten einladen. Natürlich nutze ich sehr gern diese Gelegenheit, meine",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "habe und Sie mich 46 ( ) Probearbeiten einladen.",
+     "explain": "Colocación fija «jemanden zum Probearbeiten einladen»: «zu» + Dativ contraído en «zum». Es el único complemento preposicional posible con «einladen» para una actividad; «in», «unter» o «worüber» no rigen este verbo.",
+     "explain_ru": "Устойчивое выражение «jemanden zum Probearbeiten einladen»: предлог «zu» + Dativ, слитная форма «zum». Это единственное управление, возможное при «einladen» для названия мероприятия; «in», «unter», «worüber» с этим глаголом не сочетаются."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "einladen. Natürlich nutze ich sehr gern diese Gelegenheit, meine Fähigkeiten 47 ( ) Beweis zu stellen. Von den beiden Terminvorschlägen, die Sie mir geschickt",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "meine Fähigkeiten 47 ( ) Beweis zu stellen.",
+     "explain": "Fórmula fija «etwas unter Beweis stellen» (demostrar algo), con «unter» + Akkusativ. «In Beweis» o «zum Beweis stellen» no existen en alemán; «zum Beweis» solo funciona como «como prueba», nunca con «stellen».",
+     "explain_ru": "Устойчивое словосочетание «etwas unter Beweis stellen» (доказать что-либо) требует «unter» + Akkusativ. Сочетаний «in Beweis stellen» или «zum Beweis stellen» не существует; «zum Beweis» значит «в доказательство» и с «stellen» не употребляется."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "mir geschickt haben, passt mir der nächste Dienstag am besten. Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.",
+     "explain": "«Sich freuen auf» + Akkusativ rige la preposición «auf»; como lo que se anticipa es toda una oración con «zu» (… zu bekommen), el alemán usa el adverbio pronominal «darauf». «Worüber» pertenece a «sich freuen über» (algo pasado), que no encaja con un hecho futuro.",
+     "explain_ru": "Глагол «sich freuen» с предлогом «auf» + Akkusativ; поскольку вперёд выносится целое придаточное с «zu» (… zu bekommen), используется местоименное наречие «darauf». «Worüber» относится к «sich freuen über» (о прошедшем) и здесь не подходит."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "der nächste Dienstag am besten. Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu",
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Ich freue mich 48 ( ), bei dieser Gelegenheit 49 ( ) einen ersten Einblick in die Arbeitsabläufe und Abteilungen in Ihrem Haus zu bekommen.",
+     "explain": "El hueco pide el adverbio que marca que ya en esa ocasión tendrá un primer contacto: «schon/bereits einen ersten Einblick … bekommen». «Noch» quedaría mal («noch einen ersten Einblick» = otro más) y «eventuell/manchmal» cambiarían el sentido; se deduce por el sentido, no por la gramática.",
+     "explain_ru": "Здесь нужно наречие, показывающее, что уже при этом случае она получит первое представление: «schon/bereits einen ersten Einblick … bekommen». «Noch» звучало бы неверно («noch einen ersten Einblick» = ещё одно), а «eventuell/manchmal» меняют смысл. Вывод сделан по смыслу, а не по грамматике."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "oder soll ich selbst spezielle Kleidung mitbringen? Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss? Brauche ich 51 ( ) noch eine ärztliche Bescheinigung",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss?",
+     "explain": "Tras el indefinido «irgendwas» el pronombre relativo es «was» («irgendwas, was ich … besorgen muss»). «Worüber» exigiría un verbo con preposición («worüber ich mir Sorgen mache») y «darauf» no puede ser sujeto/objeto de «besorgen».",
+     "explain_ru": "После неопределённого местоимения «irgendwas» относительное местоимение имеет форму «was» («irgendwas, was ich … besorgen muss»). «Worüber» требовало бы глагола с предлогом («worüber ich mir Sorgen mache»), а «darauf» не может быть дополнением при «besorgen»."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "Gibt es noch irgendwas, 50 ( ) ich vorher besorgen muss? Brauche ich 51 ( ) noch eine ärztliche Bescheinigung vom Gesundheitsamt? Danke im Voraus für eine",
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Brauche ich 51 ( ) noch eine ärztliche Bescheinigung vom Gesundheitsamt?",
+     "explain": "Por eliminación: el texto ya lleva «noch» detrás del hueco, así que «noch» no puede ser la respuesta; «eventuell» es el único adverbio restante que matiza una pregunta de forma natural («¿necesito quizá todavía…?»).",
+     "explain_ru": "Методом исключения: после пропуска в тексте уже стоит «noch», поэтому «noch» ответом быть не может; «eventuell» — единственное оставшееся наречие, которое естественно звучит в вопросе («нужна ли мне, возможно, ещё одна справка?»)."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v6",
+   "label": "Variante 6 (test 150321, 150301)",
+   "page": 84,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Fragen zur Ausbildung\n\nSehr geehrte Damen und Herren,\nich habe mich sehr darüber gefreut, dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement\nim August in Ihrem Unternehmen beginnen kann.\nIch würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist. Im Vorstellungsgespräch teilten Sie mir mit, dass sich die theoretischen und praktischen Blöcke teilt. Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten. 49 ( ) wäre es wichtig, so\nschnell wie\nmöglich die Termine zu wissen. In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die Miete bezahlt.\nAußerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der\nAusbildung sein wird.\nMit freundlichen Grüßen\nAnna Ivanova",
+   "options": [
+    {
+     "key": "a",
+     "text": "DASS"
+    },
+    {
+     "key": "b",
+     "text": "DESHALB"
+    },
+    {
+     "key": "c",
+     "text": "INNERHALB"
+    },
+    {
+     "key": "d",
+     "text": "OB"
+    },
+    {
+     "key": "e",
+     "text": "WÄHREND"
+    },
+    {
+     "key": "f",
+     "text": "WEIL"
+    },
+    {
+     "key": "g",
+     "text": "WIE"
+    },
+    {
+     "key": "h",
+     "text": "ZU"
+    },
+    {
+     "key": "j",
+     "text": "ZUM"
+    },
+    {
+     "key": "k",
+     "text": "ZUR"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "und Herren, ich habe mich sehr darüber gefreut, dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement im August in Ihrem Unternehmen beginnen kann. Ich",
+     "answer": "k",
+     "confidence": "hoch",
+     "quote": "dass ich meine Ausbildung 46 ( ) Kauffrau für Büromanagement im August in Ihrem Unternehmen beginnen kann.",
+     "explain": "«Die Ausbildung zur Kauffrau für Büromanagement»: el nombre del puesto es femenino singular y exige «zu» + Dativ con artículo → «zur». «Zum» serviría para masculino o neutro, y «zu» sin artículo no admite el sustantivo con artículo.",
+     "explain_ru": "«Die Ausbildung zur Kauffrau für Büromanagement»: название профессии женского рода требует «zu» + Dativ с артиклем → «zur». «Zum» возможно только для мужского или среднего рода, а «zu» без артикля с этим существительным не употребляется."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "im August in Ihrem Unternehmen beginnen kann. Ich würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist. Im Vorstellungsgespräch teilten Sie",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "Ich würde gern wissen, 47 ( ) die Ausbildung zeitlich organisiert ist.",
+     "explain": "Pregunta indirecta por el modo en que algo está organizado: «wie … organisiert ist». «Ob» preguntaría sí/no, «dass» sería una declaración y «weil» daría una causa; ninguno responde a «¿cómo?».",
+     "explain_ru": "Косвенный вопрос об образе действия: «wie … organisiert ist». «Ob» вводило бы вопрос «да/нет», «dass» — утверждение, «weil» — причину; ни один из них не отвечает на вопрос «как?»."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "mit, dass sich die theoretischen und praktischen Blöcke teilt. Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten.",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "Im Gegensatz 48 ( ) praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten.",
+     "explain": "«Im Gegensatz zu» + Dativ: «zu dem praktischen Block» se contrae en «zum». La preposición la impone la locución «im Gegensatz»; «während» o «innerhalb» no forman parte de ella.",
+     "explain_ru": "«Im Gegensatz zu» + Dativ: «zu dem praktischen Block» стягивается в «zum». Предлог задан устойчивым выражением «im Gegensatz»; «während» и «innerhalb» в него не входят."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": ") praktischen Block müsste ich mir für die Zeit der Theorie ein Zimmer mieten. 49 ( ) wäre es wichtig, so schnell wie möglich die Termine zu wissen. In diesem",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "49 ( ) wäre es wichtig, so schnell wie möglich die Termine zu wissen.",
+     "explain": "El hueco ocupa la posición 1 y le sigue el verbo conjugado con inversión («wäre es»): solo un adverbio como «deshalb» permite esa estructura de oración principal. «Weil», «dass» u «ob» exigirían el verbo al final del enunciado.",
+     "explain_ru": "Пропуск стоит на первом месте, за ним идёт спрягаемый глагол с инверсией («wäre es»): такую структуру главного предложения допускает только наречие «deshalb». «Weil», «dass», «ob» требовали бы глагола в конце предложения."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "möglich die Termine zu wissen. In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "In diesem Zusammenhang möchte ich nachfragen, 50 ( ) es möglich wäre, dass die Firma für die Theoriephasen einen Zuschuss für die Miete bezahlt.",
+     "explain": "«Nachfragen, ob …»: la interrogativa indirecta de sí/no se introduce con «ob». «Dass» afirmaría en lugar de preguntar y «wie» pediría un modo concreto, que aquí no se da.",
+     "explain_ru": "«Nachfragen, ob …»: косвенный вопрос «да/нет» вводится союзом «ob». «Dass» превратило бы вопрос в утверждение, а «wie» требовало бы конкретного способа действия."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "die Miete bezahlt. Außerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der Ausbildung sein wird. Mit freundlichen Grüßen Anna",
+     "answer": "e",
+     "confidence": "mittel",
+     "quote": "Außerdem würde ich gern erfahren, wer mein Ansprechpartner 51 ( ) des praktischen Teils der Ausbildung sein wird.",
+     "explain": "«Ansprechpartner während des praktischen Teils»: «während» + Genitiv es la colocación idiomática para una persona de contacto a lo largo de una fase. «Innerhalb» también rige genitivo y sería gramaticalmente posible, pero suena menos natural referido a una persona (se diría «für den praktischen Teil»).",
+     "explain_ru": "«Ansprechpartner während des praktischen Teils»: «während» + Genitiv — идиоматичное сочетание для контактного лица на протяжении этапа. «Innerhalb» тоже управляет генитивом и грамматически возможно, но звучит менее естественно применительно к человеку (скорее «für den praktischen Teil»)."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v7",
+   "label": "Variante 7 (test 140321, 140301)",
+   "page": 85,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Kündigung\n\nSehr geehrte Frau Schneider,\nich teile Ihnen mit, dass ich mein Arbeitsverhältnis zum 31.03. fristgerecht kündige, weil mein Mann am\n01.05. 46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April dorthin\numziehen wird. Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig.\nIch habe noch einige Fragen 48 ( ) den Formalitäten: Bitte teilen Sie mir mit, bis wann und wo ich\nden Firmenwagen abgeben und ob ich die Daten von meinem Firmenlaptop löschen soll. 49 ( )\nbitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue Stelle bewerben möchte .\nWürden Sie mir bitte auch mitteilen, ob mir mein Arbeitszeugnis am letzten Arbeitstag ausgehändigt oder 50 ( ) Nachhinein zugeschickt wird?\nIch bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare Zusammenarbeit.\nMit freundlichen Grüßen\nMelanie Sommer",
+   "options": [
+    {
+     "key": "a",
+     "text": "AM"
+    },
+    {
+     "key": "b",
+     "text": "AUßERDEM"
+    },
+    {
+     "key": "c",
+     "text": "BIS"
+    },
+    {
+     "key": "d",
+     "text": "DESHALB"
+    },
+    {
+     "key": "e",
+     "text": "IHNEN"
+    },
+    {
+     "key": "f",
+     "text": "IM"
+    },
+    {
+     "key": "g",
+     "text": "MICH"
+    },
+    {
+     "key": "h",
+     "text": "MIT"
+    },
+    {
+     "key": "i",
+     "text": "NÄMLICH"
+    },
+    {
+     "key": "j",
+     "text": "ZU"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "Arbeitsverhältnis zum 31.03. fristgerecht kündige, weil mein Mann am 01.05. 46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "46 ( ) einer neuen Tätigkeit in Süddeutschland beginnt und die ganze Familie im April dorthin umziehen wird.",
+     "explain": "«Mit einer Tätigkeit beginnen»: el verbo «beginnen» rige aquí «mit» + Dativ («mit einer neuen Tätigkeit»). «Zu» o «bis» no son complementos de «beginnen», y el dativo «einer neuen Tätigkeit» exige una preposición.",
+     "explain_ru": "«Mit einer Tätigkeit beginnen»: глагол «beginnen» управляет здесь предлогом «mit» + Dativ («mit einer neuen Tätigkeit»). «Zu» и «bis» при «beginnen» невозможны, а форма Dativ «einer neuen Tätigkeit» требует предлога."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "April dorthin umziehen wird. Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig. Ich habe noch einige Fragen 48 ( ) den",
+     "answer": "i",
+     "confidence": "mittel",
+     "quote": "Dieser Schritt ist für mich nicht leicht, ich war 47 ( ) immer sehr gerne hier tätig.",
+     "explain": "«Nämlich» introduce en el Mittelfeld la justificación de lo afirmado antes («no me resulta fácil»): la causa es que siempre trabajó a gusto aquí. Va siempre detrás del verbo conjugado y nunca en posición 1. «Deshalb» expresaría consecuencia (no causa) y «außerdem» solo añadiría otro punto sin explicar la dificultad.",
+     "explain_ru": "«Nämlich» стоит в середине предложения и обосновывает уже сказанное («мне это нелегко»): причина в том, что она всегда работала здесь с удовольствием. Оно никогда не стоит на первом месте. «Deshalb» выражало бы следствие, а не причину, «außerdem» лишь добавляло бы ещё один пункт, не объясняя трудность."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "ich war 47 ( ) immer sehr gerne hier tätig. Ich habe noch einige Fragen 48 ( ) den Formalitäten: Bitte teilen Sie mir mit, bis wann und wo ich den",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "Ich habe noch einige Fragen 48 ( ) den Formalitäten:",
+     "explain": "«Fragen zu etwas» + Dativ plural: «zu den Formalitäten». Es el régimen fijo de «Fragen»; «mit den Formalitäten» o «in den Formalitäten» no expresan el tema sobre el que se pregunta.",
+     "explain_ru": "«Fragen zu etwas» + Dativ множественного числа: «zu den Formalitäten». Это устойчивое управление существительного «Fragen»; «mit» или «in» не передают тему вопроса."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "Firmenwagen abgeben und ob ich die Daten von meinem Firmenlaptop löschen soll. 49 ( ) bitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue",
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "49 ( ) bitte ich Sie um ein Zwischenzeugnis, da ich mich jetzt schon um eine neue Stelle bewerben möchte",
+     "explain": "La petición del certificado se suma a las gestiones ya enumeradas (coche de empresa, portátil): «Außerdem bitte ich Sie um…». «Deshalb» es la alternativa tentadora, pero la causa ya la introduce la subordinada «da ich mich … bewerben möchte», con lo que resultaría redundante; «nämlich» no puede ir en posición 1.",
+     "explain_ru": "Просьба о промежуточном свидетельстве добавляется к уже перечисленным делам (служебная машина, ноутбук): «Außerdem bitte ich Sie um…». «Deshalb» — соблазнительная альтернатива, но причина уже введена придаточным «da ich mich … bewerben möchte», поэтому получилась бы тавтология; «nämlich» на первом месте стоять не может."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "mitteilen, ob mir mein Arbeitszeugnis am letzten Arbeitstag ausgehändigt oder 50 ( ) Nachhinein zugeschickt wird? Ich bedanke 51 ( ) für die interessante Zeit in",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "oder 50 ( ) Nachhinein zugeschickt wird?",
+     "explain": "Locución fija «im Nachhinein» (= a posteriori), de «in» + Dativ contraído: «oder im Nachhinein zugeschickt wird». Ninguna otra preposición del banco forma esa expresión temporal.",
+     "explain_ru": "Устойчивое выражение «im Nachhinein» (= задним числом), «in» + Dativ в слитной форме: «oder im Nachhinein zugeschickt wird». Другие предлоги из банка такого временного выражения не образуют."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "Arbeitstag ausgehändigt oder 50 ( ) Nachhinein zugeschickt wird? Ich bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "Ich bedanke 51 ( ) für die interessante Zeit in Ihrem Unternehmen und die fruchtbare Zusammenarbeit.",
+     "explain": "«Sich bei jemandem für etwas bedanken»: el verbo es reflexivo en acusativo, así que «mich» es obligatorio. «Ihnen» sería el dativo del complemento con «bei», que en esta frase no aparece.",
+     "explain_ru": "«Sich bei jemandem für etwas bedanken»: глагол возвратный, поэтому обязательна форма Akkusativ «mich». «Ihnen» — это Dativ дополнения с «bei», которого в этом предложении нет."
+    }
+   ]
+  },
+  {
+   "id": "sb1-v8",
+   "label": "Variante 8 (test 160201, 160221)",
+   "page": 85,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Brief. Welches Wort (a-j) passt in jede Lücke (46-51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "passage": "Kündigung\n\nSehr geehrte Damen und Herren,\nmit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum 31.12.20xx.\nIch habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood\nGmbH gearbeitet habe.\n48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich weiterzuentwickeln, und\nhabe mich deshalb dazu entschlossen, eine Stelle in einem größeren Unternehmen anzunehmen.\nMir stehen noch vier Tage Resturlaub 49 ( ). Da in unserer Abteilung kurz vor dem Jahresende\nsehr viel zu tun ist, würde ich vorschlagen, dass Sie mir diese Tage auszahlen und ich noch bis zum Jahresende arbeite.\nSollte das nicht möglich sein, ist mein letzter Arbeitstag der 23.12.20xx, da 50 ( ) 31.12.20xx auf\neinen Samstag fällt. Ich bitte um eine schriftliche Bestätigung über den Erhalt meiner Kündigung und den\nBescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen.\nIch bedanke mich für die Zusammenarbeit!\nMit freundlichen Grüßen\nMarkus Stein",
+   "options": [
+    {
+     "key": "a",
+     "text": "ABER"
+    },
+    {
+     "key": "b",
+     "text": "AUF"
+    },
+    {
+     "key": "c",
+     "text": "DA"
+    },
+    {
+     "key": "d",
+     "text": "DEN"
+    },
+    {
+     "key": "e",
+     "text": "DENNOCH"
+    },
+    {
+     "key": "f",
+     "text": "DER"
+    },
+    {
+     "key": "g",
+     "text": "DIESEM"
+    },
+    {
+     "key": "h",
+     "text": "WENN"
+    },
+    {
+     "key": "i",
+     "text": "WIE"
+    },
+    {
+     "key": "j",
+     "text": "ZU"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "Sehr geehrte Damen und Herren, mit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "mit 46 ( ) Schreiben kündige ich form- und fristgerecht meinen Arbeitsvertrag zum 31.12.20xx.",
+     "explain": "«Mit diesem Schreiben»: «Schreiben» es neutro singular y tras «mit» va el dativo, que en «dieses» es «diesem». «Den» sería dativo plural (varios escritos) y «der» no concuerda con «mit».",
+     "explain_ru": "«Mit diesem Schreiben»: «Schreiben» — среднего рода, единственное число, после «mit» нужен Dativ, у «dieses» это «diesem». «Den» — Dativ множественного числа (несколько писем), «der» с «mit» не согласуется."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "zum 31.12.20xx. Ich habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe. 48( ) leider sehe ich",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Ich habe mir diese Entscheidung nicht leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe.",
+     "explain": "El enunciado es una subordinada con el verbo al final («… gearbeitet habe»): la conjunción causal del banco es «da». «Wenn» introduciría una condición y «wie» una comparación o un modo.",
+     "explain_ru": "Это придаточное предложение с глаголом в конце («… gearbeitet habe»): причинный союз из банка — «da». «Wenn» вводило бы условие, «wie» — сравнение или образ действия."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "leichtgemacht, 47 ( ) ich sehr gerne bei der MillerFood GmbH gearbeitet habe. 48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "48( ) leider sehe ich hier im Unternehmen keine Möglichkeiten, mich weiterzuentwickeln, und habe mich deshalb dazu entschlossen, eine Stelle in einem größeren Unternehmen anzunehmen.",
+     "explain": "El hueco abre la oración y le sigue el verbo conjugado con inversión («sehe ich»): «Aber leider sehe ich…» funciona como contraste entre lo dicho antes y lo que sigue. «Dennoch» exigiría otro orden («Dennoch sehe ich leider…»), no «dennoch leider sehe ich».",
+     "explain_ru": "Пропуск открывает предложение, за ним идёт спрягаемый глагол с инверсией («sehe ich»): «Aber leider sehe ich…» выражает контраст с предыдущим. «Dennoch» потребовало бы другого порядка слов («Dennoch sehe ich leider…»), а не «dennoch leider sehe ich»."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "in einem größeren Unternehmen anzunehmen. Mir stehen noch vier Tage Resturlaub 49 ( ). Da in unserer Abteilung kurz vor dem Jahresende sehr viel zu tun ist, würde",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "Mir stehen noch vier Tage Resturlaub 49 ( ).",
+     "explain": "Verbo separable «zustehen» (corresponder): el prefijo «zu» se coloca al final del enunciado («Mir stehen noch vier Tage Resturlaub zu»). El dativo «mir» ya anuncia ese régimen.",
+     "explain_ru": "Глагол с отделяемой приставкой «zustehen» (полагаться): приставка «zu» выносится в конец («Mir stehen noch vier Tage Resturlaub zu»). Dativ «mir» уже указывает на это управление."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "Sollte das nicht möglich sein, ist mein letzter Arbeitstag der 23.12.20xx, da 50 ( ) 31.12.20xx auf einen Samstag fällt. Ich bitte um eine schriftliche Bestätigung",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "da 50 ( ) 31.12.20xx auf einen Samstag fällt.",
+     "explain": "La fecha es el sujeto de «fällt», así que va en nominativo: «der 31.12.20xx fällt auf einen Samstag». «Den» sería acusativo y no puede desempeñar esa función.",
+     "explain_ru": "Дата — подлежащее при «fällt», значит нужен Nominativ: «der 31.12.20xx fällt auf einen Samstag». «Den» — Akkusativ, в роли подлежащего невозможен."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "schriftliche Bestätigung über den Erhalt meiner Kündigung und den Bescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen. Ich bedanke mich für die",
+     "answer": "i",
+     "confidence": "hoch",
+     "quote": "Bescheid, 51 ( ) wir mit den restlichen Urlaubstagen verfahren sollen.",
+     "explain": "«Verfahren mit etwas» rige «mit» y la interrogativa indirecta pregunta por el modo de proceder: «wie wir … verfahren sollen». «Wenn» sería condicional y «ob» no está en el banco.",
+     "explain_ru": "«Verfahren mit etwas» управляет предлогом «mit», а косвенный вопрос спрашивает об образе действия: «wie wir … verfahren sollen». «Wenn» вводило бы условие, «ob» в банке отсутствует."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "p. 91-94: las letras de opción venían a veces con homóglifos cirílicos («а)», «с)»); normalizadas a latinas.",
+  "Se han unido las palabras que el PDF partía al final de línea («Ausbildungs-\\nkonzept»)."
+ ]
+}

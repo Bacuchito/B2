@@ -491,6 +491,13 @@ Cosas que conviene saber antes de usarlo como fuente fiable:
      `finden Sie gerne in unseren AGB`).
    - ⚠️ Lo único con "clave" en Hören Teil 2 nº7 (p.149) son **glosas en ruso del
      compilador** que atribuyen contenidos a las afirmaciones — no es una clave oficial.
+   - 🔧 **Ya resuelto en el visor:** los 132 huecos de los Sprachbausteine (Teil 1 y
+     Teil 2, pp. 80-95) están deducidos, con su cita literal y su nivel de confianza, en
+     `quiz/sprachbausteine_respuestas.json`. `quiz/make_sprachbausteine.py` los mete en
+     los datos y `quiz/merge_sprachbausteine_respuestas.py` comprueba lo comprobable
+     (respuesta dentro de las opciones, cita literal, sin repetir palabra en el Teil 1).
+     La variante 8 del Teil 2 (p. 96) queda fuera: el PDF perdió las opciones b y c de
+     casi todos sus huecos.
 2. **Errores de OCR/tecleo** en el alemán: p.142 „Darf ich recht ängstlich auf die Bäume
    klettern?", p.144 „Ich rufe mich morgen wieder an", p.78 „vielen Dank für Ihre E" y
    „die Lieferung fehlerhaft hnen eingetroffen ist", p.149 „wieterbildet", p.157 „Danke

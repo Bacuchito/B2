@@ -103,8 +103,13 @@ const entradasDe = i => {
 };
 const toggleDe = i => cabeceras()[i].children[0];
 
-check("hay una cabecera plegable por sección", cabeceras().length === 7,
-      `cabeceras: ${cabeceras().length}`);
+/* Se espera una cabecera por sección CON datos, no un número fijo: el menú crece
+   cuando se añade una parte del examen (Sprachbausteine, por ejemplo). */
+const seccionesConDatos = () => (window.DATA.sections || []).filter(s => (s.variants || []).length > 0).length;
+
+check("hay una cabecera plegable por sección",
+      cabeceras().length > 0 && cabeceras().length === seccionesConDatos(),
+      `cabeceras: ${cabeceras().length} · secciones con datos: ${seccionesConDatos()}`);
 check("al abrir la app solo está desplegado el grupo donde estás",
       abiertas().length === 1, `desplegadas: ${abiertas().length}`);
 check("el grupo desplegado deja ver sus entradas",
@@ -207,6 +212,27 @@ if (schrBtn && typeof schrBtn.onclick === "function") {
   check("el editor y botón de evaluación están presentes", /Evaluar con Examinador telc/i.test(schrText));
   check("al cambiar a una variante sin referencia se vuelve a una columna",
         ids.main.className === "", `clase de main: «${ids.main.className}»`);
+}
+
+/* ---------- Sprachbausteine: banco de palabras + texto con huecos ---------- */
+{
+  const idxSb = cabeceras().findIndex(c => /Sprachbausteine Teil 1/i.test(c.children[0].collectText()));
+  check("la sección de Sprachbausteine Teil 1 está en el menú", idxSb >= 0,
+        `cabeceras: ${cabeceras().length} · encontrada en: ${idxSb}`);
+  if (idxSb >= 0) {
+    const entradas = entradasDe(idxSb);
+    check("el Teil 1 trae sus variantes", entradas.length >= 10, `variantes: ${entradas.length}`);
+    if (entradas.length) {
+      entradas[0].onclick();
+      const texto = ids.main.collectText();
+      check("el banco de palabras se pinta con su etiqueta",
+            /Wörter/.test(texto), (texto.match(/Wörter[^<]{0,40}/) || ["(sin banco)"])[0]);
+      check("el texto del ejercicio se pinta con sus huecos marcados",
+            /46 \( \)/.test(texto), (texto.match(/.{0,40}46 \( \)/) || ["(sin huecos)"])[0]);
+      const huecos = ["46", "47", "48", "49", "50", "51"].filter(n => new RegExp(n + " \\( \\)").test(texto));
+      check("los seis huecos están en la hoja", huecos.length === 6, `huecos: ${huecos.join(",")}`);
+    }
+  }
 }
 
 /* Modal de configuración de IA */

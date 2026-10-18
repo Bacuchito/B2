@@ -1,0 +1,222 @@
+{
+ "sb1-v3": {
+  "46": {
+   "answer": "g",
+   "confidence": "hoch",
+   "quote": "46 ( ) freue ich mich wirklich sehr.",
+   "explain": "«Sich freuen über» rige acusativo y, para remitir a toda una idea (poder empezar el 1 de marzo), el alemán usa el adverbio pronominal «hierüber». Ninguna otra opción del banco completa ese verbo: «dafür», «davon» o «dahin» no son complementos de «sich freuen».",
+   "explain_ru": "«Sich freuen» управляется предлогом «über» + Akkusativ; отсылка к целому высказыванию передаётся местоименным наречием «hierüber» (= «darüber»). Остальные варианты — «dafür», «davon», «dahin» — с этим глаголом не сочетаются."
+  },
+  "47": {
+   "answer": "c",
+   "confidence": "hoch",
+   "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
+   "explain": "«Bis dahin» significa «hasta entonces» y remite al 1 de marzo ya mencionado. La preposición «bis» exige un punto temporal, y solo «dahin» lo aporta; «davon»/«dafür» no son temporales.",
+   "explain_ru": "«Bis dahin» — «до тех пор», отсылка к уже названному сроку (1 марта). Предлог «bis» требует временной точки; только «dahin» её даёт, а «davon»/«dafür» временного значения не имеют."
+  },
+  "48": {
+   "answer": "e",
+   "confidence": "hoch",
+   "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
+   "explain": "El antecedente «Internetseiten» es plural femenino; el relativo en genitivo plural es «deren» («con cuya ayuda»). «Dessen» solo valdría para masculino o neutro singular, y el resto de opciones no son relativos en genitivo.",
+   "explain_ru": "Антецедент «Internetseiten» — множественное число; относительное местоимение в генитиве мн. ч. имеет форму «deren» («mit deren Hilfe»). «Dessen» возможно только для мужского или среднего рода единственного числа."
+  },
+  "49": {
+   "answer": "d",
+   "confidence": "hoch",
+   "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung zur Verfügung stellen.",
+   "explain": "«Sprechen von etwas» exige la preposición «von»; la oración con «dass» se anticipa con el adverbio pronominal «davon». «Dafür» o «hierüber» no son complementos de «sprechen» en este sentido.",
+   "explain_ru": "Глагол «sprechen» в значении «говорить о чём-либо» управляет предлогом «von»; придаточное с «dass» вводится местоименным наречием «davon». «Dafür»/«hierüber» здесь невозможны."
+  },
+  "50": {
+   "answer": "b",
+   "confidence": "hoch",
+   "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgröße ?",
+   "explain": "«Dafür» remite a lo dicho antes, la ropa de trabajo que la empresa pone a disposición: «¿necesita usted para eso mis tallas?». Las demás opciones no pueden expresar esa referencia a un propósito ya mencionado.",
+   "explain_ru": "«Dafür» отсылает к сказанному ранее — к спецодежде, которую предоставляет фирма: «нужны ли Вам для этого мои размеры?». Остальные варианты такой отсылки к цели не выражают."
+  },
+  "51": {
+   "answer": "i",
+   "confidence": "hoch",
+   "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
+   "explain": "Fórmula fija «wie besprochen» = «como acordamos». «Wie» introduce la comparación con lo pactado; «was besprochen» no existe como fórmula y las preposiciones del banco no encajan en ese inciso.",
+   "explain_ru": "Устойчивое выражение «wie besprochen» — «как договорились». «Wie» вводит сравнение с договорённостью; «was besprochen» как формула не употребляется, а предлоги из банка в эту вставку не подходят."
+  }
+ },
+ "sb1-v3-b": {
+  "46": {
+   "answer": "g",
+   "confidence": "hoch",
+   "quote": "In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).",
+   "explain": "«Zurücksenden» es un verbo separable: el prefijo «zurück» se coloca al final de la frase («sende ich Ihnen … zurück»). Ninguna otra palabra del banco es prefijo separable de «senden».",
+   "explain_ru": "«Zurücksenden» — глагол с отделяемой приставкой: «zurück» стоит в конце предложения («sende ich Ihnen … zurück»). Ни один другой вариант не является отделяемой приставкой к «senden»."
+  },
+  "47": {
+   "answer": "c",
+   "confidence": "hoch",
+   "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
+   "explain": "«Bis dahin» = «hasta entonces», referido al 1 de marzo ya nombrado. «Bis» needs un punto temporal y solo «dahin» lo ofrece; «davon» y «dafür» no son temporales.",
+   "explain_ru": "«Bis dahin» — «до тех пор», отсылка к названному ранее 1 марта. «Bis» требует временнóй точки, и только «dahin» её даёт; «davon»/«dafür» временного значения не имеют."
+  },
+  "48": {
+   "answer": "e",
+   "confidence": "hoch",
+   "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
+   "explain": "«Internetseiten» es plural; el relativo en genitivo plural es «deren» («con cuya ayuda»). «Dessen» solo sirve para masculino/neutro singular, y el hueco exige concordancia con el plural.",
+   "explain_ru": "«Internetseiten» — множественное число; относительное местоимение в генитиве мн. ч. — «deren» («mit deren Hilfe»). «Dessen» возможно только для мужского или среднего рода единственного числа."
+  },
+  "49": {
+   "answer": "d",
+   "confidence": "hoch",
+   "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen.",
+   "explain": "«Sprechen von etwas» rige «von»; el «dass» siguiente pide el adverbio pronominal «davon». «Dafür» no es complemento de «sprechen» y «dahin» es temporal.",
+   "explain_ru": "«Sprechen» в значении «говорить о чём-то» управляет предлогом «von»; придаточное с «dass» вводится наречием «davon». «Dafür» с этим глаголом не сочетается."
+  },
+  "50": {
+   "answer": "b",
+   "confidence": "hoch",
+   "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?",
+   "explain": "«Dafür» remite a la ropa de trabajo mencionada en la frase anterior: «¿necesita para eso mis tallas?». Las demás opciones no expresan esa referencia a un propósito previo.",
+   "explain_ru": "«Dafür» отсылает к спецодежде из предыдущего предложения: «нужны ли Вам для этого мои размеры?». Прочие варианты такой отсылки к цели не выражают."
+  },
+  "51": {
+   "answer": "i",
+   "confidence": "hoch",
+   "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
+   "explain": "Locución fija «wie besprochen» = «como acordamos». «Wie» es la única partícula del banco que puede introducir ese inciso comparativo.",
+   "explain_ru": "Устойчивое выражение «wie besprochen» — «как договорились»; «wie» — единственная подходящая частица из банка для этой вставки."
+  }
+ },
+ "sb1-v3-07022025": {
+  "46": {
+   "answer": "j",
+   "confidence": "hoch",
+   "quote": "In der Anlage sende ich Ihnen den unterschriebenen Arbeitsvertrag 46 ( ).",
+   "explain": "«Zurücksenden» es separable: «zurück» va al final del enunciado («sende ich Ihnen … zurück»). La colocación de «zurück» al final es lo que prueba que es el prefijo del verbo.",
+   "explain_ru": "«Zurücksenden» — глагол с отделяемой приставкой: «zurück» выносится в конец («sende ich Ihnen … zurück»). Именно позиция в конце доказывает, что это приставка глагола."
+  },
+  "47": {
+   "answer": "d",
+   "confidence": "hoch",
+   "quote": "Aber bis 47 ( ) ist ja noch etwas Zeit und deshalb wollte ich Sie fragen, wie ich mich auf meine neue Tätigkeit vorbereiten kann.",
+   "explain": "«Bis dahin» = «hasta entonces», referido al inicio de marzo. «Bis» exige un punto en el tiempo y solo «dahin» lo aporta; «davon»/«dafür» no encajan.",
+   "explain_ru": "«Bis dahin» — «до тех пор», отсылка к началу марта. «Bis» требует указания времени, и только «dahin» его даёт; «davon»/«dafür» не подходят."
+  },
+  "48": {
+   "answer": "f",
+   "confidence": "hoch",
+   "quote": "Vielleicht können Sie mir fachspezifische Internetseiten empfehlen, mit 48 ( ) Hilfe ich mich intensiver mit den Produkten vertraut machen kann.",
+   "explain": "Con «Internetseiten» (plural) el relativo en genitivo es «deren»: «mit deren Hilfe». «Dessen» corresponde a masculino/neutro singular y rompería la concordancia.",
+   "explain_ru": "При «Internetseiten» (мн. ч.) относительное местоимение в генитиве — «deren»: «mit deren Hilfe». «Dessen» относится к мужскому/среднему роду ед. ч. и нарушило бы согласование."
+  },
+  "49": {
+   "answer": "e",
+   "confidence": "hoch",
+   "quote": "Bei dem Vorstellungsgespräch sprachen Sie 49 ( ), dass Sie mir die Arbeitskleidung stellen.",
+   "explain": "«Sprechen von etwas» rige «von», y la subordinada con «dass» se anuncia con «davon». «Dafür» y «dahin» no son complementos preposicionales de «sprechen».",
+   "explain_ru": "«Sprechen» в значении «говорить о» управляет предлогом «von», а придаточное с «dass» вводится наречием «davon». «Dafür»/«dahin» не являются его предложными дополнениями."
+  },
+  "50": {
+   "answer": "c",
+   "confidence": "hoch",
+   "quote": "Benötigen Sie 50 ( ) meine Kleider- und Schuhgrößen ?",
+   "explain": "«Dafür» retoma la ropa de trabajo del enunciado anterior: «¿necesita para eso mis tallas?». El resto del banco no puede referirse a ese propósito ya mencionado.",
+   "explain_ru": "«Dafür» отсылает к спецодежде из предыдущего предложения: «нужны ли Вам для этого мои размеры?». Остальные варианты не выражают отсылку к цели."
+  },
+  "51": {
+   "answer": "i",
+   "confidence": "hoch",
+   "quote": "Das erforderliche ärztliche Attest vom Gesundheitsamt bringe ich, 51 ( ) besprochen, zum Arbeitsantritt mit.",
+   "explain": "Fórmula fija «wie besprochen» = «como acordamos»; solo «wie» puede encabezar ese inciso comparativo dentro del banco.",
+   "explain_ru": "Устойчивое выражение «wie besprochen» — «как договорились»; только «wie» из банка может вводить такую сравнительную вставку."
+  }
+ },
+ "sb1-v4": {
+  "46": {
+   "answer": "j",
+   "confidence": "hoch",
+   "quote": "hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum.",
+   "explain": "«Zum nächstmöglichen Datum» es la fórmula fija para la fecha de efectos (= «zu» + dativo contraído). «Wegen» exigiría genitivo («nächstmöglichen Datums») y no indica la fecha de efectos del despido.",
+   "explain_ru": "«Zum nächstmöglichen Datum» — устойчивая формула даты вступления в силу («zu» + Dativ, слитная форма). «Wegen» требовал бы генитива («nächstmöglichen Datums») и не обозначает дату."
+  },
+  "47": {
+   "answer": "c",
+   "confidence": "hoch",
+   "quote": "Da aber mein Mann von seiner Firma nach Berlin versetzt wurde, wird unsere gesamte Familie so bald wie 47 ( ) umziehen.",
+   "explain": "La comparación fija es «so bald wie möglich» («lo antes posible»): tras «so bald wie» se usa obligatoriamente el positivo del adjetivo, y «möglich» completa la fórmula. Ninguna otra opción es un adjetivo en grado positivo.",
+   "explain_ru": "Устойчивое сравнение «so bald wie möglich» («как можно скорее»): после «so bald wie» обязательна положительная степень прилагательного, и «möglich» образует формулу. Другие варианты не подходят морфологически."
+  },
+  "48": {
+   "answer": "h",
+   "confidence": "hoch",
+   "quote": "Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.",
+   "explain": "Pide una liberación de sus obligaciones antes de que venza el preaviso de tres meses: ese adelanto es «vorzeitig». «Spätere» diría lo contrario y «nötige» no expresa la anticipación.",
+   "explain_ru": "Она просит освободить её от работы раньше окончания трёхмесячного срока — это «vorzeitig» («досрочный»). «Spätere» означало бы обратное, «nötige» не передаёт досрочность."
+  },
+  "49": {
+   "answer": "b",
+   "confidence": "mittel",
+   "quote": "Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken.",
+   "explain": "El hueco exige un adverbio que modifique el agradecimiento: «sich ausdrücklich bedanken» = agradecer de forma expresa. «Nur» cambiaría el sentido («solo a usted») y crearía un contraste que el contexto no pide.",
+   "explain_ru": "Нужно наречие при «bedanken»: «sich ausdrücklich bedanken» — «выразить благодарность». «Nur» изменило бы смысл («только Вам») и создало бы контраст, которого нет в тексте."
+  },
+  "50": {
+   "answer": "a",
+   "confidence": "mittel",
+   "quote": "Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe.",
+   "explain": "«Anhaltende Unterstützung» = apoyo continuado, coherente con «stets erfahren habe». «Nötige» significa «necesaria» y «spätere» («posterior») contradice el «stets» de la relativa.",
+   "explain_ru": "«Anhaltende Unterstützung» — «постоянная поддержка», что согласуется с «stets erfahren habe». «Nötige» значит «необходимая», а «spätere» («более поздняя») противоречит «stets»."
+  },
+  "51": {
+   "answer": "f",
+   "confidence": "hoch",
+   "quote": "Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.",
+   "explain": "«Sowie» (= «así como») coordina los dos objetos de «bestätigen»: el recibo de la carta y la fecha de finalización. «Wegen» no coordina complementos y el resto de palabras no pueden enlazar dos objetos.",
+   "explain_ru": "«Sowie» («а также») соединяет два дополнения при «bestätigen»: получение письма и дату окончания договора. «Wegen» не сочинительный союз, остальные варианты тоже не связывают два дополнения."
+  }
+ },
+ "sb1-v4-0404": {
+  "46": {
+   "answer": "j",
+   "confidence": "hoch",
+   "quote": "hiermit kündige ich den mit Ihnen geschlossenen Arbeitsvertrag form- und fristgerecht 46 ( ) nächstmöglichen Datum.",
+   "explain": "«Zum nächstmöglichen Datum» es la fórmula fija de la fecha de efectos («zu» + dativo, contraído en «zum»). «Wegen» exigiría genitivo («nächstmöglichen Datums») y no sirve para fijar la fecha del despido.",
+   "explain_ru": "«Zum nächstmöglichen Datum» — устойчивая формула даты вступления в силу («zu» + Dativ, слитно «zum»). «Wegen» требует генитива («nächstmöglichen Datums») и не указывает дату."
+  },
+  "47": {
+   "answer": "c",
+   "confidence": "hoch",
+   "quote": "47 ( ) ich Ihnen in unserem persönlichen Gespräch erklärt habe, habe ich mir die Entscheidung nicht leicht gemacht.",
+   "explain": "El hueco abre una subordinada con el verbo al final («… erklärt habe»), así que debe ser una conjunción, no una preposición; el sentido es «tal como le expliqué» = «wie». «Wegen» es preposición con genitivo y no puede encabezar esa oración.",
+   "explain_ru": "Пробел открывает придаточное с глаголом в конце («… erklärt habe»), значит нужна не предлог, а союз; смысл — «как я Вам объяснил» = «wie». «Wegen» — предлог с генитивом, придаточное он вводить не может."
+  },
+  "48": {
+   "answer": "h",
+   "confidence": "hoch",
+   "quote": "Mir ist bewusst, dass ich eine dreimonatige Kündigungsfrist habe, aber dennoch bitte ich Sie um eine 48 ( ) Freistellung ab dem 15. des nächsten Monats.",
+   "explain": "Pide la liberación de sus obligaciones antes de que acabe el preaviso de tres meses: eso es una «vorzeitige Freistellung». «Spätere» diría lo contrario y «nötige» no expresa el adelanto.",
+   "explain_ru": "Просьба — освободить её от работы раньше окончания трёхмесячного срока, то есть «vorzeitige Freistellung» («досрочное освобождение»). «Spätere» означало бы обратное, «nötige» не передаёт досрочность."
+  },
+  "49": {
+   "answer": "b",
+   "confidence": "mittel",
+   "quote": "Für die lange Zeit, die ich in dieser Firma hatte, möchte ich mich 49 ( ) bei Ihnen bedanken.",
+   "explain": "El hueco es un adverbio que modifica «bedanken»: «sich ausdrücklich bedanken» = agradecer de forma expresa. «Nur» sería gramatical pero cambiaría el sentido («solo a usted») e introduciría un contraste que el texto no tiene.",
+   "explain_ru": "Нужно наречие при «bedanken»: «sich ausdrücklich bedanken» — «выразить благодарность». «Nur» грамматически возможно, но меняло бы смысл («только Вам») и вводило бы контраст, которого в тексте нет."
+  },
+  "50": {
+   "answer": "a",
+   "confidence": "mittel",
+   "quote": "Ich habe viel in Ihrem Unternehmen gelernt und danke Ihnen für die 50 ( ) Unterstützung, die ich stets in der Firma erfahren habe.",
+   "explain": "«Anhaltende Unterstützung» = apoyo continuado, que concuerda con «stets erfahren habe» de la relativa. «Nötige» («necesaria») no armoniza con «stets» y «spätere» («posterior») lo contradice.",
+   "explain_ru": "«Anhaltende Unterstützung» — «постоянная/непрерывная поддержка», что согласуется с «stets erfahren habe». «Nötige» («необходимая») не сочетается с «stets», а «spätere» («более поздняя») ему противоречит."
+  },
+  "51": {
+   "answer": "f",
+   "confidence": "hoch",
+   "quote": "Bitte bestätigen Sie mir den Erhalt meiner Kündigung 51 ( ) das Datum, zu dem der Arbeitsvertrag endet.",
+   "explain": "«Sowie» (= «así como») une los dos objetos de «bestätigen»: el recibo y la fecha de finalización. «Wegen» no es conjunción y el resto del banco no puede enlazar dos complementos.",
+   "explain_ru": "«Sowie» («а также») соединяет два дополнения при «bestätigen»: получение письма и дату окончания. «Wegen» не союз, остальные варианты тоже не связывают два дополнения."
+  }
+ }
+}
