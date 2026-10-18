@@ -302,6 +302,13 @@
   .bank .ad .body{margin-top:0;color:var(--txt);max-width:none}
   .bank .ad.used .body::after{content:" ✓";color:var(--ok-ink);font-weight:700}
 
+  /* Hueco de los Sprachbausteine: raya para escribir, con el número en pequeño y en
+     color de acento. Se pinta desde `conHuecos()`, que traduce el «46 ( )» del dato. */
+  .gap{white-space:nowrap}
+  .gap-n{font-family:var(--font-ui);font-size:var(--fs-xs);font-weight:700;color:var(--acc-ink);
+         vertical-align:super;margin-right:var(--sp-1)}
+  .gap-line{display:inline-block;width:56px;border-bottom:2px solid var(--acc);vertical-align:-4px}
+
   /* Hoja de examen continua: las preguntas NO son tarjetas apiladas, son filas
      de una sola hoja, con filete de margen rojo como en el papel del examen. */
   .q-sheet{position:relative;background:var(--panel);border-radius:var(--r-3);
@@ -4036,7 +4043,7 @@ function detailsPanel(summary, text, abierto){
   s.textContent = summary;
   const b = document.createElement("div");
   b.className = "passage-body";
-  b.textContent = text;
+  b.innerHTML = conHuecos(text);
   d.appendChild(s); d.appendChild(b);
   return d;
 }
@@ -4053,7 +4060,7 @@ function renderItem(v, it){
 
   const head = document.createElement("div");
   head.innerHTML = '<span class="num">' + (it._label || it.n) + '</span>' +
-                   '<span class="prompt">' + esc(it.prompt) + '</span>';
+                   '<span class="prompt">' + conHuecos(it.prompt) + '</span>';
   div.appendChild(head);
 
   const isMatching = v.kind === "zuordnung";
@@ -4126,7 +4133,7 @@ function renderItem(v, it){
         (chosen === "__revealed__" ? '<span class="badge tag">' + t("revealedBadge") + '</span>' : '') +
       '</div>' +
       (traduccion ? '<div class="translation">' + traduccion + '</div>' : '') +
-      (it.quote ? '<div class="quote">„' + esc(it.quote) + '“</div>' : '') +
+      (it.quote ? '<div class="quote">„' + conHuecos(it.quote) + '“</div>' : '') +
       '<div>' + esc(explainOf(it)) + '</div>';
     div.appendChild(fb);
   }
@@ -4138,6 +4145,16 @@ function esc(s){
     .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
     .replace(/"/g,"&quot;").replace(/'/g,"&#39;");
 }
+
+/* Los huecos de los Sprachbausteine se guardan como «46 ( )», para que las citas
+   sigan siendo literales y comprobables. Al pintarlos se cambian por una raya con
+   el número en color: en el examen se escribe encima del hueco, y un paréntesis
+   vacío se lee mal y no se ve dónde hay que escribir. */
+function conHuecos(texto){
+  return esc(texto).replace(/(\d{2})\s*\(\s*\)/g,
+    '<span class="gap"><span class="gap-n">$1</span><span class="gap-line"></span></span>');
+}
+window.conHuecos = conHuecos;
 
 const doubtBtn = document.getElementById("doubt");
 if(doubtBtn){

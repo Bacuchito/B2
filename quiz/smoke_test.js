@@ -228,8 +228,9 @@ if (schrBtn && typeof schrBtn.onclick === "function") {
       check("el banco de palabras se pinta con su etiqueta",
             /Wörter/.test(texto), (texto.match(/Wörter[^<]{0,40}/) || ["(sin banco)"])[0]);
       check("el texto del ejercicio se pinta con sus huecos marcados",
-            /46 \( \)/.test(texto), (texto.match(/.{0,40}46 \( \)/) || ["(sin huecos)"])[0]);
-      const huecos = ["46", "47", "48", "49", "50", "51"].filter(n => new RegExp(n + " \\( \\)").test(texto));
+            /class="gap"/.test(texto) && /gap-line/.test(texto),
+            (texto.match(/class="gap"[\s\S]{0,70}/) || ["(sin huecos)"])[0]);
+      const huecos = ["46", "47", "48", "49", "50", "51"].filter(n => new RegExp('gap-n">' + n + "<").test(texto));
       check("los seis huecos están en la hoja", huecos.length === 6, `huecos: ${huecos.join(",")}`);
     }
   }
