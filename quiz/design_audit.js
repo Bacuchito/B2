@@ -104,24 +104,24 @@ function colorOf(spec) {
 }
 
 /* Los pares de contraste se miden contra la superficie REAL sobre la que se pinta
-   cada texto. Desde que la app dejó de ser cajas apiladas, casi todo vive en el
-   plano de la página (--bg) o sobre la hoja (--q-sheet); solo las insignias y los
-   estados conservan relleno propio. Los tintes translúcidos se componen con
-   `over: true` sobre el fondo real, como manda el método de esta auditoría. */
+   cada texto. En el mundo «taller nocturno» la mayoría de los textos viven sobre
+   una pieza (--panel) o sobre una hoja dentro de ella (--sheet); los estados
+   llevan relleno propio. Los tintes translúcidos se componen con `over: true`
+   sobre el fondo real, como manda el método de esta auditoría. */
 const contrastChecks = [
   ["Texto principal sobre el fondo", { sel: "body", prop: "color" }, { token: "--bg" }],
-  ["Texto secundario sobre el plano (.ad .body)", { sel: ".ad .body", prop: "color" }, { token: "--bg" }],
-  ["Micro-etiqueta sobre el plano (.panel h3)", { sel: ".panel h3", prop: "color" }, { token: "--bg" }],
+  ["Texto secundario sobre la pieza (.ad .body)", { sel: ".ad .body", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
+  ["Micro-etiqueta sobre la pieza (.panel h3)", { sel: ".panel h3", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
   ["Micro-texto sobre superficie hundida (.micro)", { sel: ".micro", prop: "color" }, { token: "--panel3" }],
-  ["Texto terciario sobre panel (.empty)", { sel: ".empty", prop: "color" }, { token: "--bg" }],
-  ["Acento claro sobre el plano (.card-label)", { sel: ".card-label", prop: "color" }, { token: "--bg" }],
-  ["Blanco sobre relleno de acento (.btn)", { sel: ".btn", prop: "color" }, { token: "--acc-fill-1" }],
-  ["Blanco sobre relleno oscuro del degradado", { literal: "#ffffff" }, { token: "--acc-fill-2" }],
-  ["Menú activo (nav button.active)", { sel: "nav button.active", prop: "color" }, { sel: "nav", prop: "background", over: true }],
+  ["Texto terciario sobre el fondo (.empty)", { sel: ".empty", prop: "color" }, { token: "--bg" }],
+  ["Acento sobre la pieza (.card-label)", { sel: ".card-label", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
+  ["Tinta sobre relleno de acento (.btn)", { sel: ".btn", prop: "color" }, { token: "--acc-fill-1" }],
+  ["Tinta sobre el extremo claro del degradado", { sel: ".btn", prop: "color" }, { token: "--acc-fill-2" }],
+  ["Menú activo, pieza hundida (nav button.active)", { sel: "nav button.active", prop: "color" }, { sel: "nav button.active", prop: "background", over: true }],
   ["Menú inactivo (nav button)", { sel: "nav button", prop: "color" }, { sel: "nav", prop: "background", over: true }],
-  ["Estadística de cabecera (.stat)", { sel: ".stat", prop: "color" }, { sel: "header", prop: "background", over: true }],
+  ["Estadística de cabecera (.stat)", { sel: ".stat", prop: "color" }, { token: "--panel" }],
   ["Opción de respuesta (.opt)", { token: "--txt" }, { sel: ".q-sheet", prop: "background", over: true }],
-  ["Letra ya asignada a otro enunciado (.letters button.taken)", { sel: ".letters button.taken", prop: "color" }, { sel: ".q-sheet", prop: "background", over: true }],
+  ["Letra ya asignada, hueco (.letters button.taken)", { sel: ".letters button.taken", prop: "color" }, { sel: ".letters button.taken", prop: "background", over: true }],
   ["Letra corregida (.letters button.correct)", { sel: ".letters button.correct", prop: "color" }, { sel: ".letters button.correct", prop: "background", over: true }],
   ["Letra fallada (.letters button.wrong)", { sel: ".letters button.wrong", prop: "color" }, { sel: ".letters button.wrong", prop: "background", over: true }],
   ["Insignia confianza alta (.badge.hoch)", { sel: ".badge.hoch", prop: "color" }, { sel: ".badge.hoch", prop: "background", over: true }],
@@ -129,15 +129,15 @@ const contrastChecks = [
   ["Insignia confianza baja (.badge.niedrig)", { sel: ".badge.niedrig", prop: "color" }, { sel: ".badge.niedrig", prop: "background", over: true }],
   ["Insignia 2ª lectura (.badge.ok)", { sel: ".badge.ok", prop: "color" }, { sel: ".badge.ok", prop: "background", over: true }],
   ["Insignia neutra (.badge.tag)", { sel: ".badge.tag", prop: "color" }, { sel: ".badge.tag", prop: "background", over: true }],
-  ["Aviso amarillo (.note)", { sel: ".note", prop: "color" }, { token: "--bg" }],
+  ["Aviso amarillo (.note)", { sel: ".note", prop: "color" }, { sel: ".note", prop: "background", over: true }],
   ["Banner aprobado (.eval-banner.pass)", { sel: ".eval-banner.pass", prop: "color" }, { sel: ".eval-banner.pass", prop: "background", over: true }],
   ["Banner suspenso (.eval-banner.fail)", { sel: ".eval-banner.fail", prop: "color" }, { sel: ".eval-banner.fail", prop: "background", over: true }],
   ["Regla del popover (.err-popover-rule)", { sel: ".err-popover-rule", prop: "color" }, { sel: ".err-popover", prop: "background", over: true }],
   ["Texto de la pareja (.partner-body)", { sel: ".partner-body", prop: "color" }, { sel: ".partner-body", prop: "background", over: true }],
-  ["Leyenda de errores (.legend-chip)", { sel: ".legend-chip", prop: "color" }, { token: "--bg" }],
-  ["Insignia de nube (.cloud-badge)", { sel: ".cloud-badge", prop: "color" }, { sel: "header", prop: "background", over: true }],
+  ["Leyenda de errores (.legend-chip)", { sel: ".legend-chip", prop: "color" }, { sel: ".legend-chip", prop: "background", over: true }],
+  ["Insignia de nube (.cloud-badge)", { sel: ".cloud-badge", prop: "color" }, { sel: ".cloud-badge", prop: "background", over: true }],
   ["Ayuda del formulario (.form-group small)", { sel: ".form-group small", prop: "color" }, { sel: ".modal", prop: "background", over: true }],
-  ["Cronómetro en aviso (.timer-display.warn)", { sel: ".timer-display.warn", prop: "color" }, { token: "--bg" }],
+  ["Cronómetro en aviso (.timer-display.warn)", { sel: ".timer-display.warn", prop: "color" }, { sel: ".editor-card", prop: "background", over: true }],
 ];
 
 /* ---------- 3. Comprobaciones ---------- */
@@ -210,10 +210,10 @@ const noRing = outlineNone.filter((r) => {
 const reduced = rules.some((r) => r.media.includes("prefers-reduced-motion"));
 (reduced ? ok : bad)(4, "Respeta prefers-reduced-motion", reduced ? "bloque presente" : "no existe");
 
-/* Materiales: papel (superficies sólidas, hairline desde token, sin glass decorativo) */
-const gradientsInBody = rules.filter((r) => /(^|,)\s*body\s*(,|$)/.test(r.selector) && /gradient\(/.test(r.decls.background || ""));
-(gradientsInBody.length === 0 ? ok : bad)(3, "Fondos sólidos desde tokens (sin radiales/degradados decorativos)",
-  gradientsInBody.length === 0 ? "body sin gradientes" : gradientsInBody.map((r) => r.selector).join(" · "));
+/* Materiales: piezas con relieve y un solo degradado de fondo (la luz cenital) */
+const gradientsInBody = rules.filter((r) => /(^|,|\s)body(::before)?\s*(,|$)/.test(r.selector) && /gradient\(/.test(r.decls.background || ""));
+(gradientsInBody.length === 1 ? ok : bad)(3, "Un solo degradado de fondo, la luz cenital",
+  gradientsInBody.length === 1 ? "1 degradado en " + gradientsInBody[0].selector : gradientsInBody.length + " degradados de fondo");
 const hairlineUses = rules.filter((r) => Object.values(r.decls).some((v) => String(v).indexOf("var(--line)") !== -1)).length;(hairlineUses >= 12 ? ok : bad)(3, "Bordes hairline desde el token --line (no gris plano)",
   hairlineUses + " reglas con var(--line)");
 const blur = rules.filter((r) => r.decls["backdrop-filter"]).length;
@@ -221,10 +221,11 @@ const blur = rules.filter((r) => r.decls["backdrop-filter"]).length;
   blur + " superficies con backdrop-filter");
 const shadowLayers = ["--sh-1", "--sh-2", "--sh-3"].map((t) => (String(tokens[t] || "").match(/rgba?\(/g) || []).length);
 (shadowLayers.every((n) => n >= 2) ? ok : bad)(3, "Sombras multicapa (atmósfera + plano)", "capas por nivel: " + shadowLayers.join("/"));
-const darkRule = rules.find((r) => r.selector.includes('[data-theme="dark"]'));
-const darkTokens = darkRule ? Object.keys(darkRule.decls).filter((k) => tokens[k] !== undefined).length : 0;
-(darkTokens >= 25 ? ok : bad)(3, "Modo noche completo (tokens propios, no filtros)",
-  darkTokens + " tokens redefinidos en [data-theme=dark]");
+/* El segundo tema redefine tokens; no aplica filtros ni invierte colores. */
+const altRule = rules.find((r) => r.selector.includes('[data-theme="paper"]'));
+const altTokens = altRule ? Object.keys(altRule.decls).filter((k) => tokens[k] !== undefined).length : 0;
+(altTokens >= 25 ? ok : bad)(3, "Segundo tema completo, por tokens (no filtros ni inversión)",
+  altTokens + " tokens redefinidos en [data-theme=paper]");
 
 /* Físicas y micro-interacciones */
 const activeScale = rules.filter((r) => r.selector.includes(":active") && /scale/.test(r.decls["transform"] || "")).length;

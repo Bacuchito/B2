@@ -11,62 +11,81 @@
 <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 <style>
   /* ==========================================================================
-     B2 Beruf — mundo «Prüfungsbogen» (hoja de examen impresa).
-     Por defecto: papel hueso con tinta cálida; [data-theme="dark"]: modo noche
-     refinado (carbón cálido, sin glass). Todo el color sale de tokens: cambiar
-     la paleta o el tema es tocar el bloque de tokens, no los componentes.
-     Reglas de elevación: hojas = sombra cálida; controles = hairline.
+     B2 Beruf — mundo «taller nocturno» (rama UXUI, en pruebas).
+     Carbón con una luz cenital, piezas con relieve —filo claro arriba, sombra
+     fuera— y azul de acento con halo. Todo el material sale de tokens: cambiar
+     la paleta o el tema es tocar este bloque, no los componentes.
+     [data-theme="paper"] = la misma lengua en claro, sobre gris papel.
+     Contrastes medidos en design_audit.js; los que declaro aquí están
+     comprobados sobre --panel.
      ========================================================================== */
   :root{
-    /* --- Papel: capas de superficie --- */
-    --bg:#e9e2d1;                 /* escritorio (papel más tostado) */
-    --panel:#fbf8f1;              /* hoja elevada (tarjetas, cabecera) */
-    --panel2:#f3eee2;             /* hoja secundaria (pies, burbujas) */
-    --panel3:#efe9db;             /* superficie hundida (chips, inputs) */
-    --sheet:#fffdf6;              /* hoja en blanco (escritura) */
-    --line:rgba(58,46,26,.15);    /* hairline cálido */
-    --line-2:rgba(58,46,26,.30);
+    /* --- Superficies: del fondo a la pieza levantada --- */
+    --bg:#25262a;                 /* mesa */
+    --bg-luz:#34363d;             /* luz cenital del fondo */
+    --panel:#313239;              /* pieza principal (tarjetas, cabecera) */
+    --panel2:#3a3b43;             /* pieza levantada (pies, menús) */
+    --panel3:#2a2b31;             /* hueco (carriles, chips) */
+    --sheet:#36373f;              /* hoja de escritura */
+    --sunken:#2a2b31;
+    --line:rgba(255,255,255,.07); /* filete sutil */
+    --line-2:rgba(255,255,255,.14);
 
-    /* --- Tinta: texto (contrastes medidos en design_audit.js) --- */
-    --txt:#241f16;
-    --dim:#5c5546;
-    --dim-2:#67604e;
+    /* --- Tinta --- */
+    --txt:#e9eaee;                /* 10.6:1 sobre --panel */
+    --dim:#b3b5bd;                /* 6.2:1 */
+    --dim-2:#9ea0a8;              /* 4.9:1 */
 
-    /* --- Acentos: tinta azul (navegación) y tintas de corrección --- */
-    --acc:#2c4d8f;
-    --acc-fill-1:#2c4d8f;         /* relleno con texto claro: 7.9:1 */
-    --acc-fill-2:#233e75;         /* sombra/hover del relleno */
-    --acc-2:#3f63ad;
-    --acc-ink:#2c4d8f;
-    --on-acc:#fdfbf6;
-    --ok:#2e6e49; --ok-ink:#1f5c3b;
-    --bad:#b0362a; --bad-ink:#9c2f24;
-    --warn:#8a6414; --warn-ink:#6e5110;
-    --violet-ink:#6b4a9e;
-    --ring:rgba(44,77,143,.55);
+    /* --- Acento azul. Sobre este azul el BLANCO no llega a 4.5:1 (3.2:1), así
+       que la tinta de encima es oscura: 5.6-7.3:1. --- */
+    --acc:#4d8df6;
+    --acc-hi:#6aa4ff;
+    --acc-deep:#2f6ede;
+    --acc-fill-1:#4d8df6;
+    --acc-fill-2:#6aa4ff;
+    --acc-2:#3f7ae4;
+    --acc-ink:#8ab4ff;            /* 6.1:1 sobre --panel */
+    --on-acc:#0b1526;
+    --ring:rgba(106,164,255,.55);
+    --glow:rgba(77,141,246,.45);
 
-    /* --- Tintas de fondo (estados) --- */
-    --tint-ok:rgba(46,110,73,.10);
-    --tint-bad:rgba(176,54,42,.09);
-    --tint-warn:rgba(138,100,20,.08);
-    --tint-acc:rgba(44,77,143,.09);
-    --tint-violet:rgba(107,74,158,.10);
-    --tint-neutral:rgba(58,46,26,.05);
-    --chip:#efe9db;
-    --chip-hover:#e7e0cf;
-    --scrim:rgba(24,19,10,.52);
-    --selection:rgba(44,77,143,.22);
-    --scroll:rgba(58,46,26,.28);
+    /* --- Semánticos --- */
+    --ok:#42c184; --ok-ink:#96e9bd;
+    --bad:#f2635a; --bad-ink:#ffa49b;
+    --warn:#e2b153; --warn-ink:#f4d191;
+    --violet-ink:#c3a8f0;
+
+    /* --- Tintas de estado (siempre translúcidas sobre la pieza) --- */
+    --tint-ok:rgba(66,193,132,.15);
+    --tint-bad:rgba(242,99,90,.15);
+    --tint-warn:rgba(226,177,83,.14);
+    --tint-acc:rgba(106,164,255,.15);
+    --tint-violet:rgba(163,120,240,.15);
+    --tint-neutral:rgba(255,255,255,.05);
+    --chip:#3a3b43;
+    --chip-hover:#43444d;
+    --scrim:rgba(8,9,11,.72);
+    --selection:rgba(77,141,246,.35);
+    --scroll:rgba(255,255,255,.14);
+
+    /* --- Rellenos de estado que llevan texto encima. Sólidos y oscuros a
+       propósito: con el verde y el rojo claros la letra se quedaba en 2.7:1 y
+       3.3:1; así quedan 6.2:1 y 7.4:1 --- */
+    --bien-fill:#246b4c; --bien-ink:#f2fff9;
+    --mal-fill:#8f3229;  --mal-ink:#fff6f5;
+    --acc-grad:linear-gradient(180deg,var(--acc-hi),var(--acc));
+    --peligro-grad:linear-gradient(180deg,#c4453b,#a03a31);
 
     /* --- Espaciado: grid de 8pt (4px solo para ajustes finos) --- */
     --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
     --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px;
 
-    /* --- Radios --- */
-    --radius:12px;
-    /* Radios casi rectos: papel, no burbuja. Lo único redondo que queda es lo que
-     significa algo (el número del ítem, que va aparte con border-radius:50%). */
-    --r-1:2px; --r-2:2px; --r-3:2px; --r-4:3px; --r-pill:2px;
+    /* --- Radios: los de la referencia (4 / 8 / 12 / 18) --- */
+    --radius:18px;
+    --r-1:4px; --r-2:8px; --r-3:12px; --r-4:18px; --r-pill:999px;
+
+    /* --- Grosores de borde: los de la referencia (0.5 / 1 / 1.5) --- */
+    --b-sutil:.5px; --b-std:1px; --b-fuerte:1.5px;
 
     /* --- Tipografía --- */
     --font-ui:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -75,10 +94,15 @@
     --fs-micro:11px; --fs-xs:12px; --fs-sm:13px; --fs-base:15px; --fs-lead:17px;
     --fs-h3:20px; --fs-h2:32px; --fs-h1:19px;
 
-    /* --- Elevación: sombra amplia (atmósfera) + sombra corta (plano) --- */
-    --sh-1:0 1px 2px rgba(60,48,26,.10),0 3px 10px -4px rgba(60,48,26,.16);
-    --sh-2:0 2px 6px rgba(60,48,26,.10),0 12px 28px -12px rgba(60,48,26,.20);
-    --sh-3:0 4px 12px rgba(60,48,26,.12),0 28px 64px -20px rgba(60,48,26,.28);
+    /* --- Relieve: la sombra de fuera levanta la pieza; el filo de dentro le da
+       material. Son dos trabajos distintos, no dos adornos superpuestos. --- */
+    --sh-1:0 1px 2px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.22);
+    --sh-2:0 2px 4px rgba(0,0,0,.40),0 8px 18px -6px rgba(0,0,0,.50);
+    --sh-3:0 4px 8px rgba(0,0,0,.45),0 24px 48px -14px rgba(0,0,0,.68);
+    --bisel:inset 0 1px 0 rgba(255,255,255,.10),inset 0 -1px 0 rgba(0,0,0,.40);
+    --hundido:inset 0 2px 5px rgba(0,0,0,.45),inset 0 -1px 0 rgba(255,255,255,.04);
+    --halo:0 0 0 1px rgba(106,164,255,.45),0 6px 16px -4px var(--glow),0 8px 26px -8px rgba(77,141,246,.30);
+    --lit:inset 0 1px 0 rgba(255,255,255,.06);
 
     /* --- Movimiento: físicas elásticas --- */
     --dur-1:120ms; --dur-2:180ms; --dur-3:280ms;
@@ -87,52 +111,65 @@
 
     /* --- Medidas de estructura --- */
     --header-h:57px; --nav-w:288px; --read-w:68ch;
-    /* Mesa de examen (pantallas ≥1500px): ancho de la columna de referencia
+    /* Mesa de examen (pantallas ≥1280px): ancho de la columna de referencia
        —anuncios o texto— y tope al que se estira la hoja de preguntas. */
     --desk-ref:600px; --desk-work:860px;
   }
 
-  /* --- Modo noche: mismo mundo, tinta clara sobre carbón cálido --- */
-  [data-theme="dark"]{
-    --bg:#16130e;
-    --panel:#211c15;
-    --panel2:#26211a;
-    --panel3:#1b1711;
-    --sheet:#1e1a13;
-    --line:rgba(240,230,210,.13);
-    --line-2:rgba(240,230,210,.26);
+  /* --- La misma lengua en claro: relieve suave sobre gris papel --- */
+  [data-theme="paper"]{
+    --bg:#e6e7ea;
+    --bg-luz:#f7f8fa;
+    --panel:#f2f3f5;
+    --panel2:#fbfbfc;
+    --panel3:#e3e4e8;
+    --sheet:#ffffff;
+    --sunken:#e3e4e8;
+    --line:rgba(20,22,28,.09);
+    --line-2:rgba(20,22,28,.18);
 
-    --txt:#ece5d6;
-    --dim:#b0a793;
-    --dim-2:#8d8471;
+    --txt:#1c1d21;
+    --dim:#4f5259;
+    --dim-2:#686b73;
 
-    --acc:#93b0e8;
-    --acc-fill-1:#3a5a96;
-    --acc-fill-2:#2c487c;
-    --acc-2:#5f80bd;
-    --acc-ink:#a3bdea;
-    --on-acc:#f7f4ec;
-    --ok:#4fae7d; --ok-ink:#8edbb2;
-    --bad:#d76a5c; --bad-ink:#f0a79c;
-    --warn:#c99a3f; --warn-ink:#e0b86a;
-    --violet-ink:#bda1ea;
-    --ring:rgba(147,176,232,.55);
+    --acc:#2f6ede;
+    --acc-hi:#4d8df6;
+    --acc-deep:#2457b6;
+    --acc-fill-1:#2f6ede;
+    --acc-fill-2:#4d8df6;
+    --acc-2:#2457b6;
+    --acc-ink:#2457b6;
+    --on-acc:#f7fbff;
+    --ring:rgba(47,110,222,.55);
+    --glow:rgba(47,110,222,.30);
 
-    --tint-ok:rgba(79,174,125,.13);
-    --tint-bad:rgba(215,106,92,.13);
-    --tint-warn:rgba(201,154,63,.11);
-    --tint-acc:rgba(147,176,232,.12);
-    --tint-violet:rgba(189,161,234,.13);
-    --tint-neutral:rgba(240,230,210,.06);
-    --chip:#1b1711;
-    --chip-hover:#241f17;
-    --scrim:rgba(6,5,3,.62);
-    --selection:rgba(147,176,232,.30);
-    --scroll:rgba(240,230,210,.28);
+    --ok:#25795a; --ok-ink:#1c6047;
+    --bad:#b23b32; --bad-ink:#8f2f27;
+    --warn:#8a6414; --warn-ink:#6e5110;
+    --violet-ink:#5b3f9e;
 
-    --sh-1:0 1px 2px rgba(0,0,0,.40),0 3px 10px -4px rgba(0,0,0,.55);
-    --sh-2:0 2px 6px rgba(0,0,0,.42),0 12px 28px -12px rgba(0,0,0,.62);
-    --sh-3:0 4px 12px rgba(0,0,0,.45),0 28px 64px -20px rgba(0,0,0,.72);
+    --tint-ok:rgba(37,121,90,.12);
+    --tint-bad:rgba(178,59,50,.12);
+    --tint-warn:rgba(138,100,20,.12);
+    --tint-acc:rgba(47,110,222,.12);
+    --tint-violet:rgba(91,63,158,.12);
+    --tint-neutral:rgba(20,22,28,.05);
+    --chip:#fbfbfc;
+    --chip-hover:#eff0f3;
+    --scrim:rgba(24,26,32,.45);
+    --selection:rgba(47,110,222,.22);
+    --scroll:rgba(20,22,28,.28);
+
+    --acc-grad:linear-gradient(180deg,var(--acc-fill-2),var(--acc-fill-1));
+    --peligro-grad:linear-gradient(180deg,#c4453b,#a03a31);
+
+    --sh-1:0 1px 2px rgba(24,26,32,.10),0 2px 6px rgba(24,26,32,.08);
+    --sh-2:0 2px 4px rgba(24,26,32,.10),0 10px 22px -8px rgba(24,26,32,.18);
+    --sh-3:0 4px 10px rgba(24,26,32,.12),0 26px 52px -16px rgba(24,26,32,.24);
+    --bisel:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(20,22,28,.07);
+    --hundido:inset 0 2px 4px rgba(20,22,28,.12),inset 0 -1px 0 rgba(255,255,255,.6);
+    --halo:0 0 0 1px rgba(77,141,246,.55),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
+    --lit:inset 0 1px 0 rgba(255,255,255,.7);
   }
 
   *{box-sizing:border-box}
@@ -142,6 +179,11 @@
        color:var(--txt);
        -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
        transition:background var(--dur-3) var(--ease),color var(--dur-3) var(--ease)}
+  /* Luz cenital: un solo degradado, fijo, para que las piezas parezcan estar sobre
+     una mesa con foco. No es una textura y no lleva patrón. */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+       background:radial-gradient(1100px 520px at 50% -12%,var(--bg-luz),transparent 70%)}
+  .layout{position:relative;z-index:1}
   ::selection{background:var(--selection);color:var(--txt)}
 
   /* Foco visible en TODO lo interactivo. */
@@ -167,11 +209,12 @@
                             border:3px solid transparent;background-clip:content-box}
   ::-webkit-scrollbar-thumb:hover{background:var(--line-2);background-clip:content-box}
 
-  /* Cabecera: hoja de examen — opaca, con filete doble inferior. */
+  /* Cabecera: pieza levantada sobre la mesa, con filo claro arriba. */
   header{position:sticky;top:0;z-index:20;
          min-height:var(--header-h);
-         background:var(--panel);
-         border-bottom:3px double var(--line-2);
+         background:linear-gradient(180deg,var(--panel2),var(--panel));
+         border-bottom:var(--b-std) solid var(--line);
+         box-shadow:var(--sh-2),var(--bisel);
          padding:var(--sp-3) var(--sp-5);
          display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;
          transition:background var(--dur-3) var(--ease)}
@@ -183,10 +226,11 @@
             background:var(--txt);color:var(--panel);font-family:var(--font-ui);
             font-weight:800;font-size:var(--fs-sm);letter-spacing:.04em;
             padding:0 var(--sp-2);height:24px;border-radius:var(--r-1);flex:0 0 auto}
-  /* Filete de progreso: la tinta que rellena el filete doble de la cabecera */
-  .progress-rule{position:absolute;left:0;right:0;bottom:-3px;height:3px;
+  /* Filete de progreso: la luz que recorre el borde inferior de la cabecera */
+  .progress-rule{position:absolute;left:0;right:0;bottom:-1px;height:2px;
                  overflow:hidden;pointer-events:none}
-  .progress-rule span{display:block;height:100%;width:0;background:var(--acc);
+  .progress-rule span{display:block;height:100%;width:0;background:var(--acc-grad);
+                 box-shadow:0 4px 12px -2px var(--glow);
                  transition:width var(--dur-3) var(--spring)}
   header .spacer{flex:1}
   .stat{font-size:var(--fs-sm);color:var(--dim);font-variant-numeric:tabular-nums}
@@ -194,8 +238,8 @@
 
   .layout{display:flex;align-items:flex-start;gap:0}
   nav{width:var(--nav-w);flex:0 0 var(--nav-w);
-      border-right:1px solid var(--line);
-      background:var(--bg);
+      border-right:var(--b-std) solid var(--line);
+      background:var(--panel);
       height:calc(100vh - var(--header-h));
       overflow-y:auto;position:sticky;top:var(--header-h);
       padding:var(--sp-3) var(--sp-3) var(--sp-5)}
@@ -237,13 +281,15 @@
                         transform var(--dur-1) var(--spring),box-shadow var(--dur-2) var(--ease)}
   nav button:hover{background:var(--tint-neutral);color:var(--txt)}
   nav button:active{transform:scale(.985)}
-  /* Activo: tinta y peso, con la marca de acento en el margen. Sin caja. */
-  nav button.active{background:none;color:var(--txt);font-weight:640;
-             border-color:transparent;box-shadow:none;
+  /* Activo: pieza hundida, como una tecla que ya está pulsada, con el filo de
+     acento en el margen y su brillo. */
+  nav button.active{background:var(--sunken);color:var(--txt);font-weight:640;
+             border-color:var(--line);box-shadow:var(--hundido),inset 2px 0 0 var(--acc);
              padding-left:calc(var(--sp-3) + 16px)}
   nav button.active::before{content:"";position:absolute;left:var(--sp-3);top:50%;
              transform:translateY(-50%);
-             width:6px;height:6px;background:var(--acc);border-radius:1px}
+             width:6px;height:6px;background:var(--acc);border-radius:1px;
+             box-shadow:0 2px 10px -2px var(--glow)}
   nav button .pill{font-size:var(--fs-micro);color:var(--dim-2);font-weight:400;
              font-variant-numeric:tabular-nums;white-space:nowrap}
   nav button.active .pill{color:var(--dim)}
@@ -259,10 +305,9 @@
      font-variant-numeric:tabular-nums}
   h2 + .sub b{color:var(--txt);font-weight:700}
 
-  /* Sección, no tarjeta: la separa un filete y el aire, nunca una caja. */
-  .panel{background:none;border:0;border-top:1px solid var(--line);
-         border-radius:0;padding:var(--sp-4) 0 0;margin-bottom:var(--sp-6);
-         box-shadow:none}
+  .panel{background:var(--panel);border:var(--b-std) solid var(--line);
+         border-radius:var(--r-4);padding:var(--sp-4) var(--sp-5);
+         margin-bottom:var(--sp-5);box-shadow:var(--sh-2),var(--bisel)}
   /* Rótulo de sección: versalitas sobre filete, como el encabezado de un impreso. */
   .panel h3{display:block;margin:0 0 var(--sp-3);font-size:var(--fs-micro);letter-spacing:.10em;
             text-transform:uppercase;color:var(--dim-2);font-weight:700;
@@ -332,10 +377,10 @@
 
   /* Hoja de examen continua: las preguntas NO son tarjetas apiladas, son filas
      de una sola hoja, con filete de margen rojo como en el papel del examen. */
-  /* La hoja: la ÚNICA superficie de la app, y plana. Un papel sobre la mesa no
-     lleva sombra ni borde: se distingue por el tono y por su regla de margen. */
-  .q-sheet{position:relative;background:var(--panel);border-radius:0;
-           padding:var(--sp-2) var(--sp-5) var(--sp-3) 56px;
+  /* La hoja de preguntas: la pieza grande de la mesa, con su regla de margen. */
+  .q-sheet{position:relative;background:var(--panel);border:var(--b-std) solid var(--line);
+           border-radius:var(--r-4);box-shadow:var(--sh-2),var(--bisel);
+           padding:var(--sp-3) var(--sp-5) var(--sp-4) 56px;
            margin-bottom:var(--sp-4)}
   .q-sheet::before{content:"";position:absolute;top:var(--sp-4);bottom:var(--sp-4);left:36px;
            width:1px;background:var(--bad);opacity:.45}
@@ -344,9 +389,10 @@
      border-top:1px solid var(--line)}
   .q:first-child{border-top:0}
   .q .num{display:inline-flex;align-items:center;justify-content:center;
-          min-width:28px;height:28px;background:none;border:1px solid var(--line-2);
+          min-width:28px;height:28px;background:var(--panel2);border:var(--b-std) solid var(--line);
           border-radius:50%;font-size:var(--fs-xs);font-weight:700;margin-right:var(--sp-3);
           color:var(--txt);font-variant-numeric:tabular-nums;vertical-align:middle;
+          box-shadow:var(--sh-1),var(--bisel);
           font-family:var(--font-read)}
   .q .prompt{font-size:var(--fs-lead);line-height:1.55;font-weight:640;margin-bottom:var(--sp-3);display:inline}
   .opts{display:flex;flex-direction:column;gap:0;margin-top:var(--sp-3)}
@@ -374,21 +420,25 @@
   .opt.correct::after{content:"✓";color:var(--ok-ink)}
   .opt.wrong::after{content:"✗";color:var(--bad-ink)}
 
-  /* Las letras dejan de ser ocho cuadrados: son campos de un impreso, apoyados en
-     una línea base. El área de toque sigue siendo 44×44. */
-  .letters{display:flex;gap:var(--sp-3);flex-wrap:wrap;margin-top:var(--sp-2)}
-  .letters button{width:44px;height:44px;border-radius:0;border:0;
-                  border-bottom:2px solid var(--line-2);
-                  background:none;color:var(--txt);font-weight:700;cursor:pointer;
+  /* Las letras son la interacción firma: cada una es una pieza que se pulsa, con
+     filo claro arriba, sombra fuera y halo al pasar. Área de toque 44×44. */
+  .letters{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-3)}
+  .letters button{width:44px;height:44px;border-radius:var(--r-2);border:var(--b-std) solid var(--line-2);
+                  background:linear-gradient(180deg,var(--panel2),var(--panel));
+                  color:var(--txt);font-weight:700;cursor:pointer;
                   font-size:var(--fs-lead);font-family:var(--font-read);
+                  box-shadow:var(--sh-1),var(--bisel);
                   transition:color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
-                             background var(--dur-2) var(--ease),transform var(--dur-1) var(--spring)}
-  .letters button:hover{border-bottom-color:var(--acc);color:var(--acc-ink)}
-  .letters button:active{transform:scale(.96)}
+                             background var(--dur-2) var(--ease),transform var(--dur-1) var(--spring),
+                             box-shadow var(--dur-2) var(--ease)}
+  .letters button:hover{border-color:var(--acc-hi);
+                  box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px var(--glow)}
+  .letters button:active{transform:scale(.94);box-shadow:var(--sh-1),var(--hundido)}
   /* Letra ya asignada a otro enunciado: sigue pulsable (puedes reasignarla),
      pero se ve que está cogida. Se distingue por la tinta y el filete discontinuo,
      no bajando la opacidad: el contraste tiene que seguir cumpliendo. */
-  .letters button.taken{color:var(--dim-2);border-bottom-style:dashed}
+  .letters button.taken{color:var(--dim-2);background:var(--sunken);border-style:dashed;
+                  box-shadow:var(--hundido)}
   /* Qué anuncio hay detrás de cada letra, sin depender del tooltip del ratón.
      Una sola línea con puntos suspensivos: si creciera, movería la fila de abajo
      cada vez que pasas por encima. */
@@ -396,21 +446,25 @@
                 color:var(--dim-2);font-family:var(--font-read);
                 white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:var(--read-w)}
   .letters-peek b{color:var(--txt);font-weight:640}
-  /* Corregida: tinta y relleno tenue sobre la línea base, más la marca textual
-     (✓ / ✗) para no depender solo del color. */
-  .letters button.correct{background:var(--tint-ok);border-bottom-color:var(--ok-ink);color:var(--ok-ink)}
-  .letters button.wrong{background:var(--tint-bad);border-bottom-color:var(--bad-ink);color:var(--bad-ink)}
+  /* Corregida: relleno sólido y oscuro (6.2:1 y 7.4:1) con el brillo puesto en la
+     sombra, que es donde no estorba, más la marca textual para no depender del color. */
+  .letters button.correct{background:var(--bien-fill);color:var(--bien-ink);
+                  border-color:rgba(255,255,255,.28);
+                  box-shadow:var(--sh-1),var(--bisel),0 6px 16px -4px rgba(66,193,132,.35)}
+  .letters button.wrong{background:var(--mal-fill);color:var(--mal-ink);
+                  border-color:rgba(255,255,255,.28);
+                  box-shadow:var(--sh-1),var(--bisel),0 6px 16px -4px rgba(242,99,90,.35)}
   .letters button.correct::after{content:"✓";font-size:var(--fs-micro);vertical-align:super}
   .letters button.wrong::after{content:"✗";font-size:var(--fs-micro);vertical-align:super}
 
-  /* Corrección: banda con tinte y SIN filete. Una sola técnica por bloque: el
-     cambio de fondo ya es la frontera; añadirle una raya sería la doble frontera
-     dura que ensucia (y ya no hay caja dentro de la hoja). */
-  .fb{margin-top:var(--sp-4);border-radius:0;padding:var(--sp-3) var(--sp-4);
-      font-size:var(--fs-base);display:none;border:0}
+  /* Corrección: pieza con tinte y filo en el color del estado, como el aviso de la
+     referencia. Sin sombra: no es una tarjeta que flote, es un estado de la hoja. */
+  .fb{margin-top:var(--sp-4);border-radius:var(--r-2);padding:var(--sp-3) var(--sp-4);
+      font-size:var(--fs-base);display:none;
+      border:var(--b-std) solid var(--line);background:var(--tint-neutral)}
   .fb.show{display:block;animation:pop var(--dur-2) var(--spring)}
-  .fb.good{background:var(--tint-ok)}
-  .fb.bad{background:var(--tint-bad)}
+  .fb.good{background:var(--tint-ok);border-color:rgba(66,193,132,.35)}
+  .fb.bad{background:var(--tint-bad);border-color:rgba(242,99,90,.35)}
   .fb .verdict{font-weight:650;margin-bottom:var(--sp-2);display:flex;align-items:center;
                gap:var(--sp-2);flex-wrap:wrap}
   /* La cita: bloque sangrado con filete de margen (el patrón del «inset text»).
@@ -419,48 +473,54 @@
              border-left:1px solid var(--acc);padding:var(--sp-1) 0 var(--sp-1) var(--sp-3);
              margin:var(--sp-2) 0;max-width:var(--read-w)}
 
-  /* Insignias: sello de tinta, no píldora. Sin borde ni radio, y en minúscula:
-     en versalitas un estado se lee peor (lo midió GOV.UK con sus task list). */
-  .badge{font-size:var(--fs-micro);font-weight:700;padding:4px var(--sp-2);border-radius:0;
-         letter-spacing:.02em;white-space:nowrap;border:0;text-transform:none}
-  .badge.hoch{background:var(--tint-ok);color:var(--ok-ink)}
-  .badge.mittel{background:var(--tint-warn);color:var(--warn-ink)}
-  .badge.niedrig{background:var(--tint-bad);color:var(--bad-ink)}
-  .badge.ok{background:var(--tint-acc);color:var(--acc-ink)}
-  .badge.tag{background:var(--tint-neutral);color:var(--dim)}
+  /* Insignias: piezas pequeñas con tinte y filo. En minúscula: en versalitas un
+     estado se lee peor (lo midió GOV.UK con sus listas de tareas). */
+  .badge{font-size:var(--fs-micro);font-weight:700;padding:4px var(--sp-2);border-radius:var(--r-1);
+         letter-spacing:.02em;white-space:nowrap;border:var(--b-sutil) solid var(--line-2);
+         text-transform:none}
+  .badge.hoch{background:var(--tint-ok);color:var(--ok-ink);border-color:rgba(66,193,132,.35)}
+  .badge.mittel{background:var(--tint-warn);color:var(--warn-ink);border-color:rgba(226,177,83,.35)}
+  .badge.niedrig{background:var(--tint-bad);color:var(--bad-ink);border-color:rgba(242,99,90,.35)}
+  .badge.ok{background:var(--tint-acc);color:var(--acc-ink);border-color:rgba(106,164,255,.35)}
+  .badge.tag{background:var(--tint-neutral);color:var(--dim);border-color:var(--line)}
 
   .row{display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center}
-  /* Botón principal: relleno plano, sin borde ni sombra. La elevación se reserva a
-     lo que de verdad flota: el modal y el popover de error. */
-  .btn{background:var(--acc-fill-1);color:var(--on-acc);
-       border:0;border-radius:var(--r-2);
-       padding:0 var(--sp-4);min-height:40px;cursor:pointer;font-size:var(--fs-base);font-weight:600;
+  /* Botón principal: píldora con degradado corto, filo claro y halo azul. Se hunde
+     al pulsar (escala 0.975) en vez de cambiar solo de color. */
+  .btn{background:var(--acc-grad);color:var(--on-acc);
+       border:var(--b-std) solid rgba(255,255,255,.22);border-radius:var(--r-pill);
+       padding:0 var(--sp-5);min-height:40px;cursor:pointer;font-size:var(--fs-base);font-weight:640;
        font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);
+       box-shadow:var(--sh-2),var(--bisel),0 8px 20px -6px var(--glow);
        transition:filter var(--dur-1) var(--ease),transform var(--dur-1) var(--spring),
-                  background var(--dur-2) var(--ease),
+                  box-shadow var(--dur-2) var(--ease),
                   color var(--dur-2) var(--ease)}
-  .btn:hover{filter:brightness(1.08)}
-  .btn:active{transform:scale(.97)}
-  .btn:disabled{opacity:.5;cursor:not-allowed;transform:none;filter:none}
-  /* Acción secundaria: texto subrayado, no una pastilla con borde. El subrayado
-     afirma que se puede pulsar; el estado activo lo pasa a tinta y a filete de acento. */
-  .btn.ghost{background:none;border:0;border-bottom:1px solid var(--line-2);border-radius:0;
+  .btn:hover{filter:brightness(1.06)}
+  .btn:active{transform:scale(.975);box-shadow:var(--sh-1),var(--bisel)}
+  /* Deshabilitado: conserva filo y contraste (3:1) para que se lea que existe. */
+  .btn:disabled{cursor:not-allowed;transform:none;filter:none;
+       background:var(--sunken);color:var(--dim-2);border-color:var(--line);
+       box-shadow:var(--hundido)}
+  /* Acción secundaria: texto, sin caja. El estado activo (Mesa de examen, Solo
+     dudosas) es el que se levanta como pieza. */
+  .btn.ghost{background:none;border:var(--b-std) solid transparent;border-radius:var(--r-pill);
              color:var(--dim);box-shadow:none;text-transform:none;letter-spacing:0;
-             font-size:var(--fs-sm);font-weight:640;padding:0 var(--sp-1)}
-  .btn.ghost:hover{background:none;color:var(--txt);border-bottom-color:var(--acc);filter:none}
-  .btn.danger{background:var(--tint-bad);border:0;color:var(--bad-ink);
-              box-shadow:none}
-  .btn.danger:hover{background:rgba(176,54,42,.16);filter:none}
-  .btn.success{background:var(--tint-ok);border:0;color:var(--ok-ink);
-               box-shadow:none}
-  .btn.success:hover{background:rgba(46,110,73,.16);filter:none}
-  .btn.sm{min-height:28px;padding:0 var(--sp-3);font-size:var(--fs-xs)}
+             font-size:var(--fs-sm);font-weight:640;padding:0 var(--sp-3)}
+  .btn.ghost:hover{background:var(--tint-neutral);color:var(--txt);filter:none}
+  .btn.danger{background:var(--peligro-grad);color:#fff6f5;border-color:rgba(255,255,255,.18);
+              box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(242,99,90,.28)}
+  .btn.danger:hover{filter:brightness(1.06)}
+  .btn.success{background:linear-gradient(180deg,#2f9c6c,#246b4c);color:#f2fff9;
+               border-color:rgba(255,255,255,.18);
+               box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(66,193,132,.28)}
+  .btn.success:hover{filter:brightness(1.06)}
+  .btn.sm{min-height:28px;padding:0 var(--sp-4);font-size:var(--fs-xs)}
 
-  /* Aviso del sistema: banda a sangre con filetes arriba y abajo, sin caja. */
-  .note{background:none;border:0;border-top:1px solid rgba(138,100,20,.45);
-        border-bottom:1px solid var(--line);
-        color:var(--warn-ink);padding:var(--sp-3) 0;
-        border-radius:0;font-size:var(--fs-sm);margin-bottom:var(--sp-5)}
+  /* Aviso del sistema: pieza con tinte y filo. Uno por pantalla y como mucho:
+     repetido pierde su fuerza. */
+  .note{background:var(--tint-warn);border:var(--b-std) solid rgba(226,177,83,.35);
+        color:var(--warn-ink);padding:var(--sp-3) var(--sp-4);
+        border-radius:var(--r-2);font-size:var(--fs-sm);margin-bottom:var(--sp-4)}
   .empty{color:var(--dim-2);padding:var(--sp-8) 0;text-align:center;font-size:var(--fs-base)}
   code{background:var(--panel3);padding:4px var(--sp-1);border-radius:var(--r-1);
        font-family:var(--font-mono);font-size:var(--fs-xs);border:0}
@@ -503,15 +563,14 @@
 
   /* Schreiben UI & Editor */
   .schreiben-layout{display:flex;flex-direction:column;gap:var(--sp-5)}
-  /* Aviso interno: banda con filete, sin caja. */
-  .memo-card{background:none;border:0;border-top:1px solid rgba(138,100,20,.45);
-             border-bottom:1px solid var(--line);
-             padding:var(--sp-3) 0;
-             border-radius:0;margin:var(--sp-4) 0;font-size:var(--fs-base);line-height:1.6}
+  /* Aviso interno de la tarea: pieza con tinte y filo. */
+  .memo-card{background:var(--tint-warn);border:var(--b-std) solid rgba(226,177,83,.35);
+             padding:var(--sp-3) var(--sp-4);
+             border-radius:var(--r-2);margin:var(--sp-4) 0;font-size:var(--fs-base);line-height:1.6}
   .memo-card b{color:var(--warn-ink)}
-  /* La carta recibida es un documento: superficie de hoja, sin borde ni sombra. */
-  .letter-card{background:var(--sheet);border:0;
-               padding:var(--sp-4) var(--sp-5);
+  /* La carta recibida es un documento: hoja con filo propio, dentro de la pieza. */
+  .letter-card{background:var(--sheet);border:var(--b-std) solid var(--line);
+               padding:var(--sp-4) var(--sp-5);box-shadow:var(--sh-1),var(--bisel);
                border-radius:var(--r-2);margin:var(--sp-3) 0;white-space:pre-wrap;
                font-family:var(--font-read);font-size:var(--fs-base);line-height:1.7;color:var(--txt);
                max-width:var(--read-w)}
@@ -527,18 +586,19 @@
            color:var(--on-acc);border-radius:50%;display:flex;align-items:center;justify-content:center;
            font-size:var(--fs-micro);font-weight:700}
 
-  .editor-card{background:none;border-radius:0;
-               padding:var(--sp-5) 0 0;box-shadow:none;border-top:1px solid var(--line)}
+  /* El taller de escritura: pieza principal con su hoja dentro. */
+  .editor-card{background:var(--panel);border:var(--b-std) solid var(--line);
+               border-radius:var(--r-4);padding:var(--sp-5);
+               box-shadow:var(--sh-2),var(--bisel)}
   .editor-toolbar{display:flex;align-items:center;justify-content:space-between;
                   margin-bottom:var(--sp-4);flex-wrap:wrap;gap:var(--sp-3)}
-  /* Un campo de escritura SÍ lleva borde: es la excepción legítima. Un solo límite
-     definido (nada de borde + sombra), cuadrado, y el foco cambia la tinta. */
-  .editor-textarea{width:100%;min-height:300px;background:var(--sheet);border:1px solid var(--line-2);
+  /* El área de escritura: hueco hundido con el halo al enfocar. */
+  .editor-textarea{width:100%;min-height:300px;background:var(--sunken);border:var(--b-std) solid var(--line);
            border-radius:var(--r-2);padding:var(--sp-4) var(--sp-5);color:var(--txt);
            font-size:var(--fs-base);line-height:1.7;font-family:var(--font-ui);resize:vertical;
-           caret-color:var(--acc);outline:none;box-sizing:border-box;
-           transition:border-color var(--dur-2) var(--ease)}
-  .editor-textarea:focus{border-color:var(--acc)}
+           caret-color:var(--acc);outline:none;box-sizing:border-box;box-shadow:var(--hundido);
+           transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+  .editor-textarea:focus{border-color:rgba(106,164,255,.75);box-shadow:var(--hundido),var(--halo)}
   .timer-box{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-sm);color:var(--dim)}
   .timer-display{font-size:var(--fs-base);font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
   .timer-display.warn{color:var(--bad-ink)}
@@ -557,19 +617,21 @@
   .eval-banner.pass{background:var(--tint-ok);border-color:rgba(46,110,73,.55);color:var(--ok-ink)}
   .eval-banner.fail{background:var(--tint-bad);border-color:rgba(176,54,42,.55);color:var(--bad-ink)}
   .crit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-             gap:0 var(--sp-5);margin:var(--sp-4) 0}
-  /* Los cuatro criterios de telc: celdas de una tabla, no cuatro tarjetas. */
-  .crit-box{background:none;border:0;border-top:1px solid var(--line);border-radius:0;
-            padding:var(--sp-3) 0}
+             gap:var(--sp-3);margin:var(--sp-4) 0}
+  /* Los cuatro criterios de telc: celdas hundidas, como las filas de una tabla. */
+  .crit-box{background:var(--sunken);border:var(--b-std) solid var(--line);border-radius:var(--r-2);
+            box-shadow:var(--hundido);
+            padding:var(--sp-3) var(--sp-4)}
   .crit-box .ch{display:flex;justify-content:space-between;align-items:center;
                 margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm)}
   .crit-box .c-body{font-size:var(--fs-sm);color:var(--dim);line-height:1.55}
-  .annotated-card{background:none;border-radius:0;border-top:1px solid var(--line);
-            padding:var(--sp-5) 0 0;margin:var(--sp-5) 0;box-shadow:none}
+  .annotated-card{background:var(--panel);border:var(--b-std) solid var(--line);
+            border-radius:var(--r-4);padding:var(--sp-5);margin:var(--sp-4) 0;
+            box-shadow:var(--sh-2),var(--bisel)}
   .annotated-head{display:flex;justify-content:space-between;align-items:center;
             margin-bottom:var(--sp-3);flex-wrap:wrap;gap:var(--sp-3)}
-  .annotated-text-box{background:var(--sheet);border:0;
-            border-radius:var(--r-2);padding:var(--sp-5);
+  .annotated-text-box{background:var(--sheet);border:var(--b-std) solid var(--line);
+            border-radius:var(--r-2);padding:var(--sp-5);box-shadow:var(--sh-1),var(--bisel);
             font-family:var(--font-read);font-size:var(--fs-base);line-height:1.95;white-space:pre-wrap;
             color:var(--txt);word-break:break-word}
 
@@ -577,21 +639,21 @@
                  cursor:pointer;display:inline;font-weight:500;
                  transition:background var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
   .err-highlight.err-grammatik{background:var(--tint-bad);border-bottom:2px solid var(--bad-ink);color:var(--bad-ink)}
-  .err-highlight.err-grammatik:hover,.err-highlight.err-grammatik.active{background:rgba(176,54,42,.24);box-shadow:0 0 0 2px var(--tint-bad)}
+  .err-highlight.err-grammatik:hover,.err-highlight.err-grammatik.active{background:rgba(176,54,42,.24);outline:2px solid var(--tint-bad);outline-offset:1px}
   .err-highlight.err-wortschatz{background:var(--tint-warn);border-bottom:2px solid var(--warn-ink);color:var(--warn-ink)}
-  .err-highlight.err-wortschatz:hover,.err-highlight.err-wortschatz.active{background:rgba(138,100,20,.22);box-shadow:0 0 0 2px var(--tint-warn)}
+  .err-highlight.err-wortschatz:hover,.err-highlight.err-wortschatz.active{background:rgba(138,100,20,.22);outline:2px solid var(--tint-warn);outline-offset:1px}
   .err-highlight.err-zeichensetzung{background:var(--tint-acc);border-bottom:2px solid var(--acc-ink);color:var(--acc-ink)}
-  .err-highlight.err-zeichensetzung:hover,.err-highlight.err-zeichensetzung.active{background:rgba(44,77,143,.20);box-shadow:0 0 0 2px var(--tint-acc)}
+  .err-highlight.err-zeichensetzung:hover,.err-highlight.err-zeichensetzung.active{background:rgba(44,77,143,.20);outline:2px solid var(--tint-acc);outline-offset:1px}
   .err-highlight.err-stil{background:var(--tint-violet);border-bottom:2px solid var(--violet-ink);color:var(--violet-ink)}
-  .err-highlight.err-stil:hover,.err-highlight.err-stil.active{background:rgba(107,74,158,.22);box-shadow:0 0 0 2px var(--tint-violet)}
+  .err-highlight.err-stil:hover,.err-highlight.err-stil.active{background:rgba(107,74,158,.22);outline:2px solid var(--tint-violet);outline-offset:1px}
 
   .err-badge-num{font-size:var(--fs-micro);font-weight:700;vertical-align:super;padding:0 var(--sp-1);
-                 border-radius:0;margin-left:var(--sp-1);background:var(--panel);
-                 border:0;opacity:.95}
+                 border-radius:var(--r-1);margin-left:var(--sp-1);background:var(--panel2);
+                 border:var(--b-sutil) solid var(--line-2);opacity:.95}
 
-  /* El popover SÍ flota: conserva la sombra y pierde el borde (una sola elevación). */
+  /* El popover flota: sombra profunda y filo propio. */
   .err-popover{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%);
-               background:var(--panel2);border:0;box-shadow:var(--sh-3);
+               background:var(--panel2);border:var(--b-std) solid var(--line-2);box-shadow:var(--sh-3),var(--bisel);
                border-radius:var(--r-2);
                padding:var(--sp-3) var(--sp-4);min-width:250px;max-width:340px;z-index:40;display:none;
                font-size:var(--fs-sm);line-height:1.5;pointer-events:auto;text-align:left;
@@ -607,8 +669,9 @@
   .err-popover-rule{color:var(--dim);font-size:var(--fs-xs);display:block;line-height:1.5}
 
   .err-legend{display:flex;gap:var(--sp-2);flex-wrap:wrap;align-items:center;font-size:var(--fs-xs)}
-  .legend-chip{display:inline-flex;align-items:center;gap:var(--sp-1);padding:0;
-               border-radius:0;background:none;border:0;
+  .legend-chip{display:inline-flex;align-items:center;gap:var(--sp-1);padding:4px var(--sp-2);
+               border-radius:var(--r-1);background:var(--tint-neutral);
+               border:var(--b-sutil) solid var(--line);
                color:var(--dim)}
   .legend-chip .dot{width:8px;height:8px;border-radius:50%}
   .legend-chip.gram .dot{background:var(--bad-ink)}
@@ -616,33 +679,38 @@
   .legend-chip.zeichen .dot{background:var(--acc-ink)}
   .legend-chip.stil .dot{background:var(--violet-ink)}
 
-  /* Pestañas: subrayado de documento, no pastillas. */
-  .tab-pills{display:flex;gap:var(--sp-4);flex-wrap:wrap;margin:var(--sp-3) 0;
-             border-bottom:1px solid var(--line)}
+  /* Pestañas: control segmentado — carril hundido y la activa levantada. */
+  .tab-pills{display:flex;gap:var(--sp-1);flex-wrap:wrap;margin:var(--sp-3) 0;
+             padding:var(--sp-1);border-radius:var(--r-pill);
+             background:var(--sunken);border:var(--b-std) solid var(--line);
+             box-shadow:var(--hundido)}
   .tab-pills.flush{margin:0}
-  .tab-pill{background:none;border:0;border-bottom:2px solid transparent;color:var(--dim);
-            padding:0 var(--sp-1);min-height:36px;display:inline-flex;align-items:center;
-            border-radius:0;font-size:var(--fs-sm);font-weight:640;cursor:pointer;
+  .tab-pill{background:none;border:var(--b-std) solid transparent;color:var(--dim);
+            padding:0 var(--sp-4);min-height:36px;display:inline-flex;align-items:center;
+            border-radius:var(--r-pill);font-size:var(--fs-sm);font-weight:640;cursor:pointer;
             font-family:inherit;
-            transition:color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
+            transition:color var(--dur-2) var(--ease),background var(--dur-2) var(--ease),
+                       border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease),
                        transform var(--dur-1) var(--spring)}
   .tab-pill:hover{color:var(--txt)}
   .tab-pill:active{transform:scale(.97)}
-  .tab-pill.active{background:none;color:var(--txt);
+  .tab-pill.active{background:var(--panel2);color:var(--txt);border-color:var(--line-2);
+            box-shadow:var(--sh-1),var(--bisel)}
 
-            border-bottom-color:var(--acc);box-shadow:none}
-
-  /* Lista de errores: filas con filete, pulsables. */
-  .err-card{background:none;border:0;border-top:1px solid var(--line);
-            border-radius:0;padding:var(--sp-3) 0;margin-bottom:0;
-            cursor:pointer;
-            transition:background var(--dur-2) var(--ease),transform var(--dur-2) var(--spring)}
-  .err-card:hover{transform:none;background:var(--tint-neutral)}
-  .err-card.pulse{box-shadow:none;background:var(--tint-acc)}
+  /* Lista de errores: filas de tabla de la referencia —pieza con filo y, al pasar
+     por encima, la fila se levanta—. */
+  .err-card{background:var(--panel);border:var(--b-std) solid var(--line);
+            border-radius:var(--r-2);padding:var(--sp-3) var(--sp-4);margin-bottom:var(--sp-2);
+            box-shadow:var(--sh-1),var(--bisel);cursor:pointer;
+            transition:background var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease),
+                       transform var(--dur-2) var(--spring)}
+  .err-card:hover{transform:none;background:var(--panel2);box-shadow:var(--sh-2),var(--bisel)}
+  .err-card.pulse{background:var(--tint-acc);box-shadow:var(--sh-1),var(--bisel),var(--halo)}
   .err-card .orig{color:var(--bad-ink);text-decoration:line-through;margin-bottom:var(--sp-1);font-size:var(--fs-sm)}
   .err-card .corr{color:var(--ok-ink);font-weight:640;margin-bottom:var(--sp-1);font-size:var(--fs-base)}
   .err-card .rule{font-size:var(--fs-sm);color:var(--dim);line-height:1.5}
-  .model-text{background:var(--sheet);border:0;border-radius:var(--r-2);
+  .model-text{background:var(--sheet);border:var(--b-std) solid var(--line);border-radius:var(--r-2);
+              box-shadow:var(--sh-1),var(--bisel);
               padding:var(--sp-4) var(--sp-5);font-family:var(--font-read);font-size:var(--fs-base);
               line-height:1.7;white-space:pre-wrap;color:var(--txt);max-width:var(--read-w)}
   .copy-btn{font-size:var(--fs-xs);padding:0 var(--sp-1);min-height:32px;border-radius:0;
@@ -656,10 +724,10 @@
   /* Modal de Configuración: hoja sobre velo cálido (sin cristal). */
   .modal-backdrop{position:fixed;inset:0;background:var(--scrim);
                   z-index:100;display:flex;align-items:center;justify-content:center;padding:var(--sp-4)}
-  /* El modal es lo único que flota sobre la página: sombra, sin borde. */
+  /* Lo que flota de verdad: el modal, con sombra profunda y filo propio. */
   .modal{background:var(--panel);
-         border:0;border-radius:var(--r-4);width:100%;max-width:560px;
-         box-shadow:var(--sh-3);overflow:hidden;animation:pop var(--dur-3) var(--spring)}
+         border:var(--b-std) solid var(--line-2);border-radius:var(--r-4);width:100%;max-width:560px;
+         box-shadow:var(--sh-3),var(--bisel);overflow:hidden;animation:pop var(--dur-3) var(--spring)}
   @keyframes pop{from{transform:scale(.965);opacity:0}to{transform:scale(1);opacity:1}}
   .modal-head{padding:var(--sp-4) var(--sp-5);border-bottom:1px solid var(--line);
               display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3)}
@@ -675,26 +743,27 @@
   .modal-foot{padding:var(--sp-3) var(--sp-5);border-top:1px solid var(--line);
               display:flex;justify-content:flex-end;gap:var(--sp-3);background:var(--panel2)}
   .ai-status{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
-             flex-wrap:wrap;background:none;border:0;border-top:1px solid var(--line);
-             border-bottom:1px solid var(--line);
-             border-radius:0;padding:var(--sp-2) 0;margin-bottom:var(--sp-4);
+             flex-wrap:wrap;background:var(--sunken);border:var(--b-std) solid var(--line);
+             border-radius:var(--r-2);padding:var(--sp-2) var(--sp-3);margin-bottom:var(--sp-4);
+             box-shadow:var(--hundido);
              font-size:var(--fs-xs);color:var(--dim)}
   .form-group{margin-bottom:var(--sp-4)}
   .form-group label{display:block;font-size:var(--fs-sm);font-weight:640;margin-bottom:var(--sp-2);color:var(--txt)}
   .form-group small{display:block;font-size:var(--fs-xs);color:var(--dim);margin-top:var(--sp-1);line-height:1.45}
-  /* Campos con un solo límite definido: borde, sin radio grande y sin halo. */
-  .input,.select{width:100%;background:var(--sheet);border:1px solid var(--line-2);
-                 border-radius:var(--r-1);padding:0 var(--sp-3);min-height:42px;color:var(--txt);
+  /* Campos: hueco hundido. Al enfocar, el borde se enciende y aparece el halo. */
+  .input,.select{width:100%;background:var(--sunken);border:var(--b-std) solid var(--line);
+                 border-radius:var(--r-2);padding:0 var(--sp-4);min-height:44px;color:var(--txt);
                  font-size:var(--fs-sm);font-family:inherit;outline:none;box-sizing:border-box;
-                 caret-color:var(--acc);
-                 transition:border-color var(--dur-2) var(--ease)}
+                 caret-color:var(--acc);box-shadow:var(--hundido);
+                 transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
   .input::placeholder{color:var(--dim-2)}
-  .input:focus,.select:focus{border-color:var(--acc)}
+  .input:focus,.select:focus{border-color:rgba(106,164,255,.75);box-shadow:var(--hundido),var(--halo)}
 
   /* Selector bilingüe ES / RU: control segmentado, hoja seleccionada (sin píldora azul). */
-  /* Control segmentado: la superficie hundida lo define; sin borde. */
-  .lang-switch{display:inline-flex;align-items:center;background:var(--panel3);
-               border:0;border-radius:var(--r-1);padding:4px;gap:var(--sp-1)}
+  /* Control segmentado: carril hundido; la opción elegida se levanta. */
+  .lang-switch{display:inline-flex;align-items:center;background:var(--sunken);
+               border:var(--b-std) solid var(--line);border-radius:var(--r-pill);
+               padding:4px;gap:var(--sp-1);box-shadow:var(--hundido)}
   .lang-btn{background:transparent;border:0;color:var(--dim);font-size:var(--fs-xs);font-weight:640;
             padding:0 var(--sp-3);min-height:32px;border-radius:var(--r-pill);cursor:pointer;
             font-family:inherit;
@@ -703,12 +772,13 @@
             display:inline-flex;align-items:center;gap:var(--sp-1);line-height:1}
   .lang-btn:hover{color:var(--txt)}
   .lang-btn:active{transform:scale(.96)}
-  .lang-btn.active{background:var(--sheet);color:var(--txt);font-weight:700;
-            box-shadow:none}
+  .lang-btn.active{background:var(--panel2);color:var(--txt);font-weight:700;
+            box-shadow:var(--sh-1),var(--bisel)}
 
   /* Selector de usuario Sergio / Diana */
-  .user-switch{display:inline-flex;align-items:center;background:var(--panel3);
-               border:0;border-radius:var(--r-1);padding:4px;gap:var(--sp-1)}
+  .user-switch{display:inline-flex;align-items:center;background:var(--sunken);
+               border:var(--b-std) solid var(--line);border-radius:var(--r-pill);
+               padding:4px;gap:var(--sp-1);box-shadow:var(--hundido)}
   .user-btn{background:transparent;border:0;color:var(--dim);font-size:var(--fs-xs);font-weight:640;
             padding:0 var(--sp-3);min-height:32px;border-radius:var(--r-pill);cursor:pointer;
             font-family:inherit;
@@ -717,13 +787,13 @@
             display:inline-flex;align-items:center;gap:var(--sp-1);line-height:1}
   .user-btn:hover{color:var(--txt)}
   .user-btn:active{transform:scale(.96)}
-  .user-btn.active{background:var(--sheet);color:var(--txt);font-weight:700;
-            box-shadow:none}
+  .user-btn.active{background:var(--panel2);color:var(--txt);font-weight:700;
+            box-shadow:var(--sh-1),var(--bisel)}
 
   /* Indicador de sincronización en la nube */
   .cloud-badge{display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-micro);color:var(--dim);
-               padding:0;border-radius:0;
-               background:none;border:0}
+               padding:4px var(--sp-2);border-radius:var(--r-pill);
+               background:var(--tint-neutral);border:var(--b-sutil) solid var(--line)}
   .cloud-dot{width:8px;height:8px;border-radius:50%;background:#6b7684;flex:0 0 8px}
   .cloud-dot.online{background:var(--ok)}
   .cloud-dot.syncing{background:var(--warn);
@@ -732,26 +802,31 @@
   @keyframes pulse-sync{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}
 
   /* Tarjeta de redacción comparativa del compañero (Diana / Sergio) */
-  .partner-card{background:none;border-radius:0;border-top:1px solid var(--line);
-                padding:var(--sp-4) 0 0;margin-bottom:var(--sp-4);
-                box-shadow:none}
+  .partner-card{background:var(--panel);border:var(--b-std) solid var(--line);
+                border-radius:var(--r-4);padding:var(--sp-4) var(--sp-5);
+                margin-bottom:var(--sp-4);
+                box-shadow:var(--sh-2),var(--bisel)}
   .partner-head{display:flex;justify-content:space-between;align-items:center;
                 margin-bottom:var(--sp-3);flex-wrap:wrap;gap:var(--sp-2)}
   .partner-title{font-size:var(--fs-base);font-weight:650;color:var(--txt);display:flex;align-items:center;gap:var(--sp-2)}
   .partner-meta{font-size:var(--fs-xs);color:var(--dim-2);display:flex;align-items:center;gap:var(--sp-2)}
-  .partner-body{background:var(--sheet);border:0;border-radius:var(--r-2);
+  .partner-body{background:var(--sheet);border:var(--b-std) solid var(--line);
+                border-radius:var(--r-2);box-shadow:var(--sh-1),var(--bisel);
                 padding:var(--sp-3) var(--sp-4);font-family:var(--font-read);font-size:var(--fs-base);
                 line-height:1.7;white-space:pre-wrap;color:var(--txt);min-height:96px;
                 max-width:var(--read-w)}
   .partner-empty{color:var(--dim-2);font-style:italic;padding:var(--sp-6) var(--sp-3);text-align:center}
 
   /* Conmutador de tema (luna/sol) y botón de índice en móvil */
-  .icon-btn{background:none;border:0;color:var(--dim);
-            width:32px;min-height:32px;padding:0;border-radius:0;cursor:pointer;
+  .icon-btn{background:linear-gradient(180deg,var(--panel2),var(--panel));
+            border:var(--b-std) solid var(--line);color:var(--dim);
+            width:32px;min-height:32px;padding:0;border-radius:var(--r-2);cursor:pointer;
             display:inline-flex;align-items:center;justify-content:center;
-            transition:color var(--dur-2) var(--ease),
+            box-shadow:var(--sh-1),var(--bisel);
+            transition:color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease),
                        transform var(--dur-1) var(--spring)}
-  .icon-btn:hover{background:none;color:var(--txt)}
+  .icon-btn:hover{color:var(--txt);box-shadow:var(--sh-2),var(--bisel)}
+  .icon-btn:active{transform:scale(.94)}
   .icon-btn:active{transform:scale(.94)}
   .icon-btn svg{width:17px;height:17px;display:block}
   #nav-toggle{display:none;gap:var(--sp-2);width:auto;padding:0 var(--sp-3)}
@@ -870,7 +945,7 @@ const LS_THEME = "b2quiz_theme";
 
 /* Tema: papel (por defecto) o noche. El <head> ya aplicó el guardado antes del
    primer pintado; aquí solo se sincroniza el estado y el botón. */
-let currentTheme = "paper";
+let currentTheme = "dark";
 try {
   const savedTheme = localStorage.getItem(LS_THEME);
   if (savedTheme === "dark" || savedTheme === "paper") currentTheme = savedTheme;

@@ -97,9 +97,10 @@ que un simple chequeo de sintaxis no ve.
 (inyección por `?room=`, ruptura del atributo `value` del modal, evaluación de la
 pareja con datos maliciosos y evaluación malformada que rompía la pantalla).
 `design_audit.js` no abre ningún navegador: lee el CSS, resuelve los tokens, compone
-las transparencias sobre el fondo real y comprueba 44 reglas de diseño (contraste
+las transparencias sobre el fondo real y comprueba 46 reglas de diseño (contraste
 mínimo 4.5:1, espaciado múltiplo de 4, áreas táctiles de 28px/44px, foco visible,
-movimiento reducido, cristal, sombras multicapa y estados de presión).
+movimiento reducido, relieve, un solo degradado de fondo, el segundo tema por
+tokens y estados de presión).
 
 ## Sistema de diseño
 
@@ -111,40 +112,42 @@ componentes**: basta el bloque `:root`.
 |---|---|---|
 | Color | `--bg`, `--panel`, `--panel2`, `--panel3`, `--line` | Fondos y superficies |
 | Texto | `--txt`, `--dim`, `--dim-2` | Tres niveles de jerarquía |
-| Acento | `--acc`, `--acc-fill-1/2`, `--acc-ink` | Rellenos (texto blanco) y texto de acento |
+| Acento | `--acc`, `--acc-fill-1/2`, `--acc-ink`, `--on-acc` | Relleno del botón (con tinta **oscura**, 5.6:1) y texto de acento |
 | Semánticos | `--ok`, `--bad`, `--warn`, `--violet-ink` y sus `-ink` | Aciertos, fallos, avisos |
+| Rellenos de estado | `--bien-fill`, `--mal-fill` y sus `-ink` | Letras corregidas: sólidos y oscuros, 6.2:1 y 7.4:1 |
 | Espaciado | `--sp-1` … `--sp-8` (4, 8, 12, 16, 24, 32, 48, 64) | Rejilla de 4/8pt |
 | Tipografía | `--fs-micro` … `--fs-h2` (11, 12, 13, 15, 17, 20, 27) | Seis pasos, sin tallas sueltas |
 | Movimiento | `--dur-1/2/3`, `--ease`, `--spring` | Duraciones y curvas elásticas |
-| Elevación | `--sh-1/2/3`, `--lit` | Sombra amplia + corta. Solo para lo que flota de verdad: modal, popover de error y enlace de salto |
-| Radios | `--r-1` … `--r-4`, `--r-pill` | Casi rectos (2-3px): papel, no burbuja. Lo redondo es solo lo que significa algo |
+| Relieve | `--sh-1/2/3`, `--bisel`, `--hundido`, `--lit` | Sombra de fuera (altura) + filo de dentro (material); `--hundido` para los huecos |
+| Brillo | `--glow`, `--halo` | Azul, y solo en el foco, en lo elegido y en la acción principal |
+| Radios | `--r-1` … `--r-4`, `--r-pill` | 4 / 8 / 12 / 18 px, los de la referencia |
+| Grosores | `--b-sutil`, `--b-std`, `--b-fuerte` | 0.5 / 1 / 1.5 px |
 | Estructura | `--header-h`, `--nav-w`, `--read-w` | Alto de cabecera, ancho del índice y medida de lectura |
 | Mesa de examen | `--desk-ref`, `--desk-work` | Ancho máximo de la columna de referencia (fluida con `clamp`) y tope de la hoja de preguntas a partir de 1280px |
 
-### De tarjetas a hoja impresa
+### Lenguaje de piezas (relieve)
 
-Nada que sea contenido lleva caja. La estructura sale de tres mecanismos, y cada
-bloque usa **uno solo** — dos fronteras duras juntas (un filete sobre un cambio de
-fondo, por ejemplo) ensucian la página:
+**Esta rama (`UXUI`) es un experimento**: cambia el material de la app. En `main`
+el mundo es la hoja de examen impresa; aquí es un taller nocturno, con los colores
+y los relieves de la referencia que pasó Sergio.
 
-| Mecanismo | Dónde vive |
-|---|---|
-| Filete de 1px: fila o cabecera de sección | `.panel`, `.opt`, `.ad`, `.bank .ad`, `.lp-item`, `.crit-box`, `.err-card`, `.tab-pills` |
-| Filete de margen (solo a la izquierda) para lo citado | `.fb .quote` |
-| Banda con tinte y sin filete, para el estado | `.fb.good`, `.fb.bad`, `.badge.*`, `.eval-banner.*` |
-
-- **Una sola superficie elevada**: el modal. Fuera de eso, la app no tiene ni una
-  sombra (se comprueba: cero `box-shadow` dentro de `main`).
-- **Dos superficies planas, y ya**: la hoja de examen (`--panel`) y las hojas de
-  documento —carta recibida, texto de lectura, redacción propia y de la pareja y
-  redacción modelo— (`--sheet`).
-- **Excepciones con borde, a propósito**: los campos de formulario (`.input`,
-  `.select`, `.editor-textarea`) porque un campo necesita un límite definido, y la
-  insignia de evaluación, que es un sello.
-- Los estados se marcan con **tinta más palabra o marca** (`✓`, `✗`, «Correcto»,
-  «confianza: alta»), nunca con una píldora rellena ni solo con color.
-- El aviso amarillo es una banda con filetes, sin caja, y **como mucho uno por
-  pantalla**: repetido pierde su fuerza.
+- **Una sola luz**: el fondo es carbón con un degradado cenital fijo. No hay
+  texturas ni patrones, y se comprueba que sea el único degradado de fondo.
+- **Relieve solo en lo que se pulsa.** Cada pieza lleva su sombra de fuera (altura)
+  y su filo claro arriba (material): letras a–h, botones, conmutadores, pestañas,
+  filas pulsables, el número del ítem. El texto —los anuncios alemanes, la cita,
+  la explicación— se queda plano: el relieve en un párrafo largo solo estorba.
+- **Tres mecanismos, y cada bloque usa uno**: pieza con filo (`--panel` + `--bisel`),
+  hueco hundido (`--sunken` + `--hundido`) para campos, carriles y celdas, o banda
+  con tinte y filo en el color del estado (`.fb`, `.note`, insignias).
+- **Lo que flota de verdad** —modal, popover de error, enlace de salto— es lo único
+  que lleva sombra profunda (`--sh-3`).
+- **El brillo azul** (`--glow`, `--halo`) está reservado al foco, a lo elegido y a
+  la acción principal. Con desplazamiento, nunca como cerco de desplazamiento cero.
+- **Los formularios sí llevan borde**: un campo necesita un límite definido.
+- **Dos temas por tokens**: el oscuro en `:root` y el claro en
+  `[data-theme="paper"]`; el lenguaje de piezas es el mismo, cambian los valores.
+  La tinta sobre el azul brillante es **oscura** (con blanco se quedaba en 3.2:1).
 
 Las tres familias tipográficas son del sistema (`--font-ui`, `--font-read` serif
 para textos largos y `--font-mono`): la app sigue funcionando sin conexión y sin
