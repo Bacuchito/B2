@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B2 Beruf — prototipo UXUI (prueba de lenguaje visual)</title>
+<!--
+  PROTOTIPO. No es la app: es una prueba de lenguaje visual, en la rama UXUI.
+  Los componentes son los reales de B2_quiz.html (cabecera, índice, anuncios,
+  hoja de preguntas, letras a-h, bloque de corrección, modal), pero repintados
+  con la paleta oscura y los relieves de la referencia que pasó Sergio.
+  Se abre con doble clic: no necesita servidor ni nada instalado.
+-->
+<style>
+:root{
+  /* ---- Superficies: carbón, con una luz cenital muy suave ---- */
+  --bg:#25262a;
+  --bg-luz:#34363d;
+  --surface:#313239;
+  --surface-2:#3a3b43;
+  --sunken:#2a2b31;
+  --scrim:rgba(8,9,11,.72);
+
+  /* ---- Tinta. Los grises están elegidos para pasar 4.5:1 sobre --surface
+         (la referencia traía grises más apagados que no cumplirían) ---- */
+  --txt:#e9eaee;
+  --dim:#b3b5bd;
+  --dim-2:#9ea0a8;
+
+  /* ---- Acento azul, con brillo propio ----
+     Ojo con la tinta: sobre este azul brillante el BLANCO no llega a 4.5:1
+     (se queda en 3.2:1). La referencia usa blanco; aquí va tinta oscura, que da
+     5.5-7.2:1 y conserva el azul y el halo. */
+  --acc:#4d8df6;
+  --acc-hi:#6aa4ff;
+  --acc-deep:#2f6ede;
+  --on-acc:#0b1526;
+  --glow:rgba(77,141,246,.45);
+
+  /* ---- Semánticos ---- */
+  --ok:#42c184;   --ok-ink:#96e9bd;
+  --bad:#f2635a;  --bad-ink:#ffa49b;
+  --warn:#e2b153; --warn-ink:#f4d191;
+
+  /* ---- Líneas y bisel ---- */
+  --line:rgba(255,255,255,.07);
+  --line-2:rgba(255,255,255,.14);
+  --bisel-alto:rgba(255,255,255,.10);
+  --bisel-bajo:rgba(0,0,0,.40);
+
+  /* ---- Grosores de borde (de la referencia: 0.5 / 1 / 1.5) ---- */
+  --b-sutil:.5px; --b-std:1px; --b-fuerte:1.5px;
+
+  /* ---- Radios (de la referencia: 4 / 8 / 12 / 18) ---- */
+  --r-1:4px; --r-2:8px; --r-3:12px; --r-4:18px; --r-pill:999px;
+
+  /* ---- Elevación: la sombra de fuera sube el objeto; el bisel de dentro le da
+         material. Son dos trabajos distintos, no dos adornos ---- */
+  --sh-1:0 1px 2px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.22);
+  --sh-2:0 2px 4px rgba(0,0,0,.40),0 8px 18px -6px rgba(0,0,0,.50);
+  --sh-3:0 4px 8px rgba(0,0,0,.45),0 24px 48px -14px rgba(0,0,0,.68);
+  --bisel:inset 0 1px 0 var(--bisel-alto),inset 0 -1px 0 var(--bisel-bajo);
+  --hundido:inset 0 2px 5px rgba(0,0,0,.45),inset 0 -1px 0 rgba(255,255,255,.04);
+  --halo:0 0 0 1px rgba(106,164,255,.45),0 6px 16px -4px var(--glow),0 0 26px rgba(77,141,246,.30);
+
+  /* ---- Escala de espaciado de la referencia: 4 a 48 ---- */
+  --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px; --sp-7:48px;
+
+  --fuente:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --lectura:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --mono:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,monospace;
+
+  --dur-1:120ms; --dur-2:200ms; --dur-3:320ms;
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --muelle:cubic-bezier(.16,1,.3,1);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--fuente);
+     font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+/* Luz cenital: da la sensación de que las piezas están sobre una mesa con foco.
+   Es un degradado radial, no una textura: uno solo, en el fondo. */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(1100px 520px at 50% -12%,var(--bg-luz),transparent 70%)}
+::selection{background:rgba(77,141,246,.35)}
+:focus-visible{outline:2px solid var(--acc-hi);outline-offset:2px;border-radius:var(--r-1)}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:var(--r-pill);
+  border:3px solid transparent;background-clip:content-box}
+
+/* ============ Estructura del prototipo ============ */
+.cascara{position:relative;z-index:1;max-width:1560px;margin:0 auto;padding:0 var(--sp-5) var(--sp-7)}
+.barra{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:var(--sp-3);
+  flex-wrap:wrap;padding:var(--sp-3) var(--sp-5);
+  background:linear-gradient(180deg,rgba(48,50,57,.96),rgba(41,42,48,.92));
+  border-bottom:var(--b-std) solid var(--line);
+  box-shadow:var(--sh-2),var(--bisel)}
+.marca{display:flex;align-items:center;gap:var(--sp-2);font-weight:700;font-size:17px;letter-spacing:-.01em}
+.monograma{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+  border-radius:var(--r-2);background:linear-gradient(180deg,var(--acc-hi),var(--acc-deep));
+  color:var(--on-acc);font-size:13px;font-weight:800;letter-spacing:.02em;
+  box-shadow:var(--sh-1),var(--bisel),0 0 18px rgba(77,141,246,.35)}
+.hueco{flex:1}
+.rejilla{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--sp-6);align-items:start;
+  margin-top:var(--sp-6)}
+@media(max-width:1180px){.rejilla{grid-template-columns:minmax(0,1fr)}}
+.bloque{margin-bottom:var(--sp-7)}
+.bloque > h2{font-size:20px;margin:0 0 var(--sp-1);letter-spacing:-.01em}
+.bloque > .nota{color:var(--dim-2);font-size:13px;margin:0 0 var(--sp-4);max-width:78ch}
+.fila{display:flex;flex-wrap:wrap;gap:var(--sp-3);align-items:center}
+.pila{display:flex;flex-direction:column;gap:var(--sp-4)}
+
+/* ============ Piezas: tarjeta, hoja, panel ============ */
+/* La tarjeta de la referencia: radio 18, bisel dentro, sombra fuera. */
+.tarjeta{background:var(--surface);border:var(--b-std) solid var(--line);
+  border-radius:var(--r-4);padding:var(--sp-5);box-shadow:var(--sh-2),var(--bisel)}
+.tarjeta.plana{box-shadow:var(--sh-1),var(--bisel)}
+.tarjeta.hundida{background:var(--sunken);box-shadow:var(--hundido);border-color:var(--line)}
+.etiqueta{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--dim-2);margin-bottom:var(--sp-3)}
+.pie{color:var(--dim-2);font-size:12px;margin-top:var(--sp-2);display:block}
+
+/* ============ Botones ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);
+  min-height:40px;padding:0 var(--sp-5);border-radius:var(--r-pill);cursor:pointer;
+  font-family:inherit;font-size:15px;font-weight:640;color:var(--on-acc);
+  background:linear-gradient(180deg,var(--acc-hi),var(--acc));
+  border:var(--b-std) solid rgba(255,255,255,.22);
+  box-shadow:var(--sh-2),var(--bisel),0 0 20px rgba(77,141,246,.22);
+  transition:transform var(--dur-1) var(--muelle),box-shadow var(--dur-2) var(--ease),
+             filter var(--dur-1) var(--ease)}
+.btn:hover{filter:brightness(1.06);box-shadow:var(--sh-2),var(--bisel),var(--halo)}
+.btn:active{transform:scale(.975);box-shadow:var(--sh-1),var(--bisel)}
+.btn.secundario{background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  color:var(--txt);border-color:var(--line-2);box-shadow:var(--sh-1),var(--bisel),0 0 0 rgba(0,0,0,0)}
+.btn.secundario:hover{color:#fff;box-shadow:var(--sh-2),var(--bisel)}
+.btn.fantasma{background:transparent;border-color:transparent;color:var(--dim);
+  box-shadow:none;padding:0 var(--sp-3)}
+.btn.fantasma:hover{color:var(--txt);background:rgba(255,255,255,.05)}
+/* Rojo oscurecido a proposito: con el rojo vivo de la referencia, la tinta clara
+   se quedaba en 3.4:1. */
+.btn.peligro{background:linear-gradient(180deg,#c4453b,#a03a31);border-color:rgba(255,255,255,.16);
+  color:#fff6f5}
+/* Deshabilitado: la referencia le quita el relieve y baja el contraste. Yo mantengo
+   un borde y subo el gris hasta 3:1, para que se siga leyendo que existe. */
+.btn[disabled]{cursor:not-allowed;color:var(--dim-2);background:var(--sunken);
+  border-color:var(--line);box-shadow:none;filter:none;transform:none}
+.btn.cargando{color:var(--on-acc)}
+.btn.cargando::after{content:"";width:13px;height:13px;border-radius:50%;
+  border:2px solid rgba(11,21,38,.35);border-top-color:var(--on-acc);animation:giro .7s linear infinite}
+@keyframes giro{to{transform:rotate(360deg)}}
+.btn.sm{min-height:32px;font-size:13px;padding:0 var(--sp-4)}
+
+/* ============ Segmentados y conmutadores ============ */
+.segmentado{display:inline-flex;gap:var(--sp-1);padding:4px;border-radius:var(--r-pill);
+  background:var(--sunken);box-shadow:var(--hundido);border:var(--b-std) solid var(--line)}
+.segmentado button{min-height:32px;padding:0 var(--sp-4);border:0;border-radius:var(--r-pill);
+  background:transparent;color:var(--dim);font:inherit;font-size:13px;font-weight:640;cursor:pointer;
+  transition:color var(--dur-2) var(--ease),background var(--dur-2) var(--ease),
+             box-shadow var(--dur-2) var(--ease),transform var(--dur-1) var(--muelle)}
+.segmentado button:hover{color:var(--txt)}
+.segmentado button:active{transform:scale(.96)}
+.segmentado button[aria-pressed="true"]{color:var(--txt);background:var(--surface-2);
+  box-shadow:var(--sh-1),var(--bisel)}
+.interruptor{display:inline-flex;align-items:center;gap:var(--sp-3);font-size:14px;color:var(--dim);cursor:pointer}
+.interruptor input{position:absolute;opacity:0;width:0;height:0}
+.pista{width:52px;height:30px;border-radius:var(--r-pill);background:var(--sunken);
+  box-shadow:var(--hundido);border:var(--b-std) solid var(--line);position:relative;
+  transition:background var(--dur-3) var(--ease),box-shadow var(--dur-3) var(--ease)}
+.pista::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;
+  border-radius:50%;background:linear-gradient(180deg,#5a5c66,#3c3d45);
+  box-shadow:var(--sh-1),var(--bisel);transition:transform var(--dur-3) var(--muelle),background var(--dur-3) var(--ease)}
+.interruptor input:checked + .pista{background:linear-gradient(180deg,var(--acc-hi),var(--acc-deep));
+  box-shadow:var(--sh-1),0 0 18px rgba(77,141,246,.45)}
+.interruptor input:checked + .pista::after{transform:translateX(22px);
+  background:linear-gradient(180deg,#fdfeff,#dbe7ff)}
+.interruptor input:focus-visible + .pista{outline:2px solid var(--acc-hi);outline-offset:2px}
+
+/* ============ Campos ============ */
+.campo{width:100%;min-height:44px;padding:0 var(--sp-4);border-radius:var(--r-2);
+  background:var(--sunken);color:var(--txt);font:inherit;font-size:15px;
+  border:var(--b-std) solid var(--line);box-shadow:var(--hundido);
+  transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
+.campo::placeholder{color:var(--dim-2)}
+.campo:focus{outline:none;border-color:rgba(106,164,255,.75);box-shadow:var(--hundido),var(--halo)}
+.area{min-height:150px;padding:var(--sp-4);line-height:1.7;resize:vertical;font-family:var(--lectura)}
+.desplegable{position:relative;max-width:320px}
+.opciones{position:absolute;z-index:10;left:0;right:0;top:calc(100% + 6px);
+  background:var(--surface-2);border:var(--b-std) solid var(--line-2);border-radius:var(--r-3);
+  box-shadow:var(--sh-3),var(--bisel);padding:var(--sp-1);margin:0;list-style:none}
+.opciones li{padding:var(--sp-2) var(--sp-3);border-radius:var(--r-2);font-size:14px;color:var(--dim);
+  transition:background var(--dur-1) var(--ease),color var(--dur-1) var(--ease)}
+.opciones li:hover,.opciones li[aria-selected="true"]{background:rgba(255,255,255,.06);color:var(--txt)}
+
+/* ============ Barra de progreso y deslizador ============ */
+.progreso{height:8px;border-radius:var(--r-pill);background:var(--sunken);
+  box-shadow:var(--hundido);overflow:hidden;max-width:420px}
+.progreso i{display:block;height:100%;width:42%;border-radius:var(--r-pill);
+  background:linear-gradient(90deg,var(--acc),var(--acc-hi));
+  box-shadow:0 0 16px rgba(77,141,246,.6)}
+.deslizador{position:relative;max-width:420px;height:26px}
+.deslizador .carril{position:absolute;top:9px;left:0;right:0;height:8px;border-radius:var(--r-pill);
+  background:var(--sunken);box-shadow:var(--hundido)}
+.deslizador .relleno{position:absolute;top:9px;left:0;width:46%;height:8px;border-radius:var(--r-pill);
+  background:linear-gradient(90deg,var(--acc),var(--acc-hi));box-shadow:0 0 16px rgba(77,141,246,.55)}
+.deslizador .mando{position:absolute;top:0;left:46%;width:26px;height:26px;margin-left:-13px;
+  border-radius:50%;background:linear-gradient(180deg,#fdfeff,#c9d6ef);
+  border:var(--b-std) solid rgba(255,255,255,.5);box-shadow:var(--sh-2)}
+
+/* ============ Índice lateral (los mismos grupos que la app) ============ */
+.indice{background:var(--surface);border:var(--b-std) solid var(--line);border-radius:var(--r-4);
+  padding:var(--sp-4);box-shadow:var(--sh-2),var(--bisel)}
+.indice .grupo{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-2);
+  padding:var(--sp-2) var(--sp-2);color:var(--dim-2);font-size:11px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;border-bottom:var(--b-std) solid var(--line);
+  margin:var(--sp-3) 0 var(--sp-2)}
+.indice .grupo:first-child{margin-top:0}
+.indice button{display:flex;width:100%;align-items:center;justify-content:space-between;gap:var(--sp-2);
+  min-height:38px;padding:var(--sp-2) var(--sp-3);border:0;border-radius:var(--r-2);
+  background:transparent;color:var(--dim);font:inherit;font-size:14px;text-align:left;cursor:pointer;
+  transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
+             box-shadow var(--dur-2) var(--ease),transform var(--dur-1) var(--muelle)}
+.indice button:hover{background:rgba(255,255,255,.05);color:var(--txt)}
+.indice button:active{transform:scale(.99)}
+/* Activo: relieve hundido + filo azul. No es una caja más: es una pieza pulsada. */
+.indice button[aria-current="true"]{color:var(--txt);font-weight:640;background:var(--sunken);
+  box-shadow:var(--hundido),inset 2px 0 0 var(--acc)}
+.indice .cuenta{font-size:12px;color:var(--dim-2);font-variant-numeric:tabular-nums}
+
+/* ============ Anuncios (filas de tabla, como la referencia) ============ */
+.lista{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:var(--sp-1)}
+.lista li{border-radius:var(--r-2);padding:var(--sp-3) var(--sp-3);color:var(--dim);font-size:14px;
+  border:var(--b-std) solid transparent;transition:background var(--dur-2) var(--ease),
+  box-shadow var(--dur-2) var(--ease),color var(--dur-2) var(--ease)}
+.lista li b{color:var(--txt);font-weight:640;margin-right:var(--sp-2)}
+.lista li:hover{background:rgba(255,255,255,.05);color:var(--txt)}
+.lista li.asignado{background:rgba(77,141,246,.12);border-color:rgba(106,164,255,.35);color:var(--txt);
+  box-shadow:var(--sh-1)}
+.lista li.elegido{background:var(--surface-2);border-color:var(--line-2);color:var(--txt);
+  box-shadow:var(--sh-2),var(--bisel)}
+.lista li.cogido{color:var(--dim-2);opacity:.75}
+
+/* ============ Letras a-h: los ocho estados ============ */
+.letras{display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+.letra{width:46px;height:46px;border-radius:var(--r-2);border:var(--b-std) solid var(--line-2);
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  color:var(--txt);font-family:var(--lectura);font-size:17px;font-weight:700;cursor:pointer;
+  box-shadow:var(--sh-1),var(--bisel);
+  transition:transform var(--dur-1) var(--muelle),box-shadow var(--dur-2) var(--ease),
+             color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
+             background var(--dur-2) var(--ease)}
+.letra:hover{border-color:rgba(106,164,255,.45);
+  box-shadow:var(--sh-2),var(--bisel),0 0 16px rgba(77,141,246,.25)}
+.letra:active{transform:scale(.94);box-shadow:var(--sh-1),var(--hundido)}
+.letra[aria-checked="true"]{background:linear-gradient(180deg,var(--acc-hi),var(--acc));
+  color:var(--on-acc);border-color:rgba(255,255,255,.35);box-shadow:var(--sh-2),var(--bisel),var(--halo)}
+.letra.cogida{color:var(--dim-2);background:var(--sunken);border-style:dashed;box-shadow:var(--hundido)}
+/* Correcta y fallada: relleno solido y oscuro, para que la letra clara pase 4.5:1
+   (con el verde y el rojo claros de la referencia se quedaba en 2.7 y 3.3). El
+   brillo de color se queda en la sombra, que es donde no hace dano. */
+.letra.bien{background:#246b4c;color:#f2fff9;
+  border-color:rgba(255,255,255,.28);box-shadow:var(--sh-1),var(--bisel),0 0 16px rgba(66,193,132,.35)}
+.letra.mal{background:#8f3229;color:#fff6f5;
+  border-color:rgba(255,255,255,.28);box-shadow:var(--sh-1),var(--bisel),0 0 16px rgba(242,99,90,.35)}
+.caption{color:var(--dim-2);font-size:12px;margin:var(--sp-2) 0 0}
+
+/* ============ Corrección ============ */
+.correccion{border-radius:var(--r-3);padding:var(--sp-4) var(--sp-5);
+  background:linear-gradient(180deg,rgba(242,99,90,.14),rgba(242,99,90,.07));
+  border:var(--b-std) solid rgba(242,99,90,.30);box-shadow:var(--sh-1),var(--bisel)}
+.correccion.bien{background:linear-gradient(180deg,rgba(66,193,132,.14),rgba(66,193,132,.07));
+  border-color:rgba(66,193,132,.30)}
+.veredicto{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap;font-weight:640;
+  margin-bottom:var(--sp-2)}
+.insignia{font-size:11px;font-weight:700;padding:3px var(--sp-2);border-radius:var(--r-1);
+  background:rgba(255,255,255,.08);color:var(--dim);border:var(--b-sutil) solid var(--line-2)}
+.insignia.alta{color:var(--ok-ink);background:rgba(66,193,132,.14);border-color:rgba(66,193,132,.35)}
+.insignia.media{color:var(--warn-ink);background:rgba(226,177,83,.14);border-color:rgba(226,177,83,.35)}
+.insignia.acento{color:var(--acc-hi);background:rgba(77,141,246,.14);border-color:rgba(106,164,255,.35)}
+.cita{font-family:var(--lectura);font-size:15px;color:var(--dim);
+  border-left:var(--b-fuerte) solid var(--acc);padding:var(--sp-1) 0 var(--sp-1) var(--sp-3);
+  margin:var(--sp-3) 0;max-width:68ch}
+.explica{color:var(--txt);max-width:68ch}
+.traduce{color:var(--dim);margin-bottom:var(--sp-2)}
+
+/* ============ Modal, aviso, vacío ============ */
+.velo{background:var(--scrim);border-radius:var(--r-4);padding:var(--sp-6);
+  display:flex;justify-content:center;border:var(--b-std) solid var(--line)}
+.modal{width:100%;max-width:520px;background:var(--surface);border:var(--b-std) solid var(--line-2);
+  border-radius:var(--r-4);box-shadow:var(--sh-3),var(--bisel);overflow:hidden}
+.modal header{display:flex;align-items:center;justify-content:space-between;gap:var(--sp-3);
+  padding:var(--sp-4) var(--sp-5);border-bottom:var(--b-std) solid var(--line)}
+.modal header h3{margin:0;font-size:17px}
+.modal .cuerpo{padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-4)}
+.modal footer{display:flex;justify-content:flex-end;gap:var(--sp-3);padding:var(--sp-4) var(--sp-5);
+  border-top:var(--b-std) solid var(--line);background:rgba(0,0,0,.14)}
+.cerrar{width:32px;height:32px;border-radius:var(--r-2);border:0;background:transparent;
+  color:var(--dim);font:inherit;font-size:17px;cursor:pointer;box-shadow:none}
+.cerrar:hover{color:var(--txt);background:rgba(255,255,255,.06)}
+.aviso{display:flex;gap:var(--sp-3);align-items:flex-start;padding:var(--sp-3) var(--sp-4);
+  border-radius:var(--r-3);background:rgba(226,177,83,.12);
+  border:var(--b-std) solid rgba(226,177,83,.30);color:var(--warn-ink);font-size:14px}
+.vacio{display:flex;flex-direction:column;align-items:center;gap:var(--sp-3);text-align:center;
+  padding:var(--sp-7) var(--sp-5);border-radius:var(--r-4);background:var(--sunken);
+  box-shadow:var(--hundido);border:var(--b-std) dashed var(--line-2);color:var(--dim)}
+.vacio .icono{width:44px;height:44px;border-radius:var(--r-3);display:flex;align-items:center;
+  justify-content:center;background:var(--surface-2);border:var(--b-std) solid var(--line);
+  box-shadow:var(--sh-1),var(--bisel);font-size:19px;color:var(--dim)}
+.toast{display:inline-flex;align-items:center;gap:var(--sp-2);padding:var(--sp-2) var(--sp-4);
+  border-radius:var(--r-pill);background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  border:var(--b-std) solid var(--line-2);box-shadow:var(--sh-2),var(--bisel);font-size:13px;color:var(--txt)}
+.punto{width:9px;height:9px;border-radius:50%;background:var(--dim-2);flex:0 0 9px}
+.punto.vivo{background:var(--ok);box-shadow:0 0 10px rgba(66,193,132,.8)}
+.punto.lento{background:var(--warn);animation:latido 1.2s var(--ease) infinite}
+@keyframes latido{0%{opacity:.4}50%{opacity:1}100%{opacity:.4}}
+
+/* ============ Panel de tokens (como la referencia) ============ */
+.tokens{position:sticky;top:86px;background:var(--surface);border:var(--b-std) solid var(--line);
+  border-radius:var(--r-4);padding:var(--sp-5);box-shadow:var(--sh-2),var(--bisel)}
+.tokens h3{margin:0 0 var(--sp-4);font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--dim-2)}
+.tokens h4{margin:var(--sp-5) 0 var(--sp-2);font-size:11px;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--dim-2);font-weight:700}
+.tokens h4:first-of-type{margin-top:0}
+.tokens dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:2px var(--sp-3);
+  font-size:13px;color:var(--dim)}
+.tokens dt{color:var(--dim-2);font-family:var(--mono);font-size:12px}
+.muestras{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-2)}
+.muestra{height:34px;flex:1 1 60px;border-radius:var(--r-2);background:var(--surface-2);
+  border:var(--b-std) solid var(--line);box-shadow:var(--sh-1),var(--bisel)}
+.muestra.r1{border-radius:var(--r-1)}.muestra.r2{border-radius:var(--r-2)}
+.muestra.r3{border-radius:var(--r-3)}.muestra.r4{border-radius:var(--r-4)}
+.muestra.e1{box-shadow:var(--sh-1)}.muestra.e2{box-shadow:var(--sh-2)}.muestra.e3{box-shadow:var(--sh-3)}
+.muestra.glow{background:linear-gradient(180deg,var(--acc-hi),var(--acc-deep));box-shadow:var(--halo)}
+.pie-pagina{color:var(--dim-2);font-size:13px;border-top:var(--b-std) solid var(--line);
+  margin-top:var(--sp-7);padding-top:var(--sp-4);max-width:90ch}
+.pie-pagina b{color:var(--txt)}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="marca"><span class="monograma">B2</span> Beruf — Test</div>
+  <div class="segmentado" role="group" aria-label="Perfil">
+    <button type="button" aria-pressed="true">Sergio</button>
+    <button type="button" aria-pressed="false">Диана</button>
+  </div>
+  <div class="segmentado" role="group" aria-label="Idioma">
+    <button type="button" aria-pressed="true">ES</button>
+    <button type="button" aria-pressed="false">RU</button>
+  </div>
+  <div class="hueco"></div>
+  <span style="color:var(--dim);font-size:13px;font-variant-numeric:tabular-nums">
+    57/358 respondidas · <b style="color:var(--txt)">53</b> correctas · 55 dudosas</span>
+  <button class="btn fantasma sm" type="button">Solo dudosas</button>
+  <button class="btn secundario sm" type="button">Mesa de examen</button>
+  <button class="btn fantasma sm" type="button">Configurar IA</button>
+  <button class="cerrar" type="button" aria-label="Modo noche">☾</button>
+</header>
+
+<div class="cascara">
+<div class="rejilla">
+
+<main>
+  <section class="bloque">
+    <h2>Vuestra pantalla, con este lenguaje</h2>
+    <p class="nota">Mismos componentes y mismo contenido que la app: índice, panel de anuncios, hoja de
+      preguntas con las letras a–h y bloque de corrección. Solo cambia el material: carbón, relieve suave
+      y azul con brillo.</p>
+
+    <div style="display:grid;grid-template-columns:290px minmax(0,1fr);gap:var(--sp-5);align-items:start">
+      <aside class="indice" aria-label="Índice">
+        <div class="grupo"><span>Lesen Teil 1</span><span class="cuenta">11</span></div>
+        <button type="button" aria-current="true">Variante 1 <span class="cuenta">5/5</span></button>
+        <button type="button">Variante 2 <span class="cuenta">4/5</span></button>
+        <button type="button">Variante 3 <span class="cuenta">5/5</span></button>
+        <div class="grupo"><span>Sprachbausteine Teil 1</span><span class="cuenta">12</span></div>
+        <button type="button">Übung 1 <span class="cuenta">6/6</span></button>
+        <div class="grupo"><span>Schreiben: Forumsbeitrag</span><span class="cuenta">98</span></div>
+        <button type="button">Homeoffice <span class="cuenta">—</span></button>
+      </aside>
+
+      <div class="pila">
+        <div class="tarjeta">
+          <span class="etiqueta">Anzeigen a–h · 3 asignadas</span>
+          <ul class="lista">
+            <li class="asignado"><b>a)</b> Auf ins Abenteuer! <span style="color:var(--ok-ink)">✓</span></li>
+            <li><b>b)</b> Deutsch-japanische Zusammenarbeit</li>
+            <li class="elegido"><b>c)</b> Job mit guten Zukunftssaussichten</li>
+            <li><b>d)</b> Nutzen Sie das Recht für sich!</li>
+            <li class="cogido"><b>e)</b> Umgangsformen im Berufsalltag · ya asignada al enunciado 1</li>
+            <li><b>f)</b> Souverän am Telefon</li>
+          </ul>
+        </div>
+
+        <div class="tarjeta">
+          <span class="etiqueta">Hoja de preguntas</span>
+          <p style="margin:0 0 var(--sp-3);font-size:17px;font-weight:640">
+            <span style="display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;
+              border-radius:var(--r-2);background:var(--sunken);box-shadow:var(--hundido);
+              font-family:var(--lectura);font-size:14px;margin-right:var(--sp-2)">1</span>
+            Moutasem fragt sich, wie er neue Kollegen korrekt ansprechen sollte.</p>
+          <div class="letras" role="radiogroup" aria-label="Enunciado 1">
+            <button class="letra mal" type="button" role="radio" aria-checked="true">a</button>
+            <button class="letra" type="button" role="radio" aria-checked="false">b</button>
+            <button class="letra" type="button" role="radio" aria-checked="false">c</button>
+            <button class="letra" type="button" role="radio" aria-checked="false">d</button>
+            <button class="letra bien" type="button" role="radio" aria-checked="false">e</button>
+            <button class="letra" type="button" role="radio" aria-checked="false">f</button>
+            <button class="letra cogida" type="button" role="radio" aria-checked="false">g</button>
+            <button class="letra" type="button" role="radio" aria-checked="false">h</button>
+          </div>
+          <p class="caption">c) Job mit guten Zukunftssaussichten. — Wer verschiedene Sprachen fliessend…</p>
+
+          <div class="correccion" style="margin-top:var(--sp-4)">
+            <div class="veredicto">✗ Incorrecto — la correcta es e
+              <span class="insignia alta">confianza: alta</span>
+              <span class="insignia acento">✓ 2ª lectura</span></div>
+            <div class="traduce">Elegiste a) Auf ins Abenteuer!. La correcta es e) Umgangsformen im Berufsalltag.</div>
+            <div class="cita">„Wie kleide ich mich richtig im Büro? Duzen oder siezen? Welche Themen sollten Sie im Smalltalk vermeiden?“</div>
+            <div class="explica">Moutasem duda de cómo dirigirse a colegas nuevos. El anuncio e trata exactamente las
+              formas de trato en el día a día laboral.</div>
+            <button class="btn fantasma sm" type="button" style="margin-top:var(--sp-3)">Borrar esta respuesta</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <h2>Botones</h2>
+    <p class="nota">Relleno con degradado muy corto, filo claro arriba, sombra fuera y halo azul al pasar.
+      Al pulsar, la pieza se hunde (escala 0.975) en vez de solo cambiar de color.</p>
+    <div class="tarjeta fila">
+      <button class="btn" type="button">Evaluar redacción</button>
+      <button class="btn secundario" type="button">Mesa de examen</button>
+      <button class="btn fantasma" type="button">Solo dudosas</button>
+      <button class="btn peligro" type="button">Borrar ejercicio</button>
+      <button class="btn" type="button" disabled>Deshabilitado</button>
+      <button class="btn cargando" type="button">Evaluando…</button>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <h2>Campos, foco y desplegable</h2>
+    <!-- Relleno de cortesía: el menú abierto flota y, sin este aire, taparía el
+         titular de la sección siguiente. -->
+    <div class="tarjeta pila" style="padding-bottom:140px"> 
+      <div class="fila" style="align-items:flex-start">
+        <div style="flex:1 1 260px">
+          <input class="campo" type="text" placeholder="Clave de API (sk-…)">
+          <span class="pie">En reposo: hueco hundido y borde sutil.</span>
+        </div>
+        <div style="flex:1 1 260px">
+          <input class="campo" type="text" value="clave guardada" style="border-color:rgba(106,164,255,.75);
+            box-shadow:var(--hundido),var(--halo)">
+          <span class="pie">Con foco: el borde se enciende y aparece el halo. Nunca solo color.</span>
+        </div>
+      </div>
+      <textarea class="campo area" placeholder="Sehr geehrte Frau Woller, …"></textarea>
+      <div class="desplegable">
+        <input class="campo" type="text" value="Variante 3 (test 140321)" aria-expanded="true">
+        <ul class="opciones">
+          <li>Variante 1</li>
+          <li aria-selected="true">Variante 3 (test 140321)</li>
+          <li>Variante 4</li>
+        </ul>
+        <span class="pie">Menú flotante: sombra profunda y bisel. Va en el mismo material oscuro, no en un
+          panel claro como en la referencia.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <h2>Las letras a–h, con todos sus estados</h2>
+    <p class="nota">Es la interacción firma de la app: ocho letras por enunciado. Aquí sí llevan relieve,
+      porque cada una es una pieza que se pulsa.</p>
+    <div class="tarjeta">
+      <div class="letras">
+        <button class="letra" type="button">a</button>
+        <button class="letra" type="button" style="border-color:rgba(106,164,255,.45);
+          box-shadow:var(--sh-2),var(--bisel),0 0 16px rgba(77,141,246,.25)">b</button>
+        <button class="letra" type="button" style="transform:scale(.94);box-shadow:var(--sh-1),var(--hundido)">c</button>
+        <button class="letra" type="button" aria-checked="true" role="radio">d</button>
+        <button class="letra bien" type="button">e</button>
+        <button class="letra mal" type="button">f</button>
+        <button class="letra cogida" type="button">g</button>
+        <button class="letra" type="button" style="outline:2px solid var(--acc-hi);outline-offset:2px">h</button>
+      </div>
+      <p class="caption">reposo · hover · pulsada · elegida (halo) · correcta · fallada · ya asignada · con foco</p>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <h2>Controles</h2>
+    <div class="tarjeta pila">
+      <div class="fila">
+        <label class="interruptor"><input type="checkbox" checked><span class="pista"></span> Modo noche</label>
+        <label class="interruptor"><input type="checkbox"><span class="pista"></span> Solo dudosas</label>
+        <span class="toast"><span class="punto vivo"></span> Sincronizado</span>
+        <span class="toast"><span class="punto lento"></span> Sincronizando…</span>
+      </div>
+      <div>
+        <span class="etiqueta">Progreso de la variante</span>
+        <div class="progreso"><i></i></div>
+      </div>
+      <div>
+        <span class="etiqueta">Deslizador (densidad de lectura)</span>
+        <div class="deslizador"><span class="carril"></span><span class="relleno"></span><span class="mando"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bloque">
+    <h2>Modal, aviso y estado vacío</h2>
+    <div class="tarjeta pila">
+      <div class="aviso"><span>⚠</span><span>El original no trae la transcripción de esta variante: se queda
+        fuera antes que ofrecerla mal.</span></div>
+      <div class="velo">
+        <div class="modal" role="dialog" aria-label="Configurar IA">
+          <header><h3>Configurar IA</h3><button class="cerrar" type="button" aria-label="Cerrar">✕</button></header>
+          <div class="cuerpo">
+            <div><span class="etiqueta">Proveedor</span><input class="campo" type="text" value="DeepSeek"></div>
+            <div><span class="etiqueta">Clave de API</span><input class="campo" type="text" placeholder="sk-…">
+              <span class="pie">Se guarda solo en este navegador y viaja directa al proveedor.</span></div>
+          </div>
+          <footer><button class="btn fantasma sm" type="button">Cancelar</button>
+            <button class="btn sm" type="button">Probar conexión</button></footer>
+        </div>
+      </div>
+      <div class="vacio">
+        <span class="icono">▤</span>
+        <span>Diana todavía no ha escrito su redacción.</span>
+        <span class="pie">Cuando la envíe aparecerá aquí, y podrás compararla con la tuya.</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<aside class="tokens">
+  <h3>Tokens</h3>
+  <h4>Radios</h4>
+  <dl><dt>--r-1</dt><dd>4 px · insignias</dd><dt>--r-2</dt><dd>8 px · letras, campos</dd>
+      <dt>--r-3</dt><dd>12 px · corrección</dd><dt>--r-4</dt><dd>18 px · tarjetas</dd></dl>
+  <div class="muestras"><span class="muestra r1"></span><span class="muestra r2"></span>
+    <span class="muestra r3"></span><span class="muestra r4"></span></div>
+  <h4>Grosor de borde</h4>
+  <dl><dt>--b-sutil</dt><dd>0.5 px · separadores</dd><dt>--b-std</dt><dd>1 px · estándar</dd>
+      <dt>--b-fuerte</dt><dd>1.5 px · filete de cita</dd></dl>
+  <h4>Elevación</h4>
+  <dl><dt>--sh-1</dt><dd>apoyado</dd><dt>--sh-2</dt><dd>tarjeta</dd><dt>--sh-3</dt><dd>modal</dd>
+      <dt>--bisel</dt><dd>filo claro arriba</dd><dt>--hundido</dt><dd>hueco (campos)</dd>
+      <dt>--halo</dt><dd>azul, solo al foco y a lo elegido</dd></dl>
+  <div class="muestras"><span class="muestra e1"></span><span class="muestra e2"></span>
+    <span class="muestra e3"></span><span class="muestra glow"></span></div>
+  <h4>Espaciado</h4>
+  <dl><dt>--sp-1…7</dt><dd>4 · 8 · 12 · 16 · 24 · 32 · 48</dd></dl>
+  <h4>Color</h4>
+  <dl><dt>--bg</dt><dd>#25262a</dd><dt>--surface</dt><dd>#313239</dd>
+      <dt>--acc</dt><dd>#4d8df6</dd><dt>--on-acc</dt><dd>#0b1526 · 5.5:1 sobre el azul</dd>
+      <dt>--txt</dt><dd>#e9eaee · 10.6:1</dd>
+      <dt>--dim</dt><dd>#b3b5bd · 6.2:1</dd><dt>--dim-2</dt><dd>#9ea0a8 · 4.9:1</dd></dl>
+</aside>
+
+</div>
+
+<p class="pie-pagina">
+  <b>Dónde me he separado de la referencia, y por qué.</b> Uno: el menú desplegable y el texto secundario no
+  son claros sobre oscuro; los grises apagados de la imagen no llegan a 4.5:1 y aquí el texto es largo y en
+  alemán. Dos: el estado deshabilitado conserva borde y sube a 3:1, porque quitándole el relieve y el
+  contraste deja de leerse que existe. Tres: el brillo azul se queda en el foco y en lo elegido, nunca
+  detrás de un párrafo. Cuatro: el bisel de dentro (filo claro arriba, oscuro abajo) y la sombra de fuera
+  hacen dos trabajos distintos —material y altura—, no son dos adornos superpuestos. Cinco: el fondo oscuro
+  con luz cenital es un solo degradado; la referencia no usa texturas y yo tampoco.
+</p>
+</div>
+</body>
+</html>
