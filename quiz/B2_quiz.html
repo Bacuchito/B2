@@ -1591,6 +1591,9 @@ function pushSchreibenToFirestore(taskId, text, evalResult) {
     .collection("schreiben").doc(taskId)
     .set(updateData, { merge: true })
     .then(() => {
+      /* Solo cuenta como enviado si la nube lo aceptó. Es lo que después permite
+         saber si el borrador local tiene algo sin enviar. */
+      if (text !== undefined) { setPushed(taskId, text); saveState(); }
       fbSyncStatus = "online";
       updateCloudStatusUI();
     })
@@ -1621,7 +1624,7 @@ function progKey(id){ return currentUser + "::" + id; }
    estaba abierto. Lo mismo con los ficheros de progreso exportados entonces. */
 function migrarClavesDeProgreso(s, dueno){
   const destinatario = (dueno === "sergio" || dueno === "diana") ? dueno : currentUser;
-  ["schreiben_drafts", "schreiben_evals", "schreiben_lps"].forEach((campo)=>{
+  ["schreiben_drafts", "schreiben_evals", "schreiben_lps", "schreiben_pushed"].forEach((campo)=>{
     const mapa = s && s[campo];
     if(!mapa) return;
     Object.keys(mapa).forEach((k)=>{
@@ -1646,6 +1649,11 @@ function setLp(id, idx, valor){
   if(!state.schreiben_lps[progKey(id)]) state.schreiben_lps[progKey(id)] = {};
   state.schreiben_lps[progKey(id)][idx] = valor;
 }
+/* Último texto que este navegador envió a la nube para esa tarea. Sin registro
+   devuelve undefined; con la cadena vacía significa que aquí se borró a propósito.
+   Sirve para saber si el borrador local tiene algo sin enviar. */
+function getPushed(id){ return state.schreiben_pushed ? state.schreiben_pushed[progKey(id)] : undefined; }
+function setPushed(id, txt){ if(!state.schreiben_pushed) state.schreiben_pushed = {}; state.schreiben_pushed[progKey(id)] = txt; }
 
 function loadState(){
   try {
@@ -1654,9 +1662,10 @@ function loadState(){
     if (!s.schreiben_drafts) s.schreiben_drafts = {};
     if (!s.schreiben_evals) s.schreiben_evals = {};
     if (!s.schreiben_lps) s.schreiben_lps = {};
+    if (!s.schreiben_pushed) s.schreiben_pushed = {};
     return s;
   }
-  catch(e){ return {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}}; }
+  catch(e){ return {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}, schreiben_pushed:{}}; }
 }
 function saveState(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
 let state = loadState();
@@ -1699,7 +1708,8 @@ function aplicarProgreso(prog, dueno){
     answers: prog.answers || {},
     schreiben_drafts: prog.schreiben_drafts || {},
     schreiben_evals: prog.schreiben_evals || {},
-    schreiben_lps: prog.schreiben_lps || {}
+    schreiben_lps: prog.schreiben_lps || {},
+    schreiben_pushed: prog.schreiben_pushed || {}
   };
   /* Un fichero exportado antes de existir la clave con perfil trae la clave
      antigua. Se asigna al perfil que lo exportó (datos.usuario), no al que
@@ -2198,18 +2208,37 @@ function renderPartnerSchreibenView(container, v, data){
   }
 }
 
-/* Trae tu lado desde la nube cuando este navegador no lo tiene. Abrir la app en
-   otro dispositivo debe devolverte tu redacción y tu evaluación. Solo rellena un
-   hueco vacío: si ya tienes texto local, no lo toca. */
+/* Trae tu lado desde la nube cuando este navegador no lo tiene, y refresca una
+   copia local que se quedó vieja. Nunca pisa ediciones sin enviar.
+
+   Las tres reglas, en orden:
+     1. Editor vacío y la nube con texto: se rellena. Si aquí se borró a propósito
+        (`enviado` es la cadena vacía), no: acabas de vaciarlo tú.
+     2. Editor igual a lo último que se envió (nada sin enviar) y la nube dice otra
+        cosa: manda la nube. Sin esto, una copia vieja se sube encima de una nueva
+        en cuanto tocas una tecla.
+     3. Editor distinto de lo último enviado: hay ediciones sin enviar. No se toca. */
 function hidratarMiLadoDesdeNube(v, datos, textarea, contenedor, badge){
   if(!datos) return;
   const textoNube = datos[currentUser + "_text"] || "";
-  if(textoNube && !getDraft(v.id) && !String(textarea.value || "").trim()){
-    setDraft(v.id, textoNube);
-    textarea.value = textoNube;
-    updateWordBadge(badge, countWords(textoNube));
+  const local = getDraft(v.id);
+  const enviado = getPushed(v.id);            // undefined = nunca se envió desde aquí
+
+  const ponerEnEditor = (txt)=>{
+    setDraft(v.id, txt);
+    textarea.value = txt;
+    updateWordBadge(badge, countWords(txt));
+    saveState();
+  };
+
+  if(!local && !String(textarea.value || "").trim() && textoNube && enviado !== ""){
+    ponerEnEditor(textoNube);
+  } else if(local && local === enviado && textoNube && textoNube !== local){
+    ponerEnEditor(textoNube);
+    setPushed(v.id, textoNube);               // ya no hay nada sin enviar
     saveState();
   }
+
   const evalNube = datos[currentUser + "_eval"];
   if(evalNube && !getEval(v.id)){
     setEval(v.id, evalNube);

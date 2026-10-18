@@ -10,6 +10,7 @@
      S3  un borrador escrito sin conexión se sube al abrir la tarea
      S9  el borrador es de cada perfil: cambiar de perfil no mezcla el trabajo
      S10 la nube devuelve tu redacción y tu evaluación si el navegador no las tiene
+     S11 una copia local vieja se refresca con la de la nube, sin pisar ediciones sin enviar
    Uso: node quiz/security_test.js quiz/B2_quiz.html
 */
 const fs = require("fs");
@@ -451,6 +452,56 @@ const check = (nombre, cond, detalle) => checks.push({ nombre, ok: !!cond, detal
   check("con borrador local, la nube no lo pisa",
     !!ta2 && String(ta2.value || "") === "Mi texto local",
     "editor: " + JSON.stringify(String((ta2 && ta2.value) || "")));
+}
+
+/* S11 · una copia local vieja no puede subirse encima de una nube más nueva */
+{
+  const h = montar("?user=sergio&room=sala-prueba",
+    { "b2quiz.v1": JSON.stringify({
+        answers: {},
+        schreiben_drafts: { "sergio::schr-b-p66": "version 1" },
+        schreiben_pushed: { "sergio::schr-b-p66": "version 1" }
+      }) }, true, false);
+  abrirSchreiben(h.registro);
+  h.empujarSnapshot({ sergio_text: "version 2 escrita en otro navegador" });
+  const ta = buscar(h.registro["main"], e => e.tagName === "textarea");
+  check("una copia local sin nada sin enviar se refresca con la de la nube",
+    !!ta && String(ta.value || "") === "version 2 escrita en otro navegador",
+    "editor: " + JSON.stringify(String((ta && ta.value) || "")));
+  check("lo refrescado no se devuelve a la nube (sin eco)",
+    h.escritos.length === 0, "escrituras: " + JSON.stringify(h.escritos).slice(0, 90));
+}
+
+/* S12 · con ediciones sin enviar, la nube no se impone */
+{
+  const h = montar("?user=sergio&room=sala-prueba",
+    { "b2quiz.v1": JSON.stringify({
+        answers: {},
+        schreiben_drafts: { "sergio::schr-b-p66": "version 2 local sin enviar" },
+        schreiben_pushed: { "sergio::schr-b-p66": "version 1" }
+      }) }, true, false);
+  abrirSchreiben(h.registro);
+  h.empujarSnapshot({ sergio_text: "version 1 de la nube" });
+  const ta = buscar(h.registro["main"], e => e.tagName === "textarea");
+  check("con ediciones sin enviar, la nube no pisa el borrador local",
+    !!ta && String(ta.value || "") === "version 2 local sin enviar",
+    "editor: " + JSON.stringify(String((ta && ta.value) || "")));
+}
+
+/* S13 · vaciar el texto a propósito no se rellena solo */
+{
+  const h = montar("?user=sergio&room=sala-prueba",
+    { "b2quiz.v1": JSON.stringify({
+        answers: {},
+        schreiben_drafts: {},
+        schreiben_pushed: { "sergio::schr-b-p66": "" }
+      }) }, true, false);
+  abrirSchreiben(h.registro);
+  h.empujarSnapshot({ sergio_text: "texto que se acaba de borrar" });
+  const ta = buscar(h.registro["main"], e => e.tagName === "textarea");
+  check("un texto vaciado a propósito no se rellena solo desde la nube",
+    !!ta && String(ta.value || "") === "",
+    "editor: " + JSON.stringify(String((ta && ta.value) || "")));
 }
 
 /* ---------- informe ---------- */

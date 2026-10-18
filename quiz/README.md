@@ -141,7 +141,10 @@ dos idiomas.
   asigna al perfil que estuviera abierto en ese momento.
 - **Abrir la app en otro navegador recupera tu lado desde la nube.** Si este navegador
   no tiene tu borrador ni tu evaluación y la sala sí los tiene, la app los trae y los
-  pinta. Solo rellena lo que está vacío: nunca pisa un texto que ya tengas en local.
+  pinta. Además refresca una copia local que se quedó vieja: si no tienes nada sin
+  enviar y la nube dice otra cosa, manda la nube. Lo que **nunca** ocurre es perder
+  ediciones sin enviar: mientras el borrador local no coincida con lo último que se
+  envió, la nube no lo toca. Un texto vaciado a propósito tampoco se rellena solo.
 - **La sala es el único secreto.** Al abrir la app por primera vez se genera un
   identificador aleatorio (`b2-…`) y se guarda en el navegador; el fichero `index.html`
   de la raíz permite compartir el enlace corto `…/<repo>/?user=diana&room=b2-…`.
