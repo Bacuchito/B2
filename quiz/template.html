@@ -929,7 +929,7 @@ const I18N = {
     perfectTextNotice: "<b>✓ ¡Texto impecable!</b> No se detectaron errores gramaticales ni ortográficos.",
     popoverCorrectionNum: "Corrección #{num}",
     popoverClickTitle: "Clic para ver explicación detallada",
-    gradeLabel: "Nota: {grade} ({score}/25)",
+    gradeLabel: "Nota: {grade} ({score}/{max})",
     leitpunkteCheckHeader: "Tratamiento de Leitpunkte:",
     errorsBreakdownTitle: "⚠ Desglose detallado de errores y reglas gramaticales ({count}):",
     locateInText: "🔍 Ubicar en el texto",
@@ -1142,7 +1142,7 @@ const I18N = {
     perfectTextNotice: "<b>✓ Безупречный текст!</b> Грамматических и орфографических ошибок не обнаружено.",
     popoverCorrectionNum: "Исправление #{num}",
     popoverClickTitle: "Нажмите для подробного объяснения",
-    gradeLabel: "Оценка: {grade} ({score}/25)",
+    gradeLabel: "Оценка: {grade} ({score}/{max})",
     leitpunkteCheckHeader: "Отражение пунктов плана (Leitpunkte):",
     errorsBreakdownTitle: "⚠ Подробный разбор ошибок и грамматических правил ({count}):",
     locateInText: "🔍 Найти в тексте",
@@ -3176,7 +3176,7 @@ function renderEvaluationResult(v, rawRes){
     const gradeColor = cData.grade === "A" ? "hoch" : (cData.grade === "B" ? "ok" : (cData.grade === "C" ? "mittel" : "niedrig"));
     box.innerHTML = '<div class="ch">' +
                     '<span>' + esc(cn.title) + '</span>' +
-                    '<span class="badge ' + gradeColor + '">' + t("gradeLabel", {grade: esc(cData.grade || "-"), score: (cData.score != null ? cData.score : '-')}) + '</span>' +
+                    '<span class="badge ' + gradeColor + '">' + t("gradeLabel", {grade: esc(cData.grade || "-"), score: (cData.score != null ? cData.score : '-'), max: (RUBRICA.max[cn.key] || 22)}) + '</span>' +
                     '</div>' +
                     '<div class="c-body">' + esc(cData.feedback || "") + '</div>';
 

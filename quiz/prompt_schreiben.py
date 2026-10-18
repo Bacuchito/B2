@@ -52,6 +52,17 @@ die Schreibaufgabe gibt Kriterium I 14 Punkte und jedem der Kriterien II-IV 9 Pu
      Entscheidung treffen«, »in Kenntnis setzen«).
    - Varianz der Formulierungen und der Satzstrukturen.
 
+### WO C AUFHÖRT UND D ANFÄNGT (hier wird zu leicht zu streng bewertet):
+Die Stufe D heißt »unter B1«, NICHT »viele Fehler«. Vergib D nur, wenn eine dieser
+Bedingungen wirklich zutrifft:
+- Kriterium I: die Aufgabe ist verfehlt oder der Text geht am Thema vorbei.
+- Kriterium II: der Text ist nicht als zusammenhängender Text erkennbar.
+- Kriterium III: durchgehend elementare Strukturen (A2) falsch, oder die
+  Rechtschreibung ist überwiegend phonetisch, oder der Text ist kaum verständlich.
+- Kriterium IV: nur einzelne Alltagsausdrücke, kein Berufswortschatz.
+Häufige, aber verständliche Fehler bei erkennbarer B2-Struktur sind C, nicht D. Ein
+Text, den man trotz der Fehler mühelos versteht, ist mindestens C.
+
 ### STUFEN UND PUNKTE (genau diese Zahlen verwenden):
 | Kriterium               | A (B2 gut) | B (B2) | C (B1) | D (unter B1) |
 |-------------------------|------------|--------|--------|--------------|
