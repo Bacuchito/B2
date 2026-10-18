@@ -34,6 +34,8 @@
   --acc:#4d8df6;
   --acc-hi:#6aa4ff;
   --acc-deep:#2f6ede;
+  --acc-ink:#8ab4ff;                        /* 6.1:1 sobre --surface */
+  --acc-grad:linear-gradient(180deg,var(--acc-hi),var(--acc));
   --on-acc:#0b1526;
   --glow:rgba(77,141,246,.45);
 
@@ -47,6 +49,8 @@
   --line-2:rgba(255,255,255,.14);
   --bisel-alto:rgba(255,255,255,.10);
   --bisel-bajo:rgba(0,0,0,.40);
+  --scroll:rgba(255,255,255,.14);
+  --mando-grad:linear-gradient(180deg,#5a5c66,#3c3d45);
 
   /* ---- Grosores de borde (de la referencia: 0.5 / 1 / 1.5) ---- */
   --b-sutil:.5px; --b-std:1px; --b-fuerte:1.5px;
@@ -61,7 +65,7 @@
   --sh-3:0 4px 8px rgba(0,0,0,.45),0 24px 48px -14px rgba(0,0,0,.68);
   --bisel:inset 0 1px 0 var(--bisel-alto),inset 0 -1px 0 var(--bisel-bajo);
   --hundido:inset 0 2px 5px rgba(0,0,0,.45),inset 0 -1px 0 rgba(255,255,255,.04);
-  --halo:0 0 0 1px rgba(106,164,255,.45),0 6px 16px -4px var(--glow),0 0 26px rgba(77,141,246,.30);
+  --halo:0 0 0 1px rgba(106,164,255,.45),0 6px 16px -4px var(--glow),0 8px 26px -8px rgba(77,141,246,.30);
 
   /* ---- Escala de espaciado de la referencia: 4 a 48 ---- */
   --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px; --sp-5:24px; --sp-6:32px; --sp-7:48px;
@@ -75,6 +79,57 @@
   --muelle:cubic-bezier(.16,1,.3,1);
 }
 
+/* ============================================================================
+   MODO CLARO: la MISMA lengua de piezas, con los valores al revés.
+   Dos cosas cambian de física, y conviene saberlas:
+
+   1. En oscuro la jerarquía la lleva el filo claro de arriba, porque una sombra
+      negra sobre carbón casi no se ve. En claro la lleva el borde y la sombra
+      corta, porque un filo blanco sobre blanco tampoco se ve. Por eso aquí el
+      borde pesa más y la sombra es más corta y más tenue.
+   2. La tinta del botón se da la vuelta: en oscuro el azul es brillante y la
+      tinta va oscura (5.6-7.3:1); en claro el azul se hunde y la tinta va
+      blanca (4.8:1). El blanco sobre el azul brillante no llega a 4.5:1 en
+      ninguno de los dos mundos: por eso el azul no es el mismo en cada tema.
+   ============================================================================ */
+[data-theme="claro"]{
+  --bg:#e6e7ea;
+  --bg-luz:#f8f9fb;
+  --surface:#f3f4f6;
+  --surface-2:#fcfcfd;
+  --sunken:#e3e4e8;
+  --scrim:rgba(24,26,32,.45);
+
+  --txt:#1c1d21;                            /* 16.3:1 sobre --surface */
+  --dim:#4f5259;                            /* 7.0:1 */
+  --dim-2:#686b73;                          /* 4.8:1 */
+
+  --acc:#2f6ede;
+  --acc-hi:#4d8df6;
+  --acc-deep:#2457b6;
+  --acc-ink:#2457b6;                        /* 6.1:1 sobre --surface */
+  --acc-grad:linear-gradient(180deg,var(--acc),var(--acc-deep));
+  --on-acc:#f7fbff;
+  --glow:rgba(47,110,222,.28);
+
+  --ok:#25795a;   --ok-ink:#1c6047;
+  --bad:#b23b32;  --bad-ink:#8f2f27;
+  --warn:#8a6414; --warn-ink:#6e5110;
+
+  --line:rgba(20,22,28,.10);
+  --line-2:rgba(20,22,28,.20);
+  --bisel-alto:rgba(255,255,255,.90);
+  --bisel-bajo:rgba(20,22,28,.06);
+  --scroll:rgba(20,22,28,.26);
+  --mando-grad:linear-gradient(180deg,#ffffff,#dcdee3);
+
+  --sh-1:0 1px 2px rgba(24,26,32,.10),0 2px 6px rgba(24,26,32,.08);
+  --sh-2:0 2px 4px rgba(24,26,32,.10),0 10px 22px -8px rgba(24,26,32,.18);
+  --sh-3:0 4px 10px rgba(24,26,32,.12),0 26px 52px -16px rgba(24,26,32,.24);
+  --hundido:inset 0 2px 4px rgba(20,22,28,.12),inset 0 -1px 0 rgba(255,255,255,.70);
+  --halo:0 0 0 1px rgba(47,110,222,.45),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
+}
+
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--fuente);
@@ -86,19 +141,19 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 ::selection{background:rgba(77,141,246,.35)}
 :focus-visible{outline:2px solid var(--acc-hi);outline-offset:2px;border-radius:var(--r-1)}
 ::-webkit-scrollbar{width:10px;height:10px}
-::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:var(--r-pill);
+::-webkit-scrollbar-thumb{background:var(--scroll);border-radius:var(--r-pill);
   border:3px solid transparent;background-clip:content-box}
 
 /* ============ Estructura del prototipo ============ */
 .cascara{position:relative;z-index:1;max-width:1560px;margin:0 auto;padding:0 var(--sp-5) var(--sp-7)}
 .barra{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:var(--sp-3);
   flex-wrap:wrap;padding:var(--sp-3) var(--sp-5);
-  background:linear-gradient(180deg,rgba(48,50,57,.96),rgba(41,42,48,.92));
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));
   border-bottom:var(--b-std) solid var(--line);
   box-shadow:var(--sh-2),var(--bisel)}
 .marca{display:flex;align-items:center;gap:var(--sp-2);font-weight:700;font-size:17px;letter-spacing:-.01em}
 .monograma{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
-  border-radius:var(--r-2);background:linear-gradient(180deg,var(--acc-hi),var(--acc-deep));
+  border-radius:var(--r-2);background:var(--acc-grad);
   color:var(--on-acc);font-size:13px;font-weight:800;letter-spacing:.02em;
   box-shadow:var(--sh-1),var(--bisel),0 0 18px rgba(77,141,246,.35)}
 .hueco{flex:1}
@@ -125,7 +180,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);
   min-height:40px;padding:0 var(--sp-5);border-radius:var(--r-pill);cursor:pointer;
   font-family:inherit;font-size:15px;font-weight:640;color:var(--on-acc);
-  background:linear-gradient(180deg,var(--acc-hi),var(--acc));
+  background:var(--acc-grad);
   border:var(--b-std) solid rgba(255,255,255,.22);
   box-shadow:var(--sh-2),var(--bisel),0 0 20px rgba(77,141,246,.22);
   transition:transform var(--dur-1) var(--muelle),box-shadow var(--dur-2) var(--ease),
@@ -133,11 +188,11 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .btn:hover{filter:brightness(1.06);box-shadow:var(--sh-2),var(--bisel),var(--halo)}
 .btn:active{transform:scale(.975);box-shadow:var(--sh-1),var(--bisel)}
 .btn.secundario{background:linear-gradient(180deg,var(--surface-2),var(--surface));
-  color:var(--txt);border-color:var(--line-2);box-shadow:var(--sh-1),var(--bisel),0 0 0 rgba(0,0,0,0)}
+  color:var(--txt);border-color:var(--line-2);box-shadow:var(--sh-1),var(--bisel)}
 .btn.secundario:hover{color:#fff;box-shadow:var(--sh-2),var(--bisel)}
 .btn.fantasma{background:transparent;border-color:transparent;color:var(--dim);
   box-shadow:none;padding:0 var(--sp-3)}
-.btn.fantasma:hover{color:var(--txt);background:rgba(255,255,255,.05)}
+.btn.fantasma:hover{color:var(--txt);background:var(--tint-neutral)}
 /* Rojo oscurecido a proposito: con el rojo vivo de la referencia, la tinta clara
    se quedaba en 3.4:1. */
 .btn.peligro{background:linear-gradient(180deg,#c4453b,#a03a31);border-color:rgba(255,255,255,.16);
@@ -169,7 +224,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   box-shadow:var(--hundido);border:var(--b-std) solid var(--line);position:relative;
   transition:background var(--dur-3) var(--ease),box-shadow var(--dur-3) var(--ease)}
 .pista::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;
-  border-radius:50%;background:linear-gradient(180deg,#5a5c66,#3c3d45);
+  border-radius:50%;background:var(--mando-grad);
   box-shadow:var(--sh-1),var(--bisel);transition:transform var(--dur-3) var(--muelle),background var(--dur-3) var(--ease)}
 .interruptor input:checked + .pista{background:linear-gradient(180deg,var(--acc-hi),var(--acc-deep));
   box-shadow:var(--sh-1),0 0 18px rgba(77,141,246,.45)}
@@ -191,7 +246,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   box-shadow:var(--sh-3),var(--bisel);padding:var(--sp-1);margin:0;list-style:none}
 .opciones li{padding:var(--sp-2) var(--sp-3);border-radius:var(--r-2);font-size:14px;color:var(--dim);
   transition:background var(--dur-1) var(--ease),color var(--dur-1) var(--ease)}
-.opciones li:hover,.opciones li[aria-selected="true"]{background:rgba(255,255,255,.06);color:var(--txt)}
+.opciones li:hover,.opciones li[aria-selected="true"]{background:var(--tint-neutral);color:var(--txt)}
 
 /* ============ Barra de progreso y deslizador ============ */
 .progreso{height:8px;border-radius:var(--r-pill);background:var(--sunken);
@@ -221,7 +276,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background:transparent;color:var(--dim);font:inherit;font-size:14px;text-align:left;cursor:pointer;
   transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
              box-shadow var(--dur-2) var(--ease),transform var(--dur-1) var(--muelle)}
-.indice button:hover{background:rgba(255,255,255,.05);color:var(--txt)}
+.indice button:hover{background:var(--tint-neutral);color:var(--txt)}
 .indice button:active{transform:scale(.99)}
 /* Activo: relieve hundido + filo azul. No es una caja más: es una pieza pulsada. */
 .indice button[aria-current="true"]{color:var(--txt);font-weight:640;background:var(--sunken);
@@ -234,7 +289,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   border:var(--b-std) solid transparent;transition:background var(--dur-2) var(--ease),
   box-shadow var(--dur-2) var(--ease),color var(--dur-2) var(--ease)}
 .lista li b{color:var(--txt);font-weight:640;margin-right:var(--sp-2)}
-.lista li:hover{background:rgba(255,255,255,.05);color:var(--txt)}
+.lista li:hover{background:var(--tint-neutral);color:var(--txt)}
 .lista li.asignado{background:rgba(77,141,246,.12);border-color:rgba(106,164,255,.35);color:var(--txt);
   box-shadow:var(--sh-1)}
 .lista li.elegido{background:var(--surface-2);border-color:var(--line-2);color:var(--txt);
@@ -253,7 +308,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .letra:hover{border-color:rgba(106,164,255,.45);
   box-shadow:var(--sh-2),var(--bisel),0 0 16px rgba(77,141,246,.25)}
 .letra:active{transform:scale(.94);box-shadow:var(--sh-1),var(--hundido)}
-.letra[aria-checked="true"]{background:linear-gradient(180deg,var(--acc-hi),var(--acc));
+.letra[aria-checked="true"]{background:var(--acc-grad);
   color:var(--on-acc);border-color:rgba(255,255,255,.35);box-shadow:var(--sh-2),var(--bisel),var(--halo)}
 .letra.cogida{color:var(--dim-2);background:var(--sunken);border-style:dashed;box-shadow:var(--hundido)}
 /* Correcta y fallada: relleno solido y oscuro, para que la letra clara pase 4.5:1
@@ -274,10 +329,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .veredicto{display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap;font-weight:640;
   margin-bottom:var(--sp-2)}
 .insignia{font-size:11px;font-weight:700;padding:3px var(--sp-2);border-radius:var(--r-1);
-  background:rgba(255,255,255,.08);color:var(--dim);border:var(--b-sutil) solid var(--line-2)}
+  background:var(--tint-neutral);color:var(--dim);border:var(--b-sutil) solid var(--line-2)}
 .insignia.alta{color:var(--ok-ink);background:rgba(66,193,132,.14);border-color:rgba(66,193,132,.35)}
 .insignia.media{color:var(--warn-ink);background:rgba(226,177,83,.14);border-color:rgba(226,177,83,.35)}
-.insignia.acento{color:var(--acc-hi);background:rgba(77,141,246,.14);border-color:rgba(106,164,255,.35)}
+.insignia.acento{color:var(--acc-ink);background:rgba(77,141,246,.14);border-color:rgba(106,164,255,.35)}
 .cita{font-family:var(--lectura);font-size:15px;color:var(--dim);
   border-left:var(--b-fuerte) solid var(--acc);padding:var(--sp-1) 0 var(--sp-1) var(--sp-3);
   margin:var(--sp-3) 0;max-width:68ch}
@@ -294,10 +349,10 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .modal header h3{margin:0;font-size:17px}
 .modal .cuerpo{padding:var(--sp-5);display:flex;flex-direction:column;gap:var(--sp-4)}
 .modal footer{display:flex;justify-content:flex-end;gap:var(--sp-3);padding:var(--sp-4) var(--sp-5);
-  border-top:var(--b-std) solid var(--line);background:rgba(0,0,0,.14)}
+  border-top:var(--b-std) solid var(--line);background:var(--sunken)}
 .cerrar{width:32px;height:32px;border-radius:var(--r-2);border:0;background:transparent;
   color:var(--dim);font:inherit;font-size:17px;cursor:pointer;box-shadow:none}
-.cerrar:hover{color:var(--txt);background:rgba(255,255,255,.06)}
+.cerrar:hover{color:var(--txt);background:var(--tint-neutral)}
 .aviso{display:flex;gap:var(--sp-3);align-items:flex-start;padding:var(--sp-3) var(--sp-4);
   border-radius:var(--r-3);background:rgba(226,177,83,.12);
   border:var(--b-std) solid rgba(226,177,83,.30);color:var(--warn-ink);font-size:14px}
@@ -350,13 +405,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
     <button type="button" aria-pressed="true">ES</button>
     <button type="button" aria-pressed="false">RU</button>
   </div>
+  <div class="segmentado" role="group" aria-label="Tema">
+    <button type="button" id="tema-oscuro" aria-pressed="true">Oscuro</button>
+    <button type="button" id="tema-claro" aria-pressed="false">Claro</button>
+  </div>
   <div class="hueco"></div>
   <span style="color:var(--dim);font-size:13px;font-variant-numeric:tabular-nums">
     57/358 respondidas · <b style="color:var(--txt)">53</b> correctas · 55 dudosas</span>
   <button class="btn fantasma sm" type="button">Solo dudosas</button>
   <button class="btn secundario sm" type="button">Mesa de examen</button>
   <button class="btn fantasma sm" type="button">Configurar IA</button>
-  <button class="cerrar" type="button" aria-label="Modo noche">☾</button>
 </header>
 
 <div class="cascara">
@@ -539,7 +597,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 </main>
 
 <aside class="tokens">
-  <h3>Tokens</h3>
+  <h3>Tokens · oscuro / claro</h3>
   <h4>Radios</h4>
   <dl><dt>--r-1</dt><dd>4 px · insignias</dd><dt>--r-2</dt><dd>8 px · letras, campos</dd>
       <dt>--r-3</dt><dd>12 px · corrección</dd><dt>--r-4</dt><dd>18 px · tarjetas</dd></dl>
@@ -557,10 +615,16 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   <h4>Espaciado</h4>
   <dl><dt>--sp-1…7</dt><dd>4 · 8 · 12 · 16 · 24 · 32 · 48</dd></dl>
   <h4>Color</h4>
-  <dl><dt>--bg</dt><dd>#25262a</dd><dt>--surface</dt><dd>#313239</dd>
-      <dt>--acc</dt><dd>#4d8df6</dd><dt>--on-acc</dt><dd>#0b1526 · 5.5:1 sobre el azul</dd>
-      <dt>--txt</dt><dd>#e9eaee · 10.6:1</dd>
-      <dt>--dim</dt><dd>#b3b5bd · 6.2:1</dd><dt>--dim-2</dt><dd>#9ea0a8 · 4.9:1</dd></dl>
+  <dl><dt>--bg</dt><dd>#25262a / #e6e7ea</dd>
+      <dt>--surface</dt><dd>#313239 / #f3f4f6</dd>
+      <dt>--acc</dt><dd>#4d8df6 / #2f6ede</dd>
+      <dt>--on-acc</dt><dd>#0b1526 · 5.6:1 / #f7fbff · 4.6:1</dd>
+      <dt>--txt</dt><dd>#e9eaee · 10.6:1 / #1c1d21 · 15.3:1</dd>
+      <dt>--dim</dt><dd>#b3b5bd · 6.2:1 / #4f5259 · 7.1:1</dd>
+      <dt>--dim-2</dt><dd>#9ea0a8 · 4.9:1 / #686b73 · 4.8:1</dd></dl>
+  <p class="caption" style="margin-top:8px">El azul no es el mismo en cada tema, y
+    es a propósito: la tinta que lo acompaña cambia de color, así que el relleno
+    tiene que cambiar con ella para que la tinta siga pasando 4.5:1.</p>
 </aside>
 
 </div>
@@ -574,6 +638,37 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   hacen dos trabajos distintos —material y altura—, no son dos adornos superpuestos. Cinco: el fondo oscuro
   con luz cenital es un solo degradado; la referencia no usa texturas y yo tampoco.
 </p>
+
+<p class="pie-pagina">
+  <b>Los dos temas, y qué cambia entre ellos.</b> En <b>oscuro</b> la altura la
+  cuenta el <b>filo claro</b> de arriba: una sombra negra sobre carbón apenas se
+  ve, así que la jerarquía la llevan el bisel y el tono de la superficie. En
+  <b>claro</b> pasa lo contrario: un filo blanco sobre blanco tampoco se ve, así
+  que la jerarquía la llevan el <b>borde</b> y la sombra corta. La otra diferencia
+  es la tinta del botón: en oscuro el azul es brillante y la tinta va oscura
+  (5.6-7.3:1); en claro el azul se hunde y la tinta va blanca (4.6:1 en el
+  extremo claro del degradado, 6.5:1 en el oscuro). El blanco sobre el azul
+  brillante no llega a 4.5:1 en ninguno de los dos mundos, y por eso el azul no
+  es el mismo.
+</p>
 </div>
+
+<script>
+/* Todo el JavaScript del prototipo: el conmutador de tema. */
+(function(){
+  const raiz = document.documentElement;
+  const oscuro = document.getElementById('tema-oscuro');
+  const claro = document.getElementById('tema-claro');
+  function pintar(claroActivo){
+    if (claroActivo) raiz.setAttribute('data-theme', 'claro');
+    else raiz.removeAttribute('data-theme');
+    oscuro.setAttribute('aria-pressed', claroActivo ? 'false' : 'true');
+    claro.setAttribute('aria-pressed', claroActivo ? 'true' : 'false');
+  }
+  oscuro.addEventListener('click', function(){ pintar(false); });
+  claro.addEventListener('click', function(){ pintar(true); });
+  pintar(false);
+})();
+</script>
 </body>
 </html>
