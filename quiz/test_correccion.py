@@ -323,6 +323,26 @@ LIVE_TASK = {
 }
 
 
+LIVE_TASK_KRANKMELDUNG = {
+    "category": "forum",
+    "label": "Forumsbeitrag: ärztliche Krankmeldung ab dem 1. Tag",
+    "topic": "Krankmeldung / Personalpolitik",
+    "scenario": "Im Firmen-Intranet diskutiert das Team über die neue Regel, dass eine "
+                "ärztliche Krankmeldung schon ab dem ersten Krankheitstag verlangt wird.",
+    "prompt": "Schreiben Sie einen Beitrag für das Firmen-Intranet und nehmen Sie zur "
+              "Diskussion Stellung.",
+    "leitpunkte": [
+        "Bezug auf die laufende Diskussion",
+        "Vorteile der Regelung",
+        "Nachteile der Regelung",
+        "Eigene Erfahrung und konkreter Vorschlag",
+    ],
+    "min_words": 150,
+}
+
+TAREAS = {"forum": LIVE_TASK, "krankmeldung": LIVE_TASK_KRANKMELDUNG}
+
+
 def _call_gemini(api_key: str, model: str, user_prompt: str) -> dict:
     import urllib.error
     import urllib.parse
@@ -390,7 +410,7 @@ def _call_openai(base: str, api_key: str, model: str, user_prompt: str) -> dict:
         body = {
             "model": model,
             "temperature": 0,
-            "max_tokens": 8192,
+            "max_tokens": 16000,
             "messages": [
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": user_prompt},
@@ -398,11 +418,16 @@ def _call_openai(base: str, api_key: str, model: str, user_prompt: str) -> dict:
         }
         if not sin_formato:
             body["response_format"] = {"type": "json_object"}
+        # deepseek-v4* razona antes de escribir: con poco max_tokens se queda sin sitio.
+        body["reasoning_effort"] = "low"
+        headers = {"Content-Type": "application/json",
+                   "Authorization": "Bearer " + api_key,
+                   "User-Agent": ua, "Accept": "application/json"}
+        # OpenCode Go pide identificar al cliente y una sesión estable.
+        if "opencode.ai" in url:
+            headers["x-opencode-session"] = "b2-corrector-" + model
         req = urllib.request.Request(
-            url, data=json.dumps(body).encode("utf-8"), method="POST",
-            headers={"Content-Type": "application/json",
-                     "Authorization": "Bearer " + api_key,
-                     "User-Agent": ua, "Accept": "application/json"})
+            url, data=json.dumps(body).encode("utf-8"), method="POST", headers=headers)
         try:
             with urllib.request.urlopen(req, timeout=240) as resp:
                 return json.loads(resp.read().decode("utf-8"))
@@ -462,7 +487,7 @@ def audit_live(data: dict, texto: str = "") -> tuple:
         low_corr = correction.casefold()
 
         # El fallo #2 del caso real: meter un relativo donde va el nominativo.
-        if low_corr.startswith("die ") and not low_orig.startswith("die"):
+        if low_corr.startswith("die ") and low_orig.startswith("und "):
             hard.append(f"#{i}: la corrección introduce «die» como relativo "
                         f"(agramatical): «{correction}»")
 
@@ -486,7 +511,7 @@ def audit_live(data: dict, texto: str = "") -> tuple:
     if not 0.75 <= ratio <= 1.35:
         soft.append(f"el texto corregido mide {ratio:.2f}× el original: huele a reescritura")
 
-    if "zum Thema" in texto and not any("zum Thema" in (e.get("original") or "") for e in entries):
+    if "zum Thema zusätzliche" in texto and not any("zum Thema" in (e.get("original") or "") for e in entries):
         soft.append("no marcó el genitivo tras «zum Thema»")
 
     campos = ("original", "correction", "change", "rule_es")
@@ -498,12 +523,12 @@ def audit_live(data: dict, texto: str = "") -> tuple:
 
 
 def live_main(provider: str, key: str, model: str, save: str = "",
-              base: str = "", texto: str = "") -> int:
+              base: str = "", texto: str = "", tarea: str = "forum") -> int:
     texto = texto or STUDENT_TEXT
     etiqueta = f"{model} @ {base}" if provider == "openai" else model
     print(f"=== CORRECTOR EN VIVO ({etiqueta}) ===")
     print(f"texto: {count_words(texto)} palabras · {len(texto)} caracteres")
-    user_prompt = build_user_prompt(LIVE_TASK, texto, lang="es")
+    user_prompt = build_user_prompt(TAREAS.get(tarea, LIVE_TASK), texto, lang="es")
     data = (_call_openai(base, key, model, user_prompt) if provider == "openai"
             else _call_gemini(key, model, user_prompt))
     if save:
@@ -539,15 +564,17 @@ if __name__ == "__main__":
         ap.add_argument("--model", default="", help="modelo (por defecto gemini-3.5-flash-lite o deepseek-chat)")
         ap.add_argument("--text-file", default="", help="texto a corregir (por defecto, el caso del foro)")
         ap.add_argument("--save", default="", help="guarda la respuesta JSON en este fichero")
+        ap.add_argument("--task", default="forum", choices=["forum", "krankmeldung"],
+                        help="tarea de ejemplo que acompaña al texto")
         ns = ap.parse_args(sys.argv[1:])
         texto = ""
         if ns.text_file:
             texto = open(ns.text_file, encoding="utf-8").read()
         if ns.openai_base and ns.openai_key:
             sys.exit(live_main("openai", ns.openai_key, ns.model or "deepseek-chat",
-                               ns.save, ns.openai_base, texto))
+                               ns.save, ns.openai_base, texto, ns.task))
         if ns.gemini_key:
             sys.exit(live_main("gemini", ns.gemini_key, ns.model or "gemini-3.5-flash-lite",
-                               ns.save, "", texto))
+                               ns.save, "", texto, ns.task))
         ap.error("indica --gemini-key, o --openai-base + --openai-key")
     sys.exit(main())

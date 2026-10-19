@@ -3911,32 +3911,53 @@ async function evaluarUnaPasada(config, systemPrompt, userPrompt, schemaOverride
   } else if(config.provider === "openai_compatible"){
     let url = (config.customEndpoint || "https://api.deepseek.com").replace(/\/+$/, "");
     if(!url.endsWith("/chat/completions")) url += "/chat/completions";
-    const body = {
-      model: config.customModel || "deepseek-chat",
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: userPrompt }
-      ],
-      response_format: { type: "json_object" },
-      temperature: 0
+    /* OpenCode (Go / Console) pide identificar al cliente y una sesión estable;
+       sus modelos DeepSeek razonan antes de escribir y necesitan presupuesto. */
+    const esOpenCode = /opencode\.ai/.test(url);
+    if(esOpenCode && !window.__ocSession){
+      window.__ocSession = "b2-quiz-" + Math.random().toString(36).slice(2, 10);
+    }
+    const cabeceras = {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + config.customKey
     };
-    const enviar = () => fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + config.customKey
-      },
-      body: JSON.stringify(body)
+    if(esOpenCode) cabeceras["x-opencode-session"] = window.__ocSession;
+
+    const cuerpo = (maxTokens, conFormato) => {
+      const body = {
+        model: config.customModel || "deepseek-chat",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: userPrompt }
+        ],
+        temperature: 0
+      };
+      if(maxTokens) body.max_tokens = maxTokens;
+      if(conFormato) body.response_format = { type: "json_object" };
+      if(esOpenCode) body.reasoning_effort = "low";
+      return body;
+    };
+    const enviar = (body) => fetch(url, {
+      method: "POST", headers: cabeceras, body: JSON.stringify(body)
     });
-    let resp = await enviar();
-    /* No todos los endpoints compatibles aceptan `response_format` (OpenCode,
-       algunos proxies). Se reintenta sin él antes de rendirse. */
+    const textoDe = (d) => {
+      let c = d?.choices?.[0]?.message?.content;
+      if(Array.isArray(c)) c = c.map(p => (typeof p === "string" ? p : (p && p.text) || "")).join("");
+      return c;
+    };
+
+    let body = cuerpo(16000, true);
+    let resp = await enviar(body);
+    /* Endpoints que no aceptan un parámetro: se reintenta sin él. */
     if(!resp.ok && (resp.status === 400 || resp.status === 422)){
       let detalle = "";
       try { detalle = await resp.clone().text(); } catch(e){}
-      if(/response_format|json_object|unsupported|unknown/i.test(detalle)){
-        delete body.response_format;
-        resp = await enviar();
+      if(/response_format|json_object/i.test(detalle)){
+        body = cuerpo(16000, false); resp = await enviar(body);
+      } else if(/max_tokens|max_completion_tokens/i.test(detalle)){
+        body = cuerpo(0, true); resp = await enviar(body);
+      } else if(/reasoning_effort/i.test(detalle)){
+        delete body.reasoning_effort; resp = await enviar(body);
       }
     }
     if(!resp.ok){
@@ -3948,9 +3969,17 @@ async function evaluarUnaPasada(config, systemPrompt, userPrompt, schemaOverride
       } catch(e){ msg += ": " + errText; }
       throw new Error(msg);
     }
-    const data = await resp.json();
-    let raw = data?.choices?.[0]?.message?.content;
-    if(Array.isArray(raw)) raw = raw.map(p => (typeof p === "string" ? p : (p && p.text) || "")).join("");
+    let data = await resp.json();
+    let raw = textoDe(data);
+    /* Se quedó sin tokens razonando (finish_reason "length" y content vacío):
+       se repite con el doble de presupuesto en vez de fallar. */
+    if((!raw || !String(raw).trim()) && data?.choices?.[0]?.finish_reason === "length"){
+      const resp2 = await enviar(cuerpo(32000, true));
+      if(resp2.ok){
+        data = await resp2.json();
+        raw = textoDe(data);
+      }
+    }
     if(!raw) throw new Error(t("evalApiEmpty"));
     return parseEvaluationJson(raw);
 
@@ -4513,12 +4542,19 @@ function openAIConfigModal(alertNotice){
         if(!tempCfg.customKey) throw new Error(t("alertEnterKey"));
         let u = tempCfg.customEndpoint.replace(/\/+$/, "");
         if(!u.endsWith("/chat/completions")) u += "/chat/completions";
+        const cab = {"Content-Type": "application/json", "Authorization": "Bearer " + tempCfg.customKey};
+        /* OpenCode (Go) quiere sesión identificada también en la prueba. */
+        if(/opencode\.ai/.test(u)){
+          if(!window.__ocSession) window.__ocSession = "b2-quiz-" + Math.random().toString(36).slice(2, 10);
+          cab["x-opencode-session"] = window.__ocSession;
+        }
         const r = await fetch(u, {
           method: "POST",
-          headers: {"Content-Type": "application/json", "Authorization": "Bearer " + tempCfg.customKey},
-          body: JSON.stringify({ model: tempCfg.customModel, messages: [{role: "user", content: "Ping"}] })
+          headers: cab,
+          body: JSON.stringify({ model: tempCfg.customModel, max_tokens: 64,
+                                 messages: [{role: "user", content: "Antworte kurz mit OK."}] })
         });
-        if(!r.ok) throw new Error("HTTP " + r.status + ": " + (await r.text()).slice(0, 100));
+        if(!r.ok) throw new Error("HTTP " + r.status + ": " + (await r.text()).slice(0, 140));
       } else if(tempCfg.provider === "ollama"){
         let u = tempCfg.ollamaEndpoint.replace(/\/+$/, "") + "/api/tags";
         const r = await fetch(u);
