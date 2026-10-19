@@ -108,6 +108,11 @@
     --sh-3:0 4px 8px rgba(0,0,0,.45),0 24px 48px -14px rgba(0,0,0,.68);
     --bisel:inset 0 1px 0 rgba(255,255,255,.10),inset 0 -1px 0 rgba(0,0,0,.40);
     --hundido:inset 0 2px 5px rgba(0,0,0,.45),inset 0 -1px 0 rgba(255,255,255,.04);
+    /* Filo y borde de una pieza RELLENA (botón, ficha corregida, mando encendido).
+       No son los de una superficie: sobre un color, un filo blanco fuerte hace que
+       el relleno parezca no llegar al borde. En oscuro se nota poco; en claro, mucho. */
+    --borde-relleno:rgba(255,255,255,.22);
+    --bisel-relleno:inset 0 1px 0 rgba(255,255,255,.20),inset 0 -1px 0 rgba(0,0,0,.28);
     --halo:0 0 0 1px rgba(106,164,255,.45),0 6px 16px -4px var(--glow),0 8px 26px -8px rgba(77,141,246,.30);
     --lit:inset 0 1px 0 rgba(255,255,255,.06);
 
@@ -184,9 +189,15 @@
     --sh-1:0 1px 2px rgba(31,42,36,.08),0 2px 6px rgba(31,42,36,.06);
     --sh-2:0 2px 4px rgba(31,42,36,.08),0 10px 22px -8px rgba(31,42,36,.14);
     --sh-3:0 4px 10px rgba(31,42,36,.10),0 26px 52px -16px rgba(31,42,36,.18);
-    --bisel:inset 0 1px 0 rgba(255,255,255,.85),inset 0 -1px 0 rgba(20,22,28,.07);
-    --hundido:inset 0 2px 4px rgba(20,22,28,.12),inset 0 -1px 0 rgba(255,255,255,.6);
-    --halo:0 0 0 1px rgba(77,141,246,.55),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
+    --bisel:inset 0 1px 0 rgba(255,255,255,.90),inset 0 -1px 0 rgba(31,42,36,.06);
+    --hundido:inset 0 2px 4px rgba(31,42,36,.12),inset 0 -1px 0 rgba(255,255,255,.70);
+    /* El halo sigue al acento del tema: en claro es verde, no azul (venía del mundo
+       anterior y se quedó ahí sin que nadie lo mirara). */
+    --halo:0 0 0 1px rgba(15,81,50,.40),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
+    /* Filo y borde de una pieza RELLENA: sobre el verde, el filo va suave y el borde
+       es oscuro. Un blanco aquí cortaba el relleno y la ficha parecía mal pintada. */
+    --borde-relleno:rgba(15,40,28,.16);
+    --bisel-relleno:inset 0 1px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(0,0,0,.18);
     --lit:inset 0 1px 0 rgba(255,255,255,.7);
   }
 
@@ -472,11 +483,11 @@
   /* Corregida: relleno sólido y oscuro (6.2:1 y 7.4:1) con el brillo puesto en la
      sombra, que es donde no estorba, más la marca textual para no depender del color. */
   .letters button.correct{background:var(--bien-fill);color:var(--bien-ink);
-                  border-color:rgba(255,255,255,.28);
-                  box-shadow:var(--sh-1),var(--bisel),0 6px 16px -4px rgba(66,193,132,.35)}
+                  border-color:var(--borde-relleno);
+                  box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px rgba(66,193,132,.35)}
   .letters button.wrong{background:var(--mal-fill);color:var(--mal-ink);
-                  border-color:rgba(255,255,255,.28);
-                  box-shadow:var(--sh-1),var(--bisel),0 6px 16px -4px rgba(242,99,90,.35)}
+                  border-color:var(--borde-relleno);
+                  box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px rgba(242,99,90,.35)}
   .letters button.correct::after{content:"✓";font-size:var(--fs-micro);vertical-align:super}
   .letters button.wrong::after{content:"✗";font-size:var(--fs-micro);vertical-align:super}
 
@@ -512,10 +523,10 @@
   /* Botón principal: píldora con degradado corto, filo claro y halo azul. Se hunde
      al pulsar (escala 0.975) en vez de cambiar solo de color. */
   .btn{background:var(--acc-grad);color:var(--on-acc);
-       border:var(--b-std) solid rgba(255,255,255,.22);border-radius:var(--r-pill);
+       border:var(--b-std) solid var(--borde-relleno);border-radius:var(--r-pill);
        padding:0 var(--sp-5);min-height:40px;cursor:pointer;font-size:var(--fs-base);font-weight:640;
        font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);
-       box-shadow:var(--sh-2),var(--bisel),0 8px 20px -6px var(--glow);
+       box-shadow:var(--sh-2),var(--bisel-relleno),0 8px 20px -6px var(--glow);
        transition:filter var(--dur-1) var(--ease),transform var(--dur-1) var(--spring),
                   box-shadow var(--dur-2) var(--ease),
                   color var(--dur-2) var(--ease)}
@@ -531,11 +542,11 @@
              color:var(--dim);box-shadow:none;text-transform:none;letter-spacing:0;
              font-size:var(--fs-sm);font-weight:640;padding:0 var(--sp-3)}
   .btn.ghost:hover{background:var(--tint-neutral);color:var(--txt);filter:none}
-  .btn.danger{background:var(--peligro-grad);color:#fff6f5;border-color:rgba(255,255,255,.18);
+  .btn.danger{background:var(--peligro-grad);color:#fff6f5;border-color:var(--borde-relleno);
               box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(242,99,90,.28)}
   .btn.danger:hover{filter:brightness(1.06)}
   .btn.success{background:var(--exito-grad);color:#f2fff9;
-               border-color:rgba(255,255,255,.18);
+               border-color:var(--borde-relleno);
                box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(66,193,132,.28)}
   .btn.success:hover{filter:brightness(1.06)}
   .btn.sm{min-height:32px;padding:0 var(--sp-4);font-size:var(--fs-sm)}
@@ -719,7 +730,7 @@
   .tab-pill:hover{color:var(--txt)}
   .tab-pill:active{transform:scale(.97)}
   .tab-pill.active{background:var(--acc-grad);color:var(--on-acc);border-color:transparent;
-            box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
+            box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 12px -4px var(--glow)}
 
   /* Lista de errores: filas de tabla de la referencia —pieza con filo y, al pasar
      por encima, la fila se levanta—. */
@@ -799,7 +810,7 @@
   /* La opción activa se rellena con el acento, como la mitad encendida de un
      interruptor: deja de ser una pastilla clara y pasa a ser «esto está encendido». */
   .lang-btn.active{background:var(--acc-grad);color:var(--on-acc);font-weight:700;
-            border:0;box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
+            border:0;box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 12px -4px var(--glow)}
 
   /* Selector de usuario Sergio / Diana */
   .user-switch{display:inline-flex;align-items:center;background:var(--sunken);
@@ -814,7 +825,7 @@
   .user-btn:hover{color:var(--txt)}
   .user-btn:active{transform:scale(.96)}
   .user-btn.active{background:var(--acc-grad);color:var(--on-acc);font-weight:700;
-            border:0;box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
+            border:0;box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 12px -4px var(--glow)}
 
   /* El mando que se desliza entre las opciones del control segmentado. Solo entra
      cuando el JS puede medir (clase `con-mando`): si no, la opción activa se marca
@@ -824,7 +835,7 @@
     content:"";position:absolute;top:var(--sp-1);bottom:var(--sp-1);left:0;
     width:var(--mando-w,0px);transform:translateX(var(--mando-x,0px));
     border-radius:var(--r-pill);background:var(--acc-grad);
-    box-shadow:var(--sh-1),var(--bisel),0 4px 14px -4px var(--glow);
+    box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 14px -4px var(--glow);
     transition:transform var(--dur-3) var(--spring),width var(--dur-3) var(--spring);
     pointer-events:none;z-index:0}
   .lang-switch.con-mando button,.user-switch.con-mando button,.tab-pills.con-mando button{
@@ -885,7 +896,7 @@
     transition:transform var(--dur-3) var(--spring),color var(--dur-2) var(--ease)}
   .switch-tema .mando-tema svg{width:13px;height:13px;display:block}
   .switch-tema[aria-checked="true"] .pista-tema{background:var(--acc-grad);border-color:transparent;
-    box-shadow:var(--sh-1),var(--bisel),0 4px 14px -4px var(--glow)}
+    box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 14px -4px var(--glow)}
   .switch-tema[aria-checked="true"] .mando-tema{transform:translateX(22px);color:var(--acc-ink)}
   .switch-tema:active .mando-tema{transform:scale(.94)}
   .switch-tema[aria-checked="true"]:active .mando-tema{transform:translateX(22px) scale(.94)}

@@ -78,6 +78,11 @@
   --sh-3:0 4px 8px rgba(0,0,0,.45),0 24px 48px -14px rgba(0,0,0,.68);
   --bisel:inset 0 1px 0 var(--bisel-alto),inset 0 -1px 0 var(--bisel-bajo);
   --hundido:inset 0 2px 5px rgba(0,0,0,.45),inset 0 -1px 0 rgba(255,255,255,.04);
+  /* Filo y borde de una pieza RELLENA (botón, ficha, mando encendido): sobre un
+     color, un filo blanco fuerte hace que el relleno parezca no llegar al borde. */
+  --borde-relleno:rgba(255,255,255,.22);
+  --bisel-relleno:inset 0 1px 0 rgba(255,255,255,.20),inset 0 -1px 0 rgba(0,0,0,.28);
+  --selection:rgba(77,141,246,.35);
   --halo:0 0 0 1px rgba(106,164,255,.45),0 6px 16px -4px var(--glow),0 8px 26px -8px rgba(77,141,246,.30);
 
   /* ---- Escala de espaciado de la referencia: 4 a 48 ---- */
@@ -152,7 +157,13 @@
   --sh-1:0 1px 2px rgba(31,42,36,.08),0 2px 6px rgba(31,42,36,.06);
   --sh-2:0 2px 4px rgba(31,42,36,.08),0 10px 22px -8px rgba(31,42,36,.14);
   --sh-3:0 4px 10px rgba(31,42,36,.10),0 26px 52px -16px rgba(31,42,36,.18);
+  --bisel:inset 0 1px 0 rgba(255,255,255,.90),inset 0 -1px 0 rgba(31,42,36,.06);
   --hundido:inset 0 2px 4px rgba(31,42,36,.10),inset 0 -1px 0 rgba(255,255,255,.70);
+  /* Sobre el verde bosque el filo va suave y el borde es oscuro: un blanco aquí
+     cortaba el relleno y la ficha parecía mal pintada. */
+  --borde-relleno:rgba(15,40,28,.16);
+  --bisel-relleno:inset 0 1px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(0,0,0,.18);
+  --selection:rgba(183,217,193,.65);
   --halo:0 0 0 1px rgba(15,81,50,.35),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
 }
 
@@ -164,7 +175,7 @@ body{margin:0;background:var(--bg);color:var(--txt);font-family:var(--fuente);
    Es un degradado radial, no una textura: uno solo, en el fondo. */
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   background:radial-gradient(1100px 520px at 50% -12%,var(--bg-luz),transparent 70%)}
-::selection{background:rgba(77,141,246,.35)}
+::selection{background:var(--selection)}
 :focus-visible{outline:2px solid var(--acc-hi);outline-offset:2px;border-radius:var(--r-1)}
 ::-webkit-scrollbar{width:10px;height:10px}
 ::-webkit-scrollbar-thumb{background:var(--scroll);border-radius:var(--r-pill);
@@ -181,7 +192,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .monograma{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
   border-radius:var(--r-2);background:var(--acc-grad);
   color:var(--on-acc);font-size:13px;font-weight:800;letter-spacing:.02em;
-  box-shadow:var(--sh-1),var(--bisel),0 0 18px rgba(77,141,246,.35)}
+  box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 18px -4px var(--glow)}
 .hueco{flex:1}
 .rejilla{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--sp-6);align-items:start;
   margin-top:var(--sp-6)}
@@ -207,12 +218,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   min-height:40px;padding:0 var(--sp-5);border-radius:var(--r-pill);cursor:pointer;
   font-family:inherit;font-size:15px;font-weight:640;color:var(--on-acc);
   background:var(--acc-grad);
-  border:var(--b-std) solid rgba(255,255,255,.22);
-  box-shadow:var(--sh-2),var(--bisel),0 0 20px rgba(77,141,246,.22);
+  border:var(--b-std) solid var(--borde-relleno);
+  box-shadow:var(--sh-2),var(--bisel-relleno),0 8px 20px -6px var(--glow);
   transition:transform var(--dur-1) var(--muelle),box-shadow var(--dur-2) var(--ease),
              filter var(--dur-1) var(--ease)}
-.btn:hover{filter:brightness(1.06);box-shadow:var(--sh-2),var(--bisel),var(--halo)}
-.btn:active{transform:scale(.975);box-shadow:var(--sh-1),var(--bisel)}
+.btn:hover{filter:brightness(1.06);box-shadow:var(--sh-2),var(--bisel-relleno),var(--halo)}
+.btn:active{transform:scale(.975);box-shadow:var(--sh-1),var(--bisel-relleno)}
 .btn.secundario{background:linear-gradient(180deg,var(--surface-2),var(--surface));
   color:var(--txt);border-color:var(--line-2);box-shadow:var(--sh-1),var(--bisel)}
 .btn.secundario:hover{color:#fff;box-shadow:var(--sh-2),var(--bisel)}
@@ -246,7 +257,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .segmentado button:hover{color:var(--txt)}
 .segmentado button:active{transform:scale(.96)}
 .segmentado button[aria-pressed="true"]{color:var(--on-acc);background:var(--acc-grad);
-  box-shadow:var(--sh-1),var(--bisel),0 4px 12px -4px var(--glow)}
+  box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 12px -4px var(--glow)}
 /* El mando que se desliza entre las opciones. Solo entra cuando se puede medir
    (clase `con-mando`, puesta por el JavaScript del final): si no, la opción activa
    se enciende con su propio relleno y nunca se queda sin marca. */
@@ -254,7 +265,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
 .segmentado.con-mando::before{content:"";position:absolute;top:4px;bottom:4px;left:0;
   width:var(--mando-w,0px);transform:translateX(var(--mando-x,0px));
   border-radius:var(--r-pill);background:var(--acc-grad);
-  box-shadow:var(--sh-1),var(--bisel),0 4px 14px -4px var(--glow);
+  box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 14px -4px var(--glow);
   transition:transform var(--dur-3) var(--muelle),width var(--dur-3) var(--muelle);
   pointer-events:none;z-index:0}
 .segmentado.con-mando button{position:relative;z-index:1}
@@ -276,7 +287,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   transition:transform var(--dur-3) var(--muelle),color var(--dur-2) var(--ease)}
 .interruptor-mando svg{width:13px;height:13px;display:block}
 .interruptor[aria-checked="true"] .interruptor-pista{background:var(--acc-grad);
-  border-color:transparent;box-shadow:var(--sh-1),var(--bisel),0 4px 14px -4px var(--glow)}
+  border-color:transparent;box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 14px -4px var(--glow)}
 .interruptor[aria-checked="true"] .interruptor-mando{transform:translateX(22px);
   color:var(--acc-ink)}
 .interruptor:active .interruptor-mando{transform:translateX(22px) scale(.94)}
@@ -304,12 +315,12 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
   box-shadow:var(--hundido);overflow:hidden;max-width:420px}
 .progreso i{display:block;height:100%;width:42%;border-radius:var(--r-pill);
   background:linear-gradient(90deg,var(--acc),var(--acc-hi));
-  box-shadow:0 0 16px rgba(77,141,246,.6)}
+  box-shadow:0 4px 16px -4px var(--glow)}
 .deslizador{position:relative;max-width:420px;height:26px}
 .deslizador .carril{position:absolute;top:9px;left:0;right:0;height:8px;border-radius:var(--r-pill);
   background:var(--sunken);box-shadow:var(--hundido)}
 .deslizador .relleno{position:absolute;top:9px;left:0;width:46%;height:8px;border-radius:var(--r-pill);
-  background:linear-gradient(90deg,var(--acc),var(--acc-hi));box-shadow:0 0 16px rgba(77,141,246,.55)}
+  background:linear-gradient(90deg,var(--acc),var(--acc-hi));box-shadow:0 4px 16px -4px var(--glow)}
 .deslizador .mando{position:absolute;top:0;left:46%;width:26px;height:26px;margin-left:-13px;
   border-radius:50%;background:linear-gradient(180deg,#fdfeff,#c9d6ef);
   border:var(--b-std) solid rgba(255,255,255,.5);box-shadow:var(--sh-2)}
@@ -357,18 +368,18 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
              color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
              background var(--dur-2) var(--ease)}
 .letra:hover{border-color:rgba(106,164,255,.45);
-  box-shadow:var(--sh-2),var(--bisel),0 0 16px rgba(77,141,246,.25)}
+  box-shadow:var(--sh-2),var(--bisel-relleno),0 6px 16px -4px var(--glow)}
 .letra:active{transform:scale(.94);box-shadow:var(--sh-1),var(--hundido)}
 .letra[aria-checked="true"]{background:var(--acc-grad);
-  color:var(--on-acc);border-color:rgba(255,255,255,.35);box-shadow:var(--sh-2),var(--bisel),var(--halo)}
+  color:var(--on-acc);border-color:var(--borde-relleno);box-shadow:var(--sh-2),var(--bisel-relleno),var(--halo)}
 .letra.cogida{color:var(--dim-2);background:var(--sunken);border-style:dashed;box-shadow:var(--hundido)}
 /* Correcta y fallada: relleno solido y oscuro, para que la letra clara pase 4.5:1
    (con el verde y el rojo claros de la referencia se quedaba en 2.7 y 3.3). El
    brillo de color se queda en la sombra, que es donde no hace dano. */
 .letra.bien{background:var(--bien-fill);color:var(--bien-ink);
-  border-color:rgba(255,255,255,.28);box-shadow:var(--sh-1),var(--bisel),0 6px 16px -4px rgba(66,193,132,.35)}
+  border-color:var(--borde-relleno);box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px rgba(66,193,132,.35)}
 .letra.mal{background:var(--mal-fill);color:var(--mal-ink);
-  border-color:rgba(255,255,255,.28);box-shadow:var(--sh-1),var(--bisel),0 6px 16px -4px rgba(242,99,90,.35)}
+  border-color:var(--borde-relleno);box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px rgba(242,99,90,.35)}
 .caption{color:var(--dim-2);font-size:12px;margin:var(--sp-2) 0 0}
 
 /* ============ Corrección ============ */
@@ -589,7 +600,7 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
       <div class="letras">
         <button class="letra" type="button">a</button>
         <button class="letra" type="button" style="border-color:rgba(106,164,255,.45);
-          box-shadow:var(--sh-2),var(--bisel),0 0 16px rgba(77,141,246,.25)">b</button>
+          box-shadow:var(--sh-2),var(--bisel-relleno),0 6px 16px -4px var(--glow)">b</button>
         <button class="letra" type="button" style="transform:scale(.94);box-shadow:var(--sh-1),var(--hundido)">c</button>
         <button class="letra" type="button" aria-checked="true" role="radio">d</button>
         <button class="letra bien" type="button">e</button>
