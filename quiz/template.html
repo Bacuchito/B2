@@ -484,10 +484,10 @@
      sombra, que es donde no estorba, más la marca textual para no depender del color. */
   .letters button.correct{background:var(--bien-fill);color:var(--bien-ink);
                   border-color:var(--borde-relleno);
-                  box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px rgba(66,193,132,.35)}
+                  box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--ok) 35%,transparent)}
   .letters button.wrong{background:var(--mal-fill);color:var(--mal-ink);
                   border-color:var(--borde-relleno);
-                  box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px rgba(242,99,90,.35)}
+                  box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--bad) 35%,transparent)}
   .letters button.correct::after{content:"✓";font-size:var(--fs-micro);vertical-align:super}
   .letters button.wrong::after{content:"✗";font-size:var(--fs-micro);vertical-align:super}
 
@@ -542,12 +542,12 @@
              color:var(--dim);box-shadow:none;text-transform:none;letter-spacing:0;
              font-size:var(--fs-sm);font-weight:640;padding:0 var(--sp-3)}
   .btn.ghost:hover{background:var(--tint-neutral);color:var(--txt);filter:none}
-  .btn.danger{background:var(--peligro-grad);color:#fff6f5;border-color:var(--borde-relleno);
-              box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(242,99,90,.28)}
+  .btn.danger{background:var(--peligro-grad);color:var(--mal-ink);border-color:var(--borde-relleno);
+              box-shadow:var(--sh-2),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--bad) 28%,transparent)}
   .btn.danger:hover{filter:brightness(1.06)}
-  .btn.success{background:var(--exito-grad);color:#f2fff9;
+  .btn.success{background:var(--exito-grad);color:var(--bien-ink);
                border-color:var(--borde-relleno);
-               box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(66,193,132,.28)}
+               box-shadow:var(--sh-2),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--ok) 28%,transparent)}
   .btn.success:hover{filter:brightness(1.06)}
   .btn.sm{min-height:32px;padding:0 var(--sp-4);font-size:var(--fs-sm)}
 
@@ -589,7 +589,7 @@
   .err-idx{font-weight:700;font-size:var(--fs-sm)}
   .list-tight.sm{font-size:var(--fs-sm);line-height:1.55;padding-left:var(--sp-5);margin:var(--sp-2) 0}
   .list-tight.xs{padding-left:var(--sp-4);margin:var(--sp-1) 0}
-  .model-text.ok-edge{background:var(--tint-ok);border-color:rgba(46,110,73,.45)}
+  .model-text.ok-edge{background:var(--tint-ok);border-color:var(--line-ok)}
   .em-bad{color:var(--bad-ink)}
   .lp-label{flex:1;cursor:pointer;display:flex;align-items:center;gap:var(--sp-2)}
   .row-inline{display:flex;gap:var(--sp-3);align-items:center;margin-top:var(--sp-2);flex-wrap:wrap}
@@ -647,12 +647,14 @@
                display:flex;align-items:center;justify-content:space-between;margin:var(--sp-4) 0;
                flex-wrap:wrap;gap:var(--sp-3);
                border:var(--b-fuerte) solid currentColor;
-               transform:rotate(-.5deg);
                animation:stamp var(--dur-3) var(--spring)}
-  @keyframes stamp{from{transform:rotate(-.5deg) scale(1.12);opacity:0}
-                   to{transform:rotate(-.5deg) scale(1);opacity:1}}
-  .eval-banner.pass{background:var(--tint-ok);border-color:rgba(46,110,73,.55);color:var(--ok-ink)}
-  .eval-banner.fail{background:var(--tint-bad);border-color:rgba(176,54,42,.55);color:var(--bad-ink)}
+  /* Sin inclinación: el sello vive DENTRO de una pieza, y un rectángulo girado deja
+     ver una franja del fondo por los bordes, que se lee como un segundo marco. El
+     golpe de tampón se queda en la escala y el desvanecido. */
+  @keyframes stamp{from{transform:scale(1.06);opacity:0}
+                   to{transform:scale(1);opacity:1}}
+  .eval-banner.pass{background:var(--tint-ok);border-color:var(--line-ok);color:var(--ok-ink)}
+  .eval-banner.fail{background:var(--tint-bad);border-color:var(--line-bad);color:var(--bad-ink)}
   .crit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
              gap:var(--sp-3);margin:var(--sp-4) 0}
   /* Los cuatro criterios de telc: celdas hundidas, como las filas de una tabla. */
@@ -4738,6 +4740,19 @@ if(themeBtn) themeBtn.onclick = () => setTheme(currentTheme === "dark" ? "paper"
    recoloca al redimensionar la ventana y una vez al arrancar. */
 if (typeof window.addEventListener === "function") window.addEventListener("resize", colocarMandos);
 colocarMandos();
+
+/* Un clic dentro de cualquier control segmentado recoloca el mando, sin depender de
+   acordarse en cada manejador: los hay en el editor de redacción y en la pantalla de
+   evaluación, que son sitios distintos del código. */
+if (typeof document.addEventListener === "function"){
+  document.addEventListener("click", function(ev){
+    let el = ev.target, vueltas = 0;
+    while (el && el !== document && vueltas++ < 8){
+      if (el.classList && el.classList.contains("tab-pill")){ colocarMandos(); return; }
+      el = el.parentNode;
+    }
+  });
+}
 
 const navToggle = document.getElementById("nav-toggle");
 if(navToggle) navToggle.onclick = ()=>{
