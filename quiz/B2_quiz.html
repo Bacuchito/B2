@@ -321,7 +321,7 @@
              font-variant-numeric:tabular-nums;white-space:nowrap}
   nav button.active .pill{color:var(--dim)}
 
-  main{flex:1;min-width:0;padding:var(--sp-6) var(--sp-6) var(--sp-8);max-width:960px}
+  main{flex:1;min-width:0;margin:0 auto;padding:var(--sp-6) var(--sp-6) var(--sp-8);max-width:960px}
   /* Masthead editorial: título display + filete + línea de datos en versalitas */
   /* Titular de sección: sans y contenido, como en el prototipo. La serif se queda
      para lo que se cita y lo que se escribe, no para los rótulos. */
@@ -393,12 +393,14 @@
      que la tarjeta alta de los anuncios no tiene sentido: en rejilla caben las diez
      de un vistazo y los huecos no se van media pantalla más abajo. Se declara desde
      el dato con `optionsLayout: "bank"`, no por heurística de longitud. */
-  /* Banco de palabras: lista de glosario (letra + palabra) con filetes, no cajas. */
-  .bank{display:block}
+  /* Banco de palabras: son diez palabras sueltas que se ELIGEN, así que van en rejilla
+     de dos columnas (cinco filas) con filetes, no en una lista de diez filas que
+     empujaría la primera pregunta media pantalla hacia abajo. */
+  .bank{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:var(--sp-5)}
   .bank .ad{border:0;border-top:1px solid var(--line);border-radius:0;
             padding:var(--sp-2) 0;display:flex;align-items:baseline;gap:var(--sp-2);
             background:none}
-  .bank .ad:first-child{border-top:0}
+  .bank .ad:nth-child(-n+2){border-top:0}
   .bank .ad .body{margin-top:0;color:var(--txt);max-width:none}
   .bank .ad.used .body::after{content:" ✓";color:var(--ok-ink);font-weight:700}
 
@@ -983,6 +985,15 @@
               padding:var(--sp-4) var(--sp-5) var(--sp-2)}
     /* Un solo scroll (el del panel), no dos anidados. */
     main.desk > details.passage .passage-body{max-height:none;overflow:visible}
+
+    /* El banco de palabras (ejercicios de huecos) NO es la lectura: va a la derecha,
+       encima de las preguntas, sin quedarse fijo y sin scroll propio. Y en rejilla de
+       dos columnas: son diez palabras sueltas, no hace falta una lista de diez filas
+       que empuje la primera pregunta media pantalla hacia abajo. */
+    main.desk > details.passage.banco{grid-column:2;position:static;max-height:none;
+              overflow:visible;margin-bottom:var(--sp-4);max-width:var(--desk-work)}
+    main.desk > details.passage.banco > summary{position:static;margin:0;background:none;
+              padding:var(--sp-4) 0 var(--sp-2)}
     main.desk > .q-sheet,main.desk > .row{grid-column:2;width:100%;max-width:var(--desk-work)}
   }
 
@@ -2397,7 +2408,10 @@ function renderMain(){
              .filter(a => a !== undefined && a !== "__revealed__")
              .map(a => String(a).toLowerCase()));
     const d = document.createElement("details");
-    d.className = "panel passage";
+    /* `banco` distingue el banco de palabras del texto de lectura: en modo mesa van a
+       columnas distintas (el texto a la izquierda, fijo; el banco a la derecha, sobre
+       las preguntas, porque es lo que se consulta al responder). */
+    d.className = "panel passage banco";
     d.open = true;
     const s = document.createElement("summary");
     const label = v.optionsLabel || (v._section === "lesen-t3" ? "Kommentare" : "Anzeigen");
