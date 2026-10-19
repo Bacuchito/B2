@@ -633,7 +633,7 @@
            font-size:var(--fs-base);line-height:1.7;font-family:var(--font-read);resize:vertical;
            caret-color:var(--acc);outline:none;box-sizing:border-box;box-shadow:var(--hundido);
            transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
-  .editor-textarea:focus{border-color:rgba(106,164,255,.75);box-shadow:var(--hundido),var(--halo)}
+  .editor-textarea:focus{border-color:var(--acc-hi);box-shadow:var(--hundido),var(--halo)}
   .timer-box{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-sm);color:var(--dim)}
   .timer-display{font-size:var(--fs-base);font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
   .timer-display.warn{color:var(--bad-ink)}
@@ -674,13 +674,13 @@
                  cursor:pointer;display:inline;font-weight:500;
                  transition:background var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
   .err-highlight.err-grammatik{background:var(--tint-bad);border-bottom:2px solid var(--bad-ink);color:var(--bad-ink)}
-  .err-highlight.err-grammatik:hover,.err-highlight.err-grammatik.active{background:rgba(176,54,42,.24);outline:2px solid var(--tint-bad);outline-offset:1px}
+  .err-highlight.err-grammatik:hover,.err-highlight.err-grammatik.active{background:color-mix(in srgb,var(--bad) 22%,transparent);outline:2px solid var(--tint-bad);outline-offset:1px}
   .err-highlight.err-wortschatz{background:var(--tint-warn);border-bottom:2px solid var(--warn-ink);color:var(--warn-ink)}
-  .err-highlight.err-wortschatz:hover,.err-highlight.err-wortschatz.active{background:rgba(138,100,20,.22);outline:2px solid var(--tint-warn);outline-offset:1px}
+  .err-highlight.err-wortschatz:hover,.err-highlight.err-wortschatz.active{background:color-mix(in srgb,var(--warn) 22%,transparent);outline:2px solid var(--tint-warn);outline-offset:1px}
   .err-highlight.err-zeichensetzung{background:var(--tint-acc);border-bottom:2px solid var(--acc-ink);color:var(--acc-ink)}
-  .err-highlight.err-zeichensetzung:hover,.err-highlight.err-zeichensetzung.active{background:rgba(44,77,143,.20);outline:2px solid var(--tint-acc);outline-offset:1px}
+  .err-highlight.err-zeichensetzung:hover,.err-highlight.err-zeichensetzung.active{background:color-mix(in srgb,var(--acc) 22%,transparent);outline:2px solid var(--tint-acc);outline-offset:1px}
   .err-highlight.err-stil{background:var(--tint-violet);border-bottom:2px solid var(--violet-ink);color:var(--violet-ink)}
-  .err-highlight.err-stil:hover,.err-highlight.err-stil.active{background:rgba(107,74,158,.22);outline:2px solid var(--tint-violet);outline-offset:1px}
+  .err-highlight.err-stil:hover,.err-highlight.err-stil.active{background:color-mix(in srgb,var(--violet-ink) 22%,transparent);outline:2px solid var(--tint-violet);outline-offset:1px}
 
   .err-badge-num{font-size:var(--fs-micro);font-weight:700;vertical-align:super;padding:0 var(--sp-1);
                  border-radius:var(--r-1);margin-left:var(--sp-1);background:var(--panel2);
@@ -741,6 +741,12 @@
                        transform var(--dur-2) var(--spring)}
   .err-card:hover{transform:none;background:var(--panel2);box-shadow:var(--sh-2),var(--bisel)}
   .err-card.pulse{background:var(--tint-acc);box-shadow:var(--sh-1),var(--bisel),var(--halo)}
+  /* El filo de cada tarjeta de error sale del tema (antes el color venía escrito en
+     el JavaScript, con los valores del mundo anterior). */
+  .err-card.err-grammatik{border-left-color:var(--bad)}
+  .err-card.err-wortschatz{border-left-color:var(--warn)}
+  .err-card.err-zeichensetzung{border-left-color:var(--acc)}
+  .err-card.err-stil{border-left-color:var(--violet-ink)}
   .err-card .orig{color:var(--bad-ink);text-decoration:line-through;margin-bottom:var(--sp-1);font-size:var(--fs-sm)}
   .err-card .corr{color:var(--ok-ink);font-weight:640;margin-bottom:var(--sp-1);font-size:var(--fs-base)}
   .err-card .rule{font-size:var(--fs-sm);color:var(--dim);line-height:1.5}
@@ -792,7 +798,7 @@
                  caret-color:var(--acc);box-shadow:var(--hundido);
                  transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
   .input::placeholder{color:var(--dim-2)}
-  .input:focus,.select:focus{border-color:rgba(106,164,255,.75);box-shadow:var(--hundido),var(--halo)}
+  .input:focus,.select:focus{border-color:var(--acc-hi);box-shadow:var(--hundido),var(--halo)}
 
   /* Selector bilingüe ES / RU: control segmentado, hoja seleccionada (sin píldora azul). */
   /* Control segmentado: carril hundido; la opción elegida se levanta. */
@@ -847,7 +853,7 @@
   .cloud-badge{display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-micro);color:var(--dim);
                padding:4px var(--sp-2);border-radius:var(--r-pill);
                background:var(--tint-neutral);border:var(--b-sutil) solid var(--line)}
-  .cloud-dot{width:8px;height:8px;border-radius:50%;background:#6b7684;flex:0 0 8px}
+  .cloud-dot{width:8px;height:8px;border-radius:50%;background:var(--dim-2);flex:0 0 8px}
   .cloud-dot.online{background:var(--ok)}
   .cloud-dot.syncing{background:var(--warn);
                animation:pulse-sync 1.2s var(--ease) infinite}
@@ -3548,27 +3554,29 @@ function renderEvaluationResult(v, rawRes){
     
     res.critical_errors.forEach((err, errIdx)=>{
       const typeStr = String(err.type || "Grammatik").toLowerCase();
+      /* La familia del error decide su insignia Y el filo de la tarjeta. El color
+         NO se escribe aquí: sale del tema por la clase, si no se queda con los
+         valores del mundo anterior y no cambia al cambiar de tema. */
       let badgeClass = "niedrig";
-      let borderCol = "#f08a92";
+      let familia = "grammatik";
       if(typeStr.includes("wort")){
         badgeClass = "mittel";
-        borderCol = "#e8c46a";
+        familia = "wortschatz";
       } else if(typeStr.includes("zeich") || typeStr.includes("punkt") || typeStr.includes("ortho") || typeStr.includes("rechtschreib")){
         badgeClass = "ok";
-        borderCol = "#7fb6ff";
+        familia = "zeichensetzung";
       } else if(typeStr.includes("stil") || typeStr.includes("reg")){
         badgeClass = "tag";
-        borderCol = "#d3a4ff";
+        familia = "stil";
       }
 
       const eb = document.createElement("div");
-      eb.className = "err-card";
+      eb.className = "err-card err-" + familia;
       eb.id = "err-card-" + errIdx;
-      eb.style.borderLeftColor = borderCol;
       eb.innerHTML =
         '<div class="err-card-head">' +
           '<div class="err-card-head-l">' +
-            '<span class="err-idx" style="color:' + borderCol + '">#' + (errIdx + 1) + '</span>' +
+            '<span class="err-idx">#' + (errIdx + 1) + '</span>' +
             '<span class="badge ' + badgeClass + '">' + esc(err.type || "Grammatik") + '</span>' +
           '</div>' +
           '<span class="micro" title="' + t("locateInText") + '">' + t("locateInText") + '</span>' +
