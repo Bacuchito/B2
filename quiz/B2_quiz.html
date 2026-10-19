@@ -1220,6 +1220,7 @@ const I18N = {
     chipStil: "Estilo ({num})",
     tabAnnotated: "🔍 Tu texto con errores marcados ({ranges}/{total} en texto)",
     tabClean: "📄 Tu texto original limpio",
+    errNotLocated: "Cita no localizada literalmente en tu texto: puede ser un error inventado o mal citado.",
     tabModel: "⭐ Tu texto corregido y pulido (B2)",
     tabMuster: "🏆 Redacción Modelo 100 pts",
     noDraftFound: "No hay texto registrado para esta evaluación. Escribe tu texto en el editor y presiona \"Evaluar con Examinador telc B2\".",
@@ -1447,6 +1448,7 @@ const I18N = {
     chipStil: "Стиль ({num})",
     tabAnnotated: "🔍 Текст с выделенными ошибками ({ranges}/{total} в тексте)",
     tabClean: "📄 Исходный текст без пометок",
+    errNotLocated: "Цитата не найдена в вашем тексте дословно: возможно, ошибка выдумана или процитирована неточно.",
     tabModel: "⭐ Исправленный текст уровня B2",
     tabMuster: "🏆 Образцовое сочинение (100 баллов)",
     noDraftFound: "Нет текста для этой оценки. Напишите текст в редакторе и нажмите \"Проверить экзаменатором telc B2\".",
@@ -3406,6 +3408,10 @@ function renderEvaluationResult(v, rawRes){
   const studentText = res.student_text || getDraft(v.id) || "";
   const errorsList = res.critical_errors || [];
   const errorRanges = findErrorRanges(studentText, errorsList);
+  /* Tarjetas cuya cita no aparece en el texto: la IA inventó o parafraseó. Se
+     muestran igual (puede ser un fallo de comillas), pero marcadas, porque un
+     «error» que no está en el texto es peor que no marcarlo. */
+  const locatedIdx = new Set(errorRanges.map(r => r.errIdx));
 
   const textCard = document.createElement("div");
   textCard.className = "annotated-card";
@@ -3627,7 +3633,9 @@ function renderEvaluationResult(v, rawRes){
         '<div class="orig">„' + esc(err.original) + '“</div>' +
         '<div class="corr">➔ ' + esc(err.correction) + '</div>' +
         (err.change ? '<div class="micro" style="margin:2px 0 0">🔁 ' + esc(err.change) + '</div>' : '') +
-        '<div class="rule">💡 ' + esc(err.rule_es) + '</div>';
+        '<div class="rule">💡 ' + esc(err.rule_es) + '</div>' +
+        (locatedIdx.has(errIdx) ? '' :
+          '<div class="micro" style="margin:4px 0 0;color:var(--warn-ink)">⚠ ' + t("errNotLocated") + '</div>');
 
       eb.onclick = ()=>{
         const highlightEl = document.querySelector('.err-highlight[data-err-target="err-card-' + errIdx + '"]');

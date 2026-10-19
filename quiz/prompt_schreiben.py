@@ -480,6 +480,10 @@ def _tight_span(s: str, limit: int = 30) -> str:
 
 
 def _only_case_diff(a: str, b: str) -> bool:
+    # «ß» y «ss» son iguales al pasar a minúsculas, pero NO es un cambio de
+    # mayúsculas: es ortografía, y la regla que lo explica habla de eso.
+    if "ß" in a or "ß" in b:
+        return False
     return a != b and a.casefold() == b.casefold()
 
 
