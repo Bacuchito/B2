@@ -23,12 +23,14 @@ Este test fija tres cosas:
   3. El prompt conserva los guardarraíles que evitan repetir estos fallos.
 """
 
+import json
 import sys
 
 if sys.platform == "win32":
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
-from prompt_schreiben import SYSTEM_PROMPT, JSON_SCHEMA, validate_evaluation_json
+from prompt_schreiben import (SYSTEM_PROMPT, JSON_SCHEMA, build_user_prompt,
+                              count_words, validate_evaluation_json)
 
 # ---------------------------------------------------------------------------
 # Texto real del alumno (tal como lo recibió el corrector)
@@ -299,5 +301,169 @@ def main() -> int:
     return 0
 
 
+# ---------------------------------------------------------------------------
+# Modo en vivo: evalúa el texto real con Gemini y audita la respuesta
+# ---------------------------------------------------------------------------
+
+LIVE_TASK = {
+    "category": "forum",
+    "label": "Forumsbeitrag: zusätzliche Aufgaben ohne Neueinstellungen",
+    "topic": "Arbeitsbelastung / Aufgabenverteilung im Team",
+    "scenario": "Im Firmen-Intranet diskutiert das Team, ob zusätzliche Aufgaben ohne neue "
+                "Stellen übernommen werden sollen.",
+    "prompt": "Schreiben Sie einen Beitrag für das Firmen-Intranet und nehmen Sie zur "
+              "Diskussion Stellung.",
+    "leitpunkte": [
+        "Bezug auf die laufende Diskussion",
+        "Eigene Position mit Begründung (Vor- und Nachteile)",
+        "Aspekt Gesundheit und Work-Life-Balance",
+        "Konkreter Vorschlag zur Lösung",
+    ],
+    "min_words": 150,
+}
+
+
+def _call_gemini(api_key: str, model: str, user_prompt: str) -> dict:
+    import urllib.error
+    import urllib.parse
+    import urllib.request
+
+    url = ("https://generativelanguage.googleapis.com/v1beta/models/"
+           + urllib.parse.quote(model, safe="")
+           + ":generateContent?key=" + urllib.parse.quote(api_key, safe=""))
+    cfg = {"temperature": 0, "response_mime_type": "application/json"}
+
+    def post(generation_config: dict) -> dict:
+        payload = {
+            "system_instruction": {"parts": [{"text": SYSTEM_PROMPT}]},
+            "contents": [{"parts": [{"text": user_prompt}]}],
+            "generationConfig": generation_config,
+        }
+        req = urllib.request.Request(
+            url, data=json.dumps(payload).encode("utf-8"),
+            headers={"Content-Type": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            # El cuerpo del error dice si el problema es el esquema o la petición.
+            detail = exc.read().decode("utf-8", "replace")
+            return {"__http_error": exc.code, "__detail": detail}
+        except urllib.error.URLError as exc:
+            return {"__http_error": 0, "__detail": str(exc.reason)}
+
+    data = post({**cfg, "response_schema": JSON_SCHEMA})
+    if data.get("__http_error") in (400, 422) and "schema" in str(data.get("__detail", "")).lower():
+        print("      (el esquema fue rechazado; reintento sin response_schema)")
+        data = post(cfg)
+    if "__http_error" in data:
+        code, detail = data["__http_error"], str(data.get("__detail", ""))
+        pista = ("revisa que la clave sea válida y tenga la Generative Language API activa"
+                 if code in (400, 403) else "revisa la conexión y el nombre del modelo")
+        raise SystemExit(f"ERROR HTTP {code}: {detail[:300]}\n  → {pista}")
+
+    cands = data.get("candidates") or []
+    if not cands:
+        raise SystemExit("respuesta sin candidatos: " + json.dumps(data)[:400])
+    parts = cands[0].get("content", {}).get("parts", [])
+    raw = "".join(p.get("text", "") for p in parts)
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        raise SystemExit("el modelo no devolvió JSON válido:\n" + raw[:600])
+
+
+def audit_live(data: dict) -> tuple:
+    """Separa fallos duros (la respuesta es incorrecta) de avisos de recall."""
+    hard = list(validate_evaluation_json(data, STUDENT_TEXT))
+    soft = []
+    entries = [e for e in (data.get("critical_errors") or []) if isinstance(e, dict)]
+
+    print("\n--- Tarjetas devueltas por el modelo ---")
+    if not entries:
+        soft.append("no marcó ningún error (¿texto perfecto?)")
+    for i, e in enumerate(entries, 1):
+        print(f"  #{i} [{e.get('type')}] „{e.get('original')}“ → „{e.get('correction')}“ "
+              f"| {e.get('change') or '(sin change)'}")
+
+    for i, e in enumerate(entries, 1):
+        original = (e.get("original") or "")
+        correction = (e.get("correction") or "")
+        low_orig = original.casefold()
+        low_corr = correction.casefold()
+
+        # El fallo #2 del caso real: meter un relativo donde va el nominativo.
+        if low_corr.startswith("die ") and not low_orig.startswith("die"):
+            hard.append(f"#{i}: la corrección introduce «die» como relativo "
+                        f"(agramatical): «{correction}»")
+
+        # El fallo #5: «Beteiligten» solo necesitaba mayúscula.
+        if "beteiligten" in low_orig and "Beteiligten" not in correction:
+            hard.append(f"#{i}: cita «{original}» pero la corrección no escribe "
+                        f"«Beteiligten» con mayúscula: «{correction}»")
+
+        # «Zusätzliche» a mitad de oración va en minúscula.
+        if original.startswith("Zusätzliche") and not correction.startswith("zusätzliche"):
+            hard.append(f"#{i}: «Zusätzliche» debe quedar en minúscula: «{correction}»")
+
+    cv = data.get("corrected_version") or ""
+    if "Liebe Grüße," in STUDENT_TEXT and "Liebe Grüße," not in cv:
+        hard.append("la despedida perdió la coma de «Liebe Grüße,»")
+    for frag in ("zwei Gruppen bilden", "Eine Gruppe, die nicht mehr arbeiten kann"):
+        if frag not in cv:
+            hard.append(f"el texto corregido ya no contiene «{frag}» (se reescribió)")
+
+    ratio = len(cv) / max(len(STUDENT_TEXT), 1)
+    if not 0.75 <= ratio <= 1.35:
+        soft.append(f"el texto corregido mide {ratio:.2f}× el original: huele a reescritura")
+
+    if not any("zum Thema" in (e.get("original") or "") for e in entries):
+        soft.append("no marcó el genitivo tras «zum Thema» (fallo de recall del caso real)")
+
+    campos = ("original", "correction", "change", "rule_es")
+    for i, e in enumerate(entries, 1):
+        for c in campos:
+            if not (e.get(c) or "").strip():
+                hard.append(f"#{i}: falta el campo «{c}»")
+    return hard, soft
+
+
+def live_main(api_key: str, model: str, save: str = "") -> int:
+    print(f"=== CORRECTOR EN VIVO ({model}) ===")
+    print(f"texto: {count_words(STUDENT_TEXT)} palabras · {len(STUDENT_TEXT)} caracteres")
+    user_prompt = build_user_prompt(LIVE_TASK, STUDENT_TEXT, lang="es")
+    data = _call_gemini(api_key, model, user_prompt)
+    if save:
+        with open(save, "w", encoding="utf-8") as fh:
+            json.dump(data, fh, ensure_ascii=False, indent=2)
+        print(f"respuesta guardada en {save}")
+
+    hard, soft = audit_live(data)
+    print(f"\nveredicto del modelo: {data.get('verdict')} ({data.get('score_total')}/100)")
+
+    if soft:
+        print(f"\nAVISOS ({len(soft)}):")
+        for s in soft:
+            print(f"  - {s}")
+    if hard:
+        print(f"\nFALLOS ({len(hard)}):")
+        for h in hard:
+            print(f"  - {h}")
+        print("\nEl corrector TODAVÍA falla: no lo des por bueno.")
+        return 1
+
+    print("\nOK: la respuesta pasa el contrato y las trampas del caso real.")
+    return 0
+
+
 if __name__ == "__main__":
+    args = sys.argv[1:]
+    if "--gemini-key" in args:
+        import argparse
+        ap = argparse.ArgumentParser(description="Corrector telc B2: suite offline o prueba en vivo")
+        ap.add_argument("--gemini-key", required=True)
+        ap.add_argument("--model", default="gemini-3.5-flash-lite")
+        ap.add_argument("--save", default="")
+        ns = ap.parse_args(args)
+        sys.exit(live_main(ns.gemini_key, ns.model, ns.save))
     sys.exit(main())

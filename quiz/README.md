@@ -296,6 +296,9 @@ delta y cada corrección aplicada en `corrected_version`.
 ```powershell
 & $py quiz\test_correccion.py   # regresión del corrector con el caso real
 & $py quiz\test_prompt.py       # contrato de la rúbrica y del JSON
+
+# prueba en vivo contra Gemini, con el texto real (necesita clave):
+& $py quiz\test_correccion.py --gemini-key $env:GEMINI_API_KEY --model gemini-3.5-flash --save resp.json
 ```
 
 ---
