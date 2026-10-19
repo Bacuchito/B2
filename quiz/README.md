@@ -117,7 +117,7 @@ componentes**: basta el bloque `:root`.
 | Semánticos | `--ok`, `--bad`, `--warn`, `--violet-ink` y sus `-ink` | Aciertos, fallos, avisos |
 | Rellenos de estado | `--bien-fill`, `--mal-fill` y sus `-ink` | Letras corregidas: sólidos y oscuros, 6.2:1 y 7.4:1 |
 | Espaciado | `--sp-1` … `--sp-8` (4, 8, 12, 16, 24, 32, 48, 64) | Rejilla de 4/8pt |
-| Tipografía | `--fs-micro` … `--fs-h2` (11, 12, 13, 15, 17, 20, 27) | Seis pasos, sin tallas sueltas |
+| Tipografía | `--fs-micro` … `--fs-h2` (11, 12, 13, 15, 17, 20) | Seis pasos, sin tallas sueltas |
 | Movimiento | `--dur-1/2/3`, `--ease`, `--spring` | Duraciones y curvas elásticas |
 | Relieve | `--sh-1/2/3`, `--bisel`, `--hundido`, `--lit` | Sombra de fuera (altura) + filo de dentro (material); `--hundido` para los huecos |
 | Brillo | `--glow`, `--halo` | Azul, y solo en el foco, en lo elegido y en la acción principal |
@@ -171,9 +171,19 @@ alguno quiere cambiarlo en ese momento.
   filos de estado (`--line-ok/-bad/-warn/-acc`) y los rellenos (`--bien-fill`,
   `--mal-fill`) también son tokens.
 
-Las tres familias tipográficas son del sistema (`--font-ui`, `--font-read` serif
-para textos largos y `--font-mono`): la app sigue funcionando sin conexión y sin
-descargar fuentes.
+Las tres familias tipográficas son del sistema (`--font-ui`, `--font-read` serif y
+`--font-mono`): la app sigue funcionando sin conexión y sin descargar fuentes.
+
+**Reparto de las dos voces** — es lo que hace que la app no parezca una plantilla:
+
+- **Sans (`--font-ui`) para la interfaz y para lo que se lee**: titulares, rótulos,
+  anuncios, textos de examen, enunciados, el área de escritura. Es la voz de trabajo.
+- **Serif (`--font-read`) solo para lo que se cita o se escribe**: la cita literal
+  del bloque de corrección, la carta recibida, la redacción modelo, el texto anotado,
+  la redacción de la pareja y las fichas de letra a–h. Es la voz del papel.
+
+El titular de sección es sans de 20 px y la cabecera va a 17 px con los controles a
+32 px: la barra queda tensa y el contenido manda.
 
 ## Bilingüismo (ES / RU)
 

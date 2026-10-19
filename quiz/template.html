@@ -99,7 +99,7 @@
     --font-read:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
     --font-mono:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,"Liberation Mono",monospace;
     --fs-micro:11px; --fs-xs:12px; --fs-sm:13px; --fs-base:15px; --fs-lead:17px;
-    --fs-h3:20px; --fs-h2:32px; --fs-h1:19px;
+    --fs-h3:20px; --fs-h2:20px; --fs-h1:17px;
 
     /* --- Relieve: la sombra de fuera levanta la pieza; el filo de dentro le da
        material. Son dos trabajos distintos, no dos adornos superpuestos. --- */
@@ -227,7 +227,8 @@
                             border:3px solid transparent;background-clip:content-box}
   ::-webkit-scrollbar-thumb:hover{background:var(--line-2);background-clip:content-box}
 
-  /* Cabecera: pieza levantada sobre la mesa, con filo claro arriba. */
+  /* Cabecera: pieza levantada sobre la mesa, con filo claro arriba. Los controles
+     van en talla pequeña (32px) para que la barra quede tensa, como el prototipo. */
   header{position:sticky;top:0;z-index:20;
          min-height:var(--header-h);
          background:linear-gradient(180deg,var(--panel2),var(--panel));
@@ -236,7 +237,8 @@
          padding:var(--sp-3) var(--sp-5);
          display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;
          transition:background var(--dur-3) var(--ease)}
-  header h1{font-family:var(--font-read);font-size:var(--fs-h1);margin:0;
+  header .btn{min-height:32px;font-size:var(--fs-sm)}
+  header h1{font-family:var(--font-ui);font-size:var(--fs-h1);margin:0;
             font-weight:700;letter-spacing:-.01em;white-space:nowrap;
             display:flex;align-items:center;gap:var(--sp-2)}
   /* Monograma «B2» como casilla de formulario de examen */
@@ -314,8 +316,10 @@
 
   main{flex:1;min-width:0;padding:var(--sp-6) var(--sp-6) var(--sp-8);max-width:960px}
   /* Masthead editorial: título display + filete + línea de datos en versalitas */
-  h2{font-family:var(--font-read);font-size:var(--fs-h2);line-height:1.16;margin:0;
-     font-weight:700;letter-spacing:-.02em;text-wrap:balance}
+  /* Titular de sección: sans y contenido, como en el prototipo. La serif se queda
+     para lo que se cita y lo que se escribe, no para los rótulos. */
+  h2{font-family:var(--font-ui);font-size:var(--fs-h2);line-height:1.2;margin:0;
+     font-weight:650;letter-spacing:-.01em;text-wrap:balance}
   h2 + .sub{color:var(--dim-2);font-size:var(--fs-xs);font-weight:640;
      margin:var(--sp-4) 0 var(--sp-5);padding-top:var(--sp-3);
      border-top:1px solid var(--line);
@@ -330,7 +334,7 @@
   .panel h3{display:block;margin:0 0 var(--sp-3);font-size:var(--fs-micro);letter-spacing:.10em;
             text-transform:uppercase;color:var(--dim-2);font-weight:700;
             border:0;border-radius:0;padding:0 0 var(--sp-2)}
-  .intro-text{font-family:var(--font-read);font-size:var(--fs-lead);line-height:1.7;
+  .intro-text{font-family:var(--font-ui);font-size:var(--fs-lead);line-height:1.7;
               color:var(--txt);max-width:var(--read-w)}
 
   details.passage summary{cursor:pointer;font-weight:640;font-size:var(--fs-base);color:var(--acc-ink);
@@ -345,7 +349,7 @@
   details.passage summary:hover{color:var(--acc)}
   details.passage[open] summary{margin-bottom:var(--sp-3);padding-bottom:var(--sp-2);
                                  border-bottom:1px solid var(--line)}
-  .passage-body{white-space:pre-wrap;font-family:var(--font-read);font-size:var(--fs-base);line-height:1.75;
+  .passage-body{white-space:pre-wrap;font-family:var(--font-ui);font-size:var(--fs-base);line-height:1.75;
                 color:var(--txt);max-width:var(--read-w);max-height:62vh;overflow-y:auto;
                 padding-right:var(--sp-2)}
 
@@ -355,12 +359,12 @@
      Nunca marca lo que la clave da por correcto: eso sería enseñar la solución.
      El ✓ repite el estado sin depender del color. */
   .ad{border:0;border-top:1px solid var(--line);padding:var(--sp-3) var(--sp-2);margin:0;
-      border-radius:0;background:transparent;font-family:var(--font-read);
+      border-radius:0;background:transparent;font-family:var(--font-ui);
       transition:background var(--dur-2) var(--ease)}
   .ad:first-child{border-top:0}
   .ad:hover{background:var(--tint-neutral)}
   .ad .k{font-weight:700;margin-right:var(--sp-2);font-variant-numeric:tabular-nums;
-         font-family:var(--font-read);font-size:var(--fs-lead)}
+         font-family:var(--font-ui);font-size:var(--fs-lead)}
   .ad .t{font-weight:640}
   .ad .body{color:var(--dim);font-size:var(--fs-base);margin-top:var(--sp-1);line-height:1.6;
             max-width:var(--read-w)}
@@ -461,7 +465,7 @@
      Una sola línea con puntos suspensivos: si creciera, movería la fila de abajo
      cada vez que pasas por encima. */
   .letters-peek{margin-top:var(--sp-2);min-height:1.3em;font-size:var(--fs-xs);
-                color:var(--dim-2);font-family:var(--font-read);
+                color:var(--dim-2);font-family:var(--font-ui);
                 white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:var(--read-w)}
   .letters-peek b{color:var(--txt);font-weight:640}
   /* Corregida: relleno sólido y oscuro (6.2:1 y 7.4:1) con el brillo puesto en la
@@ -532,7 +536,7 @@
                border-color:rgba(255,255,255,.18);
                box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px rgba(66,193,132,.28)}
   .btn.success:hover{filter:brightness(1.06)}
-  .btn.sm{min-height:28px;padding:0 var(--sp-4);font-size:var(--fs-xs)}
+  .btn.sm{min-height:32px;padding:0 var(--sp-4);font-size:var(--fs-sm)}
 
   /* Aviso del sistema: pieza con tinte y filo. Uno por pantalla y como mucho:
      repetido pierde su fuerza. */
@@ -613,7 +617,7 @@
   /* El área de escritura: hueco hundido con el halo al enfocar. */
   .editor-textarea{width:100%;min-height:300px;background:var(--sunken);border:var(--b-std) solid var(--line);
            border-radius:var(--r-2);padding:var(--sp-4) var(--sp-5);color:var(--txt);
-           font-size:var(--fs-base);line-height:1.7;font-family:var(--font-ui);resize:vertical;
+           font-size:var(--fs-base);line-height:1.7;font-family:var(--font-read);resize:vertical;
            caret-color:var(--acc);outline:none;box-sizing:border-box;box-shadow:var(--hundido);
            transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
   .editor-textarea:focus{border-color:rgba(106,164,255,.75);box-shadow:var(--hundido),var(--halo)}
@@ -866,7 +870,8 @@
   /* Interruptor de tema: pista con el mando redondo y el icono DENTRO del mando.
      El mando enseña el estado en el que estás (luna en oscuro, sol en claro) y la
      pista se enciende con el acento cuando el modo oscuro está activo. */
-  .switch-tema{display:inline-flex;align-items:center;border:0;background:none;padding:0;cursor:pointer}
+  .switch-tema{display:inline-flex;align-items:center;gap:var(--sp-2);border:0;background:none;padding:0;cursor:pointer}
+  .switch-tema .switch-tema-texto{font-size:var(--fs-sm);font-weight:640;color:var(--dim);white-space:nowrap}
   .switch-tema .pista-tema{position:relative;width:52px;height:30px;border-radius:var(--r-pill);
     background:var(--sunken);border:var(--b-std) solid var(--line);box-shadow:var(--hundido);
     transition:background var(--dur-3) var(--ease),border-color var(--dur-3) var(--ease),
@@ -907,8 +912,11 @@
     .copy-btn,.input,.select,.lp-item,.opt,.sec-reset,details.passage summary{min-height:44px}
     #nav-toggle,.icon-btn{min-height:44px}
     #theme-btn{min-height:44px}
+    .switch-tema-texto{display:none}
     .letters button{width:44px}
     .btn.sm,.copy-btn{min-height:36px}
+    /* En móvil, todo lo de la cabecera vuelve a 44px de área de toque. */
+    header .btn{min-height:44px}
   }
 
   /* --- Escritorio ancho (≥1280px): la mesa de examen, en dos columnas ---
@@ -975,6 +983,7 @@
   <button class="btn ghost" id="btn-ai-config" title="Configurar claves de API y sincronización">⚙ Configurar IA</button>
   <button class="switch-tema" id="theme-btn" type="button" role="switch" aria-checked="true" title="Modo noche" aria-label="Modo oscuro">
     <span class="pista-tema"><span class="mando-tema" id="theme-knob"></span></span>
+    <span class="switch-tema-texto" id="theme-label">Modo oscuro</span>
   </button>
   <div class="progress-rule" aria-hidden="true"><span id="progress-fill"></span></div>
 </header>
@@ -1646,6 +1655,8 @@ function applyTheme(){
   const oscuro = currentTheme === "dark";
   const mando = (typeof btn.querySelector === "function") ? btn.querySelector(".mando-tema") : null;
   if (mando) mando.innerHTML = oscuro ? ICONO_TEMA.oscuro : ICONO_TEMA.claro;
+  const etiqueta = document.getElementById("theme-label");
+  if (etiqueta) etiqueta.textContent = t("themeSwitch");
   if (typeof btn.setAttribute === "function"){
     btn.setAttribute("aria-checked", oscuro ? "true" : "false");
     btn.setAttribute("aria-label", t("themeSwitch"));
