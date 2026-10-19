@@ -107,8 +107,8 @@ BAD_EVAL = {
         },
         {
             # La app marcó la oración entera (91 caracteres) por una sola mayúscula
-            "original": "Aus meiner persönlichen Erfahrung kann ich berichten, dass Zusätzliche Aufgaben keine gute Idee sind.",
-            "correction": "Aus meiner persönlichen Erfahrung kann ich berichten, dass zusätzliche Aufgaben keine gute Idee sind.",
+            "original": "Ein weiterer Aspekt, der unbedingt bedacht werden sollte, betrifft unsere Gesundheit und World-Life-Balance. Aus meiner persönlichen Erfahrung kann ich berichten, dass Zusätzliche Aufgaben keine gute Idee sind.",
+            "correction": "Ein weiterer Aspekt, der unbedingt bedacht werden sollte, betrifft unsere Gesundheit und Work-Life-Balance. Aus meiner persönlichen Erfahrung kann ich berichten, dass zusätzliche Aufgaben keine gute Idee sind.",
             "rule_es": "Los adjetivos usados como sustantivos o comunes dentro de la oración deben ir en minúscula.",
             "type": "Rechtschreibung",
         },
@@ -344,6 +344,9 @@ TAREAS = {"forum": LIVE_TASK, "krankmeldung": LIVE_TASK_KRANKMELDUNG}
 
 
 def _call_gemini(api_key: str, model: str, user_prompt: str) -> dict:
+    """Misma cadena de reintentos que la app: Gemma no acepta response_schema,
+    ni response_mime_type JSON, ni system_instruction."""
+    import time
     import urllib.error
     import urllib.parse
     import urllib.request
@@ -351,42 +354,63 @@ def _call_gemini(api_key: str, model: str, user_prompt: str) -> dict:
     url = ("https://generativelanguage.googleapis.com/v1beta/models/"
            + urllib.parse.quote(model, safe="")
            + ":generateContent?key=" + urllib.parse.quote(api_key, safe=""))
-    cfg = {"temperature": 0, "response_mime_type": "application/json"}
+    sistema = {"system_instruction": {"parts": [{"text": SYSTEM_PROMPT}]}}
+    contenido = {"contents": [{"parts": [{"text": user_prompt}]}]}
+    intentos = [
+        ("esquema", {**sistema, **contenido, "generationConfig": {
+            "temperature": 0, "response_mime_type": "application/json",
+            "response_schema": JSON_SCHEMA}}),
+        ("json", {**sistema, **contenido, "generationConfig": {
+            "temperature": 0, "response_mime_type": "application/json"}}),
+        ("plano", {**sistema, **contenido, "generationConfig": {"temperature": 0}}),
+        ("sin system", {"contents": [{"parts": [{"text": SYSTEM_PROMPT + "\n\n" + user_prompt}]}],
+                        "generationConfig": {"temperature": 0}}),
+    ]
 
-    def post(generation_config: dict) -> dict:
-        payload = {
-            "system_instruction": {"parts": [{"text": SYSTEM_PROMPT}]},
-            "contents": [{"parts": [{"text": user_prompt}]}],
-            "generationConfig": generation_config,
-        }
-        req = urllib.request.Request(
-            url, data=json.dumps(payload).encode("utf-8"),
-            headers={"Content-Type": "application/json"})
+    def post(body, timeout=600):
+        req = urllib.request.Request(url, data=json.dumps(body).encode("utf-8"),
+                                     headers={"Content-Type": "application/json"})
         try:
-            with urllib.request.urlopen(req, timeout=180) as resp:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return json.loads(resp.read().decode("utf-8"))
         except urllib.error.HTTPError as exc:
-            # El cuerpo del error dice si el problema es el esquema o la petición.
-            detail = exc.read().decode("utf-8", "replace")
-            return {"__http_error": exc.code, "__detail": detail}
-        except urllib.error.URLError as exc:
-            return {"__http_error": 0, "__detail": str(exc.reason)}
+            return {"__http_error": exc.code, "__detail": exc.read().decode("utf-8", "replace")}
+        except Exception as exc:                      # timeout de lectura, red, etc.
+            return {"__http_error": 0, "__detail": f"{type(exc).__name__}: {exc}"}
 
-    data = post({**cfg, "response_schema": JSON_SCHEMA})
-    if data.get("__http_error") in (400, 422) and "schema" in str(data.get("__detail", "")).lower():
-        print("      (el esquema fue rechazado; reintento sin response_schema)")
-        data = post(cfg)
+    data = None
+    for etiqueta, body in intentos:
+        data = post(body)
+        if "__http_error" not in data:
+            print(f"      (aceptado en el intento «{etiqueta}»)")
+            break
+        detalle = str(data.get("__detail", ""))
+        print(f"      intento «{etiqueta}»: HTTP {data['__http_error']} {detalle[:110]}")
+        if data["__http_error"] == 0:
+            print("      (sin respuesta a tiempo; reintento con 15 min de margen)")
+            data = post(body, timeout=900)
+            if "__http_error" not in data:
+                print(f"      (aceptado en el intento «{etiqueta}» tras esperar)")
+                break
+        if data["__http_error"] == 429:
+            print("      (cuota por minuto; espero 25 s y repito)")
+            time.sleep(25)
+            data = post(body)
+            if "__http_error" not in data:
+                print(f"      (aceptado en el intento «{etiqueta}» tras esperar)")
+                break
+        if data["__http_error"] != 400:
+            break
     if "__http_error" in data:
-        code, detail = data["__http_error"], str(data.get("__detail", ""))
-        pista = ("revisa que la clave sea válida y tenga la Generative Language API activa"
-                 if code in (400, 403) else "revisa la conexión y el nombre del modelo")
-        raise SystemExit(f"ERROR HTTP {code}: {detail[:300]}\n  → {pista}")
+        raise SystemExit(f"ERROR HTTP {data['__http_error']}: {str(data.get('__detail'))[:300]}")
 
-    cands = data.get("candidates") or []
-    if not cands:
-        raise SystemExit("respuesta sin candidatos: " + json.dumps(data)[:400])
-    parts = cands[0].get("content", {}).get("parts", [])
-    raw = "".join(p.get("text", "") for p in parts)
+    partes = data.get("candidates", [{}])[0].get("content", {}).get("parts", [])
+    raw = "".join(p.get("text", "") for p in partes)
+    uso = data.get("usageMetadata") or {}
+    if uso:
+        print(f"      tokens: {uso.get('promptTokenCount')} in · {uso.get('candidatesTokenCount')} out")
+    if not raw:
+        raise SystemExit("respuesta vacía: " + json.dumps(data)[:300])
     try:
         return json.loads(raw)
     except json.JSONDecodeError:

@@ -144,7 +144,8 @@ Das ist eine Prüfliste, kein Suchmuster. Melde nur, was wörtlich im Text steht
 ### EIN EINTRAG IN `critical_errors` — FELD FÜR FELD
 - `original`: wörtlich und zeichengenau aus dem Text, MIT den Fehlern des Teilnehmers.
   Kleinster sinnvoller Abschnitt: in der Regel das falsche Wort bzw. die falsche
-  Wortgruppe, nicht der ganze Satz. Obergrenze: etwa 80 Zeichen. Bei einem
+  Wortgruppe, nicht der ganze Satz. Obergrenze: ein Teilsatz (Richtwert 160
+  Zeichen), nie der ganze Absatz. Bei einem
   Groß-/Kleinschreibungs- oder Buchstabenfehler zitierst du NUR das betroffene Wort.
 - `correction`: genau EINE korrigierte Fassung derselben Stelle. Keine Alternativen
   (»A / B«, »oder«), keine Erklärung, keine zusätzlichen Wörter.
@@ -254,7 +255,7 @@ WICHTIGE VORGABEN:
   * `original`: MUSS ein EXAKTES, wörtliches Zitat (Substring) aus dem Text des Teilnehmers sein (ohne Anführungszeichen drumherum), damit der Fehler exakt an dieser Stelle im Text farbig markiert werden kann.
     - Zitiere `original` ZEICHEN FÜR ZEICHEN so, wie der Teilnehmer es geschrieben hat — auch MIT seinen Fehlern. Schreibe NIEMALS die bereits korrigierte Form ins Feld `original` (bei einem Großschreibungsfehler steht dort also z. B. `beteiligten faire Lösung`, NICHT `Beteiligten faire Lösung`).
     - Prüfe vor der Ausgabe, ob dieser Wortlaut wirklich genau so im Text vorkommt. Wenn nicht, zitiere den tatsächlichen Wortlaut.
-    - Halte das Zitat kurz (Richtwert: höchstens 80 Zeichen). Ein ganzer Satz als Zitat für einen Fehler in einem Wort ist ein Formfehler.
+    - Halte das Zitat kurz (Richtwert: bis 160 Zeichen, ein Teilsatz). Ein ganzer Absatz als Zitat ist ein Formfehler.
   * `correction`: Die korrigierte Version der Passage auf Deutsch (B2-Niveau).
     - `correction` MUSS sich von `original` unterscheiden. Wenn du keine echte Änderung nennen kannst, ist es KEIN Fehler: dann lass den Eintrag ganz weg. Ein Eintrag, in dem `original` und `correction` gleich lauten, ist ungültig.
     - Genau EINE Fassung: keine Alternativen mit »/« oder »oder«.
@@ -462,7 +463,7 @@ def build_user_prompt(task: Dict[str, Any], student_text: str, lang: str = "es")
 # Validación mecánica del contrato
 # ---------------------------------------------------------------------------
 
-MAX_SPAN_CHARS = 80          # más que esto casi siempre es "el párrafo por la palabra"
+MAX_SPAN_CHARS = 160          # más que esto casi siempre es "el párrafo por la palabra"
 _CASE_HINTS = ("mayúscula", "mayuscula", "minúscula", "minuscula",
                "großschreibung", "kleinschreibung", "orthograf", "ortograf")
 _PUNCT_HINTS = ("coma", "komma", "punto", "punkt", "zeichensetzung", "satzzeichen",

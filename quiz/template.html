@@ -4183,7 +4183,7 @@ function errorValido(err, studentText){
   const original = comparableText(err.original);
   const correction = comparableText(err.correction);
   if(!original || !correction || original === correction) return false;
-  if(original.length > 80) return false;
+  if(original.length > 160) return false;
   if(/\s\/\s/.test(correction)) return false;
   if(/\soder\s/.test(correction) && !/\soder\s/.test(original)) return false;
   if(!String(err.change || "").trim()) return false;
@@ -4297,7 +4297,7 @@ function openAIConfigModal(alertNotice){
                 '<option value="gemini-3.5-flash">' + t("geminiModelHelpFlash") + '</option>' +
                 '<option value="gemini-3.1-pro-preview">' + t("geminiModelHelpPro") + '</option>' +
                 '<option value="gemini-2.5-flash">gemini-2.5-flash</option>' +
-                '<option value="gemma-4-26b-it">Gemma 4 26B</option>' +
+                '<option value="gemma-4-26b-a4b-it">Gemma 4 26B (lento)</option>' +
                 '<option value="gemma-4-31b-it">Gemma 4 31B</option>' +
               '</datalist>' +
               '<small>' + t("geminiModelFree") + '</small>' +
