@@ -393,6 +393,15 @@
      que la tarjeta alta de los anuncios no tiene sentido: en rejilla caben las diez
      de un vistazo y los huecos no se van media pantalla más abajo. Se declara desde
      el dato con `optionsLayout: "bank"`, no por heurística de longitud. */
+  /* El banco de palabras de los ejercicios de huecos va dentro del texto de lectura:
+     una sección con su filete, no una tarjeta dentro de otra tarjeta. Y recupera el
+     espaciado normal, porque el cuerpo de lectura conserva los saltos de línea. */
+  .passage-body .banco{background:none;border:0;box-shadow:none;padding:0;
+                       margin:var(--sp-5) 0 0;white-space:normal}
+  .passage-body .banco > summary{padding-top:var(--sp-3);margin-bottom:var(--sp-2);
+                       border-top:var(--b-std) solid var(--line-2)}
+  .passage-body .banco .bank .ad{white-space:normal}
+
   /* Banco de palabras: son diez palabras sueltas que se ELIGEN, así que van en rejilla
      de dos columnas (cinco filas) con filetes, no en una lista de diez filas que
      empujaría la primera pregunta media pantalla hacia abajo. */
@@ -986,14 +995,9 @@
     /* Un solo scroll (el del panel), no dos anidados. */
     main.desk > details.passage .passage-body{max-height:none;overflow:visible}
 
-    /* El banco de palabras (ejercicios de huecos) NO es la lectura: va a la derecha,
-       encima de las preguntas, sin quedarse fijo y sin scroll propio. Y en rejilla de
-       dos columnas: son diez palabras sueltas, no hace falta una lista de diez filas
-       que empuje la primera pregunta media pantalla hacia abajo. */
-    main.desk > details.passage.banco{grid-column:2;position:static;max-height:none;
-              overflow:visible;margin-bottom:var(--sp-4);max-width:var(--desk-work)}
-    main.desk > details.passage.banco > summary{position:static;margin:0;background:none;
-              padding:var(--sp-4) 0 var(--sp-2)}
+    /* El banco de palabras (ejercicios de huecos) NO es un panel hermano: vive dentro
+       del texto de lectura (ver el render), así que se queda con él en la columna fija
+       y sigue a la vista mientras se responde. */
     main.desk > .q-sheet,main.desk > .row{grid-column:2;width:100%;max-width:var(--desk-work)}
   }
 
@@ -2395,8 +2399,15 @@ function renderMain(){
     main.appendChild(p);
   }
 
+  /* El texto de lectura es la referencia que se queda fija en modo mesa. Y en los
+     ejercicios de huecos el banco de palabras va DENTRO de esa misma pieza, debajo del
+     texto: si fuera un panel aparte, al bajar a responder desaparecía de la vista y te
+     quedabas sin las diez palabras. */
+  let cuerpoLectura = null;
   if(v.passage){
-    main.appendChild(detailsPanel(t("readingText"), v.passage, v.passageOpen));
+    const panelLectura = detailsPanel(t("readingText"), v.passage, v.passageOpen);
+    main.appendChild(panelLectura);
+    if(typeof panelLectura.querySelector === "function") cuerpoLectura = panelLectura.querySelector(".passage-body");
   }
 
   if(v.options && v.options.length){
@@ -2408,10 +2419,9 @@ function renderMain(){
              .filter(a => a !== undefined && a !== "__revealed__")
              .map(a => String(a).toLowerCase()));
     const d = document.createElement("details");
-    /* `banco` distingue el banco de palabras del texto de lectura: en modo mesa van a
-       columnas distintas (el texto a la izquierda, fijo; el banco a la derecha, sobre
-       las preguntas, porque es lo que se consulta al responder). */
-    d.className = "panel passage banco";
+    /* `banco` marca el banco de palabras de los ejercicios de huecos: no es la lectura
+       y va dentro de ella (ver arriba), no como panel hermano. */
+    d.className = "panel passage" + (v.optionsLayout === "bank" ? " banco" : "");
     d.open = true;
     const s = document.createElement("summary");
     const label = v.optionsLabel || (v._section === "lesen-t3" ? "Kommentare" : "Anzeigen");
@@ -2444,7 +2454,8 @@ function renderMain(){
       body.appendChild(div);
     });
     d.appendChild(body);
-    main.appendChild(d);
+    if(cuerpoLectura && v.optionsLayout === "bank") cuerpoLectura.appendChild(d);
+    else main.appendChild(d);
   }
 
   const shown = onlyDoubtful ? v.items.filter(isDoubtful) : v.items;
