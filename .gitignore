@@ -23,3 +23,5 @@ Thumbs.db
 # (el repositorio es publico y una auditoria interna detalla como se rompe la app)
 AUDITORIA_B2.md
 .design/
+
+tools/.oc_key
