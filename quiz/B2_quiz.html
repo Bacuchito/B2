@@ -4559,15 +4559,18 @@ function openAIConfigModal(alertNotice){
                             encodeURIComponent(cfg.geminiKey));
       if(!r.ok) throw new Error("HTTP " + r.status + ": " + (await r.text()).slice(0, 120));
       const data = await r.json();
-      const ids = (data.models || [])
+      const modelos = (data.models || [])
         .filter(m => (m.supportedGenerationMethods || []).includes("generateContent"))
-        .map(m => String(m.name || "").replace(/^models\//, ""))
-        .filter(Boolean).sort();
-      if(!ids.length){ caja.textContent = t("modelsNone"); return; }
+        .map(m => ({ id: String(m.name || "").replace(/^models\//, ""), nombre: String(m.displayName || "") }))
+        .filter(m => m.id)
+        .sort((a, b) => a.id.localeCompare(b.id));
+      if(!modelos.length){ caja.textContent = t("modelsNone"); return; }
       const sel = document.createElement("select");
       sel.className = "select";
-      sel.innerHTML = '<option value="">' + t("modelsPick", {n: ids.length}) + '</option>' +
-        ids.map(id => '<option value="' + esc(id) + '">' + esc(id) + '</option>').join("");
+      sel.innerHTML = '<option value="">' + t("modelsPick", {n: modelos.length}) + '</option>' +
+        modelos.map(m => '<option value="' + esc(m.id) + '">' +
+          (m.nombre && m.nombre !== m.id ? esc(m.nombre) + " · " + esc(m.id) : esc(m.id)) +
+          '</option>').join("");
       sel.onchange = ()=>{
         if(sel.value){
           const campo = document.getElementById("cfg-gemini-model");
