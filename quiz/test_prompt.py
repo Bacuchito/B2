@@ -111,18 +111,21 @@ MOCK_EVAL_FAIL_A2 = {
         {
             "original": "Hallo Herr Lassner,",
             "correction": "Sehr geehrter Herr Lassner,",
+            "change": "Anrede ersetzt: Hallo → Sehr geehrter",
             "rule_es": "En correspondencia comercial alemana formal nunca se tutea ni se usa 'Hallo' con clientes insatisfechos; debe usarse 'Sehr geehrte(r) Frau/Herr...'.",
             "type": "Stil"
         },
         {
             "original": "darum sie sind früher nach Hause gegangen.",
             "correction": "darum sind sie früher nach Hause gegangen.",
+            "change": "Subjekt und Verb getauscht: sie sind → sind sie",
             "rule_es": "El adverbio conector 'darum' ocupa la posición 1, por lo que el verbo conjugado 'sind' debe ocupar obligatoriamente la posición 2 (inversión sujeto-verbo).",
             "type": "Grammatik"
         },
         {
             "original": "weil wir wollen kein Streit.",
             "correction": "weil wir keinen Streit wollen.",
+            "change": "Verb ans Satzende und Akkusativ: kein → keinen",
             "rule_es": "La conjunción subordinante 'weil' desplaza el verbo conjugado ('wollen') al final absoluto de la oración subordinada. Además, 'Streit' es masculino acusativo ('keinen Streit').",
             "type": "Grammatik"
         }

@@ -266,6 +266,40 @@ lo hace la app: el modelo lo inflaba entre un 15 % y un 20 %.
 
 ---
 
+### Cómo corrige los errores (el corrector)
+
+`prompt_schreiben.py` define el contrato. A raíz de una redacción del foro con 5
+marcas, de las que 2 estaban mal analizadas, el prompt exige que cada entrada
+traiga un `change` —qué cambia exactamente— y prohíbe lo que falló:
+
+- **Reescribir**: `corrected_version` es el texto del alumno con SOLO las
+  correcciones listadas. La versión libre de 100 puntos es `musterloesung`.
+- **Spans anchos**: se cita la palabra o el fragmento mínimo, no el párrafo
+  (tope de 80 caracteres). El caso real marcó una oración de 101 caracteres por
+  una sola mayúscula.
+- **Alternativas** en `correction` («A / B»): una sola versión. Con dos opciones,
+  una de ellas era idéntica al original.
+- **Reglas inventadas**: si el cambio es solo de mayúsculas, la regla habla de
+  mayúsculas. Antes inventó una «falta de declinación» en «für alle Beteiligten»,
+  donde la terminación ya era correcta.
+
+La lista de trampas del prompt (adjetivo sustantivado tras «alle», genitivo tras
+«zum Thema», «und» entre subordinadas, coma de «Liebe Grüße») cierra los tres
+fallos concretos: proponer «die» como relativo donde va el nominativo, inventar el
+error de declinación y borrar la coma de la despedida al generalizar la regla de
+«Mit freundlichen Grüßen».
+
+`validate_evaluation_json(data, texto_del_alumno)` comprueba lo mecánico: cita
+literal, span mínimo, corrección única, `change` presente, regla coherente con el
+delta y cada corrección aplicada en `corrected_version`.
+
+```powershell
+& $py quiz\test_correccion.py   # regresión del corrector con el caso real
+& $py quiz\test_prompt.py       # contrato de la rúbrica y del JSON
+```
+
+---
+
 ## Verificación de las respuestas
 
 Como **no hay clave oficial**, cada respuesta pasa dos filtros:

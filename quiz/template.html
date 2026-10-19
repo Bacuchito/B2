@@ -3263,6 +3263,10 @@ function normalizeEvaluationResult(raw, studentText, totalLeitpunkte){
     return {
       original: String(e.original || e.falsch || e.text || e.fehler || ""),
       correction: String(e.correction || e.korrektur || e.richtig || e.besser || ""),
+      /* `change` = qué cambia exactamente (p. ej. «nur Großschreibung»). Es lo que
+         impide que el modelo invente una regla de declinación para un error de
+         mayúsculas: si no puede nombrar el delta, no debería haber marcado nada. */
+      change: String(e.change || e.cambio || e.delta || ""),
       rule_es: String(e.rule_es || e.rule || e.regla || e.erklaerung || e.explicacion || e.grund || ""),
       type: String(e.type || e.kategorie || e.art || "Grammatik")
     };
@@ -3622,6 +3626,7 @@ function renderEvaluationResult(v, rawRes){
         '</div>' +
         '<div class="orig">„' + esc(err.original) + '“</div>' +
         '<div class="corr">➔ ' + esc(err.correction) + '</div>' +
+        (err.change ? '<div class="micro" style="margin:2px 0 0">🔁 ' + esc(err.change) + '</div>' : '') +
         '<div class="rule">💡 ' + esc(err.rule_es) + '</div>';
 
       eb.onclick = ()=>{
