@@ -1251,6 +1251,11 @@ const I18N = {
     geminiModelHelpFlash: "gemini-3.5-flash (Alta capacidad y velocidad)",
     geminiModelHelpPro: "gemini-3.1-pro-preview (Máxima capacidad de razonamiento)",
     geminiModelFree: "Puedes escribir cualquier modelo del catálogo, también los Gemma; si no aceptan JSON estricto, la app reintenta sin esquema.",
+    btnListModels: "Ver los modelos de mi clave",
+    modelsPick: "{n} modelos disponibles: elige uno",
+    modelsNone: "no he podido leer la lista de modelos (¿clave incorrecta?)",
+    modelsGemmaHint: "Aquí salen los modelos que tu clave puede usar de verdad. Si Gemma no aparece, no está disponible para ella.",
+    modelsHint404: "Ese modelo no existe para tu clave: usa «Ver los modelos de mi clave» y elige uno de la lista.",
     lblCustomEndpoint: "Endpoint Base:",
     customEndpointHelp: "DeepSeek: <code>https://api.deepseek.com</code> | OpenAI: <code>https://api.openai.com/v1</code>",
     lblCustomKey: "API Key:",
@@ -1480,6 +1485,11 @@ const I18N = {
     geminiModelHelpFlash: "gemini-3.5-flash (Высокая скорость и качество)",
     geminiModelHelpPro: "gemini-3.1-pro-preview (Максимальные аналитические способности)",
     geminiModelFree: "Можно ввести любую модель каталога, включая Gemma; если JSON не поддерживается, приложение повторит без схемы.",
+    btnListModels: "Показать модели моего ключа",
+    modelsPick: "Доступно моделей: {n}. Выберите одну",
+    modelsNone: "не удалось прочитать список моделей (неверный ключ?)",
+    modelsGemmaHint: "Здесь модели, доступные вашему ключу. Если Gemma нет в списке, она недоступна.",
+    modelsHint404: "Такой модели нет для вашего ключа: нажмите «Показать модели» и выберите из списка.",
     lblCustomEndpoint: "Базовый Endpoint:",
     customEndpointHelp: "DeepSeek: <code>https://api.deepseek.com</code> | OpenAI: <code>https://api.openai.com/v1</code>",
     lblCustomKey: "API-ключ:",
@@ -4291,6 +4301,10 @@ function openAIConfigModal(alertNotice){
                 '<option value="gemma-4-31b-it">Gemma 4 31B</option>' +
               '</datalist>' +
               '<small>' + t("geminiModelFree") + '</small>' +
+              (cfg.provider === 'gemini'
+                ? '<div style="margin-top:6px"><button class="btn ghost sm" id="btn-list-models" type="button">' + t("btnListModels") + '</button></div>' +
+                  '<div id="models-box" style="margin-top:6px"></div>'
+                : '') +
             '</div>' +
           '</div>' +
 
@@ -4532,6 +4546,42 @@ function openAIConfigModal(alertNotice){
     };
   }
 
+  /* Lista de modelos reales de la clave: acaba con los 404 por identificadores
+     inventados (Gemma, versiones nuevas, etc.). */
+  const btnListModels = document.getElementById("btn-list-models");
+  if(btnListModels) btnListModels.onclick = async ()=>{
+    const caja = document.getElementById("models-box");
+    const cfg = readAIConfigFromModal();
+    if(!cfg.geminiKey){ caja.textContent = t("alertEnterGeminiKey"); return; }
+    caja.innerHTML = '<span class="micro">' + t("testTesting") + '</span>';
+    try {
+      const r = await fetch("https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key=" +
+                            encodeURIComponent(cfg.geminiKey));
+      if(!r.ok) throw new Error("HTTP " + r.status + ": " + (await r.text()).slice(0, 120));
+      const data = await r.json();
+      const ids = (data.models || [])
+        .filter(m => (m.supportedGenerationMethods || []).includes("generateContent"))
+        .map(m => String(m.name || "").replace(/^models\//, ""))
+        .filter(Boolean).sort();
+      if(!ids.length){ caja.textContent = t("modelsNone"); return; }
+      const sel = document.createElement("select");
+      sel.className = "select";
+      sel.innerHTML = '<option value="">' + t("modelsPick", {n: ids.length}) + '</option>' +
+        ids.map(id => '<option value="' + esc(id) + '">' + esc(id) + '</option>').join("");
+      sel.onchange = ()=>{
+        if(sel.value){
+          const campo = document.getElementById("cfg-gemini-model");
+          if(campo) campo.value = sel.value;
+        }
+      };
+      caja.innerHTML = "";
+      caja.appendChild(sel);
+      caja.insertAdjacentHTML("beforeend", '<small class="micro">' + t("modelsGemmaHint") + '</small>');
+    } catch(e){
+      caja.textContent = t("testFailed", {error: esc(errorDeRed(e))});
+    }
+  };
+
   document.getElementById("btn-test-connection").onclick = async ()=>{
     const testRes = document.getElementById("test-result");
     testRes.innerHTML = '<span class="micro">' + t("testTesting") + '</span>';
@@ -4573,7 +4623,8 @@ function openAIConfigModal(alertNotice){
       testRes.innerHTML = '<span class="em-ok">' + t("testSuccess") +
         (guardadoAlProbar ? " · " + t("testSaved") : " · " + t("aiStorageBlocked")) + '</span>';
     } catch(e) {
-      testRes.innerHTML = '<span class="em-bad">' + t("testFailed", {error: esc(errorDeRed(e))}) + '</span>';
+      testRes.innerHTML = '<span class="em-bad">' + t("testFailed", {error: esc(errorDeRed(e))}) + '</span>' +
+        (/404|not found/i.test(String(e && e.message || e)) ? '<div class="micro-block">' + t("modelsHint404") + '</div>' : '');
     }
   };
 }
