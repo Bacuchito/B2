@@ -4123,7 +4123,8 @@ function buildCazaSystemPrompt(){
     "- `change`: ein Halbsatz, was sich ändert (Deutsch zitiert).",
     "- `rule_es`: die Regel, die genau diesen Delta erklärt, auf Spanisch bzw. Russisch.",
     "- Erfinde nichts: was du nicht wörtlich belegst, ist kein Fehler. Lieber einen Fehler",
-    "  übersehen als einen erfinden."
+    "  übersehen als einen erfinden.",
+    "- Antworte ausschließlich mit JSON: {\"critical_errors\": [...]}."
   ].join("\n");
 }
 
@@ -4142,7 +4143,8 @@ function buildCazaUserPrompt(studentText){
     "6. Groß-/Kleinschreibung: Adjektive klein, substantivierte Adjektive groß.",
     "7. Register: umgangssprachlich statt beruflich → Stil.",
     "",
-    "Melde höchstens 12 Einträge. Ist der Text fehlerfrei, gib eine leere Liste zurück."
+    "Melde höchstens 12 Einträge. Ist der Text fehlerfrei, gib eine leere Liste zurück.",
+    "Antworte als JSON-Objekt mit dem Schlüssel «critical_errors»."
   ];
   if(currentLang === "ru"){
     parts.push("", "`rule_es` und `change` MÜSSEN AUF RUSSISCH sein.");
