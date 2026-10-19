@@ -1312,7 +1312,7 @@ const I18N = {
     noText: "(Sin texto)",
     evalBadJson: "La respuesta recibida no es un JSON válido:\n",
     evalProgressGemini: "Consultando a Google Gemini ({model})...",
-    evalProgressPasadas: "{n} pasadas en paralelo",
+    evalProgressPasadas: "{n} pasadas en paralelo + caza de errores",
     evalProgressCombinando: "Combinando las pasadas y calculando la banda mediana...",
     critUnstable: "Las pasadas no coincidieron en este criterio ({bands}): está en la frontera. Es el sitio donde más tienes que trabajar.",
     passesNote: "Banda mediana de {n} pasadas del examinador.",
@@ -1540,7 +1540,7 @@ const I18N = {
     noText: "(Нет текста)",
     evalBadJson: "Полученный ответ — не корректный JSON:\n",
     evalProgressGemini: "Запрос к Google Gemini ({model})...",
-    evalProgressPasadas: "{n} проходов параллельно",
+    evalProgressPasadas: "{n} проходов параллельно + охота за ошибками",
     evalProgressCombinando: "Объединяю проходы и считаю медиану...",
     critUnstable: "Проходы не совпали по этому критерию ({bands}): он на границе. Здесь и нужно работать больше всего.",
     passesNote: "Медиана по {n} проходам экзаменатора.",
@@ -1780,6 +1780,9 @@ window.puntuarCriterios = puntuarCriterios;
 window.normalizeEvaluationResult = normalizeEvaluationResult;
 window.bandaMediana = bandaMediana;
 window.combinarPasadas = combinarPasadas;
+window.fusionarErrores = fusionarErrores;
+window.aplicarCorrecciones = aplicarCorrecciones;
+window.errorValido = errorValido;
 
 /* ---------- Sincronización en Tiempo Real (Firebase Firestore) ---------- */
 let fbDb = null;
@@ -3858,8 +3861,9 @@ function parseEvaluationJson(rawText){
   }
 }
 
-/* Una pasada al proveedor elegido. Devuelve el JSON crudo, sin normalizar. */
-async function evaluarUnaPasada(config, systemPrompt, userPrompt){
+/* Una pasada al proveedor elegido. Devuelve el JSON crudo, sin normalizar.
+   `schemaOverride` permite pedir un esquema pequeño (la caza de errores). */
+async function evaluarUnaPasada(config, systemPrompt, userPrompt, schemaOverride){
   if(config.provider === "gemini"){
     const model = config.geminiModel || "gemini-3.5-flash-lite";
     const url = "https://generativelanguage.googleapis.com/v1beta/models/" + model + ":generateContent?key=" + encodeURIComponent(config.geminiKey);
@@ -3867,8 +3871,9 @@ async function evaluarUnaPasada(config, systemPrompt, userPrompt){
       response_mime_type: "application/json",
       temperature: 0
     };
-    if(DATA.prompt_schreiben && DATA.prompt_schreiben.json_schema){
-      genConfig.response_schema = DATA.prompt_schreiben.json_schema;
+    const schema = schemaOverride || (DATA.prompt_schreiben && DATA.prompt_schreiben.json_schema);
+    if(schema){
+      genConfig.response_schema = schema;
     }
     const body = {
       system_instruction: { parts: [{ text: systemPrompt }] },
@@ -3915,7 +3920,7 @@ async function evaluarUnaPasada(config, systemPrompt, userPrompt){
       response_format: { type: "json_object" },
       temperature: 0
     };
-    const resp = await fetch(url, {
+    const enviar = () => fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -3923,17 +3928,29 @@ async function evaluarUnaPasada(config, systemPrompt, userPrompt){
       },
       body: JSON.stringify(body)
     });
+    let resp = await enviar();
+    /* No todos los endpoints compatibles aceptan `response_format` (OpenCode,
+       algunos proxies). Se reintenta sin él antes de rendirse. */
+    if(!resp.ok && (resp.status === 400 || resp.status === 422)){
+      let detalle = "";
+      try { detalle = await resp.clone().text(); } catch(e){}
+      if(/response_format|json_object|unsupported|unknown/i.test(detalle)){
+        delete body.response_format;
+        resp = await enviar();
+      }
+    }
     if(!resp.ok){
       const errText = await resp.text();
       let msg = "Error " + resp.status + " de API";
       try {
         const j = JSON.parse(errText);
-        if(j.error && j.error.message) msg += ": " + j.error.message;
+        if(j.error && (j.error.message || j.error)) msg += ": " + (j.error.message || j.error);
       } catch(e){ msg += ": " + errText; }
       throw new Error(msg);
     }
     const data = await resp.json();
-    const raw = data?.choices?.[0]?.message?.content;
+    let raw = data?.choices?.[0]?.message?.content;
+    if(Array.isArray(raw)) raw = raw.map(p => (typeof p === "string" ? p : (p && p.text) || "")).join("");
     if(!raw) throw new Error(t("evalApiEmpty"));
     return parseEvaluationJson(raw);
 
@@ -3984,7 +4001,7 @@ function bandaMediana(bandas){
   return orden[Math.floor(orden.length / 2)];
 }
 
-function combinarPasadas(crudos, studentText, totalLeitpunkte){
+function combinarPasadas(crudos, studentText, totalLeitpunkte, listasExtra){
   const normalizadas = crudos.map(c => normalizeEvaluationResult(c, studentText, totalLeitpunkte));
   const medianas = {}, discrepancia = {};
   CLAVES_CRITERIO.forEach(k=>{
@@ -4012,12 +4029,149 @@ function combinarPasadas(crudos, studentText, totalLeitpunkte){
   const puntuado = puntuarCriterios(conMediana.aufgabenbewaeltigung, conMediana.angemessenheit,
                                     conMediana.korrektheit, conMediana.repertoire,
                                     countWords(studentText), totalLeitpunkte);
-  return Object.assign({}, base, {
+  const combinado = Object.assign({}, base, {
     criteria: puntuado.criteria,
     score_total: puntuado.score_total,
     verdict: puntuado.verdict,
     pasadas: normalizadas.length
   });
+
+  /* RECALL: antes se mostraban solo los errores de la pasada base y los de las
+     otras dos se tiraban. Ahora se unen (más los de la caza de errores), se
+     validan y se aplican al texto corregido. */
+  const listas = normalizadas.map(n => n.critical_errors || []).concat(listasExtra || []);
+  const fusion = fusionarErrores(listas, studentText);
+  if(fusion.length){
+    combinado.critical_errors = fusion;
+    const aplicar = fusion.some(e => comparableText(studentText).indexOf(comparableText(e.original)) === -1)
+      || fusion.some(e => comparableText(combinado.corrected_version || "").indexOf(comparableText(e.correction)) === -1);
+    if(aplicar){
+      const corregido = aplicarCorrecciones(studentText, fusion);
+      if(corregido && comparableText(corregido)) combinado.corrected_version = corregido;
+    }
+  }
+  return combinado;
+}
+
+/* ---------- Caza de errores (recall) ---------- */
+/* Una cuarta llamada, en paralelo con las de puntuación, con un encargo
+   estrecho: recorrer el texto frase por frase buscando lo que las pasadas
+   generales se dejan. No puntúa ni escribe la versión corregida; si falla, se
+   ignora y las tres pasadas siguen valiendo. */
+
+const CAZA_SCHEMA = {
+  type: "object",
+  required: ["critical_errors"],
+  properties: {
+    critical_errors: {
+      type: "array",
+      items: {
+        type: "object",
+        required: ["original", "correction", "change", "rule_es", "type"],
+        properties: {
+          original: { type: "string" },
+          correction: { type: "string" },
+          change: { type: "string" },
+          rule_es: { type: "string" },
+          type: { type: "string", enum: ["Grammatik", "Wortschatz", "Rechtschreibung", "Zeichensetzung", "Stil", "Satzbau"] }
+        }
+      }
+    }
+  }
+};
+
+function buildCazaSystemPrompt(){
+  return [
+    "Du bist deutscher Korrektor für telc B2 (Beruf). Deine EINZIGE Aufgabe ist die Fehlerjagd:",
+    "alle sprachlichen Fehler im Text finden. Du bewertest nicht, vergibst keine Punkte und",
+    "schreibst keine Musterlösung.",
+    "",
+    "Regeln:",
+    "- `original` wörtlich und zeichengenau, mit den Fehlern des Teilnehmers, als kleinsten",
+    "  Abschnitt (höchstens 80 Zeichen). Bei Groß-/Kleinschreibung oder einem Buchstaben nur",
+    "  das betroffene Wort zitieren.",
+    "- `correction`: genau EINE korrigierte Fassung, keine Alternativen («/», «oder»).",
+    "- `change`: ein Halbsatz, was sich ändert (Deutsch zitiert).",
+    "- `rule_es`: die Regel, die genau diesen Delta erklärt, auf Spanisch bzw. Russisch.",
+    "- Erfinde nichts: was du nicht wörtlich belegst, ist kein Fehler. Lieber einen Fehler",
+    "  übersehen als einen erfinden."
+  ].join("\n");
+}
+
+function buildCazaUserPrompt(studentText){
+  const parts = [
+    "### FEHLERJAGD — Text (telc B2 Beruf):",
+    "\"\"\"\n" + studentText + "\n\"\"\"",
+    "",
+    "Prüfe JEDEN Satz in dieser Reihenfolge und melde nur, was wörtlich dasteht:",
+    "1. Hat jeder Hauptsatz ein finites Verb? Isoliert stehende Nebensätze und",
+    "   Satzfragmente sind Satzbaufehler.",
+    "2. Hat jede dass-/wenn-/weil-Konstruktion das konjugierte Verb am Ende?",
+    "3. Erstes Wort nach der Anrede: klein, wenn es kein Nomen und kein «Sie»/«Ihr» ist.",
+    "4. Präposition und Kasus (zu + Dat., für + Akk., an + Dat. …), Artikel und Genus.",
+    "5. Kommas: vor dass/weil/wenn ja; zwischen zwei Nebensätzen mit «und» nein.",
+    "6. Groß-/Kleinschreibung: Adjektive klein, substantivierte Adjektive groß.",
+    "7. Register: umgangssprachlich statt beruflich → Stil.",
+    "",
+    "Melde höchstens 12 Einträge. Ist der Text fehlerfrei, gib eine leere Liste zurück."
+  ];
+  if(currentLang === "ru"){
+    parts.push("", "`rule_es` und `change` MÜSSEN AUF RUSSISCH sein.");
+  } else {
+    parts.push("", "`rule_es` und `change` MÜSSEN auf SPANISCH sein.");
+  }
+  return parts.join("\n");
+}
+
+async function cazarErrores(config, studentText){
+  if(!studentText) return [];
+  const res = await evaluarUnaPasada(config, buildCazaSystemPrompt(),
+                                     buildCazaUserPrompt(studentText), CAZA_SCHEMA);
+  return Array.isArray(res && res.critical_errors) ? res.critical_errors : [];
+}
+
+/* Una tarjeta solo vale si se puede comprobar: la cita está en el texto, el span
+   es corto, la corrección es una y cambia algo. Así caen las inventadas
+   («daß diese Person» en un texto que decía «dass»). */
+function errorValido(err, studentText){
+  if(!err || typeof err !== "object") return false;
+  const original = comparableText(err.original);
+  const correction = comparableText(err.correction);
+  if(!original || !correction || original === correction) return false;
+  if(original.length > 80) return false;
+  if(/\s\/\s/.test(correction)) return false;
+  if(/\soder\s/.test(correction) && !/\soder\s/.test(original)) return false;
+  if(!String(err.change || "").trim()) return false;
+  if(!findErrorRanges(studentText, [err]).length) return false;
+  return true;
+}
+
+function fusionarErrores(listas, studentText){
+  const posicionados = [];
+  (listas || []).forEach(lista => (lista || []).forEach(e => {
+    if(!errorValido(e, studentText)) return;
+    const r = findErrorRanges(studentText, [e])[0];
+    posicionados.push({ err: e, start: r ? r.start : 0, end: r ? r.end : 0 });
+  }));
+  posicionados.sort((a, b) => a.start - b.start || (a.end - a.start) - (b.end - b.start));
+  const out = [];
+  posicionados.forEach(item => {
+    if(out.some(o => item.start < o.end && item.end > o.start)) return;  // solape: gana el más corto
+    out.push(item);
+  });
+  return out.map(o => o.err);
+}
+
+function aplicarCorrecciones(texto, errores){
+  const rangos = findErrorRanges(texto, errores).sort((a, b) => a.start - b.start);
+  let out = "", cursor = 0;
+  rangos.forEach(r => {
+    if(r.start < cursor) return;               // solapado: ya aplicado
+    out += texto.slice(cursor, r.start) + cleanQuotes(r.err.correction);
+    cursor = r.end;
+  });
+  out += texto.slice(cursor);
+  return out;
 }
 
 async function evaluateWithLLM(task, studentText, onProgress){
@@ -4035,18 +4189,23 @@ async function evaluateWithLLM(task, studentText, onProgress){
   }
 
   /* allSettled: si una pasada falla (red, cuota), las otras siguen valiendo. Con
-     una sola respuesta se usa esa; sin ninguna, el error. */
-  const resultados = await Promise.allSettled(
-    Array.from({ length: PASADAS }, () => evaluarUnaPasada(config, systemPrompt, userPrompt))
-  );
-  const crudos = resultados.filter(r => r.status === "fulfilled").map(r => r.value);
+     una sola respuesta se usa esa; sin ninguna, el error. La cuarta llamada es la
+     caza de errores: no puntúa, solo aporta tarjetas. */
+  const trabajos = Array.from({ length: PASADAS }, () => evaluarUnaPasada(config, systemPrompt, userPrompt));
+  trabajos.push(cazarErrores(config, studentText));
+  const resultados = await Promise.allSettled(trabajos);
+  const crudos = resultados.slice(0, PASADAS)
+    .filter(r => r.status === "fulfilled").map(r => r.value);
   if(!crudos.length){
     const fallo = resultados.find(r => r.status === "rejected");
     throw (fallo && fallo.reason) || new Error(t("evalUnknownProvider", {provider: config.provider}));
   }
+  const caza = resultados[PASADAS] && resultados[PASADAS].status === "fulfilled"
+    ? resultados[PASADAS].value : [];
 
   if(onProgress) onProgress(t("evalProgressCombinando"));
-  return combinarPasadas(crudos, studentText, (task.leitpunkte || []).length);
+  return combinarPasadas(crudos, studentText, (task.leitpunkte || []).length,
+                         caza.length ? [caza] : []);
 }
 
 /* ---------- Modal de Configuración de IA ---------- */

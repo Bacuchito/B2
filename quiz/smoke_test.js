@@ -495,6 +495,47 @@ if (typeof window.setLanguage === "function") {
   }
 }
 
+/* ---------- corrector: fusión de errores y filtro de citas inventadas ---------- */
+/* El caso que lo destapó: una tarjeta citaba «daß diese Person» y el alumno había
+   escrito «dass». Ahora la cita se valida contra el texto antes de mostrarse, y
+   los errores de las tres pasadas se unen en vez de tirarse. */
+if (typeof window.fusionarErrores === "function" && typeof window.aplicarCorrecciones === "function") {
+  const texto = "Liebe Kolleginnen und Kollegen,\n\nIch möchte mich beteiligen. Ich fühle das gut ist.";
+  const pasada1 = [{ original: "Ich möchte", correction: "ich möchte", change: "solo mayúscula: I → i", rule_es: "Tras la coma de la fórmula de saludo se sigue en minúscula.", type: "Rechtschreibung" }];
+  const pasada2 = [
+    { original: "Ich fühle das gut ist.", correction: "Ich finde, dass das gut ist.", change: "fühle das gut → finde, dass das gut", rule_es: "Se usa finden; tras dass va el verbo al final.", type: "Grammatik" },
+    { original: "Ich möchte", correction: "ich möchte", change: "duplicado", rule_es: "…", type: "Rechtschreibung" }
+  ];
+  const caza = [
+    { original: "daß diese Person", correction: "dass diese Person", change: "daß → dass", rule_es: "dass con doble s.", type: "Rechtschreibung" },
+    { original: "beteiligen", correction: "beteiligen", change: "no cambia nada", rule_es: "…", type: "Grammatik" }
+  ];
+  const fusion = window.fusionarErrores([pasada1, pasada2, caza], texto);
+  check("el corrector une los errores de varias pasadas sin duplicados", fusion.length === 2, `fusionados: ${fusion.length}`);
+  check("el corrector descarta la cita que no está en el texto (caso «daß»)", !fusion.some(e => /daß/.test(e.original)));
+  const corregido = window.aplicarCorrecciones(texto, fusion);
+  check("la versión corregida aplica las correcciones sobre el texto del alumno",
+        /^Liebe Kolleginnen und Kollegen,\n\nich möchte mich beteiligen\. Ich finde, dass das gut ist\.$/.test(corregido),
+        corregido.slice(0, 90));
+
+  const combinado = window.combinarPasadas([{
+    verdict: "BESTANDEN", score_total: 80, word_count: 10,
+    criteria: {
+      aufgabenbewaeltigung: { grade: "A", score: 34, leitpunkte_check: [], feedback: "" },
+      angemessenheit: { grade: "A", score: 22, feedback: "" },
+      korrektheit: { grade: "B", score: 17, feedback: "" },
+      repertoire: { grade: "B", score: 17, feedback: "" }
+    },
+    critical_errors: pasada1, strengths: [], areas_for_improvement: [],
+    corrected_version: "Liebe Kolleginnen und Kollegen,\n\nich möchte mich beteiligen. Ich fühle das gut ist."
+  }], texto, 4, [pasada2, caza]);
+  check("la evaluación combina los errores de todas las pasadas", (combinado.critical_errors || []).length === 2,
+        `errores: ${(combinado.critical_errors || []).length}`);
+  check("el texto corregido incluye las correcciones que solo trajo la caza de errores",
+        /Ich finde, dass das gut ist\./.test(combinado.corrected_version || ""),
+        String(combinado.corrected_version || "").slice(0, 80));
+}
+
 /* ---------- informe ---------- */
 let bad = 0;
 for (const c of checks) {
