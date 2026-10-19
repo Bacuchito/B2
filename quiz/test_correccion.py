@@ -373,9 +373,78 @@ def _call_gemini(api_key: str, model: str, user_prompt: str) -> dict:
         raise SystemExit("el modelo no devolvió JSON válido:\n" + raw[:600])
 
 
-def audit_live(data: dict) -> tuple:
+def _call_openai(base: str, api_key: str, model: str, user_prompt: str) -> dict:
+    """Cliente para cualquier endpoint compatible con OpenAI (DeepSeek, OpenRouter,
+    OpenCode Zen, …). Reintenta sin `response_format` si el proxy lo rechaza."""
+    import re
+    import urllib.error
+    import urllib.request
+
+    url = base.rstrip("/")
+    if not url.endswith("/chat/completions"):
+        url += "/chat/completions"
+    ua = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+          "(KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36")
+
+    def post(sin_formato: bool) -> dict:
+        body = {
+            "model": model,
+            "temperature": 0,
+            "max_tokens": 8192,
+            "messages": [
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {"role": "user", "content": user_prompt},
+            ],
+        }
+        if not sin_formato:
+            body["response_format"] = {"type": "json_object"}
+        req = urllib.request.Request(
+            url, data=json.dumps(body).encode("utf-8"), method="POST",
+            headers={"Content-Type": "application/json",
+                     "Authorization": "Bearer " + api_key,
+                     "User-Agent": ua, "Accept": "application/json"})
+        try:
+            with urllib.request.urlopen(req, timeout=240) as resp:
+                return json.loads(resp.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            return {"__http_error": exc.code,
+                    "__detail": exc.read().decode("utf-8", "replace")}
+        except urllib.error.URLError as exc:
+            return {"__http_error": 0, "__detail": str(exc.reason)}
+
+    data = post(False)
+    detalle = str(data.get("__detail", ""))
+    if data.get("__http_error") in (400, 422) and re.search(
+            r"response_format|json_object|unsupported|unknown", detalle, re.I):
+        print("      (response_format rechazado; reintento sin él)")
+        data = post(True)
+    if "__http_error" in data:
+        code = data["__http_error"]
+        if code == 402:
+            pista = "la cuenta no tiene saldo para ese modelo (o es de pago)"
+        elif code == 403:
+            pista = "el modelo está restringido al cliente oficial del proveedor"
+        else:
+            pista = "revisa clave, modelo y endpoint"
+        raise SystemExit(f"ERROR HTTP {code}: {detalle[:300]}\n  → {pista}")
+
+    uso = data.get("usage") or {}
+    if uso:
+        print(f"      tokens: entrada {uso.get('prompt_tokens')} · "
+              f"salida {uso.get('completion_tokens')}")
+    msg = ((data.get("choices") or [{}])[0].get("message") or {}).get("content", "")
+    if isinstance(msg, list):
+        msg = "".join(p.get("text", "") if isinstance(p, dict) else str(p) for p in msg)
+    try:
+        return json.loads(msg)
+    except json.JSONDecodeError:
+        raise SystemExit("el modelo no devolvió JSON válido:\n" + str(msg)[:600])
+
+
+def audit_live(data: dict, texto: str = "") -> tuple:
     """Separa fallos duros (la respuesta es incorrecta) de avisos de recall."""
-    hard = list(validate_evaluation_json(data, STUDENT_TEXT))
+    texto = texto or STUDENT_TEXT
+    hard = list(validate_evaluation_json(data, texto))
     soft = []
     entries = [e for e in (data.get("critical_errors") or []) if isinstance(e, dict)]
 
@@ -407,18 +476,18 @@ def audit_live(data: dict) -> tuple:
             hard.append(f"#{i}: «Zusätzliche» debe quedar en minúscula: «{correction}»")
 
     cv = data.get("corrected_version") or ""
-    if "Liebe Grüße," in STUDENT_TEXT and "Liebe Grüße," not in cv:
+    if "Liebe Grüße," in texto and "Liebe Grüße," not in cv:
         hard.append("la despedida perdió la coma de «Liebe Grüße,»")
     for frag in ("zwei Gruppen bilden", "Eine Gruppe, die nicht mehr arbeiten kann"):
-        if frag not in cv:
+        if frag in texto and frag not in cv:
             hard.append(f"el texto corregido ya no contiene «{frag}» (se reescribió)")
 
-    ratio = len(cv) / max(len(STUDENT_TEXT), 1)
+    ratio = len(cv) / max(len(texto), 1)
     if not 0.75 <= ratio <= 1.35:
         soft.append(f"el texto corregido mide {ratio:.2f}× el original: huele a reescritura")
 
-    if not any("zum Thema" in (e.get("original") or "") for e in entries):
-        soft.append("no marcó el genitivo tras «zum Thema» (fallo de recall del caso real)")
+    if "zum Thema" in texto and not any("zum Thema" in (e.get("original") or "") for e in entries):
+        soft.append("no marcó el genitivo tras «zum Thema»")
 
     campos = ("original", "correction", "change", "rule_es")
     for i, e in enumerate(entries, 1):
@@ -428,17 +497,21 @@ def audit_live(data: dict) -> tuple:
     return hard, soft
 
 
-def live_main(api_key: str, model: str, save: str = "") -> int:
-    print(f"=== CORRECTOR EN VIVO ({model}) ===")
-    print(f"texto: {count_words(STUDENT_TEXT)} palabras · {len(STUDENT_TEXT)} caracteres")
-    user_prompt = build_user_prompt(LIVE_TASK, STUDENT_TEXT, lang="es")
-    data = _call_gemini(api_key, model, user_prompt)
+def live_main(provider: str, key: str, model: str, save: str = "",
+              base: str = "", texto: str = "") -> int:
+    texto = texto or STUDENT_TEXT
+    etiqueta = f"{model} @ {base}" if provider == "openai" else model
+    print(f"=== CORRECTOR EN VIVO ({etiqueta}) ===")
+    print(f"texto: {count_words(texto)} palabras · {len(texto)} caracteres")
+    user_prompt = build_user_prompt(LIVE_TASK, texto, lang="es")
+    data = (_call_openai(base, key, model, user_prompt) if provider == "openai"
+            else _call_gemini(key, model, user_prompt))
     if save:
         with open(save, "w", encoding="utf-8") as fh:
             json.dump(data, fh, ensure_ascii=False, indent=2)
         print(f"respuesta guardada en {save}")
 
-    hard, soft = audit_live(data)
+    hard, soft = audit_live(data, texto)
     print(f"\nveredicto del modelo: {data.get('verdict')} ({data.get('score_total')}/100)")
 
     if soft:
@@ -457,13 +530,24 @@ def live_main(api_key: str, model: str, save: str = "") -> int:
 
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    if "--gemini-key" in args:
+    if any(a.startswith("--") and a not in ("--help",) for a in sys.argv[1:]):
         import argparse
         ap = argparse.ArgumentParser(description="Corrector telc B2: suite offline o prueba en vivo")
-        ap.add_argument("--gemini-key", required=True)
-        ap.add_argument("--model", default="gemini-3.5-flash-lite")
-        ap.add_argument("--save", default="")
-        ns = ap.parse_args(args)
-        sys.exit(live_main(ns.gemini_key, ns.model, ns.save))
+        ap.add_argument("--gemini-key", default="", help="clave de Google AI Studio")
+        ap.add_argument("--openai-base", default="", help="base URL compatible con OpenAI, p. ej. https://api.deepseek.com/v1")
+        ap.add_argument("--openai-key", default="", help="clave del proveedor compatible")
+        ap.add_argument("--model", default="", help="modelo (por defecto gemini-3.5-flash-lite o deepseek-chat)")
+        ap.add_argument("--text-file", default="", help="texto a corregir (por defecto, el caso del foro)")
+        ap.add_argument("--save", default="", help="guarda la respuesta JSON en este fichero")
+        ns = ap.parse_args(sys.argv[1:])
+        texto = ""
+        if ns.text_file:
+            texto = open(ns.text_file, encoding="utf-8").read()
+        if ns.openai_base and ns.openai_key:
+            sys.exit(live_main("openai", ns.openai_key, ns.model or "deepseek-chat",
+                               ns.save, ns.openai_base, texto))
+        if ns.gemini_key:
+            sys.exit(live_main("gemini", ns.gemini_key, ns.model or "gemini-3.5-flash-lite",
+                               ns.save, "", texto))
+        ap.error("indica --gemini-key, o --openai-base + --openai-key")
     sys.exit(main())
