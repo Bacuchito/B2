@@ -640,11 +640,13 @@
 
   /* Evaluación de Schreiben */
   /* Evaluación: sello de examen — marco doble, versalitas, prensado elástico */
+  /* Sello de examen: UN solo marco. Antes llevaba borde de 2px más un anillo
+     interior de 1px; en claro eso se lee como un rectángulo dibujado dos veces. */
   .eval-banner{padding:var(--sp-3) var(--sp-5);border-radius:var(--r-2);font-weight:700;
                font-size:var(--fs-base);letter-spacing:.05em;text-transform:uppercase;
                display:flex;align-items:center;justify-content:space-between;margin:var(--sp-4) 0;
                flex-wrap:wrap;gap:var(--sp-3);
-               border:2px solid currentColor;box-shadow:inset 0 0 0 1px currentColor;
+               border:var(--b-fuerte) solid currentColor;
                transform:rotate(-.5deg);
                animation:stamp var(--dur-3) var(--spring)}
   @keyframes stamp{from{transform:rotate(-.5deg) scale(1.12);opacity:0}
@@ -716,7 +718,7 @@
 
   /* Pestañas: control segmentado — carril hundido y la activa levantada. */
   .tab-pills{display:flex;gap:var(--sp-1);flex-wrap:wrap;margin:var(--sp-3) 0;
-             padding:var(--sp-1);border-radius:var(--r-pill);
+             padding:var(--sp-1);border-radius:var(--r-3);
              background:var(--sunken);border:var(--b-std) solid var(--line);
              box-shadow:var(--hundido)}
   .tab-pills.flush{margin:0}
@@ -835,15 +837,21 @@
 
   /* El mando que se desliza entre las opciones del control segmentado. Solo entra
      cuando el JS puede medir (clase `con-mando`): si no, la opción activa se marca
-     con su propio relleno y nunca se queda sin señal. */
+     con su propio relleno y nunca se queda sin señal.
+     La posición Y la altura las manda el JS: si el control se parte en dos filas
+     (las pestañas de Schreiben, sin ir más lejos), el mando tiene que cubrir SU fila
+     y no el carril entero, o se come las etiquetas de la fila de abajo. */
   .lang-switch,.user-switch,.tab-pills{position:relative}
   .lang-switch.con-mando::before,.user-switch.con-mando::before,.tab-pills.con-mando::before{
-    content:"";position:absolute;top:var(--sp-1);bottom:var(--sp-1);left:0;
+    content:"";position:absolute;left:0;top:var(--mando-y,var(--sp-1));
+    height:var(--mando-h,32px);
     width:var(--mando-w,0px);transform:translateX(var(--mando-x,0px));
     border-radius:var(--r-pill);background:var(--acc-grad);
     box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 14px -4px var(--glow);
-    transition:transform var(--dur-3) var(--spring),width var(--dur-3) var(--spring);
+    transition:transform var(--dur-3) var(--spring),width var(--dur-3) var(--spring),
+               top var(--dur-3) var(--spring),height var(--dur-3) var(--spring);
     pointer-events:none;z-index:0}
+  .tab-pills.con-mando::before{border-radius:var(--r-2)}
   .lang-switch.con-mando button,.user-switch.con-mando button,.tab-pills.con-mando button{
     position:relative;z-index:1}
   .lang-switch.con-mando .lang-btn.active,.user-switch.con-mando .user-btn.active,
@@ -2311,6 +2319,10 @@ function render(){
   try {
     renderMain();
     restaurarFoco();
+    /* Al final, y no en cada sitio: así el mando de los controles segmentados se
+       recoloca también cuando el render crea controles nuevos (las pestañas de la
+       evaluación, sin ir más lejos), y no se queda con la medida de los anteriores. */
+    colocarMandos();
   } catch(e){
     console.warn("Error al renderizar:", e);
     const main = document.getElementById("main");
@@ -4352,6 +4364,10 @@ function colocarMandos(){
     toggleClass(caja, "con-mando", true);
     caja.style.setProperty("--mando-x", activo.offsetLeft + "px");
     caja.style.setProperty("--mando-w", activo.offsetWidth + "px");
+    /* Su fila y su alto, no los del carril: si el control se parte en dos filas, el
+       mando tiene que cubrir solo la de la opción encendida. */
+    caja.style.setProperty("--mando-y", activo.offsetTop + "px");
+    caja.style.setProperty("--mando-h", activo.offsetHeight + "px");
   }
 }
 
