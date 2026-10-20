@@ -200,3 +200,51 @@ Tareas abiertas de expresión escrita del examen telc Deutsch-Test für den Beru
 | `min_words` | sí | Longitud mínima requerida (150 palabras) |
 | `time_minutes` | sí | Tiempo oficial asignado (45 minutos) |
 | `redemittel` | opcional | Array de expresiones modelo B2 recomendadas para este tipo de texto |
+
+---
+
+## 6. Formato de tarea: `smalltalk` (Sprechen Teil 2)
+
+Mazo de cartas para el Smalltalk de la prueba oral. **No es un ejercicio que se
+corrija**: no hay `answer`, ni `quote`, ni `confidence`, porque no hay nada que
+acertar. Cada variante es un mazo completo y la app lo pinta como tarjetas.
+
+```json
+{
+  "block": "sprechen_t2",
+  "section": "sprechen-t2",
+  "variants": [{
+    "id": "spr-t2-smalltalk",
+    "label": "Alle Karten",
+    "page": 182,
+    "kind": "smalltalk",
+    "intro": "Teil 2 der mündlichen Prüfung …",
+    "time_minutes": 3,
+    "cards": [
+      {
+        "n": 6,
+        "de": "Ich habe noch fünf Tage Resturlaub. Was passiert mit diesen Tagen?",
+        "alt": ["Ich habe vom Urlaub in diesem Jahr noch 5 Tage übrig. …"],
+        "ru": "У меня осталось пять дней неиспользованного отпуска. …",
+        "es": "Me quedan cinco días de vacaciones sin gastar. …"
+      }
+    ]
+  }]
+}
+```
+
+| Campo | Obligatorio | Contenido |
+|---|---|---|
+| `kind` | sí | `"smalltalk"` |
+| `intro` | sí | Instrucción del examen, **en alemán** (con quién se habla, cuánto dura) |
+| `time_minutes` | no | Duración de la tarjeta en el examen (3 en el Teil 2) |
+| `cards` | sí | Las tarjetas |
+| `cards[].n` | sí | Número de la tarjeta, **1..N sin huecos**: es el número del documento |
+| `cards[].de` | sí | La pregunta, **en alemán, verbatim** |
+| `cards[].alt` | no | Otras formulaciones del mismo tema, si el documento las trae (separadas por « / ») |
+| `cards[].ru` | sí | Traducción rusa (ayuda) |
+| `cards[].es` | sí | Traducción española (ayuda) |
+
+Regla de una tarjeta: **el alemán no se inventa ni se resume**. Si el documento trae
+dos formulaciones del mismo tema, van las dos en la misma tarjeta (`alt`), para que
+`n` siga señalando el mismo sitio del PDF.

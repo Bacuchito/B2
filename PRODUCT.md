@@ -36,7 +36,10 @@ de plantilla podría copiar eso sin hacer antes el mismo trabajo de deducción.
   referencia (los anuncios o el texto) queda fija en la columna izquierda y la hoja
   de preguntas en la derecha, para responder sin subir y bajar. El conmutador de la
   cabecera lo fuerza o lo apaga y recuerda la elección.
-- 358 ítems de opción y 111 tareas de escritura (13 Beschwerde, 98 Forumsbeitrag).
+- Sis 358 ítems de opción y 111 tareas de escritura (13 Beschwerde, 98 Forumsbeitrag).
+- 104 tarjetas de **Smalltalk (Sprechen Teil 2)**: un mazo que se hojea entero en dos
+  mitades y una **mesa de trabajo** que saca una carta al azar para hablarla en voz
+  alta, con un cuadro de notas por carta.
 - El progreso vive en `localStorage`, por perfil. La sincronización con Firebase es
   opcional y solo sirve para compartir las redacciones entre los dos.
 - La evaluación de Schreiben la hace un LLM con la clave de API propia de cada uno
@@ -52,6 +55,9 @@ de plantilla podría copiar eso sin hacer antes el mismo trabajo de deducción.
   idioma.
 - **Hören no tiene audio**, solo transcripciones. Las dos variantes sin transcripción
   quedan fuera en lugar de ofrecerse inventadas.
+- **El Smalltalk no se corrige**: no lleva clave, cita ni confianza porque no hay nada
+  que acertar. Lo único que se guarda es la baraja (qué cartas ya salieron) y tus
+  notas de cada carta, por perfil. La ayuda ES/RU de cada carta va plegada.
 - El entregable es **un único HTML autocontenido** generado por `build.py` desde
   `template.html`; los datos viven en `quiz/data/*.json` bajo el contrato de
   `SPEC.md`.

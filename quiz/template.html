@@ -575,6 +575,11 @@
   .card-label{font-weight:640;font-size:var(--fs-sm);color:var(--acc-ink);margin-bottom:var(--sp-1)}
   .lp-head{font-weight:700;font-size:var(--fs-base);margin-bottom:var(--sp-2)}
   .micro{font-size:var(--fs-micro);color:var(--dim)}
+  /* Los dos avisos del corrector tenían su margen y su color en el atributo
+     style; la auditoría solo tolera seis estilos en línea (los conmutadores
+     display), así que viven aquí, en la rejilla de 4pt. */
+  .micro-cambio{margin:var(--sp-1) 0 0}
+  .micro-aviso{margin:var(--sp-1) 0 0;color:var(--warn-ink)}
   .notice-ok{color:var(--ok-ink);margin-bottom:var(--sp-2)}
   .notice-dim{color:var(--dim-2);font-style:italic}
   .status-error{color:var(--bad-ink)}
@@ -934,6 +939,78 @@
   /* El conmutador de mesa solo existe donde la mesa cabe (≥1280px). */
   #desk-toggle{display:none}
 
+  /* ---------- Sprechen Teil 2 · Smalltalk: el mazo y la mesa de trabajo ----------
+     Estas preguntas no se contestan, se hablan. Por eso no llevan clave, cita ni
+     confianza: son un mazo de tarjetas. La mesa de trabajo es la otra pieza: saca
+     una carta al azar para practicarla en voz alta y guarda tus notas de esa carta. */
+  .st-bar{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-4)}
+  .st-bar .tab-pills{margin-left:auto}
+  /* El interruptor de la mesa no es una acción más: es un estado. Por eso no usa
+     el relleno de acento de .btn (competía con «Otra al azar») sino un punto que
+     se enciende y un tinte suave. */
+  .st-toggle{display:inline-flex;align-items:center;gap:var(--sp-2);min-height:36px;cursor:pointer;
+           padding:0 var(--sp-4);border-radius:var(--r-pill);
+           border:var(--b-std) solid var(--line-2);background:var(--tint-neutral);
+           color:var(--txt);font:inherit;font-size:var(--fs-sm);font-weight:640;
+           box-shadow:var(--sh-1),var(--bisel);
+           transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
+                      border-color var(--dur-2) var(--ease),transform var(--dur-1) var(--spring)}
+  .st-toggle::before{content:"";width:8px;height:8px;border-radius:50%;flex:0 0 8px;
+           background:var(--dim-2);transition:background var(--dur-2) var(--ease),
+           box-shadow var(--dur-2) var(--ease)}
+  .st-toggle:hover{border-color:var(--line-acc);color:var(--acc-ink)}
+  .st-toggle.on{border-color:var(--line-acc);background:var(--tint-acc);color:var(--acc-ink)}
+  .st-toggle.on::before{background:var(--acc);box-shadow:0 0 0 4px var(--tint-acc)}
+  .st-toggle:active{transform:scale(.97)}
+  .st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));
+           gap:var(--sp-3);margin-bottom:var(--sp-6)}
+  .st-card{display:flex;flex-direction:column;gap:var(--sp-2);
+           background:var(--panel);border:var(--b-std) solid var(--line);
+           border-radius:var(--r-3);padding:var(--sp-4);
+           box-shadow:var(--sh-1),var(--bisel)}
+  .st-card.on-desk{border-color:var(--line-acc);
+           box-shadow:var(--sh-2),var(--bisel),inset 0 0 0 1px var(--line-acc)}
+  .st-num{display:flex;align-items:center;gap:var(--sp-2);
+          font-family:var(--font-mono);font-size:var(--fs-micro);
+          letter-spacing:.10em;color:var(--acc-ink)}
+  .st-de{margin:0;font-size:var(--fs-base);line-height:1.5;color:var(--txt)}
+  .st-alt{margin:0;padding-left:var(--sp-2);border-left:2px solid var(--line-2);
+          font-size:var(--fs-sm);line-height:1.5;color:var(--dim)}
+  .st-help{margin-top:auto;padding-top:var(--sp-2);border-top:var(--b-std) solid var(--line)}
+  .st-help summary{display:flex;align-items:center;gap:var(--sp-2);min-height:28px;
+          cursor:pointer;list-style:none;font-size:var(--fs-micro);font-weight:700;
+          letter-spacing:.08em;color:var(--acc-ink)}
+  .st-help summary::-webkit-details-marker{display:none}
+  .st-help summary::before{content:"›";font-size:var(--fs-base);line-height:1;
+          transition:transform var(--dur-2) var(--spring)}
+  .st-help[open] summary::before{transform:rotate(90deg)}
+  .st-help summary:hover{color:var(--acc)}
+  .st-help p{margin:var(--sp-2) 0 0;font-size:var(--fs-sm);line-height:1.55;color:var(--dim)}
+  .st-help p.st-ru{color:var(--dim-2)}
+  /* La mesa de trabajo: pieza con relieve propio, no una tarjeta más del mazo. */
+  .st-mesa{margin-bottom:var(--sp-4);padding:var(--sp-4) var(--sp-5);
+           background:linear-gradient(180deg,var(--panel2),var(--panel));
+           border:var(--b-std) solid var(--line-acc);border-radius:var(--r-4);
+           box-shadow:var(--sh-3),var(--bisel)}
+  .st-mesa-head{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-2);
+           margin-bottom:var(--sp-3)}
+  .st-mesa-head h3{margin:0;font-size:var(--fs-micro);letter-spacing:.10em;
+           text-transform:uppercase;color:var(--acc-ink)}
+  .st-count{font-size:var(--fs-xs);color:var(--dim-2);font-variant-numeric:tabular-nums}
+  .st-actions{margin-left:auto;display:flex;flex-wrap:wrap;gap:var(--sp-2)}
+  .st-mesa-carta{padding:var(--sp-4);background:var(--sheet);
+           border:var(--b-std) solid var(--line);border-radius:var(--r-3);
+           box-shadow:var(--sh-1),var(--bisel)}
+  .st-mesa-vacia{padding:var(--sp-5) var(--sp-3);text-align:center;
+           color:var(--dim-2);font-style:italic}
+  .st-notas{margin-top:var(--sp-3)}
+  .st-notas .cap{display:block;margin-bottom:var(--sp-2);font-size:var(--fs-micro);
+           letter-spacing:.08em;text-transform:uppercase;color:var(--dim-2)}
+  .st-notas textarea{width:100%;min-height:96px;resize:vertical;padding:var(--sp-3);
+           background:var(--sheet);color:var(--txt);border:var(--b-std) solid var(--line);
+           border-radius:var(--r-2);box-shadow:var(--hundido);
+           font-family:var(--font-ui);font-size:var(--fs-base);line-height:1.6}
+
   /* --- Móvil: índice plegado, cabecera compacta y TODO control a 44px --- */
   @media(max-width:860px){
     :root{--header-h:auto}
@@ -949,7 +1026,8 @@
     body.nav-open nav{display:block;max-height:60vh;overflow-y:auto}
     main{padding:var(--sp-5) var(--sp-4) var(--sp-7)}
     nav button,.sec-toggle,.letters button,.btn,.tab-pill,.lang-btn,.user-btn,.modal-close,
-    .copy-btn,.input,.select,.lp-item,.opt,.sec-reset,details.passage summary{min-height:44px}
+    .copy-btn,.input,.select,.lp-item,.opt,.sec-reset,details.passage summary,
+    .st-help summary,.st-notas textarea,.st-toggle{min-height:44px}
     #nav-toggle,.icon-btn{min-height:44px}
     #theme-btn{min-height:44px}
     .switch-tema-texto{display:none}
@@ -1351,6 +1429,27 @@ const I18N = {
     alertStorageBlocked: "No he podido guardar: este navegador bloquea el almacenamiento (o está lleno). La clave NO se ha guardado.",
     alertAiSavedNoKey: "Ajustes guardados, pero el proveedor elegido sigue sin clave: la evaluación no funcionará hasta que la pegues.",
     testSaved: "guardado",
+    cardsCount: "{count} tarjetas",
+    cardCountSingle: "1 tarjeta",
+    deckLabel: "Mesa de trabajo",
+    deckToggleTitle: "Abrir la mesa de trabajo: saca una tarjeta al azar y practícala en voz alta. Mientras está apagada, el mazo se ve entero.",
+    deckEmpty: "La mesa está vacía. Saca una tarjeta al azar y habla tres minutos.",
+    deckDraw: "Sacar una al azar",
+    deckDrawAgain: "Otra al azar",
+    deckReturn: "Devolver a la baraja",
+    deckExhausted: "Mazo agotado: han salido las {total}. Baraja para volver a empezar.",
+    deckShuffle: "Barajar de nuevo",
+    deckDrawn: "{drawn} de {total} sacadas",
+    deckNotes: "Tus notas de esta tarjeta",
+    deckNotesPlaceholder: "Dos o tres ideas para no quedarte en blanco…",
+    deckOnDesk: "En la mesa",
+    stAltLabel: "Variante:",
+    stHelp: "ES · RU",
+    stTabFirst: "1–52",
+    stTabSecond: "53–104",
+    srCardDrawn: "Tarjeta {n} en la mesa.",
+    srCardReturned: "Tarjeta devuelta a la baraja.",
+    srDeckReset: "Baraja reiniciada.",
   },
   ru: {
     appTitle: "B2 Beruf — Экзамен",
@@ -1585,6 +1684,27 @@ const I18N = {
     alertStorageBlocked: "Не удалось сохранить: этот браузер блокирует хранилище (или оно заполнено). Ключ НЕ сохранён.",
     alertAiSavedNoKey: "Настройки сохранены, но у выбранного провайдера нет ключа: оценка не заработает, пока ты его не вставишь.",
     testSaved: "сохранено",
+    cardsCount: "{count} карточек",
+    cardCountSingle: "1 карточка",
+    deckLabel: "Рабочий стол",
+    deckToggleTitle: "Открыть рабочий стол: вытяни случайную карточку и говори вслух. Пока стол закрыт, видно всю колоду.",
+    deckEmpty: "Стол пуст. Вытяни случайную карточку и говори три минуты.",
+    deckDraw: "Вытянуть случайную",
+    deckDrawAgain: "Ещё одну",
+    deckReturn: "Вернуть в колоду",
+    deckExhausted: "Колода исчерпана: вышли все {total}. Перемешай, чтобы начать заново.",
+    deckShuffle: "Перемешать заново",
+    deckDrawn: "{drawn} из {total} вытянуто",
+    deckNotes: "Твои заметки к этой карточке",
+    deckNotesPlaceholder: "Две-три мысли, чтобы не растеряться…",
+    deckOnDesk: "На столе",
+    stAltLabel: "Вариант:",
+    stHelp: "ES · RU",
+    stTabFirst: "1–52",
+    stTabSecond: "53–104",
+    srCardDrawn: "Карточка {n} на столе.",
+    srCardReturned: "Карточка возвращена в колоду.",
+    srDeckReset: "Колода перемешана.",
   }
 };
 
@@ -1657,7 +1777,8 @@ const SECTION_RU = {
   "Schreiben: Beschwerde-E-Mail": "Письмо: жалоба",
   "Schreiben: Forumsbeitrag": "Письмо: форум",
   "Hören Teil 1": "Аудирование 1", "Hören Teil 2": "Аудирование 2",
-  "Hören Teil 3": "Аудирование 3", "Hören Teil 4": "Аудирование 4"
+  "Hören Teil 3": "Аудирование 3", "Hören Teil 4": "Аудирование 4",
+  "Sprechen Teil 2 · Smalltalk": "Устная часть 2"
 };
 function localizeSection(title){
   const ru = SECTION_RU[title];
@@ -2014,6 +2135,35 @@ function setLp(id, idx, valor){
 function getPushed(id){ return state.schreiben_pushed ? state.schreiben_pushed[progKey(id)] : undefined; }
 function setPushed(id, txt){ if(!state.schreiben_pushed) state.schreiben_pushed = {}; state.schreiben_pushed[progKey(id)] = txt; }
 
+/* ---------- Mazo de Smalltalk: baraja, notas y carta en la mesa ----------
+   Se guarda por perfil, como el resto: la clave lleva `progKey`, así que Diana
+   no hereda la baraja de Sergio. `drawn` es lo que ya salió (para no repetir
+   hasta agotar el mazo); `top` es la carta que está encima de la mesa, y
+   `notes` guarda el texto por NÚMERO de tarjeta, no por posición: el número es
+   el del documento y no cambia aunque mañana se reordene el mazo. */
+function deckState(id){
+  if(!state.smalltalk) state.smalltalk = {};
+  const k = progKey(id);
+  /* La mesa nace apagada: la pantalla primero enseña el mazo entero, que es lo
+     que se pidió. Encenderla es un gesto, no el estado de partida. */
+  if(!state.smalltalk[k]) state.smalltalk[k] = { mesa:false, drawn:[], top:null, notes:{}, tab:0 };
+  const d = state.smalltalk[k];
+  if(!Array.isArray(d.drawn)) d.drawn = [];
+  if(!d.notes || typeof d.notes !== "object") d.notes = {};
+  if(d.tab !== 1) d.tab = 0;
+  if(typeof d.mesa !== "boolean") d.mesa = false;
+  return d;
+}
+function deckNote(id, n){
+  const d = deckState(id);
+  return d.notes[String(n)] || "";
+}
+function setDeckNote(id, n, txt){
+  const d = deckState(id);
+  if(txt) d.notes[String(n)] = txt; else delete d.notes[String(n)];
+  saveState();
+}
+
 function loadState(){
   try {
     const s = migrarClavesDeProgreso(JSON.parse(localStorage.getItem(LS)) || {});
@@ -2022,9 +2172,10 @@ function loadState(){
     if (!s.schreiben_evals) s.schreiben_evals = {};
     if (!s.schreiben_lps) s.schreiben_lps = {};
     if (!s.schreiben_pushed) s.schreiben_pushed = {};
+    if (!s.smalltalk) s.smalltalk = {};
     return s;
   }
-  catch(e){ return {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}, schreiben_pushed:{}}; }
+  catch(e){ return {answers:{}, schreiben_drafts:{}, schreiben_evals:{}, schreiben_lps:{}, schreiben_pushed:{}, smalltalk:{}}; }
 }
 function saveState(){ try{ localStorage.setItem(LS, JSON.stringify(state)); }catch(e){} }
 let state = loadState();
@@ -2068,7 +2219,8 @@ function aplicarProgreso(prog, dueno){
     schreiben_drafts: prog.schreiben_drafts || {},
     schreiben_evals: prog.schreiben_evals || {},
     schreiben_lps: prog.schreiben_lps || {},
-    schreiben_pushed: prog.schreiben_pushed || {}
+    schreiben_pushed: prog.schreiben_pushed || {},
+    smalltalk: prog.smalltalk || {}
   };
   /* Un fichero exportado antes de existir la clave con perfil trae la clave
      antigua. Se asigna al perfil que lo exportó (datos.usuario), no al que
@@ -2319,6 +2471,10 @@ function renderNav(){
         const ev = getEval(v.id);
         const conVara = ev ? normalizeEvaluationResult(ev, null, (v.leitpunkte || []).length) : null;
         pill = conVara ? (conVara.verdict === "BESTANDEN" ? t("passedPill") : t("failedPill")) : (v.category === "beschwerde" ? t("pillEmail") : t("pillPost"));
+      } else if(v.kind === "smalltalk"){
+        /* El mazo no se responde: la insignia cuenta tarjetas, no aciertos. */
+        const nc = (v.cards || []).length;
+        pill = nc === 1 ? t("cardCountSingle") : t("cardsCount", {count: nc});
       } else {
         pill = onlyDoubtful
           ? (nd === 1 ? t("doubtPillSingle") : t("doubtPillPlural", {count: nd}))
@@ -2390,8 +2546,10 @@ function renderMain(){
   main.appendChild(h2);
   const sub = document.createElement("div");
   sub.className = "sub";
-  const numItems = (v.items || []).length;
-  const itemsText = numItems === 1 ? t("itemCountSingle") : t("itemsCount", {count: numItems});
+  const numItems = v.kind === "smalltalk" ? (v.cards || []).length : (v.items || []).length;
+  const itemsText = numItems === 1
+    ? t(v.kind === "smalltalk" ? "cardCountSingle" : "itemCountSingle")
+    : t(v.kind === "smalltalk" ? "cardsCount" : "itemsCount", {count: numItems});
   sub.innerHTML = t("pagePdf", {page: v.page}) +
     (v.topic ? ' · <b>' + esc(v.topic) + '</b>' : '') +
     (v.kind === "schreiben" ? ' · <b>' + t("schreibenSubBadge") + '</b>' : ' · ' + itemsText);
@@ -2402,7 +2560,9 @@ function renderMain(){
     return;
   }
 
-  /* Vista habitual para preguntas de Lesen / Hören */
+  /* Vista habitual para preguntas de Lesen / Hören. El mazo de Smalltalk pasa
+     por aquí también: las instrucciones del Teil 2 (tres minutos, con quién se
+     habla) son justo lo que hay que leer antes de sacar la primera carta. */
   if(v.note){
     const n = document.createElement("div");
     n.className = "note";
@@ -2414,6 +2574,11 @@ function renderMain(){
     p.className = "panel intro";
     p.innerHTML = '<h3>' + t("instructions") + '</h3><div class="intro-text">' + esc(v.intro) + '</div>';
     main.appendChild(p);
+  }
+
+  if(v.kind === "smalltalk"){
+    renderSmalltalk(v, main);
+    return;
   }
 
   /* El texto de lectura es la referencia que se queda fija en modo mesa. Y en los
@@ -2506,6 +2671,199 @@ function renderMain(){
     saveState(); render(); };
   row.appendChild(bAll); row.appendChild(bClear);
   main.appendChild(row);
+}
+
+/* ---------- Renderizador del mazo de Smalltalk (Sprechen Teil 2) ----------
+   Sin clave, sin cita y sin confianza: aquí no se acierta, se habla. La pantalla
+   enseña el mazo entero en dos mitades y, si se enciende, la mesa de trabajo con
+   la carta que ha salido al azar y tus notas de esa carta. */
+const ST_POR_TAB = 52;
+
+/* Las cartas que quedan por salir. El sorteo no repite hasta agotar el mazo:
+   con 104 temas, sacar dos veces el mismo en una sesión de veinte minutos es
+   la forma más rápida de que la mesa deje de servir. */
+function cartasRestantes(v, d){
+  return (v.cards || []).map(c => c.n).filter(n => d.drawn.indexOf(n) === -1);
+}
+
+function contenidoCarta(c, enMesa){
+  const nodos = [];
+  const num = document.createElement("div");
+  num.className = "st-num";
+  num.textContent = "#" + c.n + (enMesa ? " · " + t("deckOnDesk") : "");
+  nodos.push(num);
+
+  const de = document.createElement("p");
+  de.className = "st-de";
+  de.textContent = c.de || "";
+  if(de.setAttribute) de.setAttribute("lang", "de");
+  nodos.push(de);
+
+  (c.alt || []).forEach(a=>{
+    const p = document.createElement("p");
+    p.className = "st-alt";
+    p.textContent = t("stAltLabel") + " " + a;
+    if(p.setAttribute) p.setAttribute("lang", "de");
+    nodos.push(p);
+  });
+
+  /* La ayuda se pliega con <details>: sin estado que recordar ni JavaScript que
+     se pueda desincronizar con el re-render. */
+  const det = document.createElement("details");
+  det.className = "st-help";
+  const sum = document.createElement("summary");
+  sum.textContent = t("stHelp");
+  det.appendChild(sum);
+  const es = document.createElement("p");
+  es.className = "st-es";
+  es.textContent = c.es || "";
+  if(es.setAttribute) es.setAttribute("lang", "es");
+  const ru = document.createElement("p");
+  ru.className = "st-ru";
+  ru.textContent = c.ru || "";
+  if(ru.setAttribute) ru.setAttribute("lang", "ru");
+  det.appendChild(es);
+  det.appendChild(ru);
+  nodos.push(det);
+  return nodos;
+}
+
+function renderMesa(v){
+  const d = deckState(v.id);
+  const total = (v.cards || []).length;
+  const agotado = d.drawn.length >= total;
+  const carta = d.top == null ? null : (v.cards || []).find(c => c.n === d.top);
+
+  const caja = document.createElement("section");
+  caja.className = "st-mesa";
+
+  const head = document.createElement("div");
+  head.className = "st-mesa-head";
+  const h3 = document.createElement("h3");
+  h3.textContent = t("deckLabel");
+  const cuenta = document.createElement("span");
+  cuenta.className = "st-count";
+  cuenta.textContent = t("deckDrawn", {drawn: d.drawn.length, total: total});
+  const acts = document.createElement("div");
+  acts.className = "st-actions";
+
+  const bSacar = document.createElement("button");
+  bSacar.className = "btn";
+  bSacar.textContent = agotado ? t("deckShuffle") : (carta ? t("deckDrawAgain") : t("deckDraw"));
+  bSacar.onclick = ()=>{
+    const st = deckState(v.id);
+    if(st.drawn.length >= total){
+      st.drawn = []; st.top = null;
+      saveState(); announce(t("srDeckReset")); render(); return;
+    }
+    const quedan = cartasRestantes(v, st);
+    const n = quedan[Math.floor(Math.random() * quedan.length)];
+    st.drawn.push(n);
+    st.top = n;
+    /* El mazo gira a la mitad donde vive la carta: si no, la carta sale en la
+       mesa y en la rejilla no aparece marcada porque estás mirando la otra
+       pestaña, y parece que no se ha sacado nada. */
+    st.tab = n <= ST_POR_TAB ? 0 : 1;
+    saveState();
+    announce(t("srCardDrawn", {n: n}));
+    render();
+  };
+  acts.appendChild(bSacar);
+
+  if(carta){
+    const bDevolver = document.createElement("button");
+    bDevolver.className = "btn ghost";
+    bDevolver.textContent = t("deckReturn");
+    /* Devolver es devolver: la carta sale de la lista de vistas y puede volver
+       a salir. Si no, el botón mentiría. */
+    bDevolver.onclick = ()=>{
+      const st = deckState(v.id);
+      const i = st.drawn.indexOf(st.top);
+      if(i !== -1) st.drawn.splice(i, 1);
+      st.top = null;
+      saveState(); announce(t("srCardReturned")); render();
+    };
+    acts.appendChild(bDevolver);
+  }
+  head.appendChild(h3);
+  head.appendChild(cuenta);
+  head.appendChild(acts);
+  caja.appendChild(head);
+
+  const cuerpo = document.createElement("div");
+  cuerpo.className = "st-mesa-carta";
+  if(carta){
+    contenidoCarta(carta, true).forEach(n => cuerpo.appendChild(n));
+    const notas = document.createElement("div");
+    notas.className = "st-notas";
+    const cap = document.createElement("div");
+    cap.className = "cap";
+    cap.textContent = t("deckNotes");
+    const ta = document.createElement("textarea");
+    ta.value = deckNote(v.id, carta.n);
+    ta.placeholder = t("deckNotesPlaceholder");
+    setAttr(ta, "aria-label", t("deckNotes"));
+    /* Se guarda al teclear y NO se repinta: repintar aquí devolvería el foco al
+       principio del texto en cada pulsación. */
+    ta.oninput = (e)=>{ setDeckNote(v.id, carta.n, (e && e.target ? e.target.value : ta.value)); };
+    notas.appendChild(cap);
+    notas.appendChild(ta);
+    cuerpo.appendChild(notas);
+  } else {
+    const vacia = document.createElement("div");
+    vacia.className = "st-mesa-vacia";
+    vacia.textContent = agotado ? t("deckExhausted", {total: total}) : t("deckEmpty");
+    cuerpo.appendChild(vacia);
+  }
+  caja.appendChild(cuerpo);
+  return caja;
+}
+
+function renderSmalltalk(v, main){
+  const d = deckState(v.id);
+  const cartas = v.cards || [];
+
+  const bar = document.createElement("div");
+  bar.className = "st-bar";
+  const bMesa = document.createElement("button");
+  bMesa.className = "st-toggle" + (d.mesa ? " on" : "");
+  bMesa.textContent = t("deckLabel");
+  bMesa.title = t("deckToggleTitle");
+  setAttr(bMesa, "aria-pressed", d.mesa ? "true" : "false");
+  bMesa.onclick = ()=>{
+    const st = deckState(v.id);
+    st.mesa = !st.mesa;
+    saveState();
+    render();
+  };
+  bar.appendChild(bMesa);
+
+  const pills = document.createElement("div");
+  pills.className = "tab-pills";
+  [[0, t("stTabFirst")], [1, t("stTabSecond")]].forEach(par=>{
+    const idx = par[0];
+    const b = document.createElement("button");
+    b.className = "tab-pill" + (d.tab === idx ? " active" : "");
+    b.textContent = par[1];
+    b.onclick = ()=>{ deckState(v.id).tab = idx; saveState(); render(); };
+    pills.appendChild(b);
+  });
+  bar.appendChild(pills);
+  main.appendChild(bar);
+
+  if(d.mesa) main.appendChild(renderMesa(v));
+
+  const grid = document.createElement("div");
+  grid.className = "st-grid";
+  const desde = d.tab === 0 ? 0 : ST_POR_TAB;
+  cartas.slice(desde, desde + ST_POR_TAB).forEach(c=>{
+    const art = document.createElement("article");
+    art.className = "st-card" + (d.top === c.n ? " on-desk" : "");
+    setAttr(art, "data-n", String(c.n));
+    contenidoCarta(c, false).forEach(n => art.appendChild(n));
+    grid.appendChild(art);
+  });
+  main.appendChild(grid);
 }
 
 /* ---------- Renderizador del módulo de Schreiben ---------- */
@@ -3647,10 +4005,10 @@ function renderEvaluationResult(v, rawRes){
         '</div>' +
         '<div class="orig">„' + esc(err.original) + '“</div>' +
         '<div class="corr">➔ ' + esc(err.correction) + '</div>' +
-        (err.change ? '<div class="micro" style="margin:2px 0 0">🔁 ' + esc(err.change) + '</div>' : '') +
+        (err.change ? '<div class="micro micro-cambio">🔁 ' + esc(err.change) + '</div>' : '') +
         '<div class="rule">💡 ' + esc(err.rule_es) + '</div>' +
         (locatedIdx.has(errIdx) ? '' :
-          '<div class="micro" style="margin:4px 0 0;color:var(--warn-ink)">⚠ ' + t("errNotLocated") + '</div>');
+          '<div class="micro micro-aviso">⚠ ' + t("errNotLocated") + '</div>');
 
       eb.onclick = ()=>{
         const highlightEl = document.querySelector('.err-highlight[data-err-target="err-card-' + errIdx + '"]');

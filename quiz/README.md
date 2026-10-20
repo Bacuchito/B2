@@ -52,6 +52,8 @@ quiz/
 ├─ SPEC.md               ← contrato de datos que siguen los extractores
 ├─ make_quiz_sources.py  ← parte el Markdown en bloques por página
 ├─ make_sprachbausteine.py  ← extrae los Sprachbausteine (Teil 1 y 2)
+├─ make_sprechen_t2.py    ← extrae el mazo de Smalltalk (Sprechen Teil 2)
+├─ sprechen_t2_es.json    ← traducción al español de las 104 tarjetas (a mano)
 ├─ merge_sprachbausteine_respuestas.py  ← funde las respuestas deducidas
 ├─ sprachbausteine_respuestas.json  ← respuestas de los Sprachbausteine (a mano)
 ├─ _resp_*.json          ← deducción por grupos; el merge los funde en el anterior
@@ -353,6 +355,26 @@ revisarlas contra el texto original.
 - **Coherencia entre variantes**: si el mismo enunciado lleva respuestas distintas,
   distingue tres casos — conflicto real (mismo texto y mismas opciones → aviso),
   cambio de versión del texto (informativo) y opciones distintas (informativo).
+- **Mazo de Smalltalk (`kind: "smalltalk"`)**: cada tarjeta necesita su alemán y su
+  ayuda en español y en ruso (no hay dónde caer si falta una), la numeración tiene
+  que ser 1..N sin huecos ni repetidos, y avisa si el mazo trae menos de 20 tarjetas.
+  Aquí no se validan `quote` ni `confidence`: no hay respuesta que deducir.
+
+## Smalltalk (Sprechen Teil 2)
+
+Las 104 preguntas del Teil 2 son un **mazo de tarjetas**, no un ejercicio corregible:
+no llevan clave, cita ni confianza porque no se acierta, se habla. La página las
+enseña todas en dos mitades (1–52 y 53–104) y tiene un **mesa de trabajo** que se
+enciende con un interruptor: saca una carta al azar, no la repite hasta agotar el
+mazo, deja devolverla a la baraja y guarda tus notas de esa carta por perfil.
+
+- El alemán va verbatim del documento; las dos formulaciones separadas por « / » van
+  en la misma tarjeta (campo `alt`), para que el número coincida con el del PDF.
+- La ayuda (traducción ES y RU) va plegada detrás de un botón en cada carta. El ruso
+  lo trae el documento en las 104; el español lo aporta `sprechen_t2_es.json`.
+- Las erratas del original se corrigen en `CORRECCIONES` (dentro de
+  `make_sprechen_t2.py`) y cada una se anota en `fixes`. El script falla si la errata
+  ya no está: no corrige a ciegas.
 
 ## Niveles de confianza
 

@@ -1,0 +1,785 @@
+{
+ "block": "sprechen_t2",
+ "section": "sprechen-t2",
+ "variants": [
+  {
+   "id": "spr-t2-smalltalk",
+   "label": "Alle Karten",
+   "page": 182,
+   "kind": "smalltalk",
+   "intro": "Teil 2 der mündlichen Prüfung. Sie unterhalten sich mit einer Kollegin oder einem Kollegen über Alltag und Beruf. Wählen Sie eine Karte und sprechen Sie etwa drei Minuten darüber.",
+   "time_minutes": 3,
+   "cards": [
+    {
+     "n": 1,
+     "de": "Ich finde, wir als Praktikant*innen sollten eigentlich keine Überstunden machen. Was meinst du?",
+     "alt": [],
+     "ru": "Я считаю, что мы, как стажёры, не должны работать сверхурочно. Что ты думаешь?",
+     "es": "Creo que nosotros, como becarios, no deberíamos hacer horas extra. ¿Tú qué dices?"
+    },
+    {
+     "n": 2,
+     "de": "Ich gehe in der Mittagspause meist zum Imbiss um die Ecke. Wo isst du?",
+     "alt": [],
+     "ru": "Я обычно хожу в закусочную за углом во время обеденного перерыва. А ты где ешь?",
+     "es": "En la pausa del mediodía suelo ir al puesto de comida de la esquina. ¿Dónde comes tú?"
+    },
+    {
+     "n": 3,
+     "de": "Der Chef möchte, dass ich einen Computerkurs mache. Weißt du, wie ich das organisieren kann?",
+     "alt": [],
+     "ru": "Шеф хочет, чтобы я прошел курс по компьютеру. Ты знаешь, как это организовать?",
+     "es": "El jefe quiere que haga un curso de informática. ¿Sabes cómo puedo organizarlo?"
+    },
+    {
+     "n": 4,
+     "de": "Im Sommer fahre ich gerne an einen See zum Baden. Du auch oder magst du Freibäder lieber?",
+     "alt": [],
+     "ru": "Летом я люблю ездить на озеро купаться. А ты? Или ты предпочитаешь бассейны под открытым небом?",
+     "es": "En verano me gusta ir a un lago a bañarme. ¿Tú también o prefieres las piscinas al aire libre?"
+    },
+    {
+     "n": 5,
+     "de": "Wie und wann buchst du deinen Urlaub?",
+     "alt": [],
+     "ru": "Как и когда ты бронируешь свой отпуск?",
+     "es": "¿Cómo y cuándo reservas tus vacaciones?"
+    },
+    {
+     "n": 6,
+     "de": "Ich habe noch fünf Tage Resturlaub. Was passiert mit diesen Tagen?",
+     "alt": [
+      "Ich habe vom Urlaub in diesem Jahr noch 5 Tage übrig. Was passiert eigentlich mit dem Resturlaub?"
+     ],
+     "ru": "У меня осталось пять дней неиспользованного отпуска. Что с ними будет?",
+     "es": "Me quedan cinco días de vacaciones sin gastar. ¿Qué pasa con esos días? / Este año me quedan todavía 5 días de vacaciones. ¿Qué pasa en realidad con los días pendientes?"
+    },
+    {
+     "n": 7,
+     "de": "Wie kann man die verbleibenden 5 Urlaubstage am besten nutzen?",
+     "alt": [],
+     "ru": "Как лучше провести оставшиеся 5 дней отпуска?",
+     "es": "¿Cómo se aprovechan mejor los 5 días de vacaciones que quedan?"
+    },
+    {
+     "n": 8,
+     "de": "Ich arbeite im Homeoffice. Ich habe kein Diensthandy bekommen. Denkst du, dass ich mein Privathandy benutzen soll?",
+     "alt": [],
+     "ru": "Я работаю из дома и не получил служебный телефон. Как думаешь, стоит ли использовать личный телефон?",
+     "es": "Trabajo desde casa. No me han dado móvil de empresa. ¿Crees que debería usar mi móvil privado?"
+    },
+    {
+     "n": 9,
+     "de": "Der Chef möchte von Mitarbeitern die Arbeitsunfähigkeitsbescheinigung ab dem ersten Tag und nicht am dritten Tag. Was hältst du davon?",
+     "alt": [],
+     "ru": "Шеф хочет, чтобы сотрудники приносили больничный с первого дня, а не с третьего. Что ты думаешь об этом?",
+     "es": "El jefe quiere que los empleados entreguen la baja médica desde el primer día y no al tercero. ¿Qué opinas?"
+    },
+    {
+     "n": 10,
+     "de": "Am Samstag ist der Tag der offenen Tür im Unternehmen. Wir können unsere Kinder mitbringen. Bist du dabei?",
+     "alt": [],
+     "ru": "В субботу в компании день открытых дверей. Мы можем привести детей. Ты пойдешь?",
+     "es": "El sábado es la jornada de puertas abiertas en la empresa. Podemos llevar a los niños. ¿Te apuntas?"
+    },
+    {
+     "n": 11,
+     "de": "Das Unternehmen gewährt keine Boni für dieses Jahr. Was hältst du davon?",
+     "alt": [],
+     "ru": "Компания в этом году не выплачивает бонусы. Что ты об этом думаешь?",
+     "es": "La empresa no paga bonus este año. ¿Qué opinas?"
+    },
+    {
+     "n": 12,
+     "de": "80% der Mitarbeiter kommen mit dem Fahrrad zur Arbeit. Findest du es auch toll?",
+     "alt": [],
+     "ru": "80% сотрудников приезжают на работу на велосипеде. Ты тоже считаешь это классным?",
+     "es": "El 80 % de los empleados viene en bici al trabajo. ¿A ti también te parece genial?"
+    },
+    {
+     "n": 13,
+     "de": "Im Dezember gibt es Urlaubsperre. Findest du das fair?",
+     "alt": [],
+     "ru": "В декабре запрещено брать отпуск. Ты считаешь это справедливым?",
+     "es": "En diciembre no se puede coger vacaciones. ¿Te parece justo?"
+    },
+    {
+     "n": 14,
+     "de": "Wo verbringst du am liebsten deine Mittagspause? Ich verbringe sie gerne außerhalb des Betriebs.",
+     "alt": [],
+     "ru": "Где ты предпочитаешь проводить обеденный перерыв? Я люблю обедать вне офиса.",
+     "es": "¿Dónde pasas preferentemente la pausa del mediodía? A mí me gusta pasarla fuera de la empresa."
+    },
+    {
+     "n": 15,
+     "de": "Wo ist es besser, Mittag zu essen: im Büro oder draußen, mit Kollegen oder alleine?",
+     "alt": [],
+     "ru": "Где лучше обедать: внутри офиса или снаружи, с коллегами или одному?",
+     "es": "¿Dónde es mejor comer: en la oficina o fuera, con compañeros o solo?"
+    },
+    {
+     "n": 16,
+     "de": "Arbeitest du bevorzugt im Büro oder lieber von zu Hause aus?",
+     "alt": [
+      "Was ist besser: Homeoffice oder Büroarbeit?"
+     ],
+     "ru": "Ты предпочитаешь работать в офисе или из дома?",
+     "es": "¿Prefieres trabajar en la oficina o desde casa? / ¿Qué es mejor: teletrabajo o trabajo en oficina?"
+    },
+    {
+     "n": 17,
+     "de": "Ich bevorzuge im Herbst Urlaub zu nehmen, weil es viele Vorteile hat. Und du? Wann machst du Urlaub?",
+     "alt": [
+      "Ist es gut, im Herbst Urlaub zu nehmen?"
+     ],
+     "ru": "Я предпочитаю брать отпуск осенью, потому что это имеет много преимуществ. А ты? Когда ты берешь отпуск?",
+     "es": "Yo prefiero coger vacaciones en otoño porque tiene muchas ventajas. ¿Y tú? ¿Cuándo coges vacaciones? / ¿Está bien coger vacaciones en otoño?"
+    },
+    {
+     "n": 18,
+     "de": "Ich würde gerne in meiner Freizeit ehrenamtlich arbeiten. Hast du eine Idee, was man machen könnte?",
+     "alt": [],
+     "ru": "Я бы хотел заниматься волонтерской работой в свободное время. У тебя есть идеи, чем можно заняться?",
+     "es": "Me gustaría hacer voluntariado en mi tiempo libre. ¿Tienes alguna idea de qué se podría hacer?"
+    },
+    {
+     "n": 19,
+     "de": "Wie kann man mit ehrenamtlicher Arbeit anfangen?",
+     "alt": [],
+     "ru": "Как начать заниматься волонтёрской деятельностью?",
+     "es": "¿Cómo se empieza a hacer voluntariado?"
+    },
+    {
+     "n": 20,
+     "de": "Ich habe nächste Woche meine erste Nachtschicht. Was machst du, um wach zu bleiben?",
+     "alt": [],
+     "ru": "На следующей неделе у меня первая ночная смена. Что ты делаешь, чтобы не уснуть?",
+     "es": "La semana que viene tengo mi primer turno de noche. ¿Qué haces tú para no dormirte?"
+    },
+    {
+     "n": 21,
+     "de": "Bist du auch produktiver in der Frühschicht? Das trifft auf mich zu.",
+     "alt": [
+      "Was hältst du von Frühschichten?"
+     ],
+     "ru": "Ты тоже продуктивнее в утреннюю смену? Это про меня.",
+     "es": "¿Tú también eres más productivo en el turno de mañana? En mi caso sí. / ¿Qué opinas de los turnos de mañana?"
+    },
+    {
+     "n": 22,
+     "de": "Brauchst du nach der Arbeit auch erstmal Ruhe, wie ich?",
+     "alt": [
+      "Wie entspannst du dich am besten nach der Arbeit?",
+      "Was tun, wenn man nach der Arbeit Ruhe haben möchte?"
+     ],
+     "ru": "Тебе тоже нужно немного отдыха после работы, как и мне?",
+     "es": "¿Tú también necesitas primero un rato de calma después del trabajo, como yo? / ¿Cómo te relajas mejor después del trabajo? / ¿Qué hacer cuando uno quiere tranquilidad después del trabajo?"
+    },
+    {
+     "n": 23,
+     "de": "Sollen wir mittags etwas bestellen? Wie wäre es mit einem gemeinsamen Mittagessen?",
+     "alt": [],
+     "ru": "Может, закажем что-то на обед? Как насчет совместного обеда?",
+     "es": "¿Pedimos algo para comer? ¿Qué te parece si comemos juntos?"
+    },
+    {
+     "n": 24,
+     "de": "Nächsten Monat kann ich leider keine Überstunden machen. Denkst du, dass es geht?",
+     "alt": [],
+     "ru": "В следующем месяце я, к сожалению, не могу работать сверхурочно. Как думаешь, это возможно?",
+     "es": "El mes que viene, por desgracia, no puedo hacer horas extra. ¿Crees que es posible?"
+    },
+    {
+     "n": 25,
+     "de": "Meine neue Kollegin ist unfreundlich. Hast du vielleicht Ratschläge, wie ich damit umgehen könnte?",
+     "alt": [],
+     "ru": "Моя новая коллега недружелюбна. У тебя есть советы, как с этим справиться?",
+     "es": "Mi compañera nueva es antipática. ¿Tienes algún consejo sobre cómo podría tratarlo?"
+    },
+    {
+     "n": 26,
+     "de": "Ich soll am Samstag für eine Kollegin einspringen. Weißt du, ob ich dafür nächste Woche einen anderen Tag frei bekomme?",
+     "alt": [],
+     "ru": "Мне нужно заменить коллегу в субботу. Знаешь, получу ли я за это выходной на следующей неделе?",
+     "es": "El sábado tengo que cubrir a una compañera. ¿Sabes si por eso me dan libre otro día la semana que viene?"
+    },
+    {
+     "n": 27,
+     "de": "Mein Kind weint in der Kita. Hast du Erfahrungen damit und Tipps, was ich tun könnte?",
+     "alt": [],
+     "ru": "Мой ребенок плачет в детском саду. У тебя есть опыт в этом и советы, что делать?",
+     "es": "Mi hijo llora en la guardería. ¿Tienes experiencia con eso y algún consejo sobre qué podría hacer?"
+    },
+    {
+     "n": 28,
+     "de": "Ich möchte meine Kollegen besser kennenlernen. Hast du eine Idee, wie ich das machen könnte?",
+     "alt": [],
+     "ru": "Я хочу лучше узнать своих коллег. У тебя есть идеи, как это сделать?",
+     "es": "Me gustaría conocer mejor a mis compañeros. ¿Tienes alguna idea de cómo podría hacerlo?"
+    },
+    {
+     "n": 29,
+     "de": "Ich möchte gerne mal im Sommer Urlaub machen. Leider dürfen das nur Kolleg*innen mit Kindern. Findest du das fair?",
+     "alt": [
+      "Nur Mitarbeitende mit schulpflichtigen Kindern dürfen Urlaub in den Sommerferien machen. Findest du das fair?"
+     ],
+     "ru": "Я бы хотел взять отпуск летом, но это разрешено только сотрудникам с детьми. Ты считаешь это справедливым?",
+     "es": "Me gustaría coger vacaciones en verano alguna vez. Por desgracia solo pueden los compañeros con hijos. ¿Te parece justo? / Solo quien tiene hijos en edad escolar puede coger vacaciones en verano. ¿Te parece justo?"
+    },
+    {
+     "n": 30,
+     "de": "Bei uns in der Firma haben wir eine dreimonatige Kündigungsfrist. Ist das nicht zu viel?",
+     "alt": [
+      "Findest du dreimonatige Kündigungsfrist fair?"
+     ],
+     "ru": "У нас в компании срок увольнения — три месяца. Это не слишком долго?",
+     "es": "En mi empresa el preaviso de dimisión es de tres meses. ¿No es demasiado? / ¿Te parece justo un preaviso de tres meses?"
+    },
+    {
+     "n": 31,
+     "de": "Ich würde am Wochenende mit Freunden bei mir im Garten grillen. Magst du auch kommen?",
+     "alt": [],
+     "ru": "Я собираюсь на выходных устроить барбекю в саду с друзьями. Хочешь присоединиться?",
+     "es": "Este fin de semana voy a hacer una barbacoa en el jardín de casa con amigos. ¿Te apetece venir?"
+    },
+    {
+     "n": 32,
+     "de": "Eine Freundin von mir sagt, dass in ihrer Firma freitags schon um 14 Uhr Feierabend ist. Was hältst du davon?",
+     "alt": [],
+     "ru": "Моя подруга говорит, что в её компании в пятницу рабочий день заканчивается в 14:00. Что ты об этом думаешь?",
+     "es": "Una amiga dice que en su empresa los viernes se acaba a las 14:00. ¿Qué opinas?"
+    },
+    {
+     "n": 33,
+     "de": "Im Unternehmen findet ein Seminar zur Stressbewältigung statt. Ich würde es gerne besuchen. Bist du auch dabei?",
+     "alt": [],
+     "ru": "В компании проводится семинар по управлению стрессом. Я бы хотел его посетить. Ты тоже?",
+     "es": "En la empresa hay un seminario para gestionar el estrés. Me gustaría ir. ¿Vienes tú también?"
+    },
+    {
+     "n": 34,
+     "de": "Ich arbeite schon lange hier und würde mich gerne weiterentwickeln. Hast du Ideen, was ich machen könnte?",
+     "alt": [],
+     "ru": "Я уже давно работаю здесь и хочу развиваться. У тебя есть идеи, что мне можно сделать?",
+     "es": "Llevo mucho tiempo aquí y me gustaría desarrollarme profesionalmente. ¿Tienes ideas de qué podría hacer?"
+    },
+    {
+     "n": 35,
+     "de": "Ich brauche ein zusätzliches Einkommen. Denkst du es ist eine gute Idee, einen Nebenjob anzunehmen?",
+     "alt": [],
+     "ru": "Мне нужен дополнительный доход. Ты думаешь, подработка – это хорошая идея?",
+     "es": "Necesito un ingreso extra. ¿Crees que es buena idea coger un segundo trabajo?"
+    },
+    {
+     "n": 36,
+     "de": "Wie kann man das Einkommen erhöhen, wenn die Ausgaben gestiegen sind?",
+     "alt": [],
+     "ru": "Как можно увеличить доходы, если расходы выросли?",
+     "es": "¿Cómo se pueden aumentar los ingresos cuando los gastos han subido?"
+    },
+    {
+     "n": 37,
+     "de": "Was hältst du von zusätzlicher Arbeit wie einem Minijob?",
+     "alt": [],
+     "ru": "Что ты думаешь о дополнительной работе, например, мини-джоб?",
+     "es": "¿Qué opinas de un trabajo extra, tipo miniempleo?"
+    },
+    {
+     "n": 38,
+     "de": "In der Firma soll es Maßnahmen zur betrieblichen Gesundheitsförderung geben. Wie findest du das?",
+     "alt": [],
+     "ru": "В компании должны внедрить меры по укреплению здоровья сотрудников. Как ты к этому относишься?",
+     "es": "Parece que en la empresa va a haber medidas de promoción de la salud. ¿Qué te parece?"
+    },
+    {
+     "n": 39,
+     "de": "Wie stehen Sie zu Gesundheitsvorsorge-Veranstaltungen?",
+     "alt": [],
+     "ru": "Как Вы относитесь к мероприятиям по профилактике здоровья?",
+     "es": "¿Qué opina de las jornadas de prevención de la salud?"
+    },
+    {
+     "n": 40,
+     "de": "Findest du es auch super, dass in unserer Kantine mehr vegane und vegetarische Gerichte angeboten werden?",
+     "alt": [],
+     "ru": "Ты тоже считаешь классным, что в нашей столовой стало больше веганских и вегетарианских блюд?",
+     "es": "¿A ti también te parece genial que en nuestra cantina se ofrezcan más platos veganos y vegetarianos?"
+    },
+    {
+     "n": 41,
+     "de": "Spielst du ein Musikinstrument? Ich würde gerne eins lernen. Kennst du hier gute Lehrmöglichkeiten?",
+     "alt": [],
+     "ru": "Ты играешь на музыкальном инструменте? Я бы хотел научиться. Знаешь хорошие курсы?",
+     "es": "¿Tocas algún instrumento? A mí me gustaría aprender uno. ¿Conoces buenos sitios para aprender aquí?"
+    },
+    {
+     "n": 42,
+     "de": "Diesen Sommer fahren wir im Urlaub nicht in die Heimat, sondern bleiben hier. Wollen wir mal etwas zusammen unternehmen?",
+     "alt": [],
+     "ru": "Этим летом мы не поедем в отпуск на родину, а останемся здесь. Давай что-нибудь вместе организуем?",
+     "es": "Este verano no nos vamos de vacaciones a nuestro país, nos quedamos aquí. ¿Hacemos algo juntos alguna vez?"
+    },
+    {
+     "n": 43,
+     "de": "Weißt du schon, was du für unsere Weihnachtsfeier anziehst? Sie findet schon nächste Woche statt.",
+     "alt": [],
+     "ru": "Ты уже знаешь, что наденешь на нашу рождественскую вечеринку? Она уже на следующей неделе.",
+     "es": "¿Ya sabes qué te vas a poner para nuestra fiesta de Navidad? Es la semana que viene."
+    },
+    {
+     "n": 44,
+     "de": "Weißt du, wie das in der Firma eigentlich mit der Krankmeldung geregelt ist?",
+     "alt": [],
+     "ru": "Ты знаешь, как у нас в компании оформляют больничный?",
+     "es": "¿Sabes cómo está regulado en la empresa el tema de dar la baja?"
+    },
+    {
+     "n": 45,
+     "de": "Die Firma plant, ab diesem Jahr nur noch ein Sommerfest zu veranstalten. Die Weihnachtsfeier wird gestrichen. Wie findest du das?",
+     "alt": [],
+     "ru": "Компания планирует теперь проводить только летний праздник, а рождественскую вечеринку отменить. Как тебе это?",
+     "es": "La empresa planea celebrar a partir de este año solo una fiesta de verano. La de Navidad se cancela. ¿Qué te parece?"
+    },
+    {
+     "n": 46,
+     "de": "Hast du von dem Zuschuss der Firma für den Kauf eines E-Bikes gehört? Was denkst du darüber?",
+     "alt": [],
+     "ru": "Ты слышал, что компания дает субсидию на покупку электровелосипеда? Что думаешь об этом?",
+     "es": "¿Te has enterado de la ayuda de la empresa para comprar una bici eléctrica? ¿Qué piensas de eso?"
+    },
+    {
+     "n": 47,
+     "de": "Verbringst du wichtige Feiertage eher mit der Familie oder mit Freunden?",
+     "alt": [],
+     "ru": "Ты важные праздники проводишь с семьей или с друзьями?",
+     "es": "¿Las fiestas importantes las pasas más con la familia o con amigos?"
+    },
+    {
+     "n": 48,
+     "de": "Was hältst du von Fahrgemeinschaften auf dem Weg zur Arbeit? Auf diese Weise könnte man Fahrtkosten sparen.",
+     "alt": [
+      "Hast du Lust, eine Fahrgemeinschaft zu bilden?",
+      "Was hältst du von gemeinsamen Fahrten mit Kollegen nach Hause?"
+     ],
+     "ru": "Что ты думаешь о совместных поездках на работу? Так можно сэкономить на проезде.",
+     "es": "¿Qué opinas de compartir coche para ir al trabajo? Así se podrían ahorrar gastos de desplazamiento. / ¿Te apetece compartir coche? / ¿Qué opinas de ir y volver en coche con compañeros?"
+    },
+    {
+     "n": 49,
+     "de": "Bevorzugst du bargeldlose Zahlungen oder zahlst du lieber bar?",
+     "alt": [],
+     "ru": "Ты предпочитаешь безналичную оплату или платишь наличными?",
+     "es": "¿Prefieres pagar sin efectivo o pagas en metálico?"
+    },
+    {
+     "n": 50,
+     "de": "Denkst du, es ist eine gute Idee, sich selbstständig zu machen?",
+     "alt": [
+      "Was hältst du von Selbstständigkeit?"
+     ],
+     "ru": "Ты считаешь хорошей идеей открыть собственное дело?",
+     "es": "¿Crees que es buena idea hacerse autónomo? / ¿Qué opinas de trabajar por cuenta propia?"
+    },
+    {
+     "n": 51,
+     "de": "Hast du auch mitbekommen, unsere Kantine wird für zwei Monate geschlossen, weil sie umgebaut wird? Was sagst du dazu?",
+     "alt": [],
+     "ru": "Ты слышал, что нашу столовую закроют на два месяца из-за ремонта? Что ты думаешь об этом?",
+     "es": "¿Te has enterado de que cierran la cantina dos meses porque la van a reformar? ¿Qué me dices?"
+    },
+    {
+     "n": 52,
+     "de": "Meinst du, dass man wirklich alle zwei Jahre ein neues Handy benötigt?",
+     "alt": [],
+     "ru": "Ты считаешь, что действительно нужно менять телефон каждые два года?",
+     "es": "¿Crees que de verdad hace falta un móvil nuevo cada dos años?"
+    },
+    {
+     "n": 53,
+     "de": "Nächsten Monat muss ich in eine Wohnung umziehen. Könntest du mir mit der Renovierung helfen?",
+     "alt": [],
+     "ru": "В следующем месяце я переезжаю в новую квартиру. Ты мог бы помочь с ремонтом?",
+     "es": "El mes que viene me tengo que mudar a un piso. ¿Podrías ayudarme con la reforma?"
+    },
+    {
+     "n": 54,
+     "de": "Ich muss bald umziehen. Wo finde ich einen guten Handwerker für den Umzug?",
+     "alt": [],
+     "ru": "Мне предстоит переезд. Где найти хорошего мастера для переезда?",
+     "es": "Pronto tengo que mudarme. ¿Dónde encuentro un buen profesional para la mudanza?"
+    },
+    {
+     "n": 55,
+     "de": "Findest du eine Betriebsfeier mit oder ohne Partner besser?",
+     "alt": [],
+     "ru": "Как ты считаешь, корпоратив лучше проводить с партнерами или без них?",
+     "es": "¿Te parece mejor una fiesta de empresa con pareja o sin pareja?"
+    },
+    {
+     "n": 56,
+     "de": "Soll man einen Partner/eine Partnerin zur Firmenfeier mitbringen?",
+     "alt": [],
+     "ru": "Нужно ли брать партнёра на корпоративную вечеринку?",
+     "es": "¿Se debe llevar a la pareja a la fiesta de la empresa?"
+    },
+    {
+     "n": 57,
+     "de": "Ich mache gerne Überstunden. Du auch?",
+     "alt": [],
+     "ru": "Мне нравится работать сверхурочно. А тебе?",
+     "es": "A mí me gusta hacer horas extra. ¿A ti también?"
+    },
+    {
+     "n": 58,
+     "de": "Hast du gehört, dass es in der Firma bald kostenlose Sportkurse geben soll? Ich würde gerne dran teilnehmen. Und du?",
+     "alt": [],
+     "ru": "Ты слышал, что скоро в компании будут бесплатные спортивные занятия? Я хочу участвовать. А ты?",
+     "es": "¿Te has enterado de que pronto habrá cursos de deporte gratis en la empresa? A mí me gustaría apuntarme. ¿Y a ti?"
+    },
+    {
+     "n": 59,
+     "de": "Für mich wäre Schichtarbeit kein Problem. Wie siehst du das?",
+     "alt": [],
+     "ru": "Мне было бы несложно работать посменно. А как ты к этому относишься?",
+     "es": "Para mí el trabajo por turnos no sería un problema. ¿Tú cómo lo ves?"
+    },
+    {
+     "n": 60,
+     "de": "Wollen wir mal an einem Abend (morgen Abend) etwas mit Kolleg*innen unternehmen?",
+     "alt": [],
+     "ru": "Может, какнибудь вечером (завтра вечером) организуем что-то с коллегами?",
+     "es": "¿Hacemos algo una noche con los compañeros (mañana por la noche)?"
+    },
+    {
+     "n": 61,
+     "de": "Arbeitest du lieber im Team oder alleine? Ich persönlich bevorzuge, im Team zu arbeiten.",
+     "alt": [],
+     "ru": "Ты предпочитаешь работать в команде или самостоятельно? Лично я предпочитаю работать в команде.",
+     "es": "¿Prefieres trabajar en equipo o solo? Yo personalmente prefiero trabajar en equipo."
+    },
+    {
+     "n": 62,
+     "de": "Unser Betriebsausflug findet am Samstag statt. Was hältst du davon?",
+     "alt": [],
+     "ru": "Наш корпоративный выезд состоится в субботу. Как ты к этому относишься?",
+     "es": "Nuestra excursión de empresa es el sábado. ¿Qué te parece?"
+    },
+    {
+     "n": 63,
+     "de": "Ich nehme an Brückentagen immer frei. Und du?",
+     "alt": [],
+     "ru": "Я всегда беру выходной на стыке праздников. А ты?",
+     "es": "Los puentes siempre los cojo libres. ¿Y tú?"
+    },
+    {
+     "n": 64,
+     "de": "Ich finde einen Tag extra Urlaub für einen Umzug sehr wenig. Was denkst du darüber?",
+     "alt": [],
+     "ru": "Я считаю, что один день отпуска на переезд – это мало. Что ты думаешь?",
+     "es": "Un día extra de vacaciones por una mudanza me parece muy poco. ¿Qué opinas?"
+    },
+    {
+     "n": 65,
+     "de": "Alle Fortbildungen sollen dieses Jahr an Wochenenden stattfinden. Was hältst du davon?",
+     "alt": [],
+     "ru": "Все курсы повышения квалификации в этом году будут проводиться по выходным. Как тебе это?",
+     "es": "Este año todos los cursos de formación se van a hacer los fines de semana. ¿Qué opinas?"
+    },
+    {
+     "n": 66,
+     "de": "Du arbeitest doch Vollzeit, oder? Wie schaffst du das denn mit deinem Kind?",
+     "alt": [
+      "Du arbeitest ganztägig. Wer passt während dieser Zeit auf die Kinder auf?"
+     ],
+     "ru": "Ты же работаешь полный день, верно? Как ты справляешься с этим и с ребенком?",
+     "es": "Tú trabajas a jornada completa, ¿no? ¿Cómo lo haces con tu hijo? / Trabajas todo el día. ¿Quién cuida a los niños mientras tanto?"
+    },
+    {
+     "n": 67,
+     "de": "Dieses Jahr fällt unser Betriebsausflug aus. Was hältst du davon?",
+     "alt": [],
+     "ru": "В этом году наш корпоративный выезд отменили. Как ты к этому относишься?",
+     "es": "Este año se cancela nuestra excursión de empresa. ¿Qué opinas?"
+    },
+    {
+     "n": 68,
+     "de": "Was wäre eine gute Idee für unseren nächsten Betriebsausflug?",
+     "alt": [],
+     "ru": "Какая идея для следующего корпоративного выезда была бы хорошей?",
+     "es": "¿Qué sería una buena idea para nuestra próxima excursión de empresa?"
+    },
+    {
+     "n": 69,
+     "de": "Bald ziehen wir um. Im neuen Gebäude arbeiten wir im Großraumbüro. Freust du dich auch darauf?",
+     "alt": [],
+     "ru": "Скоро мы переезжаем. В новом здании у нас будет офис открытого типа. Ты этому рад?",
+     "es": "Pronto nos mudamos. En el edificio nuevo vamos a trabajar en una oficina diáfana. ¿Tú también tienes ganas?"
+    },
+    {
+     "n": 70,
+     "de": "Ich wünsche, es gäbe mehr vegetarische Gerichte in der Kantine. Was denkst du darüber?",
+     "alt": [
+      "Ich fände es gut, wenn es mehr vegetarische Gerichte in der Kantine geben würde. Was denkst du darüber?"
+     ],
+     "ru": "Я бы хотел, чтобы в столовой было больше вегетарианских блюд. Что ты об этом думаешь?",
+     "es": "Ojalá hubiera más platos vegetarianos en la cantina. ¿Qué opinas? / Me parecería bien que hubiera más platos vegetarianos en la cantina. ¿Qué opinas?"
+    },
+    {
+     "n": 71,
+     "de": "Ich finde es gut, wenn wir uns einmal im Monat abends zu einem Stammtisch treffen würden. Und du? Machst du mit?",
+     "alt": [
+      "Hast du etwas dagegen, wenn wir einen Stammtisch organisieren?"
+     ],
+     "ru": "Я думаю, было бы здорово встречаться раз в месяц вечером за неформальным столом. А ты? Присоединишься?",
+     "es": "Me parece bien que nos reuniéramos una vez al mes por la noche en una tertulia. ¿Y tú? ¿Te apuntas? / ¿Te importa si organizamos una tertulia?"
+    },
+    {
+     "n": 72,
+     "de": "Ich überlege, meine Stunden zu reduzieren und in Teilzeit zu arbeiten. Was denkst du? Ist das gut?",
+     "alt": [
+      "Ich möchte meine Stunden reduzieren. Hast du darüber auch nachgedacht?"
+     ],
+     "ru": "Я думаю о том, чтобы сократить рабочие часы и работать на полставки. Как ты считаешь, это хорошая идея?",
+     "es": "Estoy pensando en reducir mis horas y trabajar a tiempo parcial. ¿Qué opinas? ¿Está bien? / Quiero reducir mis horas. ¿Tú también lo has pensado?"
+    },
+    {
+     "n": 73,
+     "de": "Mein Zug kommt jeden Morgen spät. Ich habe Angst, ich bekomme bald Ärger vom Chef. Was soll ich machen?",
+     "alt": [],
+     "ru": "Мой поезд каждое утро опаздывает. Боюсь, что начальник начнет ругаться. Что мне делать?",
+     "es": "Mi tren llega tarde cada mañana. Me da miedo que pronto me eche la bronca el jefe. ¿Qué debería hacer?"
+    },
+    {
+     "n": 74,
+     "de": "Was tun, wenn der Zug ständig Verspätung hat?",
+     "alt": [],
+     "ru": "Что делать, если поезд постоянно опаздывает?",
+     "es": "¿Qué hacer cuando el tren llega siempre tarde?"
+    },
+    {
+     "n": 75,
+     "de": "Was kann man tun, wenn man 45 Minuten im Zug verbringen muss?",
+     "alt": [],
+     "ru": "Чем заняться, если предстоит провести 45 минут в поезде?",
+     "es": "¿Qué se puede hacer si tienes que pasar 45 minutos en el tren?"
+    },
+    {
+     "n": 76,
+     "de": "Ich möchte gerne mal einen Bildungsurlaub machen. Weißt du, wie das bei uns in der Firma geregelt ist?",
+     "alt": [],
+     "ru": "Я хочу взять учебный отпуск. Ты знаешь, как это устроено в нашей компании?",
+     "es": "Me gustaría hacer un permiso de formación. ¿Sabes cómo está regulado en nuestra empresa?"
+    },
+    {
+     "n": 77,
+     "de": "Unsere Abteilung plant, in ein Kochstudio zu gehen, um gemeinsam zu kochen. Mir gefällt diese Idee. Wie findest du sie?",
+     "alt": [],
+     "ru": "Наш отдел планирует сходить в кулинарную студию и приготовить что-то вместе. Мне нравится эта идея. А тебе?",
+     "es": "Nuestro departamento quiere ir a un estudio de cocina para cocinar juntos. A mí me gusta la idea. ¿A ti qué te parece?"
+    },
+    {
+     "n": 78,
+     "de": "Weißt du schon, wohin du in den Urlaub fährst? Bist du auf die Schulferien angewiesen?",
+     "alt": [],
+     "ru": "Ты уже знаешь, куда поедешь в отпуск? Ты зависишь от школьных каникул?",
+     "es": "¿Ya sabes adónde te vas de vacaciones? ¿Dependes de las vacaciones escolares?"
+    },
+    {
+     "n": 79,
+     "de": "In der Kantine kann man nur noch abgepackte Brötchen kaufen. Ich würde gerne eine warme Mahlzeit essen. Wie ist das bei dir?",
+     "alt": [],
+     "ru": "В столовой теперь можно купить только упакованные булочки. Я бы хотел есть теплую еду. А ты?",
+     "es": "En la cantina ahora solo se pueden comprar bocadillos envasados. A mí me gustaría comer algo caliente. ¿Y en tu caso?"
+    },
+    {
+     "n": 80,
+     "de": "Als neues Angebot für eine aktive Pause gibt es jetzt Tischtennis. Wollen wir mal in der Pause spielen?",
+     "alt": [],
+     "ru": "Теперь в качестве активного отдыха на работе есть настольный теннис. Может, поиграем в перерыв?",
+     "es": "Como novedad para una pausa activa ahora hay tenis de mesa. ¿Jugamos un rato en la pausa?"
+    },
+    {
+     "n": 81,
+     "de": "Die Firma plant einen Betriebsausflug über das ganze Wochenende. Was hältst du davon?",
+     "alt": [],
+     "ru": "Компания планирует корпоративный выезд на целый уик-энд. Как ты к этому относишься?",
+     "es": "La empresa planea una excursión de todo el fin de semana. ¿Qué opinas?"
+    },
+    {
+     "n": 82,
+     "de": "Soll man an den Betriebsausflügen teilnehmen?",
+     "alt": [],
+     "ru": "Обязаны ли участвовать в корпоративных эскурсиях?",
+     "es": "¿Hay que apuntarse a las excursiones de la empresa?"
+    },
+    {
+     "n": 83,
+     "de": "Hast du eine Idee?",
+     "alt": [
+      "Weißt du, was man in den Ferien mit Kindern hier in der Stadt unternehmen kann?"
+     ],
+     "ru": "У тебя есть идеи, чем можно заняться с детьми в городе во время каникул?",
+     "es": "¿Tienes alguna idea? / ¿Sabes qué se puede hacer aquí en la ciudad con niños durante las vacaciones?"
+    },
+    {
+     "n": 84,
+     "de": "Was soll man zur Party mit den Kollegen anziehen?",
+     "alt": [],
+     "ru": "Что надеть на вечеринку с коллегами?",
+     "es": "¿Qué hay que ponerse para la fiesta con los compañeros?"
+    },
+    {
+     "n": 85,
+     "de": "Ich finde flexible Arbeitszeiten großartig. Wann fängst du morgens mit der Arbeit an?",
+     "alt": [],
+     "ru": "Я считаю, что гибкий график работы – это здорово. Во сколько ты начинаешь работать по утрам?",
+     "es": "El horario flexible me parece genial. ¿A qué hora empiezas a trabajar por la mañana?"
+    },
+    {
+     "n": 86,
+     "de": "Ich finde die Uniform langweilig. Was ist deine Meinung?",
+     "alt": [],
+     "ru": "Я считаю, что униформа скучная. Каково твое мнение?",
+     "es": "El uniforme me parece aburrido. ¿Cuál es tu opinión?"
+    },
+    {
+     "n": 87,
+     "de": "Findest du es fair, dass wir die Kosten für die Fortbildungen selbst tragen sollen?",
+     "alt": [],
+     "ru": "Ты считаешь справедливым, что мы должны сами оплачивать курсы повышения квалификации?",
+     "es": "¿Te parece justo que tengamos que pagar nosotros los cursos de formación?"
+    },
+    {
+     "n": 88,
+     "de": "Ich finde die Gleitzeit sehr familienfreundlich. Und du auch?",
+     "alt": [],
+     "ru": "Я считаю, что гибкий график работы удобен для семейных людей. Ты согласен?",
+     "es": "El horario flexible me parece muy compatible con la familia. ¿A ti también?"
+    },
+    {
+     "n": 89,
+     "de": "Was denkst du? Was könnte eine gute Idee für eine aktive Pause sein?",
+     "alt": [],
+     "ru": "Как ты думаешь, какая идея для активного перерыва была бы хорошей?",
+     "es": "¿Tú qué piensas? ¿Qué podría ser una buena idea para una pausa activa?"
+    },
+    {
+     "n": 90,
+     "de": "Was ist wichtiger? Familie oder Karriere?",
+     "alt": [],
+     "ru": "Что важнее? Семья или карьера?",
+     "es": "¿Qué es más importante? ¿La familia o la carrera?"
+    },
+    {
+     "n": 91,
+     "de": "Ich habe so viele Überstunden. Ist es besser, diese abzubummeln oder sich diese auszahlen zu lassen?",
+     "alt": [],
+     "ru": "У меня так много переработок. Лучше взять отгулы или получить за них деньги?",
+     "es": "Tengo muchísimas horas extra. ¿Es mejor compensarlas con tiempo libre o cobrarlas?"
+    },
+    {
+     "n": 92,
+     "de": "Ich bin nach der Arbeit immer so müde. Hast du eine Idee, wie ich mich trotz Familie erholen kann?",
+     "alt": [],
+     "ru": "Я всегда такой уставший после работы. У тебя есть идея, как я могу отдохнуть, несмотря на семью?",
+     "es": "Siempre estoy muy cansado después del trabajo. ¿Tienes alguna idea de cómo descansar a pesar de la familia?"
+    },
+    {
+     "n": 93,
+     "de": "Wie kann man Müdigkeit von der Arbeit nicht ins Familienleben tragen?",
+     "alt": [],
+     "ru": "Как не переносить усталость с работы в семью?",
+     "es": "¿Cómo se evita llevarse el cansancio del trabajo a la vida familiar?"
+    },
+    {
+     "n": 94,
+     "de": "Was kann man nach der Arbeit tun, um die Stimmung zu verbessern?",
+     "alt": [],
+     "ru": "Что можно делать после работы для улучшения настроения?",
+     "es": "¿Qué se puede hacer después del trabajo para mejorar el ánimo?"
+    },
+    {
+     "n": 95,
+     "de": "Müssen wir eigentlich im Homeoffice unser privates Handy für die Arbeit benutzen? Ich habe nämlich kein Diensthandy bekommen.",
+     "alt": [],
+     "ru": "Должны ли мы вообще в хоум-офисе использовать свой личный телефон для работы? Дело в том, что мне не выдали служебный телефон.",
+     "es": "¿De verdad tenemos que usar nuestro móvil privado para trabajar en casa? Es que no me han dado móvil de empresa."
+    },
+    {
+     "n": 96,
+     "de": "Gibt es in deinem Heimatland auch so viele Formulare und Bürokratie wie hier in Deutschland?",
+     "alt": [],
+     "ru": "В твоей родной стране тоже так много формуляров, как здесь, в Германии?",
+     "es": "¿En tu país también hay tantos formularios y tanta burocracia como aquí en Alemania?"
+    },
+    {
+     "n": 97,
+     "de": "In der Firma ist die Rede davon, dass wir an einer Spendenaktion teilnehmen sollen. Machst du mit?",
+     "alt": [],
+     "ru": "В компании говорят о том, что мы должны принять участие в благотворительной акции. Ты будешь участвовать?",
+     "es": "En la empresa se dice que deberíamos participar en una colecta. ¿Te apuntas?"
+    },
+    {
+     "n": 98,
+     "de": "Wir bekommen Zuschuss für das Mittagessen in der Kantine. Findest du das gut?",
+     "alt": [],
+     "ru": "Мы получаем дотацию на обед в столовой. Ты считаешь это хорошим?",
+     "es": "Nos subvencionan la comida en la cantina. ¿Te parece bien?"
+    },
+    {
+     "n": 99,
+     "de": "Wäre ein Seminar für Konfliktmanagement für unser Team nützlich? Was meinst du?",
+     "alt": [],
+     "ru": "Был бы полезен семинар по управлению конфликтами для нашей команды? Как ты думаешь?",
+     "es": "¿Sería útil un seminario de gestión de conflictos para nuestro equipo? ¿Tú qué crees?"
+    },
+    {
+     "n": 100,
+     "de": "Ich hätte gerne rückenfreundliche Bürostühle, aber die Firma bezahlt das nicht.",
+     "alt": [],
+     "ru": "Я бы хотел удобные для спины офисные стулья, но компания за это не платит.",
+     "es": "Me gustarían sillas de oficina que cuiden la espalda, pero la empresa no las paga."
+    },
+    {
+     "n": 101,
+     "de": "Wie stehen Sie zum zusätzlichen Lernen oder zur Weiterbildung am Arbeitsplatz?",
+     "alt": [],
+     "ru": "Как Вы относитесь к дополнительному обучению на работе?",
+     "es": "¿Qué opina del aprendizaje adicional o de la formación continua en el puesto de trabajo?"
+    },
+    {
+     "n": 102,
+     "de": "Was soll man machen, wenn im Büro Hunde erlaubt sind und man Angst vor ihnen hat?",
+     "alt": [],
+     "ru": "Что делать, если в офисе разрешают приводить собак, а у меня страх?",
+     "es": "¿Qué se debe hacer si en la oficina se permiten perros y uno les tiene miedo?"
+    },
+    {
+     "n": 103,
+     "de": "Wie kann man die Balance zwischen Freizeit und Arbeit halten?",
+     "alt": [],
+     "ru": "Как поддерживать баланс между свободным временем и работой?",
+     "es": "¿Cómo se mantiene el equilibrio entre el tiempo libre y el trabajo?"
+    },
+    {
+     "n": 104,
+     "de": "Liest du lieber Bücher oder hörst du Hörbücher?",
+     "alt": [],
+     "ru": "Тебе больше нравиться читать книги или слушать аудиокниги?",
+     "es": "¿Prefieres leer libros o escuchar audiolibros?"
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "p.182-187: unidas las líneas partidas y quitados los números de página sueltos.",
+  "p.182-187: las dos formulaciones separadas por « / » van en la misma tarjeta (campo alt).",
+  "tarjeta 50: «Was hälst du von Selbstständigkeit?» → «Was hältst du von Selbstständigkeit?»",
+  "tarjeta 72: «Ich möchte meine Stunden reduziere.» → «Ich möchte meine Stunden reduzieren.»",
+  "tarjeta 83: «Hast du eine Idee» → «Hast du eine Idee?»",
+  "tarjeta 83: «weißt du, was man in den Ferien mit Kindern» → «Weißt du, was man in den Ferien mit Kindern»",
+  "tarjeta 92: «Hast du Idee» → «Hast du eine Idee»",
+  "tarjeta 99: «für unsere Team» → «für unser Team»",
+  "tarjeta 102: «Angst vor ihn hat» → «Angst vor ihnen hat»"
+ ]
+}

@@ -236,6 +236,99 @@ if (schrBtn && typeof schrBtn.onclick === "function") {
   }
 }
 
+/* ---------- Sprechen Teil 2: mazo de tarjetas y mesa de trabajo ----------
+   El Smalltalk no se contesta: se habla. Lo que se comprueba aquí es que el mazo
+   entra como UNA entrada de menú, que las dos mitades suman las 104 tarjetas, y
+   que la mesa saca cartas al azar sin repetir hasta agotar y guarda las notas. */
+{
+  const idxSpr = cabeceras().findIndex(c => /Sprechen Teil 2/i.test(c.children[0].collectText()));
+  check("la sección de Sprechen Teil 2 está en el menú", idxSpr >= 0,
+        `cabeceras: ${cabeceras().length}`);
+  if (idxSpr >= 0) {
+    const entradas = entradasDe(idxSpr);
+    check("el mazo entra como una sola entrada, no como 104", entradas.length === 1,
+          `entradas: ${entradas.length}`);
+    if (entradas.length) {
+      check("la entrada del menú anuncia las 104 tarjetas",
+            /104 tarjetas/.test(String(entradas[0]._html)), String(entradas[0]._html).slice(0, 90));
+      entradas[0].onclick();
+
+      const tarjetas = () => descendientes(ids.main).filter(e => /\bst-card\b/.test(String(e.className)));
+      const ayudas = () => descendientes(ids.main).filter(e => String(e.className) === "st-help");
+      const boton = txt => descendientes(ids.main).find(e => e.textContent === txt && /btn|st-toggle/.test(String(e.className)));
+      const textoMain = () => ids.main.collectText();
+
+      check("la primera mitad pinta 52 tarjetas", tarjetas().length === 52, `tarjetas: ${tarjetas().length}`);
+      check("cada tarjeta lleva su ayuda plegada", ayudas().length === 52, `ayudas: ${ayudas().length}`);
+      check("el alemán de la tarjeta va verbatim",
+            /Ich finde, wir als Praktikant\*innen/.test(textoMain()));
+      check("la ayuda trae español y ruso",
+            /Creo que nosotros/.test(textoMain()) && /Я считаю/.test(textoMain()));
+
+      const pills = descendientes(ids.main).filter(e => /^tab-pill( active)?$/.test(String(e.className)));
+      check("el mazo se parte en dos pestañas", pills.length === 2, `pestañas: ${pills.length}`);
+      if (pills.length === 2) {
+        pills[1].onclick();
+        check("la segunda mitad trae las otras 52 tarjetas",
+              tarjetas().length === 52 && /Nächsten Monat muss ich in eine Wohnung umziehen/.test(textoMain()),
+              `tarjetas: ${tarjetas().length}`);
+        check("la segunda pestaña no repite las tarjetas de la primera",
+              !/Ich finde, wir als Praktikant\*innen/.test(textoMain()),
+              "la tarjeta 1 no debería estar en la mitad 53–104");
+        pills[0].onclick();
+      }
+
+      /* La mesa: apagada por defecto, y al encenderla aparece vacía. */
+      check("la mesa de trabajo empieza apagada", !/st-mesa/.test(String(ids.main.collectText())),
+            "la pieza de la mesa ya estaba pintada");
+      boton("Mesa de trabajo").onclick();
+      check("al encender la mesa aparece el panel", /La mesa está vacía/.test(textoMain()));
+      check("la mesa cuenta las sacadas", /0 de 104 sacadas/.test(textoMain()));
+
+      /* Sorteo sin repetición. El primer clic crea el mazo; los demás suman. */
+      const clave = Object.keys(window.quizState.smalltalk || {})[0] || "";
+      check("el estado del mazo se guarda por perfil", /^sergio::/.test(clave), `clave: ${clave}`);
+      for (let i = 0; i < 6; i++) {
+        const b = boton("Sacar una al azar") || boton("Otra al azar");
+        b.onclick();
+      }
+      const deck = window.quizState.smalltalk[clave] || { drawn: [], notes: {} };
+      check("sacar seis veces deja seis cartas distintas",
+            deck.drawn.length === 6 && new Set(deck.drawn).size === 6, `sacadas: ${deck.drawn}`);
+      check("la mesa muestra la carta que ha salido", tarjetas().some(e => /on-desk/.test(String(e.className))),
+            `en la mesa: ${tarjetas().filter(e => /on-desk/.test(String(e.className))).length}`);
+
+      /* Las notas de la carta se guardan sin repintar (repintar perdería el foco). */
+      const nota = descendientes(ids.main).find(e => e.tagName === "textarea");
+      check("hay un cuadro de notas para la carta de la mesa", !!nota,
+            nota ? "encontrado" : "no encontrado");
+      if (nota) {
+        nota.oninput({ target: { value: "Zwei Ideen: Fahrtkosten und Steuer" } });
+        check("la nota se guarda en el progreso del perfil",
+              (window.quizState.smalltalk[clave].notes || {})[String(deck.top)] ===
+                "Zwei Ideen: Fahrtkosten und Steuer",
+              `notas: ${JSON.stringify(window.quizState.smalltalk[clave].notes).slice(0, 60)}`);
+      }
+
+      /* Devolver: la carta vuelve a la baraja, así que la cuenta baja. */
+      boton("Devolver a la baraja").onclick();
+      check("devolver la carta la quita de la mesa y de lo visto",
+            window.quizState.smalltalk[clave].top === null &&
+            window.quizState.smalltalk[clave].drawn.length === 5,
+            `top: ${window.quizState.smalltalk[clave].top} · sacadas: ${window.quizState.smalltalk[clave].drawn.length}`);
+
+      /* Mazo agotado: el botón cambia a barajar, no a sacar otra. */
+      const st = window.quizState.smalltalk[clave];
+      st.drawn = []; for (let n = 1; n <= 104; n++) st.drawn.push(n);
+      st.top = null;
+      descendientes(ids.main).filter(e => /^tab-pill( active)?$/.test(String(e.className)))[0].onclick();
+      check("con el mazo agotado la mesa avisa y ofrece barajar",
+            /Mazo agotado/.test(textoMain()) && !!boton("Barajar de nuevo"),
+            (textoMain().match(/Mazo agotado[^<]{0,40}/) || ["(sin aviso)"])[0]);
+    }
+  }
+}
+
 /* Modal de configuración de IA */
 const aiConfigBtn = ids["btn-ai-config"];
 if (aiConfigBtn && typeof aiConfigBtn.onclick === "function") {
@@ -544,3 +637,4 @@ for (const c of checks) {
 }
 console.log(`\n${checks.length - bad}/${checks.length} comprobaciones superadas`);
 process.exit(bad ? 1 : 0);
+

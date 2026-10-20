@@ -41,8 +41,41 @@ SECTIONS = {
     "hoeren-t2": "Hören Teil 2",
     "hoeren-t3": "Hören Teil 3",
     "hoeren-t4": "Hören Teil 4",
+    "sprechen-t2": "Sprechen Teil 2 · Smalltalk",
 }
 ORDER = list(SECTIONS)
+
+
+def validate_smalltalk(variant, err, warn):
+    """Validación de las tarjetas de Smalltalk (Sprechen Teil 2)."""
+    for f in ("id", "label", "page", "kind", "intro", "cards"):
+        if f not in variant:
+            err(f"falta el campo obligatorio «{f}» para kind=smalltalk")
+    cards = variant.get("cards") or []
+    if not cards:
+        err("no tiene tarjetas")
+        return
+    nums = []
+    for c in cards:
+        n = c.get("n")
+        if not isinstance(n, int) or n < 1:
+            err(f"tarjeta con número inválido: {n!r}")
+            continue
+        nums.append(n)
+        for campo in ("de", "es", "ru"):
+            if not (c.get(campo) or "").strip():
+                err(f"tarjeta {n}: «{campo}» vacío")
+        if not isinstance(c.get("alt", []), list):
+            err(f"tarjeta {n}: «alt» debe ser una lista")
+        elif any(not str(a).strip() for a in c["alt"]):
+            err(f"tarjeta {n}: alternativa vacía en «alt»")
+    if len(set(nums)) != len(nums):
+        repetidos = sorted({x for x in nums if nums.count(x) > 1})
+        err(f"números de tarjeta repetidos: {repetidos}")
+    elif nums and sorted(nums) != list(range(1, len(nums) + 1)):
+        err(f"la numeración de las tarjetas debe ser 1..{len(nums)} sin huecos")
+    if len(cards) < 20:
+        warn(f"mazo muy corto: {len(cards)} tarjetas")
 
 
 def norm_ws(s) -> str:
@@ -60,8 +93,15 @@ def validate(variant, errors, warns, infos):
         warns.append(f"[{vid}] {m}")
 
     kind = variant.get("kind")
-    if kind not in ("zuordnung", "text", "schreiben"):
+    if kind not in ("zuordnung", "text", "schreiben", "smalltalk"):
         err(f"kind inválido: {kind!r}")
+        return
+
+    if kind == "smalltalk":
+        # Sin clave y sin cita: no se responde, se habla. Lo que sí se exige es
+        # que cada tarjeta tenga su alemán y su ayuda en los dos idiomas, porque
+        # la app las pinta como texto y no hay dónde caer.
+        validate_smalltalk(variant, err, warn)
         return
 
     if kind == "schreiben":
@@ -202,7 +242,7 @@ def main():
     errors, warns, infos = [], [], []
     by_section = {}
     seen_ids = set()
-    nvar = nitem = 0
+    nvar = nitem = ncard = 0
     conf_count = {}
 
     for path in files:
@@ -226,8 +266,10 @@ def main():
             by_section.setdefault(sec, []).append(v)
             nvar += 1
             nitem += len(v.get("items", []))
+            ncard += len(v.get("cards", []))
 
-    print(f"ficheros: {len(files)} · variantes: {nvar} · ítems: {nitem}")
+    print(f"ficheros: {len(files)} · variantes: {nvar} · ítems: {nitem}"
+          + (f" · tarjetas: {ncard}" if ncard else ""))
     print("confianza:", dict(sorted(conf_count.items())))
 
     # --- coherencia entre variantes ---
