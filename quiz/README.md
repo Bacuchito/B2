@@ -255,11 +255,19 @@ Los cuatro criterios y las bandas A/B/C/D son los de telc, y los pesos también
 Gestaltung*, *Formale Richtigkeit*, *Spektrum sprachlicher Mittel*—, con bandas al
 100 %, ~75 %, ~39 % y 0 %.
 
-La app usa una escala de 100 puntos con esas mismas proporciones (**I = 34, II-IV = 22**)
-y añade **dos reglas propias, más estrictas que el examen**: un criterio en D suspende
-aunque la suma llegue a 60, y el criterio I no pasa de C si falta un Leitpunkt o el
-texto baja de 100 palabras (ni de B entre 100 y 149). En el examen real esas reglas no
-existen: se aprueba con el 60 % de 240 puntos y un subtest se puede compensar.
+La app usa una escala de 100 puntos con esas mismas proporciones (**I = 34, II-IV = 22**).
+
+El criterio I sigue el descriptor de telc para los Leitpunkte. Con uno menos, la banda
+máxima es B; con dos menos, C; con tres o más, D. `smoke_test.js` fija ese mapeo, así
+que el documento no puede separarse del código otra vez.
+
+La app añade **dos reglas propias, más estrictas que el examen**:
+
+- **D suspende**: un criterio en D suspende aunque la suma llegue a 60.
+- **Longitud**: el criterio I no pasa de C con menos de 100 palabras, ni de B entre 100 y 149.
+
+En el examen real esas dos reglas no existen: se aprueba con el 60 % de 240 puntos y un
+subtest se puede compensar.
 
 Los puntos los calcula la app a partir de las bandas que da el modelo
 (`puntuarCriterios` en `template.html`), así que el mismo juicio da siempre el mismo

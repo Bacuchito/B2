@@ -376,6 +376,44 @@ check("los resultados de evaluación se pintan correctamente", /BESTANDEN|Aufgab
 check("el texto del alumno anotado con errores está presente", /Tu texto con análisis|Ich danke Sie/i.test(evalText));
 check("la regla gramatical y corrección interactiva se muestran", /Danken rige dativo|Ich danke Ihnen/i.test(evalText));
 
+/* ---------- banda del criterio I según los Leitpunkte cubiertos ---------- */
+/* El README decía «no pasa de C si falta un Leitpunkt» y el código permitía B.
+   Estas comprobaciones fijan el mapeo que aplica la app de verdad: un point
+   menos deja el criterio en B, dos en C y tres o más en D. */
+try {
+  const conLeitpunkte = (cubiertos) => ({
+    grade: "A",
+    feedback: "",
+    leitpunkte_check: Array.from({ length: 4 }, (_, i) =>
+      ({ point: "Leitpunkt " + (i + 1), covered: i < cubiertos, comment: "" }))
+  });
+  const criterioAlto = () => ({ grade: "A", feedback: "", leitpunkte_check: [] });
+
+  const mapa = [
+    ["cuatro Leitpunkte cubiertos mantienen el criterio I en A", 4, "A", 34],
+    ["un Leitpunkt menos deja el criterio I en B", 3, "B", 26],
+    ["dos Leitpunkte menos dejan el criterio I en C", 2, "C", 13],
+    ["tres Leitpunkte menos ponen el criterio I en D", 1, "D", 0]
+  ];
+  mapa.forEach(([nombre, cubiertos, banda, puntos]) => {
+    const res = window.puntuarCriterios(conLeitpunkte(cubiertos), criterioAlto(), criterioAlto(), criterioAlto(), 200, 4);
+    const uno = res.criteria.aufgabenbewaeltigung;
+    check(nombre, uno.grade === banda && uno.score === puntos, `banda=${uno.grade} puntos=${uno.score}`);
+  });
+
+  const sinLista = window.puntuarCriterios(criterioAlto(), criterioAlto(), criterioAlto(), criterioAlto(), 200, 4);
+  check("sin lista de Leitpunkte no se aplica tope al criterio I",
+        sinLista.criteria.aufgabenbewaeltigung.grade === "A",
+        "banda=" + sinLista.criteria.aufgabenbewaeltigung.grade);
+
+  const corto = window.puntuarCriterios(conLeitpunkte(4), criterioAlto(), criterioAlto(), criterioAlto(), 120, 4);
+  check("menos de 150 palabras limitan el criterio I a B",
+        corto.criteria.aufgabenbewaeltigung.grade === "B",
+        "banda=" + corto.criteria.aufgabenbewaeltigung.grade);
+} catch (e) {
+  errors.push("excepción al comprobar la banda del criterio I: " + e.message);
+}
+
 /* ---------- guardado de la clave de IA ---------- */
 /* El síntoma que reportó Sergio: pegaba la clave, guardaba, y no se quedaba.
    Aquí se comprueba la ida y vuelta real contra el almacenamiento, el estado
