@@ -1011,6 +1011,52 @@
            border-radius:var(--r-2);box-shadow:var(--hundido);
            font-family:var(--font-ui);font-size:var(--fs-base);line-height:1.6}
 
+  /* ---------- Sprechen Teil 3 · Lösungswege: una situación por página ----------
+     La descripción alemana y los Stichpunkte van a la vista. La ayuda ES/RU y
+     los ejemplos quedan detrás de un «Ver»: primero se lee el caso y se habla,
+     sin la traducción delante. Sin ventana ni salto de pantalla. */
+  .sit-brief{margin:0 0 var(--sp-4);font-size:var(--fs-sm);color:var(--dim-2)}
+  .sit-de{margin:0 0 var(--sp-5);font-family:var(--font-read);font-size:var(--fs-lead);
+          line-height:1.65;color:var(--txt);max-width:66ch}
+  .sit-sec{margin:var(--sp-5) 0 var(--sp-2);font-size:var(--fs-micro);font-weight:700;
+           letter-spacing:.10em;text-transform:uppercase;color:var(--dim-2)}
+  .sit-points{margin:0 0 var(--sp-5);padding-left:var(--sp-5)}
+  .sit-points li{padding:var(--sp-2) 0;border-top:var(--b-std) solid var(--line);
+                 font-size:var(--fs-base);line-height:1.5;color:var(--txt)}
+  .sit-points li:first-child{border-top:0;padding-top:0}
+  .sit-points li::marker{color:var(--acc-ink);font-family:var(--font-mono);font-size:var(--fs-sm)}
+  .sit-help{margin:0 0 var(--sp-3);background:var(--panel);border:var(--b-std) solid var(--line);
+            border-radius:var(--r-3);box-shadow:var(--sh-1),var(--bisel)}
+  .sit-help summary{display:flex;align-items:center;gap:var(--sp-2);min-height:44px;
+            padding:0 var(--sp-4);cursor:pointer;list-style:none;font-size:var(--fs-sm);
+            font-weight:640;color:var(--acc-ink)}
+  .sit-help summary::-webkit-details-marker{display:none}
+  .sit-help summary::before{content:"›";font-size:var(--fs-base);line-height:1;
+            transition:transform var(--dur-2) var(--spring)}
+  .sit-help[open] summary::before{transform:rotate(90deg)}
+  .sit-help summary:hover{color:var(--acc)}
+  .sit-help[open] summary{border-bottom:var(--b-std) solid var(--line)}
+  .sit-help-body{padding:var(--sp-3) var(--sp-4) var(--sp-4)}
+  .sit-tr{margin:0;font-size:var(--fs-sm);line-height:1.6;color:var(--dim)}
+  .sit-tr + .sit-tr{margin-top:var(--sp-2)}
+  .sit-tag{display:inline-block;margin-right:var(--sp-2);min-width:24px;
+           font-family:var(--font-mono);font-size:var(--fs-micro);letter-spacing:.08em;
+           color:var(--acc-ink)}
+  .sit-help-points{list-style:none;margin:var(--sp-2) 0 0;padding:0}
+  .sit-help-points li{padding:var(--sp-2) 0;border-top:var(--b-std) solid var(--line)}
+  .sit-help-points li:first-child{border-top:0;padding-top:0}
+  .sit-hp-es{margin:0;font-size:var(--fs-sm);line-height:1.5;color:var(--txt)}
+  .sit-hp-ru{margin:var(--sp-1) 0 0;font-size:var(--fs-sm);line-height:1.5;color:var(--dim-2)}
+  .sit-examples{list-style:none;margin:0;padding:0}
+  .sit-examples li{padding:var(--sp-2) 0;border-top:var(--b-std) solid var(--line);
+                   font-family:var(--font-read);font-size:var(--fs-base);line-height:1.55;
+                   color:var(--txt)}
+  .sit-examples li:first-child{border-top:0;padding-top:0}
+  .sit-nav-row{margin-top:var(--sp-5)}
+  @media(max-width:860px){
+    .sit-de{font-size:var(--fs-base)}
+  }
+
   /* --- Móvil: índice plegado, cabecera compacta y TODO control a 44px --- */
   @media(max-width:860px){
     :root{--header-h:auto}
@@ -1027,7 +1073,7 @@
     main{padding:var(--sp-5) var(--sp-4) var(--sp-7)}
     nav button,.sec-toggle,.letters button,.btn,.tab-pill,.lang-btn,.user-btn,.modal-close,
     .copy-btn,.input,.select,.lp-item,.opt,.sec-reset,details.passage summary,
-    .st-help summary,.st-notas textarea,.st-toggle{min-height:44px}
+    .st-help summary,.st-notas textarea,.st-toggle,.sit-help summary{min-height:44px}
     #nav-toggle,.icon-btn{min-height:44px}
     #theme-btn{min-height:44px}
     .switch-tema-texto{display:none}
@@ -1450,6 +1496,14 @@ const I18N = {
     srCardDrawn: "Tarjeta {n} en la mesa.",
     srCardReturned: "Tarjeta devuelta a la baraja.",
     srDeckReset: "Baraja reiniciada.",
+    sitSingleHint: "Habla con tu pareja y acordad una solución: unos cuatro minutos.",
+    sitPointsTitle: "Stichpunkte",
+    sitPointsHelp: "Puntos clave (ES · RU)",
+    sitShowHelp: "Ver ayuda (ES · RU)",
+    sitShowExamples: "Ver ejemplos en alemán",
+    sitPrev: "Anterior",
+    sitNext: "Siguiente",
+    sitPointsCount: "{count} puntos",
   },
   ru: {
     appTitle: "B2 Beruf — Экзамен",
@@ -1705,6 +1759,14 @@ const I18N = {
     srCardDrawn: "Карточка {n} на столе.",
     srCardReturned: "Карточка возвращена в колоду.",
     srDeckReset: "Колода перемешана.",
+    sitSingleHint: "Обсудите с партнёром решение: около четырёх минут.",
+    sitPointsTitle: "Stichpunkte",
+    sitPointsHelp: "Опорные пункты (ES · RU)",
+    sitShowHelp: "Показать помощь (ES · RU)",
+    sitShowExamples: "Показать примеры на немецком",
+    sitPrev: "Назад",
+    sitNext: "Вперёд",
+    sitPointsCount: "{count} пунктов",
   }
 };
 
@@ -1778,7 +1840,8 @@ const SECTION_RU = {
   "Schreiben: Forumsbeitrag": "Письмо: форум",
   "Hören Teil 1": "Аудирование 1", "Hören Teil 2": "Аудирование 2",
   "Hören Teil 3": "Аудирование 3", "Hören Teil 4": "Аудирование 4",
-  "Sprechen Teil 2 · Smalltalk": "Устная часть 2"
+  "Sprechen Teil 2 · Smalltalk": "Устная часть 2",
+  "Sprechen Teil 3 · Lösungswege": "Устная часть 3"
 };
 function localizeSection(title){
   const ru = SECTION_RU[title];
@@ -2475,12 +2538,16 @@ function renderNav(){
         /* El mazo no se responde: la insignia cuenta tarjetas, no aciertos. */
         const nc = (v.cards || []).length;
         pill = nc === 1 ? t("cardCountSingle") : t("cardsCount", {count: nc});
+      } else if(v.kind === "situation"){
+        /* Una situación por entrada; el número ya va en el rótulo. */
+        pill = "";
       } else {
         pill = onlyDoubtful
           ? (nd === 1 ? t("doubtPillSingle") : t("doubtPillPlural", {count: nd}))
           : (done ? ok + "/" + n : (n === 1 ? t("itemCountSingle") : t("itemsCount", {count: n})));
       }
-      b.innerHTML = esc(localizeLabel(v.label)) + '<span class="pill">' + esc(pill) + '</span>';
+      b.innerHTML = esc(localizeLabel(v.label)) +
+        (pill ? '<span class="pill">' + esc(pill) + '</span>' : '');
       b.className = (v.id === current ? "active " : "") + "sec-item";
       /* Los grupos plegados se ocultan, no se borran: el teclado y las pruebas
          siguen encontrando sus entradas. */
@@ -2546,10 +2613,14 @@ function renderMain(){
   main.appendChild(h2);
   const sub = document.createElement("div");
   sub.className = "sub";
-  const numItems = v.kind === "smalltalk" ? (v.cards || []).length : (v.items || []).length;
-  const itemsText = numItems === 1
-    ? t(v.kind === "smalltalk" ? "cardCountSingle" : "itemCountSingle")
-    : t(v.kind === "smalltalk" ? "cardsCount" : "itemsCount", {count: numItems});
+  const numItems = v.kind === "smalltalk" ? (v.cards || []).length
+                 : v.kind === "situation" ? (v.punkte || []).length
+                 : (v.items || []).length;
+  const itemsText = v.kind === "smalltalk"
+    ? (numItems === 1 ? t("cardCountSingle") : t("cardsCount", {count: numItems}))
+    : v.kind === "situation"
+    ? t("sitPointsCount", {count: numItems})
+    : (numItems === 1 ? t("itemCountSingle") : t("itemsCount", {count: numItems}));
   sub.innerHTML = t("pagePdf", {page: v.page}) +
     (v.topic ? ' · <b>' + esc(v.topic) + '</b>' : '') +
     (v.kind === "schreiben" ? ' · <b>' + t("schreibenSubBadge") + '</b>' : ' · ' + itemsText);
@@ -2578,6 +2649,11 @@ function renderMain(){
 
   if(v.kind === "smalltalk"){
     renderSmalltalk(v, main);
+    return;
+  }
+
+  if(v.kind === "situation"){
+    renderSituation(v, main);
     return;
   }
 
@@ -2864,6 +2940,137 @@ function renderSmalltalk(v, main){
     grid.appendChild(art);
   });
   main.appendChild(grid);
+}
+
+/* ---------- Renderizador de una situación (Sprechen Teil 3) ----------
+   Cada situación es una entrada del menú y su propia página. A la vista van la
+   descripción alemana y los Stichpunkte; la ayuda ES/RU y los ejemplos quedan
+   detrás de un «Ver», para leer el caso primero y hablar sin la traducción
+   delante. Sin ventana ni salto de pantalla. */
+function renderSituation(v, main){
+  const brief = document.createElement("p");
+  brief.className = "sit-brief";
+  brief.textContent = t("sitSingleHint");
+  main.appendChild(brief);
+
+  const de = document.createElement("p");
+  de.className = "sit-de";
+  de.textContent = v.de || "";
+  setAttr(de, "lang", "de");
+  main.appendChild(de);
+
+  const hPuntos = document.createElement("h4");
+  hPuntos.className = "sit-sec";
+  hPuntos.textContent = t("sitPointsTitle");
+  main.appendChild(hPuntos);
+
+  const puntos = document.createElement("ol");
+  puntos.className = "sit-points";
+  (v.punkte || []).forEach(p=>{
+    const li = document.createElement("li");
+    li.textContent = p.de || "";
+    setAttr(li, "lang", "de");
+    puntos.appendChild(li);
+  });
+  main.appendChild(puntos);
+
+  /* Ayuda: la traducción no se enseña sola. */
+  const ayuda = document.createElement("details");
+  ayuda.className = "sit-help";
+  const sumAyuda = document.createElement("summary");
+  sumAyuda.textContent = t("sitShowHelp");
+  ayuda.appendChild(sumAyuda);
+
+  const cuerpoAyuda = document.createElement("div");
+  cuerpoAyuda.className = "sit-help-body";
+  [["ES", v.es, "es"], ["RU", v.ru, "ru"]].forEach(par=>{
+    const p = document.createElement("p");
+    p.className = "sit-tr";
+    p.innerHTML = '<span class="sit-tag">' + par[0] + '</span>' + esc(par[1] || "");
+    setAttr(p, "lang", par[2]);
+    cuerpoAyuda.appendChild(p);
+  });
+
+  const hPuntosAyuda = document.createElement("h4");
+  hPuntosAyuda.className = "sit-sec";
+  hPuntosAyuda.textContent = t("sitPointsHelp");
+  cuerpoAyuda.appendChild(hPuntosAyuda);
+
+  const traducciones = document.createElement("ul");
+  traducciones.className = "sit-help-points";
+  (v.punkte || []).forEach((p, i)=>{
+    const li = document.createElement("li");
+    const es = document.createElement("p");
+    es.className = "sit-hp-es";
+    es.textContent = (i + 1) + ". " + (p.es || "");
+    setAttr(es, "lang", "es");
+    const ru = document.createElement("p");
+    ru.className = "sit-hp-ru";
+    ru.textContent = p.ru || "";
+    setAttr(ru, "lang", "ru");
+    li.appendChild(es);
+    li.appendChild(ru);
+    traducciones.appendChild(li);
+  });
+  cuerpoAyuda.appendChild(traducciones);
+  ayuda.appendChild(cuerpoAyuda);
+  main.appendChild(ayuda);
+
+  /* Ejemplos: tampoco salen solos. */
+  const ejemplos = document.createElement("details");
+  ejemplos.className = "sit-help";
+  const sumEj = document.createElement("summary");
+  sumEj.textContent = t("sitShowExamples");
+  ejemplos.appendChild(sumEj);
+  const cuerpoEj = document.createElement("div");
+  cuerpoEj.className = "sit-help-body";
+  const listaEj = document.createElement("ul");
+  listaEj.className = "sit-examples";
+  (v.beispiele || []).forEach(e=>{
+    const li = document.createElement("li");
+    li.textContent = e;
+    setAttr(li, "lang", "de");
+    listaEj.appendChild(li);
+  });
+  cuerpoEj.appendChild(listaEj);
+  ejemplos.appendChild(cuerpoEj);
+  main.appendChild(ejemplos);
+
+  /* Anterior / siguiente dentro de la misma sección: pasar de caso sin volver
+     al menú. */
+  const hermanas = hermanasDe(v);
+  const i = hermanas.findIndex(x => x.id === v.id);
+  if(i !== -1 && hermanas.length > 1){
+    const row = document.createElement("div");
+    row.className = "row sit-nav-row";
+    const bPrev = document.createElement("button");
+    bPrev.type = "button";
+    bPrev.className = "btn ghost";
+    bPrev.textContent = t("sitPrev");
+    bPrev.disabled = i === 0;
+    bPrev.onclick = ()=>{ if(i > 0) irAVariante(hermanas[i - 1].id); };
+    const bNext = document.createElement("button");
+    bNext.type = "button";
+    bNext.className = "btn ghost";
+    bNext.textContent = t("sitNext");
+    bNext.disabled = i === hermanas.length - 1;
+    bNext.onclick = ()=>{ if(i < hermanas.length - 1) irAVariante(hermanas[i + 1].id); };
+    row.appendChild(bPrev);
+    row.appendChild(bNext);
+    main.appendChild(row);
+  }
+}
+
+/* Variantes de la misma sección, en el orden del menú. */
+function hermanasDe(v){
+  const sec = (DATA.sections || []).find(s => s.id === v._section);
+  return sec ? (sec.variants || []) : [];
+}
+
+function irAVariante(id){
+  current = id;
+  render();
+  window.scrollTo(0, 0);
 }
 
 /* ---------- Renderizador del módulo de Schreiben ---------- */

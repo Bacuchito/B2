@@ -1,0 +1,495 @@
+{
+ "1": {
+  "titel": "Würmer im Mehl der Konditorei",
+  "es": "Trabajas en una pastelería. Hoy has encontrado gusanos o bichitos en la harina del almacén. Hay que encontrar una solución rápido. Ahora mismo no puedes hornear con esa harina, pero, como siempre, tienes muchos encargos de tartas.",
+  "ru": "Вы работаете в кондитерской. Сегодня вы обнаружили в муке на складе червяков или мелких насекомых. Нужно быстро найти решение. Сейчас вы не можете печь с этой мукой, но у вас, как всегда, много предварительных заказов на торты.",
+  "punkte": [
+   {
+    "es": "Jefe: ¿cómo contactarlo?",
+    "ru": "Шеф: как с ним связаться?"
+   },
+   {
+    "es": "Clientes: ¿cómo informarles? ¿qué ofrecerles?",
+    "ru": "Клиенты: как сообщить? что предложить?"
+   },
+   {
+    "es": "Almacén: ¿qué hacer?",
+    "ru": "Склад: что делать?"
+   },
+   {
+    "es": "Harina nueva: ¿de dónde conseguirla? ¿dónde almacenarla?",
+    "ru": "Новая мука: где взять? где хранить?"
+   }
+  ],
+  "beispiele": [
+   "Ich rufe den Chef sofort an und erkläre ihm ruhig, dass wir das Mehl im Lager nicht mehr verwenden können, weil wir Würmer darin gefunden haben.",
+   "Den Kunden, die schon Torten bestellt haben, würde ich anbieten, die Lieferung um einen Tag zu verschieben oder ihnen einen Gutschein für den nächsten Einkauf zu geben.",
+   "Ich würde das befallene Mehl sofort aus dem Lager entfernen und beim Lieferanten neues bestellen, damit wir morgen wieder backen können.",
+   "Damit das nicht wieder passiert, sollten wir das neue Mehl in geschlossenen Behältern lagern und die Vorräte jede Woche kontrollieren."
+  ]
+ },
+ "2": {
+  "titel": "Kaputter Backofen in der Bäckerei",
+  "es": "Trabajas en una panadería. El horno está averiado y tienes que decidir cómo seguir con el negocio.",
+  "ru": "Вы работаете в пекарне. Печь сломана, и вам нужно решить, как продолжать работу.",
+  "punkte": [
+   {
+    "es": "Abrir la tienda.",
+    "ru": "Открыть магазин."
+   },
+   {
+    "es": "¿A quién llamar?",
+    "ru": "Кому позвонить?"
+   },
+   {
+    "es": "¿Qué vender? Precios.",
+    "ru": "Что продавать? Цены."
+   },
+   {
+    "es": "A largo plazo: ¿otra empresa de artesanos?",
+    "ru": "В долгосрочной перспективе: другая ремонтная фирма?"
+   }
+  ],
+  "beispiele": [
+   "Wir könnten den Laden heute trotzdem öffnen und nur die Kuchen verkaufen, die wir noch im Kühlraum haben, damit die Stammkunden nicht umsonst kommen.",
+   "Ich würde zuerst den Techniker anrufen und ihn fragen, wie schnell er kommen kann und ob sich eine Reparatur überhaupt noch lohnt.",
+   "Vielleicht verkaufen wir heute nur Brötchen und Kaffee zu normalen Preisen und sagen den Kunden ehrlich, dass der Backofen defekt ist.",
+   "Langfristig sollten wir einen Wartungsvertrag mit einer anderen Handwerksfirma abschließen, damit uns so ein Ausfall nicht wieder trifft."
+  ]
+ },
+ "3": {
+  "titel": "Konflikte zwischen drei Kolleginnen",
+  "es": "Trabajas en una empresa de producción y hay conflictos constantes entre tres compañeras del equipo. Esto afecta al ambiente de trabajo y al rendimiento.",
+  "ru": "Вы работаете на производственном предприятии, и в команде постоянно возникают конфликты между тремя сотрудницами. Это влияет на атмосферу и производительность.",
+  "punkte": [
+   {
+    "es": "Con quién hablar.",
+    "ru": "С кем поговорить."
+   },
+   {
+    "es": "Rotación de puestos posible.",
+    "ru": "Возможна ротация должностей."
+   },
+   {
+    "es": "Hablar con el jefe de producción.",
+    "ru": "Поговорить с начальником производства."
+   },
+   {
+    "es": "Cómo mejorar la atmósfera.",
+    "ru": "Как улучшить атмосферу."
+   },
+   {
+    "es": "Actividades de grupo.",
+    "ru": "Совместные мероприятия."
+   }
+  ],
+  "beispiele": [
+   "Ich würde mit jeder der drei Kolleginnen einzeln sprechen und mir beide Seiten anhören, bevor ich eine Entscheidung treffe.",
+   "Vielleicht hilft eine Jobrotation, damit die drei nicht den ganzen Tag zusammenarbeiten und sich wieder auf ihre Aufgaben konzentrieren können.",
+   "Wir könnten ein gemeinsames Frühstück organisieren, um die Atmosphäre zu verbessern und wieder ins Gespräch zu kommen.",
+   "Wenn es nach ein paar Wochen nicht besser wird, sollten wir den Produktionsleiter einschalten und ihn um Unterstützung bitten."
+  ]
+ },
+ "4": {
+  "titel": "Essen im Altenheim schmeckt nicht",
+  "es": "Trabajas en una residencia de mayores. Algunos residentes se quejan de la comida (del sabor), y eso hace que coman menos y adelgacen.",
+  "ru": "Вы работаете в доме престарелых. Некоторые жильцы жалуются на еду (на вкус), из-за этого они меньше едят и худеют.",
+  "punkte": [
+   {
+    "es": "Hablar con el jefe de cocina.",
+    "ru": "Поговорить с шеф-поваром."
+   },
+   {
+    "es": "Nuevas ideas de recetas.",
+    "ru": "Новые идеи рецептов."
+   },
+   {
+    "es": "Preguntar por el plato favorito de los residentes.",
+    "ru": "Спросить любимое блюдо жильцов."
+   },
+   {
+    "es": "Alimentos: ¿dónde comprarlos?",
+    "ru": "Продукты: где покупать?"
+   },
+   {
+    "es": "Platos vegetarianos o veganos.",
+    "ru": "Вегетарианские или веганские блюда."
+   }
+  ],
+  "beispiele": [
+   "Ich würde zuerst mit dem Küchenchef sprechen und ihm die Beschwerden schildern, damit er weiß, warum die Bewohner weniger essen.",
+   "Wir könnten die Bewohner fragen, was ihr Lieblingsgericht ist, und es einmal pro Woche auf den Speiseplan setzen.",
+   "Vielleicht sollten wir mehr vegetarische Gerichte anbieten, weil viele ältere Menschen abends kein schweres Essen mehr möchten.",
+   "Ich schlage vor, dass wir die Lebensmittel bei einem anderen Lieferanten bestellen, der frischer und regionaler liefert."
+  ]
+ },
+ "5": {
+  "titel": "Transportboxen gehen auf",
+  "es": "Trabajas en un servicio de comida rápida y usáis cajas de transporte nuevas. Se abren durante el transporte y la comida llega fría a los clientes. / Trabajas en un servicio de pizzas y desde hace un tiempo usáis cajas de transporte nuevas. Por desgracia se abren con facilidad durante el transporte, así que la comida llega fría.",
+  "ru": "Вы работаете в службе фастфуда и используете новые транспортные контейнеры. Они открываются при перевозке, и еда приезжает к клиентам холодной. / Вы работаете в службе доставки пиццы и с недавних пор используете новые контейнеры. К сожалению, они легко открываются в дороге, поэтому еда приезжает холодной.",
+  "punkte": [
+   {
+    "es": "A corto plazo: ¿cómo transportar la mercancía?",
+    "ru": "Краткосрочно: как перевозить товар?"
+   },
+   {
+    "es": "Clientes: ¿cómo contactarlos y qué ofrecer?",
+    "ru": "Клиенты: как связаться и что предложить?"
+   },
+   {
+    "es": "Fabricante: ¿qué exigir?",
+    "ru": "Производитель: что требовать?"
+   },
+   {
+    "es": "A largo plazo: buscar otras cajas de transporte.",
+    "ru": "В перспективе: искать другие контейнеры."
+   }
+  ],
+  "beispiele": [
+   "Kurzfristig könnten wir die Boxen mit Klebeband zusätzlich sichern, damit sie unterwegs nicht aufgehen und das Essen warm bleibt.",
+   "Wir sollten uns bei den betroffenen Kunden entschuldigen und ihnen beim nächsten Mal einen Rabatt geben, damit sie uns weiter vertrauen.",
+   "Ich würde den Hersteller anrufen und verlangen, dass er die defekten Boxen umtauscht oder uns das Geld zurückerstattet.",
+   "Auf Dauer brauchen wir Boxen, die wirklich dicht schließen; sonst verlieren wir Kunden, weil das Essen immer kalt ankommt."
+  ]
+ },
+ "6": {
+  "titel": "Wasserschaden vor der Großveranstaltung",
+  "es": "Trabajas en un restaurante y para esta noche está previsto un evento grande. Por desgracia hay una fuga de agua, así que hay que cancelar el evento.",
+  "ru": "Вы работаете в ресторане, и на вечер запланировано большое мероприятие. К сожалению, произошла протечка воды, поэтому мероприятие придётся отменить.",
+  "punkte": [
+   {
+    "es": "Fuga de agua: ¿qué hacer? ¿cómo encontrar al técnico?",
+    "ru": "Протечка: что делать? Как найти мастера?"
+   },
+   {
+    "es": "Clientes: ¿cómo informar y qué ofrecer?",
+    "ru": "Клиенты: как сообщить и что предложить?"
+   },
+   {
+    "es": "Comida: ¿qué hacer con ella?",
+    "ru": "Еда: что с ней делать?"
+   },
+   {
+    "es": "Personal de refuerzo: ¿cómo contactarlo?",
+    "ru": "Подменный персонал: как связаться?"
+   },
+   {
+    "es": "Soluciones a largo plazo.",
+    "ru": "Долгосрочные решения."
+   }
+  ],
+  "beispiele": [
+   "Ich rufe sofort einen Handwerker an und schließe die Wasserzufuhr, damit der Schaden nicht noch größer wird.",
+   "Wir müssen alle Gäste telefonisch informieren und ihnen einen Gutschein anbieten, weil wir die Veranstaltung kurzfristig absagen müssen.",
+   "Die vorbereiteten Speisen könnten wir an eine soziale Einrichtung spenden, damit sie nicht weggeworfen werden.",
+   "Für die Zukunft sollten wir einen Notfallplan haben, in dem steht, wen wir bei einem Wasserschaden zuerst anrufen."
+  ]
+ },
+ "7": {
+  "titel": "Heizung funktioniert nicht richtig",
+  "es": "Un empleado ha instalado una calefacción a un cliente, pero no funciona bien. (En todos los pisos no funcionan las pilas).",
+  "ru": "Сотрудник установил клиенту отопление, но оно работает неправильно. (Во всех квартирах не работают батарейки).",
+  "punkte": [
+   {
+    "es": "¿Qué hace la empresa?",
+    "ru": "Что делает фирма?"
+   },
+   {
+    "es": "¿Qué puede ofrecer el empleado?",
+    "ru": "Что может предложить сотрудник?"
+   },
+   {
+    "es": "Solución a largo plazo.",
+    "ru": "Долгосрочное решение."
+   },
+   {
+    "es": "¿Qué exigir?",
+    "ru": "Что требовать?"
+   }
+  ],
+  "beispiele": [
+   "Die Firma sollte sofort einen Techniker zu dem Kunden schicken, damit er schnell merkt, dass wir das Problem ernst nehmen.",
+   "Der Mitarbeiter könnte dem Kunden eine kostenlose Nachkontrolle anbieten und sich persönlich für die Unannehmlichkeiten entschuldigen.",
+   "Wir sollten prüfen, ob die Batterien in allen Wohnungen defekt sind, denn dann liegt der Fehler vielleicht an der ganzen Lieferung.",
+   "Langfristig würde ich mit dem Hersteller sprechen und die Batterien austauschen lassen, bevor noch mehr Kunden sich beschweren."
+  ]
+ },
+ "8": {
+  "titel": "Verlorene Bestellungen durch die neue Software",
+  "es": "Trabajas en una empresa de muebles y gestionáis pedidos online. El nuevo software de pedidos tiene fallos técnicos y se han perdido muchos pedidos. (Trabajáis juntos en una empresa de muebles y procesáis los pedidos online. Hace poco se instaló un nuevo software de pedidos. Tiene fallos técnicos, de modo que se han perdido muchos pedidos.)",
+  "ru": "Вы работаете в мебельной компании и обрабатываете онлайн-заказы. У нового программного обеспечения для заказов технические ошибки, из-за чего потеряно много заказов. (Вы вместе работаете в мебельной компании и обрабатываете поступившие онлайн-заказы. Недавно установили новое ПО для заказов. В нём технические ошибки, и многие заказы пропали.)",
+  "punkte": [
+   {
+    "es": "Pedidos perdidos: ¿qué hacer?",
+    "ru": "Потерянные заказы: что делать?"
+   },
+   {
+    "es": "Clientes: ¿cómo informar y qué ofrecer?",
+    "ru": "Клиенты: как сообщить и что предложить?"
+   },
+   {
+    "es": "Empresa de software: ¿cómo contactar y qué exigir?",
+    "ru": "Компания-разработчик: как связаться и что требовать?"
+   },
+   {
+    "es": "A largo plazo: considerar otras soluciones de software.",
+    "ru": "В перспективе: рассмотреть другие программы."
+   }
+  ],
+  "beispiele": [
+   "Wir müssen zuerst prüfen, welche Bestellungen genau verloren gegangen sind, damit wir die Kunden gezielt informieren können.",
+   "Ich würde die betroffenen Kunden anrufen, mich entschuldigen und ihnen eine schnelle Nachlieferung oder einen Gutschein anbieten.",
+   "Die Software-Firma soll den Fehler beheben und uns eine Entschädigung zahlen, weil uns durch den Ausfall Umsatz verloren gegangen ist.",
+   "Langfristig sollten wir eine andere Software gründlich testen, bevor wir sie im Tagesgeschäft einführen."
+  ]
+ },
+ "9": {
+  "titel": "Patientenbeschwerde über einen Kollegen",
+  "es": "Trabajas en un hospital y hay una queja de pacientes. (Los pacientes se quejan de un compañero).",
+  "ru": "Вы работаете в больнице, и есть жалоба от пациентов. (Пациенты жалуются на коллегу.)",
+  "punkte": [
+   {
+    "es": "¿De qué va la queja?",
+    "ru": "В чём суть жалобы?"
+   },
+   {
+    "es": "¿Qué ofrecer?",
+    "ru": "Что предложить?"
+   },
+   {
+    "es": "Solución a corto plazo.",
+    "ru": "Краткосрочное решение."
+   },
+   {
+    "es": "Solución a largo plazo.",
+    "ru": "Долгосрочное решение."
+   }
+  ],
+  "beispiele": [
+   "Ich würde zuerst mit den Patienten sprechen und mir genau anhören, was passiert ist, bevor ich den Kollegen darauf anspreche.",
+   "Wir könnten den Patienten einen anderen Ansprechpartner anbieten, damit sie sich weiter gut betreut fühlen.",
+   "Kurzfristig sollte der Kollege nicht mehr allein auf dieser Station arbeiten, bis die Sache geklärt ist.",
+   "Langfristig halte ich ein Gespräch mit dem ganzen Team für sinnvoll, damit solche Beschwerden früh auffallen."
+  ]
+ },
+ "10": {
+  "titel": "Reinigungsgerät für Teppichboden kaputt",
+  "es": "Trabajas en una empresa de limpieza y se ha roto un aparato de limpieza importante (un aparato para moqueta). Sin embargo, hay encargos urgentes.",
+  "ru": "Вы работаете в клининговой компании, и сломался важный аппарат (машина для ковров). При этом есть срочные заказы.",
+  "punkte": [
+   {
+    "es": "Clientes: ¿qué ofrecer?",
+    "ru": "Клиенты: что предложить?"
+   },
+   {
+    "es": "¿Solución provisional?",
+    "ru": "Временное решение?"
+   },
+   {
+    "es": "¿Aparatos alternativos?",
+    "ru": "Альтернативные аппараты?"
+   },
+   {
+    "es": "Solución a largo plazo.",
+    "ru": "Долгосрочное решение."
+   }
+  ],
+  "beispiele": [
+   "Wir könnten den Kunden eine Verschiebung des Termins anbieten und ihnen erklären, dass unser Teppichreinigungsgerät repariert werden muss.",
+   "Vorübergehend können wir uns ein Ersatzgerät bei einer befreundeten Firma ausleihen, damit die dringenden Aufträge nicht liegen bleiben.",
+   "Ich würde prüfen lassen, ob sich die Reparatur überhaupt noch lohnt oder ob ein neues Gerät auf Dauer günstiger ist.",
+   "Langfristig sollten wir ein zweites Gerät als Ersatz anschaffen, damit uns ein Ausfall nicht wieder in Schwierigkeiten bringt."
+  ]
+ },
+ "11": {
+  "titel": "Unfreundlicher Kollege im Café",
+  "es": "Trabajas en una cafetería y los clientes se quejan de la antipatía de un compañero o compañera.",
+  "ru": "Вы работаете в кафе, и клиенты жалуются на недружелюбие коллеги.",
+  "punkte": [
+   {
+    "es": "Abordar el problema.",
+    "ru": "Обсудить проблему."
+   },
+   {
+    "es": "Informar al jefe.",
+    "ru": "Сообщить шефу."
+   },
+   {
+    "es": "Explicar la situación a los clientes.",
+    "ru": "Объяснить ситуацию клиентам."
+   },
+   {
+    "es": "Apoyo al compañero o compañera.",
+    "ru": "Поддержка коллеге."
+   }
+  ],
+  "beispiele": [
+   "Ich würde zuerst unter vier Augen mit der Kollegin sprechen und sie fragen, ob sie im Moment vielleicht überlastet ist.",
+   "Wenn sich nichts ändert, müssen wir den Chef informieren, damit er das Gespräch mit ihr führt und eine Lösung findet.",
+   "Den Gästen können wir sagen, dass wir an dem Problem arbeiten, und uns für die unfreundliche Behandlung entschuldigen.",
+   "Vielleicht braucht die Kollegin einfach Unterstützung in stressigen Situationen, dann wäre ein gemeinsamer Dienstplan sinnvoll."
+  ]
+ },
+ "12": {
+  "titel": "Fehlende Ware im Supermarkt",
+  "es": "Diriges un supermercado y los clientes se quejan de que faltan alimentos o están mal colocados.",
+  "ru": "Вы руководите супермаркетом, и клиенты жалуются на отсутствие продуктов или на то, что они неправильно разложены.",
+  "punkte": [
+   {
+    "es": "Quejas: ¿qué estanterías están afectadas?",
+    "ru": "Жалобы: какие полки затронуты?"
+   },
+   {
+    "es": "Reunión de equipo: ¿cuáles son las medidas de mejora?",
+    "ru": "Собрание команды: какие меры улучшения?"
+   },
+   {
+    "es": "Clientes: comunicación.",
+    "ru": "Клиенты: коммуникация."
+   }
+  ],
+  "beispiele": [
+   "Ich würde zuerst die betroffenen Regale prüfen und Fotos machen, damit wir im Team genau sehen, wo die Ware fehlt.",
+   "In der Teambesprechung sollten wir klären, wer für welche Regale zuständig ist und wie oft kontrolliert wird.",
+   "Wir können den Kunden über Schilder mitteilen, wann die Ware wieder da ist, damit sie nicht umsonst kommen.",
+   "Außerdem würde ich die Aushilfen bitten, leere Fächer sofort zu melden, damit wir schneller nachbestellen können."
+  ]
+ },
+ "13": {
+  "titel": "Geschirrspüler defekt",
+  "es": "Trabajas en un restaurante y el lavavajillas está averiado. Hay que lavar la vajilla a mano. / Trabajáis juntos en una cafetería. Normalmente la vajilla queda con restos después de lavarla con el lavavajillas, así que hay que lavarla otra vez a mano.",
+  "ru": "Вы работаете в ресторане, и посудомоечная машина сломана. Посуду приходится мыть вручную. / Вы вместе работаете в кафе. Обычно после машинной мойки на посуде остаются следы, поэтому её приходится мыть ещё раз вручную.",
+  "punkte": [
+   {
+    "es": "Lavavajillas averiado: reparación.",
+    "ru": "Посудомойка сломана: ремонт."
+   },
+   {
+    "es": "Comprar un lavavajillas nuevo.",
+    "ru": "Купить новую посудомоечную машину."
+   },
+   {
+    "es": "Detergente alternativo.",
+    "ru": "Альтернативное моющее средство."
+   },
+   {
+    "es": "Formar mejor al personal de refuerzo.",
+    "ru": "Лучше обучать подменный персонал."
+   }
+  ],
+  "beispiele": [
+   "Wir sollten sofort einen Reparaturdienst rufen und das Geschirr bis dahin mit der Hand spülen, damit der Betrieb weiterläuft.",
+   "Vielleicht ist ein neuer Geschirrspüler auf Dauer günstiger als die Reparatur, weil das Gerät ohnehin schon alt ist.",
+   "Ich würde ein anderes Reinigungsmittel ausprobieren und prüfen, ob die Rückstände danach verschwinden.",
+   "Die Aushilfen brauchen eine kurze Einweisung, damit sie das Geschirr richtig einräumen und wir es nicht doppelt spülen müssen."
+  ]
+ },
+ "14": {
+  "titel": "Falsche oder kalte Pizza",
+  "es": "Trabajas en un servicio de reparto de pizzas y los clientes se quejan de entregas equivocadas o frías.",
+  "ru": "Вы работаете в службе доставки пиццы, и клиенты жалуются на неправильные или холодные доставки.",
+  "punkte": [
+   {
+    "es": "Entregas equivocadas o tardías: ¿qué hacer?",
+    "ru": "Неправильные или поздние доставки: что делать?"
+   },
+   {
+    "es": "Clientes: ¿cómo reaccionar y qué ofrecer?",
+    "ru": "Клиенты: как реагировать и что предложить?"
+   },
+   {
+    "es": "A largo plazo: ¿qué hacer para que las pizzas lleguen bien y a tiempo?",
+    "ru": "В перспективе: что сделать, чтобы пицца приезжала правильной и вовремя?"
+   }
+  ],
+  "beispiele": [
+   "Bei einer falschen Lieferung würde ich sofort eine neue Pizza losschicken und den Kunden anrufen, damit er weiß, dass er nicht vergessen wurde.",
+   "Dem Kunden können wir die Pizza kostenlos anbieten und uns entschuldigen, weil er lange auf sein Essen warten musste.",
+   "Langfristig sollten wir die Bestellungen am Telefon doppelt prüfen, damit falsche Pizzen gar nicht erst in die Küche gehen.",
+   "Außerdem würde ich die Fahrer bitten, die Pizza erst kurz vor der Abfahrt aus der Warmhaltebox zu nehmen."
+  ]
+ },
+ "15": {
+  "titel": "Drucker im Geschäft defekt",
+  "es": "La impresora de tu negocio no funciona y hay muchos clientes.",
+  "ru": "Принтер в вашем магазине не работает, а клиентов много.",
+  "punkte": [
+   {
+    "es": "Clientes: ¿cómo reaccionar?",
+    "ru": "Клиенты: как реагировать?"
+   },
+   {
+    "es": "Clientes: ¿qué ofrecer?",
+    "ru": "Клиенты: что предложить?"
+   },
+   {
+    "es": "Contactar al técnico.",
+    "ru": "Связаться с мастером."
+   }
+  ],
+  "beispiele": [
+   "Ich würde den Kunden offen sagen, dass der Drucker gerade nicht funktioniert, und ihnen eine Alternative anbieten.",
+   "Wir können den Kunden anbieten, die Dokumente später abzuholen oder sie ihnen per E-Mail zu schicken, damit sie nicht warten müssen.",
+   "Ich rufe sofort den Techniker an und frage nach einem Termin, damit der Drucker spätestens morgen wieder läuft.",
+   "Für wichtige Aufträge könnten wir die Dateien an einen Copyshop in der Nähe schicken."
+  ]
+ },
+ "16": {
+  "titel": "Schlechter Zimmerservice im Hotel",
+  "es": "Trabajas en un gran hotel. Algunos huéspedes se han quejado de que el servicio de habitaciones no hace bien su trabajo. En el baño a menudo no cambian las toallas sucias y las camas muchas veces no están bien arregladas.",
+  "ru": "Вы работаете в большом отеле. Некоторые гости жалуются, что служба уборки номеров плохо делает свою работу. В ванной часто не меняют грязные полотенца, а кровати часто не заправлены как следует.",
+  "punkte": [
+   {
+    "es": "Mal servicio de habitaciones: ¿qué hacer?",
+    "ru": "Плохая уборка номеров: что делать?"
+   },
+   {
+    "es": "Huéspedes: ¿cómo contactarlos?",
+    "ru": "Гости: как с ними связаться?"
+   },
+   {
+    "es": "¿Ofrecer compensación?",
+    "ru": "Предложить компенсацию?"
+   },
+   {
+    "es": "A largo plazo: ¿qué hacer para que las habitaciones estén siempre limpias y ordenadas?",
+    "ru": "В перспективе: что сделать, чтобы номера всегда были чистыми и убранными?"
+   }
+  ],
+  "beispiele": [
+   "Ich würde das Reinigungsteam zusammenrufen und die Beschwerden besprechen, damit alle wissen, was falsch gelaufen ist.",
+   "Wir sollten uns bei den betroffenen Gästen persönlich entschuldigen und ihnen ein kostenloses Frühstück anbieten.",
+   "Als Entschädigung könnten wir den Gästen eine kostenlose Übernachtung anbieten, wenn sie mehrere Nächte bleiben.",
+   "Langfristig hilft eine Checkliste, die jede Reinigungskraft abhaken muss, damit kein Handtuch und kein Bett vergessen wird."
+  ]
+ },
+ "17": {
+  "titel": "Verdorbene Lebensmittel im Laden",
+  "es": "Trabajas en una pequeña tienda de alimentación. Algunos clientes se han quejado de que los productos comprados ya no estaban en buen estado.",
+  "ru": "Вы работаете в небольшом продуктовом магазине. Некоторые покупатели жалуются, что купленные продукты были уже несвежими.",
+  "punkte": [
+   {
+    "es": "Alimentos: ¿qué hacer?",
+    "ru": "Продукты: что делать?"
+   },
+   {
+    "es": "Clientes: ¿cómo contactarlos?",
+    "ru": "Покупатели: как с ними связаться?"
+   },
+   {
+    "es": "¿Ofrecer compensación?",
+    "ru": "Предложить компенсацию?"
+   },
+   {
+    "es": "A largo plazo: ¿qué hacer para garantizar siempre la caducidad?",
+    "ru": "В перспективе: что сделать, чтобы срок годности всегда соблюдался?"
+   }
+  ],
+  "beispiele": [
+   "Ich würde die betroffenen Produkte sofort aus dem Regal nehmen und prüfen, ob noch mehr Packungen betroffen sind.",
+   "Den Kunden können wir das Geld zurückgeben oder einen Gutschein anbieten, damit sie uns weiter vertrauen.",
+   "Wir sollten die Kühlkette und die Haltbarkeitsdaten regelmäßig kontrollieren, damit abgelaufene Ware gar nicht erst in den Verkauf kommt.",
+   "Außerdem würde ich beim Lieferanten nachfragen, warum die Ware so schnell verdorben ist."
+  ]
+ }
+}

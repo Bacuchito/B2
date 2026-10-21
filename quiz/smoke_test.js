@@ -329,6 +329,74 @@ if (schrBtn && typeof schrBtn.onclick === "function") {
   }
 }
 
+/* ---------- Sprechen Teil 3: una página por situación ----------
+   Las 67 son entradas separadas del menú. En cada página se ven el alemán y
+   los Stichpunkte; la ayuda ES/RU y los ejemplos quedan plegados tras «Ver». */
+{
+  const idxSit = cabeceras().findIndex(c => /Sprechen Teil 3/i.test(c.children[0].collectText()));
+  check("la sección de Sprechen Teil 3 está en el menú", idxSit >= 0,
+        `cabeceras: ${cabeceras().length}`);
+  if (idxSit >= 0) {
+    const entradas = entradasDe(idxSit);
+    const primera = entradas[0], ultima = entradas[entradas.length - 1];
+    check("cada situación entra como una entrada separada",
+          entradas.length === 67, `entradas: ${entradas.length}`);
+    check("la primera entrada lleva su número y su título",
+          !!primera && /1 · Würmer im Mehl/.test(String(primera._html)),
+          primera ? String(primera._html).slice(0, 100) : "sin entradas");
+    check("la última entrada es la 67",
+          !!ultima && /67 · Kantine/.test(String(ultima._html)),
+          ultima ? String(ultima._html).slice(0, 100) : "sin entradas");
+
+    if (primera) {
+      primera.onclick();
+      const textoMain = () => ids.main.collectText();
+      const detalles = descendientes(ids.main).filter(e => String(e.className) === "sit-help");
+
+      check("la página muestra una sola situación, no la rejilla",
+            /Würmer im Mehl/.test(textoMain()) && !/67 situaciones/.test(textoMain()));
+      check("la descripción alemana va a la vista",
+            /Würmer\/ kleine Tierchen im Mehl/.test(textoMain()));
+      check("los Stichpunkte alemanes van a la vista",
+            /Chef: Wie kontaktieren\?/.test(textoMain()));
+      check("hay dos bloques plegados: ayuda y ejemplos",
+            detalles.length === 2 && detalles.every(d => !d.open),
+            `bloques: ${detalles.length} · abiertos: ${detalles.filter(d => d.open).length}`);
+      check("el primer bloque se llama «Ver ayuda» y el segundo «Ver ejemplos»",
+            detalles.length === 2 &&
+            /Ver ayuda \(ES · RU\)/.test(detalles[0].children[0].textContent) &&
+            /Ver ejemplos en alemán/.test(detalles[1].children[0].textContent),
+            detalles.map(d => d.children[0].textContent).join(" · "));
+      check("la ayuda plegada trae español y ruso",
+            detalles.length === 2 &&
+            /Trabajas en una pastelería/.test(detalles[0].collectText()) &&
+            /Вы работаете в кондитерской/.test(detalles[0].collectText()));
+      check("la ayuda plegada traduce los Stichpunkte",
+            detalles.length === 2 &&
+            /Jefe: ¿cómo contactarlo\?/.test(detalles[0].collectText()) &&
+            /Шеф: как с ним связаться/.test(detalles[0].collectText()));
+      check("los ejemplos plegados están en alemán",
+            detalles.length === 2 &&
+            /Ich rufe den Chef sofort an/.test(detalles[1].collectText()));
+
+      const bSiguiente = descendientes(ids.main).find(e => e.textContent === "Siguiente");
+      check("hay navegación a la situación siguiente", !!bSiguiente,
+            bSiguiente ? "botón encontrado" : "sin botón");
+      if (bSiguiente) {
+        bSiguiente.onclick();
+        check("pasar a la siguiente cambia de situación y de página",
+              /Kaputter Backofen/.test(textoMain()) &&
+              /Der Backofen ist kaputt/.test(textoMain()) &&
+              !/Würmer im Mehl/.test(textoMain()),
+              textoMain().slice(0, 120));
+      }
+      check("no se abre ninguna ventana modal",
+            String(ids["modal-container"].innerHTML) === "" &&
+            ids["modal-container"].children.length === 0);
+    }
+  }
+}
+
 /* Modal de configuración de IA */
 const aiConfigBtn = ids["btn-ai-config"];
 if (aiConfigBtn && typeof aiConfigBtn.onclick === "function") {

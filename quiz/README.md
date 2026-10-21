@@ -54,6 +54,9 @@ quiz/
 ├─ make_sprachbausteine.py  ← extrae los Sprachbausteine (Teil 1 y 2)
 ├─ make_sprechen_t2.py    ← extrae el mazo de Smalltalk (Sprechen Teil 2)
 ├─ sprechen_t2_es.json    ← traducción al español de las 104 tarjetas (a mano)
+├─ make_sprechen_t3.py    ← extrae las 67 situaciones (Sprechen Teil 3)
+├─ merge_t3_ayuda.py      ← funde los cuatro bloques de ayuda de T3
+├─ sprechen_t3_ayuda.json ← ayuda ES/RU, títulos y ejemplos de T3 (a mano)
 ├─ merge_sprachbausteine_respuestas.py  ← funde las respuestas deducidas
 ├─ sprachbausteine_respuestas.json  ← respuestas de los Sprachbausteine (a mano)
 ├─ _resp_*.json          ← deducción por grupos; el merge los funde en el anterior
@@ -75,6 +78,8 @@ $node = "C:\Users\sergi\.dsh\dsh-runtimes\dsh-primary-runtime\dependencies\node\
 & $py quiz\make_full_forums.py
 & $py quiz\merge_sprachbausteine_respuestas.py quiz
 & $py quiz\make_sprachbausteine.py out\B2_ohne_antworten.md quiz
+& $py quiz\merge_t3_ayuda.py quiz\src\t3_ayuda_1.json quiz\src\t3_ayuda_2.json quiz\src\t3_ayuda_3.json quiz\src\t3_ayuda_4.json quiz\sprechen_t3_ayuda.json
+& $py quiz\make_sprechen_t3.py out\B2_ohne_antworten.md quiz\sprechen_t3_draft.json quiz\sprechen_t3_ayuda.json quiz\data\sprechen_t3.json
 & $py quiz\build.py quiz\data quiz\template.html quiz\B2_quiz.html
 & $node quiz\smoke_test.js quiz\B2_quiz.html
 & $node quiz\security_test.js quiz\B2_quiz.html
@@ -367,6 +372,11 @@ revisarlas contra el texto original.
   ayuda en español y en ruso (no hay dónde caer si falta una), la numeración tiene
   que ser 1..N sin huecos ni repetidos, y avisa si el mazo trae menos de 20 tarjetas.
   Aquí no se validan `quote` ni `confidence`: no hay respuesta que deducir.
+- **Situaciones de Sprechen T3 (`kind: "situation"`)**: cada una es una variante y
+  lleva título, descripción alemana, ayuda ES/RU, al menos un Stichpunkt traducido a
+  los dos idiomas y dos ejemplos de habla en alemán. La numeración de la sección es
+  1..67 sin huecos. Tampoco hay clave: el ejercicio es discutir una solución, no
+  acertar una letra.
 
 ## Smalltalk (Sprechen Teil 2)
 
@@ -383,6 +393,32 @@ mazo, deja devolverla a la baraja y guarda tus notas de esa carta por perfil.
 - Las erratas del original se corrigen en `CORRECCIONES` (dentro de
   `make_sprechen_t2.py`) y cada una se anota en `fixes`. El script falla si la errata
   ya no está: no corrige a ciegas.
+
+## Situationen (Sprechen Teil 3)
+
+Las 67 situaciones de «Lösungswege diskutieren» también se hablan, no se corrigen.
+**Cada una es una entrada del menú y su propia página**, no una rejilla con ventana.
+En la página se ve:
+
+- la descripción alemana, **verbatim** del documento;
+- los Stichpunkte en alemán.
+
+La ayuda y los ejemplos **no salen solos**: quedan detrás de dos bloques plegables,
+«Ver ayuda (ES · RU)» y «Ver ejemplos en alemán». Así se lee el caso y se habla sin
+la traducción delante. Abajo hay **Anterior / Siguiente** para pasar de situación sin
+volver al menú.
+
+- El alemán lo extrae `make_sprechen_t3.py` del bloque de las pp. 188-200. El script
+  cose los guiones de corte, quita números de página y enlaces, y falla si la
+  numeración no es 1..67.
+- Cada variante se queda con la página donde empieza su situación, para que el
+  rótulo del PDF no mienta.
+- Los Stichpunkte de las situaciones 14, 44, 56 y 59 venían mezclados por columnas en
+  el PDF; se ordenan a mano en `STICHPUNKTE_MANUALES` sin cambiar el texto.
+- La ayuda (títulos, traducciones y ejemplos) se escribe a mano en
+  `quiz/src/t3_ayuda_*.json` y se funde con `merge_t3_ayuda.py`. Los ejemplos son
+  nuestros, no del examen: sirven para practicar, no se presentan como material
+  oficial.
 
 ## Niveles de confianza
 

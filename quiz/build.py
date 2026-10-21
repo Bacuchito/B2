@@ -42,6 +42,7 @@ SECTIONS = {
     "hoeren-t3": "Hören Teil 3",
     "hoeren-t4": "Hören Teil 4",
     "sprechen-t2": "Sprechen Teil 2 · Smalltalk",
+    "sprechen-t3": "Sprechen Teil 3 · Lösungswege",
 }
 ORDER = list(SECTIONS)
 
@@ -83,6 +84,40 @@ def norm_ws(s) -> str:
     return " ".join(str(s or "").split())
 
 
+def validate_situation(variant, err, warn):
+    """Validación de una situación de Sprechen Teil 3.
+
+    Tampoco se corrige: es un caso para discutir una solución. Cada variante es
+    UNA situación, con su alemán verbatim, su ayuda en los dos idiomas, los
+    Stichpunkte traducidos y al menos dos ejemplos de habla.
+    """
+    for f in ("id", "label", "page", "kind", "n", "titel", "de", "es", "ru",
+              "punkte", "beispiele"):
+        if f not in variant:
+            err(f"falta el campo obligatorio «{f}» para kind=situation")
+    n = variant.get("n")
+    if not isinstance(n, int) or n < 1:
+        err(f"número de situación inválido: {n!r}")
+    for campo in ("titel", "de", "es", "ru"):
+        if not (variant.get(campo) or "").strip():
+            err(f"situación {n}: «{campo}» vacío")
+    puntos = variant.get("punkte") or []
+    if not isinstance(puntos, list) or not puntos:
+        err(f"situación {n}: sin Stichpunkte")
+    for p in puntos:
+        if not isinstance(p, dict):
+            err(f"situación {n}: Stichpunkt sin estructura")
+            continue
+        for campo in ("de", "es", "ru"):
+            if not (p.get(campo) or "").strip():
+                err(f"situación {n}: Stichpunkt sin «{campo}»: {(p.get('de') or '')[:40]}")
+    ejemplos = variant.get("beispiele") or []
+    if not isinstance(ejemplos, list) or len(ejemplos) < 2:
+        err(f"situación {n}: menos de dos ejemplos en alemán")
+    elif any(not str(e).strip() for e in ejemplos):
+        err(f"situación {n}: ejemplo vacío")
+
+
 def validate(variant, errors, warns, infos):
     vid = variant.get("id", "<sin id>")
 
@@ -93,8 +128,12 @@ def validate(variant, errors, warns, infos):
         warns.append(f"[{vid}] {m}")
 
     kind = variant.get("kind")
-    if kind not in ("zuordnung", "text", "schreiben", "smalltalk"):
+    if kind not in ("zuordnung", "text", "schreiben", "smalltalk", "situation"):
         err(f"kind inválido: {kind!r}")
+        return
+
+    if kind == "situation":
+        validate_situation(variant, err, warn)
         return
 
     if kind == "smalltalk":
@@ -219,6 +258,21 @@ def validate(variant, errors, warns, infos):
             elif ans not in okeys:
                 err(f"ítem {n}: answer «{ans}» no está entre las opciones {okeys}")
 
+    # --- números de ítem repetidos ---
+    # El PDF original repite numeración en dos variantes: t2_b-p23 (6, 6, 7) y
+    # t4_c-p51 (14, 15, 15, 16, 17, 18). No viene del extractor: el documento lo
+    # trae así y se copia literal. Avisa, no bloquea, porque el número identifica
+    # el ítem en dos sitios que entonces se confunden: la insignia de
+    # «2ª lectura» (verified.json va por número) y lo que el alumno ya respondió.
+    vistos = set()
+    for it in items:
+        n = it.get("n")
+        if n in vistos:
+            warn(f"ítem {n} repetido en «{variant.get('id')}»: el original repite "
+                 f"numeración, así que «2ª lectura» y la respuesta guardada marcan "
+                 f"los dos ítems con un solo número")
+        vistos.add(n)
+
 
 def main():
     datadir, template, out = sys.argv[1], sys.argv[2], sys.argv[3]
@@ -242,7 +296,7 @@ def main():
     errors, warns, infos = [], [], []
     by_section = {}
     seen_ids = set()
-    nvar = nitem = ncard = 0
+    nvar = nitem = ncard = nsit = 0
     conf_count = {}
 
     for path in files:
@@ -267,9 +321,12 @@ def main():
             nvar += 1
             nitem += len(v.get("items", []))
             ncard += len(v.get("cards", []))
+            if v.get("kind") == "situation":
+                nsit += 1
 
     print(f"ficheros: {len(files)} · variantes: {nvar} · ítems: {nitem}"
-          + (f" · tarjetas: {ncard}" if ncard else ""))
+          + (f" · tarjetas: {ncard}" if ncard else "")
+          + (f" · situaciones: {nsit}" if nsit else ""))
     print("confianza:", dict(sorted(conf_count.items())))
 
     # --- coherencia entre variantes ---
@@ -356,6 +413,17 @@ def main():
         errors.append("Forumsbeitrag: `num` repetido en el catálogo")
     elif sorted(nums_foro) != list(range(1, len(nums_foro) + 1)):
         errors.append("Forumsbeitrag: la numeración debe ser 1..N sin huecos")
+
+    # --- orden de las situaciones de Sprechen T3 ---
+    # Cada situación es una entrada de menú, como los Forumsbeiträge: el número
+    # que lleva en el nombre es el del documento y manda el orden.
+    nums_sit = [v.get("n") for v in by_section.get("sprechen-t3", [])]
+    if any(n is None for n in nums_sit):
+        errors.append("Sprechen T3: hay situaciones sin `n`")
+    elif len(set(nums_sit)) != len(nums_sit):
+        errors.append("Sprechen T3: `n` repetido")
+    elif nums_sit and sorted(nums_sit) != list(range(1, len(nums_sit) + 1)):
+        errors.append("Sprechen T3: la numeración debe ser 1..N sin huecos")
 
     if infos:
         print(f"\n--- INFORMATIVO ({len(infos)}) ---")

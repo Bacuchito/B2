@@ -248,3 +248,58 @@ acertar. Cada variante es un mazo completo y la app lo pinta como tarjetas.
 Regla de una tarjeta: **el alemán no se inventa ni se resume**. Si el documento trae
 dos formulaciones del mismo tema, van las dos en la misma tarjeta (`alt`), para que
 `n` siga señalando el mismo sitio del PDF.
+
+---
+
+## 7. Formato de tarea: `situation` (Sprechen Teil 3)
+
+Las **67 situaciones** de «Lösungswege diskutieren» de las pp. 188-200. Tampoco se
+corrigen: no hay `answer`, `quote` ni `confidence`, porque el ejercicio es hablar y
+acordar una solución, no acertar una letra. **Cada situación es una variante**: así
+el menú las lista por separado y cada una tiene su propia página.
+
+```json
+{
+  "block": "sprechen_t3",
+  "section": "sprechen-t3",
+  "variants": [{
+    "id": "spr-t3-01",
+    "label": "1 · Würmer im Mehl der Konditorei",
+    "page": 188,
+    "kind": "situation",
+    "n": 1,
+    "titel": "Würmer im Mehl der Konditorei",
+    "de": "Sie arbeiten in einer Konditorei. Heute haben Sie Würmer/ kleine Tierchen im Mehl im Lager gefunden. …",
+    "es": "Trabajas en una pastelería. Hoy has encontrado gusanos o bichitos en la harina del almacén. …",
+    "ru": "Вы работаете в кондитерской. Сегодня вы обнаружили в муке на складе червяков …",
+    "punkte": [
+      {"de": "Chef: Wie kontaktieren?", "es": "Jefe: ¿cómo contactarlo?", "ru": "Шеф: как с ним связаться?"}
+    ],
+    "beispiele": ["Ich rufe den Chef sofort an und erkläre ihm ruhig, was im Lager passiert ist."]
+  }]
+}
+```
+
+| Campo | Obligatorio | Contenido |
+|---|---|---|
+| `kind` | sí | `"situation"` |
+| `n` | sí | Número de la situación, **1..67 sin huecos** en toda la sección |
+| `label` | sí | `«n · título»`: lo que se ve en el menú |
+| `page` | sí | Página del PDF donde empieza la situación |
+| `titel` | sí | Título corto en alemán |
+| `de` | sí | Descripción **verbatim** del documento |
+| `es` | sí | Traducción española (ayuda) |
+| `ru` | sí | Traducción rusa (ayuda) |
+| `punkte` | sí | Stichpunkte, cada uno con `de`, `es` y `ru` |
+| `beispiele` | sí | Frases de ejemplo **en alemán** (mínimo 2) |
+
+Reglas:
+
+1. **El alemán de `de` y `punkte[].de` no se inventa**: sale del documento. Se
+   corrigen solo erratas evidentes y cada corrección se anota en `fixes`.
+2. `es` y `ru` son ayuda y **no se enseñan solas**: la app las deja detrás de un
+   «Ver». Los `beispiele` también van plegados.
+3. `beispiele` es material nuestro para practicar, no texto del examen. No se
+   presenta como oficial.
+4. Si una situación trae dos formulaciones separadas por « / », se conservan las dos
+   en `de`: el documento las une en el mismo caso.

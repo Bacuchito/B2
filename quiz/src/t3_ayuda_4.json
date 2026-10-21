@@ -1,0 +1,461 @@
+{
+ "52": {
+  "titel": "Antiker Spiegel beim Umzug zerbrochen",
+  "es": "Trabajas para una empresa de mudanzas. Durante el transporte, un espejo antiguo cayó por la escalera y se rompió. El cliente está muy enfadado porque el espejo no se puede sustituir.",
+  "ru": "Вы работаете в фирме по переездам. При перевозке антикварное зеркало упало на лестнице и разбилось. Клиент очень зол: зеркало невозможно заменить.",
+  "punkte": [
+   {
+    "es": "¿A quién informar?",
+    "ru": "Кого информировать?"
+   },
+   {
+    "es": "Costes: ¿quién paga el daño?",
+    "ru": "Расходы: кто оплачивает ущерб?"
+   },
+   {
+    "es": "Cliente: ¿qué ofrecer?",
+    "ru": "Клиент: что предложить?"
+   },
+   {
+    "es": "A largo plazo: ¿cómo evitar daños?",
+    "ru": "В перспективе: как избежать повреждений?"
+   }
+  ],
+  "beispiele": [
+   "Ich würde sofort den Chef und die Versicherung informieren, damit der Schaden schnell gemeldet ist.",
+   "Den Schaden übernimmt die Versicherung der Firma, weil der Spiegel beim Transport zerbrochen ist.",
+   "Dem Kunden bieten wir eine Entschädigung und eine aufrichtige Entschuldigung an, auch wenn der Spiegel nicht zu ersetzen ist.",
+   "Langfristig sollten empfindliche Stücke besser verpackt und extra versichert werden, damit so etwas nicht wieder passiert."
+  ]
+ },
+ "53": {
+  "titel": "Buchhandlung verliert Kunden",
+  "es": "Trabajamos en una librería cuyas ventas están bajando por las compras online. El jefe nos ha encargado una tarea para recuperar a los clientes.",
+  "ru": "Мы работаем в книжном магазине, продажи падают из-за покупок в интернете. Шеф поручил нам задачу вернуть клиентов.",
+  "punkte": [
+   {
+    "es": "Ofertas: ¿ampliamos? ¿estrategia de ventas?",
+    "ru": "Предложения: расширять? стратегия продаж?"
+   },
+   {
+    "es": "¿Presencia en internet?",
+    "ru": "Присутствие в интернете?"
+   },
+   {
+    "es": "¿Reducir el negocio?",
+    "ru": "Уменьшить магазин?"
+   }
+  ],
+  "beispiele": [
+   "Wir könnten Lesungen und Signierstunden im Laden anbieten, damit die Kunden wieder einen Grund haben, zu uns zu kommen.",
+   "Ein Online-Shop mit Lieferung könnte neue Kunden bringen, besonders in den Stadtteilen, die weit weg sind.",
+   "Vielleicht verkleinern wir die Fläche und nutzen den Rest als Café, damit der Laden auch ohne Buchverkauf rentabel bleibt."
+  ]
+ },
+ "54": {
+  "titel": "Mieterhöhung für die Konditorei",
+  "es": "Sois dos socias de una pastelería y vuestro casero ha subido mucho el alquiler para el mes que viene. Los gastos adicionales también han subido.",
+  "ru": "Вы вдвоём владелицы кондитерской, и арендодатель сильно повысил аренду со следующего месяца. Коммунальные расходы тоже выросли.",
+  "punkte": [
+   {
+    "es": "Casero: ¿qué proponer?",
+    "ru": "Арендодатель: что предложить?"
+   },
+   {
+    "es": "Más ingresos: ¿cómo?",
+    "ru": "Больше доходов: как?"
+   },
+   {
+    "es": "¿Posibilidades de ahorro?",
+    "ru": "Возможности экономии?"
+   },
+   {
+    "es": "A largo plazo: buscar un local nuevo, ¿cómo y qué?",
+    "ru": "В перспективе: искать новое помещение, как и какое?"
+   }
+  ],
+  "beispiele": [
+   "Wir sollten mit dem Vermieter über eine Staffelung der Miete sprechen, damit wir die Erhöhung nicht sofort tragen müssen.",
+   "Mit einem Lieferdienst könnten wir mehr Umsatz machen, weil viele Kunden morgens keine Zeit haben, zu uns zu kommen.",
+   "Vielleicht können wir beim Einkauf und beim Strom sparen, indem wir größere Mengen bestellen und alte Geräte durch sparsamere ersetzen.",
+   "Langfristig suchen wir ein kleineres Lokal in ruhigerer Lage, falls die Miete dauerhaft zu hoch bleibt."
+  ]
+ },
+ "55": {
+  "titel": "Abteilungsleiter ist gereizt",
+  "es": "Trabajáis juntos en una empresa. Vuestro jefe de departamento está de mal humor desde hace semanas: se le nota muy irritable y lo paga con los empleados. Por eso el ambiente de trabajo ha empeorado.",
+  "ru": "Вы вместе работаете в фирме. Ваш начальник отдела в последние недели в плохом настроении: он очень раздражён и срывается на сотрудниках. Из-за этого атмосфера в коллективе испортилась.",
+  "punkte": [
+   {
+    "es": "Problema: ¿cómo hablar con el jefe de equipo o cómo tratar con él?",
+    "ru": "Проблема: как поговорить с руководителем группы или как с ним вести себя?"
+   },
+   {
+    "es": "¿Informar al jefe?",
+    "ru": "Сообщить начальству?"
+   },
+   {
+    "es": "Empleados: ¿cómo motivarlos?",
+    "ru": "Сотрудники: как их мотивировать?"
+   },
+   {
+    "es": "Otras ideas o propuestas.",
+    "ru": "Другие идеи или предложения."
+   }
+  ],
+  "beispiele": [
+   "Ich würde ihn unter vier Augen ansprechen und fragen, ob alles in Ordnung ist, statt ihn vor dem Team zu kritisieren.",
+   "Wenn es so weitergeht, sollten wir das dem Chef melden, weil die Stimmung im Team darunter leidet.",
+   "Wir könnten ein gemeinsames Teamfrühstück organisieren, um die Stimmung zu heben und wieder miteinander zu sprechen.",
+   "Vielleicht hilft eine klare Aufgabenverteilung, damit der Druck auf ihn und das Team sinkt."
+  ]
+ },
+ "56": {
+  "titel": "Teambildung-Nachmittag ohne Reaktion",
+  "es": "Trabajas en una empresa informática y hace semanas propusiste una tarde de team building; por desgracia nadie ha reaccionado. No entiendes por qué, si precisamente sería importante para mejorar la colaboración.",
+  "ru": "Вы работаете в компьютерной фирме и несколько недель назад предложили провести день тимбилдинга; к сожалению, никто не отреагировал. Вы не понимаете почему, хотя это как раз помогло бы улучшить сотрудничество.",
+  "punkte": [
+   {
+    "es": "Hablar en persona.",
+    "ru": "Поговорить лично."
+   },
+   {
+    "es": "Motivos: ¿falta de tiempo?",
+    "ru": "Причины: нехватка времени?"
+   },
+   {
+    "es": "¿Desinterés?",
+    "ru": "Безразличие?"
+   },
+   {
+    "es": "¿Contrapropuestas?",
+    "ru": "Встречные предложения?"
+   }
+  ],
+  "beispiele": [
+   "Ich würde die Kollegen einzeln ansprechen und nach ihrer Meinung fragen, statt eine allgemeine E-Mail zu schicken.",
+   "Vielleicht fehlt einfach die Zeit, also schlage ich einen kürzeren Termin vor, der nur zwei Stunden dauert.",
+   "Wenn niemand Interesse hat, frage ich nach den Gründen, damit ich beim nächsten Vorschlag besser planen kann.",
+   "Wir könnten mit einem kleinen gemeinsamen Mittagessen anfangen, um zu sehen, ob die Idee überhaupt ankommt."
+  ]
+ },
+ "57": {
+  "titel": "Kollege bringt den Hund mit",
+  "es": "Uno de nuestros compañeros trae su perro al trabajo y a nosotros no nos gustan los animales.",
+  "ru": "Один из наших коллег приводит собаку на работу, а мы не любим животных.",
+  "punkte": [
+   {
+    "es": "Organizar una reunión de equipo y hablarlo.",
+    "ru": "Организовать собрание команды и обсудить это."
+   },
+   {
+    "es": "Propuestas.",
+    "ru": "Предложения."
+   },
+   {
+    "es": "Cómo actuar con el compañero.",
+    "ru": "Как вести себя с коллегой."
+   },
+   {
+    "es": "Solución.",
+    "ru": "Решение."
+   }
+  ],
+  "beispiele": [
+   "Ich würde das Thema in der nächsten Teamsitzung sachlich ansprechen, damit alle ihre Meinung dazu sagen können.",
+   "Wir könnten vorschlagen, den Hund nur an bestimmten Tagen mitzubringen, an denen weniger Kunden kommen.",
+   "Wichtig ist, dass wir dem Kollegen nicht das Gefühl geben, angegriffen zu werden, sondern eine gemeinsame Lösung suchen.",
+   "Als Lösung könnte der Hund in einem separaten Raum bleiben, damit niemand Angst haben muss."
+  ]
+ },
+ "58": {
+  "titel": "Zu kleine Portionen und versalzenes Essen",
+  "es": "Trabajáis juntos en la cocina de un restaurante. Algunos clientes se han quejado de que las raciones suelen ser pequeñas y de que la comida a veces está demasiado salada.",
+  "ru": "Вы вместе работаете на кухне ресторана. Некоторые гости жалуются, что порции часто маленькие, а еда иногда пересолена.",
+  "punkte": [
+   {
+    "es": "Tamaño de las raciones: ¿qué hacer?",
+    "ru": "Размер порций: что делать?"
+   },
+   {
+    "es": "Comida salada: ¿cómo evitarlo?",
+    "ru": "Пересоленная еда: как этого избежать?"
+   },
+   {
+    "es": "¿Qué ofrecer a los clientes como compensación?",
+    "ru": "Что предложить гостям в качестве компенсации?"
+   },
+   {
+    "es": "A largo plazo: ¿qué hacer para que los clientes estén contentos con la comida?",
+    "ru": "В перспективе: что сделать, чтобы гости были довольны едой?"
+   }
+  ],
+  "beispiele": [
+   "Wir sollten die Portionen etwas größer machen, weil die Gäste sich sonst beschweren und nicht wiederkommen.",
+   "Beim Salzen hilft es, erst am Ende abzuschmecken, damit das Essen nicht wieder versalzen ist.",
+   "Den betroffenen Gästen bieten wir ein Getränk oder einen Nachtisch an, um die Beschwerde auszugleichen.",
+   "Langfristig sollten wir regelmäßig Rückmeldungen der Gäste auswerten, damit wir wissen, was gut ankommt."
+  ]
+ },
+ "59": {
+  "titel": "Betriebsfeier kurzfristig storniert",
+  "es": "Tenéis que entregar la comida para una fiesta de empresa. El cliente ha cancelado el pedido a última hora sin dar motivos. Los platos ya están preparados y el equipo está reservado.",
+  "ru": "Вы должны доставить еду на корпоративный праздник. Клиент в последний момент отменил заказ без объяснения причин. Блюда уже готовы, команда занята.",
+  "punkte": [
+   {
+    "es": "¿Qué hacer con la comida?",
+    "ru": "Что делать с едой?"
+   },
+   {
+    "es": "¿A quién informar?",
+    "ru": "Кого информировать?"
+   },
+   {
+    "es": "Costes: ¿quién paga?",
+    "ru": "Расходы: кто платит?"
+   },
+   {
+    "es": "Cliente: ¿qué exigir?",
+    "ru": "Клиент: что требовать?"
+   }
+  ],
+  "beispiele": [
+   "Die Speisen könnten wir an eine soziale Einrichtung spenden, damit sie nicht weggeworfen werden.",
+   "Ich würde den Chef und das Team sofort informieren, damit niemand weiterplant und die Küche die Ware nicht anderweitig einsetzt.",
+   "Der Kunde muss mindestens die Materialkosten bezahlen, weil wir die Speisen schon vorbereitet haben.",
+   "Wir sollten eine Ausfallgebühr im Vertrag festhalten, damit kurzfristige Absagen nicht immer bei uns hängen bleiben."
+  ]
+ },
+ "60": {
+  "titel": "Blaustich auf allen Werbedrucken",
+  "es": "Trabajas en una agencia de publicidad y tienes que imprimir material publicitario para clientes, como folletos y tarjetas de visita, para mañana. A pesar de que un técnico hizo el mantenimiento de la impresora, todas las impresiones tienen un tono azulado no deseado.",
+  "ru": "Вы работаете в рекламном агентстве и должны до завтра напечатать для клиентов рекламные материалы: листовки, визитки. Несмотря на то, что мастер провёл обслуживание принтера, на всех распечатках нежелательный синий оттенок.",
+  "punkte": [
+   {
+    "es": "Impresora: ¿qué hacer con la impresora averiada?",
+    "ru": "Принтер: что делать со сломанным принтером?"
+   },
+   {
+    "es": "Clientes: ¿cómo contactarlos? ¿qué ofrecer?",
+    "ru": "Клиенты: как связаться? что предложить?"
+   },
+   {
+    "es": "Técnico: ¿cómo contactarlo? ¿qué exigir?",
+    "ru": "Мастер: как связаться? что требовать?"
+   },
+   {
+    "es": "A largo plazo: ¿qué otras posibilidades?",
+    "ru": "В перспективе: какие ещё возможности?"
+   }
+  ],
+  "beispiele": [
+   "Wir sollten die Drucke sofort stoppen und den Techniker rufen, damit nicht noch mehr Material mit Blaustich gedruckt wird.",
+   "Den Kunden sagen wir ehrlich, dass sich die Lieferung etwas verzögert, und bieten ihnen an, die Materialien später zu bringen.",
+   "Vom Techniker fordern wir eine kostenlose Nachbesserung, weil er den Drucker erst vor Kurzem gewartet hat.",
+   "Für den Notfall können wir einen anderen Copyshop nutzen, damit die Kunden ihre Materialien morgen haben."
+  ]
+ },
+ "61": {
+  "titel": "Verfärbtes Abendkleid in der Reinigung",
+  "es": "Trabajas en una empresa de limpieza. Un vestido de noche caro se ha desteñido. La clienta está furiosa porque lo necesita esta noche. Amenaza con llamar al abogado.",
+  "ru": "Вы работаете в химчистке. Дорогое вечернее платье полиняло. Клиентка в ярости, потому что оно нужно ей сегодня вечером. Она грозит адвокатом.",
+  "punkte": [
+   {
+    "es": "¿A quién informar?",
+    "ru": "Кого информировать?"
+   },
+   {
+    "es": "Costes: reparar el daño.",
+    "ru": "Расходы: возместить ущерб."
+   },
+   {
+    "es": "Clienta: ¿qué ofrecer?",
+    "ru": "Клиентка: что предложить?"
+   },
+   {
+    "es": "A largo plazo: ¿cómo evitar casos así?",
+    "ru": "В перспективе: как избежать таких случаев?"
+   }
+  ],
+  "beispiele": [
+   "Ich würde sofort den Chef und die Versicherung informieren, weil das Kleid teuer ist und die Kundin mit dem Anwalt droht.",
+   "Wir übernehmen die Kosten für die Reinigung oder den Ersatz, damit die Kundin nicht auf dem Schaden sitzen bleibt.",
+   "Der Kundin bieten wir ein Ersatzkleid oder eine Entschädigung an, weil sie das Kleid heute Abend braucht.",
+   "Langfristig prüfen wir jedes Kleidungsstück vor der Annahme, damit solche Schäden gar nicht erst entstehen."
+  ]
+ },
+ "62": {
+  "titel": "Lange Reparaturzeiten im IT-Service",
+  "es": "Trabajas en un servicio de reparación informática. Algunos clientes se han quejado de que las reparaciones a menudo tardan mucho o de que ni siquiera se encuentran los fallos del ordenador.",
+  "ru": "Вы работаете в службе ремонта компьютеров. Некоторые клиенты жалуются, что ремонт часто длится очень долго или что неисправность вообще не находят.",
+  "punkte": [
+   {
+    "es": "Servicio de reparación: ¿cómo mejorarlo?",
+    "ru": "Сервис ремонта: как улучшить?"
+   },
+   {
+    "es": "¿Formación para el personal?",
+    "ru": "Обучение сотрудников?"
+   },
+   {
+    "es": "¿Qué ofrecer a los clientes como compensación?",
+    "ru": "Что предложить клиентам в качестве компенсации?"
+   },
+   {
+    "es": "A largo plazo: ¿qué hacer para que la clientela esté satisfecha?",
+    "ru": "В перспективе: что сделать, чтобы клиенты были довольны?"
+   }
+  ],
+  "beispiele": [
+   "Wir sollten feste Fristen für jede Reparatur festlegen, damit die Kunden wissen, wann sie ihr Gerät zurückbekommen.",
+   "Schulungen helfen dem Team, Fehler schneller zu finden, weil viele Probleme erst bei der zweiten Prüfung auffallen.",
+   "Den Kunden bieten wir einen Rabatt auf die nächste Reparatur an, wenn es länger gedauert hat.",
+   "Langfristig hilft eine Online-Anfrage, damit die Kunden den Stand sehen und nicht ständig anrufen müssen."
+  ]
+ },
+ "63": {
+  "titel": "25-jähriges Firmenjubiläum organisieren",
+  "es": "Tu empresa celebra dentro de tres meses su 25 aniversario. Tu jefe te ha pedido que organices la fiesta.",
+  "ru": "Ваша фирма через три месяца отмечает 25-летие. Шеф попросил вас организовать праздник.",
+  "punkte": [
+   {
+    "es": "Fecha: ¿cuál es la mejor? ¿por qué?",
+    "ru": "Дата: какая лучшая? почему?"
+   },
+   {
+    "es": "Lugar: ¿en nuestras propias salas? ¿alquilar un local?",
+    "ru": "Место: в своих помещениях? арендовать зал?"
+   },
+   {
+    "es": "Propuestas de programa e ideas: ¿organizarlo nosotros? ¿contratar a alguien?",
+    "ru": "Программа и идеи: организовать самим? кого-то нанять?"
+   },
+   {
+    "es": "Acciones especiales para clientes: ¿ofertas? ¿regalos publicitarios?",
+    "ru": "Специальные акции для клиентов: скидки? рекламные подарки?"
+   }
+  ],
+  "beispiele": [
+   "Ich würde einen Freitagabend wählen, damit alle Zeit haben und die Feier nicht mit der Arbeit kollidiert.",
+   "Wir könnten die Feier in unserem Büro machen und einen Caterer bestellen, damit die Kosten im Rahmen bleiben.",
+   "Für das Programm könnten wir eine kleine Band engagieren und einen Kollegen bitten, eine kurze Rede zu halten.",
+   "Den Kunden bieten wir an diesem Tag einen Rabatt an und verteilen kleine Werbegeschenke mit unserem Logo."
+  ]
+ },
+ "64": {
+  "titel": "Unfreundliche Taxifahrer",
+  "es": "Trabajas para una empresa de taxis. Algunos pasajeros se han quejado de que algunos conductores no son amables y tardan demasiado en encontrar una dirección.",
+  "ru": "Вы работаете в такси-компании. Некоторые пассажиры жалуются, что некоторые водители недружелюбны и слишком долго ищут адрес.",
+  "punkte": [
+   {
+    "es": "Amabilidad: ¿cómo mejorarla?",
+    "ru": "Дружелюбие: как улучшить?"
+   },
+   {
+    "es": "¿Cómo encontrar direcciones más rápido?",
+    "ru": "Как быстрее находить адреса?"
+   },
+   {
+    "es": "¿Qué ofrecer a los pasajeros como compensación?",
+    "ru": "Что предложить пассажирам в качестве компенсации?"
+   },
+   {
+    "es": "A largo plazo: ¿qué hacer para que los pasajeros estén satisfechos?",
+    "ru": "В перспективе: что сделать, чтобы пассажиры были довольны?"
+   }
+  ],
+  "beispiele": [
+   "Wir sollten Schulungen für Freundlichkeit und Service anbieten, damit die Fahrer wissen, wie wichtig ein guter erster Eindruck ist.",
+   "Moderne Navigationsgeräte helfen, die Adressen schneller zu finden, besonders in Stadtteilen, die die Fahrer nicht kennen.",
+   "Als Entschädigung können wir dem Fahrgast die Fahrt verbilligen, wenn er lange warten musste.",
+   "Langfristig zählen Bewertungen der Fahrgäste bei der Planung, damit unfreundliche Fahrer auffallen."
+  ]
+ },
+ "65": {
+  "titel": "Falsche Arbeitstische geliefert",
+  "es": "Para tu oficina se han pedido mesas de trabajo nuevas. La entrega acaba de llegar. Al comprobarla, ves que es defectuosa: han entregado mesas de otra marca. Además, las medidas no coinciden con el pedido.",
+  "ru": "Для вашего офиса заказали новые рабочие столы. Доставка только что пришла. При проверке выясняется, что она с ошибками: привезли столы другой марки. Кроме того, размеры не совпадают с заказом.",
+  "punkte": [
+   {
+    "es": "Mercancía: ¿qué se pidió? ¿por qué se necesita con urgencia?",
+    "ru": "Товар: что заказали? почему нужно срочно?"
+   },
+   {
+    "es": "Entrega: ¿qué errores hay? ¿cómo se pueden corregir? ¿recoger la mercancía? ¿entregar la correcta? ¿para cuándo?",
+    "ru": "Доставка: какие ошибки? как их исправить? забрать товар? привезти правильный? к какому сроку?"
+   },
+   {
+    "es": "Proveedor: ¿a quién y cómo contactar? ¿qué exigir?",
+    "ru": "Поставщик: с кем и как связаться? что требовать?"
+   },
+   {
+    "es": "Cancelar el contrato de compra: anular el pedido si no llega la mercancía correcta en cinco días laborables.",
+    "ru": "Расторгнуть договор купли-продажи: отменить заказ, если правильный товар не привезут в течение пяти рабочих дней."
+   }
+  ],
+  "beispiele": [
+   "Wir brauchen die Tische dringend, weil nächste Woche neue Mitarbeiter kommen und sonst kein Arbeitsplatz frei ist.",
+   "Der Lieferant soll die falschen Tische abholen und die richtigen nachliefern, und zwar innerhalb der nächsten fünf Werktage.",
+   "Ich würde den Lieferanten schriftlich kontaktieren und eine Frist setzen, damit wir etwas in der Hand haben.",
+   "Wenn die Frist verstreicht, kündigen wir den Kaufvertrag und bestellen bei einem anderen Anbieter."
+  ]
+ },
+ "66": {
+  "titel": "Falsche Waschbecken und Toiletten geliefert",
+  "es": "Trabajas en un jardín de infancia. Para los baños recién reformados se pidieron lavabos e inodoros infantiles nuevos. Al comprobar la entrega, habéis visto que es defectuosa: han entregado inodoros y lavabos para adultos. Además, ni la cantidad ni el color coinciden con el pedido.",
+  "ru": "Вы работаете в детском саду. Для недавно отремонтированных туалетов заказали новые детские раковины и унитазы. При проверке доставки вы обнаружили, что она с ошибками: привезли унитазы и раковины для взрослых. Кроме того, ни количество, ни цвет не совпадают с заказом.",
+  "punkte": [
+   {
+    "es": "Mercancía: ¿qué se pidió? ¿qué está mal?",
+    "ru": "Товар: что заказали? что не так?"
+   },
+   {
+    "es": "Entrega: ¿qué errores hay? ¿cómo se pueden corregir? ¿recoger la mercancía? ¿entregar la correcta? ¿para cuándo?",
+    "ru": "Доставка: какие ошибки? как их исправить? забрать товар? привезти правильный? к какому сроку?"
+   },
+   {
+    "es": "Proveedor: ¿a quién y cómo contactar? ¿qué exigir?",
+    "ru": "Поставщик: с кем и как связаться? что требовать?"
+   },
+   {
+    "es": "Descuento: ¿retirarse del contrato de compra?",
+    "ru": "Скидка: отказаться от договора купли-продажи?"
+   }
+  ],
+  "beispiele": [
+   "Wir haben Kindertoiletten in Blau bestellt, nicht Erwachsenentoiletten in Weiß, und auch die Menge stimmt nicht.",
+   "Ich würde den Lieferanten anrufen und eine schnelle Nachlieferung fordern, weil die Toiletten vor der Eröffnung eingebaut sein müssen.",
+   "Bis dahin darf die falsche Ware nicht eingebaut werden, damit wir sie problemlos zurückgeben können.",
+   "Wenn die richtige Ware nicht kommt, treten wir vom Vertrag zurück und verlangen den Preisnachlass."
+  ]
+ },
+ "67": {
+  "titel": "Kantine zu klein für alle Mitarbeitenden",
+  "es": "Trabajas en una empresa que ha crecido en los últimos años. Mientras tanto, el comedor se ha quedado pequeño para todos los empleados.",
+  "ru": "Вы работаете в фирме, которая за последние годы выросла. Тем временем столовая стала слишком маленькой для всех сотрудников.",
+  "punkte": [
+   {
+    "es": "Horarios de comida: ¿cuándo? ¿qué departamento?",
+    "ru": "Время питания: когда? какой отдел?"
+   },
+   {
+    "es": "Ampliación: ¿posible? ¿costes?",
+    "ru": "Пристройка: возможно? расходы?"
+   },
+   {
+    "es": "Trasladar el comedor: ¿dónde hay otras salas?",
+    "ru": "Перенести столовую: где есть другие помещения?"
+   },
+   {
+    "es": "¿Alternativas?",
+    "ru": "Альтернативы?"
+   }
+  ],
+  "beispiele": [
+   "Wir könnten die Essenszeiten nach Abteilungen staffeln, damit nicht alle gleichzeitig in die Kantine kommen.",
+   "Ein Anbau wäre teuer, aber langfristig die beste Lösung, weil die Firma weiter wachsen wird.",
+   "Vielleicht können wir den Besprechungsraum mittags als Essensraum nutzen und die Tische entsprechend umstellen.",
+   "Als Alternative könnte ein Essenswagen zu den Abteilungen kommen, damit die Mitarbeiter nicht so weit laufen müssen."
+  ]
+ }
+}
