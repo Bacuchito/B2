@@ -281,17 +281,6 @@
   header .switch-tema[aria-checked="true"] .pista-tema{background:rgba(0,0,0,.28);border-color:var(--line)}
   header .switch-tema[aria-checked="true"] .mando-tema{color:var(--acc-fill-1)}
   header .switch-tema .switch-tema-texto{color:var(--on-band)}
-  /* Una sola pieza de latón en la banda: el botón principal. Lo elegido (perfil,
-     idioma) se marca en crema, que es el papel de la banda, no el acento. */
-  header .user-btn.active,header .lang-btn.active{background:var(--on-band);
-    color:var(--band);font-weight:700;box-shadow:none}
-  /* El mando deslizante de los segmentados es el que pinta el estado: en la banda
-     va en crema, no en latón. */
-  header .user-switch.con-mando::before,
-  header .lang-switch.con-mando::before{background:var(--on-band);box-shadow:none}
-  header .user-switch.con-mando .user-btn.active,
-  header .lang-switch.con-mando .lang-btn.active{color:var(--band);background:var(--on-band);
-    box-shadow:none}
   /* El recuento de dudas se marca con filete de latón, no con tinta oscura:
      sobre el verde, el ámbar del papel desaparecía. */
   header .em-warn{color:var(--on-band);font-weight:700;
@@ -876,60 +865,35 @@
   .input::placeholder{color:var(--dim-2)}
   .input:focus,.select:focus{border-color:var(--acc-hi);box-shadow:var(--hundido),var(--halo)}
 
-  /* Selector bilingüe ES / RU: control segmentado, hoja seleccionada (sin píldora azul). */
-  /* Control segmentado: carril hundido; la opción elegida se levanta. */
-  .lang-switch{display:inline-flex;align-items:center;background:var(--sunken);
-               border:var(--b-std) solid var(--line);border-radius:var(--r-pill);
-               padding:4px;gap:var(--sp-1);box-shadow:var(--hundido)}
-  .lang-btn{background:transparent;border:0;color:var(--dim);font-size:var(--fs-xs);font-weight:640;
-            padding:0 var(--sp-3);min-height:32px;border-radius:var(--r-pill);cursor:pointer;
-            font-family:inherit;
-            transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
-                       transform var(--dur-1) var(--spring),box-shadow var(--dur-2) var(--ease);
-            display:inline-flex;align-items:center;gap:var(--sp-1);line-height:1}
+  /* Idioma ES / RU: dos letras y un filete bajo la elegida. Sin carril y sin
+     mando: el subrayado es la señal, como en un índice impreso. */
+  .lang-switch{display:inline-flex;align-items:center;gap:var(--sp-4);
+               background:none;border:0;padding:0;box-shadow:none}
+  .lang-btn{background:transparent;border:0;color:var(--dim);cursor:pointer;
+            font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-xs);
+            font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+            padding:0 0 var(--sp-1);border-bottom:2px solid transparent;
+            min-height:32px;border-radius:0;
+            transition:color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease);
+            display:inline-flex;align-items:center;line-height:1}
   .lang-btn:hover{color:var(--txt)}
-  .lang-btn:active{transform:scale(.96)}
-  /* La opción activa se rellena con el acento, como la mitad encendida de un
-     interruptor: deja de ser una pastilla clara y pasa a ser «esto está encendido». */
-  .lang-btn.active{background:var(--acc-grad);color:var(--on-acc);font-weight:700;
-            border:0;box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 12px -4px var(--glow)}
+  .lang-btn.active{color:var(--txt);font-weight:700;background:none;box-shadow:none;
+            border-bottom-color:currentColor}
 
-  /* Selector de usuario Sergio / Diana */
-  .user-switch{display:inline-flex;align-items:center;background:var(--sunken);
-               border:var(--b-std) solid var(--line);border-radius:var(--r-pill);
-               padding:4px;gap:var(--sp-1);box-shadow:var(--hundido)}
-  .user-btn{background:transparent;border:0;color:var(--dim);font-size:var(--fs-xs);font-weight:640;
-            padding:0 var(--sp-3);min-height:32px;border-radius:var(--r-pill);cursor:pointer;
-            font-family:inherit;
-            transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
-                       transform var(--dur-1) var(--spring),box-shadow var(--dur-2) var(--ease);
-            display:inline-flex;align-items:center;gap:var(--sp-1);line-height:1}
+  /* Perfil Sergio / Diana: una caja con filete y la opción encendida invertida. */
+  .user-switch{display:inline-flex;align-items:center;background:none;
+               border:1.5px solid var(--line-2);border-radius:0;
+               padding:0;gap:0;box-shadow:none}
+  .user-btn{background:transparent;border:0;color:var(--dim);cursor:pointer;
+            font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-xs);
+            font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+            padding:0 var(--sp-4);min-height:32px;border-radius:0;
+            transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease);
+            display:inline-flex;align-items:center;line-height:1}
+  .user-btn+.user-btn{border-left:1.5px solid var(--line-2)}
   .user-btn:hover{color:var(--txt)}
-  .user-btn:active{transform:scale(.96)}
-  .user-btn.active{background:var(--acc-grad);color:var(--on-acc);font-weight:700;
-            border:0;box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 12px -4px var(--glow)}
-
-  /* El mando que se desliza entre las opciones del control segmentado. Solo entra
-     cuando el JS puede medir (clase `con-mando`): si no, la opción activa se marca
-     con su propio relleno y nunca se queda sin señal.
-     La posición Y la altura las manda el JS: si el control se parte en dos filas
-     (las pestañas de Schreiben, sin ir más lejos), el mando tiene que cubrir SU fila
-     y no el carril entero, o se come las etiquetas de la fila de abajo. */
-  .lang-switch,.user-switch,.tab-pills{position:relative}
-  .lang-switch.con-mando::before,.user-switch.con-mando::before,.tab-pills.con-mando::before{
-    content:"";position:absolute;left:0;top:var(--mando-y,var(--sp-1));
-    height:var(--mando-h,32px);
-    width:var(--mando-w,0px);transform:translateX(var(--mando-x,0px));
-    border-radius:var(--r-pill);background:var(--acc-grad);
-    box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 14px -4px var(--glow);
-    transition:transform var(--dur-3) var(--spring),width var(--dur-3) var(--spring),
-               top var(--dur-3) var(--spring),height var(--dur-3) var(--spring);
-    pointer-events:none;z-index:0}
-  .tab-pills.con-mando::before{border-radius:var(--r-2)}
-  .lang-switch.con-mando button,.user-switch.con-mando button,.tab-pills.con-mando button{
-    position:relative;z-index:1}
-  .lang-switch.con-mando .lang-btn.active,.user-switch.con-mando .user-btn.active,
-  .tab-pills.con-mando .tab-pill.active{background:none;box-shadow:none;border-color:transparent}
+  .user-btn.active{background:var(--txt);color:var(--panel);font-weight:700;
+            box-shadow:none;border:0}
 
   /* Indicador de sincronización en la nube */
   .cloud-badge{display:inline-flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-micro);color:var(--dim);
@@ -1999,7 +1963,6 @@ function updateUserUI() {
   if (btnDiana) btnDiana.title = t("userDianaTitle");
   /* El idioma y el perfil son controles segmentados: recolocar su mando después de
      cambiar cuál está encendido es lo que hace que se vea el deslice. */
-  colocarMandos();
 }
 
 function setUser(user) {
@@ -2658,7 +2621,6 @@ function render(){
     /* Al final, y no en cada sitio: así el mando de los controles segmentados se
        recoloca también cuando el render crea controles nuevos (las pestañas de la
        evaluación, sin ir más lejos), y no se queda con la medida de los anteriores. */
-    colocarMandos();
   } catch(e){
     console.warn("Error al renderizar:", e);
     const main = document.getElementById("main");
@@ -3535,16 +3497,13 @@ function renderSchreiben(v, main){
       tabPartnerBtn.classList.remove("active");
       mineContainer.style.display = "block";
       partnerContainer.style.display = "none";
-      colocarMandos();
     };
     tabPartnerBtn.onclick = ()=>{
       tabPartnerBtn.classList.add("active");
       tabMineBtn.classList.remove("active");
       mineContainer.style.display = "none";
       partnerContainer.style.display = "block";
-      colocarMandos();
     };
-    colocarMandos();
   }
 
   /* Conectar eventos del temporizador */
@@ -5292,36 +5251,6 @@ function closeModal(){
 const aiBtn = document.getElementById("btn-ai-config");
 if(aiBtn) aiBtn.onclick = ()=> openAIConfigModal();
 
-/* ---------- Mando deslizante de los controles segmentados ----------
-   Mide la opción encendida y coloca el mando ahí; al cambiar de opción, el mando
-   se desliza con curva de resorte en vez de encenderse y apagarse de golpe.
-   Si no se puede medir (DOM simulado de las pruebas), se quita la clase y la
-   opción activa se marca con su propio relleno: nunca se queda sin señal. */
-function colocarMandos(){
-  if (typeof document.querySelectorAll !== "function") return;
-  const cajas = document.querySelectorAll(".lang-switch, .user-switch, .tab-pills");
-  for (const caja of cajas){
-    const activo = (typeof caja.querySelector === "function")
-      ? caja.querySelector('[aria-pressed="true"], .active') : null;
-    const medible = activo && typeof activo.offsetLeft === "number" && activo.offsetWidth > 0;
-    /* Si la opción activa ha caído en otra fila (el control se partió en móvil),
-       el mando no puede deslizar en línea: se deja el relleno de siempre. */
-    const enLaMismaFila = medible && caja.children.length &&
-      activo.offsetTop === caja.children[0].offsetTop;
-    if (!medible || !enLaMismaFila || !caja.style || typeof caja.style.setProperty !== "function"){
-      toggleClass(caja, "con-mando", false);
-      continue;
-    }
-    toggleClass(caja, "con-mando", true);
-    caja.style.setProperty("--mando-x", activo.offsetLeft + "px");
-    caja.style.setProperty("--mando-w", activo.offsetWidth + "px");
-    /* Su fila y su alto, no los del carril: si el control se parte en dos filas, el
-       mando tiene que cubrir solo la de la opción encendida. */
-    caja.style.setProperty("--mando-y", activo.offsetTop + "px");
-    caja.style.setProperty("--mando-h", activo.offsetHeight + "px");
-  }
-}
-
 /* ---------- Renderizador de ítems de preguntas ---------- */
 function detailsPanel(summary, text, abierto){
   const d = document.createElement("details");
@@ -5721,23 +5650,6 @@ if(btnRu) btnRu.onclick = () => setLanguage("ru");
 const themeBtn = document.getElementById("theme-btn");
 if(themeBtn) themeBtn.onclick = () => setTheme(currentTheme === "dark" ? "paper" : "dark");
 
-/* El mando de los controles segmentados depende del ancho de cada opción: se
-   recoloca al redimensionar la ventana y una vez al arrancar. */
-if (typeof window.addEventListener === "function") window.addEventListener("resize", colocarMandos);
-colocarMandos();
-
-/* Un clic dentro de cualquier control segmentado recoloca el mando, sin depender de
-   acordarse en cada manejador: los hay en el editor de redacción y en la pantalla de
-   evaluación, que son sitios distintos del código. */
-if (typeof document.addEventListener === "function"){
-  document.addEventListener("click", function(ev){
-    let el = ev.target, vueltas = 0;
-    while (el && el !== document && vueltas++ < 8){
-      if (el.classList && el.classList.contains("tab-pill")){ colocarMandos(); return; }
-      el = el.parentNode;
-    }
-  });
-}
 
 const navToggle = document.getElementById("nav-toggle");
 if(navToggle) navToggle.onclick = ()=>{
