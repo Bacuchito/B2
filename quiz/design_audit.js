@@ -234,8 +234,10 @@ const hairlineUses = rules.filter((r) => Object.values(r.decls).some((v) => Stri
 const blur = rules.filter((r) => r.decls["backdrop-filter"]).length;
 (blur <= 2 ? ok : bad)(3, "Sin cristal decorativo (backdrop-filter como efecto, no como default)",
   blur + " superficies con backdrop-filter");
-const shadowLayers = ["--sh-1", "--sh-2", "--sh-3"].map((t) => (String(tokens[t] || "").match(/rgba?\(/g) || []).length);
-(shadowLayers.every((n) => n >= 2) ? ok : bad)(3, "Sombras multicapa (atmósfera + plano)", "capas por nivel: " + shadowLayers.join("/"));
+/* Este mundo se separa con filete, no con altura: ninguna sombra en ningún nivel. */
+const shadowValues = ["--sh-1", "--sh-2", "--sh-3"].map((t) => String(tokens[t] || "").trim());
+(shadowValues.every((v) => v === "none") ? ok : bad)(3, "Cero sombras: la pieza se separa con filete, no con altura",
+  "niveles: " + shadowValues.join(" / "));
 /* El segundo tema redefine tokens; no aplica filtros ni invierte colores. */
 const altRule = rules.find((r) => r.selector.includes('[data-theme="paper"]'));
 const altTokens = altRule ? Object.keys(altRule.decls).filter((k) => tokens[k] !== undefined).length : 0;

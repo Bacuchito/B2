@@ -19,112 +19,110 @@
      Contrastes medidos en design_audit.js; los que declaro aquí están
      comprobados sobre --panel.
      ========================================================================== */
+  /* ==========================================================================
+     B2 Beruf — mundo «Lesesaal». Hoja impresa sobre la mesa de una biblioteca:
+     papel marfil, tinta casi negra, banda verde botella y un solo acento, latón.
+     Material de imprenta: radios 0, cero sombras, filetes de 1 px. Todo el
+     material sale de tokens; cambiar el mundo es tocar este bloque, no los
+     componentes.
+     Contrastes medidos en design_audit.js sobre --panel y sobre --bg.
+     ========================================================================== */
   :root{
-    /* --- Superficies: del fondo a la pieza levantada --- */
-    --bg:#25262a;                 /* mesa */
-    --bg-luz:#34363d;             /* luz cenital del fondo */
-    --panel:#313239;              /* pieza principal (tarjetas, cabecera) */
-    --panel2:#3a3b43;             /* pieza levantada (pies, menús) */
-    --panel3:#2a2b31;             /* hueco (carriles, chips) */
-    --sheet:#36373f;              /* hoja de escritura */
-    --sunken:#2a2b31;
-    --line:rgba(255,255,255,.07); /* filete sutil */
-    --line-2:rgba(255,255,255,.14);
+    /* --- Superficies: de la mesa a la hoja --- */
+    --bg:#E4DDC9;                 /* mesa: papel tostado */
+    --bg-luz:#F3EFE2;             /* luz que cae desde arriba */
+    --panel:#FCFAF3;              /* hoja principal */
+    --panel2:#FFFFFF;             /* hoja levantada (menús, pies) */
+    --panel3:#EDE8D9;             /* hueco (carriles, chips) */
+    --sheet:#FFFDF6;              /* hoja de escritura */
+    --sunken:#E7E1D0;
+    --line:rgba(26,24,20,.16);    /* filete */
+    --line-2:rgba(26,24,20,.30);  /* filete marcado */
 
     /* --- Tinta --- */
-    --txt:#e9eaee;                /* 10.6:1 sobre --panel */
-    --dim:#b3b5bd;                /* 6.2:1 */
-    --dim-2:#9ea0a8;              /* 4.9:1 */
+    --txt:#1A1814;                /* 15.9:1 sobre --panel */
+    --dim:#4E4A40;                /* 7.8:1 */
+    --dim-2:#625E52;              /* 5.8:1 */
 
-    /* --- Acento azul. Sobre este azul el BLANCO no llega a 4.5:1 (3.2:1), así
-       que la tinta de encima es oscura: 5.6-7.3:1. --- */
-    --acc:#4d8df6;
-    --acc-hi:#6aa4ff;
-    --acc-deep:#2f6ede;
-    --acc-fill-1:#4d8df6;
-    --acc-fill-2:#6aa4ff;
-    --acc-2:#3f7ae4;
-    --acc-ink:#8ab4ff;            /* 6.1:1 sobre --panel */
-    --on-acc:#0b1526;
-    --ring:rgba(106,164,255,.55);
-    --glow:rgba(77,141,246,.45);
+    /* --- Latón: el único color saturado. Sobre --acc-fill-1 el blanco no llega
+       a 4.5:1, así que la tinta de encima es oscura (5.1-6.0:1). --- */
+    --acc:#8A6A1E;
+    --acc-hi:#A8842C;
+    --acc-deep:#6B5216;
+    --acc-fill-1:#A8842C;
+    --acc-fill-2:#B8933A;
+    --acc-2:#7A5C16;
+    --acc-ink:#6B5216;            /* 6.2:1 sobre --panel */
+    --on-acc:#1A1814;
+    --ring:rgba(138,106,30,.55);
+    --glow:rgba(138,106,30,.20);
 
     /* --- Semánticos --- */
-    --ok:#42c184; --ok-ink:#96e9bd;
-    --bad:#f2635a; --bad-ink:#ffa49b;
-    --warn:#e2b153; --warn-ink:#f4d191;
-    --violet-ink:#c3a8f0;
+    --ok:#1F6B4A; --ok-ink:#175440;
+    --bad:#9E3B24; --bad-ink:#7E2E1A;
+    --warn:#8A6414; --warn-ink:#6E5110;
+    --violet-ink:#5E4382;
 
-    /* --- Tintas de estado (siempre translúcidas sobre la pieza) --- */
-    --tint-ok:rgba(66,193,132,.15);
-    --tint-bad:rgba(242,99,90,.15);
-    --tint-warn:rgba(226,177,83,.14);
-    --tint-acc:rgba(106,164,255,.15);
-    --tint-violet:rgba(163,120,240,.15);
-    --tint-neutral:rgba(255,255,255,.05);
-    --chip:#3a3b43;
-    --chip-hover:#43444d;
-    --scrim:rgba(8,9,11,.72);
-    --selection:rgba(77,141,246,.35);
-    --scroll:rgba(255,255,255,.14);
+    /* --- Tintas de estado (translúcidas sobre la hoja) --- */
+    --tint-ok:rgba(31,107,74,.12);
+    --tint-bad:rgba(158,59,36,.10);
+    --tint-warn:rgba(138,100,20,.10);
+    --tint-acc:rgba(138,106,30,.12);
+    --tint-violet:rgba(94,67,130,.10);
+    --tint-neutral:rgba(26,24,20,.05);
+    --chip:#FFFDF6;
+    --chip-hover:#F0EBDD;
+    --scrim:rgba(24,21,16,.55);
+    --selection:rgba(168,132,44,.30);
+    --scroll:rgba(26,24,20,.24);
 
-    /* --- Rellenos de estado que llevan texto encima. Sólidos y oscuros a
-       propósito: con el verde y el rojo claros la letra se quedaba en 2.7:1 y
-       3.3:1; así quedan 6.2:1 y 7.4:1 --- */
-    --bien-fill:#246b4c; --bien-ink:#f2fff9;
-    --mal-fill:#8f3229;  --mal-ink:#fff6f5;
-    --acc-grad:linear-gradient(180deg,var(--acc-hi),var(--acc));
-    --exito-grad:linear-gradient(180deg,#2f9c6c,#246b4c);
-    --peligro-grad:linear-gradient(180deg,#c4453b,#a03a31);
-    /* Filos de estado: el color de cada familia al 35 %, para no escribirlo a mano
-       en cada componente (y para que el tema claro los pueda cambiar). */
-    --line-ok:rgba(66,193,132,.35);
-    --line-bad:rgba(242,99,90,.35);
-    --line-warn:rgba(226,177,83,.35);
-    --line-acc:rgba(106,164,255,.35);
+    /* --- Rellenos que llevan texto encima --- */
+    --bien-fill:#1F6B4A; --bien-ink:#FFFFFF;
+    --mal-fill:#9E3B24;  --mal-ink:#FFFFFF;
+    --acc-grad:linear-gradient(180deg,#B8933A,#A8842C);
+    --exito-grad:linear-gradient(180deg,#25795A,#1F6B4A);
+    --peligro-grad:linear-gradient(180deg,#AC4630,#9E3B24);
+    --line-ok:rgba(31,107,74,.32);
+    --line-bad:rgba(158,59,36,.32);
+    --line-warn:rgba(138,100,20,.32);
+    --line-acc:rgba(138,106,30,.32);
 
     /* --- Espaciado: grid de 8pt (4px solo para ajustes finos) --- */
     --sp-1:4px; --sp-2:8px; --sp-3:12px; --sp-4:16px;
     --sp-5:24px; --sp-6:32px; --sp-7:48px; --sp-8:64px;
 
-    /* --- Radios: los de la referencia (4 / 8 / 12 / 18) --- */
-    --radius:18px;
-    --r-1:4px; --r-2:8px; --r-3:12px; --r-4:18px; --r-pill:999px;
+    /* --- Radios: cero. Es papel impreso, no una app de tarjetas. --- */
+    --radius:0;
+    --r-1:0; --r-2:0; --r-3:0; --r-4:0; --r-pill:0;
 
-    /* --- Grosores de borde: los de la referencia (0.5 / 1 / 1.5) --- */
-    --b-sutil:.5px; --b-std:1px; --b-fuerte:1.5px;
+    /* --- Filetes --- */
+    --b-sutil:1px; --b-std:1px; --b-fuerte:1.5px;
 
-    /* --- Tipografía --- */
+    /* --- Tipografía: DIN para rótulos y cifras, humanista para el texto y
+       Palatino para lo que se lee como examen. --- */
+    --font-d:"Bahnschrift","DIN Alternate","DIN Condensed","Arial Narrow","Liberation Sans Narrow",sans-serif;
     --font-ui:-apple-system,BlinkMacSystemFont,"Segoe UI Variable Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --font-read:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
     --font-mono:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,"Liberation Mono",monospace;
     --fs-micro:11px; --fs-xs:12px; --fs-sm:13px; --fs-base:15px; --fs-lead:17px;
     --fs-h3:20px; --fs-h2:20px; --fs-h1:17px;
 
-    /* --- Relieve: la sombra de fuera levanta la pieza; el filo de dentro le da
-       material. Son dos trabajos distintos, no dos adornos superpuestos. --- */
-    --sh-1:0 1px 2px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.22);
-    --sh-2:0 2px 4px rgba(0,0,0,.40),0 8px 18px -6px rgba(0,0,0,.50);
-    --sh-3:0 4px 8px rgba(0,0,0,.45),0 24px 48px -14px rgba(0,0,0,.68);
-    --bisel:inset 0 1px 0 rgba(255,255,255,.10),inset 0 -1px 0 rgba(0,0,0,.40);
-    --hundido:inset 0 2px 5px rgba(0,0,0,.45),inset 0 -1px 0 rgba(255,255,255,.04);
-    /* Filo y borde de una pieza RELLENA (botón, ficha corregida, mando encendido).
-       No son los de una superficie: sobre un color, un filo blanco fuerte hace que
-       el relleno parezca no llegar al borde. En oscuro se nota poco; en claro, mucho. */
-    --borde-relleno:rgba(255,255,255,.22);
-    --bisel-relleno:inset 0 1px 0 rgba(255,255,255,.20),inset 0 -1px 0 rgba(0,0,0,.28);
-    --halo:0 0 0 1px rgba(106,164,255,.45),0 6px 16px -4px var(--glow),0 8px 26px -8px rgba(77,141,246,.30);
-    --lit:inset 0 1px 0 rgba(255,255,255,.06);
+    /* --- Relieve: ninguna sombra. La pieza se separa con filete, no con altura. --- */
+    --sh-1:none; --sh-2:none; --sh-3:none;
+    --bisel:none;
+    --hundido:none;
+    --borde-relleno:rgba(26,24,20,.28);
+    --bisel-relleno:none;
+    --halo:none;
+    --lit:none;
 
-    /* --- Movimiento: físicas elásticas --- */
+    /* --- Movimiento: corto y sobrio --- */
     --dur-1:120ms; --dur-2:180ms; --dur-3:280ms;
     --ease:cubic-bezier(.2,.7,.3,1);
     --spring:cubic-bezier(.16,1,.3,1);
 
-    /* --- Medidas de estructura --- */
+    /* --- Estructura --- */
     --header-h:57px; --nav-w:288px; --read-w:68ch;
-    /* Mesa de examen (pantallas ≥1280px): ancho de la columna de referencia
-       —anuncios o texto— y tope al que se estira la hoja de preguntas. */
     --desk-ref:600px; --desk-work:860px;
   }
 
@@ -185,20 +183,19 @@
     --acc-grad:linear-gradient(180deg,var(--acc-fill-2),var(--acc-fill-1));
     --exito-grad:linear-gradient(180deg,#1B6B45,#0F5132);
     --peligro-grad:linear-gradient(180deg,#A8483A,#8A3428);
-
-    --sh-1:0 1px 2px rgba(31,42,36,.08),0 2px 6px rgba(31,42,36,.06);
-    --sh-2:0 2px 4px rgba(31,42,36,.08),0 10px 22px -8px rgba(31,42,36,.14);
-    --sh-3:0 4px 10px rgba(31,42,36,.10),0 26px 52px -16px rgba(31,42,36,.18);
-    --bisel:inset 0 1px 0 rgba(255,255,255,.90),inset 0 -1px 0 rgba(31,42,36,.06);
-    --hundido:inset 0 2px 4px rgba(31,42,36,.12),inset 0 -1px 0 rgba(255,255,255,.70);
+    --sh-1:none;
+    --sh-2:none;
+    --sh-3:none;
+    --bisel:none;
+    --hundido:none;
     /* El halo sigue al acento del tema: en claro es verde, no azul (venía del mundo
        anterior y se quedó ahí sin que nadie lo mirara). */
-    --halo:0 0 0 1px rgba(15,81,50,.40),0 6px 16px -6px var(--glow),0 8px 22px -8px var(--glow);
+    --halo:none;
     /* Filo y borde de una pieza RELLENA: sobre el verde, el filo va suave y el borde
        es oscuro. Un blanco aquí cortaba el relleno y la ficha parecía mal pintada. */
     --borde-relleno:rgba(15,40,28,.16);
-    --bisel-relleno:inset 0 1px 0 rgba(255,255,255,.18),inset 0 -1px 0 rgba(0,0,0,.18);
-    --lit:inset 0 1px 0 rgba(255,255,255,.7);
+    --bisel-relleno:none;
+    --lit:none;
   }
 
   *{box-sizing:border-box}
@@ -454,6 +451,10 @@
                   transform var(--dur-1) var(--spring)}
   .opt:hover{border-top-color:var(--line-2);background:var(--tint-neutral)}
   .opt:active{transform:scale(.995)}
+  /* Sin clave no hay ✓ ni ✗: la elección se marca con el acento, para que el
+     usuario vea qué ha pulsado sin insinuar que es la respuesta correcta. */
+  .opt.chosen{border-top-color:var(--acc);background:var(--tint-acc)}
+  .opt.chosen .key{color:var(--acc-ink)}
   .opt .key{font-weight:700;min-width:20px;color:var(--acc-ink);font-variant-numeric:tabular-nums}
   .opt.correct{border-top-color:var(--ok-ink);background:var(--tint-ok)}
   .opt.wrong{border-top-color:var(--bad-ink);background:var(--tint-bad)}
@@ -479,6 +480,12 @@
   .letters button:hover{border-color:var(--acc-hi);
                   box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px var(--glow)}
   .letters button:active{transform:scale(.94);box-shadow:var(--sh-1),var(--hundido)}
+  /* Elección sin clave: se ve cuál está marcada, sin veredicto. */
+  .letters button.chosen{border-color:var(--acc);color:var(--acc-ink)}
+  /* La x de «ningún consejo encaja»: no es una letra del banco, así que se
+     distingue por el filete discontinuo y la tinta apagada. */
+  .letters button.letter-none{font-family:var(--font-mono);font-size:var(--fs-base);
+                  color:var(--dim-2);border-style:dashed}
   /* Letra ya asignada a otro enunciado: sigue pulsable (puedes reasignarla),
      pero se ve que está cogida. Se distingue por la tinta y el filete discontinuo,
      no bajando la opacidad: el contraste tiene que seguir cumpliendo. */
@@ -1504,6 +1511,10 @@ const I18N = {
     sitPrev: "Anterior",
     sitNext: "Siguiente",
     sitPointsCount: "{count} puntos",
+    noKeyPill: "Sin clave",
+    noKeyNotice: "Hören sin audio ni clave: puedes marcar tus opciones, pero la app no corrige.",
+    noKeyAnswer: "Elección guardada. Este bloque no se corrige.",
+    noTip: "Ningún consejo encaja",
   },
   ru: {
     appTitle: "B2 Beruf — Экзамен",
@@ -1767,6 +1778,10 @@ const I18N = {
     sitPrev: "Назад",
     sitNext: "Вперёд",
     sitPointsCount: "{count} пунктов",
+    noKeyPill: "Без ключа",
+    noKeyNotice: "Hören без аудио и ключа: можно отметить варианты, но приложение не проверяет.",
+    noKeyAnswer: "Выбор сохранён. Этот блок не проверяется.",
+    noTip: "Ни один совет не подходит",
   }
 };
 
@@ -1841,7 +1856,14 @@ const SECTION_RU = {
   "Hören Teil 1": "Аудирование 1", "Hören Teil 2": "Аудирование 2",
   "Hören Teil 3": "Аудирование 3", "Hören Teil 4": "Аудирование 4",
   "Sprechen Teil 2 · Smalltalk": "Устная часть 2",
-  "Sprechen Teil 3 · Lösungswege": "Устная часть 3"
+  "Sprechen Teil 3 · Lösungswege": "Устная часть 3",
+  "Modeltest 11": "Модельный тест 11",
+  "Modeltest 12": "Модельный тест 12",
+  "Modeltest 13": "Модельный тест 13",
+  "Modeltest 14": "Модельный тест 14",
+  "Modeltest 15": "Модельный тест 15",
+  "Modeltest 16": "Модельный тест 16",
+  "Modeltest 17": "Модельный тест 17"
 };
 function localizeSection(title){
   const ru = SECTION_RU[title];
@@ -2405,7 +2427,7 @@ DATA.sections.forEach(sec=>{
   sec.variants.forEach(v=>{
     v._section = sec.id; v._sectionTitle = sec.title;
     if(!v.items) v.items = [];
-    v.items.forEach((it,i)=>{ it._idx = i; });
+    v.items.forEach((it,i)=>{ it._idx = i; it._sinClave = v.kind === "ohne-key"; });
     const byN = {};
     v.items.forEach(it => { byN[it.n] = (byN[it.n]||0) + 1; });
     const seenN = {};
@@ -2424,7 +2446,11 @@ DATA.sections.forEach(sec=>{
 function ansKey(v, item){ return v.id + "#" + item._idx; }
 function itemAnswerLetter(it){ return String(it.answer).toLowerCase(); }
 function isDoubtful(it){ return String(it.confidence||"mittel").toLowerCase() !== "hoch"; }
-function doubtfulCount(v){ return (v.items || []).filter(isDoubtful).length; }
+function doubtfulCount(v){
+  /* Sin clave no hay nada dudoso que revisar: no entra en el filtro. */
+  if(v && v.kind === "ohne-key") return 0;
+  return (v.items || []).filter(isDoubtful).length;
+}
 
 let onlyDoubtful = false;
 
@@ -2432,6 +2458,7 @@ let onlyDoubtful = false;
 function updateStats(){
   let total = 0, done = 0, ok = 0, doubt = 0;
   allVariants.forEach(v=>{
+    if(v.kind === "ohne-key") return;
     (v.items || []).forEach(it=>{
       total++;
       if(isDoubtful(it)) doubt++;
@@ -2541,6 +2568,9 @@ function renderNav(){
       } else if(v.kind === "situation"){
         /* Una situación por entrada; el número ya va en el rótulo. */
         pill = "";
+      } else if(v.kind === "ohne-key"){
+        /* Hören sin audio ni clave: se practica, no se corrige. */
+        pill = t("noKeyPill");
       } else {
         pill = onlyDoubtful
           ? (nd === 1 ? t("doubtPillSingle") : t("doubtPillPlural", {count: nd}))
@@ -2625,6 +2655,14 @@ function renderMain(){
     (v.topic ? ' · <b>' + esc(v.topic) + '</b>' : '') +
     (v.kind === "schreiben" ? ' · <b>' + t("schreibenSubBadge") + '</b>' : ' · ' + itemsText);
   main.appendChild(sub);
+
+  /* Hören de los Modeltests: hay enunciado y opciones, pero ni audio ni clave. */
+  if(v.kind === "ohne-key"){
+    const aviso = document.createElement("div");
+    aviso.className = "note";
+    aviso.textContent = "ℹ " + t("noKeyNotice");
+    main.appendChild(aviso);
+  }
 
   if(v.kind === "schreiben"){
     renderSchreiben(v, main);
@@ -2716,8 +2754,8 @@ function renderMain(){
     else main.appendChild(d);
   }
 
-  const shown = onlyDoubtful ? v.items.filter(isDoubtful) : v.items;
-  if(onlyDoubtful){
+  const shown = (onlyDoubtful && v.kind !== "ohne-key") ? v.items.filter(isDoubtful) : v.items;
+  if(onlyDoubtful && v.kind !== "ohne-key"){
     const info = document.createElement("div");
     info.className = "note";
     info.textContent = shown.length
@@ -5256,7 +5294,9 @@ function renderItem(v, it){
   const chosen = state.answers[key];
   const answered = chosen !== undefined && chosen !== "__revealed__";
   const revealed = chosen === "__revealed__";
-  const correctLetter = itemAnswerLetter(it);
+  /* Sin clave (Hören de los Modeltests): no hay letra correcta ni veredicto. */
+  const sinClave = v.kind === "ohne-key";
+  const correctLetter = sinClave ? "" : itemAnswerLetter(it);
 
   const div = document.createElement("div");
   div.className = "q";
@@ -5267,7 +5307,8 @@ function renderItem(v, it){
                    '<span class="prompt" id="' + promptId + '">' + conHuecos(it.prompt) + '</span>';
   div.appendChild(head);
 
-  const isMatching = v.kind === "zuordnung";
+  const isMatching = v.kind === "zuordnung" ||
+    (sinClave && !!(v.options && v.options.length));
 
   /* Letras ya gastadas por OTRO enunciado de esta variante. Se leen del estado del
      usuario, nunca de la clave: el panel sigue sin decir cuál es la respuesta. */
@@ -5305,10 +5346,11 @@ function renderItem(v, it){
       setAttr(b, "aria-checked", String(chosen||"").toLowerCase() === bajo ? "true" : "false");
       setAttr(b, "data-key", key + ":" + bajo);
       b.className = "";
-      if(answered && String(chosen).toLowerCase() === bajo){
+      if(!sinClave && answered && String(chosen).toLowerCase() === bajo){
         b.className = (bajo===correctLetter) ? "correct" : "wrong";
       }
-      if((answered||revealed) && bajo===correctLetter) b.className = "correct";
+      if(sinClave && answered && String(chosen).toLowerCase() === bajo) b.className = "chosen";
+      if(!sinClave && (answered||revealed) && bajo===correctLetter) b.className = "correct";
       /* Estado que antes no existía y que el CSS declaraba sin que nadie pudiera
          verlo: la letra ya cogida por otro enunciado. Sigue siendo pulsable
          (puedes reasignarla), pero se ve. */
@@ -5333,6 +5375,35 @@ function renderItem(v, it){
       botones.push(b);
       letters.appendChild(b);
     });
+    /* «x» para la pregunta que no tiene consejo (Lesen T3 de los Modeltests). */
+    if(v.allowNone){
+      const bx = document.createElement("button");
+      bx.type = "button";
+      bx.textContent = "x";
+      bx.title = t("noTip");
+      setAttr(bx, "aria-label", t("noTip"));
+      setAttr(bx, "role", "radio");
+      setAttr(bx, "aria-checked", String(chosen||"").toLowerCase() === "x" ? "true" : "false");
+      setAttr(bx, "data-key", key + ":x");
+      bx.className = "letter-none";
+      if(!sinClave && answered && String(chosen).toLowerCase() === "x"){
+        bx.className += (correctLetter === "x") ? " correct" : " wrong";
+      }
+      if(!sinClave && (answered||revealed) && correctLetter === "x") bx.className += " correct";
+      if(!answered && !revealed && gastadas["x"]) bx.className += " taken";
+      bx.tabIndex = (String(chosen||"").toLowerCase() === "x" ||
+                     (chosen === undefined && (v.options||[]).length === 0)) ? 0 : -1;
+      bx.onclick = ()=> commitAnswer(key, it, "x");
+      const mostrarX = ()=>{ peek.innerHTML = '<b>x)</b> ' + esc(t("noTip")); };
+      const ocultarX = ()=>{ clearPeek(); peek.innerHTML = ""; };
+      bx.onmouseenter = mostrarX;
+      bx.onmouseleave = ocultarX;
+      bx.onfocus = mostrarX;
+      bx.onblur = ocultarX;
+      bx.onkeydown = (e)=> teclasGrupo(e, botones, botones.length);
+      botones.push(bx);
+      letters.appendChild(bx);
+    }
     div.appendChild(letters);
     div.appendChild(peek);
   } else {
@@ -5354,10 +5425,11 @@ function renderItem(v, it){
       setAttr(el, "aria-checked", isChosen ? "true" : "false");
       setAttr(el, "data-key", key + ":" + k.toLowerCase());
       el.className = "opt";
-      if(answered || revealed){
+      if(!sinClave && (answered || revealed)){
         if(isCorrect) el.className += " correct";
         else if(isChosen) el.className += " wrong";
       }
+      if(sinClave && isChosen) el.className += " chosen";
       el.tabIndex = (isChosen || (chosen === undefined && i === 0) ||
                      (revealed && isCorrect)) ? 0 : -1;
       el.innerHTML = tf
@@ -5371,7 +5443,7 @@ function renderItem(v, it){
     div.appendChild(opts);
   }
 
-  if(answered || revealed){
+  if(!sinClave && (answered || revealed)){
     const good = answered && String(chosen).toLowerCase() === correctLetter;
     const fb = document.createElement("div");
     fb.className = "fb show " + (good ? "good" : "bad");
@@ -5529,6 +5601,8 @@ function commitAnswer(clave, item, valor){
   focusTrasRender = clave + ":" + String(valor).toLowerCase();
   render();
   if(!cambio) return;
+  /* Sin clave no hay acierto que anunciar: sólo se guarda la elección. */
+  if(item && item._sinClave){ announce(t("noKeyAnswer")); return; }
   const letra = itemAnswerLetter(item);
   announce(String(valor).toLowerCase() === letra ? t("srRight") : t("srWrong", {letter: letra}));
 }
