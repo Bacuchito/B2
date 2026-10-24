@@ -220,7 +220,7 @@
   ::selection{background:var(--selection);color:var(--txt)}
 
   /* Foco visible en TODO lo interactivo. */
-  :focus-visible{outline:2px solid var(--ring);outline-offset:2px;border-radius:var(--r-1)}
+  :focus-visible{outline:2px solid var(--acc);outline-offset:2px;border-radius:0}
 
   /* Avisos de estado solo para lectores de pantalla: sin ruido visual. */
   .sr-only{position:absolute;width:1px;height:1px;margin:0;padding:0;overflow:hidden;
@@ -516,13 +516,13 @@
   .opt:active{transform:scale(.995)}
   /* Sin clave no hay ✓ ni ✗: la elección se marca con el acento, para que el
      usuario vea qué ha pulsado sin insinuar que es la respuesta correcta. */
-  .opt.chosen{border-top-color:var(--acc);background:var(--tint-acc)}
+  .opt.chosen{border-top-color:var(--acc);background:var(--tint-acc);box-shadow:inset 3px 0 0 var(--acc)}
   .opt.chosen .key{color:var(--acc-ink)}
   .opt .key{font-weight:700;min-width:20px;color:var(--acc-ink);font-variant-numeric:tabular-nums}
-  .opt.correct{border-top-color:var(--ok-ink);background:var(--tint-ok)}
-  .opt.wrong{border-top-color:var(--bad-ink);background:var(--tint-bad)}
-  .opt.correct .key{color:var(--ok-ink)}
-  .opt.wrong .key{color:var(--bad-ink)}
+  .opt.correct{border-top-color:var(--ok);background:var(--tint-ok);box-shadow:inset 3px 0 0 var(--ok)}
+  .opt.wrong{border-top-color:var(--bad);background:var(--tint-bad);box-shadow:inset 3px 0 0 var(--bad)}
+  .opt.correct .key{color:var(--ok)}
+  .opt.wrong .key{color:var(--bad)}
   /* El estado no depende solo del color: marca textual a la derecha. */
   .opt.correct::after,.opt.wrong::after{position:absolute;right:0;top:50%;
        transform:translateY(-50%);font-weight:700;font-size:var(--fs-base)}
@@ -567,17 +567,19 @@
   .letters button.wrong{background:none;color:var(--bad);border-color:var(--bad);
                   text-decoration:line-through;text-decoration-thickness:2px}
   .letters button.correct::after{content:"✓";font-size:var(--fs-micro);vertical-align:super}
-  .letters button.wrong::after{content:"✗";font-size:var(--fs-micro);vertical-align:super}
+  /* La casilla fallada ya va tachada: una segunda marca encima la ensuciaba. */
 
   /* Corrección: el tinte se desvanece hacia abajo en vez de ser un baño plano, así
      no pesa más que el propio veredicto. El estado lo llevan el filo, la marca (✓/✗)
      y la palabra; el color solo acompaña. */
-  .fb{margin-top:var(--sp-4);border-radius:var(--r-2);padding:var(--sp-3) var(--sp-4);
+  /* Panel de corrección: papel, no tarjeta de color. El veredicto lo dice la
+     palabra y el filete de la izquierda; el tinte se queda en casi nada. */
+  .fb{margin-top:var(--sp-4);border-radius:0;padding:var(--sp-3) 0 var(--sp-3) var(--sp-4);
       font-size:var(--fs-base);display:none;
-      border:var(--b-std) solid var(--line);background:var(--tint-neutral)}
+      border:0;border-left:3px solid var(--line-2);background:none}
   .fb.show{display:block;animation:pop var(--dur-2) var(--spring)}
-  .fb.good{background:linear-gradient(180deg,var(--tint-ok),transparent);border-color:var(--line-ok)}
-  .fb.bad{background:linear-gradient(180deg,var(--tint-bad),transparent);border-color:var(--line-bad)}
+  .fb.good{border-left-color:var(--ok)}
+  .fb.bad{border-left-color:var(--bad)}
   .fb .verdict{font-weight:650;margin-bottom:var(--sp-2);display:flex;align-items:center;
                gap:var(--sp-2);flex-wrap:wrap}
   /* La cita: bloque sangrado con filete de margen (el patrón del «inset text»).
@@ -586,16 +588,26 @@
              border-left:1px solid var(--acc);padding:var(--sp-1) 0 var(--sp-1) var(--sp-3);
              margin:var(--sp-2) 0;max-width:var(--read-w)}
 
-  /* Insignias: piezas pequeñas con tinte y filo. En minúscula: en versalitas un
-     estado se lee peor (lo midió GOV.UK con sus listas de tareas). */
-  .badge{font-size:var(--fs-micro);font-weight:700;padding:4px var(--sp-2);border-radius:var(--r-1);
-         letter-spacing:.02em;white-space:nowrap;border:var(--b-sutil) solid var(--line-2);
+  /* Insignias: sello cuadrado con una marca delante. La marca es la FORMA de la
+     confianza (llena, media, hueca), así que el estado no depende solo del color;
+     la palabra sigue debajo para quien no distinga formas. */
+  .badge{display:inline-flex;align-items:center;gap:var(--sp-1);
+         font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-micro);
+         font-weight:600;letter-spacing:.06em;
+         padding:4px var(--sp-2);border-radius:0;
+         white-space:nowrap;border:1px solid currentColor;background:none;
          text-transform:none}
-  .badge.hoch{background:var(--tint-ok);color:var(--ok-ink);border-color:var(--line-ok)}
-  .badge.mittel{background:var(--tint-warn);color:var(--warn-ink);border-color:var(--line-warn)}
-  .badge.niedrig{background:var(--tint-bad);color:var(--bad-ink);border-color:var(--line-bad)}
-  .badge.ok{background:var(--tint-acc);color:var(--acc-ink);border-color:var(--line-acc)}
-  .badge.tag{background:var(--tint-neutral);color:var(--dim);border-color:var(--line)}
+  .badge::before{content:"";width:7px;height:7px;flex:0 0 7px;
+         border:1px solid currentColor;display:inline-block}
+  .badge.hoch{color:var(--ok);border-color:var(--line-ok)}
+  .badge.hoch::before{background:currentColor}
+  .badge.mittel{color:var(--warn);border-color:var(--line-warn)}
+  .badge.mittel::before{background:linear-gradient(90deg,currentColor 50%,transparent 50%)}
+  .badge.niedrig{color:var(--bad);border-color:var(--line-bad)}
+  .badge.ok{color:var(--acc);border-color:var(--line-acc)}
+  .badge.ok::before{background:currentColor}
+  .badge.tag{color:var(--dim);border-color:var(--line)}
+  .badge.tag::before{display:none}
 
   .row{display:flex;gap:var(--sp-3);flex-wrap:wrap;align-items:center}
   /* Botón principal: píldora con degradado corto, filo claro y halo azul. Se hunde
