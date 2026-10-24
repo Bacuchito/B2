@@ -112,7 +112,7 @@
     --font-read:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
     --font-mono:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,"Liberation Mono",monospace;
     --fs-micro:11px; --fs-xs:12px; --fs-sm:13px; --fs-base:15px; --fs-lead:17px;
-    --fs-h3:20px; --fs-h2:28px; --fs-h1:17px;
+    --fs-h3:20px; --fs-h2:22px; --fs-h1:17px;
 
     /* --- Relieve: ninguna sombra. La pieza se separa con filete, no con altura. --- */
     --sh-1:none; --sh-2:none; --sh-3:none;
@@ -364,7 +364,8 @@
 
   /* La hoja: papel blanco sobre la mesa, con filete de tinta arriba. */
   main{flex:1;min-width:0;margin:0 auto;padding:var(--sp-6) var(--sp-7) var(--sp-8);
-       max-width:1100px;background:var(--sheet);border-top:2px solid var(--txt)}
+       max-width:1100px;background:var(--sheet);border-top:2px solid var(--txt);
+       min-height:calc(100vh - var(--header-h))}
   /* Masthead editorial: título display + filete + línea de datos en versalitas */
   /* Titular de sección: sans y contenido, como en el prototipo. La serif se queda
      para lo que se cita y lo que se escribe, no para los rótulos. */
@@ -641,11 +642,11 @@
   .btn.success:hover{filter:brightness(1.06)}
   .btn.sm{min-height:32px;padding:0 var(--sp-4);font-size:var(--fs-sm)}
 
-  /* Aviso del sistema: pieza con tinte y filo. Uno por pantalla y como mucho:
+  /* Aviso del sistema: filete de margen, no caja. Uno por pantalla y como mucho:
      repetido pierde su fuerza. */
-  .note{background:var(--tint-warn);border:var(--b-std) solid var(--line-warn);
-        color:var(--warn-ink);padding:var(--sp-3) var(--sp-4);
-        border-radius:var(--r-2);font-size:var(--fs-sm);margin-bottom:var(--sp-4)}
+  .note{background:none;border:0;border-left:3px solid var(--warn);
+        color:var(--txt);padding:var(--sp-2) 0 var(--sp-2) var(--sp-4);
+        border-radius:0;font-size:var(--fs-sm);margin-bottom:var(--sp-4)}
   .empty{color:var(--dim-2);padding:var(--sp-8) 0;text-align:center;font-size:var(--fs-base)}
   code{background:var(--panel3);padding:4px var(--sp-1);border-radius:var(--r-1);
        font-family:var(--font-mono);font-size:var(--fs-xs);border:0}
@@ -693,16 +694,18 @@
 
   /* Schreiben UI & Editor */
   .schreiben-layout{display:flex;flex-direction:column;gap:var(--sp-5)}
-  /* Aviso interno de la tarea: pieza con tinte y filo. */
-  .memo-card{background:var(--tint-warn);border:var(--b-std) solid var(--line-warn);
-             padding:var(--sp-3) var(--sp-4);
-             border-radius:var(--r-2);margin:var(--sp-4) 0;font-size:var(--fs-base);line-height:1.6}
-  .memo-card b{color:var(--warn-ink)}
-  /* La carta recibida es un documento: hoja con filo propio, dentro de la pieza. */
-  .letter-card{background:var(--sheet);border:var(--b-std) solid var(--line);
-               padding:var(--sp-4) var(--sp-5);box-shadow:var(--sh-1),var(--bisel);
-               border-radius:var(--r-2);margin:var(--sp-3) 0;white-space:pre-wrap;
-               font-family:var(--font-read);font-size:var(--fs-base);line-height:1.7;color:var(--txt);
+  /* Aviso interno de la tarea: filete de margen, como una nota al pie. */
+  .memo-card{background:none;border:0;border-left:3px solid var(--acc);
+             padding:var(--sp-2) 0 var(--sp-2) var(--sp-4);
+             border-radius:0;margin:var(--sp-4) 0;font-size:var(--fs-base);line-height:1.6}
+  .memo-card b{color:var(--acc-ink);font-family:var(--font-d);font-stretch:87.5%;
+             letter-spacing:.04em}
+  /* La carta recibida es un documento: bloque entre filetes, no caja. */
+  .letter-card{background:none;border:0;
+               border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+               padding:var(--sp-4) 0;
+               box-shadow:none;border-radius:0;margin:var(--sp-3) 0;white-space:pre-wrap;
+               font-family:var(--font-read);font-size:17px;line-height:1.75;color:var(--txt);
                max-width:var(--read-w)}
   .lp-list{list-style:none;padding:0;margin:var(--sp-3) 0;display:flex;flex-direction:column;gap:0}
   .lp-item{display:flex;align-items:flex-start;gap:var(--sp-3);min-height:44px;background:none;
@@ -712,23 +715,25 @@
   .lp-item:hover{background:var(--tint-neutral)}
   .lp-item input[type="checkbox"]{margin-top:4px;cursor:pointer;accent-color:var(--acc);
            width:16px;height:16px;flex:0 0 16px}
-  .lp-item .lp-num{min-width:24px;height:24px;flex:0 0 24px;background:var(--acc-fill-1);
-           color:var(--on-acc);border-radius:50%;display:flex;align-items:center;justify-content:center;
+  .lp-item .lp-num{min-width:24px;height:24px;flex:0 0 24px;background:none;
+           color:var(--acc-ink);border:1px solid var(--line-2);border-radius:0;
+           display:flex;align-items:center;justify-content:center;
+           font-family:var(--font-d);font-stretch:87.5%;
            font-size:var(--fs-micro);font-weight:700}
 
-  /* El taller de escritura: pieza principal con su hoja dentro. */
-  .editor-card{background:var(--panel);border:var(--b-std) solid var(--line);
-               border-radius:var(--r-4);padding:var(--sp-5);
-               box-shadow:var(--sh-2),var(--bisel)}
+  /* El taller de escritura: filete y hoja dentro. Ni tarjeta ni sombra. */
+  .editor-card{background:none;border:0;border-top:1px solid var(--line);
+               border-radius:0;padding:var(--sp-4) 0;box-shadow:none}
   .editor-toolbar{display:flex;align-items:center;justify-content:space-between;
                   margin-bottom:var(--sp-4);flex-wrap:wrap;gap:var(--sp-3)}
-  /* El área de escritura: hueco hundido con el halo al enfocar. */
-  .editor-textarea{width:100%;min-height:300px;background:var(--sunken);border:var(--b-std) solid var(--line);
-           border-radius:var(--r-2);padding:var(--sp-4) var(--sp-5);color:var(--txt);
-           font-size:var(--fs-base);line-height:1.7;font-family:var(--font-read);resize:vertical;
-           caret-color:var(--acc);outline:none;box-sizing:border-box;box-shadow:var(--hundido);
-           transition:border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease)}
-  .editor-textarea:focus{border-color:var(--acc-hi);box-shadow:var(--hundido),var(--halo)}
+  /* El área de escritura: hoja de examen, no campo de formulario. */
+  .editor-textarea{width:100%;min-height:300px;background:var(--sheet);
+           border:1px solid var(--line-2);
+           border-radius:0;padding:var(--sp-4) var(--sp-5);color:var(--txt);
+           font-size:17px;line-height:1.75;font-family:var(--font-read);resize:vertical;
+           caret-color:var(--acc);outline:none;box-sizing:border-box;box-shadow:none;
+           transition:border-color var(--dur-2) var(--ease)}
+  .editor-textarea:focus{border-color:var(--acc);outline:2px solid var(--acc);outline-offset:2px}
   .timer-box{display:flex;align-items:center;gap:var(--sp-2);font-size:var(--fs-sm);color:var(--dim)}
   .timer-display{font-size:var(--fs-base);font-weight:700;color:var(--txt);font-variant-numeric:tabular-nums}
   .timer-display.warn{color:var(--bad-ink)}
@@ -737,25 +742,25 @@
   /* Evaluación: sello de examen — marco doble, versalitas, prensado elástico */
   /* Sello de examen: UN solo marco. Antes llevaba borde de 2px más un anillo
      interior de 1px; en claro eso se lee como un rectángulo dibujado dos veces. */
-  .eval-banner{padding:var(--sp-3) var(--sp-5);border-radius:var(--r-2);font-weight:700;
-               font-size:var(--fs-base);letter-spacing:.05em;text-transform:uppercase;
+  .eval-banner{padding:var(--sp-3) 0;border-radius:0;font-weight:700;
+               font-family:var(--font-d);font-stretch:87.5%;
+               font-size:var(--fs-sm);letter-spacing:.10em;text-transform:uppercase;
                display:flex;align-items:center;justify-content:space-between;margin:var(--sp-4) 0;
                flex-wrap:wrap;gap:var(--sp-3);
-               border:var(--b-fuerte) solid currentColor;
+               border:0;border-top:2px solid currentColor;border-bottom:1px solid var(--line);
                animation:stamp var(--dur-3) var(--spring)}
   /* Sin inclinación: el sello vive DENTRO de una pieza, y un rectángulo girado deja
      ver una franja del fondo por los bordes, que se lee como un segundo marco. El
      golpe de tampón se queda en la escala y el desvanecido. */
   @keyframes stamp{from{transform:scale(1.06);opacity:0}
                    to{transform:scale(1);opacity:1}}
-  .eval-banner.pass{background:var(--tint-ok);border-color:var(--line-ok);color:var(--ok-ink)}
-  .eval-banner.fail{background:var(--tint-bad);border-color:var(--line-bad);color:var(--bad-ink)}
+  .eval-banner.pass{color:var(--ok);border-top-color:var(--ok)}
+  .eval-banner.fail{color:var(--bad);border-top-color:var(--bad)}
   .crit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-             gap:var(--sp-3);margin:var(--sp-4) 0}
-  /* Los cuatro criterios de telc: celdas hundidas, como las filas de una tabla. */
-  .crit-box{background:var(--sunken);border:var(--b-std) solid var(--line);border-radius:var(--r-2);
-            box-shadow:var(--hundido);
-            padding:var(--sp-3) var(--sp-4)}
+             gap:0 var(--sp-5);margin:var(--sp-4) 0}
+  /* Los cuatro criterios de telc: celdas de tabla, con filete arriba y nada más. */
+  .crit-box{background:none;border:0;border-top:1px solid var(--line);border-radius:0;
+            box-shadow:none;padding:var(--sp-3) 0}
   .crit-box .ch{display:flex;justify-content:space-between;align-items:center;
                 margin-bottom:var(--sp-2);font-weight:600;font-size:var(--fs-sm)}
   .crit-box .c-body{font-size:var(--fs-sm);color:var(--dim);line-height:1.55}
@@ -849,10 +854,12 @@
   .err-card .orig{color:var(--bad-ink);text-decoration:line-through;margin-bottom:var(--sp-1);font-size:var(--fs-sm)}
   .err-card .corr{color:var(--ok-ink);font-weight:640;margin-bottom:var(--sp-1);font-size:var(--fs-base)}
   .err-card .rule{font-size:var(--fs-sm);color:var(--dim);line-height:1.5}
-  .model-text{background:var(--sheet);border:var(--b-std) solid var(--line);border-radius:var(--r-2);
-              box-shadow:var(--sh-1),var(--bisel);
-              padding:var(--sp-4) var(--sp-5);font-family:var(--font-read);font-size:var(--fs-base);
-              line-height:1.7;white-space:pre-wrap;color:var(--txt);max-width:var(--read-w)}
+  /* La carta del cliente: bloque de papel entre dos filetes, no una caja. */
+  .model-text{background:none;border:0;
+              border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+              border-radius:0;box-shadow:none;
+              padding:var(--sp-4) 0;font-family:var(--font-read);font-size:17px;
+              line-height:1.75;white-space:pre-wrap;color:var(--txt);max-width:var(--read-w)}
   .copy-btn{font-size:var(--fs-xs);padding:0 var(--sp-1);min-height:32px;border-radius:0;
             cursor:pointer;background:none;border:0;border-bottom:1px solid var(--line-2);
             color:var(--dim);font-family:inherit;

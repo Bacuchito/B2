@@ -138,15 +138,15 @@ const contrastChecks = [
   ["Insignia confianza baja (.badge.niedrig)", { sel: ".badge.niedrig", prop: "color" }, { token: "--sheet" }],
   ["Insignia 2ª lectura (.badge.ok)", { sel: ".badge.ok", prop: "color" }, { token: "--sheet" }],
   ["Insignia neutra (.badge.tag)", { sel: ".badge.tag", prop: "color" }, { token: "--sheet" }],
-  ["Aviso amarillo (.note)", { sel: ".note", prop: "color" }, { sel: ".note", prop: "background", over: true }],
-  ["Banner aprobado (.eval-banner.pass)", { sel: ".eval-banner.pass", prop: "color" }, { sel: ".eval-banner.pass", prop: "background", over: true }],
-  ["Banner suspenso (.eval-banner.fail)", { sel: ".eval-banner.fail", prop: "color" }, { sel: ".eval-banner.fail", prop: "background", over: true }],
+  ["Aviso amarillo (.note)", { sel: ".note", prop: "color" }, { token: "--sheet" }],
+  ["Banner aprobado (.eval-banner.pass)", { sel: ".eval-banner.pass", prop: "color" }, { token: "--sheet" }],
+  ["Banner suspenso (.eval-banner.fail)", { sel: ".eval-banner.fail", prop: "color" }, { token: "--sheet" }],
   ["Regla del popover (.err-popover-rule)", { sel: ".err-popover-rule", prop: "color" }, { sel: ".err-popover", prop: "background", over: true }],
   ["Texto de la pareja (.partner-body)", { sel: ".partner-body", prop: "color" }, { sel: ".partner-body", prop: "background", over: true }],
   ["Leyenda de errores (.legend-chip)", { sel: ".legend-chip", prop: "color" }, { sel: ".legend-chip", prop: "background", over: true }],
   ["Insignia de nube (.cloud-badge)", { sel: ".cloud-badge", prop: "color" }, { sel: ".cloud-badge", prop: "background", over: true }],
   ["Ayuda del formulario (.form-group small)", { sel: ".form-group small", prop: "color" }, { sel: ".modal", prop: "background", over: true }],
-  ["Cronómetro en aviso (.timer-display.warn)", { sel: ".timer-display.warn", prop: "color" }, { sel: ".editor-card", prop: "background", over: true }],
+  ["Cronómetro en aviso (.timer-display.warn)", { sel: ".timer-display.warn", prop: "color" }, { token: "--sheet" }],
 ];
 
 /* ---------- 3. Comprobaciones ---------- */
