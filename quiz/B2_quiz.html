@@ -112,7 +112,7 @@
     --font-read:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Times New Roman",serif;
     --font-mono:ui-monospace,SFMono-Regular,"Cascadia Mono",Consolas,"Liberation Mono",monospace;
     --fs-micro:11px; --fs-xs:12px; --fs-sm:13px; --fs-base:15px; --fs-lead:17px;
-    --fs-h3:20px; --fs-h2:20px; --fs-h1:17px;
+    --fs-h3:20px; --fs-h2:28px; --fs-h1:17px;
 
     /* --- Relieve: ninguna sombra. La pieza se separa con filete, no con altura. --- */
     --sh-1:none; --sh-2:none; --sh-3:none;
@@ -362,12 +362,17 @@
              font-variant-numeric:tabular-nums;white-space:nowrap}
   nav button.active .pill{color:var(--bg)}
 
-  main{flex:1;min-width:0;margin:0 auto;padding:var(--sp-6) var(--sp-6) var(--sp-8);max-width:960px}
+  /* La hoja: papel blanco sobre la mesa, con filete de tinta arriba. */
+  main{flex:1;min-width:0;margin:0 auto;padding:var(--sp-6) var(--sp-7) var(--sp-8);
+       max-width:1100px;background:var(--sheet);border-top:2px solid var(--txt)}
   /* Masthead editorial: título display + filete + línea de datos en versalitas */
   /* Titular de sección: sans y contenido, como en el prototipo. La serif se queda
      para lo que se cita y lo que se escribe, no para los rótulos. */
-  h2{font-family:var(--font-ui);font-size:var(--fs-h2);line-height:1.2;margin:0;
-     font-weight:650;letter-spacing:-.01em;text-wrap:balance}
+  /* Titular de la hoja: DIN condensada en versalitas, como el encabezado de un
+     impreso oficial. */
+  h2{font-family:var(--font-d);font-stretch:75%;font-size:var(--fs-h2);line-height:1;
+     margin:0;font-weight:700;letter-spacing:.005em;text-transform:uppercase;
+     text-wrap:balance}
   h2 + .sub{color:var(--dim-2);font-size:var(--fs-xs);font-weight:640;
      margin:var(--sp-4) 0 var(--sp-3);padding-top:var(--sp-3);
      border-top:1px solid var(--line);
@@ -386,19 +391,22 @@
      font-variant-numeric:tabular-nums}
   .strip-c.on{background:var(--txt);border-color:var(--txt);color:var(--bg)}
 
-  .panel{background:var(--panel);border:var(--b-std) solid var(--line);
-         border-radius:var(--r-4);padding:var(--sp-4) var(--sp-5);
-         margin-bottom:var(--sp-5);box-shadow:var(--sh-2),var(--bisel)}
+  /* Pieza plana: filete arriba y nada más. En este mundo no hay tarjetas. */
+  .panel{background:none;border:0;border-top:1px solid var(--line);
+         border-radius:0;padding:var(--sp-4) 0;
+         margin-bottom:var(--sp-5);box-shadow:none}
   /* Rótulo de sección: versalitas sobre filete, como el encabezado de un impreso. */
-  .panel h3{display:block;margin:0 0 var(--sp-3);font-size:var(--fs-micro);letter-spacing:.10em;
-            text-transform:uppercase;color:var(--dim-2);font-weight:700;
+  .panel h3{display:block;margin:0 0 var(--sp-3);font-family:var(--font-d);
+            font-stretch:87.5%;font-size:var(--fs-micro);letter-spacing:.12em;
+            text-transform:uppercase;color:var(--dim);font-weight:600;
             border:0;border-radius:0;padding:0 0 var(--sp-2)}
   /* La instrucción del examen es texto con rótulo y regla, NO una pieza: así no hay
      dos cajas seguidas antes de llegar al material (el aviso ya es una pieza). */
   .panel.intro{background:none;border:0;border-top:var(--b-std) solid var(--line);
                border-radius:0;box-shadow:none;
                padding:var(--sp-3) 0 0;margin-bottom:var(--sp-5)}
-  .intro-text{font-family:var(--font-ui);font-size:var(--fs-lead);line-height:1.7;
+  /* La instrucción se lee como el enunciado de un examen: Palatino, no interfaz. */
+  .intro-text{font-family:var(--font-read);font-size:19px;line-height:1.55;
               color:var(--txt);max-width:var(--read-w)}
 
   details.passage summary{cursor:pointer;font-weight:640;font-size:var(--fs-base);color:var(--acc-ink);
@@ -475,22 +483,22 @@
   /* Hoja de examen continua: las preguntas NO son tarjetas apiladas, son filas
      de una sola hoja, con filete de margen rojo como en el papel del examen. */
   /* La hoja de preguntas: la pieza grande de la mesa, con su regla de margen. */
-  .q-sheet{position:relative;background:var(--panel);border:var(--b-std) solid var(--line);
-           border-radius:var(--r-4);box-shadow:var(--sh-2),var(--bisel);
-           padding:var(--sp-3) var(--sp-5) var(--sp-4) 56px;
+  /* Columna de preguntas: sin caja. El filete de la izquierda es el margen de
+     corrección de una hoja de examen, no un adorno. */
+  .q-sheet{position:relative;background:none;border:0;box-shadow:none;
+           border-left:1.5px solid var(--line-2);
+           padding:0 0 var(--sp-4) var(--sp-5);
            margin-bottom:var(--sp-4)}
-  .q-sheet::before{content:"";position:absolute;top:var(--sp-4);bottom:var(--sp-4);left:36px;
-           width:1px;background:var(--bad);opacity:.45}
   .q{border-radius:0;background:transparent;
-     padding:var(--sp-5) 0;margin:0;box-shadow:none;
+     padding:var(--sp-4) 0;margin:0;box-shadow:none;
      border-top:1px solid var(--line)}
   .q:first-child{border-top:0}
+  /* Número del ítem: casilla cuadrada, no pastilla redonda. */
   .q .num{display:inline-flex;align-items:center;justify-content:center;
-          min-width:28px;height:28px;background:var(--panel2);border:var(--b-std) solid var(--line);
-          border-radius:50%;font-size:var(--fs-xs);font-weight:700;margin-right:var(--sp-3);
+          min-width:28px;height:28px;background:none;border:1px solid var(--line-2);
+          border-radius:0;font-size:var(--fs-xs);font-weight:700;margin-right:var(--sp-3);
           color:var(--txt);font-variant-numeric:tabular-nums;vertical-align:middle;
-          box-shadow:var(--sh-1),var(--bisel);
-          font-family:var(--font-read)}
+          box-shadow:none;font-family:var(--font-d);font-stretch:87.5%}
   .q .prompt{font-size:var(--fs-lead);line-height:1.55;font-weight:640;margin-bottom:var(--sp-3);display:inline}
   .opts{display:flex;flex-direction:column;gap:0;margin-top:var(--sp-3)}
   /* La opción es un <button> de verdad: se alcanza con Tab y se recorre con las
@@ -524,19 +532,18 @@
   /* Las letras son la interacción firma: cada una es una pieza que se pulsa, con
      filo claro arriba, sombra fuera y halo al pasar. Área de toque 44×44. */
   .letters{display:flex;gap:var(--sp-2);flex-wrap:wrap;margin-top:var(--sp-3)}
-  .letters button{width:44px;height:44px;border-radius:var(--r-2);border:var(--b-std) solid var(--line-2);
-                  background:linear-gradient(180deg,var(--panel2),var(--panel));
-                  color:var(--txt);font-weight:700;cursor:pointer;
-                  font-size:var(--fs-lead);font-family:var(--font-read);
-                  box-shadow:var(--sh-1),var(--bisel);
+  /* Casilla del banco de letras: cuadrada, con filete de tinta y la letra en DIN.
+     La elegida se invierte; la fallada lleva tachado, no solo color. */
+  .letters button{width:44px;height:44px;border-radius:0;border:1.5px solid var(--txt);
+                  background:none;color:var(--txt);font-weight:600;cursor:pointer;
+                  font-size:var(--fs-lead);font-family:var(--font-d);
+                  font-stretch:87.5%;
                   transition:color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
-                             background var(--dur-2) var(--ease),transform var(--dur-1) var(--spring),
-                             box-shadow var(--dur-2) var(--ease)}
-  .letters button:hover{border-color:var(--acc-hi);
-                  box-shadow:var(--sh-2),var(--bisel),0 6px 16px -4px var(--glow)}
-  .letters button:active{transform:scale(.94);box-shadow:var(--sh-1),var(--hundido)}
+                             background var(--dur-2) var(--ease)}
+  .letters button:hover{background:var(--tint-acc)}
+  .letters button:active{transform:scale(.94)}
   /* Elección sin clave: se ve cuál está marcada, sin veredicto. */
-  .letters button.chosen{border-color:var(--acc);color:var(--acc-ink)}
+  .letters button.chosen{background:var(--txt);color:var(--sheet);border-color:var(--txt)}
   /* La x de «ningún consejo encaja»: no es una letra del banco, así que se
      distingue por el filete discontinuo y la tinta apagada. */
   .letters button.letter-none{font-family:var(--font-mono);font-size:var(--fs-base);
@@ -544,8 +551,8 @@
   /* Letra ya asignada a otro enunciado: sigue pulsable (puedes reasignarla),
      pero se ve que está cogida. Se distingue por la tinta y el filete discontinuo,
      no bajando la opacidad: el contraste tiene que seguir cumpliendo. */
-  .letters button.taken{color:var(--dim-2);background:var(--sunken);border-style:dashed;
-                  box-shadow:var(--hundido)}
+  .letters button.taken{color:var(--dim-2);background:none;border-style:dashed;
+                  border-color:var(--line-2)}
   /* Qué anuncio hay detrás de cada letra, sin depender del tooltip del ratón.
      Una sola línea con puntos suspensivos: si creciera, movería la fila de abajo
      cada vez que pasas por encima. */
@@ -553,14 +560,12 @@
                 color:var(--dim-2);font-family:var(--font-ui);
                 white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:var(--read-w)}
   .letters-peek b{color:var(--txt);font-weight:640}
-  /* Corregida: relleno sólido y oscuro (6.2:1 y 7.4:1) con el brillo puesto en la
-     sombra, que es donde no estorba, más la marca textual para no depender del color. */
+  /* Corregida: relleno sólido de su color y marca textual encima, para no
+     depender solo del color. */
   .letters button.correct{background:var(--bien-fill);color:var(--bien-ink);
-                  border-color:var(--borde-relleno);
-                  box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--ok) 35%,transparent)}
-  .letters button.wrong{background:var(--mal-fill);color:var(--mal-ink);
-                  border-color:var(--borde-relleno);
-                  box-shadow:var(--sh-1),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--bad) 35%,transparent)}
+                  border-color:var(--bien-fill)}
+  .letters button.wrong{background:none;color:var(--bad);border-color:var(--bad);
+                  text-decoration:line-through;text-decoration-thickness:2px}
   .letters button.correct::after{content:"✓";font-size:var(--fs-micro);vertical-align:super}
   .letters button.wrong::after{content:"✗";font-size:var(--fs-micro);vertical-align:super}
 
@@ -1098,8 +1103,7 @@
   @media(max-width:860px){
     :root{--header-h:auto}
     header{padding:var(--sp-2) var(--sp-3);gap:var(--sp-2);position:relative}
-    .q-sheet{padding:var(--sp-2) var(--sp-4) var(--sp-3) var(--sp-6)}
-    .q-sheet::before{left:var(--sp-4)}
+    .q-sheet{padding:var(--sp-2) 0 var(--sp-3) var(--sp-4)}
     header h1{font-size:16px;white-space:normal}
     #nav-toggle{display:inline-flex}
     .layout{flex-direction:column}
