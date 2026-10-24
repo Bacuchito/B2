@@ -76,6 +76,13 @@
     --selection:rgba(168,132,44,.30);
     --scroll:rgba(26,24,20,.24);
 
+    /* --- Banda de cabecera: el verde botella de la encuadernación. Es la única
+       superficie oscura del mundo; los controles de dentro se pintan con estos
+       tres tokens, no con los del papel. --- */
+    --band:#14382B;
+    --band-deep:#0E2A20;
+    --on-band:#EFE6CC;
+
     /* --- Rellenos que llevan texto encima --- */
     --bien-fill:#1F6B4A; --bien-ink:#FFFFFF;
     --mal-fill:#9E3B24;  --mal-ink:#FFFFFF;
@@ -239,26 +246,68 @@
      van en talla pequeña (32px) para que la barra quede tensa, como el prototipo. */
   header{position:sticky;top:0;z-index:20;
          min-height:var(--header-h);
-         background:linear-gradient(180deg,var(--panel2),var(--panel));
-         border-bottom:var(--b-std) solid var(--line);
-         box-shadow:var(--sh-2),var(--bisel);
+         background:var(--band);
+         color:var(--on-band);
+         border-bottom:2px solid var(--ink);
          padding:var(--sp-3) var(--sp-5);
          display:flex;align-items:center;gap:var(--sp-3);flex-wrap:wrap;
+         /* La banda es la única superficie oscura: redefino aquí los tokens de
+            tinta y filete para que los controles de dentro se pinten solos, sin
+            tocar una regla por cada uno. */
+         --txt:var(--on-band);
+         --dim:rgba(239,230,204,.82);
+         --dim-2:rgba(239,230,204,.68);
+         --line:rgba(239,230,204,.26);
+         --line-2:rgba(239,230,204,.44);
+         --panel:var(--band-deep);
+         --panel2:var(--band-deep);
+         --panel3:rgba(0,0,0,.22);
+         --sunken:rgba(0,0,0,.22);
+         --chip:rgba(239,230,204,.14);
+         --tint-neutral:rgba(239,230,204,.14);
          transition:background var(--dur-3) var(--ease)}
   header .btn{min-height:32px;font-size:var(--fs-sm)}
-  header h1{font-family:var(--font-ui);font-size:var(--fs-h1);margin:0;
-            font-weight:700;letter-spacing:-.01em;white-space:nowrap;
-            display:flex;align-items:center;gap:var(--sp-2)}
-  /* Monograma «B2» como casilla de formulario de examen */
+  /* Botón de la banda: filete claro y, al pasar, se invierte. Nada de relleno
+     translúcido: sobre verde el tinte se ensucia. */
+  header .btn.ghost{border:var(--b-std) solid var(--line-2);border-radius:0;
+                    color:var(--on-band);font-family:var(--font-d);
+                    font-stretch:87.5%;letter-spacing:.09em;text-transform:uppercase;
+                    font-size:var(--fs-xs)}
+  header .btn.ghost:hover{background:var(--on-band);color:var(--band);
+                          border-color:var(--on-band);filter:none}
+  /* El conmutador de tema: mando claro sobre carril hundido. */
+  header .switch-tema .pista-tema{background:rgba(0,0,0,.24);border-color:var(--line);box-shadow:none}
+  header .switch-tema .mando-tema{background:var(--on-band);color:var(--band);box-shadow:none}
+  header .switch-tema[aria-checked="true"] .pista-tema{background:rgba(0,0,0,.28);border-color:var(--line)}
+  header .switch-tema[aria-checked="true"] .mando-tema{color:var(--acc-fill-1)}
+  header .switch-tema .switch-tema-texto{color:var(--on-band)}
+  /* Una sola pieza de latón en la banda: el botón principal. Lo elegido (perfil,
+     idioma) se marca en crema, que es el papel de la banda, no el acento. */
+  header .user-btn.active,header .lang-btn.active{background:var(--on-band);
+    color:var(--band);font-weight:700;box-shadow:none}
+  /* El mando deslizante de los segmentados es el que pinta el estado: en la banda
+     va en crema, no en latón. */
+  header .user-switch.con-mando::before,
+  header .lang-switch.con-mando::before{background:var(--on-band);box-shadow:none}
+  header .user-switch.con-mando .user-btn.active,
+  header .lang-switch.con-mando .lang-btn.active{color:var(--band);background:var(--on-band);
+    box-shadow:none}
+  /* El recuento de dudas se marca con filete de latón, no con tinta oscura:
+     sobre el verde, el ámbar del papel desaparecía. */
+  header .em-warn{color:var(--on-band);font-weight:700;
+    border-bottom:2px solid var(--acc-hi)}
+  header h1{font-family:var(--font-d);font-stretch:87.5%;font-size:17px;margin:0;
+            font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+            white-space:nowrap;display:flex;align-items:center;gap:var(--sp-2)}
+  /* Monograma «B2»: la casilla invertida de la banda */
   .monogram{display:inline-flex;align-items:center;justify-content:center;
-            background:var(--txt);color:var(--panel);font-family:var(--font-ui);
-            font-weight:800;font-size:var(--fs-sm);letter-spacing:.04em;
-            padding:0 var(--sp-2);height:24px;border-radius:var(--r-1);flex:0 0 auto}
+            background:var(--txt);color:var(--panel);font-family:var(--font-d);
+            font-stretch:75%;font-weight:700;font-size:16px;letter-spacing:.02em;
+            padding:0 var(--sp-2);height:26px;line-height:1;border-radius:0;flex:0 0 auto}
   /* Filete de progreso: la luz que recorre el borde inferior de la cabecera */
   .progress-rule{position:absolute;left:0;right:0;bottom:-1px;height:2px;
                  overflow:hidden;pointer-events:none}
   .progress-rule span{display:block;height:100%;width:0;background:var(--acc-grad);
-                 box-shadow:0 4px 12px -2px var(--glow);
                  transition:width var(--dur-3) var(--spring)}
   header .spacer{flex:1}
   .stat{font-size:var(--fs-sm);color:var(--dim);font-variant-numeric:tabular-nums}

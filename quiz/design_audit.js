@@ -118,6 +118,7 @@ function colorOf(spec, mapa, fondo) {
    sobre el fondo real, como manda el método de esta auditoría. */
 const contrastChecks = [
   ["Texto principal sobre el fondo", { sel: "body", prop: "color" }, { token: "--bg" }],
+  ["Texto de la cabecera sobre la banda", { sel: "header", prop: "color" }, { sel: "header", prop: "background" }],
   ["Texto secundario sobre la pieza (.ad .body)", { sel: ".ad .body", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
   ["Micro-etiqueta sobre la pieza (.panel h3)", { sel: ".panel h3", prop: "color" }, { sel: ".panel", prop: "background", over: true }],
   ["Micro-texto sobre superficie hundida (.micro)", { sel: ".micro", prop: "color" }, { token: "--panel3" }],
