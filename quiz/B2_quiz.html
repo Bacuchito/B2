@@ -819,22 +819,22 @@
   .legend-chip.stil .dot{background:var(--violet-ink)}
 
   /* Pestañas: control segmentado — carril hundido y la activa levantada. */
-  .tab-pills{display:flex;gap:var(--sp-1);flex-wrap:wrap;margin:var(--sp-3) 0;
-             padding:var(--sp-1);border-radius:var(--r-3);
-             background:var(--sunken);border:var(--b-std) solid var(--line);
-             box-shadow:var(--hundido)}
+  /* Pestañas: fila de filetes con la activa invertida. Sin carril ni mando. */
+  .tab-pills{display:flex;gap:0;flex-wrap:wrap;margin:var(--sp-3) 0;
+             padding:0;border-radius:0;
+             background:none;border:0;border-bottom:1px solid var(--line);
+             box-shadow:none}
   .tab-pills.flush{margin:0}
-  .tab-pill{background:none;border:var(--b-std) solid transparent;color:var(--dim);
+  .tab-pill{background:none;border:0;border-bottom:2px solid transparent;color:var(--dim);
             padding:0 var(--sp-4);min-height:36px;display:inline-flex;align-items:center;
-            border-radius:var(--r-pill);font-size:var(--fs-sm);font-weight:640;cursor:pointer;
-            font-family:inherit;
-            transition:color var(--dur-2) var(--ease),background var(--dur-2) var(--ease),
-                       border-color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease),
-                       transform var(--dur-1) var(--spring)}
+            border-radius:0;font-family:var(--font-d);font-stretch:87.5%;
+            font-size:var(--fs-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+            cursor:pointer;
+            transition:color var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease)}
   .tab-pill:hover{color:var(--txt)}
   .tab-pill:active{transform:scale(.97)}
-  .tab-pill.active{background:var(--acc-grad);color:var(--on-acc);border-color:transparent;
-            box-shadow:var(--sh-1),var(--bisel-relleno),0 4px 12px -4px var(--glow)}
+  .tab-pill.active{background:none;color:var(--txt);border-color:transparent;
+            border-bottom-color:var(--txt);box-shadow:none}
 
   /* Lista de errores: filas de tabla de la referencia —pieza con filo y, al pasar
      por encima, la fila se levanta—. */
@@ -1006,41 +1006,39 @@
      una carta al azar para practicarla en voz alta y guarda tus notas de esa carta. */
   .st-bar{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-2);margin-bottom:var(--sp-4)}
   .st-bar .tab-pills{margin-left:auto}
-  /* El interruptor de la mesa no es una acción más: es un estado. Por eso no usa
-     el relleno de acento de .btn (competía con «Otra al azar») sino un punto que
-     se enciende y un tinte suave. */
+  /* El interruptor de la mesa no es una acción más: es un estado. Se marca con
+     una casilla que se rellena, no con un punto encendido. */
   .st-toggle{display:inline-flex;align-items:center;gap:var(--sp-2);min-height:36px;cursor:pointer;
-           padding:0 var(--sp-4);border-radius:var(--r-pill);
-           border:var(--b-std) solid var(--line-2);background:var(--tint-neutral);
-           color:var(--txt);font:inherit;font-size:var(--fs-sm);font-weight:640;
-           box-shadow:var(--sh-1),var(--bisel);
+           padding:0 var(--sp-4);border-radius:0;
+           border:1px solid var(--line-2);background:none;
+           color:var(--txt);font-family:var(--font-d);font-stretch:87.5%;
+           font-size:var(--fs-xs);font-weight:600;letter-spacing:.1em;text-transform:uppercase;
            transition:background var(--dur-2) var(--ease),color var(--dur-2) var(--ease),
-                      border-color var(--dur-2) var(--ease),transform var(--dur-1) var(--spring)}
-  .st-toggle::before{content:"";width:8px;height:8px;border-radius:50%;flex:0 0 8px;
-           background:var(--dim-2);transition:background var(--dur-2) var(--ease),
-           box-shadow var(--dur-2) var(--ease)}
-  .st-toggle:hover{border-color:var(--line-acc);color:var(--acc-ink)}
-  .st-toggle.on{border-color:var(--line-acc);background:var(--tint-acc);color:var(--acc-ink)}
-  .st-toggle.on::before{background:var(--acc);box-shadow:0 0 0 4px var(--tint-acc)}
-  .st-toggle:active{transform:scale(.97)}
+                      border-color var(--dur-2) var(--ease)}
+  .st-toggle::before{content:"";width:9px;height:9px;flex:0 0 9px;border-radius:0;
+           border:1px solid currentColor;background:none;
+           transition:background var(--dur-2) var(--ease)}
+  .st-toggle:hover{border-color:var(--acc)}
+  .st-toggle.on{background:var(--txt);color:var(--sheet);border-color:var(--txt)}
+  .st-toggle.on::before{background:currentColor}
   .st-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(288px,1fr));
-           gap:var(--sp-3);margin-bottom:var(--sp-6)}
+           gap:0 var(--sp-5);margin-bottom:var(--sp-6)}
+  /* Ficha del mazo: entrada de índice, con filete arriba y nada de caja. */
   .st-card{display:flex;flex-direction:column;gap:var(--sp-2);
-           background:var(--panel);border:var(--b-std) solid var(--line);
-           border-radius:var(--r-3);padding:var(--sp-4);
-           box-shadow:var(--sh-1),var(--bisel)}
-  .st-card.on-desk{border-color:var(--line-acc);
-           box-shadow:var(--sh-2),var(--bisel),inset 0 0 0 1px var(--line-acc)}
+           background:none;border:0;border-top:1px solid var(--line);
+           border-radius:0;padding:var(--sp-3) 0;
+           box-shadow:none}
+  .st-card.on-desk{border-top:2px solid var(--acc);padding-left:var(--sp-3)}
   .st-num{display:flex;align-items:center;gap:var(--sp-2);
-          font-family:var(--font-mono);font-size:var(--fs-micro);
-          letter-spacing:.10em;color:var(--acc-ink)}
+          font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-micro);
+          letter-spacing:.12em;color:var(--acc-ink)}
   .st-de{margin:0;font-size:var(--fs-base);line-height:1.5;color:var(--txt)}
   .st-alt{margin:0;padding-left:var(--sp-2);border-left:2px solid var(--line-2);
           font-size:var(--fs-sm);line-height:1.5;color:var(--dim)}
-  .st-help{margin-top:auto;padding-top:var(--sp-2);border-top:var(--b-std) solid var(--line)}
+  .st-help{margin-top:auto;padding-top:var(--sp-2);border-top:1px solid var(--line)}
   .st-help summary{display:flex;align-items:center;gap:var(--sp-2);min-height:28px;
-          cursor:pointer;list-style:none;font-size:var(--fs-micro);font-weight:700;
-          letter-spacing:.08em;color:var(--acc-ink)}
+          cursor:pointer;list-style:none;font-family:var(--font-d);font-size:var(--fs-micro);
+          font-weight:600;letter-spacing:.1em;color:var(--acc-ink)}
   .st-help summary::-webkit-details-marker{display:none}
   .st-help summary::before{content:"›";font-size:var(--fs-base);line-height:1;
           transition:transform var(--dur-2) var(--spring)}
@@ -1048,29 +1046,31 @@
   .st-help summary:hover{color:var(--acc)}
   .st-help p{margin:var(--sp-2) 0 0;font-size:var(--fs-sm);line-height:1.55;color:var(--dim)}
   .st-help p.st-ru{color:var(--dim-2)}
-  /* La mesa de trabajo: pieza con relieve propio, no una tarjeta más del mazo. */
-  .st-mesa{margin-bottom:var(--sp-4);padding:var(--sp-4) var(--sp-5);
-           background:linear-gradient(180deg,var(--panel2),var(--panel));
-           border:var(--b-std) solid var(--line-acc);border-radius:var(--r-4);
-           box-shadow:var(--sh-3),var(--bisel)}
+  /* La mesa de trabajo: la hoja en blanco sobre la que se habla. */
+  .st-mesa{margin-bottom:var(--sp-4);padding:var(--sp-4) 0;
+           background:none;
+           border:0;border-top:2px solid var(--txt);border-bottom:1px solid var(--line);
+           border-radius:0;
+           box-shadow:none}
   .st-mesa-head{display:flex;flex-wrap:wrap;align-items:center;gap:var(--sp-2);
            margin-bottom:var(--sp-3)}
-  .st-mesa-head h3{margin:0;font-size:var(--fs-micro);letter-spacing:.10em;
+  .st-mesa-head h3{margin:0;font-family:var(--font-d);font-stretch:87.5%;
+           font-size:var(--fs-micro);letter-spacing:.12em;
            text-transform:uppercase;color:var(--acc-ink)}
   .st-count{font-size:var(--fs-xs);color:var(--dim-2);font-variant-numeric:tabular-nums}
   .st-actions{margin-left:auto;display:flex;flex-wrap:wrap;gap:var(--sp-2)}
   .st-mesa-carta{padding:var(--sp-4);background:var(--sheet);
-           border:var(--b-std) solid var(--line);border-radius:var(--r-3);
-           box-shadow:var(--sh-1),var(--bisel)}
+           border:1px solid var(--line-2);border-radius:0;
+           box-shadow:none}
   .st-mesa-vacia{padding:var(--sp-5) var(--sp-3);text-align:center;
            color:var(--dim-2);font-style:italic}
   .st-notas{margin-top:var(--sp-3)}
-  .st-notas .cap{display:block;margin-bottom:var(--sp-2);font-size:var(--fs-micro);
-           letter-spacing:.08em;text-transform:uppercase;color:var(--dim-2)}
+  .st-notas .cap{display:block;margin-bottom:var(--sp-2);font-family:var(--font-d);
+           font-size:var(--fs-micro);letter-spacing:.1em;text-transform:uppercase;color:var(--dim-2)}
   .st-notas textarea{width:100%;min-height:96px;resize:vertical;padding:var(--sp-3);
-           background:var(--sheet);color:var(--txt);border:var(--b-std) solid var(--line);
-           border-radius:var(--r-2);box-shadow:var(--hundido);
-           font-family:var(--font-ui);font-size:var(--fs-base);line-height:1.6}
+           background:var(--sheet);color:var(--txt);border:1px solid var(--line-2);
+           border-radius:0;box-shadow:none;
+           font-family:var(--font-read);font-size:17px;line-height:1.7}
 
   /* ---------- Sprechen Teil 3 · Lösungswege: una situación por página ----------
      La descripción alemana y los Stichpunkte van a la vista. La ayuda ES/RU y
@@ -1086,18 +1086,20 @@
                  font-size:var(--fs-base);line-height:1.5;color:var(--txt)}
   .sit-points li:first-child{border-top:0;padding-top:0}
   .sit-points li::marker{color:var(--acc-ink);font-family:var(--font-mono);font-size:var(--fs-sm)}
-  .sit-help{margin:0 0 var(--sp-3);background:var(--panel);border:var(--b-std) solid var(--line);
-            border-radius:var(--r-3);box-shadow:var(--sh-1),var(--bisel)}
+  .sit-help{margin:0 0 var(--sp-3);background:none;border:0;border-top:1px solid var(--line);
+            border-radius:0;box-shadow:none}
   .sit-help summary{display:flex;align-items:center;gap:var(--sp-2);min-height:44px;
-            padding:0 var(--sp-4);cursor:pointer;list-style:none;font-size:var(--fs-sm);
-            font-weight:640;color:var(--acc-ink)}
+            padding:0;cursor:pointer;list-style:none;
+            font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-micro);
+            letter-spacing:.1em;text-transform:uppercase;
+            font-weight:600;color:var(--acc-ink)}
   .sit-help summary::-webkit-details-marker{display:none}
   .sit-help summary::before{content:"›";font-size:var(--fs-base);line-height:1;
             transition:transform var(--dur-2) var(--spring)}
   .sit-help[open] summary::before{transform:rotate(90deg)}
   .sit-help summary:hover{color:var(--acc)}
-  .sit-help[open] summary{border-bottom:var(--b-std) solid var(--line)}
-  .sit-help-body{padding:var(--sp-3) var(--sp-4) var(--sp-4)}
+  .sit-help[open] summary{border-bottom:1px solid var(--line)}
+  .sit-help-body{padding:var(--sp-3) 0 var(--sp-4)}
   .sit-tr{margin:0;font-size:var(--fs-sm);line-height:1.6;color:var(--dim)}
   .sit-tr + .sit-tr{margin-top:var(--sp-2)}
   .sit-tag{display:inline-block;margin-right:var(--sp-2);min-width:24px;
