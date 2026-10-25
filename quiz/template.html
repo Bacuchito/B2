@@ -304,6 +304,13 @@
   .stat b{color:var(--txt);font-weight:640}
 
   .layout{display:flex;align-items:flex-start;gap:0}
+  /* Cabecera del índice: filete de tinta abajo, rótulo en DIN y el recuento. */
+  nav .nav-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--sp-2);
+                padding:var(--sp-3) var(--sp-3);border-bottom:1.5px solid var(--txt);
+                position:sticky;top:0;background:var(--bg);z-index:2}
+  nav .nav-head .lbl{color:var(--txt);font-size:var(--fs-micro);letter-spacing:.14em}
+  nav .nav-head b{font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-xs);
+                  font-weight:600;letter-spacing:.06em;color:var(--dim);white-space:nowrap}
   nav{width:var(--nav-w);flex:0 0 var(--nav-w);
       border-right:var(--b-std) solid var(--line-2);
       background:var(--bg);
@@ -2555,6 +2562,20 @@ function renderNav(){
   const nav = document.getElementById("nav");
   if(!nav) return;
   nav.innerHTML = "";
+  /* Cabecera del índice: el panel se anuncia a sí mismo y dice cuánto hay dentro.
+     Sin ella el menú empezaba directamente en «Lesen Teil 1» y no se leía como
+     una pieza aparte de la hoja. */
+  const totalItems = (allVariants || []).reduce((a,v)=>a+((v.items||[]).length),0);
+  const cabeza = document.createElement("div");
+  cabeza.className = "nav-head";
+  const rotulo = document.createElement("span");
+  rotulo.className = "lbl";
+  rotulo.textContent = t("navToggleLabel");
+  const cuenta = document.createElement("b");
+  cuenta.textContent = t("itemsCount", {count: totalItems});
+  cabeza.appendChild(rotulo);
+  cabeza.appendChild(cuenta);
+  nav.appendChild(cabeza);
   /* Saltar a otra entrada (clic, filtro de dudosas) reabre su grupo: el menú
      nunca esconde el ejercicio que estás viendo. */
   const aqui = allVariants.find(v => v.id === current);
