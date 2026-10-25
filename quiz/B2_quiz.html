@@ -133,76 +133,67 @@
     --desk-ref:600px; --desk-work:860px;
   }
 
-  /* --- Segundo tema: «Calma». Marfil, verde bosque, menta y piedra ---
-     Diana trabaja en claro y Sergio en oscuro: el perfil cambia el tema, y el
-     tema claro es un mundo entero, no el oscuro aclarado. Sobre marfil el azul
-     frío lavaba todo; el verde bosque es lo que le da carácter. */
-  [data-theme="paper"]{
-    --bg:#EDEBE3;
-    --bg-luz:#FAF9F4;
-    --panel:#FAF9F4;
-    --panel2:#FFFFFF;
-    --panel3:#E5E2D8;
-    --sheet:#FFFFFF;
-    --sunken:#E5E2D8;
-    --line:rgba(31,42,36,.12);
-    --line-2:rgba(31,42,36,.22);
+  /* --- Tema noche: el mismo mundo con la luz apagada. Papel a cartón verdoso,
+     banda más profunda y el latón como única fuente de color. La noche no cambia
+     el material (ni radios ni sombras): solo la luz. --- */
+  [data-theme="dark"]{
+    --bg:#12160F;
+    --bg-luz:#1A2016;
+    --panel:#191E15;
+    --panel2:#20261B;
+    --panel3:#151A11;
+    --sheet:#1C2217;
+    --sunken:#0E120C;
+    --line:rgba(239,231,210,.16);
+    --line-2:rgba(239,231,210,.30);
 
-    --txt:#1F2A24;                            /* 14.1:1 sobre --panel */
-    --dim:#4C5A52;                            /* 6.9:1 */
-    --dim-2:#57645C;                          /* 5.2:1 sobre --bg y 4.8:1 sobre --sunken */
+    --txt:#EFE7D2;                /* 13.1:1 sobre --panel */
+    --dim:#C2B9A1;                /* 8.4:1 */
+    --dim-2:#A79E86;              /* 5.9:1 */
 
-    --acc:#0F5132;
-    --acc-hi:#1B6B45;
-    --acc-deep:#0B3D26;
-    --acc-fill-1:#0F5132;
-    --acc-fill-2:#1B6B45;
-    --acc-2:#0B3D26;
-    --acc-ink:#0F5132;                        /* 6.6:1 sobre --panel */
-    --on-acc:#FAF9F4;                         /* 6.2-8.9:1 sobre el verde */
-    --ring:rgba(15,81,50,.45);
-    --glow:rgba(15,81,50,.20);
+    --acc:#C9A44A;
+    --acc-hi:#DDBB63;
+    --acc-deep:#A8863A;
+    --acc-fill-1:#C9A44A;
+    --acc-fill-2:#DDBB63;
+    --acc-2:#A8863A;
+    --acc-ink:#E2C88A;            /* 9.1:1 sobre --panel */
+    --on-acc:#14170F;
+    --ring:rgba(201,164,74,.55);
+    --glow:rgba(201,164,74,.18);
 
-    --ok:#0F5132;   --ok-ink:#0B3D26;
-    --bad:#9C3B2E;  --bad-ink:#7E2E23;
-    --warn:#8A6414; --warn-ink:#6E5110;
-    --violet-ink:#5B3F8E;
+    --ok:#57C08D; --ok-ink:#8FDCB4;
+    --bad:#E0705C; --bad-ink:#F2A99E;
+    --warn:#D9A94E; --warn-ink:#EFCE8C;
+    --violet-ink:#B9A0E6;
 
-    --bien-fill:#0F5132; --bien-ink:#FAF9F4;
-    --mal-fill:#8A3428;  --mal-ink:#FDF6F4;
+    --tint-ok:rgba(87,192,141,.14);
+    --tint-bad:rgba(224,112,92,.14);
+    --tint-warn:rgba(217,169,78,.14);
+    --tint-acc:rgba(201,164,74,.14);
+    --tint-violet:rgba(185,160,230,.14);
+    --tint-neutral:rgba(239,231,210,.05);
+    --chip:#20261B;
+    --chip-hover:#262D20;
+    --scrim:rgba(6,8,5,.70);
+    --selection:rgba(201,164,74,.32);
+    --scroll:rgba(239,231,210,.22);
 
-    --tint-ok:rgba(183,217,193,.55);          /* menta */
-    --tint-bad:rgba(156,59,46,.10);
-    --tint-warn:rgba(138,100,20,.10);
-    --tint-acc:rgba(15,81,50,.10);
-    --tint-violet:rgba(91,63,142,.10);
-    --tint-neutral:rgba(31,42,36,.05);
-    --line-ok:rgba(15,81,50,.28);
-    --line-bad:rgba(156,59,46,.30);
-    --line-warn:rgba(138,100,20,.30);
-    --line-acc:rgba(15,81,50,.30);
-    --chip:#FFFFFF;
-    --chip-hover:#F2F0E9;
-    --scrim:rgba(24,32,28,.45);
-    --selection:rgba(183,217,193,.65);
-    --scroll:rgba(31,42,36,.24);
+    --bien-fill:#1E6B49; --bien-ink:#FFFFFF;
+    --mal-fill:#8E3428;  --mal-ink:#FFFFFF;
+    --acc-grad:linear-gradient(180deg,#DDBB63,#C9A44A);
+    --exito-grad:linear-gradient(180deg,#2A8259,#1E6B49);
+    --peligro-grad:linear-gradient(180deg,#A04A38,#8E3428);
+    --line-ok:rgba(87,192,141,.32);
+    --line-bad:rgba(224,112,92,.32);
+    --line-warn:rgba(217,169,78,.32);
+    --line-acc:rgba(201,164,74,.32);
 
-    --acc-grad:linear-gradient(180deg,var(--acc-fill-2),var(--acc-fill-1));
-    --exito-grad:linear-gradient(180deg,#1B6B45,#0F5132);
-    --peligro-grad:linear-gradient(180deg,#A8483A,#8A3428);
-    --sh-1:none;
-    --sh-2:none;
-    --sh-3:none;
-    --bisel:none;
-    --hundido:none;
-    /* El halo sigue al acento del tema: en claro es verde, no azul (venía del mundo
-       anterior y se quedó ahí sin que nadie lo mirara). */
-    --halo:none;
-    /* Filo y borde de una pieza RELLENA: sobre el verde, el filo va suave y el borde
-       es oscuro. Un blanco aquí cortaba el relleno y la ficha parecía mal pintada. */
-    --borde-relleno:rgba(15,40,28,.16);
-    --bisel-relleno:none;
-    --lit:none;
+    --band:#152B1E;
+    --band-deep:#0B1D13;
+    --on-band:#EFE6CC;
+
+    --borde-relleno:rgba(239,231,210,.24);
   }
 
   *{box-sizing:border-box}
@@ -1244,7 +1235,7 @@ const LS_THEME = "b2quiz_theme";
 
 /* Tema: papel (por defecto) o noche. El <head> ya aplicó el guardado antes del
    primer pintado; aquí solo se sincroniza el estado y el botón. */
-let currentTheme = "dark";
+let currentTheme = "paper";
 try {
   const savedTheme = localStorage.getItem(LS_THEME);
   if (savedTheme === "dark" || savedTheme === "paper") currentTheme = savedTheme;
@@ -1980,7 +1971,8 @@ function applyTheme(){
   const mando = (typeof btn.querySelector === "function") ? btn.querySelector(".mando-tema") : null;
   if (mando) mando.innerHTML = oscuro ? ICONO_TEMA.oscuro : ICONO_TEMA.claro;
   const etiqueta = document.getElementById("theme-label");
-  if (etiqueta) etiqueta.textContent = t("themeSwitch");
+  /* La etiqueta nombra el modo en el que estás, no el que vas a encender. */
+  if (etiqueta) etiqueta.textContent = t(oscuro ? "themeSwitch" : "themeToLight");
   if (typeof btn.setAttribute === "function"){
     btn.setAttribute("aria-checked", oscuro ? "true" : "false");
     btn.setAttribute("aria-label", t("themeSwitch"));
@@ -2014,9 +2006,10 @@ function setUser(user) {
   updateUserUI();
   // Al cambiar usuario, vincular su idioma preferido: Sergio -> ES, Diana -> RU
   setLanguage(user === "diana" ? "ru" : "es");
-  /* Y su mundo: Diana trabaja en claro (Calma) y Sergio en oscuro. El botón de
-     tema sigue mandando si alguno quiere cambiarlo en ese momento. */
-  setTheme(user === "diana" ? "paper" : "dark");
+  /* El mundo nuevo es de papel: se abre en claro para los dos perfiles. La noche
+     existe y se elige con el botón, que la recuerda. Si hay tema guardado, manda
+     el guardado (lo aplica applyTheme al arrancar). */
+  setTheme("paper");
 }
 window.setUser = setUser;
 window.getUser = () => currentUser;

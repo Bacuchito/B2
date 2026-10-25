@@ -58,9 +58,9 @@ const tokens = (() => {
 
 /* ---------- 2. Color: resolución, composición y contraste WCAG ----------
    Todo lleva el mapa de tokens como parámetro, porque la app tiene DOS temas y
-   los dos se auditan: el oscuro (:root) y el claro ([data-theme="paper"]). */
+   los dos se auditan: el oscuro (:root) y el claro ([data-theme="dark"]). */
 const tokensClaro = (() => {
-  const alt = findRule('[data-theme="paper"]');
+  const alt = findRule('[data-theme="dark"]');
   return alt ? Object.assign({}, tokens, alt.decls) : null;
 })();
 function resolve(value, mapa) {
@@ -157,7 +157,7 @@ const bad = (lens, label, detail) => results.push({ lens, pass: false, label, de
 const MIN_TEXT = 4.5; // texto normal (HIG/WCAG AA)
 
 /* Los dos temas se auditan. El claro hereda lo que no redefine, así que el mapa
-   es la mezcla de :root y [data-theme="paper"]. */
+   es la mezcla de :root y [data-theme="dark"]. */
 const TEMAS = [["oscuro", tokens], ["claro", tokensClaro]];
 for (const [tema, mapa] of TEMAS) {
   if (!mapa) { bad(1, "Tema " + tema, "no encuentro sus tokens"); continue; }
@@ -240,10 +240,10 @@ const shadowValues = ["--sh-1", "--sh-2", "--sh-3"].map((t) => String(tokens[t] 
 (shadowValues.every((v) => v === "none") ? ok : bad)(3, "Cero sombras: la pieza se separa con filete, no con altura",
   "niveles: " + shadowValues.join(" / "));
 /* El segundo tema redefine tokens; no aplica filtros ni invierte colores. */
-const altRule = rules.find((r) => r.selector.includes('[data-theme="paper"]'));
+const altRule = rules.find((r) => r.selector.includes('[data-theme="dark"]'));
 const altTokens = altRule ? Object.keys(altRule.decls).filter((k) => tokens[k] !== undefined).length : 0;
 (altTokens >= 25 ? ok : bad)(3, "Segundo tema completo, por tokens (no filtros ni inversión)",
-  altTokens + " tokens redefinidos en [data-theme=paper]");
+  altTokens + " tokens redefinidos en [data-theme=dark]");
 
 /* Físicas y micro-interacciones */
 const activeScale = rules.filter((r) => r.selector.includes(":active") && /scale/.test(r.decls["transform"] || "")).length;
