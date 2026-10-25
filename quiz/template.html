@@ -643,11 +643,17 @@
   /* Acción secundaria: texto, sin caja. El estado activo (Mesa de examen, Solo
      dudosas) es el que se levanta como pieza. */
   .btn.ghost{background:none;border:1px solid var(--line-2);border-radius:0;
-             color:var(--txt);box-shadow:none;text-transform:uppercase;letter-spacing:.08em;
-             font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-xs);font-weight:600;padding:0 var(--sp-4);min-height:36px}
+             color:var(--dim);box-shadow:none;text-transform:none;letter-spacing:0;
+             font-family:var(--font-ui);font-size:var(--fs-sm);font-weight:600;padding:0 var(--sp-4);min-height:36px}
   .btn.ghost:hover{background:var(--txt);color:var(--sheet);border-color:var(--txt);filter:none}
+  /* Acciones al pie de la hoja: alineadas a la izquierda y separadas entre sí. La
+     que borra va última y con aire: no debe quedar al lado de la inocua. */
+  .acciones{justify-content:flex-start;gap:var(--sp-5);margin-top:var(--sp-5)}
   .btn.danger{background:var(--peligro-grad);color:var(--mal-ink);border-color:var(--borde-relleno);
               box-shadow:var(--sh-2),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--bad) 28%,transparent)}
+  /* Acción que destruye: en reposo es una caja apagada con tinta roja; al pasar, se llena. */
+  .btn.ghost.danger{background:none;color:var(--bad);border-color:var(--line-bad)}
+  .btn.ghost.danger:hover{background:var(--bad);border-color:var(--bad);color:var(--sheet)}
   .btn.danger:hover{filter:brightness(1.06)}
   .btn.success{background:var(--exito-grad);color:var(--bien-ink);
                border-color:var(--borde-relleno);
@@ -2923,7 +2929,7 @@ function renderMain(){
   main.appendChild(sheet);
 
   const row = document.createElement("div");
-  row.className = "row";
+  row.className = "row acciones";
   const bAll = document.createElement("button");
   bAll.className = "btn ghost";
   bAll.textContent = t("btnShowAllAnswers");
@@ -2933,7 +2939,7 @@ function renderMain(){
     saveState(); render();
   };
   const bClear = document.createElement("button");
-  bClear.className = "btn ghost";
+  bClear.className = "btn ghost danger";
   bClear.textContent = t("btnClearVariantAnswers");
   bClear.onclick = ()=>{ v.items.forEach(it=> delete state.answers[ansKey(v,it)]);
     saveState(); render(); };
