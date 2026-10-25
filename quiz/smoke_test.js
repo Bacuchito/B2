@@ -97,6 +97,8 @@ const entradasDe = i => {
   let dentro = false;
   for (const c of ids.nav.children) {
     if (clases(c).includes("sec")) { dentro = c === cabeceras()[i]; continue; }
+    /* Los rotulos de familia son adorno del menu, no entradas del grupo. */
+    if (clases(c).includes("nav-group")) continue;
     if (dentro) out.push(c);
   }
   return out;
@@ -394,6 +396,80 @@ if (schrBtn && typeof schrBtn.onclick === "function") {
             String(ids["modal-container"].innerHTML) === "" &&
             ids["modal-container"].children.length === 0);
     }
+  }
+}
+
+/* ---------- Modeltests: Hören sin clave y la x del Lesen T3 ----------
+   La zona nueva mete 12 bloques por test. Hören no tiene audio ni clave: se
+   puede elegir, pero no se corrige ni cuenta en las estadísticas. Lesen T3
+   añade una x para la pregunta que no tiene consejo. */
+{
+  const idxMT = cabeceras().findIndex(c => /Modeltest 11/i.test(c.children[0].collectText()));
+  check("la sección Modeltest 11 está en el menú", idxMT >= 0,
+        `cabeceras: ${cabeceras().length}`);
+  if (idxMT >= 0) {
+    const entradas = entradasDe(idxMT);
+    check("el Modeltest 11 trae sus 12 bloques", entradas.length === 12,
+          `entradas: ${entradas.length}`);
+    const porRotulo = (txt) => entradas.find(e => String(e._html).indexOf(txt) !== -1);
+
+    const entradaH1 = porRotulo("Hören Teil 1");
+    check("Hören Teil 1 está entre los bloques", !!entradaH1,
+          entradaH1 ? String(entradaH1._html).slice(0, 80) : "no encontrado");
+    if (entradaH1) {
+      entradaH1.onclick();
+      const textoH1 = () => ids.main.collectText();
+      check("Hören avisa de que no hay clave", /sin audio ni clave/i.test(textoH1()),
+            textoH1().slice(0, 110));
+      const opciones = descendientes(ids.main).filter(e => /\bopt\b/.test(String(e.className)));
+      check("Hören pinta sus opciones", opciones.length > 0, `opciones: ${opciones.length}`);
+      if (opciones.length) {
+        const statsAntes = ids.stats.innerHTML;
+        opciones[0].onclick();
+        const marcadas = descendientes(ids.main)
+          .filter(e => /\b(correct|wrong)\b/.test(String(e.className)));
+        check("elegir en Hören no marca acierto ni fallo", marcadas.length === 0,
+              `marcadas: ${marcadas.length}`);
+        const elegidas = descendientes(ids.main)
+          .filter(e => /\bchosen\b/.test(String(e.className)));
+        check("la opción elegida se marca sin veredicto", elegidas.length === 1,
+              `elegidas: ${elegidas.length}`);
+        check("elegir en Hören no cuenta como respondida", ids.stats.innerHTML === statsAntes,
+              ids.stats.innerHTML === statsAntes ? "sin cambios" : "las estadísticas cambiaron");
+      }
+    }
+
+    const entradaT3 = porRotulo("Lesen Teil 3");
+    check("Lesen Teil 3 está entre los bloques", !!entradaT3,
+          entradaT3 ? String(entradaT3._html).slice(0, 80) : "no encontrado");
+    if (entradaT3) {
+      entradaT3.onclick();
+      const preguntas = descendientes(ids.main).filter(e => String(e.className) === "q");
+      const qJulia = preguntas.find(q => /Julia/.test(q.collectText()));
+      const botonX = qJulia
+        ? descendientes(qJulia).find(e => String(e.textContent) === "x")
+        : null;
+      check("Lesen T3 ofrece la x para la pregunta sin consejo", !!botonX,
+            botonX ? "botón x encontrado" : "sin botón x");
+      if (botonX) {
+        botonX.onclick();
+        check("la x se guarda como respuesta",
+              window.quizState.answers["mt11-lesen-t3#1"] === "x",
+              `guardado: ${window.quizState.answers["mt11-lesen-t3#1"]}`);
+        check("la x se corrige como acierto",
+              /Correcto/.test(ids.main.collectText()),
+              ids.main.collectText().slice(0, 120));
+      }
+    }
+
+    /* Los siete tests, no solo el 11, tienen que estar y traer sus 12 bloques. */
+    const indices = [11, 12, 13, 14, 15, 16, 17].map(n =>
+      cabeceras().findIndex(c => new RegExp("Modeltest " + n + "\\b").test(c.children[0].collectText())));
+    check("los siete Modeltests están en el menú", indices.every(i => i >= 0),
+          `índices: ${indices.join(",")}`);
+    check("cada Modeltest trae sus 12 bloques",
+          indices.every(i => i >= 0 && entradasDe(i).length === 12),
+          indices.map(i => i >= 0 ? entradasDe(i).length : "?").join(","));
   }
 }
 

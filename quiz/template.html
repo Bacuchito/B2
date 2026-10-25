@@ -319,6 +319,11 @@
       padding:0 0 var(--sp-5);counter-reset:sec}
   /* Cada grupo lleva su número de línea: 01, 02… Sale del orden del documento,
      no del JS: añadir una sección no obliga a numerar nada a mano. */
+  /* Rótulo de familia: versalitas sueltas, sin número y con aire arriba. */
+  nav .nav-group{font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-micro);
+           font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+           color:var(--acc-ink);padding:var(--sp-5) var(--sp-3) var(--sp-2);
+           background:var(--bg)}
   nav .sec{font-family:var(--font-d);font-stretch:87.5%;
            font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;
            color:var(--dim);margin:0;padding:var(--sp-3) var(--sp-3) var(--sp-2) 40px;
@@ -363,12 +368,12 @@
   nav button:hover{background:var(--tint-neutral);color:var(--txt)}
   nav button:active{transform:scale(.985)}
   /* Encendida: se invierte entera. Una sola señal, como en una lista impresa. */
-  nav button.active{background:var(--txt);color:var(--bg);font-weight:640;
-             box-shadow:none;border-bottom-color:var(--txt)}
+  nav button.active{background:var(--band);color:var(--on-band);font-weight:640;
+             box-shadow:none;border-bottom-color:var(--band)}
   nav button .pill{font-family:var(--font-d);font-size:var(--fs-micro);font-weight:400;
              letter-spacing:.04em;color:var(--dim-2);
              font-variant-numeric:tabular-nums;white-space:nowrap}
-  nav button.active .pill{color:var(--bg)}
+  nav button.active .pill{color:var(--on-band)}
 
   /* La hoja: papel blanco sobre la mesa, con filete de tinta arriba. */
   main{flex:1;min-width:0;margin:0 auto;padding:var(--sp-6) var(--sp-7) var(--sp-8);
@@ -2583,7 +2588,22 @@ function renderNav(){
   if(openSec === undefined || current !== lastNavCurrent){
     openSec = secActual; lastNavCurrent = current;
   }
+  /* Un rótulo separa cada familia de examen. El nombre sale del título de la
+     sección («Schreiben: …» → SCHREIBEN), así que no hay una lista aparte que
+     mantener: añadir una sección nueva la coloca sola en su familia. */
+  let familiaAnterior = null;
   DATA.sections.forEach(sec=>{
+    const familia = (function(){
+      const m = String(sec.title || "").match(/^\s*(schreiben|sprechen|modeltest)/i);
+      return m ? m[1].toUpperCase() : "";
+    })();
+    if (familia && familia !== familiaAnterior){
+      const grupo = document.createElement("div");
+      grupo.className = "nav-group";
+      grupo.textContent = familia;
+      nav.appendChild(grupo);
+    }
+    familiaAnterior = familia;
     const abierto = openSec === sec.id;
     /* Con el filtro de dudosas puesto, el contador cuenta lo que de verdad
        se ve, no lo que el grupo guarda. */
