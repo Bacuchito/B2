@@ -269,7 +269,7 @@
   /* El conmutador de tema: mando claro sobre carril hundido. */
   /* El conmutador es un cuadrado más de la banda, con el icono del modo en el que
      estás. Sin pista, sin mando y sin rótulo: la palabra queda en el título. */
-  header .switch-tema{width:36px;height:36px;padding:0;justify-content:center;
+  header .switch-tema{width:36px;height:36px;padding:0;justify-content:center;color:var(--on-band);
     border:1.5px solid var(--line-2);border-radius:0}
   header .switch-tema:hover{background:var(--on-band);color:var(--band);border-color:var(--on-band)}
   header .switch-tema .pista-tema{width:auto;height:auto;background:none;border:0;
@@ -1975,8 +1975,8 @@ function updateLangUI() {
    oscuro, sol si estás en claro. Antes enseñaba el icono de lo que ibas a hacer,
    que es lo contrario de lo que promete un interruptor. */
 const ICONO_TEMA = {
-  oscuro: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></svg>',
-  claro:  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></svg>'
+  oscuro: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 0 0 16.8z" fill="currentColor"/></svg>',
+  claro:  '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3.6a8.4 8.4 0 0 0 0 16.8z" fill="currentColor"/></svg>'
 };
 function applyTheme(){
   const de = document.documentElement;
