@@ -2554,7 +2554,45 @@ function updateStats(){
 }
 
 /* ---------- navegación ---------- */
+/* Dónde estabas, para que F5 no devuelva al primer ejercicio. Se guarda la
+   variante y la altura de la página; la variante manda, la altura es un extra
+   que se ignora si no cuadra. */
+const LS_VIEW = "b2quiz_view";
+let vistaGuardada = null;
+try { vistaGuardada = JSON.parse(localStorage.getItem(LS_VIEW) || "null"); } catch(e){ vistaGuardada = null; }
 let current = allVariants.length ? allVariants[0].id : null;
+if (vistaGuardada && vistaGuardada.v && allVariants.some(x => x.id === vistaGuardada.v)){
+  current = vistaGuardada.v;
+}
+function guardarVista(){
+  try {
+    localStorage.setItem(LS_VIEW, JSON.stringify({
+      v: current,
+      y: Math.round((typeof window !== "undefined" && window.scrollY) || 0)
+    }));
+  } catch(e){}
+}
+/* El scroll no se escribe en cada píxel: se agrupa y se guarda al parar. */
+let tVista = null;
+if (typeof window !== "undefined" && typeof window.addEventListener === "function"){
+  window.addEventListener("scroll", function(){
+    if (tVista) return;
+    tVista = setTimeout(function(){ tVista = null; guardarVista(); }, 400);
+  });
+  /* Volver a la altura guardada al terminar de cargar, no dentro del render: así
+     no depende del orden en que se pinten las piezas. La animación de scroll se
+     apaga un instante para que el salto sea de una vez y no un deslizamiento. */
+  window.addEventListener("load", function(){
+    if (!vistaGuardada || !vistaGuardada.y) return;
+    try {
+      const html = document.documentElement;
+      const antes = html.style.scrollBehavior;
+      html.style.scrollBehavior = "auto";
+      window.scrollTo(0, vistaGuardada.y);
+      html.style.scrollBehavior = antes;
+    } catch(e){}
+  });
+}
 
 /* Grupo desplegado del menú. `undefined` = sin decidir todavía (se despliega el
    grupo donde estás); `null` = todos plegados, que es lo que deja el clic en la
@@ -2687,7 +2725,7 @@ function renderNav(){
       /* Los grupos plegados se ocultan, no se borran: el teclado y las pruebas
          siguen encontrando sus entradas. */
       b.hidden = !abierto;
-      b.onclick = ()=>{ current = v.id; render(); window.scrollTo(0,0); };
+      b.onclick = ()=>{ current = v.id; render(); window.scrollTo(0,0); guardarVista(); };
       nav.appendChild(b);
     });
   });
@@ -2711,9 +2749,6 @@ function render(){
   try {
     renderMain();
     restaurarFoco();
-    /* Al final, y no en cada sitio: así el mando de los controles segmentados se
-       recoloca también cuando el render crea controles nuevos (las pestañas de la
-       evaluación, sin ir más lejos), y no se queda con la medida de los anteriores. */
   } catch(e){
     console.warn("Error al renderizar:", e);
     const main = document.getElementById("main");
@@ -3228,6 +3263,7 @@ function irAVariante(id){
   current = id;
   render();
   window.scrollTo(0, 0);
+  guardarVista();
 }
 
 /* ---------- Renderizador del módulo de Schreiben ---------- */
