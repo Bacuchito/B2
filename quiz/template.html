@@ -267,11 +267,19 @@
   header .btn.ghost:hover{background:var(--on-band);color:var(--band);
                           border-color:var(--on-band);filter:none}
   /* El conmutador de tema: mando claro sobre carril hundido. */
-  header .switch-tema .pista-tema{background:rgba(0,0,0,.24);border-color:var(--line);box-shadow:none}
-  header .switch-tema .mando-tema{background:var(--on-band);color:var(--band);box-shadow:none}
-  header .switch-tema[aria-checked="true"] .pista-tema{background:rgba(0,0,0,.28);border-color:var(--line)}
-  header .switch-tema[aria-checked="true"] .mando-tema{color:var(--acc-fill-1)}
-  header .switch-tema .switch-tema-texto{color:var(--on-band)}
+  /* El conmutador es un cuadrado más de la banda, con el icono del modo en el que
+     estás. Sin pista, sin mando y sin rótulo: la palabra queda en el título. */
+  header .switch-tema{width:36px;height:36px;padding:0;justify-content:center;
+    border:1.5px solid var(--line-2);border-radius:0}
+  header .switch-tema:hover{background:var(--on-band);color:var(--band);border-color:var(--on-band)}
+  header .switch-tema .pista-tema{width:auto;height:auto;background:none;border:0;
+    box-shadow:none;display:grid;place-items:center}
+  header .switch-tema .mando-tema{position:static;width:auto;height:auto;background:none;
+    box-shadow:none;color:inherit;transform:none}
+  header .switch-tema[aria-checked="true"] .pista-tema{background:none;border:0}
+  header .switch-tema[aria-checked="true"] .mando-tema{transform:none;color:inherit}
+  header .switch-tema .switch-tema-texto{display:none}
+  header .switch-tema .mando-tema svg{width:17px;height:17px;display:block}
   /* El recuento de dudas se marca con filete de latón, no con tinta oscura:
      sobre el verde, el ámbar del papel desaparecía. */
   header .em-warn{color:var(--on-band);font-weight:700;
@@ -955,14 +963,16 @@
   .partner-empty{color:var(--dim-2);font-style:italic;padding:var(--sp-6) var(--sp-3);text-align:center}
 
   /* Conmutador de tema (luna/sol) y botón de índice en móvil */
-  .icon-btn{background:linear-gradient(180deg,var(--panel2),var(--panel));
-            border:var(--b-std) solid var(--line);color:var(--dim);
-            width:32px;min-height:32px;padding:0;border-radius:var(--r-2);cursor:pointer;
+  /* Botón cuadrado de icono: misma caja que las letras del examen. */
+  .icon-btn{background:none;
+            border:1.5px solid var(--line-2);color:inherit;
+            width:36px;min-height:36px;padding:0;border-radius:0;cursor:pointer;
             display:inline-flex;align-items:center;justify-content:center;
-            box-shadow:var(--sh-1),var(--bisel);
-            transition:color var(--dur-2) var(--ease),box-shadow var(--dur-2) var(--ease),
-                       transform var(--dur-1) var(--spring)}
-  .icon-btn:hover{color:var(--txt);box-shadow:var(--sh-2),var(--bisel)}
+            box-shadow:none;
+            transition:color var(--dur-2) var(--ease),background var(--dur-2) var(--ease),
+                       border-color var(--dur-2) var(--ease)}
+  header .icon-btn:hover{background:var(--on-band);color:var(--band);border-color:var(--on-band)}
+  .icon-btn:hover{color:var(--txt);border-color:var(--txt)}
   .icon-btn:active{transform:scale(.94)}
   /* Interruptor de tema: pista con el mando redondo y el icono DENTRO del mando.
      El mando enseña el estado en el que estás (luna en oscuro, sol en claro) y la
@@ -1206,7 +1216,9 @@
   <div class="stat" id="stats"></div>
   <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
   <button class="btn ghost" id="desk-toggle" aria-pressed="false" title="Mesa de examen">Mesa de examen</button>
-  <button class="btn ghost" id="btn-ai-config" title="Configurar claves de API y sincronización">⚙ Configurar IA</button>
+  <button class="icon-btn" id="btn-ai-config" title="Configurar claves de API y sincronización" aria-label="Configurar IA">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/><path d="M9 4.8v4.4M15 9.8v4.4M8 14.8v4.4" stroke-width="2.6"/></svg>
+  </button>
   <button class="switch-tema" id="theme-btn" type="button" role="switch" aria-checked="true" title="Modo noche" aria-label="Modo oscuro">
     <span class="pista-tema"><span class="mando-tema" id="theme-knob"></span></span>
     <span class="switch-tema-texto" id="theme-label">Modo oscuro</span>
@@ -1937,7 +1949,9 @@ function updateLangUI() {
 
   const aiBtn = document.getElementById("btn-ai-config");
   if (aiBtn) {
-    aiBtn.textContent = t("btnAiConfig");
+    /* El botón es solo icono: la palabra vive en el título y en la etiqueta
+       accesible, no en el cuerpo del botón. */
+    if (typeof aiBtn.setAttribute === "function") aiBtn.setAttribute("aria-label", t("btnAiConfig"));
     aiBtn.title = t("btnAiConfigTitle");
   }
 
@@ -1975,7 +1989,7 @@ function applyTheme(){
   if (etiqueta) etiqueta.textContent = t(oscuro ? "themeSwitch" : "themeToLight");
   if (typeof btn.setAttribute === "function"){
     btn.setAttribute("aria-checked", oscuro ? "true" : "false");
-    btn.setAttribute("aria-label", t("themeSwitch"));
+    btn.setAttribute("aria-label", t(oscuro ? "themeSwitch" : "themeToLight"));
   }
   /* El título dice lo que pasará al pulsar; la etiqueta dice lo que hay ahora. */
   btn.title = t(oscuro ? "themeToLight" : "themeToDark");
