@@ -279,7 +279,9 @@
   header .switch-tema[aria-checked="true"] .pista-tema{background:none;border:0}
   header .switch-tema[aria-checked="true"] .mando-tema{transform:none;color:inherit}
   header .switch-tema .switch-tema-texto{display:none}
+  header .switch-tema .mando-tema{font-size:17px;line-height:1}
   header .switch-tema .mando-tema svg{width:17px;height:17px;display:block}
+  #btn-ai-config{font-size:16px;line-height:1}
   /* El recuento de dudas se marca con filete de latón, no con tinta oscura:
      sobre el verde, el ámbar del papel desaparecía. */
   header .em-warn{color:var(--on-band);font-weight:700;
@@ -1217,7 +1219,7 @@
   <button class="btn ghost" id="doubt" title="Ver solo las respuestas con confianza media o baja">Solo dudosas</button>
   <button class="btn ghost" id="desk-toggle" aria-pressed="false" title="Mesa de examen">Mesa de examen</button>
   <button class="icon-btn" id="btn-ai-config" title="Configurar claves de API y sincronización" aria-label="Configurar IA">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/><path d="M9 4.8v4.4M15 9.8v4.4M8 14.8v4.4" stroke-width="2.6"/></svg>
+    ⚙
   </button>
   <button class="switch-tema" id="theme-btn" type="button" role="switch" aria-checked="true" title="Modo noche" aria-label="Modo oscuro">
     <span class="pista-tema"><span class="mando-tema" id="theme-knob"></span></span>
@@ -1973,8 +1975,8 @@ function updateLangUI() {
    oscuro, sol si estás en claro. Antes enseñaba el icono de lo que ibas a hacer,
    que es lo contrario de lo que promete un interruptor. */
 const ICONO_TEMA = {
-  oscuro: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',
-  claro:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.2 2.2M16.9 16.9l2.2 2.2M19.1 4.9l-2.2 2.2M7.1 16.9l-2.2 2.2"/></svg>'
+  oscuro: '◐',
+  claro:  '◐'
 };
 function applyTheme(){
   const de = document.documentElement;
