@@ -649,6 +649,11 @@
   /* Acciones al pie de la hoja: alineadas a la izquierda y separadas entre sí. La
      que borra va última y con aire: no debe quedar al lado de la inocua. */
   .acciones{justify-content:flex-start;gap:var(--sp-5);margin-top:var(--sp-5)}
+  /* La acción dentro de una corrección: más pequeña y separada del texto, para que
+     no parezca parte de la explicación ni se pegue al bloque de la cita. */
+  .fb .btn.ghost.sm{margin-top:var(--sp-3);min-height:32px;padding:0 var(--sp-3);
+     border-color:var(--line);color:var(--dim);font-size:var(--fs-xs)}
+  .fb .btn.ghost.sm:hover{background:var(--txt);color:var(--sheet);border-color:var(--txt)}
   .btn.danger{background:var(--peligro-grad);color:var(--mal-ink);border-color:var(--borde-relleno);
               box-shadow:var(--sh-2),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--bad) 28%,transparent)}
   /* Acción que destruye: en reposo es una caja apagada con tinta roja; al pasar, se llena. */
@@ -5613,7 +5618,9 @@ function renderItem(v, it){
       render();
       announce(t("srCleared"));
     };
-    div.appendChild(borrar);
+    /* Dentro del bloque de corrección, no del ítem: así alinea con su texto y se
+       esconde con él cuando no hay nada que borrar. */
+    fb.appendChild(borrar);
   }
   return div;
 }
