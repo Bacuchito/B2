@@ -627,7 +627,7 @@
   /* Botón principal: píldora con degradado corto, filo claro y halo azul. Se hunde
      al pulsar (escala 0.975) en vez de cambiar solo de color. */
   .btn{background:var(--acc-grad);color:var(--on-acc);
-       border:var(--b-std) solid var(--borde-relleno);border-radius:var(--r-pill);
+       border:1px solid var(--borde-relleno);border-radius:0;
        padding:0 var(--sp-5);min-height:40px;cursor:pointer;font-size:var(--fs-base);font-weight:640;
        font-family:inherit;display:inline-flex;align-items:center;justify-content:center;gap:var(--sp-2);
        box-shadow:var(--sh-2),var(--bisel-relleno),0 8px 20px -6px var(--glow);
@@ -642,10 +642,10 @@
        box-shadow:var(--hundido)}
   /* Acción secundaria: texto, sin caja. El estado activo (Mesa de examen, Solo
      dudosas) es el que se levanta como pieza. */
-  .btn.ghost{background:none;border:var(--b-std) solid transparent;border-radius:var(--r-pill);
-             color:var(--dim);box-shadow:none;text-transform:none;letter-spacing:0;
-             font-size:var(--fs-sm);font-weight:640;padding:0 var(--sp-3)}
-  .btn.ghost:hover{background:var(--tint-neutral);color:var(--txt);filter:none}
+  .btn.ghost{background:none;border:1px solid var(--line-2);border-radius:0;
+             color:var(--txt);box-shadow:none;text-transform:uppercase;letter-spacing:.08em;
+             font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-xs);font-weight:600;padding:0 var(--sp-4);min-height:36px}
+  .btn.ghost:hover{background:var(--txt);color:var(--sheet);border-color:var(--txt);filter:none}
   .btn.danger{background:var(--peligro-grad);color:var(--mal-ink);border-color:var(--borde-relleno);
               box-shadow:var(--sh-2),var(--bisel-relleno),0 6px 16px -4px color-mix(in srgb,var(--bad) 28%,transparent)}
   .btn.danger:hover{filter:brightness(1.06)}
