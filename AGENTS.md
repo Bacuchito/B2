@@ -103,8 +103,15 @@ El bucle tiene cuatro pasos. No te saltes el 1 ni el 4.
    Declaradas en la primera línea, según §2.
 2. **Plan.** Tarea no trivial: propón plan y espera el OK. Si el juicio es caro
    o no lo puede comprobar un test, pide `segunda-opinion` antes de decidir.
+   Después clasifica el trabajo:
+   - **Pequeño** si se retoma con la petición y el `git diff`. Sin documento;
+     el plan vive en el chat.
+   - **Grande** si no. Un solo documento en `tasks/<nombre>.md`, creado antes
+     del primer cambio. Parte de `tasks/TEMPLATE.md`.
 3. **Cierre de tarea.** Di qué cambiaste, en qué ficheros y qué control pasaste.
-   Si no hay control posible, dilo en vez de insinuar que lo hay.
+   Si no hay control posible, dilo en vez de insinuar que lo hay. En trabajo
+   grande, anota en el documento el resultado observado de cada control, fallos
+   incluidos, y el veredicto por tarea.
 4. **Cierre de sesión.** Controles verdes, `graphify update` si tocaste
    documentos, y qué queda sin commitear.
 
