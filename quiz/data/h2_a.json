@@ -1,0 +1,131 @@
+{
+  "block": "h2_a",
+  "section": "hoeren-t2",
+  "variants": [
+    {
+      "id": "h2-v1",
+      "label": "Variante 1",
+      "page": 137,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "zuordnung",
+      "optionsLabel": "Aussagen",
+      "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch? Zwei Sätze bleiben übrig.",
+      "passage": "Nummer 28\nFrau 1: Habt ihr auch schon davon gehört, dass wir uns alle ein Diensthandy bekommen sollen?\nHerr: Wirklich? Wie toll. Dann können wir endlich, wenn wir für die Firma unterwegs sind, das Firmenhandy benutzen und müssen nicht ständig auf unsere Kosten mit unseren privaten Geräten telefonieren.\nFrau 2: Müssen wir dann auch in der Freizeit erreichbar sein? Das finde ich nämlich nicht so gut.\nHerr: Wir können es doch einfach am Ende des Arbeitstages und am Wochenende ausschalten. Da sehe ich kein Problem.\nFrau 1: Hoffentlich erwartet der Chef nicht, dass er uns dann immer erreichen kann. Darauf habe ich keine Lust.\nHerr: Das geht natürlich nicht. Es muss klar geregelt sein, dass wir nur während der Arbeitszeit erreichbar sein müssen. Aber dann finde ich es praktisch.\nFrau 2: Dann lasst uns doch mal mit dem Chef darüber sprechen, wie er sich das vorstellt.\nNummer 29\nFrau: Hallo Max, schön dich wiederzusehen. Wie war dein Urlaub?\nMax: Der war eigentlich schön, aber ich habe zu viele E-Mails aus dem Büro bekommen. Ich kann gar nicht richtig entspannen, wenn ich immer wieder an die Arbeit denken muss.\nFrau: Warum schaust du dir deine geschäftlichen Mails überhaupt im Urlaub an? Das würde ich ja nicht machen.\nMax: Mache ich eigentlich auch nicht. Aber wir waren mitten im Projekt, und deshalb habe ich mein Diensthandy mitgenommen. Für den Fall, dass etwas Wichtiges geklärt werden muss. Dass auch noch andere Mails kommen könnten, habe ich nicht bedacht.\nFrau: Naja, dann darfst du dich aber nicht beschweren. Selbst schuld - wer im Urlaub auch noch an die Arbeit denkt.\nMax: Das war eine besondere Situation. Das nächste Mal lasse ich das Diensthandy lieber zu Hause.\nNummer 30\nFrau: Sag mal Thomas, hast du meine Nachricht denn gestern nicht bekommen?\nThomas: Wie? Hast du mir geschrieben? Worum ging's denn?\nFrau: Ach Thomas, warum hast du die Nachricht denn nicht gelesen? Ich wollte etwas wegen des Angebots für unseren Kunden mit dir besprechen und es dann auch ausschicken.\nThomas: Du weißt doch, dass ich abends mein Handy immer ausschalte. Wir hätten doch im Büro deine Fragen klären können. Ich war schließlich den ganzen Tag da.\nFrau: Ich habe es vorher nicht geschafft, deshalb bin ich erst abends dazu gekommen. Und weil der Kunde wichtig ist, wollte ich es noch erledigen.\nThomas: Das kann ich verstehen, aber ich war schon um 7 Uhr im Büro und dann habe ich wie immer um 17 Uhr Feierabend gemacht und das Handy ausgeschaltet. Aber komm, lass uns das Angebot jetzt schnell zusammen fertig machen.\nNummer 31\nFrau 1: Kommt ihr auch? Gleich fängt das Meeting mit dem Chef an.\nHerr: Ja, wir kommen. Wisst ihr, worum es heute geht?\nFrau 2: Ich habe gehört, um einen Bereitschaftsdienst am Wochenende. Ich bin mal gespannt, was das bedeuten soll.\nFrau 1: Ich denke, dass an jedem Wochenende immer einer aus dem Team erreichbar sein soll.\nFrau 2: Wieso soll das denn? Wir sind doch eh jeden Tag unter der Woche von morgens bis abends erreichbar. Ist das nicht genug?\nFrau 1: Ja, aber unsere Kunden brauchen vielleicht auch am Wochenende einen Ansprechpartner und wenn wir samstags arbeiten, dann sollten wir auch ansprechbar sein\nHerr: Naja. Wenn es nur um eine telefonische Erreichbarkeit geht, ist es ja nicht so schlimm... Solange wir nicht ins Büro kommen müssen.\nFrau 2: Kundenservice ist schon wichtig. Aber irgendwo ist auch mal eine Grenze. Jetzt hören wir erstmal, was der Chef sagt.",
+      "options": [
+        {"key": "a", "text": "Mitarbeiter sollten ihr Diensthandy nach der Arbeit ausschalten."},
+        {"key": "b", "text": "Im Urlaub sollte man sich Arbeitsangelegenheiten nicht beschäftigen."},
+        {"key": "c", "text": "Arbeit und Freizeit sollten klar getrennt sein, um das Privatleben zu schützen."},
+        {"key": "d", "text": "Für manche Kunden ist es wichtig, dass der Kundenservice auch am Wochenende verfügbar ist."},
+        {"key": "e", "text": "Man sollte das Privatleben respektieren und Arbeitsanfangen außerhalb der Arbeitszeit vermeiden."},
+        {"key": "f", "text": "Manche Mitarbeiter sind bereit, für den Kundenservice am Wochenende erreichbar zu sein."}
+      ],
+      "items": [
+        {
+          "n": 28,
+          "type": "choice",
+          "prompt": "Gespräch 1",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Wir können es doch einfach am Ende des Arbeitstages und am Wochenende ausschalten.",
+          "explain": "El equipo acuerda apagar el móvil de empresa al terminar la jornada y el fin de semana. Eso es exactamente lo que dice el enunciado a.",
+          "explain_ru": "Команда договаривается выключать рабочий телефон после работы и на выходных. Это и есть утверждение a."
+        },
+        {
+          "n": 29,
+          "type": "choice",
+          "prompt": "Gespräch 2",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Ich kann gar nicht richtig entspannen, wenn ich immer wieder an die Arbeit denken muss.",
+          "explain": "Max no logra desconectar en vacaciones porque sigue pendiente del trabajo. La próxima vez dejará el móvil en casa: vacaciones sin trabajo.",
+          "explain_ru": "Макс не может отключиться в отпуске, потому что всё время думает о работе. В следующий раз он оставит телефон дома: отпуск без работы."
+        },
+        {
+          "n": 30,
+          "type": "choice",
+          "prompt": "Gespräch 3",
+          "answer": "e",
+          "confidence": "mittel",
+          "quote": "ich war schon um 7 Uhr im Büro und dann habe ich wie immer um 17 Uhr Feierabend gemacht und das Handy ausgeschaltet.",
+          "explain": "Thomas defiende su tiempo libre: contestar mensajes de trabajo por la noche invade su vida privada. El enunciado e pide respetar eso y evitar encargos fuera de horario.",
+          "explain_ru": "Томас защищает своё свободное время: рабочие сообщения вечером вторгаются в личную жизнь. Утверждение e требует уважать это и не давать поручения вне рабочего времени."
+        },
+        {
+          "n": 31,
+          "type": "choice",
+          "prompt": "Gespräch 4",
+          "answer": "d",
+          "confidence": "mittel",
+          "quote": "unsere Kunden brauchen vielleicht auch am Wochenende einen Ansprechpartner",
+          "explain": "El motivo del servicio de fin de semana es que los clientes pueden necesitar contacto también esos días. El enunciado f describe la disposición del equipo, que aquí solo es condicional.",
+          "explain_ru": "Причина дежурства на выходных — клиентам может понадобиться контакт и в эти дни. Утверждение f описывает готовность команды, которая здесь лишь условная."
+        }
+      ]
+    },
+    {
+      "id": "h2-v2",
+      "label": "Variante 2",
+      "page": 139,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "zuordnung",
+      "optionsLabel": "Aussagen",
+      "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch? Zwei Sätze bleiben übrig.",
+      "passage": "Nummer 28\nHerr: Jana, ich habe gehört, dass du im nächsten Monat an einem Spanischkurs teilnimmst. Das ist ja toll. Fliegst du dann nach Spanien?\nFrau: Das wäre wirklich super. Aber ich fliege nicht weg, sondern lerne zwei Wochen lang in einem Intensivkurs in einer Sprachschule hier in der Stadt.\nHerr: Nimmst du dafür Urlaubstage?\nFrau: Nein, das brauche ich nicht. Ich habe nämlich Bildungsurlaub.\nHerr: Bildungsurlaub?\nFrau: Ja. Den können wir doch jedes Jahr nehmen. Im letzten Jahr hatte ich keinen. Und nun stehen mir dieses Jahr sogar zwei Wochen für so eine Weiterbildung zu. Dafür brauche ich keine Urlaubstage zu nehmen.\nHerr: Und warum hast du dich für einen Spanischkurs entschieden?\nFrau: Ich spreche diese Sprache schon ganz gut und betreue deshalb unsere Kunden in Lateinamerika. Aber E-Mails auf Spanisch zu schreiben fällt mir immer noch schwer.\nHerr: Dann wünsche ich dir viel Spaß und viel Erfolg.\nNummer 29\nFrau: Stimmt das eigentlich, dass unsere Firma keine professionellen Übersetzer mehr bezahlen will? Habt ihr etwas über diesen Plan gehört?\nHerr 1: Das kann ich mir nicht vorstellen. Wir müssen doch oft etwas in anderen Sprachen schreiben.\nHerr 2: Ja, erst gestern habe ich eine Information über das neue Produkt für den französischen Markt geschrieben. Das konnte ich auf Deutsch machen. Zum Glück. Die Übersetzer können das natürlich viel besser auf Französisch ausdrücken als ich.\nFrau: Ich spreche überhaupt kein Französisch. Das kann doch auch keiner von uns verlangen.\nHerr 1: Unser Team ist ja ziemlich international. Vielleicht haben wir genug Mitarbeiter, die Präsentationen und E-Mails in anderen Sprachen schreiben können.\nFrau: Aber professionell ist das nicht.\nHerr 2: Ich sehe das auch so wie Julia. Wir brauchen den Übersetzerservice. Hoffentlich behalten wir ihn.\nNummer 30\nFrau: Hallo, Ahmed. Ich brauche deine Hilfe. Hast du einen Moment Zeit?\nHerr: Natürlich, Gina. Worum geht es denn?\nFrau: Ich bediene gerade einen Kunden, der ein neues Handy kaufen will. Er spricht zwar ganz gut Deutsch, aber wir wollen jetzt über den Vertrag sprechen. Das ist ein bisschen schwierig. Könntest du ihm das wohl auf Arabisch erklären? Der Kunde spricht Arabisch.\nHerr: Ja, das kann ich machen. Am besten übernehme ich den Kunden. Und du machst hier weiter mit den Bestellungen.\nFrau: Eigentlich habe ich ihm schon ziemlich viele Handymodelle gezeigt und würde gerne den Verkauf auch abschließen.\nHerr: Und jetzt möchtest du nicht auf deine Verkaufsprovision verzichten? Das kann ich ja auch verstehen. In Ordnung, gehen wir zusammen zu ihm.\nFrau: Danke, Achmed. Wenn ich dich nicht hätte.\nNummer 31\nFrau 1: Nächste Woche fangen doch unsere Englischkurse an! Habt ihr euch schon für einen entschieden?\nHerr: Also ich bin Anfänger. Seit mindestens 20 Jahren habe ich kein Englisch mehr gesprochen und ich werde es in meinem Alter auch bestimmt nicht mehr lernen.\nFrau 2: Ich weiß gar nicht, wie gut mein Englisch ist. Die Lehrer werden uns sicherlich beraten, welcher Kurs der Richtige ist, oder? Vielleicht machen die ja auch einen Einstufungstest mit uns.\nHerr: Einen Test? Das wird ja immer schlimmer. Ich arbeite seit Jahren hier, ohne dass sich jemand für meine Englischkenntnisse interessiert. Und jetzt soll ich plötzlich in einen Kurs gehen und Tests schreiben? Das gefällt mir gar nicht.\nFrau 1: Na ja, Hans, weil du kein Englisch sprichst, muss immer ich mit unseren internationalen Partnern telefonieren. Du sollst das ja auch mal machen.\nFrau 2: Miriam hat recht. Wir arbeiten mit immer mehr Partnern in verschiedenen Ländern zusammen. Ich finde es gut, dass unsere Firma jetzt Englischkurse für uns anbietet.",
+      "options": [
+        {"key": "a", "text": "Die Firma möchte, dass alle Mitarbeiter ihre Englischkenntnisse verbessern."},
+        {"key": "b", "text": "Ein Mitarbeiter nutzt eine besondere Urlaubsregelung, um seine Sprachkenntnisse zu verbessern."},
+        {"key": "c", "text": "Ein Mitarbeiter hilft einem Kollegen bei einem Kundengespräch auf einer fremden Sprache."},
+        {"key": "d", "text": "Die Firma überlegt, ob sie weiterhin Übersetzungsdienste benötigt."},
+        {"key": "e", "text": "Ein Mitarbeiter plant, an einem Intensivsprachkurs teilzunehmen."},
+        {"key": "f", "text": "Ein Kollege übernimmt einen Teil der Arbeit, um einem Team zu helfen."}
+      ],
+      "items": [
+        {
+          "n": 28,
+          "type": "choice",
+          "prompt": "Gespräch 1",
+          "answer": "b",
+          "confidence": "mittel",
+          "quote": "Ich habe nämlich Bildungsurlaub.",
+          "explain": "Jana hace un curso de español con Bildungsurlaub, un permiso especial que no consume vacaciones. El enunciado e también encaja, pero se queda en el curso y no explica la regla que lo permite.",
+          "explain_ru": "Яна проходит курс испанского в Bildungsurlaub — это особый отпуск, не расходующий дни отпуска. Утверждение e тоже подходит, но говорит только о курсе, а не о правиле, которое его позволяет."
+        },
+        {
+          "n": 29,
+          "type": "choice",
+          "prompt": "Gespräch 2",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Stimmt das eigentlich, dass unsere Firma keine professionellen Übersetzer mehr bezahlen will?",
+          "explain": "Los compañeros discuten si la empresa dejará de pagar traductores profesionales. Exactamente el enunciado d.",
+          "explain_ru": "Коллеги обсуждают, перестанет ли фирма оплачивать профессиональных переводчиков. Это и есть утверждение d."
+        },
+        {
+          "n": 30,
+          "type": "choice",
+          "prompt": "Gespräch 3",
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Könntest du ihm das wohl auf Arabisch erklären?",
+          "explain": "Gina pide a Ahmed que explique el contrato en árabe a un cliente. Un compañero ayuda en una conversación de cliente en otro idioma.",
+          "explain_ru": "Джина просит Ахмеда объяснить клиенту договор по-арабски. Коллега помогает в разговоре с клиентом на другом языке."
+        },
+        {
+          "n": 31,
+          "type": "choice",
+          "prompt": "Gespräch 4",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Ich finde es gut, dass unsere Firma jetzt Englischkurse für uns anbietet.",
+          "explain": "La empresa ofrece cursos de inglés a todos. El objetivo es que el equipo mejore sus conocimientos del idioma.",
+          "explain_ru": "Фирма предлагает курсы английского для всех. Цель — чтобы команда улучшила знание языка."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.137: «Arbeitsanfangen» y «sich Arbeitsangelegenheiten nicht beschäftigen» se copian verbatim (erratas del original)."
+  ]
+}

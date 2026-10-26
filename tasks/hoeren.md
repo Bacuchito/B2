@@ -119,6 +119,9 @@ escribir el registro. Repasar la barra en escritorio y móvil.
 - **H2** — 8 variantes, 48 ítems. `build.py` 770 ítems (689 con clave), sin
   errores. Los cuatro controles verdes: smoke 130/130, seguridad 52/52, diseño
   77/77.
+- **H3** — 7 variantes, 28 ítems (24 con clave, 4 sin clave). `build.py` 798
+  ítems (713 con clave), sin errores ni citas rotas. Smoke 137/137, seguridad
+  52/52, diseño 77/77.
 
 ## Fuera de alcance
 

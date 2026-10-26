@@ -1,0 +1,131 @@
+{
+  "block": "h2_b",
+  "section": "hoeren-t2",
+  "variants": [
+    {
+      "id": "h2-v3",
+      "label": "Variante 3",
+      "page": 141,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "zuordnung",
+      "optionsLabel": "Aussagen",
+      "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch? Zwei Sätze bleiben übrig.",
+      "passage": "Nummer 28\nHerr Schmidt: Hallo Mia. Ich suche Kollegen, die Lust haben, beim Firmenlauf mitzumachen. Du bist doch sportlich. Wie sieht das bei dir aus?\nMia: Firmenlauf? Muss man denn da joggen? Oder kann man da auch walken?\nHerr Schmidt: Natürlich kannst du beides machen. Aber je schneller, desto besser. Die Läufer des besten Teams gewinnen nämlich einen tollen Preis.\nMia: Oh, das klingt ja gut. Wann findet das Ganze denn statt?\nHerr Schmidt: In einem Monat. Das ist aber wenig Zeit, um für so einen Lauf zu trainieren.\nMia: Ich bin mir nicht sicher, ob ich das schaffe. Wie viele Kilometer muss man denn laufen?\nHerr Schmidt: Man läuft nur 6 Kilometer. Aber wir müssen fünf Kollegen sein, die teilnehmen.\nMia: Und was kann man gewinnen?\nHerr Schmidt: Eine Jahresmitgliedschaft im Fitnessstudio.\nMia: Das ist super. Okay, du hast mich überzeugt. Ich mache mit.\nHerr Schmidt: Toll. Dann müssen wir jetzt nur noch drei andere Personen finden.\nNummer 29\nHerr 1: Wow, im nächsten Jahr wird unsere Firma 50. Ich habe gehört, das soll groß gefeiert werden.\nEmilia: Ja, und für unsere Kunden sind jede Menge Aktionen geplant. Davon bin ich nicht so begeistert.\nHerr 1: Warum denn? Ich finde es toll, dass unsere Firma schon so viele Jahre existiert und wir das feiern.\nEmilia: Naja, aber für uns bedeutet das vor allem mehr Arbeit, oder?\nHerr 2: Ach, Emilia, sei doch nicht so negativ. Wenn alle so denken würden, könnten wir nichts auf die Beine stellen. Das ist doch mal was anderes. Also, mir gefällt die Idee.\nEmilia: Ja, schon. Aber wir arbeiten sowieso schon so viel. Da habe ich keine Lust auf Extraaktionen.\nHerr 1: Aber diese Extraaktionen machen uns doch auch Spaß und finden in der Arbeitszeit statt.\nHerr 2: Ich finde diese Abwechslung auch gut.\nEmilia: Ja, ihr habt recht. Und das große Fest am Ende des Jubiläumsjahres wird bestimmt schön.\nNummer 30\nMichael: Ich freue mich schon auf unseren Mitarbeiterausflug übermorgen. Dass wir dies Mal in den Klettergarten gehen, finde ich richtig super!\nSabine: Hmm, Klettern ist nicht so meins, ehrlich gesagt.\nMichael: Warum, hast du etwa Höhenangst?\nSabine: Ja, habe ich. Ich wäre schon nervös, wenn ich nur auf einen Stuhl steige. Darf ich recht ängstlich auf die Bäume klettern?\nMichael: Ah, ja. Das kann ich gut verstehen. Aber kommst du trotzdem mit, oder gehst du lieber ins Büro? Zuhause bleiben dürfen wir nicht.\nSabine: Nee, nee, ich komme schon mit. Julia ist ja auch dabei, obwohl sie aufgrund ihrer Schwangerschaft nicht klettern kann.\nMichael: Ja, stimmt. Und nach dem Klettern wird ja auch noch zusammen gegrillt. Da sind wir dann alle dabei.\nSabine: Auf das Grillen und das gemeinsame Essen freue ich mich auch schon. Und euch beim Klettern zuzugucken, das wird bestimmt auch ganz witzig.\nNummer 31\nLena: Diesen Freitag ist ja schon die Weihnachtsfeier. Ich freue mich drauf und ich finde es toll, dass der Chef uns alle dazu einlädt.\nElla: An sich finde ich das auch gut, aber in der Weihnachtszeit haben die meisten Leute viele private Verpflichtungen.\nTom: Meine Frau und ich haben auch einen Termin nach dem anderen, aber die Weihnachtsfeier der Firma gehört auch dazu. Zieht man da eigentlich etwas Besonderes an? Ich bin ja das erste Mal dabei.\nLena: Also, ich habe mir extra ein neues Kleid gekauft, aber man kann anziehen, was man will.\nElla: Ich glaube, ich ziehe mich an wie immer. Mir ist die Kleidung nicht so wichtig, aber ich habe mich noch nicht entschieden.\nTom: Das klingt ja entspannt. Dann werde ich auch was finden.",
+      "options": [
+        {"key": "a", "text": "Kleidung für die Feiertage sollten schick aussehen."},
+        {"key": "b", "text": "Auf der Firmenfeier gibt es keine Kleiderordnung."},
+        {"key": "c", "text": "Beim Firmenlauf sollen möglichst viele Mitarbeiter teilnehmen."},
+        {"key": "d", "text": "Die Firma plant aus besonderem Anlass eine Kunden-Kampagne."},
+        {"key": "e", "text": "Es gibt verschiedene Programmpunkte beim Betriebsausflug."},
+        {"key": "f", "text": "Für den Lauf werden sportliche Mitarbeiter gesucht."}
+      ],
+      "items": [
+        {
+          "n": 28,
+          "type": "choice",
+          "prompt": "Gespräch 1",
+          "answer": "f",
+          "confidence": "hoch",
+          "quote": "Ich suche Kollegen, die Lust haben, beim Firmenlauf mitzumachen. Du bist doch sportlich.",
+          "explain": "Herr Schmidt busca compañeros deportistas para el equipo de la carrera. El enunciado c habla de que participe el mayor número posible, y solo necesitan cinco.",
+          "explain_ru": "Господин Шмидт ищет спортивных коллег для команды на забеге. Утверждение c говорит о как можно большем числе участников, а им нужно всего пять."
+        },
+        {
+          "n": 29,
+          "type": "choice",
+          "prompt": "Gespräch 2",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "für unsere Kunden sind jede Menge Aktionen geplant.",
+          "explain": "La empresa cumple 50 años y prepara acciones para los clientes. Es una campaña por un aniversario.",
+          "explain_ru": "Фирме исполняется 50 лет, и она готовит акции для клиентов. Это кампания к юбилею."
+        },
+        {
+          "n": 30,
+          "type": "choice",
+          "prompt": "Gespräch 3",
+          "answer": "e",
+          "confidence": "hoch",
+          "quote": "Und nach dem Klettern wird ja auch noch zusammen gegrillt.",
+          "explain": "La excursión tiene dos partes: escalar y después una barbacoa. Hay varios puntos en el programa.",
+          "explain_ru": "У поездки две части: скалолазание и потом барбекю. В программе несколько пунктов."
+        },
+        {
+          "n": 31,
+          "type": "choice",
+          "prompt": "Gespräch 4",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "man kann anziehen, was man will.",
+          "explain": "En la fiesta de empresa no hay código de vestimenta: cada uno va como quiere.",
+          "explain_ru": "На корпоративном празднике нет дресс-кода: каждый одевается как хочет."
+        }
+      ]
+    },
+    {
+      "id": "h2-v4",
+      "label": "Variante 4",
+      "page": 143,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "zuordnung",
+      "optionsLabel": "Aussagen",
+      "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch? Zwei Sätze bleiben übrig.",
+      "passage": "Nummer 28\nHerr: Hallo, Lisa-Vera. Wie gut, dass ich dich jetzt noch treffe. Ich wollte vor meinem Urlaub noch etwas mit dir besprechen.\nFrau: Ach, du machst Urlaub? Wohin geht's denn?\nHerr: Ja, nächste Woche bin ich mit der Familie in Südfrankreich. Du weißt ja, unser Projekt muss bald fertig sein. Und leider habe ich es nicht mehr geschafft, die Informationen über den Kreis einzuholen. Könntest du das bitte für mich machen?\nFrau: Eigentlich habe ich überhaupt keine Zeit dafür. Sag mir bitte das nächste Mal früher Bescheid. Aber gut, wer hat denn die Informationen?\nHerr: Franka Pater. Die ist allerdings heute nicht mehr im Haus, aber morgen ist sie wieder da.\nFrau: In Ordnung, dann rufe ich mich morgen wieder an. Und dir wünsche ich einen schönen Urlaub.\nHerr: Danke, du bist super.\nNummer 29\nHerr: Wisst ihr eigentlich, bis wann wir unseren Jahresurlaub einreichen müssen?\nFrau 1: Ich denke, wie immer bis Ende Januar. Aber je früher, desto besser, damit wir uns noch absprechen können. Hast du dir denn schon überlegt, wann du Urlaub machen willst?\nHerr: Am nächsten, im August. Da hat meine Familie in der Türkei auch Urlaub. Dann können wir alle zusammen den Sommer genießen.\nFrau 2: Das klingt super. Aber du weißt ja, ich bin wegen der Kinder auch auf die Schulferien angewiesen. Wir sollten uns da absprechen.\nHerr: Ja, klar sprechen wir uns mal. Was hältst du davon, wenn ich die erste Augusthälfte freinehme und du die letzten beiden Wochen?\nFrau: Das klingt super. Dann bin ich einverstanden. Jetzt warten wir mal, was der Chef dazu sagt.\nNummer 30\nFrau: Hallo Jens. Wie war dein Urlaub? Bist du gut erholt?\nHerr: Nein, gar nicht. Mich hat schon gleich am 1. Urlaubstag eine dicke Erkältung erwischt. Ich lag die meiste Zeit im Bett, statt am Strand in der Sonne.\nFrau: Ach du Armer, das tut mir aber leid. Hast du dir wenigstens einen Attest vom Arzt besorgt, damit du dir die Urlaubstage zurückholen kannst?\nHerr: Nee, ich war doch im Ausland. Und da wollte ich nicht zum Arzt gehen. Aber wenigstens für die letzten 4 Tage habe ich von meinem Hausarzt hier noch eine Krankschreibung bekommen.\nFrau: Na, immerhin. Dann hast du noch ein paar Urlaubstage, die du später nehmen kannst.\nHerr: Genau. Aber jetzt fange ich erstmal wieder mit der Arbeit an.\nFrau: Sei einen guten Start.\nNummer 31\nFrau: Ich habe gehört, dass du vor Kurzem umgezogen bist. Wusstest du, dass bei mir demnächst auch ein Umzug ansteht?\nHerr: Ach ja? Na dann viel Spaß. Das ist echt viel Arbeit. Wir haben 2 Tage nur Müll geschleppt. Zum Glück gibt es dafür einen Antrag auf Sonderurlaub.\nFrau: Sonderurlaub? Das wusste ich gar nicht. Was muss man denn dafür machen?\nHerr: Einfach einen Antrag stellen. Und später musst du natürlich nachweisen, dass du umgezogen bist.\nFrau: Guter Tipp. Reicht da ein einfaches Schreiben oder muss ich ein Antragsformular ausfüllen?\nHerr: Es gibt ein Formular dafür. Geh einfach mal zu Frau Heilmann ins Sekretariat. Die kann dir genau sagen, was du brauchst. Aber geh rechtzeitig. Die Firma muss mindestens eine Woche vorher wissen, dass du nicht da bist.\nFrau: Okay. Dann erledige ich das mal sofort. Danke dir.",
+      "options": [
+        {"key": "a", "text": "Arbeitnehmer bekommen zu besonderen Anlässen frei."},
+        {"key": "b", "text": "Einige Kollegen können nur zu bestimmten Zeiten Urlaub nehmen."},
+        {"key": "c", "text": "Manchmal müssen Kollegen auch die Aufgaben von anderen übernehmen."},
+        {"key": "d", "text": "Unter gewissen Umständen gehen Urlaubstage nicht verloren."},
+        {"key": "e", "text": "Viele Menschen träumen während der Arbeitszeit vom Sommerurlaub."},
+        {"key": "f", "text": "Wer im Urlaub krank wird, kann Sonderurlaub beantragen."}
+      ],
+      "items": [
+        {
+          "n": 28,
+          "type": "choice",
+          "prompt": "Gespräch 1",
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Könntest du das bitte für mich machen?",
+          "explain": "Un compañero que se va de vacaciones pide a Lisa-Vera que asuma su tarea pendiente. Ella no tiene tiempo, pero acepta.",
+          "explain_ru": "Коллега, уходящий в отпуск, просит Лизу-Веру взять его незаконченную задачу. У неё нет времени, но она соглашается."
+        },
+        {
+          "n": 29,
+          "type": "choice",
+          "prompt": "Gespräch 2",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "ich bin wegen der Kinder auch auf die Schulferien angewiesen.",
+          "explain": "Una compañera solo puede coger vacaciones en las vacaciones escolares. Por eso hay que repartir agosto entre los dos.",
+          "explain_ru": "Коллега может взять отпуск только на школьных каникулах. Поэтому август делят между двумя."
+        },
+        {
+          "n": 30,
+          "type": "choice",
+          "prompt": "Gespräch 3",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Dann hast du noch ein paar Urlaubstage, die du später nehmen kannst.",
+          "explain": "Jens enfermó en vacaciones y con el parte médico recupera los últimos cuatro días. Los días de vacaciones no se pierden.",
+          "explain_ru": "Йенс заболел в отпуске, и со справкой от врача он возвращает последние четыре дня. Дни отпуска не теряются."
+        },
+        {
+          "n": 31,
+          "type": "choice",
+          "prompt": "Gespräch 4",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Zum Glück gibt es dafür einen Antrag auf Sonderurlaub.",
+          "explain": "Por una mudanza se puede pedir un permiso especial retribuido. Es un día libre por una ocasión concreta.",
+          "explain_ru": "Из-за переезда можно оформить специальный оплачиваемый отпуск. Это свободный день по конкретному поводу."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.143: el original trae un segundo banco de respuestas con otra «d»; se usa el primero."
+  ]
+}

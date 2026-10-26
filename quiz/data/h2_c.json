@@ -1,0 +1,156 @@
+{
+  "block": "h2_c",
+  "section": "hoeren-t2",
+  "variants": [
+    {
+      "id": "h2-v5",
+      "label": "Variante 5",
+      "page": 145,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "zuordnung",
+      "optionsLabel": "Aussagen",
+      "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch? Zwei Sätze bleiben übrig.",
+      "passage": "Nummer 28\nFrau 1: Wie ist das eigentlich? Könnt ihr mir sagen, was ich machen muss, wenn ich mal krank sein sollte? Ich habe noch gar nicht gefragt, wie das hier gehandhabt wird.\nHerr: Ich bin auch erst kurz hier und weiß das nicht genau. Melanie, was sagst du denn dazu?\nMelanie: Wenn man krank ist, soll man morgens so früh wie möglich anrufen und im Büro bei Frau Gumpel Bescheid sagen. Das ist wichtig, sich direkt bei ihr krank zu melden.\nHerr: Ach stimmt, so war das. Frau Gumpel ist auch immer schon früh im Büro.\nFrau 1: In meiner letzten Firma musste ich immer direkt am ersten Krankheitstag ein Attest bringen. Wie ist das hier?\nMelanie: Keine Sorge, hier ist es nicht so streng. Zwei Tage darf man fehlen, aber wenn du länger krank bist, musst du eine Krankmeldung vorlegen.\nFrau 1: Ah. Danke für die Tipps.\nNummer 29\nHerr: Hast du auch die Information im Pausenraum gesehen? Ich frage mich ja, was das soll. Ich halte sowieso nichts von Grippeschutzimpfungen. Aber warum muss jetzt auch noch ein Arzt in die Firma kommen?\nFrau: Also ich finde, das ist ein tolles Angebot. Ich lasse mich auf jeden Fall impfen.\nHerr: Aber du bist doch jung und gesund. Nur Personen über 60 Jahren wird eine Impfung empfohlen.\nFrau: Das kann noch nicht schaden. Außerdem ist es doch wirklich bequem für uns, wenn der Arzt schon extra in die Firma kommt. Dann nehme ich auf jeden Fall das Angebot an.\nHerr: Jeder kann das selbst entscheiden. Ich habe keine Angst vor der Grippe und lasse mich auch nicht impfen.\nFrau: Du hast doch nur Angst vor der Spritze. Komm, gibt's zu.\nNummer 30\nHerr 1: Monika, hängt bei euch Damen in der Toilette auch ein Infoblatt zum richtigen Händewaschen? Oder wollen sie uns Männern etwas damit sagen?\nFrau: Nee, nee, das hängt bei uns auch. Aber ich frage mich, ob das nicht Allgemeinwissen sein sollte.\nHerr 2: Jetzt in der kalten Jahreszeit, in der so viele krank sind, ist eine Erinnerung immer gut. Das macht bestimmt nicht jeder.\nHerr 1: Schön und gut. Aber was sollen wir denn machen, wenn die Seife immer leer ist? Desinfektionsmittel wäre auch keine schlechte Idee.\nFrau: Das stimmt. Ich finde es auch lästig, dass man immer dran erinnern muss. Kann man die Seife nicht jeden Morgen einfach auffüllen?\nHerr 2: Ja, aber auch mit Seife muss man wissen, wie man sich richtig die Hände wäscht. Es gibt genug Leute, die das falsch machen.\nNummer 31\nHerr: Hallo Isabel. Wurde dein Arbeitsplatz schon geprüft?\nFrau: Nein, noch nicht. Was soll da überhaupt passieren?\nHerr: Der Experte kontrolliert, ob du in der richtigen Haltung am Schreibtisch sitzen kannst.\nFrau: Aha. Und wie macht er das?\nHerr: Naja, er schaut, wie weit du vom Computer entfernt sitzt und ob der Stuhl richtig eingestellt ist.\nFrau: Das klingt ja merkwürdig. Ich arbeite doch schon seit Jahren an meinem Schreibtisch. Und plötzlich soll kontrolliert werden, ob das gesund ist?\nHerr: Wie du weißt, haben viele Kollegen Rückenschmerzen und fallen dadurch bei der Arbeit aus.\nFrau: Und was kam bei dir dabei heraus? Hat dein Stuhl die richtige Höhe?\nHerr: Ja, das schon. Aber der Computer steht jetzt tatsächlich anders, damit ich besser davor sitze.\nFrau: Na. Ich bin gespannt, was er zu mir sagt.",
+      "options": [
+        {"key": "a", "text": "Regelungen zur Arbeitsunfähigkeit unterscheiden sich von Unternehmen zu Unternehmen."},
+        {"key": "b", "text": "Die Arbeitsplatzgestaltung hat einen Einfluss auf die Gesundheit der Mitarbeiter."},
+        {"key": "c", "text": "Arbeitgeber sollten mehr für die Hygiene im Betrieb tun."},
+        {"key": "d", "text": "Manche Arbeitgeber bieten Maßnahmen für die Gesundheitsvorsorge an."},
+        {"key": "e", "text": "Das Wohlbefinden der Mitarbeiter sollte ein wichtiges Anliegen sein."},
+        {"key": "f", "text": "Bei Krankheit braucht man ab dem ersten Tag ein Attest vom Arzt."}
+      ],
+      "items": [
+        {
+          "n": 28,
+          "type": "choice",
+          "prompt": "Gespräch 1",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "In meiner letzten Firma musste ich immer direkt am ersten Krankheitstag ein Attest bringen.",
+          "explain": "Compara la norma de su empresa anterior con la de ahora: dos días sin parte y luego justificante. Cada empresa lo regula distinto.",
+          "explain_ru": "Она сравнивает правило прежней фирмы с нынешним: два дня без справки, потом справка. Каждая фирма регулирует это по-своему."
+        },
+        {
+          "n": 29,
+          "type": "choice",
+          "prompt": "Gespräch 2",
+          "answer": "d",
+          "confidence": "hoch",
+          "quote": "Außerdem ist es doch wirklich bequem für uns, wenn der Arzt schon extra in die Firma kommt.",
+          "explain": "La empresa trae un médico para vacunar contra la gripe. Es una medida de prevención ofrecida por el empleador.",
+          "explain_ru": "Фирма приглашает врача для прививки от гриппа. Это профилактическая мера, которую предлагает работодатель."
+        },
+        {
+          "n": 30,
+          "type": "choice",
+          "prompt": "Gespräch 3",
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Aber was sollen wir denn machen, wenn die Seife immer leer ist?",
+          "explain": "El personal se queja de que el jabón está vacío y pide desinfectante. Piden más higiene en la empresa.",
+          "explain_ru": "Сотрудники жалуются, что мыло всегда пустое, и просят дезинфицирующее средство. Они требуют больше гигиены на фирме."
+        },
+        {
+          "n": 31,
+          "type": "choice",
+          "prompt": "Gespräch 4",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Der Experte kontrolliert, ob du in der richtigen Haltung am Schreibtisch sitzen kannst.",
+          "explain": "Revisan la silla y la distancia al monitor para prevenir dolores de espalda. El puesto influye en la salud.",
+          "explain_ru": "Проверяют стул и расстояние до монитора, чтобы предотвратить боли в спине. Рабочее место влияет на здоровье."
+        }
+      ]
+    },
+    {
+      "id": "h2-v6",
+      "label": "Variante 6",
+      "page": 147,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "zuordnung",
+      "optionsLabel": "Aussagen",
+      "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch? Zwei Sätze bleiben übrig.",
+      "passage": "Nummer 28\nHerr: Ich finde es wirklich schlimm, dass wir nächste Woche ins Großraumbüro umziehen müssen. Das ist die schlechteste Entscheidung, die unsere Firma seit Jahren getroffen hat.\nFrau 1: Das sehe ich nicht so negativ. Ich war schon mal in so einem Büro - am Anfang war es ungewohnt, aber man gewöhnt sich dran.\nHerr: Ungewohnt? Bei dem ständigen Lärm kann ich doch überhaupt nicht konzentriert arbeiten. Ich werde auf jeden Fall beim Chef nachfragen, ob man wenigstens Raumteiler aufstellen kann oder ob es eine ruhigere Ecke gibt.\nFrau 2: Das verstehe ich. Aber denk mal daran, wie oft wir uns im Moment stundenlang E-Mails hin- und herschicken, nur weil wir in verschiedenen Zimmern sitzen. Gestern haben Lukas und ich ein Problem in zehn Minuten gelöst - einfach weil wir nebeneinander saßen und direkt reden konnten.\nFrau 1: Genau. Spontane Abstimmungen, kurze Rückfragen, gemeinsam an einem Dokument arbeiten - das läuft im Großraumbüro einfach flüssiger. Das merkt man wirklich.\nHerr: Na gut, vielleicht mag das stimmen. Aber an den Lärm werde ich mich trotzdem nie gewöhnen.\nNummer 29\nHerr: Du arbeitest jetzt schon seit zwei Jahren fast nur von zu Hause, oder? Ich kann mir das ehrlich gesagt nicht vorstellen.\nFrau: Für mich ist es ideal. Ich mochte gar nicht mehr tauschen.\nHerr: Ich habe das selbst mal drei Monate lang versucht. Aber ich kam einfach nicht los - nach dem Feierabend saß ich immer noch am Laptop, weil mir die Grenze zwischen Arbeit und Privatleben völlig verschwommen ist.\nFrau: Das kenne ich. Das war bei mir am Anfang auch so. Aber das Problem lässt sich lösen. Ich habe mir ein eigenes Arbeitszimmer eingerichtet - das war der entscheidende Schritt.\nHerr: Ein eigenes Zimmer nur fürs Arbeiten? Das habe ich bei mir leider nicht.\nFrau: Das ist natürlich ideal. Aber auch ohne eigenes Zimmer geht es, wenn man klare Rituale schafft. Bei mir gilt: wenn der Arbeitstag vorbei ist, schließe ich die Tür des Arbeitszimmers zu - und damit ist die Arbeit wirklich abgeschlossen. Dann mache ich Yoga oder gehe spazieren, und der Kopf schaltet vollständig ab.\nHerr: Das klingt wirklich gut. Aber ich glaube, das schaffst du einfach besser als ich.\nFrau: Das denken viele. Aber es ist vor allem eine Frage der richtigen Organisation. Ich jedenfalls kann mir nicht mehr vorstellen, täglich eine Stunde zur Arbeit zu pendeln.\nNummer 30\nHerr 1: Habt ihr schon gehört? Nächsten Monat kommt noch eine neue Kollegin zu uns.\nFrau: Schon wieder jemand Neues? Wir sitzen doch jetzt schon auf engstem Raum. Wo soll die denn überhaupt hin?\nHerr 1: Das habe ich auch sofort gefragt. Der Chef sagt, es wird schon irgendwie gehen.\nFrau: In meiner alten Firma war das mal genauso eng. Da haben sie kurzentschlossen einen ungenutzten Raum im Stockwerk darüber umfunktioniert - das Problem war innerhalb einer Woche gelöst. Warum macht man das hier nicht auch so?\nHerr 1: Das wäre natürlich die einfachste Lösung. Aber hier wird das offenbar anders laufen. Der Chef hat entschieden: der Kopierer kommt in den Flur - dann ist genug Platz für einen neuen Schreibtisch.\nHerr 2: In den Flur? Das ist doch eine Zumutung. Jedes Mal, wenn ich etwas drucken will, muss ich extra rausgehen. Und im Winter, wenn es zieht und man keine Jacke anhat...\nFrau: Genau. Das kostet uns alle täglich Zeit und Nerven.\nHerr 1: Ich weiß. Aber irgendwo muss der Platz ja herkommen. Die Neue kommt auf jeden Fall - das steht fest.\nHerr 2: Na dann. Enger geht immer.\nNummer 31\nFrau 1: Ich habe gerade einen interessanten Bericht gelesen. Immer mehr mittelständische Unternehmen steigen auf sogenannte Co-Working-Spaces um also gemeinsame Büroflächen, die man flexibel mietet, statt ein eigenes Büro langfristig zu binden.\nHerr: Das klingt für mich ehrlich gesagt nach Chaos. Man sitzt dann neben völlig Fremden, kennt niemanden, hat keinen festen Platz.\nFrau 1: Dafür spart das Unternehmen enorm - keine teuren Langzeitverträge, flexible Kapazitäten je nach aktuellem Bedarf.\nFrau 2: Und solche Spaces sind oft sehr modern ausgestattet - schnelles Internet, professionelle Meetingräume, Gemeinschaftsbereiche.\nHerr: Das ist doch im Grunde dasselbe wie ein Großraumbüro, nur dass man sich die Fläche mit fremden Firmen teilt. Kein eigener Schreibtisch, kein richtiges Zugehörigkeitsgefühl - ich sehe da keinen Unterschied.\nFrau 1: Das ist so nicht ganz richtig. Viele dieser Spaces bieten auch feste Arbeitsplätze und abgeschlossene Bereiche für Teams. Und vor allem: sie machen das Unternehmen attraktiver für qualifizierte Bewerber, die Wert auf moderne und flexible Arbeitsumgebungen legen.\nFrau 2: Genau. Gerade für wachsende Firmen ist das wirtschaftlich wirklich interessant - man kann schnell reagieren, ohne sich für Jahre zu binden.\nHerr: Na ja. Ich bleibe skeptisch. Aber ich sehe, dass die Argumente Unternehmenssicht aus zumindest einleuchten.",
+      "options": [
+        {"key": "a", "text": "Es ist nicht immer einfach, Platz für neue Kolleg*innen zu schaffen."},
+        {"key": "b", "text": "Im Großraumbüro kann man mit den Kolleg*innen besser zusammenarbeiten."},
+        {"key": "c", "text": "Manche Mitarbeit*innen arbeiten gerne regelmäßig von zu Hause aus."},
+        {"key": "d", "text": "Manchmal tut der räumliche Abstand zu Kolleg*innen gut."},
+        {"key": "e", "text": "Neue Arbeitsplatzmodelle können für Unternehmen attraktiv sein."},
+        {"key": "f", "text": "Über die Neugestaltung des Arbeitsplatzes muss nachgedacht werden."}
+      ],
+      "items": [
+        {
+          "n": 28,
+          "type": "choice",
+          "prompt": "Gespräch 1",
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Gestern haben Lukas und ich ein Problem in zehn Minuten gelöst - einfach weil wir nebeneinander saßen und direkt reden konnten.",
+          "explain": "En la oficina abierta las consultas y el trabajo conjunto fluyen mejor. El compañero se queja del ruido, pero los demás defienden la colaboración.",
+          "explain_ru": "В открытом офисе вопросы и совместная работа идут быстрее. Коллега жалуется на шум, но остальные защищают сотрудничество."
+        },
+        {
+          "n": 29,
+          "type": "choice",
+          "prompt": "Gespräch 2",
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Für mich ist es ideal. Ich mochte gar nicht mehr tauschen.",
+          "explain": "La mujer lleva dos años trabajando casi solo desde casa y no quiere volver. Le gusta el teletrabajo regular.",
+          "explain_ru": "Женщина уже два года работает почти только из дома и не хочет возвращаться. Ей нравится регулярная удалённая работа."
+        },
+        {
+          "n": 30,
+          "type": "choice",
+          "prompt": "Gespräch 3",
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Wir sitzen doch jetzt schon auf engstem Raum. Wo soll die denn überhaupt hin?",
+          "explain": "Llega una compañera nueva y ya están apretados. Mueven la fotocopiadora al pasillo para hacer sitio.",
+          "explain_ru": "Приходит новая коллега, а места уже мало. Копир переносят в коридор, чтобы освободить место."
+        },
+        {
+          "n": 31,
+          "type": "choice",
+          "prompt": "Gespräch 4",
+          "answer": "e",
+          "confidence": "hoch",
+          "quote": "sie machen das Unternehmen attraktiver für qualifizierte Bewerber",
+          "explain": "Los espacios de coworking ahorran costes y hacen la empresa más atractiva para candidatos. Un modelo de puesto atractivo.",
+          "explain_ru": "Коворкинги экономят расходы и делают фирму привлекательнее для кандидатов. Это привлекательная модель рабочего места."
+        }
+      ]
+    },
+    {
+      "id": "h2-v7",
+      "label": "Variante 7",
+      "page": 149,
+      "note": "El original no trae transcripción de estos audios: solo las seis afirmaciones. No se corrige.",
+      "note_ru": "В оригинале нет текста этих аудио: только шесть утверждений. Проверка недоступна.",
+      "kind": "ohne-key",
+      "optionsLabel": "Aussagen",
+      "intro": "Sie hören vier Gespräche zum Thema Fortbildung. Welcher der Sätze a–f passt am besten zu welchem Gespräch? Zwei Sätze bleiben übrig.",
+      "items": [
+        {"n": 28, "type": "choice", "prompt": "Gespräch 1"},
+        {"n": 29, "type": "choice", "prompt": "Gespräch 2"},
+        {"n": 30, "type": "choice", "prompt": "Gespräch 3"},
+        {"n": 31, "type": "choice", "prompt": "Gespräch 4"}
+      ],
+      "options": [
+        {"key": "a", "text": "Das Lernen hört im Arbeitsleben nie auf."},
+        {"key": "b", "text": "Die Firma sollte regelmäßig arbeitsplatzbezogene Schulungen organisieren."},
+        {"key": "c", "text": "Es ist sinnvoll, Fortbildungen an unterschiedlichen Tagen anzubieten."},
+        {"key": "d", "text": "Schulungen sollten praxisnah und an realen Fällen orientiert sein."},
+        {"key": "e", "text": "Wer sich wieterbildet, hat bessere Chancen auf eine Beförderung."},
+        {"key": "f", "text": "Nicht alle Schulungen müssen im Betrieb stattfinden."}
+      ]
+    }
+  ],
+  "fixes": [
+    "p.147: «Großraumbüro» y los guiones largos se ajustan al texto del original.",
+    "p.149: «wieterbildet» se copia verbatim (errata del original)."
+  ]
+}
