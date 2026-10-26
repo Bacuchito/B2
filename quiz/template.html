@@ -2572,6 +2572,9 @@ function updateStats(){
 }
 
 /* ---------- navegación ---------- */
+/* Variante → si el texto de lectura estaba desplegado. Vive en la sesión: al
+   recargar vuelve a lo que diga el dato. */
+const passageAbierto = {};
 /* Dónde estabas, para que F5 no devuelva al primer ejercicio. Se guarda la
    variante y la altura de la página; la variante manda, la altura es un extra
    que se ignora si no cuadra. */
@@ -2873,7 +2876,13 @@ function renderMain(){
      quedabas sin las diez palabras. */
   let cuerpoLectura = null;
   if(v.passage){
-    const panelLectura = detailsPanel(t("readingText"), v.passage, v.passageOpen);
+    /* El despliegue lo manda el usuario, no el dato: si se cierra al responder, el
+       panel se vacía y parece que el texto ha desaparecido. Se recuerda por variante. */
+    const abiertoLectura = (passageAbierto[v.id] !== undefined) ? passageAbierto[v.id] : !!v.passageOpen;
+    const panelLectura = detailsPanel(t("readingText"), v.passage, abiertoLectura);
+    if (typeof panelLectura.addEventListener === "function"){
+      panelLectura.addEventListener("toggle", function(){ passageAbierto[v.id] = !!panelLectura.open; });
+    }
     main.appendChild(panelLectura);
     if(typeof panelLectura.querySelector === "function") cuerpoLectura = panelLectura.querySelector(".passage-body");
   }
