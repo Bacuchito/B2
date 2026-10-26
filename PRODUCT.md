@@ -36,13 +36,17 @@ de plantilla podría copiar eso sin hacer antes el mismo trabajo de deducción.
   referencia (los anuncios o el texto) queda fija en la columna izquierda y la hoja
   de preguntas en la derecha, para responder sin subir y bajar. El conmutador de la
   cabecera lo fuerza o lo apaga y recuerda la elección.
-- Son 358 ítems de opción y 111 tareas de escritura (13 Beschwerde, 98 Forumsbeitrag).
+- Son 722 ítems (641 con clave y 81 de Hören sin clave) y 111 tareas de escritura
+  (13 Beschwerde, 98 Forumsbeitrag).
 - 104 tarjetas de **Smalltalk (Sprechen Teil 2)**: un mazo que se hojea entero en dos
   mitades y una **mesa de trabajo** que saca una carta al azar para hablarla en voz
   alta, con un cuadro de notas por carta.
 - **67 situaciones de Sprechen Teil 3** («Lösungswege diskutieren»), una entrada por
   situación: la página enseña el caso y sus Stichpunkte, y deja la ayuda ES/RU y los
   ejemplos detrás de un «Ver».
+- **Siete Modeltests** (11–17), cada uno con sus 12 bloques y 52 ítems. Las respuestas
+  de Lesen y Sprachbausteine están deducidas porque los PDF no traen clave; Hören se
+  ofrece con enunciados y opciones, sin corregir.
 - El progreso vive en `localStorage`, por perfil. La sincronización con Firebase es
   opcional y solo sirve para compartir las redacciones entre los dos.
 - La evaluación de Schreiben la hace un LLM con la clave de API propia de cada uno
@@ -64,6 +68,12 @@ de plantilla podría copiar eso sin hacer antes el mismo trabajo de deducción.
 - **Las situaciones de Sprechen T3 tampoco se corrigen**: cada una es una entrada y
   una página. La descripción alemana y los Stichpunkte van a la vista; la ayuda
   (ES/RU) y los ejemplos de habla en alemán solo se ven al pulsar «Ver».
+- **Los Modeltests separan clave y no clave**: Lesen y Sprachbausteine llevan quote,
+  confidence y explicación ES/RU deducidas; Hören (`kind: "ohne-key"`) muestra
+  enunciados y opciones sin answer, no corrige y no cuenta en las estadísticas.
+  Lesen T3 admite una `x` para la pregunta sin consejo. Los Modeltests 13, 14 y 15
+  son la excepción: sus Hörtexte llegaron aparte y su Hören se corrige (13: 22–40;
+  14 y 15: 22–41).
 - El entregable es **un único HTML autocontenido** generado por `build.py` desde
   `template.html`; los datos viven en `quiz/data/*.json` bajo el contrato de
   `SPEC.md`.
@@ -91,6 +101,7 @@ de plantilla podría copiar eso sin hacer antes el mismo trabajo de deducción.
 - `quiz/verified.json`: las respuestas confirmadas por la segunda lectura.
 - `quiz/sprachbausteine_respuestas.json` y `quiz/_resp_*.json`: las 132 respuestas
   deducidas de los huecos.
+- `DESIGN.md`: el mundo visual, sus tokens y lo que queda prohibido.
 - `quiz/README.md` y `quiz/SPEC.md`: contrato de datos y sistema de diseño
   documentado.
 - `AUDITORIA_B2.md`: auditoría interna, en disco y fuera del repositorio público.

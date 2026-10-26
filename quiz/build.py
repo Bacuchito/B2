@@ -43,6 +43,13 @@ SECTIONS = {
     "hoeren-t4": "Hören Teil 4",
     "sprechen-t2": "Sprechen Teil 2 · Smalltalk",
     "sprechen-t3": "Sprechen Teil 3 · Lösungswege",
+    "modeltest-11": "Modeltest 11",
+    "modeltest-12": "Modeltest 12",
+    "modeltest-13": "Modeltest 13",
+    "modeltest-14": "Modeltest 14",
+    "modeltest-15": "Modeltest 15",
+    "modeltest-16": "Modeltest 16",
+    "modeltest-17": "Modeltest 17",
 }
 ORDER = list(SECTIONS)
 
@@ -118,6 +125,49 @@ def validate_situation(variant, err, warn):
         err(f"situación {n}: ejemplo vacío")
 
 
+def validate_ohne_key(variant, err, warn):
+    """Validación de un bloque sin clave (Hören de los Modeltests).
+
+    No hay audio ni transcripción en el origen, así que no se puede deducir la
+    respuesta. Se exigen enunciados y opciones completos, pero ni `answer` ni
+    `quote` ni `confidence`: la app deja elegir y no corrige.
+    """
+    for f in ("id", "label", "page", "kind", "intro", "items"):
+        if f not in variant:
+            err(f"falta el campo obligatorio «{f}» para kind=ohne-key")
+    items = variant.get("items") or []
+    if not items:
+        err("no tiene ítems")
+        return
+    pool = variant.get("options") or []
+    if pool:
+        claves = [str(o.get("key", "")).lower() for o in pool]
+        if len(set(claves)) != len(claves):
+            err("opciones globales con clave duplicada")
+        for o in pool:
+            if not (o.get("text") or o.get("title") or "").strip():
+                err(f"opción global {o.get('key')} sin texto")
+        for it in items:
+            if not (it.get("prompt") or "").strip():
+                err(f"ítem {it.get('n')}: prompt vacío")
+    else:
+        for it in items:
+            n = it.get("n")
+            if it.get("type") not in ("choice", "truefalse"):
+                err(f"ítem {n}: type inválido {it.get('type')!r}")
+            if not (it.get("prompt") or "").strip():
+                err(f"ítem {n}: prompt vacío")
+            opciones = it.get("options") or []
+            if not opciones:
+                err(f"ítem {n}: sin opciones")
+            claves = [str(o.get("key", "")).lower() for o in opciones]
+            if len(set(claves)) != len(claves):
+                err(f"ítem {n}: claves de opción duplicadas")
+            for o in opciones:
+                if not (o.get("text") or "").strip():
+                    err(f"ítem {n}: opción {o.get('key')} sin texto")
+
+
 def validate(variant, errors, warns, infos):
     vid = variant.get("id", "<sin id>")
 
@@ -128,8 +178,12 @@ def validate(variant, errors, warns, infos):
         warns.append(f"[{vid}] {m}")
 
     kind = variant.get("kind")
-    if kind not in ("zuordnung", "text", "schreiben", "smalltalk", "situation"):
+    if kind not in ("zuordnung", "text", "schreiben", "smalltalk", "situation", "ohne-key"):
         err(f"kind inválido: {kind!r}")
+        return
+
+    if kind == "ohne-key":
+        validate_ohne_key(variant, err, warn)
         return
 
     if kind == "situation":
@@ -183,11 +237,19 @@ def validate(variant, errors, warns, infos):
             if not (o.get("text") or "").strip():
                 err(f"opción {o.get('key')} sin texto")
         answers = [str(i.get("answer", "")).lower() for i in items]
+        permitir_x = bool(variant.get("allowNone"))
         if len(set(answers)) != len(answers):
             err(f"las respuestas se repiten (cada opción se usa una vez): {answers}")
         for a in answers:
+            if a == "x" and permitir_x:
+                continue
             if a not in keys:
                 err(f"respuesta «{a}» no está entre las opciones")
+        if permitir_x:
+            if answers.count("x") > 1:
+                err("sólo una pregunta puede quedar sin consejo (x)")
+            elif "x" not in answers:
+                warn("allowNone está activo pero ninguna respuesta es x")
         unused = sorted(set(keys) - set(answers))
         if len(unused) == 0:
             warn("no sobra ninguna opción: ¿faltan distractores?")
@@ -239,7 +301,9 @@ def validate(variant, errors, warns, infos):
             err(f"ítem {n}: type inválido {it.get('type')!r}")
         if not (it.get("prompt") or "").strip():
             err(f"ítem {n}: prompt vacío")
-        if not (it.get("quote") or "").strip():
+        es_x = (str(it.get("answer", "")).lower() == "x"
+                and bool(variant.get("allowNone")))
+        if not (it.get("quote") or "").strip() and not es_x:
             err(f"ítem {n}: quote vacío (es obligatorio)")
         if not (it.get("explain") or "").strip():
             err(f"ítem {n}: explain vacío")
@@ -296,7 +360,7 @@ def main():
     errors, warns, infos = [], [], []
     by_section = {}
     seen_ids = set()
-    nvar = nitem = ncard = nsit = 0
+    nvar = nitem = ncard = nsit = nitem_clave = 0
     conf_count = {}
 
     for path in files:
@@ -315,16 +379,20 @@ def main():
             seen_ids.add(v.get("id"))
             validate(v, errors, warns, infos)
             for it in v.get("items", []):
+                if "confidence" not in it:
+                    continue
                 conf_count[str(it.get("confidence", "?")).lower()] = \
                     conf_count.get(str(it.get("confidence", "?")).lower(), 0) + 1
             by_section.setdefault(sec, []).append(v)
             nvar += 1
             nitem += len(v.get("items", []))
+            nitem_clave += sum(1 for it in v.get("items", []) if "answer" in it)
             ncard += len(v.get("cards", []))
             if v.get("kind") == "situation":
                 nsit += 1
 
     print(f"ficheros: {len(files)} · variantes: {nvar} · ítems: {nitem}"
+          + (f" (con clave: {nitem_clave}, sin clave: {nitem - nitem_clave})" if nitem != nitem_clave else "")
           + (f" · tarjetas: {ncard}" if ncard else "")
           + (f" · situaciones: {nsit}" if nsit else ""))
     print("confianza:", dict(sorted(conf_count.items())))
@@ -476,7 +544,7 @@ def main():
         fh.write(html)
 
     print(f"\nOK -> {out}  ({len(html):,} bytes, {len(sections)} secciones)")
-    print(f"   respuestas con verificación independiente: {nver}/{nitem}")
+    print(f"   respuestas con verificación independiente: {nver}/{nitem_clave}")
     for s in sections:
         print(f"   {s['title']:35} {len(s['variants']):>3} variantes")
     return 0

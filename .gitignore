@@ -11,6 +11,19 @@ venv/
 # Graphify cache
 graphify-out/cache/
 
+# Intermedios de una extracción de graphify (no son el grafo; el grafo es
+# graph.json + graph.html + GRAPH_REPORT.md + manifest.json)
+graphify-out/.graphify_ast.json
+graphify-out/.graphify_chunk_*.json
+graphify-out/.graphify_detect.json
+graphify-out/.graphify_extract.json
+graphify-out/.graphify_incremental.json
+graphify-out/.graphify_semantic*.json
+graphify-out/.graphify_cached.json
+graphify-out/.graphify_uncached.txt
+graphify-out/cost.json
+graphify-out/.graphify_python
+
 # OS and Editor
 .DS_Store
 Thumbs.db
@@ -25,3 +38,7 @@ AUDITORIA_B2.md
 .design/
 
 tools/.oc_key
+
+# Capturas y extracciones de trabajo
+tmp-shots/
+.dsh-asar-extract/

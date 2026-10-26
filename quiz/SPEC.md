@@ -303,3 +303,70 @@ Reglas:
    presenta como oficial.
 4. Si una situación trae dos formulaciones separadas por « / », se conservan las dos
    en `de`: el documento las une en el mismo caso.
+
+---
+
+## 8. Formato de tarea: `ohne-key` (Hören de los Modeltests)
+
+Bloques de comprensión auditiva de los que **solo existe el enunciado y las opciones**:
+no hay audio, ni transcripción, ni clave. No se puede deducir la respuesta, así que
+la app deja elegir pero no corrige. Se usa en Hören T1-T4 y en Hören und Schreiben
+(ítem 41) de los siete Modeltests, salvo los Modeltests 13 (22–40), 14 (22–41) y
+15 (22–41): sus Hörtexte llegaron en imágenes y esos bloques son
+`text`/`zuordnung` con `answer`.
+
+```json
+{
+  "id": "mt11-hoeren-t1",
+  "label": "Hören Teil 1",
+  "page": 12,
+  "kind": "ohne-key",
+  "intro": "Sie hören drei Gespräche. …",
+  "items": [
+    {
+      "n": 22,
+      "type": "truefalse",
+      "prompt": "Luisa hat noch keine Erfahrungen mit dem Imbiss-Bereich.",
+      "options": [{"key": "Richtig", "text": "Richtig"}, {"key": "Falsch", "text": "Falsch"}]
+    }
+  ]
+}
+```
+
+| Campo | Obligatorio | Contenido |
+|---|---|---|
+| `kind` | sí | `"ohne-key"` |
+| `intro` | sí | Instrucción del examen, en alemán |
+| `items[].n` | sí | Número del ítem del examen |
+| `items[].type` | sí | `choice` o `truefalse` |
+| `items[].prompt` | sí | Enunciado, en alemán |
+| `items[].options` | sí | Opciones, si no hay `options` a nivel de variante |
+| `options` | solo T2 | Banco global a-f; los ítems solo llevan `n` y `prompt` |
+| `optionsLabel` | no | `"Aussagen"` en Hören T2 |
+
+Reglas:
+
+1. **Nada de `answer`, `quote`, `confidence` ni `explain`**: no hay información para
+   deducir la respuesta. Inventarla sería peor que no corregir.
+2. La app muestra un aviso («sin audio ni clave») y marca la elección sin veredicto.
+   Esos ítems no cuentan en las estadísticas ni en «Solo dudosas».
+3. `intro` puede decir que se trata de una práctica sin audio; el aviso lo pone la app.
+
+---
+
+## 9. Modeltests 11–17 (zona especial)
+
+Cada test es una sección propia (`modeltest-11` … `modeltest-17`) y un fichero
+`quiz/data/modeltest_N.json` con 12 variantes: Lesen T1-T4, Lesen und Schreiben,
+Hören T1-T4, Hören und Schreiben y Sprachbausteine T1-T2. Los ítems conservan la
+numeración del examen (1-20, 22-41, 46-57).
+
+- **Sin clave oficial**: los PDF no traen Lösungsschlüssel; las 32 respuestas de
+  Lesen y Sprachbausteine de cada test se deducen y llevan `quote`, `confidence` y
+  `explain`/`explain_ru`, como el resto de la app.
+- **Hören sin clave**: `kind: "ohne-key"` (apartado 8). Los Modeltests 13 (22–40),
+  14 (22–41) y 15 (22–41) son la excepción: sus Hörtexte se transcribieron y ahora
+  llevan respuesta.
+- **Lesen T3 con `allowNone: true`**: una de las cuatro preguntas no tiene consejo;
+  su `answer` es `"x"` y su `quote` va vacía. Sólo puede haber una `x`.
+- Schreiben y Sprechen quedan fuera de esta zona.

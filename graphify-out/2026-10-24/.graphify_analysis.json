@@ -1,0 +1,656 @@
+{
+  "communities": {
+    "0": [
+      "index_enlace_corto",
+      "plan_schreiben_catalogo_tareas_schreiben",
+      "plan_schreiben_conector_multiproveedor",
+      "plan_schreiben_contrato_salida_json",
+      "plan_schreiben_interfaz_editor",
+      "plan_schreiben_modulo_schreiben",
+      "plan_schreiben_system_prompt_examinador",
+      "quiz_readme_corrector",
+      "quiz_readme_escala_100",
+      "quiz_readme_seguridad_sincronizacion",
+      "quiz_spec_formato_schreiben",
+      "quiz_template_aplicarcorrecciones",
+      "quiz_template_bandamediana",
+      "quiz_template_buildcazasystemprompt",
+      "quiz_template_buildcazauserprompt",
+      "quiz_template_cazarerrores",
+      "quiz_template_combinarpasadas",
+      "quiz_template_countwords",
+      "quiz_template_errorvalido",
+      "quiz_template_evaluarunapasada",
+      "quiz_template_evaluatewithllm",
+      "quiz_template_finderrorranges",
+      "quiz_template_formatgermanletter",
+      "quiz_template_fusionarerrores",
+      "quiz_template_hidratarmiladodesdenube",
+      "quiz_template_normalizeevaluationresult",
+      "quiz_template_openaiconfigmodal",
+      "quiz_template_parseevaluationjson",
+      "quiz_template_progkey",
+      "quiz_template_puntosdebanda",
+      "quiz_template_puntuarcriterios",
+      "quiz_template_pushschreibentofirestore",
+      "quiz_template_queueschreibensync",
+      "quiz_template_renderevaluationresult",
+      "quiz_template_renderpartnereschreibenview",
+      "quiz_template_renderschreiben",
+      "quiz_template_rubrica",
+      "quiz_template_startlisteningtotask",
+      "quiz_template_updatewordbadge",
+      "readme_la_ia_opina_el_codigo_decide",
+      "readme_rubrica_telc_b2beruf",
+      "readme_validacion_mecanica",
+      "resumen_cambios_deepseek_esquema_documentos",
+      "resumen_cambios_deepseek_privacidad_separacion",
+      "resumen_cambios_deepseek_reglas_seguridad",
+      "resumen_cambios_deepseek_sincronizacion_firestore"
+    ],
+    "1": [
+      "tools_analyze_gaps",
+      "tools_analyze_gaps_rationale_2",
+      "tools_pdf2md",
+      "tools_pdf2md_build_font",
+      "tools_pdf2md_build_lines",
+      "tools_pdf2md_code_width",
+      "tools_pdf2md_decode_string",
+      "tools_pdf2md_emit",
+      "tools_pdf2md_extract_runs",
+      "tools_pdf2md_font",
+      "tools_pdf2md_font_init",
+      "tools_pdf2md_glyph_name_to_char",
+      "tools_pdf2md_hex_to_text",
+      "tools_pdf2md_is_ref",
+      "tools_pdf2md_main",
+      "tools_pdf2md_name",
+      "tools_pdf2md_page_runs",
+      "tools_pdf2md_parse_full",
+      "tools_pdf2md_parse_tounicode",
+      "tools_pdf2md_pdf",
+      "tools_pdf2md_pdf_build_objects",
+      "tools_pdf2md_pdf_catalog_num",
+      "tools_pdf2md_pdf_decode_stream",
+      "tools_pdf2md_pdf_deref",
+      "tools_pdf2md_pdf_extract_objstms",
+      "tools_pdf2md_pdf_in_stream",
+      "tools_pdf2md_pdf_inherited",
+      "tools_pdf2md_pdf_init",
+      "tools_pdf2md_pdf_obj",
+      "tools_pdf2md_pdf_pages",
+      "tools_pdf2md_pdf_ref_num",
+      "tools_pdf2md_pdf_resolve_stream_meta",
+      "tools_pdf2md_pdf_stream_of",
+      "tools_pdf2md_rationale_2",
+      "tools_pdf2md_rationale_29",
+      "tools_pdf2md_rationale_637",
+      "tools_pdf2md_read_w_array",
+      "tools_pdf2md_run",
+      "tools_pdf2md_run_init",
+      "tools_test_pdf2md",
+      "tools_test_pdf2md_check",
+      "tools_test_pdf2md_extrae",
+      "tools_test_pdf2md_fuente",
+      "tools_test_pdf2md_rationale_2"
+    ],
+    "2": [
+      "quiz_design_audit",
+      "quiz_design_audit_altrule",
+      "quiz_design_audit_bad",
+      "quiz_design_audit_basebg",
+      "quiz_design_audit_colorof",
+      "quiz_design_audit_contrast",
+      "quiz_design_audit_contrastchecks",
+      "quiz_design_audit_duruses",
+      "quiz_design_audit_failed",
+      "quiz_design_audit_findrule",
+      "quiz_design_audit_focusvisible",
+      "quiz_design_audit_fonttokens",
+      "quiz_design_audit_fs",
+      "quiz_design_audit_gradientsinbody",
+      "quiz_design_audit_html",
+      "quiz_design_audit_interactive",
+      "quiz_design_audit_lenses",
+      "quiz_design_audit_luminance",
+      "quiz_design_audit_mobilerule",
+      "quiz_design_audit_noring",
+      "quiz_design_audit_notmobile",
+      "quiz_design_audit_offgrid",
+      "quiz_design_audit_ok",
+      "quiz_design_audit_outlinenone",
+      "quiz_design_audit_over",
+      "quiz_design_audit_parsecolor",
+      "quiz_design_audit_parsecss",
+      "quiz_design_audit_reduced",
+      "quiz_design_audit_resolve",
+      "quiz_design_audit_results",
+      "quiz_design_audit_rules",
+      "quiz_design_audit_shadowlayers",
+      "quiz_design_audit_smalltargets",
+      "quiz_design_audit_stylematch",
+      "quiz_design_audit_temas",
+      "quiz_design_audit_tokens",
+      "quiz_design_audit_tokensclaro"
+    ],
+    "3": [
+      "quiz_smoke_test",
+      "quiz_smoke_test_abiertas",
+      "quiz_smoke_test_anunciosactuales",
+      "quiz_smoke_test_anunciosiniciales",
+      "quiz_smoke_test_bloques",
+      "quiz_smoke_test_cabeceras",
+      "quiz_smoke_test_check",
+      "quiz_smoke_test_checks",
+      "quiz_smoke_test_clases",
+      "quiz_smoke_test_clicables",
+      "quiz_smoke_test_descendientes",
+      "quiz_smoke_test_document",
+      "quiz_smoke_test_el",
+      "quiz_smoke_test_el_appendchild",
+      "quiz_smoke_test_el_collecttext",
+      "quiz_smoke_test_el_constructor",
+      "quiz_smoke_test_el_count",
+      "quiz_smoke_test_el_innerhtml",
+      "quiz_smoke_test_el_queryselector",
+      "quiz_smoke_test_entradasde",
+      "quiz_smoke_test_errors",
+      "quiz_smoke_test_esusado",
+      "quiz_smoke_test_evaltext",
+      "quiz_smoke_test_fs",
+      "quiz_smoke_test_html",
+      "quiz_smoke_test_ids",
+      "quiz_smoke_test_letradelanuncio",
+      "quiz_smoke_test_localstorage",
+      "quiz_smoke_test_maintext",
+      "quiz_smoke_test_schrbtn",
+      "quiz_smoke_test_script",
+      "quiz_smoke_test_seccionescondatos",
+      "quiz_smoke_test_store",
+      "quiz_smoke_test_todas",
+      "quiz_smoke_test_togglede",
+      "quiz_smoke_test_usadosiniciales",
+      "quiz_smoke_test_window"
+    ],
+    "4": [
+      "product_accesibilidad",
+      "product_bilinguismo_es_ru",
+      "product_entregable_unico_html",
+      "product_perfiles_sergio_diana",
+      "product_principios",
+      "product_proposito_clave_deducida",
+      "quiz_readme_contrato_de_datos",
+      "quiz_readme_dos_temas_tokens",
+      "quiz_readme_huecos_conocidos",
+      "quiz_readme_niveles_confianza",
+      "quiz_readme_que_valida_build",
+      "quiz_spec_formato_zuordnung",
+      "quiz_spec_niveles_confianza",
+      "quiz_spec_regla_quote_literal",
+      "quiz_template_applytheme",
+      "quiz_template_builduserpromptclient",
+      "quiz_template_colocarmandos",
+      "quiz_template_i18n",
+      "quiz_template_setlanguage",
+      "quiz_template_settheme",
+      "quiz_template_setuser",
+      "readme_deuda_conocida",
+      "readme_dev_agents_vs_app_agents",
+      "readme_ranking_agentes",
+      "readme_reglas_duras",
+      "readme_segunda_lectura",
+      "readme_sistema_de_confianza",
+      "readme_stack_estatico",
+      "resumen_cambios_deepseek_evaluador_bilingue",
+      "resumen_cambios_deepseek_selector_perfiles",
+      "uxui_prototipo_contraste_aa",
+      "uxui_prototipo_dos_temas",
+      "uxui_prototipo_interruptor_tema",
+      "uxui_prototipo_lenguaje_visual",
+      "uxui_prototipo_mando_deslizante",
+      "uxui_prototipo_tokens"
+    ],
+    "5": [
+      "quiz_prompt_schreiben",
+      "quiz_prompt_schreiben_build_user_prompt",
+      "quiz_prompt_schreiben_count_words",
+      "quiz_prompt_schreiben_norm_ws",
+      "quiz_prompt_schreiben_only_case_diff",
+      "quiz_prompt_schreiben_only_punct_diff",
+      "quiz_prompt_schreiben_py_any",
+      "quiz_prompt_schreiben_rationale_2",
+      "quiz_prompt_schreiben_rationale_391",
+      "quiz_prompt_schreiben_rationale_396",
+      "quiz_prompt_schreiben_rationale_478",
+      "quiz_prompt_schreiben_rationale_492",
+      "quiz_prompt_schreiben_rationale_499",
+      "quiz_prompt_schreiben_tight_span",
+      "quiz_prompt_schreiben_validate_evaluation_json",
+      "quiz_test_correccion",
+      "quiz_test_correccion_audit_live",
+      "quiz_test_correccion_call_gemini",
+      "quiz_test_correccion_call_openai",
+      "quiz_test_correccion_check",
+      "quiz_test_correccion_criteria",
+      "quiz_test_correccion_live_main",
+      "quiz_test_correccion_main",
+      "quiz_test_correccion_rationale_2",
+      "quiz_test_correccion_rationale_347",
+      "quiz_test_correccion_rationale_421",
+      "quiz_test_correccion_rationale_494",
+      "quiz_test_prompt",
+      "quiz_test_prompt_call_live_gemini",
+      "quiz_test_prompt_main",
+      "quiz_test_prompt_py_any",
+      "quiz_test_prompt_rationale_191",
+      "quiz_test_prompt_rationale_2",
+      "quiz_test_prompt_rationale_254",
+      "quiz_test_prompt_run_offline_tests"
+    ],
+    "6": [
+      "quiz_make_sprachbausteine",
+      "quiz_make_sprachbausteine_dividir_subvariantes",
+      "quiz_make_sprachbausteine_es_linea_de_opciones",
+      "quiz_make_sprachbausteine_es_nota",
+      "quiz_make_sprachbausteine_es_titular",
+      "quiz_make_sprachbausteine_etiqueta_extra",
+      "quiz_make_sprachbausteine_frase_del_hueco",
+      "quiz_make_sprachbausteine_leer_opciones_t1",
+      "quiz_make_sprachbausteine_leer_opciones_t2",
+      "quiz_make_sprachbausteine_limpiar_guiones",
+      "quiz_make_sprachbausteine_main",
+      "quiz_make_sprachbausteine_normalizar_clave",
+      "quiz_make_sprachbausteine_partir_cuerpo",
+      "quiz_make_sprachbausteine_partir_secciones",
+      "quiz_make_sprachbausteine_rationale_101",
+      "quiz_make_sprachbausteine_rationale_115",
+      "quiz_make_sprachbausteine_rationale_127",
+      "quiz_make_sprachbausteine_rationale_150",
+      "quiz_make_sprachbausteine_rationale_190",
+      "quiz_make_sprachbausteine_rationale_2",
+      "quiz_make_sprachbausteine_rationale_211",
+      "quiz_make_sprachbausteine_rationale_230",
+      "quiz_make_sprachbausteine_rationale_238",
+      "quiz_make_sprachbausteine_rationale_269",
+      "quiz_make_sprachbausteine_rationale_49",
+      "quiz_make_sprachbausteine_rationale_69",
+      "quiz_make_sprachbausteine_rationale_74",
+      "quiz_make_sprachbausteine_rationale_84",
+      "quiz_make_sprachbausteine_sufijo_id"
+    ],
+    "7": [
+      "quiz_security_test",
+      "quiz_security_test_abrirschreiben",
+      "quiz_security_test_bloques",
+      "quiz_security_test_buscar",
+      "quiz_security_test_check",
+      "quiz_security_test_checks",
+      "quiz_security_test_el",
+      "quiz_security_test_el_appendchild",
+      "quiz_security_test_el_constructor",
+      "quiz_security_test_el_html",
+      "quiz_security_test_el_id",
+      "quiz_security_test_el_innerhtml",
+      "quiz_security_test_el_queryselector",
+      "quiz_security_test_el_queryselectorall",
+      "quiz_security_test_el_texto",
+      "quiz_security_test_fs",
+      "quiz_security_test_html",
+      "quiz_security_test_montar",
+      "quiz_security_test_registro",
+      "quiz_security_test_script"
+    ],
+    "8": [
+      "bytes",
+      "tools_pdf2md_keyword",
+      "tools_pdf2md_lexer",
+      "tools_pdf2md_lexer_init",
+      "tools_pdf2md_lexer_parse_object",
+      "tools_pdf2md_lexer_read_dict",
+      "tools_pdf2md_lexer_read_hex_string",
+      "tools_pdf2md_lexer_read_literal_string",
+      "tools_pdf2md_lexer_skip_ws",
+      "tools_pdf2md_lexer_token",
+      "tools_pdf2md_pdfstring",
+      "tools_pdf2md_pdfstring_init",
+      "tools_pdf2md_pdfstring_repr",
+      "tools_pdf2md_rationale_34"
+    ],
+    "9": [
+      "quiz_make_sprechen_t2",
+      "quiz_make_sprechen_t2_aplicar_correcciones",
+      "quiz_make_sprechen_t2_bloque_crudo",
+      "quiz_make_sprechen_t2_limpiar",
+      "quiz_make_sprechen_t2_main",
+      "quiz_make_sprechen_t2_rationale_2",
+      "quiz_make_sprechen_t2_rationale_47",
+      "quiz_make_sprechen_t2_rationale_54",
+      "quiz_make_sprechen_t2_rationale_68",
+      "quiz_make_sprechen_t2_rationale_78",
+      "quiz_make_sprechen_t2_rationale_96",
+      "quiz_make_sprechen_t2_separar_alternativas",
+      "quiz_make_sprechen_t2_separar_idiomas",
+      "quiz_make_sprechen_t2_trocear"
+    ],
+    "10": [
+      "02_err2_ansicht_fehlerkorrektur",
+      "02_err2_dark_mode",
+      "02_err2_farbcodierung",
+      "02_err2_fehler_mitarbeiter",
+      "02_err2_fehler_und_diese",
+      "02_err2_legende_marker",
+      "02_err2_marker_1",
+      "02_err2_marker_2",
+      "02_err2_satz_meinung",
+      "02_err2_schreibaufgabe_b2",
+      "02_err2_textfeld_editierbar"
+    ],
+    "11": [
+      "basehttprequesthandler",
+      "tools_go_proxy",
+      "tools_go_proxy_handler",
+      "tools_go_proxy_handler_cors",
+      "tools_go_proxy_handler_do_options",
+      "tools_go_proxy_handler_do_post",
+      "tools_go_proxy_handler_json",
+      "tools_go_proxy_handler_log_message",
+      "tools_go_proxy_handler_responder",
+      "tools_go_proxy_rationale_2"
+    ],
+    "12": [
+      "10_wlb4x_estado_recorte",
+      "10_wlb4x_estilo_marcado",
+      "10_wlb4x_fragmento_previo",
+      "10_wlb4x_guion_compuesto",
+      "10_wlb4x_hipotesis_ubicacion",
+      "10_wlb4x_pantalla_recorte",
+      "10_wlb4x_tema_oscuro",
+      "10_wlb4x_termino_resaltado",
+      "10_wlb4x_variante_work_life"
+    ],
+    "13": [
+      "quiz_build",
+      "quiz_build_main",
+      "quiz_build_norm_ws",
+      "quiz_build_rationale_2",
+      "quiz_build_rationale_50",
+      "quiz_build_rationale_82",
+      "quiz_build_validate",
+      "quiz_build_validate_smalltalk"
+    ],
+    "14": [
+      "tools_inspect_pdf",
+      "tools_inspect_pdf_decompress_stream",
+      "tools_inspect_pdf_find_objects",
+      "tools_inspect_pdf_main",
+      "tools_inspect_pdf_rationale_1",
+      "tools_inspect_pdf_rationale_17",
+      "tools_inspect_pdf_rationale_30"
+    ],
+    "15": [
+      "quiz_fix_review",
+      "quiz_fix_review_find",
+      "quiz_fix_review_load",
+      "quiz_fix_review_rationale_2",
+      "quiz_fix_review_save"
+    ],
+    "16": [
+      "quiz_make_full_forums",
+      "quiz_make_full_forums_main",
+      "quiz_make_full_forums_make_forum",
+      "quiz_make_full_forums_rationale_2",
+      "quiz_make_full_forums_rationale_29"
+    ],
+    "17": [
+      "quiz_fix_review2",
+      "quiz_fix_review2_load",
+      "quiz_fix_review2_rationale_2",
+      "quiz_fix_review2_save"
+    ],
+    "18": [
+      "quiz_make_quiz_sources",
+      "quiz_make_quiz_sources_load_pages",
+      "quiz_make_quiz_sources_main",
+      "quiz_make_quiz_sources_rationale_2"
+    ],
+    "19": [
+      "quiz_merge_sprachbausteine_respuestas",
+      "quiz_merge_sprachbausteine_respuestas_main",
+      "quiz_merge_sprachbausteine_respuestas_norm_ws",
+      "quiz_merge_sprachbausteine_respuestas_rationale_2"
+    ],
+    "20": [
+      "tools_readme_ancho_de_avance",
+      "tools_readme_limitaciones",
+      "tools_readme_pdf2md",
+      "tools_readme_umbral_espacio"
+    ],
+    "21": [
+      "quiz_fix_review3",
+      "quiz_fix_review3_norm_ws",
+      "quiz_fix_review3_rationale_2"
+    ],
+    "22": [
+      "quiz_make_ls_b",
+      "quiz_make_ls_b_norm"
+    ],
+    "23": [
+      "quiz_make_t3_b",
+      "quiz_make_t3_b_norm"
+    ],
+    "24": [
+      "quiz_make_t3_d",
+      "quiz_make_t3_d_norm"
+    ],
+    "25": [
+      "quiz_make_t4_e",
+      "quiz_make_t4_e_norm"
+    ],
+    "26": [
+      "quiz_readme_smalltalk_mazo",
+      "quiz_spec_formato_smalltalk"
+    ],
+    "27": [
+      "quiz_validate_ls_c",
+      "quiz_validate_ls_c_norm"
+    ],
+    "28": [
+      "tools_make_index",
+      "tools_make_index_rationale_2"
+    ],
+    "29": [
+      "tools_opencode_go_proxy",
+      "tools_opencode_go_proxy_fetch"
+    ],
+    "30": [
+      "product_modo_mesa_de_examen"
+    ],
+    "31": [
+      "quiz_extract_all_forums"
+    ],
+    "32": [
+      "quiz_make_schreiben"
+    ]
+  },
+  "cohesion": {
+    "0": 0.06956521739130435,
+    "1": 0.09302325581395349,
+    "2": 0.06456456456456457,
+    "3": 0.06456456456456457,
+    "4": 0.06190476190476191,
+    "5": 0.10420168067226891,
+    "6": 0.11083743842364532,
+    "7": 0.10526315789473684,
+    "8": 0.21978021978021978,
+    "9": 0.2087912087912088,
+    "10": 0.21818181818181817,
+    "11": 0.3111111111111111,
+    "12": 0.3888888888888889,
+    "13": 0.35714285714285715,
+    "14": 0.38095238095238093,
+    "15": 0.4,
+    "16": 0.5,
+    "17": 0.5,
+    "18": 0.6666666666666666,
+    "19": 0.6666666666666666,
+    "20": 0.6666666666666666,
+    "21": 0.6666666666666666,
+    "22": 1.0,
+    "23": 1.0,
+    "24": 1.0,
+    "25": 1.0,
+    "26": 1.0,
+    "27": 1.0,
+    "28": 1.0,
+    "29": 1.0,
+    "30": 1.0,
+    "31": 1.0,
+    "32": 1.0
+  },
+  "gods": [
+    {
+      "id": "tools_pdf2md_pdf",
+      "label": "PDF",
+      "degree": 18
+    },
+    {
+      "id": "quiz_prompt_schreiben_validate_evaluation_json",
+      "label": "validate_evaluation_json()",
+      "degree": 13
+    },
+    {
+      "id": "quiz_security_test_el",
+      "label": "El",
+      "degree": 10
+    },
+    {
+      "id": "tools_pdf2md_lexer",
+      "label": "Lexer",
+      "degree": 10
+    },
+    {
+      "id": "quiz_prompt_schreiben_build_user_prompt",
+      "label": "build_user_prompt()",
+      "degree": 9
+    },
+    {
+      "id": "quiz_template_renderschreiben",
+      "label": "renderSchreiben",
+      "degree": 9
+    },
+    {
+      "id": "quiz_make_sprachbausteine_main",
+      "label": "main()",
+      "degree": 8
+    },
+    {
+      "id": "tools_go_proxy_handler",
+      "label": "Handler",
+      "degree": 8
+    },
+    {
+      "id": "tools_pdf2md_build_font",
+      "label": "build_font()",
+      "degree": 8
+    },
+    {
+      "id": "quiz_template_countwords",
+      "label": "countWords",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Rúbrica telc B2 Beruf con dos reglas propias más estrictas",
+      "target": "Escala de 100 puntos (I=34, II-IV=22)",
+      "source_files": [
+        "README.md",
+        "quiz/README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Validación mecánica de la evaluación (validate_evaluation_json)",
+      "target": "Corrector: contrato contra reescritura, spans anchos y reglas inventadas",
+      "source_files": [
+        "README.md",
+        "quiz/README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Validación mecánica de la evaluación (validate_evaluation_json)",
+      "target": "errorValido",
+      "source_files": [
+        "README.md",
+        "quiz/template.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Deuda conocida del proyecto",
+      "target": "Huecos conocidos del PDF fuente",
+      "source_files": [
+        "README.md",
+        "quiz/README.md"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    },
+    {
+      "source": "Sistema de tokens :root y [data-theme=claro]",
+      "target": "applyTheme",
+      "source_files": [
+        "uxui/prototipo.html",
+        "quiz/template.html"
+      ],
+      "confidence": "INFERRED",
+      "relation": "semantically_similar_to",
+      "why": "inferred connection - not explicitly stated in source; connects across different repos/directories; semantically similar concepts with no structural link"
+    }
+  ],
+  "questions": [
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Clause-link error: 'und diese nicht noch mehr Arbeit ... leisten können' (dangling demonstrative / broken causal connector)` and `Two-tier color-coded error taxonomy (blue span = wording/form error, red span = logic/cohesion error)`?",
+      "why": "Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low."
+    },
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Magnified crop of a single highlighted term inside a dark-mode text panel (no app chrome visible)` and `Unresolved context: zoom on an inline annotation/marked term in running text vs. chart-label or legend crop (no app shell visible to confirm)`?",
+      "why": "Edge tagged AMBIGUOUS (relation: references) - confidence is low."
+    },
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Highlighted literal 'World-Life-' set in serif, pale gold (#FFEFA2) on taupe block (#4E4842)` and `Possible typo/variant: term intended as 'Work-Life' (as in 'Work-Life-Balance') rather than 'World-Life'`?",
+      "why": "Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low."
+    },
+    {
+      "type": "ambiguous_edge",
+      "question": "What is the exact relationship between `Crop/truncation state: text cut at both edges, no margins, no header, no controls, no visible error state` and `Unresolved context: zoom on an inline annotation/marked term in running text vs. chart-label or legend crop (no app shell visible to confirm)`?",
+      "why": "Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `buildUserPromptClient` connect `Community 4` to `Community 0`?",
+      "why": "High betweenness centrality (0.014) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `fs`, `html`, `styleMatch` to the rest of the system?",
+      "why": "71 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 0` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06956521739130435 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

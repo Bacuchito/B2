@@ -64,6 +64,7 @@ quiz/
 ├─ design_audit.js       ← audita el diseño: contraste WCAG, rejilla de 4pt, áreas táctiles, foco, físicas
 ├─ verified.json         ← respuestas confirmadas por una 2ª lectura
 ├─ data/                 ← un JSON por bloque (la fuente de verdad)
+│  └─ modeltest_11.json … _17.json  ← los siete tests, con Hören sin clave
 └─ src/                  ← Markdown por bloque, entrada de los extractores
 ```
 
@@ -104,8 +105,8 @@ que un simple chequeo de sintaxis no ve.
 (inyección por `?room=`, ruptura del atributo `value` del modal, evaluación de la
 pareja con datos maliciosos y evaluación malformada que rompía la pantalla).
 `design_audit.js` no abre ningún navegador: lee el CSS, resuelve los tokens, compone
-las transparencias sobre el fondo real y comprueba **75 reglas de diseño en los dos
-temas** (contraste mínimo 4.5:1 sobre la superficie real de cada texto, en oscuro y
+las transparencias sobre el fondo real y comprueba **77 reglas de diseño en los dos
+temas** (contraste mínimo 4.5:1 sobre la superficie real de cada texto, en papel y
 en claro; espaciado múltiplo de 4; áreas táctiles de 28px/44px; foco visible;
 movimiento reducido; relieve; un solo degradado de fondo; el segundo tema por tokens
 y no por filtros; y estados de presión).
@@ -133,64 +134,42 @@ componentes**: basta el bloque `:root`.
 | Estructura | `--header-h`, `--nav-w`, `--read-w` | Alto de cabecera, ancho del índice y medida de lectura |
 | Mesa de examen | `--desk-ref`, `--desk-work` | Ancho máximo de la columna de referencia (fluida con `clamp`) y tope de la hoja de preguntas a partir de 1280px |
 
-### Lenguaje de piezas (dos temas)
+### El mundo visual: «Lesesaal»
 
-**Esta rama (`UXUI`) es un experimento**: cambia el material de la app. En `main`
-el mundo es la hoja de examen impresa; aquí son dos mundos con la misma lengua de
-piezas, uno para cada uno: **Diana trabaja en claro y Sergio en oscuro**, y cambiar
-de perfil cambia el tema (además del idioma). El botón de tema sigue mandando si
-alguno quiere cambiarlo en ese momento.
+La hoja de un examen impreso sobre la mesa de una biblioteca. Papel marfil, tinta
+casi negra, banda verde botella y latón como único color saturado. Material de
+imprenta: filetes de 1 px, radios 0 y ninguna sombra. La pieza se separa con un
+filete, no con altura.
 
-| | Oscuro — «taller nocturno» | Claro — «Calma» |
-|---|---|---|
-| Mesa y piezas | carbón `#25262a` y `#313239` | marfil `#EDEBE3` y `#FAF9F4` |
-| Acento | azul `#4d8df6`, tinta **oscura** (5,6:1) | verde bosque `#0F5132`, tinta **marfil** (6,2-8,9:1) |
-| De dónde viene la altura | del **filo claro** de arriba: una sombra negra sobre carbón casi no se ve | del **borde** y una sombra corta: un filo blanco sobre marfil tampoco se ve |
-| Estados | verde y rojo claros con brillo | verde bosque y terracota, y **menta** `#B7D9C1` en los tintes |
+El detalle completo —paleta de los dos temas, tipografía, componentes, estados y la
+lista de lo prohibido— vive en `DESIGN.md`, en la raíz del repositorio. Aquí solo lo
+que hace falta para no romperlo:
 
-- **Una sola luz**: el fondo lleva un único degradado cenital fijo. No hay texturas
-  ni patrones, y se comprueba que sea el único degradado de fondo.
-- **Relieve solo en lo que se pulsa.** Cada pieza lleva su sombra de fuera (altura)
-  y su filo claro arriba (material): letras a–h, botones, conmutadores, pestañas,
-  filas pulsables, el número del ítem. El texto —los anuncios alemanes, la cita,
-  la explicación— se queda plano: el relieve en un párrafo largo solo estorba.
-- **Tres mecanismos, y cada bloque usa uno**: pieza con filo (`--panel` + `--bisel`),
-  hueco hundido (`--sunken` + `--hundido`) para campos, carriles y celdas, o banda
-  con tinte y filo en el color del estado (`.fb`, `.note`, insignias).
-- **Lo que flota de verdad** —modal, popover de error, enlace de salto— es lo único
-  que lleva sombra profunda (`--sh-3`).
-- **El brillo del acento** (`--glow`, `--halo`) está reservado al foco, a lo elegido
-  y a la acción principal. Con desplazamiento, nunca como cerco de desplazamiento cero.
-- **Los controles dicen lo que está encendido.** En un control segmentado (perfil,
-  idioma, pestañas de Schreiben) la opción activa se **rellena con el acento** —azul
-  en oscuro, verde en claro—, no con una pastilla clara, y el relleno es un **mando
-  que se desliza** de una opción a otra con curva de resorte. El JS mide la opción
-  encendida y le pasa su posición y su ancho al CSS (`--mando-x`, `--mando-w`); si no
-  se puede medir, se quita la clase `con-mando` y la opción activa se marca con su
-  propio relleno, así que nunca se queda sin señal. Y el tema es un **interruptor**:
-  pista con el mando redondo, el **icono dentro del mando** (luna si estás en oscuro,
-  sol si estás en claro: enseña el estado, no la acción) y la pista encendida cuando
-  el modo oscuro está activo.
-- **Los formularios sí llevan borde**: un campo necesita un límite definido.
-- **Dos temas por tokens**: el oscuro en `:root` y el claro en
-  `[data-theme="paper"]`. El lenguaje de piezas es el mismo; cambian los valores.
-  Cualquier color escrito a mano en un componente rompe el segundo tema, así que los
-  filos de estado (`--line-ok/-bad/-warn/-acc`) y los rellenos (`--bien-fill`,
-  `--mal-fill`) también son tokens.
+- **Dos temas por tokens**: el papel en `:root` y la noche en `[data-theme="dark"]`.
+  Cualquier color escrito a mano en un componente rompe el segundo tema.
+- **Un solo degradado en toda la app**: la luz de `body::before`.
+- **Ninguna sombra y ningún radio**: `--sh-*` valen `none` y `--r-*` valen `0`.
+  La auditoría lo exige; devolver una sombra rompe el control, no solo el gusto.
+- **Lo elegido se invierte**: tinta de fondo, papel de letra. No hay mandos que se
+  deslicen ni píldoras de color.
+- **La duda se marca con forma**: la insignia de confianza lleva delante una marca
+  llena, media o hueca. El color acompaña; no informa solo.
+- **La acción secundaria lleva caja y rótulo en minúscula**; la que destruye va en
+  rojo y apartada del resto.
 
-Las tres familias tipográficas son del sistema (`--font-ui`, `--font-read` serif y
+Las familias son del sistema (`--font-d` DIN, `--font-ui`, `--font-read` serif y
 `--font-mono`): la app sigue funcionando sin conexión y sin descargar fuentes.
 
-**Reparto de las dos voces** — es lo que hace que la app no parezca una plantilla:
+**Reparto de las tres voces** — es lo que hace que la app no parezca una plantilla:
 
-- **Sans (`--font-ui`) para la interfaz y para lo que se lee**: titulares, rótulos,
-  anuncios, textos de examen, enunciados, el área de escritura. Es la voz de trabajo.
-- **Serif (`--font-read`) solo para lo que se cita o se escribe**: la cita literal
-  del bloque de corrección, la carta recibida, la redacción modelo, el texto anotado,
-  la redacción de la pareja y las fichas de letra a–h. Es la voz del papel.
+- **DIN (`--font-d`) para rótulos y cifras**: titulares, números de sección,
+  contadores, celdas a–h, marcas de estado. En versalitas y con `letter-spacing`.
+- **Sans (`--font-ui`) para la interfaz y lo que se lee de pasada**: anuncios,
+  enunciados, ayuda, botones.
+- **Serif (`--font-read`) para lo que se lee como examen**: la instrucción de la
+  tarea, la cita literal, la carta recibida y el área de escritura.
 
-El titular de sección es sans de 20 px y la cabecera va a 17 px con los controles a
-32 px: la barra queda tensa y el contenido manda.
+El titular de la hoja va en DIN a 22 px y los controles de la cabecera a 36 px.
 
 ## Bilingüismo (ES / RU)
 
@@ -377,6 +356,11 @@ revisarlas contra el texto original.
   los dos idiomas y dos ejemplos de habla en alemán. La numeración de la sección es
   1..67 sin huecos. Tampoco hay clave: el ejercicio es discutir una solución, no
   acertar una letra.
+- **Hören sin clave (`kind: "ohne-key"`)**: exige enunciados y opciones completos,
+  pero prohíbe `answer`, `quote`, `confidence` y `explain`. Es la comprensión
+  auditiva de los Modeltests: no hay audio ni transcripción de la que deducir.
+- **`allowNone` en Lesen T3**: deja que una de las preguntas se quede sin consejo
+  (`answer: "x"`, `quote` vacía). Sólo se admite una `x` por bloque.
 
 ## Smalltalk (Sprechen Teil 2)
 
@@ -419,6 +403,35 @@ volver al menú.
   `quiz/src/t3_ayuda_*.json` y se funde con `merge_t3_ayuda.py`. Los ejemplos son
   nuestros, no del examen: sirven para practicar, no se presentan como material
   oficial.
+
+## Modeltests 11–17 (zona especial)
+
+Siete secciones nuevas, `Modeltest 11` … `Modeltest 17`, con un fichero
+`data/modeltest_N.json` cada una. **Cada test trae 12 bloques** en el orden del PDF:
+Lesen T1-T4, Lesen und Schreiben, Hören T1-T4, Hören und Schreiben y
+Sprachbausteine T1-T2. Son 52 ítems por test (364 en total).
+
+- **No hay Lösungsschlüssel en los PDF.** La última página solo remite a un grupo
+  externo. Las 32 respuestas de Lesen y Sprachbausteine de cada test están
+  deducidas, con `quote` literal, `confidence` y `explain`/`explain_ru`.
+- **Hören va sin clave** (`kind: "ohne-key"`): el PDF no trae audio ni
+  transcripción. Se ven enunciados y opciones, se puede marcar, pero la app no
+  corrige y esos 81 ítems no cuentan en las estadísticas.
+- **Los Modeltests 13, 14 y 15 son la excepción**: sus Hörtexte llegaron en
+  imágenes aparte. En el 13 son bloques corregidos las tareas 22–40 (19 respuestas);
+  en el 14 y el 15, las 22–41 (20 respuestas cada uno). En total, 283 ítems con
+  clave y 81 sin clave.
+- **Lesen T3** usa `allowNone`: una de las cuatro preguntas no tiene consejo y se
+  responde con `x`. La app pinta un botón `x` con filete discontinuo.
+- **Lesen T1** y **Sprachbausteine** usan los mismos formatos que el examen
+  principal (`zuordnung` y banco de palabras), así que el panel de referencia y el
+  «peek» funcionan igual.
+- Schreiben y Sprechen no entran en esta zona.
+
+Los PDF de origen son **escaneos sin capa de texto**. El texto se extrajo con OCR
+de Windows en alemán (`de-DE`) y se corrigió a mano; cada corrección va en `fixes`.
+Por eso una cita puede diferir de una edición impresa en un guion o una tilde: manda
+el texto publicado en el JSON.
 
 ## Niveles de confianza
 

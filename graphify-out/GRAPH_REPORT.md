@@ -1,647 +1,226 @@
-# Graph Report - B2  (2026-10-18)
+# Graph Report - B2  (2026-10-26)
 
 ## Corpus Check
-- 171 files · ~548,965 words
+- 90 files · ~7,724,192 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 2796 nodes · 5101 edges · 168 communities (113 shown, 13 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 77 edges (avg confidence: 0.85)
+- 602 nodes · 995 edges · 46 communities (27 shown, 7 thin omitted)
+- Extraction: 95% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 44 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `29dd0199`
+- Built from commit: `21ea9852`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- dsh/package.json
-- modern-screenshot.umd.js
-- el
-- initPageChat
+- renderSchreiben
 - pdf2md.py
-- live-browser.js
-- 2. Arquitectura de las Soluciones Implementadas
-- renderDesignVisual
-- What You Must Do When Invoked
-- handleManualEditActivity
-- dependencies
-- smoke_test.js
-- main.js
-- setLiveState
-- captureElementToBlob
-- resumeSession
-- createLiveBrowserSessionState
-- main
-- composeNode
-- createLiveBrowserDomHelpers
 - design_audit.js
-- connectSSE
-- push
-- Responsive Design
-- initGlobalBar
-- adapterStream
-- test_prompt.py
-- live-browser-ignores.js
+- smoke_test.js
+- Respuesta con cita literal y nivel de confianza
+- validate_evaluation_json
+- make_sprachbausteine.py
+- security_test.js
+- check.js
+- make_sprechen_t2.py
+- Inline error-annotation correction view (dark mode)
+- Handler
+- Magnified crop of a single highlighted term inside a dark-mode text panel (no app chrome visible)
+- t
 - inspect_pdf.py
-- impeccable
-- impeccable/SKILL.md
-- onboard.md
-- Operate mode depth (and Read notes)
 - fix_review.py
+- make_full_forums.py
 - fix_review2.py
 - make_quiz_sources.py
+- merge_sprachbausteine_respuestas.py
+- pdf2md.py: conversor PDF a Markdown propio
 - fix_review3.py
+- Mazo de Smalltalk de Sprechen Teil 2 (no se corrige)
 - make_index.py
-- The Toolkit
-- animate.md
-- live.md
-- Handle `generate`
-- mountSvelteComponentVariant
-- Generate Report
-- New visual work
-- optimize.md
-- YAMLException
-- Impeccable Asset Producer
-- Scan mode (approach C: auto-extract, then confirm descriptive language)
-- installDesktopShortcuts
-- critique.md
-- Simplify the Design
-- Hardening Dimensions
-- Pipeline PDF → Markdown (sin dependencias)
-- Desarrollo Guiado por Pruebas
-- clarify.md
-- Nielsen's 10 Heuristics
-- Generate Combined Critique Report
-- document.md
-- polish.md
-- quieter.md
-- update
-- Revisión de Código y Calidad
-- Desglose Detallado de Tareas
-- Depuración y Recuperación de Errores
-- 1. Principios Fundamentales de Redacción
-- Init flow
-- _root/package.json
-- Planificación y Descomposición de Tareas
-- Test B2 Beruf — Lesen y Hören
-- 2. Las 5 Lentes de Auditoría (En este orden estricto)
-- graphify reference: extra exports and benchmark
-- Common Cognitive Load Violations
-- iOS platform
-- .toString
-- Shape
-- check
-- Android platform
-- colorize.md
-- Persona-Based Design Testing
-- doctor.md
-- Extract Flow
-- Ponytail: El Senior Developer Perezoso y Pragmático
-- Entrevístame: Extraer la Intención Real
-- Generate Report
-- Cognitive Load Assessment
-- Impeccable Finish Reviewer
-- Impeccable Manual Edit Applier
-- Regla: Comunicación Clara y Explicación de Tecnicismos
-- graphify reference: query, path, explain
-- Diagnostic Scan
-- Persuade and Experience
-- Visualize: Direction Comps & Asset Production
-- Impeccable Documenter
-- Region map
-- graphify reference: add a URL and watch a folder
-- graphify reference: commit hook and native CLAUDE.md integration
-- graphify reference: incremental update and cluster-only
-- Heuristics Scoring Guide
-- make_full_forums.py
-- Read
-- graphify reference: GitHub clone and cross-repo merge
-- graphify reference: transcribe video and audio
-- rules/graphify.md
-- extraction-spec.md
-- apple-design.md
-- ets.md
-- workflows/graphify.md
-- ponytail.md
-- h4_b.md
-- Adaptation Strategies
-- get
-- security_test.js
-- run
-- focusSteerChat
-- resolve
-- resolveLiveInjectionAnchor
-- scheduleAcceptCleanup
-- dump-events.cjs
-- Operate
-- Command guidance
-- actOnAgentTarget
-- syncAgentPollingUi
-- init
-- State
-- toggleDesignPanel
+- Modo mesa de examen a partir de 1280 px
+- Design
+- renderSchreiben
+- renderItem
+- Rediseño visual — B2 Beruf
+- normalizeEvaluationResult
+- make_sprechen_t3.py
+- AGENTS.md — puerta de entrada para cualquier agente
+- evaluateWithLLM
+- qa.js
 
 ## God Nodes (most connected - your core abstractions)
-1. `main()` - 71 edges
-2. `connectSSE()` - 34 edges
-3. `setLiveState()` - 33 edges
-4. `resumeSession()` - 33 edges
-5. `push()` - 32 edges
-6. `showToast()` - 31 edges
-7. `initGlobalBar()` - 30 edges
-8. `el()` - 29 edges
-9. `handleKeyDown()` - 27 edges
-10. `cleanup()` - 27 edges
+1. `t()` - 28 edges
+2. `renderSchreiben()` - 26 edges
+3. `openAIConfigModal()` - 19 edges
+4. `renderMain()` - 18 edges
+5. `PDF` - 18 edges
+6. `renderItem()` - 17 edges
+7. `render()` - 16 edges
+8. `renderNav()` - 15 edges
+9. `renderEvaluationResult()` - 14 edges
+10. `validate_evaluation_json()` - 13 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `enableInlineEdit()` --indirect_call--> `own()`  [INFERRED]
-  .agents/skills/impeccable/scripts/live-browser.js → .agents/skills/impeccable/scripts/live-browser-dom.js
-- `layoutFlowChildren()` --indirect_call--> `pickable()`  [INFERRED]
-  .agents/skills/impeccable/scripts/live-browser.js → .agents/skills/impeccable/scripts/live-browser-dom.js
-- `run_offline_tests()` --calls--> `count_words()`  [EXTRACTED]
-  quiz/test_prompt.py → quiz/prompt_schreiben.py
-- `call_live_gemini()` --calls--> `build_user_prompt()`  [EXTRACTED]
-  quiz/test_prompt.py → quiz/prompt_schreiben.py
-- `run_offline_tests()` --calls--> `build_user_prompt()`  [EXTRACTED]
-  quiz/test_prompt.py → quiz/prompt_schreiben.py
+- `Validación mecánica de la evaluación (validate_evaluation_json)` --semantically_similar_to--> `errorValido`  [INFERRED] [semantically similar]
+  README.md → quiz/template.html
+- `Rúbrica telc B2 Beruf con dos reglas propias más estrictas` --semantically_similar_to--> `Escala de 100 puntos (I=34, II-IV=22)`  [INFERRED] [semantically similar]
+  README.md → quiz/README.md
+- `Validación mecánica de la evaluación (validate_evaluation_json)` --semantically_similar_to--> `Corrector: contrato contra reescritura, spans anchos y reglas inventadas`  [INFERRED] [semantically similar]
+  README.md → quiz/README.md
+- `Sistema de tokens :root y [data-theme=claro]` --semantically_similar_to--> `applyTheme`  [INFERRED] [semantically similar]
+  uxui/prototipo.html → quiz/template.html
+- `Mando deslizante del control segmentado` --semantically_similar_to--> `colocarMandos`  [INFERRED] [semantically similar]
+  uxui/prototipo.html → quiz/template.html
 
 ## Import Cycles
 - None detected.
 
-## Communities (168 total, 13 thin omitted)
+## Hyperedges (group relationships)
+- **Flujo de evaluación LLM de Schreiben (3 pasadas + caza de errores + puntuación de la app)** — quiz_template_evaluatewithllm, quiz_template_evaluarunapasada, quiz_template_cazarerrores, quiz_template_combinarpasadas, quiz_template_puntuarcriterios, quiz_template_renderevaluationresult [EXTRACTED 1.00]
+- **Lenguaje de piezas con dos temas por tokens (mando deslizante e interruptor)** — quiz_readme_dos_temas_tokens, uxui_prototipo_dos_temas, uxui_prototipo_tokens, uxui_prototipo_mando_deslizante, uxui_prototipo_interruptor_tema, quiz_template_colocarmandos, quiz_template_applytheme [INFERRED 0.85]
+- **Sincronización de redacciones por perfil en una sala compartida** — resumen_cambios_deepseek_privacidad_separacion, resumen_cambios_deepseek_sincronizacion_firestore, resumen_cambios_deepseek_esquema_documentos, resumen_cambios_deepseek_reglas_seguridad, quiz_template_progkey, quiz_template_pushschreibentofirestore, quiz_template_startlisteningtotask [INFERRED 0.85]
 
-### Community 0 - "dsh/package.json"
-Cohesion: 0.01
-Nodes (291): @deepseek-ai/cordis, @deepseek-ai/dsh-api-gateway, name, private, type, version, @deepseek-ai/cordis-plugin-group, @deepseek-ai/cordis-plugin-include (+283 more)
+## Communities (46 total, 7 thin omitted)
 
-### Community 1 - "modern-screenshot.umd.js"
-Cohesion: 0.09
-Nodes (55): ae(), be(), bt(), Ce(), s(), Ct(), de(), dt() (+47 more)
+### Community 0 - "renderSchreiben"
+Cohesion: 0.07
+Nodes (47): Redirección de enlace corto conservando ?user y ?room, Catálogo de tareas de Schreiben (13 Beschwerde + 98 Forumsbeitrag), Conector multi-proveedor de IA (Gemini, DeepSeek/OpenAI, Ollama), Contrato de salida JSON del evaluador, Editor de Schreiben con contador de palabras y temporizador de 45 min, Módulo de Schreiben con evaluador LLM, System Prompt del examinador telc B2 Beruf, Corrector: contrato contra reescritura, spans anchos y reglas inventadas (+39 more)
 
-### Community 2 - "el"
-Cohesion: 0.06
-Nodes (67): actionLabel(), applyConfigureBarChrome(), bindConfigureCountPillTooltip(), bindConfigureInlineControlHover(), bindConfigureModifierPillHover(), buildConfigureActionControl(), buildConfigureCountControl(), buildConfigureRow() (+59 more)
-
-### Community 3 - "initPageChat"
-Cohesion: 0.22
-Nodes (21): armPageChatForTyping(), buildSteerProcessingDots(), clearSteerAwaitTimer(), collapsePageChat(), expandPageChat(), focusPageChatInput(), initPageChat(), keepSteerPointerInside() (+13 more)
-
-### Community 4 - "pdf2md.py"
+### Community 1 - "pdf2md.py"
 Cohesion: 0.07
 Nodes (28): bytes, Diagnostico: distribucion de huecos entre fragmentos de texto. Objetivo: elegir…, build_font(), build_lines(), code_width(), decode_string(), _emit(), extract_runs() (+20 more)
 
-### Community 5 - "live-browser.js"
-Cohesion: 0.03
-Nodes (114): addManualContextText(), applyEditing(), applyLiveBarPreference(), applyPlaceholderSizingStyles(), bindEditBadgeProxy(), buildInsertPlaceholderSnapshotFromDom(), buildLocatorForLeaf(), buildPickedAnchorSnapshot() (+106 more)
+### Community 2 - "design_audit.js"
+Cohesion: 0.06
+Nodes (33): altRule, baseBg, colorOf(), contrast(), contrastChecks, durUses, failed, findRule() (+25 more)
 
-### Community 6 - "2. Arquitectura de las Soluciones Implementadas"
-Cohesion: 0.11
-Nodes (17): 1. Contexto y Objetivos del Proyecto, 2. Arquitectura de las Soluciones Implementadas, 3. Resumen de Archivos Afectados, 4. Resultados de las Pruebas Automatizadas, 5. Instrucciones de Uso y Despliegue, A. Selector de Perfiles y Conmutación Dinámica de Idioma (Frontend), A. Smoke Test del Visor (`node quiz/smoke_test.js quiz/B2_quiz.html`):, B. Módulo de Schreiben: Pestañas Comparativas en Tiempo Real (+9 more)
-
-### Community 7 - "renderDesignVisual"
-Cohesion: 0.08
-Nodes (35): buildCollapsible(), buildColorModels(), buildListHtml(), buildRadiiModels(), buildTypographyModels(), copyToClipboard(), cssSafe(), designEmptyMessage() (+27 more)
-
-### Community 8 - "What You Must Do When Invoked"
-Cohesion: 0.07
-Nodes (26): For /graphify add and --watch, For /graphify query, For the commit hook and native CLAUDE.md integration, For --update and --cluster-only, /graphify, Honesty Rules, Interpreter guard for subcommands, Part A - Structural extraction for code files (+18 more)
-
-### Community 9 - "handleManualEditActivity"
-Cohesion: 0.18
-Nodes (25): clearStoredManualApplyState(), fetchPendingCount(), handleManualEditActivity(), hidePendingApplyDock(), manualApplyLoadingText(), manualApplyStateKey(), manualEditEventForCurrentPage(), numberOrNull() (+17 more)
-
-### Community 10 - "dependencies"
-Cohesion: 0.01
-Nodes (288): dependencies, @deepseek-ai/cordis, @deepseek-ai/cordis-plugin-group, @deepseek-ai/cordis-plugin-include, @deepseek-ai/cordis-plugin-loader, @deepseek-ai/cordis-plugin-timer, @deepseek-ai/cosmokit, @deepseek-ai/dsh (+280 more)
-
-### Community 11 - "smoke_test.js"
-Cohesion: 0.07
+### Community 3 - "smoke_test.js"
+Cohesion: 0.06
 Nodes (26): abiertas(), anunciosActuales(), anunciosIniciales, bloques, cabeceras(), checks, clases(), clicables (+18 more)
 
-### Community 12 - "main.js"
-Cohesion: 0.02
-Nodes (106): accountView(), acquire(), adapterFailureChunk(), addMarkerInitializer(), allowedNavigation(), ALWAYS_POLICY_KEYS, alwaysPolicySchema, applicationFrame() (+98 more)
-
-### Community 13 - "setLiveState"
-Cohesion: 0.13
-Nodes (49): beginNewLiveConfiguration(), cancelEditing(), cancelEditingToPicking(), cancelInsertConfigure(), cleanup(), cleanupAcceptedSession(), clearAnnotations(), clearInsertPicking() (+41 more)
-
-### Community 14 - "captureElementToBlob"
-Cohesion: 0.08
-Nodes (36): averageRgb01(), beginEditPin(), bufferToBase64(), buildAnnotationsForCapture(), buildPinElement(), cancelEditingPin(), captureChromeNodes(), captureElementFromRenderedAncestor() (+28 more)
-
-### Community 15 - "resumeSession"
+### Community 4 - "Respuesta con cita literal y nivel de confianza"
 Cohesion: 0.06
-Nodes (77): abortSvelteComponentInjection(), applyParamDefaults(), applyParamValue(), applyPlaceholderDimensions(), applySavedSessionMeta(), buildParamsPanel(), clampVariantIndex(), clearHandled() (+69 more)
+Nodes (35): Requisitos de accesibilidad (contraste 4.5:1, rejilla 4 px, 28/44 px), Bilingüismo ES/RU vinculante, Entregable: un único HTML autocontenido, Perfiles de Sergio (español) y Diana (ruso), Principios de producto, Propósito: publicar la clave de respuestas que el original no trae, Contrato de datos de quiz/SPEC.md, Dos temas por tokens (oscuro y paper) (+27 more)
 
-### Community 16 - "createLiveBrowserSessionState"
-Cohesion: 0.22
-Nodes (15): createLiveBrowserSessionState(), clearHandled(), clearScrollY(), clearSession(), isHandled(), loadSession(), markHandled(), nextCheckpointRevision() (+7 more)
+### Community 5 - "validate_evaluation_json"
+Cohesion: 0.07
+Nodes (42): main(), norm_ws(), Validación de un bloque sin clave (Hören de los Modeltests). No hay audio ni…, Valida los JSON de preguntas y construye el HTML autocontenido. Uso: python…, Validación de las tarjetas de Smalltalk (Sprechen Teil 2)., Normaliza espacios para comparar citas con el texto del que salen., Validación de una situación de Sprechen Teil 3. Tampoco se corrige: es un caso…, validate() (+34 more)
 
-### Community 17 - "main"
-Cohesion: 0.06
-Nodes (45): authenticateWebHost(), bootstrap(), cancel(), chromeFallbackFill(), connectDesktopWelcome(), control(), createWindow(), currentDesktopLocale() (+37 more)
-
-### Community 18 - "composeNode"
+### Community 6 - "make_sprachbausteine.py"
 Cohesion: 0.11
-Nodes (44): beginAnchorTransaction(), captureSegment(), charFromCodepoint(), _class(), commitAnchorTransaction(), composeNode(), escapedHexLen(), fromDecimalCode() (+36 more)
+Nodes (28): dividir_subvariantes(), es_linea_de_opciones(), es_nota(), es_titular(), etiqueta_extra(), frase_del_hueco(), leer_opciones_t1(), leer_opciones_t2() (+20 more)
 
-### Community 19 - "createLiveBrowserDomHelpers"
-Cohesion: 0.16
-Nodes (11): createLiveBrowserDomHelpers(), cssId(), liveUiRoot(), makeFrozenAnchor(), own(), pickable(), rectIsUsableAnchor(), uiAppend() (+3 more)
-
-### Community 20 - "design_audit.js"
-Cohesion: 0.07
-Nodes (31): baseBg, colorOf(), contrast(), contrastChecks, darkRule, durUses, failed, findRule() (+23 more)
-
-### Community 21 - "connectSSE"
-Cohesion: 0.16
-Nodes (22): abandonForeignSession(), abandonSupersededGo(), connectSSE(), discardOrphanedSession(), injectVariantsFromSource(), isFrameworkComponentPreviewMode(), isJsxSourceFile(), isSvelteComponentManifestPath() (+14 more)
-
-### Community 22 - "push"
-Cohesion: 0.07
-Nodes (25): collect(), compileList(), compileMap(), collectType(), constructYamlBinary(), defineMethod(), discoverModels(), dump() (+17 more)
-
-### Community 23 - "Responsive Design"
-Cohesion: 0.08
-Nodes (25): Assess Adaptation Challenge, Breakpoints: Content-Driven, Content Adaptation, Desktop Adaptation (Mobile → Desktop), Detect Input Method, Not Just Screen Size, Email Adaptation (Web → Email), Implement Adaptations, Layout Adaptation Patterns (+17 more)
-
-### Community 24 - "initGlobalBar"
-Cohesion: 0.22
-Nodes (12): applyGlobalBarLabelState(), globalBarModeToggles(), initGlobalBar(), makeIconBtn(), loadDetectScript(), onDetectMessage(), positionPendingDock(), requestDetectScan() (+4 more)
-
-### Community 25 - "adapterStream"
-Cohesion: 0.10
-Nodes (31): adapterStream(), await(), callConfigEquals(), contentHasFile(), contentHasImage(), deepFreeze(), detachedModalities(), entries() (+23 more)
-
-### Community 26 - "test_prompt.py"
-Cohesion: 0.14
-Nodes (20): main(), norm_ws(), Valida los JSON de preguntas y construye el HTML autocontenido. Uso: python…, Normaliza espacios para comparar citas con el texto del que salen., validate(), build_user_prompt(), count_words(), Any (+12 more)
-
-### Community 27 - "live-browser-ignores.js"
-Cohesion: 0.52
-Nodes (6): globToRegex(), matchesScope(), normalizeIgnoreRule(), normalizeIgnoreValue(), pageCandidates(), resolveDetectIgnores()
-
-### Community 28 - "inspect_pdf.py"
-Cohesion: 0.38
-Nodes (6): decompress_stream(), find_objects(), main(), Inspecciona la estructura interna del PDF para planear el extractor. Solo…, Extrae objetos de nivel superior por fuerza bruta: 'N G obj ... endobj'., Localiza 'stream...endstream' y descomprime si es FlateDecode.
-
-### Community 29 - "impeccable"
-Cohesion: 0.60
-Nodes (5): impeccable script, check_download(), fetch_url(), probe_ok(), setup_help()
-
-### Community 30 - "impeccable/SKILL.md"
-Cohesion: 0.10
-Nodes (20): Assess Adaptation Challenge, Implement & Verify, Recommended Actions, Craft (deprecated alias), Apply, Live-mode signature params, Set the spatial thesis, Two isolated assessments (+12 more)
-
-### Community 31 - "onboard.md"
-Cohesion: 0.09
-Nodes (22): Assess Onboarding Needs, Context Over Ceremony, Contextual Help, Design Onboarding Experiences, Documentation & Help, Empty State Design, Feature Discovery & Adoption, Guided Tours & Walkthroughs (+14 more)
-
-### Community 32 - "Operate mode depth (and Read notes)"
-Cohesion: 0.10
-Nodes (18): Craft floor, Refuse, Verify, Constraints, Failure modes, Flow, $impeccable hooks, Routing (+10 more)
-
-### Community 35 - "make_quiz_sources.py"
-Cohesion: 0.67
-Nodes (3): load_pages(), main(), Parte el Markdown convertido en ficheros fuente por bloque de variantes. Uso:…
-
-### Community 38 - "The Toolkit"
-Cohesion: 0.10
-Nodes (20): Animate complex properties, Assess What "Extraordinary" Means Here, For data-heavy interfaces, For functional UI, For performance-critical UI, For visual/marketing surfaces, Implement with Discipline, Interact with the device (+12 more)
-
-### Community 39 - "animate.md"
-Cohesion: 0.12
-Nodes (14): Accessibility and control, Choose material by meaning, Find the job, Implement to the runtime, Set the motion thesis, Timing and easing, Verify, Visitor mode (+6 more)
-
-### Community 40 - "live.md"
-Cohesion: 0.07
-Nodes (26): Step 1: Parse the request, Step 2: Reuse the page, then start, Step 3: Generate, Step 4: Accept and close, Cleanup, Exit, First-time setup, Handle `accept` (+18 more)
-
-### Community 41 - "Handle `generate`"
-Cohesion: 0.12
-Nodes (16): 1. Read the screenshot (if present), 2. Wrap the element, 3. Load the action's reference, 4. Plan three variants: identity first, then mode, then axes, 5. Apply the freeform prompt (if present), 6. Deliver variants, 7. Parameters (composition-sized, 0-4 per variant), 8. Signal done (+8 more)
-
-### Community 42 - "mountSvelteComponentVariant"
-Cohesion: 0.12
-Nodes (22): applyOriginalAttrsToSvelteAnchor(), captureAndEmit(), checkpointPayload(), commitAcceptedSvelteComponentToDom(), compileShader(), componentModuleCandidates(), describeMountFailure(), detectDevServerBase() (+14 more)
-
-### Community 43 - "Generate Report"
-Cohesion: 0.13
-Nodes (14): 1. Accessibility (A11y), 2. Performance, 3. Theming, 4. Responsive Design, 5. Implementation Integrity (CRITICAL), Audit Health Score, Detailed Findings by Severity, Diagnostic Scan (+6 more)
-
-### Community 44 - "New visual work"
-Cohesion: 0.14
-Nodes (14): 1. Decide what is already true, 2. Ask what will change the work, 3. Choose the right amount of invention, 4. Commit the world, 5. Record the decision, 6. Build with full commitment, 7. Inspect and finish, Both paths (+6 more)
-
-### Community 45 - "optimize.md"
-Cohesion: 0.14
-Nodes (13): Animation Performance, Assess Performance Issues, Core Web Vitals Optimization, Cumulative Layout Shift (CLS < 0.1), Interaction to Next Paint (INP < 200ms), Largest Contentful Paint (LCP < 2.5s), Loading Performance, Network Optimization (+5 more)
-
-### Community 46 - "YAMLException"
-Cohesion: 0.09
-Nodes (29): blockHeader(), chooseScalarStyle(), codePointAt(), compileStyleAliases(), detectType(), dropEndingNewline(), encodeHex(), escapeString() (+21 more)
-
-### Community 47 - "Impeccable Asset Producer"
-Cohesion: 0.15
-Nodes (11): Act on the receipt, Assemble and review, Plan and asset review, Plan, capture, serve, Core Rule, Decision Comps, Impeccable Asset Producer, Input Contract (+3 more)
-
-### Community 48 - "Scan mode (approach C: auto-extract, then confirm descriptive language)"
-Cohesion: 0.15
-Nodes (13): Component translation rules, Narrative mapping, Scan mode (approach C: auto-extract, then confirm descriptive language), Schema, Step 1: Find the design assets, Step 2: Auto-extract what can be auto-extracted, Step 2b: Stage the frontmatter, Step 3: Ask the user for qualitative language (+5 more)
-
-### Community 49 - "installDesktopShortcuts"
-Cohesion: 0.14
-Nodes (26): accept(), assertDesktopSender(), assertSender(), bindingIssue(), bindingKey(), edit(), effectiveShortcuts(), installDesktopShortcuts() (+18 more)
-
-### Community 50 - "critique.md"
-Cohesion: 0.17
-Nodes (11): Action Summary, Ask the User, Assessment A: Design Review, Assessment B: Detector + Browser Evidence, Assessment Orchestration, Deliver the Report, Hard Invariants, Persist the Snapshot (+3 more)
-
-### Community 51 - "Simplify the Design"
-Cohesion: 0.17
-Nodes (11): Assess Current State, Code Simplification, Content Simplification, Document Removed Complexity, Information Architecture, Interaction Simplification, Layout Simplification, Plan Simplification (+3 more)
-
-### Community 52 - "Hardening Dimensions"
-Cohesion: 0.17
-Nodes (11): Accessibility Resilience, Assess Hardening Needs, Edge Cases & Boundary Conditions, Error Handling, Hardening Dimensions, Input Validation & Sanitization, Internationalization (i18n), Performance Resilience (+3 more)
-
-### Community 53 - "Pipeline PDF → Markdown (sin dependencias)"
-Cohesion: 0.15
-Nodes (12): `analyze_gaps.py` — calibración del umbral de espacio, `inspect_pdf.py` — diagnóstico previo, Limitaciones conocidas, `make_index.py` — índice navegable, `pdf2md.py` — el conversor, Pipeline PDF → Markdown (sin dependencias), Por qué no se usó MarkItDown, Prueba del extractor (+4 more)
-
-### Community 54 - "Desarrollo Guiado por Pruebas"
-Cohesion: 0.18
-Nodes (10): 1. Cuándo Usar, 2. Estado Actual de Este Proyecto (léelo antes de empezar), 3. El Ciclo, 4. El Patrón "Demuéstralo" (para bugs), 5. La Pirámide, 6. Cómo Escribir Buenas Pruebas, 7. Tabla Anti-Racionalización, 8. Banderas Rojas (+2 more)
-
-### Community 55 - "clarify.md"
-Cohesion: 0.18
-Nodes (10): Actions and navigation, Audit the language, Errors and permissions, Forms, Help and instructional text, Loading, empty, and success states, Rewrite by function, Set the message hierarchy (+2 more)
-
-### Community 56 - "Nielsen's 10 Heuristics"
-Cohesion: 0.18
-Nodes (11): 10. Help and Documentation, 1. Visibility of System Status, 2. Match Between System and Real World, 3. User Control and Freedom, 4. Consistency and Standards, 5. Error Prevention, 6. Recognition Rather Than Recall, 7. Flexibility and Efficiency of Use (+3 more)
-
-### Community 57 - "Generate Combined Critique Report"
-Cohesion: 0.18
-Nodes (11): Design Health Score, Design Specificity Verdict, Generate Combined Critique Report, Minor Observations, Overall Impression, Persona Red Flags, Priority Issues, Questions to Consider (+3 more)
-
-### Community 58 - "document.md"
-Cohesion: 0.18
-Nodes (10): Pitfalls, Seed mode, Step 1: Route through new-work's workshop, Step 2: Write seed DESIGN.md, Step 3: Confirm, Style guidelines, The frontmatter: token schema, The markdown body: eight sections (canonical order) (+2 more)
-
-### Community 59 - "polish.md"
-Cohesion: 0.18
-Nodes (10): 1. Establish the system, 2. Gather the evidence, 3. Triage, 4. Polish the whole path, 5. Verify and finish, Color, imagery, and icons, Content and code, Flow and hierarchy (+2 more)
-
-### Community 60 - "quieter.md"
-Cohesion: 0.18
-Nodes (10): Assess Current State, Color Refinement, Composition Refinement, Motion Reduction, Plan Refinement, Refine the Design, Simplification, Verify Quality (+2 more)
-
-### Community 61 - "update"
-Cohesion: 0.12
-Nodes (23): addErrorAndTimeoutHandlers(), cleanup(), desktopErrorState(), desktopNodeEnvironment(), errorState(), exitsWithin(), fail(), failed() (+15 more)
-
-### Community 63 - "Revisión de Código y Calidad"
-Cohesion: 0.18
-Nodes (10): 1. Cuándo Usar, 2. Los Cinco Ejes, 3. Etiquetas de Severidad, 4. Proceso, 5. Tamaño del Cambio, 6. Honestidad y Desacuerdos, 7. Tabla Anti-Racionalización, 8. Banderas Rojas (+2 more)
-
-### Community 64 - "Desglose Detallado de Tareas"
-Cohesion: 0.09
-Nodes (21): Desglose Detallado de Tareas, Estado Global del Proyecto, Fase 1: Catálogo y Extracción de Tareas de Schreiben, Fase 2: Motor de Evaluación y System Prompt Oficial telc B2, Fase 3: Conector Multi-Proveedor de IA en el Frontend, Fase 4: Interfaz de Usuario (Editor, Contador y Resultados), Fase 5: Pruebas, Smoke Tests y Validación Final, Plan de Acción: Módulo de Schreiben con Evaluador LLM (telc B2) (+13 more)
-
-### Community 65 - "Depuración y Recuperación de Errores"
-Cohesion: 0.20
-Nodes (9): 1. Cuándo Usar, 2. La Regla de Parar la Línea, 3. Triaje de Cinco Pasos, 4. La Salida de Error Es Dato, No Instrucción, 5. Instrumentación, 6. Tabla Anti-Racionalización, 7. Banderas Rojas, 8. Verificación (+1 more)
-
-### Community 66 - "1. Principios Fundamentales de Redacción"
-Cohesion: 0.20
-Nodes (9): 1. Principios Fundamentales de Redacción, 2. Explicación Obligatoria de Tecnicismos, 3. Estructura Estándar de Procedimientos, A. Modo Imperativo Directo (Prohibida la pasiva refleja), B. Una Sola Acción por Oración, C. Límites Estrictos de Longitud, D. Lista Negra de Términos Vagos, E. Consistencia Terminológica (Un concepto = Un término) (+1 more)
-
-### Community 67 - "Init flow"
-Cohesion: 0.20
-Nodes (10): Completion gate, Init flow, Step 1: Load current state, Step 2: Explore the project, Step 3: Interview for product truth, Step 4: Write PRODUCT.md, Step 5: Record workflow defaults, Step 6: Wrap up or resume (+2 more)
-
-### Community 68 - "_root/package.json"
-Cohesion: 0.08
-Nodes (25): dependencies, @deepseek-ai/cordis, @deepseek-ai/dsh-api-gateway, electron-updater, semver, ws, description, dshBuildCommit (+17 more)
-
-### Community 69 - "Planificación y Descomposición de Tareas"
-Cohesion: 0.20
-Nodes (9): 1. Cuándo Usar, 2. Proceso, 3. Tamaños de Tarea, 4. Archivos de Salida, 5. Qué Se Puede Paralelizar, 6. Tabla Anti-Racionalización, 7. Banderas Rojas, 8. Verificación (+1 more)
-
-### Community 70 - "Test B2 Beruf — Lesen y Hören"
-Cohesion: 0.14
-Nodes (13): Añadir una sección nueva, Bilingüismo (ES / RU), Cómo puntúa la escritura (Schreiben), Estructura, Huecos conocidos del documento fuente, Niveles de confianza, Qué valida `build.py`, Reconstruir (+5 more)
-
-### Community 71 - "2. Las 5 Lentes de Auditoría (En este orden estricto)"
-Cohesion: 0.22
-Nodes (8): 1. El Doble Rol del Auditor, 2. Las 5 Lentes de Auditoría (En este orden estricto), Apple Design Skill: HIG & Craftsmanship Reviewer, Lente 1: Accesibilidad y Ergonomía Táctil (Crítico), Lente 2: Jerarquía, Espaciado y Ritmo (Grid de 8pt), Lente 3: Materiales y Acabados (Liquid & Frosted Glass), Lente 4: Dinamismo, Físicas y Micro-interacciones (Vida), Lente 5: Identidad y Anti-Plantilla (Des-IAficar)
-
-### Community 72 - "graphify reference: extra exports and benchmark"
-Cohesion: 0.22
-Nodes (8): graphify reference: extra exports and benchmark, Step 6b - Wiki (only if --wiki flag), Step 7 - Neo4j export (only if --neo4j or --neo4j-push flag), Step 7a - FalkorDB export (only if --falkordb or --falkordb-push flag), Step 7b - SVG export (only if --svg flag), Step 7c - GraphML export (only if --graphml flag), Step 7d - MCP server (only if --mcp flag), Step 8 - Token reduction benchmark (only if total_words > 5000)
-
-### Community 73 - "Common Cognitive Load Violations"
-Cohesion: 0.22
-Nodes (9): 1. The Wall of Options, 2. The Memory Bridge, 3. The Hidden Navigation, 4. The Jargon Barrier, 5. The Visual Noise Floor, 6. The Inconsistent Pattern, 7. The Multi-Task Demand, 8. The Context Switch (+1 more)
-
-### Community 74 - "iOS platform"
-Cohesion: 0.22
-Nodes (9): Color & materials, Components & controls, iOS platform, Layout & structure, Motion, The iOS slop test, Touch targets, Typography (+1 more)
-
-### Community 75 - ".toString"
-Cohesion: 0.13
-Nodes (17): decimalShift(), desktopKeybindings(), ensureId(), fromBase64(), fromHex(), fromSource(), initialShortcutConfig(), isMultipleOf() (+9 more)
-
-### Community 76 - "Shape"
-Cohesion: 0.22
-Nodes (8): Cadence, Confirm and stop, Phase 1: Discovery interview, Phase 2: Resolve the design direction, Phase 3: Write the brief, Round 1: purpose, people, and outcome, Round 2: material, behavior, and boundaries, Shape
-
-### Community 77 - "check"
-Cohesion: 0.13
-Nodes (20): assertLive(), check(), complete(), desktopClientHeaders(), desktopPolicyPage(), doCheck(), download(), failure() (+12 more)
-
-### Community 78 - "Android platform"
-Cohesion: 0.25
-Nodes (8): Android platform, Color & theming, Components & motion, Layout & structure, The Android slop test, Touch targets, Typography, Verifying the build
-
-### Community 79 - "colorize.md"
-Cohesion: 0.25
-Nodes (7): Apply at system scale, Audit before choosing, Choose a strategy, Contrast and perception, Live-mode signature params, Verify, Visitor mode
-
-### Community 80 - "Persona-Based Design Testing"
-Cohesion: 0.25
-Nodes (8): 1. Impatient Power User: "Alex", 2. Confused First-Timer: "Jordan", 3. Accessibility-Dependent User: "Sam", 4. Deliberate Stress Tester: "Riley", 5. Distracted Mobile User: "Casey", Persona-Based Design Testing, Project-Specific Personas, Selecting Personas
-
-### Community 81 - "doctor.md"
-Cohesion: 0.13
-Nodes (12): Before you finish, Scope is sovereign, The amplification, The skeleton test, Why it reads flat, Monorepo notes, Opting out of the boot check, Step 1: Run the pass (+4 more)
-
-### Community 82 - "Extract Flow"
-Cohesion: 0.25
-Nodes (7): Extract Flow, Step 1: Discover the Design System, Step 2: Identify Patterns, Step 3: Plan Extraction, Step 4: Extract & Enrich, Step 5: Migrate, Step 6: Document
-
-### Community 83 - "Ponytail: El Senior Developer Perezoso y Pragmático"
-Cohesion: 0.25
-Nodes (7): 1. Persistencia y Modos, 2. La Escalera de Decisión (The Ladder), 3. Resolución de Bugs: Causa Raíz, No Síntomas, 4. Reglas de Oro, 5. Niveles de Intensidad, 6. Cuándo NO ser "Perezoso" (Límites Críticos), Ponytail: El Senior Developer Perezoso y Pragmático
-
-### Community 84 - "Entrevístame: Extraer la Intención Real"
-Cohesion: 0.29
-Nodes (6): 1. Cuándo Usar, 2. Proceso, 3. Tabla Anti-Racionalización, 4. Banderas Rojas, 5. Verificación, Entrevístame: Extraer la Intención Real
-
-### Community 85 - "Generate Report"
-Cohesion: 0.29
-Nodes (7): Audit Health Score, Detailed Findings by Severity, Executive Summary, Generate Report, Patterns & Systemic Issues, Platform Conformance Verdict, Positive Findings
-
-### Community 86 - "Cognitive Load Assessment"
-Cohesion: 0.29
-Nodes (7): Cognitive Load Assessment, Cognitive Load Checklist, Extraneous Load: Bad Design, Germane Load: Learning Effort, Intrinsic Load: The Task Itself, The Working Memory Rule, Three Types of Cognitive Load
-
-### Community 87 - "Impeccable Finish Reviewer"
-Cohesion: 0.29
-Nodes (6): Checks, in order, Disposition, Impeccable Finish Reviewer, Input Contract, Output Contract, Verdict Pass
-
-### Community 88 - "Impeccable Manual Edit Applier"
-Cohesion: 0.29
-Nodes (6): Checks, Entry Atomicity, Impeccable Manual Edit Applier, Input Contract, Output Contract, Workflow
-
-### Community 89 - "Regla: Comunicación Clara y Explicación de Tecnicismos"
-Cohesion: 0.33
-Nodes (5): 1. Directo y sin Relleno, 2. Explicación Obligatoria de Palabras Técnicas (Regla Clave), 3. Resumen Práctico, Ejemplos obligatorios:, Regla: Comunicación Clara y Explicación de Tecnicismos
-
-### Community 90 - "graphify reference: query, path, explain"
-Cohesion: 0.33
-Nodes (5): For /graphify explain, For /graphify path, graphify reference: query, path, explain, Step 0 — Constrained query expansion (REQUIRED before traversal), Step 1 — Traversal
-
-### Community 91 - "Diagnostic Scan"
-Cohesion: 0.33
-Nodes (6): 1. Accessibility (VoiceOver / TalkBack), 2. Performance, 3. Appearance & Theming, 4. Platform Conformance (CRITICAL), 5. Adaptivity, Diagnostic Scan
-
-### Community 92 - "Persuade and Experience"
-Cohesion: 0.50
-Nodes (3): Comps, Directions, Persuade and Experience
-
-### Community 93 - "Visualize: Direction Comps & Asset Production"
-Cohesion: 0.33
-Nodes (5): After approval: the comp becomes a spec, Generate three compositional options, One approval point, Plates and provenance, Visualize: Direction Comps & Asset Production
-
-### Community 94 - "Impeccable Documenter"
-Cohesion: 0.40
-Nodes (4): Impeccable Documenter, Input Contract, Output Contract, Workflow
-
-### Community 95 - "Region map"
-Cohesion: 0.40
-Nodes (4): Containment, Painted material, Region map, What varies independently
-
-### Community 96 - "graphify reference: add a URL and watch a folder"
-Cohesion: 0.50
-Nodes (3): For /graphify add, For --watch, graphify reference: add a URL and watch a folder
-
-### Community 97 - "graphify reference: commit hook and native CLAUDE.md integration"
-Cohesion: 0.50
-Nodes (3): For git commit hook, For native CLAUDE.md integration, graphify reference: commit hook and native CLAUDE.md integration
-
-### Community 98 - "graphify reference: incremental update and cluster-only"
-Cohesion: 0.50
-Nodes (3): For --cluster-only, For --update (incremental re-extraction), graphify reference: incremental update and cluster-only
-
-### Community 99 - "Heuristics Scoring Guide"
-Cohesion: 0.50
-Nodes (4): Heuristics Scoring Guide, Issue Severity (P0–P3), Reference Material, Score Summary
-
-### Community 100 - "make_full_forums.py"
-Cohesion: 0.50
-Nodes (4): main(), make_forum(), make_full_forums.py - Generador del catálogo exhaustivo de Forumsbeiträge (telc…, Un tema de Forumsbeitrag. Sin `colleague_post`: la aportación del compañero era…
-
-### Community 101 - "Read"
-Cohesion: 0.50
-Nodes (3): Comps, Directions, Read
-
-### Community 151 - "Adaptation Strategies"
-Cohesion: 0.40
-Nodes (5): Adaptation Strategies, Orientation & foldables, Phone → Tablet (iPad / large screens), Platform → platform (iOS ↔ Android), Web → native (porting a website or web app)
-
-### Community 152 - "get"
-Cohesion: 0.08
-Nodes (30): clone(), _commitVolatile(), deepEqual(), compare(), disabled(), disabledOf(), equal(), equalExceptVolatile() (+22 more)
-
-### Community 153 - "security_test.js"
+### Community 7 - "security_test.js"
 Cohesion: 0.11
 Nodes (8): bloques, checks, El, fs, html, montar(), registro, script
 
-### Community 154 - "run"
+### Community 8 - "check.js"
+Cohesion: 0.06
+Nodes (48): adNodes, aiBtn, aiKeyOf(), aiStatusText(), allVariants, aplicarProgreso(), btnDiana, btnEs (+40 more)
+
+### Community 9 - "make_sprechen_t2.py"
 Cohesion: 0.21
-Nodes (13): boundedErrorSection(), crashReportFileName(), format(), inspect(), object(), parseState(), presentCommandManagement(), renderCrashReport() (+5 more)
+Nodes (13): aplicar_correcciones(), bloque_crudo(), limpiar(), main(), Extrae las 104 tarjetas de Smalltalk (Sprechen Teil 2) del PDF convertido. El…, Devuelve las líneas del bloque de Smalltalk, sin cabecera ni cola., Agrupa por número de tarjeta. Devuelve [(n, [lineas…]), …]., Une las líneas de una tarjeta en un párrafo y quita las costuras. (+5 more)
 
-### Community 156 - "focusSteerChat"
-Cohesion: 0.29
-Nodes (12): attachSteerFocusDebug(), attachSteerFocusGuard(), clearSteerFocusRecoverTimer(), focusConfigureInput(), focusSteerChat(), notePagePointerDown(), pageHasHostTextSelection(), scheduleSteerFocusRecover() (+4 more)
+### Community 10 - "Inline error-annotation correction view (dark mode)"
+Cohesion: 0.22
+Nodes (11): Inline error-annotation correction view (dark mode), Dark mode theme (dark grey background, serif body text), Two-tier color-coded error taxonomy (blue span = wording/form error, red span = logic/cohesion error), Word-form error: 'Mitarbeite' instead of 'Mitarbeiter' (missing final -r), Clause-link error: 'und diese nicht noch mehr Arbeit ... leisten können' (dangling demonstrative / broken causal connector), Numbered badge markers linking each highlighted span to an error explanation list, Numbered marker [1] on blue-highlighted span 'viele Mitarbeite schon', Numbered marker [2] on red-highlighted span 'und diese nicht noch mehr Arbeit' (+3 more)
 
-### Community 157 - "resolve"
-Cohesion: 0.09
-Nodes (41): active(), allowed(), bind(), cleanStorage(), clear(), clearNavigation(), close(), closeAndWait() (+33 more)
-
-### Community 158 - "resolveLiveInjectionAnchor"
-Cohesion: 0.16
-Nodes (19): buildSvelteExpressionTextMap(), buildSveltePropValuesFromLiveElement(), buildSveltePropValuesV2(), cloneWithoutElements(), collectTextNodes(), collectVisibleTexts(), cssEscapeIdent(), elementMatchesOriginalMarkup() (+11 more)
-
-### Community 159 - "scheduleAcceptCleanup"
+### Community 11 - "Handler"
 Cohesion: 0.31
-Nodes (11): acceptedDomAlreadyClean(), clearHandledWrapperReloadStamp(), deferredRecoverySuperseded(), ensureAcceptedDomClean(), findAcceptedRuntimeWrappers(), handledWrapperReloadKey(), reloadAfterMissingAcceptedDom(), restoreAcceptedDomFromSnapshot() (+3 more)
+Nodes (3): BaseHTTPRequestHandler, Handler, Proxy local para OpenCode Go (el «Worker» de andar por casa). Por qué hace…
 
-### Community 160 - "dump-events.cjs"
-Cohesion: 0.25
-Nodes (7): fs, hits, limit, lines, pattern, text, z
+### Community 12 - "Magnified crop of a single highlighted term inside a dark-mode text panel (no app chrome visible)"
+Cohesion: 0.39
+Nodes (9): Crop/truncation state: text cut at both edges, no margins, no header, no controls, no visible error state, Marking treatment: rounded taupe highlight block with a 4 px gold underline rule (x100-413, y302-305), Clipped white text fragment '...nd' at the left edge (tail of the preceding word, most likely 'und'), Trailing hyphen after 'Life-', implying a compound continuation (e.g. '-Balance') that is cut off, Unresolved context: zoom on an inline annotation/marked term in running text vs. chart-label or legend crop (no app shell visible to confirm), Magnified crop of a single highlighted term inside a dark-mode text panel (no app chrome visible), Dark-mode surface palette: near-black blue-grey background #36373F (RGB 54,55,63) with warm highlight fill, Highlighted literal 'World-Life-' set in serif, pale gold (#FFEFA2) on taupe block (#4E4842) (+1 more)
 
-### Community 161 - "Operate"
+### Community 13 - "t"
+Cohesion: 0.14
+Nodes (32): ansKey(), applyTheme(), cartasRestantes(), contenidoCarta(), deckNote(), deckState(), doubtfulCount(), esc() (+24 more)
+
+### Community 14 - "inspect_pdf.py"
+Cohesion: 0.38
+Nodes (6): decompress_stream(), find_objects(), main(), Inspecciona la estructura interna del PDF para planear el extractor. Solo…, Extrae objetos de nivel superior por fuerza bruta: 'N G obj ... endobj'., Localiza 'stream...endstream' y descomprime si es FlateDecode.
+
+### Community 16 - "make_full_forums.py"
 Cohesion: 0.50
-Nodes (3): Comps, Directions, Operate
+Nodes (4): main(), make_forum(), make_full_forums.py - Generador del catálogo exhaustivo de Forumsbeiträge (telc…, Un tema de Forumsbeitrag. Sin `colleague_post`: la aportación del compañero era…
 
-### Community 162 - "Command guidance"
-Cohesion: 0.50
-Nodes (3): Command guidance, No-argument routing: the context-aware menu, Workflow questions
+### Community 18 - "make_quiz_sources.py"
+Cohesion: 0.67
+Nodes (3): load_pages(), main(), Parte el Markdown convertido en ficheros fuente por bloque de variantes. Uso:…
 
-### Community 163 - "actOnAgentTarget"
-Cohesion: 0.29
-Nodes (17): actOnAgentTarget(), agentTargetBusyReason(), agentTargetOverlayGone(), agentTargetTaken(), claimAgentTarget(), claimAndActOnAgentTarget(), declineAgentTargetBusy(), declineAgentTargetUnresolvable() (+9 more)
+### Community 19 - "merge_sprachbausteine_respuestas.py"
+Cohesion: 0.67
+Nodes (3): main(), norm_ws(), merge_sprachbausteine_respuestas.py - Consolida las respuestas deducidas. Los…
 
-### Community 164 - "syncAgentPollingUi"
-Cohesion: 0.18
-Nodes (14): agentHasWorkInFlight(), agentStatusText(), brandMarkSvg(), buildSteerQueueHint(), ensureAgentPollTooltip(), hideAgentPollTooltip(), pageChatCollapsedWidthPx(), pageChatExpandedWidth() (+6 more)
+### Community 20 - "pdf2md.py: conversor PDF a Markdown propio"
+Cohesion: 0.67
+Nodes (4): Validador de ancho de avance real (Run.x1), Limitaciones conocidas del conversor, pdf2md.py: conversor PDF a Markdown propio, Umbral de espacio de 0.18 em
 
-### Community 165 - "init"
-Cohesion: 0.27
-Nodes (11): barPaletteForTheme(), designPanelCss(), detectPageTheme(), init(), initActionPicker(), initBar(), initDesignPanel(), initHighlight() (+3 more)
-
-### Community 166 - "State"
+### Community 33 - "Design"
 Cohesion: 0.20
-Nodes (10): action(), append(), compileStyleMap(), desktopUpdateJournalState(), isNothing(), load(), loadAll(), loadDocuments() (+2 more)
+Nodes (9): Color, Componentes, Design, Estados, Material, Prohibido, Temas, Tipografía (+1 more)
 
-### Community 167 - "toggleDesignPanel"
-Cohesion: 0.70
-Nodes (5): buildDesignHeader(), fetchDesignSystem(), renderDesignChrome(), saveDesignPrefs(), toggleDesignPanel()
+### Community 34 - "renderSchreiben"
+Cohesion: 0.20
+Nodes (21): countWords(), delDraft(), delEval(), formatTimer(), getDraft(), getEval(), getLps(), getPushed() (+13 more)
+
+### Community 35 - "renderItem"
+Cohesion: 0.15
+Nodes (16): announce(), clearPeek(), commitAnswer(), conHuecos(), detailsPanel(), explainOf(), focusEl(), formatConfidence() (+8 more)
+
+### Community 36 - "Rediseño visual — B2 Beruf"
+Cohesion: 0.14
+Nodes (13): Contrato de dirección, Puntos de control, Rediseño visual — B2 Beruf, Regla de trabajo, Tarea 1: tokens y material, Tarea 2: cabecera, Tarea 3: navegación y progreso, Tarea 4: hoja de examen (+5 more)
+
+### Community 37 - "normalizeEvaluationResult"
+Cohesion: 0.23
+Nodes (13): aplicarCorrecciones(), bandaMediana(), cleanQuotes(), combinarPasadas(), comparableText(), errorValido(), findErrorRanges(), formatGermanLetter() (+5 more)
+
+### Community 38 - "make_sprechen_t3.py"
+Cohesion: 0.24
+Nodes (11): aplicar_correcciones(), bloque_crudo(), main(), partir_puntos(), Une el bloque en un párrafo y cose los cortes de línea., Devuelve [(n, descripción, [stichpunkte…]), …]., Parte los Stichpunkte por «1.», «2.» o por viñeta «•»., Extrae las 67 situaciones de Sprechen Teil 3 del PDF convertido. El bloque… (+3 more)
+
+### Community 39 - "AGENTS.md — puerta de entrada para cualquier agente"
+Cohesion: 0.22
+Nodes (8): 1. Antes de responder cualquier cosa sobre el código, 2.1 Desempates ya decididos, 2. Carga la skill antes de empezar, no después, 3. Reglas que no se negocian, 4. El contexto largo, 5. Cómo respondo al usuario, 6. Flujo de trabajo, AGENTS.md — puerta de entrada para cualquier agente
+
+### Community 40 - "evaluateWithLLM"
+Cohesion: 0.33
+Nodes (7): buildCazaSystemPrompt(), buildCazaUserPrompt(), buildUserPromptClient(), cazarErrores(), evaluarUnaPasada(), evaluateWithLLM(), parseEvaluationJson()
+
+## Ambiguous Edges - Review These
+- `Clause-link error: 'und diese nicht noch mehr Arbeit ... leisten können' (dangling demonstrative / broken causal connector)` → `Two-tier color-coded error taxonomy (blue span = wording/form error, red span = logic/cohesion error)`  [AMBIGUOUS]
+  02_err2.png · relation: semantically_similar_to
+- `Crop/truncation state: text cut at both edges, no margins, no header, no controls, no visible error state` → `Unresolved context: zoom on an inline annotation/marked term in running text vs. chart-label or legend crop (no app shell visible to confirm)`  [AMBIGUOUS]
+  10_wlb4x.png · relation: conceptually_related_to
+- `Unresolved context: zoom on an inline annotation/marked term in running text vs. chart-label or legend crop (no app shell visible to confirm)` → `Magnified crop of a single highlighted term inside a dark-mode text panel (no app chrome visible)`  [AMBIGUOUS]
+  10_wlb4x.png · relation: references
+- `Possible typo/variant: term intended as 'Work-Life' (as in 'Work-Life-Balance') rather than 'World-Life'` → `Highlighted literal 'World-Life-' set in serif, pale gold (#FFEFA2) on taupe block (#4E4842)`  [AMBIGUOUS]
+  10_wlb4x.png · relation: semantically_similar_to
 
 ## Knowledge Gaps
-- **1245 isolated node(s):** `name`, `private`, `version`, `type`, `@deepseek-ai/cordis` (+1240 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 1445 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **13 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **123 isolated node(s):** `fs`, `html`, `styleMatch`, `rules`, `baseBg` (+118 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 251 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `dependencies` connect `dependencies` to `dsh/package.json`?**
-  _High betweenness centrality (0.039) - this node is a cross-community bridge._
-- **Why does `Reference Material` connect `Heuristics Scoring Guide` to `Persona-Based Design Testing`, `critique.md`, `Cognitive Load Assessment`?**
+- **What is the exact relationship between `Clause-link error: 'und diese nicht noch mehr Arbeit ... leisten können' (dangling demonstrative / broken causal connector)` and `Two-tier color-coded error taxonomy (blue span = wording/form error, red span = logic/cohesion error)`?**
+  _Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low._
+- **What is the exact relationship between `Crop/truncation state: text cut at both edges, no margins, no header, no controls, no visible error state` and `Unresolved context: zoom on an inline annotation/marked term in running text vs. chart-label or legend crop (no app shell visible to confirm)`?**
+  _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
+- **What is the exact relationship between `Unresolved context: zoom on an inline annotation/marked term in running text vs. chart-label or legend crop (no app shell visible to confirm)` and `Magnified crop of a single highlighted term inside a dark-mode text panel (no app chrome visible)`?**
+  _Edge tagged AMBIGUOUS (relation: references) - confidence is low._
+- **What is the exact relationship between `Possible typo/variant: term intended as 'Work-Life' (as in 'Work-Life-Balance') rather than 'World-Life'` and `Highlighted literal 'World-Life-' set in serif, pale gold (#FFEFA2) on taupe block (#4E4842)`?**
+  _Edge tagged AMBIGUOUS (relation: semantically_similar_to) - confidence is low._
+- **Why does `buildUserPromptClient` connect `renderSchreiben` to `Respuesta con cita literal y nivel de confianza`?**
   _High betweenness centrality (0.006) - this node is a cross-community bridge._
-- **What connects `name`, `private`, `version` to the rest of the system?**
-  _1245 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `dsh/package.json` be split into smaller, more focused modules?**
-  _Cohesion score 0.00684931506849315 - nodes in this community are weakly interconnected._
-- **Should `modern-screenshot.umd.js` be split into smaller, more focused modules?**
-  _Cohesion score 0.08959899749373433 - nodes in this community are weakly interconnected._
-- **Should `el` be split into smaller, more focused modules?**
-  _Cohesion score 0.06060606060606061 - nodes in this community are weakly interconnected._
-- **Should `pdf2md.py` be split into smaller, more focused modules?**
-  _Cohesion score 0.06957047791893527 - nodes in this community are weakly interconnected._
+- **Why does `Evaluador LLM bilingüe: explicaciones en el idioma del alumno` connect `Respuesta con cita literal y nivel de confianza` to `renderSchreiben`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **What connects `fs`, `html`, `styleMatch` to the rest of the system?**
+  _123 weakly-connected nodes found - possible documentation gaps or missing edges._

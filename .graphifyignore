@@ -1,0 +1,27 @@
+# Qué entra en el grafo de graphify.
+# Formato gitignore. graphify sí lee este fichero (.gitignore no basta cuando el
+# path ya está en el índice de Git).
+
+# Bibliotecas de skills y estado de herramientas: no son el producto.
+.agents/
+.impeccable/
+.design/
+
+# Salidas del propio graphify.
+graphify-out/
+
+# Desempaquetado temporal del .asar de DSH (herramienta, no proyecto).
+.dsh-asar-extract/
+
+# El PDF convertido: 77.000 palabras de texto de examen que ya viven
+# estructuradas en quiz/data/*.json. Incluirlo llenaba el grafo de pasajes
+# y multiplicaba por diez el coste de la extracción.
+out/B2_ohne_antworten.md
+
+# El entregable generado por build.py: 150.000 palabras que no se editan a mano.
+# Lo que interesa está en template.html.
+quiz/B2_quiz.html
+
+# Markdown intermedio por bloque (49.000 palabras): es el texto de examen troceado,
+# y su versión estructurada es quiz/data/. Duplicarlo no aporta nada al grafo.
+quiz/src/
