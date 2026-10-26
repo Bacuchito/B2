@@ -1,0 +1,1260 @@
+{
+ "block": "modeltest_15",
+ "section": "modeltest-15",
+ "variants": [
+  {
+   "id": "mt15-lesen-t1",
+   "label": "Lesen Teil 1",
+   "page": 3,
+   "kind": "zuordnung",
+   "intro": "Sie lesen online in einer Wirtschaftszeitung und möchten Ihren Freunden einige Artikel schicken. Entscheiden Sie, welcher Artikel a–h zu welcher Person 1–5 passt.",
+   "optionsLabel": "Artikel",
+   "options": [
+    {
+     "key": "a",
+     "title": "Mehr Zeit für das Wichtige?",
+     "text": "Für die meisten Firmen ist es Pflicht, viele Berufstätige finden es praktisch: professionelle Unterstützung bei der Buchhaltung. Nicht nur sind viele damit überfordert, sondern diese Arbeit hält einen auch davon ab, wichtigere Dinge zu erledigen - oder? Wir zeigen Ihnen anhand von Beispielen, worauf Sie achten müssen und wann es sich rentiert.",
+     "distractor": ""
+    },
+    {
+     "key": "b",
+     "title": "Modernes Marketing",
+     "text": "Große Firmen setzen nicht mehr nur auf das Internet, um erfolgreich Marketing zu betreiben. „Die Mischung macht's!“, sagt Werner Claussen vom Netzwerk „Modernes Marketing“. In einem Interview berichtet er, was genau damit gemeint ist.",
+     "distractor": "Habla de marketing, pero defiende una mezcla de canales y no la publicidad solo en Internet. Se confunde con Wanda, que quiere anunciarse en la red."
+    },
+    {
+     "key": "c",
+     "title": "Ein Gesetz, das viele nicht kennen",
+     "text": "Vielen ist nicht bewusst, dass es einen gesetzlichen Anspruch auf Teilzeitarbeit gibt. Wenn der bzw. die Angestellte möchte, muss der Arbeitgeber kürzere Arbeitszeiten ermöglichen. Bevor man diesen Wunsch äußert, sollte man sich allerdings über die Konsequenzen für Karriere, Steuern und Rente im Klaren sein. Wir haben eine Checkliste zusammengestellt.",
+     "distractor": ""
+    },
+    {
+     "key": "d",
+     "title": "Im Fokus: Arbeitszeitmodelle",
+     "text": "In unserer Reihe zu unterschiedlichen Arbeitszeitmodellen stellen wir Ihnen heute anhand von drei Best-Practice-Beispielen vor, wie unterschiedliche Unternehmen die Gleitzeit in ihrem Betrieb umgesetzt haben. Lesen Sie außerdem, was die Geschäftsführung und Mitarbeitende berichten.",
+     "distractor": "Trata de modelos de jornada y horario flexible, pero no de reducir la jornada. Se confunde con Kasimir por el tema del tiempo de trabajo."
+    },
+    {
+     "key": "e",
+     "title": "Alles im Lot?",
+     "text": "Wenn Ihnen alles zu viel wird, kann das unterschiedliche Ursachen haben: die Menge der Arbeit, zu schwierige Aufgaben oder in Ihrem Privatleben gibt es Probleme, die Ihnen zu schaffen machen. Was Sie tun können, lesen Sie in einem Gastbeitrag der Psychologin Tamara Feuer.",
+     "distractor": ""
+    },
+    {
+     "key": "f",
+     "title": "Neues aus der Welt der Steuern",
+     "text": "Die wenigsten mögen sie, und doch muss sie jeder zahlen: Steuern. Für Unternehmen ist dieser Bereich oft schwer zu durchschauen, deshalb fassen wir alle gesetzlichen Neuregelungen für Betriebe zusammen, die seit unserer letzten Ausgabe in Kraft getreten sind.",
+     "distractor": "Resume novedades fiscales para empresas, no asesora sobre contratar a un asesor fiscal. Se confunde con Gladis por la palabra Steuern."
+    },
+    {
+     "key": "g",
+     "title": "Der Weg zu mehr Kunden",
+     "text": "Die Möglichkeiten, Produkte und Dienstleistungen zu bewerben, sind kaum zu überblicken. Gerade in kleineren Firmen sind die Mittel für das Marketing außerdem begrenzt. Hier ist Online-Marketing eine vergleichsweise günstige Möglichkeit, mehr Kunden zu erreichen. Wir zeigen Ihnen wie.",
+     "distractor": ""
+    },
+    {
+     "key": "h",
+     "title": "Vergessen Sie Zertifikate!",
+     "text": "In vielen Branchen sind sie wichtiger als ein gutes Zeugnis: gute Kontakte. Das gilt umso mehr in einer internationalen Berufswelt, in der Sie wichtige Kontakte schnell und einfach auch über Kontinente hinweg knüpfen können. Unser Autor Felix Schubert zeigt, worauf es ankommt.",
+     "distractor": ""
+    }
+   ],
+   "items": [
+    {
+     "n": 1,
+     "type": "choice",
+     "prompt": "Wanda möchte im Internet Werbung für ihre Firma machen.",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "Hier ist Online-Marketing eine vergleichsweise günstige Möglichkeit, mehr Kunden zu erreichen.",
+     "explain": "El artículo g presenta el marketing online como la vía barata para llegar a más clientes, justo lo que busca Wanda. El b también habla de marketing, pero defiende combinar canales y no solo Internet.",
+     "explain_ru": "Статья g представляет онлайн-маркетинг как недорогой способ привлечь больше клиентов — именно это нужно Ванде. В b тоже речь о маркетинге, но там советуют сочетать каналы, а не только интернет."
+    },
+    {
+     "n": 2,
+     "type": "choice",
+     "prompt": "Kasimir überlegt, seine Arbeitszeit zu reduzieren.",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wenn der bzw. die Angestellte möchte, muss der Arbeitgeber kürzere Arbeitszeiten ermöglichen.",
+     "explain": "El artículo c explica el derecho legal a trabajar a tiempo parcial y qué consecuencias tiene para la carrera, los impuestos y la pensión. Es la información que necesita Kasimir.",
+     "explain_ru": "Статья c объясняет законное право на неполную занятость и её последствия для карьеры, налогов и пенсии. Это и есть информация для Казимира."
+    },
+    {
+     "n": 3,
+     "type": "choice",
+     "prompt": "Floris interessiert sich für das Netzwerken.",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "Das gilt umso mehr in einer internationalen Berufswelt, in der Sie wichtige Kontakte schnell und einfach auch über Kontinente hinweg knüpfen können.",
+     "explain": "El artículo h dice que los buenos contactos valen más que un certificado y explica cómo cultivarlos, incluso entre continentes. Eso es exactamente el networking que interesa a Floris.",
+     "explain_ru": "Статья h утверждает, что хорошие контакты важнее сертификата, и объясняет, как их поддерживать, в том числе между континентами. Это и есть нетворкинг, интересующий Флориса."
+    },
+    {
+     "n": 4,
+     "type": "choice",
+     "prompt": "Gladis fragt sich, ob sie sich einen Steuerberater nehmen sollte.",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "professionelle Unterstützung bei der Buchhaltung",
+     "explain": "El artículo a trata del apoyo profesional en la contabilidad y de cuándo merece la pena pagarlo. Responde a la duda de Gladis; el f solo resume novedades fiscales para empresas.",
+     "explain_ru": "Статья a посвящена профессиональной помощи в бухгалтерии и тому, когда она окупается. Это ответ на вопрос Гладис; f лишь пересказывает налоговые новшества для фирм."
+    },
+    {
+     "n": 5,
+     "type": "choice",
+     "prompt": "Stephan hat das Gefühl, ständig überlastet zu sein.",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Wenn Ihnen alles zu viel wird, kann das unterschiedliche Ursachen haben",
+     "explain": "El artículo e parte justo de la sensación de que todo es demasiado y enumera las causas posibles y qué se puede hacer. Encaja con Stephan sin ambigüedad.",
+     "explain_ru": "Статья e начинается с ощущения, что всё слишком много, и перечисляет причины и возможные действия. Она однозначно подходит Штефану."
+    }
+   ]
+  },
+  {
+   "id": "mt15-lesen-t2",
+   "label": "Lesen Teil 2",
+   "page": 5,
+   "kind": "text",
+   "intro": "Lesen Sie die Texte und die Aufgaben 6–9. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Text 1\nWillkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nGemeinschaftsküchen\n\nIn unserem Betrieb haben wir zwei kleine Gemeinschaftsküchen, die alle Mitarbeitenden nutzen können. Für die Benutzung der Küchen gelten folgende Regeln:\n\nDie Küchen sind mit Geschirrspülautomaten, Kaffeevollautomaten und Wasserkochern ausgestattet, die Küche im 2. OG verfügt auch über eine Mikrowelle. Die Geräte werden von einer externen Firma gewartet, für das Be- und Entladen (Geschirrspüler) bzw. das Nachfüllen von Kaffee, Wasser und Milch (Kaffeevollautomat) sowie das Entkalken der Wasserkocher sind jeweils zwei Mitarbeitende verantwortlich. Wer Küchendienst hat, wird auf Plänen in den Küchen ausgehängt. Die Einteilung erfolgt automatisch in alphabetischer Reihenfolge nach den Nachnamen der Mitarbeitenden und berücksichtigt Urlaubszeiten, soweit sie frühzeitig eingereicht wurden. Wenn Änderungen notwendig sind (Urlaub, Krankheit usw.), bitten wir diese schnellstmöglich an Frau Schubert zu melden, die Änderungen vornehmen kann.\n\nIn beiden Küchen stehen Wasserspender für gekühltes Wasser. Das Wasser ist für alle Mitarbeitenden kostenlos. Die Tanks werden täglich einmal am Abend von Herrn Nguyen vom externen Facilitymanagement ausgetauscht. Sollte ein weiterer Austausch nötig sein, wenden sich die Mitarbeitenden des Küchendienstes bitte an Herrn Nguyen.\n\nText 2\nWillkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nElektronisches Zugangs- und Zeiterfassungssystem\n\nFür den Zugang zu unserem Firmengebäude und die Erfassung der Arbeitszeit wurde Ihnen eine elektronische Karte ausgehändigt, auf der auch Ihre Mitarbeiternummer und Ihr vollständiger Name hinterlegt sind.\n\nBeim Betreten und Verlassen des Firmengebäudes halten Sie Ihre Karte an das elektronische Lesegerät, das neben dem Haupteingang an der Wand befestigt ist. Warten Sie unbedingt das grüne Signal ab, das anzeigt, dass Ihre Karte gelesen und Ihre Zeit automatisch erfasst wurde.\n\nDie Pausenzeiten (siehe Anlage F) sind einzuhalten. Die gesetzlichen Ruhepausen werden vom Erfassungssystem automatisch abgezogen, wenn Sie es versäumen, sich zur Pause ab- und wieder anzumelden. Die Länge der Ruhepausen variiert je nach Arbeitszeit zwischen 30 bis 45 Minuten, Details hierzu finden Sie in Anlage G.\nSind Anpassungen der erfassten Zeit erforderlich (z. B. bei Fehlfunktion des Lesegeräts), wenden Sie sich an Herrn Sangkam (Raum 169, Durchwahl -29).\n\nSollten Sie Probleme bei der Verwendung haben, wenden Sie sich an das Büro des Officemanagements (Raum 132). Sollte das Büro nicht besetzt sein, erreichen Sie in dringenden Fällen die Assistenz der Geschäftsführung, Frau Schneider, unter der Durchwahl -22.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "In beiden Küchen ist eine Kochmöglichkeit vorhanden.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "mittel",
+     "quote": "die Küche im 2. OG verfügt auch über eine Mikrowelle.",
+     "explain": "«Falsch»: el texto solo nombra lavavajillas, cafeteras y hervidores, y añade que una de las dos cocinas tiene además microondas. No hay cocina propiamente dicha, y el «auch» indica que ese extra está solo en una.",
+     "explain_ru": "«Falsch»: в тексте названы только посудомоечные машины, кофемашины и чайники, и добавлено, что одна из двух кухонь имеет ещё и микроволновку. Плиты нет, а «auch» показывает, что этот плюс есть только на одной кухне."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Der Küchendienst",
+     "options": [
+      {
+       "key": "a",
+       "text": "erfolgt nach einem festen System."
+      },
+      {
+       "key": "b",
+       "text": "ist für die Mitarbeitenden freiwillig."
+      },
+      {
+       "key": "c",
+       "text": "wird von einer Mitarbeiterin eingeteilt."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Die Einteilung erfolgt automatisch in alphabetischer Reihenfolge nach den Nachnamen der Mitarbeitenden",
+     "explain": "El reparto es automático y sigue el orden alfabético de apellidos: un sistema fijo. Frau Schubert solo puede cambiar turnos concretos, así que la c confunde corregir con repartir.",
+     "explain_ru": "Распределение идёт автоматически по алфавиту фамилий: это фиксированная система. Госпожа Шуберт может менять только отдельные смены, поэтому c путает исправление с распределением."
+    },
+    {
+     "n": 8,
+     "type": "truefalse",
+     "prompt": "Die elektronische Karte wird auch als Schlüssel verwendet.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "mittel",
+     "quote": "Für den Zugang zu unserem Firmengebäude und die Erfassung der Arbeitszeit wurde Ihnen eine elektronische Karte ausgehändigt",
+     "explain": "«Richtig»: la tarjeta sirve para entrar en el edificio y para fichar. Abrir la puerta es la función de una llave, aunque el texto no use esa palabra.",
+     "explain_ru": "«Richtig»: карта служит для входа в здание и для учёта времени. Открывать дверь — это функция ключа, хотя слово «Schlüssel» в тексте не названо."
+    },
+    {
+     "n": 9,
+     "type": "choice",
+     "prompt": "Die von dem System erfassten Zeiten",
+     "options": [
+      {
+       "key": "a",
+       "text": "beinhalten die Ruhepausen."
+      },
+      {
+       "key": "b",
+       "text": "kann man nachträglich ändern lassen."
+      },
+      {
+       "key": "c",
+       "text": "werden am Ladegerät korrigiert."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Sind Anpassungen der erfassten Zeit erforderlich (z. B. bei Fehlfunktion des Lesegeräts), wenden Sie sich an Herrn Sangkam (Raum 169, Durchwahl -29).",
+     "explain": "Se puede pedir una corrección posterior de las horas registradas, por ejemplo si el lector falló. La a es falsa porque las pausas se descuentan; la c confunde Lesegerät (lector) con Ladegerät (cargador).",
+     "explain_ru": "Можно позже исправить учтённое время, например при сбое считывателя. a неверно: перерывы вычитаются; c путает Lesegerät (считыватель) с Ladegerät (зарядка)."
+    }
+   ]
+  },
+  {
+   "id": "mt15-lesen-t3",
+   "label": "Lesen Teil 3",
+   "page": 7,
+   "kind": "zuordnung",
+   "allowNone": true,
+   "intro": "Lesen Sie die Fragen 10–13 und die Texte a–f. Welche Frage passt zu welchem Tipp? Für eine Frage gibt es keinen passenden Tipp; markieren Sie dafür ein x.",
+   "optionsLabel": "Tipps",
+   "options": [
+    {
+     "key": "a",
+     "title": "Heinrich",
+     "text": "Das ist tatsächlich nicht einfach, denn auch im Büro hat man mal private Minuten, zum Beispiel in WC-Räumen. Wenn da was passiert, ist das nicht automatisch ein Arbeitsunfall. Schau mal im Internet unter www.arbeitsrecht-aktuell24.eu, da findest du ein Urteil zu dem Fall, den ich gerade erwähnt habe."
+    },
+    {
+     "key": "b",
+     "title": "Niloofar",
+     "text": "Berufskrankheiten können einen schwer treffen. In meiner Firma ist eine Kollegin lange Zeit ausgefallen. Alle dachten, sie hätte Probleme mit der Lunge, weil sie Raucherin ist, aber wegen der Arbeit am Computer hatte sie Rückenprobleme. Sie kann jetzt nur noch 2 Stunden am Tag am Schreibtisch sitzen und unser Chef hat für sie einen höhenverstellbaren Schreibtisch besorgt. Das hilft ihr. Vielleicht ist das auch was für dich?"
+    },
+    {
+     "key": "c",
+     "title": "Chris",
+     "text": "Ich fürchte, dein Arbeitgeber hat gute Karten. Wege zum Imbiss oder Restaurant in der Mittagspause sind genauso wenig versichert wie deine Raucherpause. Das gehört einfach nicht zur Arbeit und Arbeitszeit. Tut mir leid, dass ich keine bessere Nachricht habe."
+    },
+    {
+     "key": "d",
+     "title": "Petra",
+     "text": "Das ist kein Problem. Du musst nicht von der Adresse losfahren, unter der du gemeldet bis, um versichert zu sein. Als Arbeitsweg gilt auch, wenn du zum Beispiel am Wochenende immer bei deinem Freund oder deinen Eltern bist und dann Freitag nach Feierabend direkt vom Arbeitsort dort hinfährst."
+    },
+    {
+     "key": "e",
+     "title": "Shakuntala",
+     "text": "Das kann man so pauschal nicht sagen. Wenn zum Beispiel regelmäßig Sport in der Firma stattfindet, ist das versichert, genauso wie eine Weihnachtsfeier, die veranstaltet wird, um den Zusammenhalt der Belegschaft zu stärken. In deinem Fall ist es fraglich, ob das dem Zusammenhalt dient oder nicht einfach eine gemeinsame Freizeitunternehmung ist. Sprich mal die Vorgesetzten an."
+    },
+    {
+     "key": "f",
+     "title": "Arkardi",
+     "text": "Ob dir das wirklich hilft, weiß ich nicht, denn natürlich bekommst du dann nicht so viel Geld wie jetzt durch eine volle Stelle. Aber wenn das, was du hast, eine anerkannte Berufskrankheit ist, dann hast du schon Anspruch auf Leistungen. Am besten kann dir da die Deutsche Rentenversicherung helfen."
+    }
+   ],
+   "items": [
+    {
+     "n": 10,
+     "type": "choice",
+     "prompt": "Achim: Ich bin Aufzugsmonteur, mein Job ist körperlich sehr anstrengend und ich habe Probleme mit den Gelenken. Mein Hausarzt meinte neulich, ich könne nicht mehr Vollzeit arbeiten. Ich brauche aber mein volles Gehalt und habe Angst vor finanziellen Einschränkungen. Mein Arzt brachte dann eine Erwerbsminderungsrente ins Spiel. Wo kann ich mich darüber informieren, weiß das jemand?",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Am besten kann dir da die Deutsche Rentenversicherung helfen.",
+     "explain": "Arkardi nombra el organismo que informa sobre la pensión por incapacidad laboral y avisa de que el ingreso será menor que con un puesto completo, que es justo el miedo de Achim.",
+     "explain_ru": "Аркарди называет орган, который консультирует по пенсии по потере трудоспособности, и предупреждает, что доход будет меньше, чем при полной ставке — именно этого боится Ахим."
+    },
+    {
+     "n": 11,
+     "type": "choice",
+     "prompt": "Ute: Ich bin vorhin auf dem Weg von der Arbeit nach Hause mit dem Fahrrad gestürzt. Zum Glück ist außer ein paar Schrammen an den Händen nichts passiert, aber jetzt meinte mein Mann gerade, dass ich das dem Arbeitgeber melden muss, auch wegen möglicher Spätfolgen. Ist das nicht übertrieben? Ich bin in der Probezeit und will keinen Ärger.",
+     "answer": "x",
+     "confidence": "mittel",
+     "quote": "",
+     "explain": "Ningún tipp contesta a si hay que comunicar al jefe un accidente in itinere. Petra habla de qué trayecto cuenta como Arbeitsweg, pero no de la obligación de avisar; Chris descarta ir a comer y Heinrich los minutos privados dentro de la oficina. Por eso la pregunta queda sin tipp.",
+     "explain_ru": "Ни один совет не отвечает, надо ли сообщать работодателю о несчастном случае по дороге домой. Петра говорит о том, какой путь считается рабочим, но не об обязанности сообщать; Крис — о выходе пообедать, Генрих — о личных минутах в офисе. Поэтому вопрос остаётся без совета."
+    },
+    {
+     "n": 12,
+     "type": "choice",
+     "prompt": "Liane: Ich habe gerade die Stelle gewechselt und in meinem neuen Betrieb findet demnächst ein Ausflug in einen Klettergarten statt. Ich will kein Spielverderber sein, aber klettern ist echt nicht mein Ding und ich mache mir Sorgen, was ist, wenn was passiert? Eine Kollegin meinte, wir wären da auch unfallversichert, weil die Firma das organisiert. Ist das richtig?",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "In deinem Fall ist es fraglich, ob das dem Zusammenhalt dient oder nicht einfach eine gemeinsame Freizeitunternehmung ist.",
+     "explain": "Shakuntala explica que las actividades con seguro son las que fomentan la cohesión, y duda de que una excursión de ocio lo sea. Responde a la duda de Liane y le aconseja hablar con sus superiores.",
+     "explain_ru": "Шакунтала объясняет, что застрахованы мероприятия, укрепляющие коллектив, и сомневается, что развлекательная поездка к ним относится. Это ответ на вопрос Лиане, и совет — поговорить с руководством."
+    },
+    {
+     "n": 13,
+     "type": "choice",
+     "prompt": "Wolfgang: Letzte Woche bin ich wie so oft aus der Werkstatt gegangen, um eine Zigarette anzuzünden, und dann bin ich draußen ganz blöd gestolpert und habe mir das Handgelenk gebrochen. Heute meinte mein Chef, dass die gesetzliche Unfallversicherung nichts zahlt, weil ich privat draußen war. Stimmt das?! Das würde mich echt schockieren. Ich brauche irgendwann auch eine Reha, das kostet doch alles Geld!",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wege zum Imbiss oder Restaurant in der Mittagspause sind genauso wenig versichert wie deine Raucherpause.",
+     "explain": "Chris confirma que la pausa para fumar no cuenta como trabajo ni tiempo de trabajo, así que el seguro no paga. Su «Tut mir leid» encaja con el enfado de Wolfgang.",
+     "explain_ru": "Крис подтверждает, что перекур не относится ни к работе, ни к рабочему времени, поэтому страховка не платит. Его «Tut mir leid» соответствует реакции Вольфганга."
+    }
+   ]
+  },
+  {
+   "id": "mt15-lesen-t4",
+   "label": "Lesen Teil 4",
+   "page": 9,
+   "kind": "text",
+   "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Protokoll\n15. Juli 20XX, 10:00–11:00 Uhr\nOrt: Raum 471, Rostocker Chaussee 10, 17628 Grabenow\n\nAnwesende:\nHeide Wessely (HW, Geschäftsführung), Roman Lauf (RL, Assistenz Geschäftsführung), Ottmar Peters (OP, Abteilungsleiter Marketing), Andrea Olms (AO, Abteilungsleiterin IT), Frank Traube (FT, Abteilungsleiter Einkauf), Ingmar Kves (IK, Abteilungsleiter Logistik)\nSitzungsleitung: Heide Wessely\nProtokollant: Roman Lauf\n\nTagesordnungspunkte\n1 Begrüßung, Genehmigung des letzten Protokolls\n2 Berichte aus den Abteilungen\n3 Baumaßnahmen Rostocker Chaussee\n4 Stand Homepage\n5 Termine\n6 Verschiedenes\n\nTOP 1 Begrüßung, Genehmigung des letzten Protokolls\nNach der Begrüßung durch HW wird die Tagesordnung einstimmig beschlossen. OP meldet sich zum Protokoll der letzten Sitzung zu Wort und weist darauf hin, dass unter TOP 5 ein falscher Termin für die Schiffbauermesse steht. Nach Korrektur des Termins erfolgt einstimmig die Abnahme des Protokolls.\n\nTOP 2 Berichte aus den Abteilungen\nHW weist auf die Berichte hin, die vorab an alle Teilnehmenden verschickt wurden, und bittet um Fragen oder Anmerkungen. FT greift den Bericht der IT-Abteilung auf. Die Datenbank zur Erfassung der Lagerbestände habe sich seit ihrer Einführung vor einem Jahr bewährt. FT weist auf Probleme beim Log-in hin, die er kürzlich hatte. Diese Probleme seien jetzt zwar gelöst, er bittet aber darum, dies der Vollständigkeit halber in dem Bericht zu ergänzen. AO sagt zu, den Bericht entsprechend zu ändern.\n\nTOP 3 Baumaßnahmen Rostocker Chaussee\nIK informiert über die kurzfristig geplante Fahrbahnerneuerung auf der Rostocker Chaussee, die laut Bauamt bereits im August erfolgen soll. Dafür wird es notwendig sein, die Rostocker Chaussee für eine Fahrbahn zu sperren und eine Ampel für Wechselverkehr einzurichten. Wie lange die Sperrung dauert, ist noch nicht bekannt. Das bedeute logistische Herausforderungen, so IK: Es werde aufgrund der Sperrung zu längeren Fahrzeiten bei An- und Auslieferungen kommen und es stelle sich die Frage, ob die Zufahrt während der Baumaßnahmen auch für große Fahrzeuge möglich sein wird. IK soll sich umgehend mit dem Bauamt in Verbindung setzen, um diese Punkte zu klären. Ein Bericht darüber soll zur Information für alle ins Intranet gestellt werden.\n\nTOP 4 Stand Homepage\nWie auf der letzten Sitzung beschlossen, hat AO Angebote eingeholt und im Vorfeld dieser Sitzung drei Angebote präsentiert, die in die engere Auswahl kommen. Alle Firmen haben Erfahrung darin, einen Webshop für Großkunden auf einer Homepage zu integrieren, was die zentrale Neuerung bei uns sein wird. AO hält die zuverlässige Abwicklung der Arbeiten dabei für wichtiger, als nur auf die Kosten zu achten. OP stimmt zu und weist darauf hin, dass bereits zahlreiche Kunden angefragt haben, wann es bei uns die Möglichkeit des Online-Einkaufs geben wird. Das Thema sei für die Kunden entscheidend, so OP, und wir sollten dies schnell und qualitativ hochwertig umsetzen lassen. Unter Berücksichtigung dieser Aspekte wird einstimmig beschlossen, der Firma Sasuki Systems den Zuschlag zu erteilen.\n\nTOP 5 Termine\nIm kommenden Januar unternehmen FT und OP eine Geschäftsreise nach Busan (Südkorea), um dort eine Schiffswerft zu besichtigen, die an einer Zusammenarbeit interessiert ist.\n\nTOP 6 Verschiedenes\nHW berichtet von einer Anfrage, im kommenden Jahr einen Tag der Berufsorientierung für Schülerinnen und Schüler durchzuführen. Sie halte dies für interessant und werde auf der nächsten Sitzung genauer darüber informieren.",
+   "items": [
+    {
+     "n": 14,
+     "type": "choice",
+     "prompt": "Das Protokoll",
+     "options": [
+      {
+       "key": "a",
+       "text": "führt heute ein Abteilungsleiter."
+      },
+      {
+       "key": "b",
+       "text": "wird nach Änderung genehmigt."
+      },
+      {
+       "key": "c",
+       "text": "wird um einen TOP erweitert."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Nach Korrektur des Termins erfolgt einstimmig die Abnahme des Protokolls.",
+     "explain": "El acta de la sesión anterior se corrige y después se aprueba por unanimidad. La a es falsa porque lo redacta Roman Lauf, asistencia de dirección, y la c porque la orden del día se aprueba tal cual.",
+     "explain_ru": "Протокол прошлого заседания исправляют и затем единогласно утверждают. a неверно: протокол ведёт Роман Лауф, ассистент руководства; c неверно: повестка утверждается без изменений."
+    },
+    {
+     "n": 15,
+     "type": "choice",
+     "prompt": "Der Bericht der IT-Abteilung",
+     "options": [
+      {
+       "key": "a",
+       "text": "beschreibt Schwierigkeiten."
+      },
+      {
+       "key": "b",
+       "text": "soll korrigiert werden."
+      },
+      {
+       "key": "c",
+       "text": "wird in der Sitzung verteilt."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "AO sagt zu, den Bericht entsprechend zu ändern.",
+     "explain": "FT pide añadir al informe el problema de acceso que ya está resuelto y AO acepta modificarlo. La c es falsa: los informes se enviaron antes de la reunión.",
+     "explain_ru": "FT просит дополнить отчёт уже решённой проблемой со входом, и AO соглашается его изменить. c неверно: отчёты разослали до заседания."
+    },
+    {
+     "n": 16,
+     "type": "choice",
+     "prompt": "Die Fahrbahnerneuerung vor dem Firmengelände",
+     "options": [
+      {
+       "key": "a",
+       "text": "bereite der Logistik Probleme."
+      },
+      {
+       "key": "b",
+       "text": "betrifft die Firma kaum."
+      },
+      {
+       "key": "c",
+       "text": "dauert nicht mehr lange."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Das bedeute logistische Herausforderungen, so IK",
+     "explain": "IK avisa de retrasos en las entregas y de la duda de si los camiones grandes podrán acceder: problemas logísticos, en estilo indirecto (Konjunktiv I). La b y la c contradicen el texto.",
+     "explain_ru": "IK предупреждает о задержках поставок и о вопросе, смогут ли проехать большие грузовики: логистические проблемы, в косвенной речи (Konjunktiv I). b и c противоречат тексту."
+    },
+    {
+     "n": 17,
+     "type": "choice",
+     "prompt": "Die Homepage der Firma",
+     "options": [
+      {
+       "key": "a",
+       "text": "ist von vielen Kunden kritisiert worden."
+      },
+      {
+       "key": "b",
+       "text": "kostet der Marketingleitung zu viel."
+      },
+      {
+       "key": "c",
+       "text": "wird um einen wichtigen Bereich erweitert."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "einen Webshop für Großkunden auf einer Homepage zu integrieren, was die zentrale Neuerung bei uns sein wird",
+     "explain": "La novedad central es integrar una tienda online para grandes clientes en la web. Los clientes no critican nada: preguntan cuándo podrán comprar online, y el precio no es el criterio decisivo.",
+     "explain_ru": "Главное новшество — интегрировать в сайт интернет-магазин для крупных клиентов. Клиенты ничего не критикуют, а спрашивают, когда можно будет покупать онлайн; цена не главный критерий."
+    },
+    {
+     "n": 18,
+     "type": "choice",
+     "prompt": "Im nächsten Jahr",
+     "options": [
+      {
+       "key": "a",
+       "text": "besuchen Mitarbeiter eine andere Firma."
+      },
+      {
+       "key": "b",
+       "text": "kommen Gäste zu Besuch."
+      },
+      {
+       "key": "c",
+       "text": "kooperiert der Betrieb mit einer Schule."
+      }
+     ],
+     "answer": "a",
+     "confidence": "mittel",
+     "quote": "Im kommenden Januar unternehmen FT und OP eine Geschäftsreise nach Busan (Südkorea), um dort eine Schiffswerft zu besichtigen",
+     "explain": "En enero próximo FT y OP viajan a Busan para visitar un astillero interesado en colaborar: empleados que visitan otra empresa. La c es tentadora, pero el día de orientación profesional es solo una consulta sin decidir; de ahí la confianza media.",
+     "explain_ru": "В январе FT и OP едут в Пусан, чтобы посетить верфь, заинтересованную в сотрудничестве: сотрудники посещают другую фирму. c соблазнителен, но день профориентации — лишь запрос без решения; поэтому уверенность средняя."
+    }
+   ]
+  },
+  {
+   "id": "mt15-lesen-us",
+   "label": "Lesen und Schreiben",
+   "page": 11,
+   "kind": "text",
+   "intro": "Ihre Teamleitung leitet Ihnen die E-Mail von einer Kundin weiter und bittet Sie zu antworten. Welche Lösung (a, b oder c) passt am besten?",
+   "passage": "Ihre Teamleitung leitet Ihnen die E-Mail von einer Kundin weiter und bittet Sie zu antworten.\n\nErhalten: gestern 17:57 Uhr\nVon: Bernd Hauser\nAn: ...\nBetreff: FW Unsere Schulungen in Ihrem Tagungshaus\n\nHallo,\n\ndie unten stehende Mail habe ich gerade bekommen. Bitte kümmern Sie sich darum und antworten Sie der Kundin höflich. Die Firma ist seit vielen Jahren unser Kunde und das soll auch so bleiben. Sie können der Kundin ruhig schreiben, warum es bei uns diese Probleme gab. Ganz wichtig: Bitte schreiben Sie der Kundin auch, wie wir so etwas in Zukunft vermeiden wollen.\n\nDanke und beste Grüße\nBernd Hauser\nTeamleiter\n\nGesendet: gestern 17:44 Uhr\nVon: Anke Steffens\nAn: Bernd Hauser\nBetreff: Unsere Schulungen in Ihrem Tagungshaus\n\nSehr geehrter Herr Hauser,\n\nwie Sie wissen, führen wir unsere Mitarbeiterschulungen und Fortbildungen in Ihrem Tagungshaus durch. Bislang waren wir mit dem Service vor Ort (Ausstattung der Räume, Sauberkeit, Verpflegung etc.) immer sehr zufrieden.\n\nLeider haben einige Mitarbeitende berichtet, dass es in letzter Zeit nicht reibungslos lief. Eine Fortbildung vor zwei Wochen wurde kurzfristig und ohne Rückfrage in einen anderen Raum verlegt, dort hatte die Trainerin dann keinen Beamer, obwohl das so abgesprochen war, und für das Whiteboard fehlten die Stifte. Zum Glück hatte die Trainerin Stifte dabei, aber der Beamer musste erst gebracht und angeschlossen werden, sodass Zeit verlorenging. Für eine Mitarbeiterschulung am letzten Samstag hatten wir eine Suppe und Salate als Mittagsimbiss bestellt, aber nur einige Kekse bekommen. Das war natürlich alles nicht gut!\n\nBitte sorgen Sie wieder für die gewohnte Qualität, sonst werden wir uns nach anderen Schulungsräumen umsehen müssen.\n\nMit freundlichen Grüßen\nAnke Steffens",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Frau Steffens",
+     "options": [
+      {
+       "key": "a",
+       "text": "beschwert sich über die Raumgröße."
+      },
+      {
+       "key": "b",
+       "text": "ist mit der Trainerin unzufrieden."
+      },
+      {
+       "key": "c",
+       "text": "nennt organisatorische Mängel."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Leider haben einige Mitarbeitende berichtet, dass es in letzter Zeit nicht reibungslos lief.",
+     "explain": "Critica cambios de sala, falta de proyector y rotuladores y un almuerzo equivocado: fallos de organización. No habla del tamaño de la sala y culpa al servicio, no a la formadora.",
+     "explain_ru": "Она критикует смену зала, отсутствие проектора и маркеров и неверный обед: организационные сбои. О размере зала речи нет, и виноват сервис, а не тренер."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Das Problem",
+     "options": [
+      {
+       "key": "a",
+       "text": "beschränkt sich auf Wochenenden."
+      },
+      {
+       "key": "b",
+       "text": "gibt es an unterschiedlichen Wochentagen."
+      },
+      {
+       "key": "c",
+       "text": "trat erstmals letzte Woche auf."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Für eine Mitarbeiterschulung am letzten Samstag hatten wir eine Suppe und Salate als Mittagsimbiss bestellt, aber nur einige Kekse bekommen.",
+     "explain": "Hay dos casos en momentos distintos: uno hace dos semanas y otro el sábado pasado. Por eso no se limita al fin de semana ni ocurrió una sola vez la semana pasada.",
+     "explain_ru": "Есть два случая в разное время: один две недели назад, другой в прошлую субботу. Поэтому проблема не только в выходных и не возникла впервые на прошлой неделе."
+    }
+   ]
+  },
+  {
+   "id": "mt15-hoeren-t1",
+   "label": "Hören Teil 1",
+   "page": 13,
+   "kind": "text",
+   "intro": "Sie hören drei Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 22,
+     "type": "truefalse",
+     "prompt": "Die Firma Glasklar GmbH will ihre Räume über einen Makler verkaufen.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "hoch",
+     "quote": "weil die bisherige Werkstatt zu klein wird",
+     "explain": "La empresa no vende sus locales: busca otros porque el taller se ha quedado pequeño.",
+     "explain_ru": "Фирма не продаёт помещения: она ищет новые, потому что мастерская стала мала."
+    },
+    {
+     "n": 23,
+     "type": "choice",
+     "prompt": "Die Räume im Gewerbepark Ost",
+     "options": [
+      {
+       "key": "a",
+       "text": "können in Zukunft noch vergrößert werden."
+      },
+      {
+       "key": "b",
+       "text": "sind nicht für eine Küchenzeile geeignet."
+      },
+      {
+       "key": "c",
+       "text": "verfügen über eine separate Umkleide."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "auf dem Gelände ist noch relativ viel Platz",
+     "explain": "El solar tiene espacio para ampliar; la cocina se puede instalar y el vestuario, crear, pero no existe todavía.",
+     "explain_ru": "На территории есть место для расширения; кухню можно оборудовать, а раздевалку создать, но пока её нет."
+    },
+    {
+     "n": 24,
+     "type": "truefalse",
+     "prompt": "Ein Programm auf den Computern läuft schlecht.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "Die alte ist zwischenzeitlich so langsam, dass man kaum noch richtig arbeiten kann.",
+     "explain": "Olaf dice que el programa antiguo va tan lento que ya casi no se puede trabajar.",
+     "explain_ru": "Олаф говорит, что старая программа работает так медленно, что почти невозможно работать."
+    },
+    {
+     "n": 25,
+     "type": "choice",
+     "prompt": "In Olafs Abteilung",
+     "options": [
+      {
+       "key": "a",
+       "text": "fängt morgen ein neuer Mitarbeiter an."
+      },
+      {
+       "key": "b",
+       "text": "ist jeden Mittwoch eine Besprechung."
+      },
+      {
+       "key": "c",
+       "text": "wird eine Fortbildung stattfinden."
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Die Fortbildung sollte ja erst virtuell ... ich komme doch direkt ... und wir gehen ... alles zusammen durch.",
+     "explain": "La instalación se aplaza y se cambia por una formación presencial sobre el programa; la opción c es la que recoge ese cambio.",
+     "explain_ru": "Установку откладывают и заменяют очной учебой по программе; вариант c передаёт это изменение."
+    },
+    {
+     "n": 26,
+     "type": "truefalse",
+     "prompt": "Susanne und Rainer führen ein Bewerbungsgespräch.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "hoch",
+     "quote": "Nach meinem Vorstellungsgespräch.",
+     "explain": "Susanne ya ha pasado la entrevista: ahora Rainer le enseña el centro, no están en una entrevista.",
+     "explain_ru": "Сюзанна уже прошла собеседование: сейчас Райнер показывает ей центр, они не на собеседовании."
+    },
+    {
+     "n": 27,
+     "type": "choice",
+     "prompt": "In der Betreuung",
+     "options": [
+      {
+       "key": "a",
+       "text": "gibt es Aushänge mit den Speiseplänen."
+      },
+      {
+       "key": "b",
+       "text": "haben fast alle Kinder ein Handy."
+      },
+      {
+       "key": "c",
+       "text": "kümmern sich die Kinder selbst um ihr Geschirr."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Bei allen Mahlzeiten decken die Kinder ihre Teller allein ein und räumen das Besteck selbst ab.",
+     "explain": "Los niños se encargan ellos mismos de poner y recoger sus cubiertos; casi ninguno trae móvil y no hay carteles con menús.",
+     "explain_ru": "Дети сами накрывают на стол и убирают приборы; мобильные есть у единиц, а меню на стендах нет."
+    }
+   ],
+   "passage": "Hören Teil 1, Gespräch 1 (Aufgaben 22 und 23)\n\nMaklerin: Guten Tag, was kann ich für Sie tun?\nPeter Schmidt: Guten Tag, mein Name ist Peter Schmidt, Firma Glasklar GmbH. Wir suchen neue Räume, weil die bisherige Werkstatt zu klein wird.\nMaklerin: Ja, das stimmt. Wir bieten die Räume im Gewerbepark Ost doch zur Miete und auch zum Kauf an, 250 m² und zusätzlich WC-Anlagen.\nPeter Schmidt: Hmhm, befindet sich in den Räumen auch wenigstens eine Küchenzeile?\nMaklerin: Bislang nicht, nur ein Kaffeeautomat und ein Kühlschrank. Aber alle Wasser- und Stromanschlüsse sind vorhanden, das wäre also möglich.\nPeter Schmidt: Das hört sich schon mal gut an.\nMaklerin: Es wäre auch Platz, um einen Umkleideraum einzurichten, falls Sie so etwas benötigen sollten.\nPeter Schmidt: Das ist gut zu wissen, aber das wird uns nicht reichen. Ist die Fläche gegebenenfalls erweiterbar?\nMaklerin: Ja, auf dem Gelände ist noch relativ viel Platz. Vor der Halle befindet sich ein großer Parkplatz; der könnte zum Teil auch für eine Erweiterung der Halle genutzt werden. Es sei denn, Sie brauchen den Parkplatz für Fahrzeuge; es gibt ungefähr 50 Stellplätze.\nPeter Schmidt: So viele Fahrzeuge haben wir nicht, und öffentlichen Verkehr haben wir auch eher selten. Wir könnten den Parkplatz für eine Erweiterung verwenden. Das klingt alles sehr gut. Ich stimme mit meinem Chef einen Termin für eine Besichtigung ab und melde mich noch mal.\nMaklerin: Sehr gerne. Auf Wiederhören!\nPeter Schmidt: Danke, auf Wiederhören!\n\nGespräch 2 (Aufgaben 24 und 25)\n\nInes: Hallo Olaf, hier ist Ines aus der IT-Abteilung.\nOlaf: Hallo Ines! Gerade habe ich zu meinem neuen Kollegen gesagt: Ein Glück, dass wir morgen endlich die neue Software aufgespielt bekommen. Die alte ist zwischenzeitlich so langsam, dass man kaum noch richtig arbeiten kann.\nInes: Ja, also, Olaf, leider wird das morgen nichts. Es ist mit der Lizenz schiefgelaufen. Deshalb ... Am Donnerstag ist ja Feiertag ... Wie es also am ... geändert ... Die Fortbildung sollte ja erst virtuell ... ich komme doch direkt ... und wir gehen ... alles zusammen durch.\nOlaf: Das ist mir vor Ort lieber. Dann können wir ...?\n\nGespräch 3 (Aufgaben 26 und 27)\n\nRainer: Hallo, ich bin Rainer.\nSusanne: Nach meinem Vorstellungsgespräch. Richtig, es ist so, dass es geklappt hat.\nRainer: Das freut mich. Dann zeige ich dir heute noch mal alles in Ruhe. Also, hier rechts haben wir die Kleiderhaken, wie du siehst, kleine Schließfächer. Achte unbedingt darauf, dass die Kinder auch Handys da einschließen.\nSusanne: In der Grundschule?\nRainer: Ich wundere mich auch. Das ist die Ausnahme und nicht die Regel. Wir möchten gar keine Handys in den Gruppen.\nSusanne: Das verstehe ich. Und dann gibt es noch ... Frühstück, oder?\nRainer: Also, wir ... ab halb ... gibt es ... Kinder ... Das ... von ... Woche hier an der Wand hängen die Listen, darauf steht, wer ...\nUnd ganz wichtig: Bei allen Mahlzeiten decken die Kinder ihre Teller allein ein und räumen das Besteck selbst ab. Das klingt vielleicht etwas streng ..."
+  },
+  {
+   "id": "mt15-hoeren-t2",
+   "label": "Hören Teil 2",
+   "page": 14,
+   "kind": "zuordnung",
+   "optionsLabel": "Aussagen",
+   "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch?",
+   "options": [
+    {
+     "key": "a",
+     "text": "Feste Arbeitszeiten sorgen für Verlässlichkeit bei den Arbeitsabläufen."
+    },
+    {
+     "key": "b",
+     "text": "Früh mit der Arbeit zu beginnen, hat mehr Vor- als Nachteile."
+    },
+    {
+     "key": "c",
+     "text": "Mit Gleitzeit kann man Beruf und Privatleben besser vereinbaren."
+    },
+    {
+     "key": "d",
+     "text": "Wenn man abends arbeiten muss, ist man nicht immer konzentriert."
+    },
+    {
+     "key": "e",
+     "text": "Wer in Schicht arbeitet, bringt seinen Biorhythmus völlig durcheinander."
+    },
+    {
+     "key": "f",
+     "text": "Wochenendarbeit wirkt sich negativ auf das Familienleben aus."
+    }
+   ],
+   "items": [
+    {
+     "n": 28,
+     "type": "choice",
+     "prompt": "Gespräch 1",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Nach dem Frühdienst ist noch jede Menge Zeit, auch um Freunde zu treffen oder so.",
+     "explain": "Carla y Luigi prefieren el turno de mañana porque acaban temprano y les queda el día libre.",
+     "explain_ru": "Карла и Луиджи предпочитают утреннюю смену: она заканчивается рано, и остаётся свободный день."
+    },
+    {
+     "n": 29,
+     "type": "choice",
+     "prompt": "Gespräch 2",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Aber meine Tochter bleibt schon etwas auf der Strecke.",
+     "explain": "El trabajo de fin de semana y los domingos comerciales afectan a la vida familiar, sobre todo a la hija de Franziska.",
+     "explain_ru": "Работа по выходным и торговые воскресенья бьют по семье, особенно по дочери Франциски."
+    },
+    {
+     "n": 30,
+     "type": "choice",
+     "prompt": "Gespräch 3",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "mit der Kernarbeitszeit gibt es verbindliche Vorgaben für alle.",
+     "explain": "Bianca defiende que con el horario flexible hace falta un núcleo común que garantice la presencia.",
+     "explain_ru": "Бианка считает, что при гибком графике нужно общее ядро, гарантирующее присутствие."
+    },
+    {
+     "n": 31,
+     "type": "choice",
+     "prompt": "Gespräch 4",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "das Unregelmäßige ist nicht so gut.",
+     "explain": "Los turnos cambiantes desordenan el ritmo y el descanso; Andrea lo resume en lo irregular.",
+     "explain_ru": "Меняющиеся смены сбивают ритм и отдых; Андреа говорит именно о нерегулярности."
+    }
+   ],
+   "passage": "Hören Teil 2, Gespräch 1 (Aufgabe 28)\n\nLuigi: Guten Morgen, Carla! Wie war der Nachtdienst auf Station?\nCarla: Ach, es ging, es war ziemlich ruhig. Trotzdem freue ich mich auf nächste Woche, wenn ich wieder Frühdienst habe.\nLuigi: Hast du Probleme mit dem Schlaf wegen der wechselnden Schichten?\nCarla: Das würde ich nicht sagen. Ich weiß, dass einige Kolleginnen dadurch aus dem Tritt kommen, aber mir geht es eher darum, dass ich gerne früh am Tag Feierabend habe. Dann kann ich noch viel erledigen.\nLuigi: Das geht mir genauso! Nach dem Frühdienst ist noch jede Menge Zeit, auch um Freunde zu treffen oder so.\nCarla: Richtig. Das gefällt mir auch.\n\nGespräch 2 (Aufgabe 29)\n\nFranziska: Na, ihr, wie war's gestern Abend im Laden?\nYavuz: Ruhig.\nGudrun: Hmhm, Yavuz konnte sich ganz auf sein Handy konzentrieren.\nYavuz: Ja, ich weiß schon, warum ich samstags arbeite.\nFranziska: Du hast ja auch keine Tochter, die sich dann über deine Arbeitszeiten beschwert.\nYavuz: Naja, das stimmt zwar; meine Eltern würden mich auch gerne öfter zum Essen sehen.\nGudrun: Das wird nicht klappen, wenn du dich immer freiwillig für diese Verkaufsschichten einträgst.\nYavuz: Es bringt halt mehr Geld als werktags, und ich ...\nFranziska: Tja, so ähnlich geht's mir auch, deshalb nehme ich dann noch alle verkaufsoffenen Sonntage mit, wegen der Zuschläge. Aber meine Tochter bleibt schon etwas auf der Strecke.\n\nGespräch 3 (Aufgabe 30)\n\nSascha: Hast du schon gehört, dass bei uns demnächst Gleitzeit eingeführt werden soll?\nBianca: Na endlich! Dann wird's eine Kernarbeitszeit geben, das ist überall in ein paar Abteilungen schon so.\nSascha: Stimmt. Vielleicht ist das auch der Hintergrund ...\nBianca: ... dass man in einer Firma doch sicher sein können sollte, wann jemand am Arbeitsplatz ist, und mit der Kernarbeitszeit gibt es verbindliche Vorgaben für alle.\n\nGespräch 4 (Aufgabe 31)\n\nPetra: Hallo Christian, hallo Andrea! Wie war euer Wochenende?\nChristian: Ach, ganz okay, aber meine Kinder haben sich mal beklagt, dass wir so wenig Zeit für Ausflüge haben.\nAndrea: Hattest du Wochenenddienst?\nChristian: Nein, das nicht, aber mein ... braucht immer einen Tag, um sich zu erholen; meine Arbeitszeiten wechseln ja ständig.\nPetra: Und ich dachte, ich bin die Einzige, der es so geht! Für mich ist das auch schwer; manchmal wache ich um ... Uhr auf und denke, es ist schon Vormittag.\nAndrea: Stimmt, das Unregelmäßige ist nicht so gut. Es wäre leichter, wenn man immer nur am Abend oder in der Nacht arbeiten müsste."
+  },
+  {
+   "id": "mt15-hoeren-t3",
+   "label": "Hören Teil 3",
+   "page": 15,
+   "kind": "text",
+   "intro": "Sie hören gleich eine Präsentation. Dazu gibt es vier Aufgaben. Welche Lösung (a, b oder c) passt jeweils am besten?",
+   "items": [
+    {
+     "n": 32,
+     "type": "choice",
+     "prompt": "Das Team der Kundenberater",
+     "options": [
+      {
+       "key": "a",
+       "text": "benötigt mehr Ruhe."
+      },
+      {
+       "key": "b",
+       "text": "macht jetzt mehr Besuche."
+      },
+      {
+       "key": "c",
+       "text": "wird sich verkleinern."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Da ist es besser, wenn die Räume eher abgeschieden sind, sodass man die Gespräche ungestört führen kann.",
+     "explain": "El equipo de asesoramiento necesita espacios más tranquilos para atender por teléfono y videollamada.",
+     "explain_ru": "Консультантам нужны более тихие помещения для звонков и видеосвязи."
+    },
+    {
+     "n": 33,
+     "type": "choice",
+     "prompt": "Die Mitarbeiter im Verkauf",
+     "options": [
+      {
+       "key": "a",
+       "text": "bekommen eine neue Leitung."
+      },
+      {
+       "key": "b",
+       "text": "wechseln in den vierten Stock."
+      },
+      {
+       "key": "c",
+       "text": "ziehen in ein Großraumbüro."
+      }
+     ],
+     "answer": "b",
+     "confidence": "niedrig",
+     "quote": "deshalb wird das Team jetzt in den 4. Stock umziehen",
+     "explain": "Ojo: el texto dice que el equipo de asesoramiento sube al 4.º y que el Verkauf deja el 4.º para bajar al 1.º. La opción b encaja con el traslado al 4.º, pero no con el Verkauf; la pregunta es ambigua. Revísala.",
+     "explain_ru": "Внимание: в тексте консультанты переезжают на 4-й этаж, а отдел продаж уходит с 4-го на 1-й. Вариант b подходит к переезду на 4-й, но не к продажам; вопрос двусмысленный. Проверь."
+    },
+    {
+     "n": 34,
+     "type": "choice",
+     "prompt": "Das Lager",
+     "options": [
+      {
+       "key": "a",
+       "text": "kommt vorläufig in ein anderes Gebäude."
+      },
+      {
+       "key": "b",
+       "text": "soll es zukünftig nicht mehr geben."
+      },
+      {
+       "key": "c",
+       "text": "wird im ersten Stock eingerichtet."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "das Lager in diesem Haus aufgeben",
+     "explain": "El almacén se reparte o se elimina: ya no existirá como tal.",
+     "explain_ru": "Склад распределяют или ликвидируют: как такового его больше не будет."
+    },
+    {
+     "n": 35,
+     "type": "choice",
+     "prompt": "In Zukunft",
+     "options": [
+      {
+       "key": "a",
+       "text": "arbeitet Frau Robins im Verkauf."
+      },
+      {
+       "key": "b",
+       "text": "gibt es einen neuen Hausmeister."
+      },
+      {
+       "key": "c",
+       "text": "übernimmt Frau Teslin eine Abteilung."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "aber Sie werden die Abteilung dann leiten",
+     "explain": "Frau Teslin dirigirá la nueva sección de calidad; no se habla de un nuevo conserje.",
+     "explain_ru": "Фрау Теслин возглавит новый отдел качества; о новом завхозе речи нет."
+    }
+   ],
+   "passage": "Hören Teil 3, Präsentation (Aufgaben 32 bis 35)\n\nChefin: Guten Morgen, ich begrüße Sie alle recht herzlich! Wie Sie wissen, steht demnächst eine Umstrukturierung unserer Abteilungen an. Es wird dann auch neue Teams geben; die bisherigen Teams werden teilweise erweitert, sodass sie einen größeren Arbeitsbereich benötigen. Wir möchten aber unsere aktuellen Büroräume nicht wechseln, denn die Lage ist ja wirklich optimal für uns. Ja, Herr Stork?\nHerr Stork: Wenn wir in diesem Gebäude bleiben, könnten wir eventuell mal ein paar Änderungen wie neue Wandfarben oder so besprechen. Wir sind ja schon über 5 Jahre hier, ohne dass es in der Zeit neue Bodenbeläge oder etwas an den Wänden gegeben hätte.\nChefin: Darüber können wir gerne demnächst reden, Herr Stork, klar. Aber jetzt geht es erstmal darum, wer in Zukunft wo arbeiten wird, also wie die Büros demnächst belegt werden. Der Empfangsbereich wird sich nicht ändern, und auch für Mitarbeitende im 3. Stock ändert sich wenig. Dort ist ja die Buchhaltung, und das bleibt auch so. Anders sieht es beim Serviceteam aus. Unsere Kunden legen Wert auf eine gute Beratung und zahlen dafür auch mehr. Deshalb mussten wir das Team erweitern. Frau Wolter, Sie sind ja schon lange in dem Team, wollen Sie das kurz erläutern?\nFrau Wolter: Ja, gerne. Unsere bisherigen Büros waren sehr nah am Eingangsbereich. Das war früher wirklich praktisch, als unsere Kunden häufig und persönlich zu uns kamen und dann nicht lange durch die Firma laufen mussten. Mit der Zeit hat sich das geändert, wir haben auch immer mehr internationale Kunden und beraten immer häufiger telefonisch oder per Videokonferenz. Dafür ist es direkt am Eingang und nur mit den dünnen Trennwänden im Großraum zu laut. Da ist es besser, wenn die Räume eher abgeschieden sind, sodass man die Gespräche ungestört führen kann.\nChefin: Genau, deshalb wird das Team jetzt in den 4. Stock umziehen und dort am Ende des Gangs mehrere kleine Räume haben.\nHerr Stork: Verstehe, deshalb müssen meine Leute aus dem Verkauf jetzt aus dem 4. Stock ausziehen.\nChefin: Korrekt, Herr Stork, Sie und Ihr Team werden von ganz oben dann in den ersten Stock ziehen. Auf Ihren Wunsch hin werden dort ...\nChefin: Natürlich. Was sich aber noch ändert, ist, dass es ab kommendem Monat eine eigene Abteilung für Qualitätssicherung gibt. Das hat bislang ja Frau Teslin alleine gemacht.\nFrau Teslin: Ich habe es zumindest versucht.\nChefin: Frau Teslin, Sie haben das sehr gut gemacht, aber es ist einfach zu viel für eine Person. Deshalb bekommen Sie Unterstützung durch Frau Robins aus dem Verkaufsteam und durch eine neue Mitarbeiterin, aber Sie werden die Abteilung dann leiten. Das Team ist dann im zweiten Stock neben der Geschäftsführung untergebracht, die übrigens die Räume nicht wechselt.\nHerr Stork: Natürlich nicht ...\nChefin: ... Frau Teslin hat ja das Lager, das bislang im ersten Stock war. Der Bedarf nach Lagerraum ist bei uns nicht sehr hoch. Im Wesentlichen hatten wir dort ... Wir werden ... das Lager in diesem Haus aufgeben. Alles, was wir an Material brauchen, wird ab jetzt nach Bedarf eingekauft. Wirklich nur das, was Sie brauchen; das schärft ja den Blick dafür, ob etwas wirklich notwendig ist. Das Lager wird verteilt oder entsorgt.\nFrau Wolter: Aber im Keller ändert sich sonst nichts?\nChefin: Richtig, ... Heizungsräumen und ... bleibt alles beim Alten.\nFrau Wolter: Und der Hausmeister bleibt auch?"
+  },
+  {
+   "id": "mt15-hoeren-t4",
+   "label": "Hören Teil 4",
+   "page": 16,
+   "kind": "text",
+   "intro": "Sie hören fünf telefonische Mitteilungen. Zu jeder Mitteilung gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 36,
+     "type": "choice",
+     "prompt": "Ulf",
+     "options": [
+      {
+       "key": "a",
+       "text": "bittet um einen Rückruf nach 16 Uhr."
+      },
+      {
+       "key": "b",
+       "text": "braucht ein bestimmtes Werkzeug."
+      },
+      {
+       "key": "c",
+       "text": "möchte heute früher Feierabend machen."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Jetzt finde ich in der Werkstatt aber den Spannungsmesser nicht",
+     "explain": "Ulf necesita el medidor de tensión para el cliente; no pide un cambio de hora ni un favor personal.",
+     "explain_ru": "Ульфу нужен измеритель напряжения для клиента; речь не о переносе времени."
+    },
+    {
+     "n": 37,
+     "type": "choice",
+     "prompt": "Frau Hertel",
+     "options": [
+      {
+       "key": "a",
+       "text": "benötigt noch eine Betriebsanleitung."
+      },
+      {
+       "key": "b",
+       "text": "hat wieder die falschen Waren bekommen."
+      },
+      {
+       "key": "c",
+       "text": "möchte gerne etwas nachbestellen."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Könnten Sie uns noch eine deutsche Anleitung schicken?",
+     "explain": "Frau Hertel pide el manual de instrucciones en alemán; la mercancía ya llegó completa.",
+     "explain_ru": "Фрау Хертель просит инструкцию на немецком; товар уже пришёл полностью."
+    },
+    {
+     "n": 38,
+     "type": "choice",
+     "prompt": "Lotte",
+     "options": [
+      {
+       "key": "a",
+       "text": "fragt ihre Kollegen nach einer Adresse."
+      },
+      {
+       "key": "b",
+       "text": "kauft ihrem Chef ein anderes Geschenk."
+      },
+      {
+       "key": "c",
+       "text": "will über die Betriebsferien im Geschäft reden."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Ich habe keine Ahnung, wo es hier noch andere Feinkostläden gibt. Weißt du das?",
+     "explain": "Lotte pregunta dónde hay otra tienda de delicatessen porque la suya está cerrada.",
+     "explain_ru": "Лотте спрашивает, где есть другой гастроном: её магазин закрыт."
+    },
+    {
+     "n": 39,
+     "type": "choice",
+     "prompt": "Paul",
+     "options": [
+      {
+       "key": "a",
+       "text": "muss die Besprechung auf 8:30 Uhr verschieben."
+      },
+      {
+       "key": "b",
+       "text": "schlägt vor, dass Susanne ihn vertritt."
+      },
+      {
+       "key": "c",
+       "text": "wird morgen erst später in die Firma kommen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Um halb neun bin ich dann auf jeden Fall auch da.",
+     "explain": "Paul no mueve la reunión: pide empezar sin él y llegar a las 8:30.",
+     "explain_ru": "Пауль не переносит совещание: просит начать без него и прийти к 8:30."
+    },
+    {
+     "n": 40,
+     "type": "choice",
+     "prompt": "Fred möchte, dass",
+     "options": [
+      {
+       "key": "a",
+       "text": "die Chefin ihm schnell eine Datei schickt."
+      },
+      {
+       "key": "b",
+       "text": "ihn ein Kollege aus der IT-Abteilung anruft."
+      },
+      {
+       "key": "c",
+       "text": "Luisa ihm erklärt, wie man Dateien verkleinert."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "aber ich habe ehrlich gesagt keine Ahnung, wie das geht.",
+     "explain": "Fred no sabe comprimir archivos y pide que le expliquen cómo hacerlo.",
+     "explain_ru": "Фред не умеет сжимать файлы и просит объяснить, как это сделать."
+    }
+   ],
+   "passage": "Hören Teil 4, Mitteilung 36\n\nHallo Carsten, hier ist Ulf. Ich habe ein kleines Problem. Ich muss dringend zu einem Kunden, der hat seit heute Mittag keinen Strom im Haus, das soll ich bis um vier prüfen. Jetzt finde ich in der Werkstatt aber den Spannungsmesser nicht, ich suche schon seit einer halben Stunde. Ich will deswegen heute echt nicht schon wieder Überstunden machen. Du hattest den Spannungsmesser doch heute Morgen mit zu deinem Termin genommen, oder? Wäre super, wenn du dich umgehend bei mir meldest und mir sagst, wo ich das Ding finde. Vielen Dank!\n\nMitteilung 37\n\nGuten Tag, Nina Hertel von der Firma Hertel hier. Ich hatte letzte Woche bei Ihnen die elektrischen Fensterwächter bestellt. Die Lieferung war wohl zuerst falsch, deshalb kamen die Geräte erst an, das war nicht so schlimm. Die Hauptsache ist, dass die Lieferung vollständig ist. Ich wollte die Geräte gleich ausprobieren, aber alles war nur auf Englisch und Chinesisch beschrieben. Könnten Sie uns noch eine deutsche Anleitung schicken? Wenn Sie das hinkriegen, brauchen wir uns nicht mehr zu melden. Danke!\n\nMitteilung 38\n\nHallo, hier ist Lotte. Ich stehe gerade vor dem Feinkostladen Nolte am Marktplatz, um den ... für ... zu besorgen. Leider gibt es ein kleines Problem: Das Geschäft hat gerade vierzehn Tage geschlossen. Ich habe keine Ahnung, wo es hier noch andere Feinkostläden gibt. Weißt du das? Bevor wir lange über ein Geschenk diskutieren, fahr doch schnell rum und ruf mich an. Danke!\n\nMitteilung 39\n\nHallo, Paul hier. Wegen unserer Teambesprechung morgen um 8. Ich muss morgen früh erstmal zu der Baustelle in Köln fahren, die haben da ein Problem. Damit wir unseren Termin aber nicht verschieben müssen, würde ich euch bitten, ohne mich zu beginnen. Susanne vertritt uns ja diese Woche auf der Messe in Berlin und ist nicht da, aber Peter kann die Besprechung leiten. Er berichtet ja sowieso als Erster über seine Projekte, damit ihr auf dem aktuellen Stand seid. Um halb neun bin ich dann auf jeden Fall auch da.\n\nMitteilung 40\n\nHallo, hier ist Fred. Ich habe gerade die Unterlagen zusammengestellt, die die Chefin haben wollte. Sie will, dass ich ihr die Dateien per E-Mail schicke, aber die Dateien sind wahnsinnig groß und das klappt nicht. Ich habe Markus aus der IT-Abteilung angerufen, und er meinte nur, ich solle die Dateien komprimieren, aber ich habe ehrlich gesagt keine Ahnung, wie das geht. Er hat keine Zeit, mir das zu zeigen, aber ich muss das bis zum Feierabend hinkriegen. Vielleicht kannst du mich zurückrufen und mir das erklären?"
+  },
+  {
+   "id": "mt15-hoeren-und-schreiben",
+   "label": "Hören und Schreiben",
+   "page": 17,
+   "kind": "text",
+   "intro": "Sie hören eine telefonische Mitteilung. Wählen Sie die richtige Lösung (a, b oder c) für Aufgabe 41. Die Notizen 42–45 gehören zum Schreibteil und sind hier nicht enthalten.",
+   "items": [
+    {
+     "n": 41,
+     "type": "choice",
+     "prompt": "Grund für den Anruf",
+     "options": [
+      {
+       "key": "a",
+       "text": "Angebot"
+      },
+      {
+       "key": "b",
+       "text": "Bestellung/Buchung"
+      },
+      {
+       "key": "c",
+       "text": "Beschwerde"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Wir bräuchten 30 Brotdosen",
+     "explain": "El motivo es un pedido: 30 fiambreras del modelo A39.",
+     "explain_ru": "Причина — заказ: 30 ланч-боксов модели A39."
+    }
+   ],
+   "passage": "Hören und Schreiben, Aufgabe 41\n\nHallo, hier ist Ingo Woytkes von der Firma Baden Pharma. Wir haben im vergangenen Jahr schon einmal Brotdosen bei Ihnen bestellt und waren sehr zufrieden. Deshalb überlegen wir wieder, bei Ihnen zu kaufen. Wir bräuchten 30 Brotdosen, und zwar das Modell mit der Artikelnummer A39. Wir möchten die Dosen am liebsten blau; das geht doch, oder? Ach so, und alle Dosen bitte für Handballen. Wie viel würde das inklusive Lieferung bis Ende Mai kosten? Falls Sie Rückfragen haben, können Sie mich telefonisch erreichen, hier meine Durchwahl: 0 62 71 89 234. Zur Sicherheit auch noch mal mein Name: Ingo Woytkes, W-O-Y-T-K-E-S. Es müsste unsere E-Mail-Adresse noch haben, dann wäre es schön, wenn Sie uns das Angebot per Mail schicken könnten. Vielen Dank!"
+  },
+  {
+   "id": "mt15-sprachbausteine-t1",
+   "label": "Sprachbausteine Teil 1",
+   "page": 18,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Text. Welches Wort (a–j) passt in jede Lücke (46–51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Betreff: Unser Gespräch am 19.9.\n\nSehr geehrte Frau Peters,\n\nzunächst noch einmal herzlichen Dank für das angenehme Vorstellungsgespräch in Ihrem Unternehmen.\n\nEs hat mich sehr gefreut, Sie und Ihren Kollegen Herrn Schubert kennenzulernen. Besonders interessant waren die Einblicke 46 ( ) die Pläne für die Expansion. Ich würde mich sehr freuen, 47 ( ) ich Ihr Unternehmen zukünftig unterstützen könnte.\n\nWie Sie wissen, bin ich derzeit 48 ( ) in einem ungekündigten Arbeitsverhältnis und reise ab Montag kurzfristig beruflich ins Ausland. 49 ( ) werde ich telefonisch nicht gut erreichbar sein. Ich wollte Sie nur kurz 50 ( ) informieren, da Sie sich ja in den nächsten zwei Wochen wieder bei mir melden wollten.\n\nIch bin nach wie vor sehr an der Stelle interessiert und ab übernächster Woche auch wieder in Deutschland. Natürlich können Sie mich 51 ( ) aber immer per E-Mail erreichen.\n\nIch freue mich darauf, wieder von Ihnen zu hören!\n\nMit freundlichen Grüßen\nSabrina Sturm",
+   "options": [
+    {
+     "key": "a",
+     "text": "DA"
+    },
+    {
+     "key": "b",
+     "text": "DAHER"
+    },
+    {
+     "key": "c",
+     "text": "DARÜBER"
+    },
+    {
+     "key": "d",
+     "text": "DAZWISCHEN"
+    },
+    {
+     "key": "e",
+     "text": "FÜR"
+    },
+    {
+     "key": "f",
+     "text": "IN"
+    },
+    {
+     "key": "g",
+     "text": "NOCH"
+    },
+    {
+     "key": "h",
+     "text": "SCHON"
+    },
+    {
+     "key": "i",
+     "text": "WENN"
+    },
+    {
+     "key": "j",
+     "text": "ZWISCHENZEITLICH"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "Besonders interessant waren die Einblicke 46 ( ) die Pläne für die Expansion.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Besonders interessant waren die Einblicke 46 ( ) die Pläne für die Expansion.",
+     "explain": "«Einblicke in etwas» rige con acusativo: Einblicke in die Pläne. Ninguna otra palabra del banco puede regir «die Pläne».",
+     "explain_ru": "«Einblicke in etwas» требует винительного падежа: Einblicke in die Pläne. Ни одно другое слово из списка не управляет «die Pläne»."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "Ich würde mich sehr freuen, 47 ( ) ich Ihr Unternehmen zukünftig unterstützen könnte.",
+     "answer": "i",
+     "confidence": "hoch",
+     "quote": "Ich würde mich sehr freuen, 47 ( ) ich Ihr Unternehmen zukünftig unterstützen könnte.",
+     "explain": "La subordinada con «könnte» y el sentido condicional piden «wenn»: me alegraría mucho si pudiera apoyar a su empresa en el futuro.",
+     "explain_ru": "Придаточное с «könnte» и условный смысл требуют «wenn»: я был бы очень рад, если бы мог в будущем поддерживать вашу фирму."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "Wie Sie wissen, bin ich derzeit 48 ( ) in einem ungekündigten Arbeitsverhältnis",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "bin ich derzeit 48 ( ) in einem ungekündigten Arbeitsverhältnis",
+     "explain": "«noch» indica que sigue contratado por ahora: derzeit noch in einem ungekündigten Arbeitsverhältnis. «Schon» cambiaría el sentido y no encaja con la renuncia implícita.",
+     "explain_ru": "«noch» показывает, что пока он ещё трудоустроен: derzeit noch in einem ungekündigten Arbeitsverhältnis. «Schon» изменило бы смысл и не подходит к подразумеваемому уходу."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "49 ( ) werde ich telefonisch nicht gut erreichbar sein.",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "49 ( ) werde ich telefonisch nicht gut erreichbar sein.",
+     "explain": "«Daher» enlaza el viaje al extranjero con la consecuencia: por eso no podré atender bien el teléfono. Con inversión detrás, la conjunción causal «denn» no podría abrir la frase.",
+     "explain_ru": "«Daher» связывает поездку за границу с последствием: поэтому я не смогу хорошо отвечать по телефону. При инверсии причинный «denn» не мог бы открывать предложение."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "Ich wollte Sie nur kurz 50 ( ) informieren",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Ich wollte Sie nur kurz 50 ( ) informieren",
+     "explain": "El verbo es «jemanden über etwas informieren»: el pronombre adverbial «darüber» recoge la información que falta. «Dafür» o «davon» cambiarían la preposición.",
+     "explain_ru": "Глагол — «jemanden über etwas informieren»: местоименное наречие «darüber» замещает содержание. «Dafür» или «davon» изменили бы предлог."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "Natürlich können Sie mich 51 ( ) aber immer per E-Mail erreichen.",
+     "answer": "j",
+     "confidence": "mittel",
+     "quote": "Natürlich können Sie mich 51 ( ) aber immer per E-Mail erreichen.",
+     "explain": "«zwischenzeitlich» significa «mientras tanto»: durante su ausencia, el correo funciona siempre. Es la única palabra del banco que encaja con «aber immer»; de ahí la confianza media, porque el uso es algo forzado.",
+     "explain_ru": "«zwischenzeitlich» значит «тем временем»: пока его нет, почта работает всегда. Это единственное слово из списка, подходящее к «aber immer»; поэтому уверенность средняя — употребление немного натянутое."
+    }
+   ]
+  },
+  {
+   "id": "mt15-sprachbausteine-t2",
+   "label": "Sprachbausteine Teil 2",
+   "page": 19,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welcher Ausdruck (a, b oder c) passt in jede Lücke (52–57)?",
+   "passageOpen": true,
+   "passage": "Ihre Anfrage\n\nSehr geehrter Herr Obers,\n\nwir bedanken uns für Ihr Interesse an 52 ( ) !\n\nGerne erstellen wir ein Angebot für die Lieferung und den Einbau von 25 Fenstern in Ihrem Bürogebäude. Allerdings benötigen wir 53 ( ) weitere Informationen.\n\nBitte teilen Sie uns mit, ob Sie auch Jalousien außen für die Fenster wünschen und falls ja, für wie viele der Fenster.\nSie hatten in Ihrer Anfrage geschrieben, dass die Fensterrahmen weiß sein sollen. Haben Sie auch 54 ( ) (Metall oder Kunststoff) oder möchten Sie ein Angebot für beide Varianten?\n\nDie Fenster wird unser Mitarbeiter Herr Zumwinkel dann vor Ort ausmessen und sich zur Terminvereinbarung direkt mit Ihnen 55 ( ).\n\nSollten Sie in der Zwischenzeit 56 ( ), können Sie sich selbstverständlich gerne an mich wenden.\n\nIch freue mich auf 57 ( ) !\n\nMit freundlichen Grüßen\n\nIlona Jacob\n- Kuhl GmbH, Fenster & Wintergärten -",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "wir bedanken uns für Ihr Interesse an 52 ( ) !",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihren Angeboten"
+      },
+      {
+       "key": "b",
+       "text": "unseren Produkten"
+      },
+      {
+       "key": "c",
+       "text": "unserer Bestellung"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "wir bedanken uns für Ihr Interesse an 52 ( ) !",
+     "explain": "La empresa agradece al cliente su interés por sus propios productos: «an unseren Produkten» (dativo tras «Interesse an»). La c no tiene sentido porque la carta es la respuesta a la consulta del cliente.",
+     "explain_ru": "Фирма благодарит клиента за интерес к своим продуктам: «an unseren Produkten» (дательный после «Interesse an»). c бессмысленно: письмо — ответ на запрос клиента."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "Allerdings benötigen wir 53 ( ) weitere Informationen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "davor auch"
+      },
+      {
+       "key": "b",
+       "text": "vorerst schon"
+      },
+      {
+       "key": "c",
+       "text": "zunächst noch"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Allerdings benötigen wir 53 ( ) weitere Informationen.",
+     "explain": "«zunächst noch» significa que por ahora hacen falta más datos antes de seguir. La a es un adverbio temporal mal colocado y la b suena contradictoria con «allerdings».",
+     "explain_ru": "«zunächst noch» значит, что пока нужны дополнительные данные, прежде чем продолжать. a — неуместное обстоятельство времени, b противоречит «allerdings»."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Haben Sie auch 54 ( ) (Metall oder Kunststoff) oder möchten Sie ein Angebot für beide Varianten?",
+     "options": [
+      {
+       "key": "a",
+       "text": "ein bevorzugtes Material"
+      },
+      {
+       "key": "b",
+       "text": "eine andere Ware"
+      },
+      {
+       "key": "c",
+       "text": "einen weiteren Bedarf"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Haben Sie auch 54 ( ) (Metall oder Kunststoff) oder möchten Sie ein Angebot für beide Varianten?",
+     "explain": "El paréntesis ofrece dos materiales, así que la pregunta es por un material preferido: «ein bevorzugtes Material». «Eine andere Ware» no encaja con el acusativo ni con el sentido.",
+     "explain_ru": "В скобках предложены два материала, значит, спрашивают о предпочтительном: «ein bevorzugtes Material». «Eine andere Ware» не подходит ни по падежу, ни по смыслу."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "Die Fenster wird unser Mitarbeiter Herr Zumwinkel dann vor Ort ausmessen und sich zur Terminvereinbarung direkt mit Ihnen 55 ( ).",
+     "options": [
+      {
+       "key": "a",
+       "text": "im Gespräch bleiben"
+      },
+      {
+       "key": "b",
+       "text": "in Verbindung setzen"
+      },
+      {
+       "key": "c",
+       "text": "in Kontakt kommen"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "sich zur Terminvereinbarung direkt mit Ihnen 55 ( ).",
+     "explain": "«sich mit jemandem in Verbindung setzen» (ponerse en contacto con alguien) es la colocación que pide el «sich». «In Kontakt kommen» no lleva reflexivo y «im Gespräch bleiben» significa seguir hablando.",
+     "explain_ru": "«sich mit jemandem in Verbindung setzen» (связаться с кем-либо) — конструкция, требующая «sich». «In Kontakt kommen» без возвратного, а «im Gespräch bleiben» значит продолжать разговор."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "Sollten Sie in der Zwischenzeit 56 ( ), können Sie sich selbstverständlich gerne an mich wenden.",
+     "options": [
+      {
+       "key": "a",
+       "text": "dringende Anrufe erhalten"
+      },
+      {
+       "key": "b",
+       "text": "neue Hinweise geben"
+      },
+      {
+       "key": "c",
+       "text": "weitere Fragen haben"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Sollten Sie in der Zwischenzeit 56 ( ), können Sie sich selbstverständlich gerne an mich wenden.",
+     "explain": "La frase invita al cliente a llamar si tiene más preguntas: «weitere Fragen haben». Recibir llamadas o dar indicaciones no justifica que el cliente se dirija al remitente.",
+     "explain_ru": "Фраза приглашает клиента звонить, если у него есть ещё вопросы: «weitere Fragen haben». Получать звонки или давать указания не объясняют, зачем клиенту обращаться к отправителю."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Ich freue mich auf 57 ( ) !",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihre zeitnahe Rückmeldung"
+      },
+      {
+       "key": "b",
+       "text": "Ihren ausführlichen Bericht"
+      },
+      {
+       "key": "c",
+       "text": "unseren längeren Termin"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Ich freue mich auf 57 ( ) !",
+     "explain": "El cierre espera la respuesta rápida del cliente: «Ihre zeitnahe Rückmeldung» en acusativo tras «sich freuen auf». El informe no se lo han pedido y el cierre no tiene que ver con una cita larga.",
+     "explain_ru": "В конце ждут быстрого ответа клиента: «Ihre zeitnahe Rückmeldung» в винительном после «sich freuen auf». Отчёт не запрашивали, а «längerer Termin» не связан с содержанием."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.3–19: texto reconstruido desde OCR de un PDF escaneado; se corrigen tildes diacríticas y erratas evidentes del OCR.",
+  "p.4, anuncio h: el OCR da «in der Sic wichtige Kontakte»; la imagen dice «in der Sie wichtige Kontakte».",
+  "p.8, tipp a: el OCR da «www.arbeitsrecht-aktue1124.eu»; la imagen dice «www.arbeitsrecht-aktuell24.eu».",
+  "p.8, tipp f: el OCR da «ankerkannte»; la imagen dice «anerkannte». El nombre «Arkardi» se copia tal como está impreso.",
+  "p.8, tipp d: el original imprime «unter der du gemeldet bis» (por «bist»); se copia verbatim y no se corrige.",
+  "p.9: el OCR pierde la hora de la cabecera («15. Juli 20XX, Uhr»); la imagen dice «15. Juli 20XX, 10:00–11:00 Uhr».",
+  "p.10, ítem 16: el original imprime «bereite der Logistik Probleme» (Konjunktiv I); se copia verbatim y no se corrige.",
+  "p.15: la opción b del «Beispiel» sale como «y» en el OCR; el ejemplo no entra en el fichero, solo las tareas 32–35. Las palabras de la columna izquierda (Büroräume, Änderungen, Verkaufsteam, Lager, Personelles) son rótulos de la presentación y no se incluyen.",
+  "p.18: el OCR pierde las letras e, i y j del banco de palabras; la imagen las da en orden alfabético (e FÜR, i WENN, j ZWISCHENZEITLICH).",
+  "p.19: el OCR mezcla las líneas de las opciones 53 («davor auch / vorerst schon / zunächst noch»); se separan según la imagen.",
+  "Las respuestas de Lesen y Sprachbausteine son deducidas: el PDF no incluye Lösungsschlüssel (la p.24 solo remite a un grupo externo).",
+  "Hören (22–41) va sin clave: el PDF no trae audio ni transcripción.",
+  "No se incluyen Schreiben (58) ni Sprechen (Teile 1–3) ni las notas 42–45.",
+  "Hören del Modeltest 15: transcripción aportada en imágenes (Hörtexte). Corregidas las tareas 22–41."
+ ]
+}

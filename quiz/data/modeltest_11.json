@@ -1,0 +1,1144 @@
+{
+ "block": "modeltest_11",
+ "section": "modeltest-11",
+ "variants": [
+  {
+   "id": "mt11-lesen-t1",
+   "label": "Lesen Teil 1",
+   "page": 2,
+   "kind": "zuordnung",
+   "intro": "Sie lesen online in einer Wirtschaftszeitung und möchten Ihren Freunden einige Artikel schicken. Entscheiden Sie, welcher Artikel a–h zu welcher Person 1–5 passt.",
+   "optionsLabel": "Artikel",
+   "options": [
+    {
+     "key": "a",
+     "title": "Außergewöhnliche Berufe",
+     "text": "Stirbt ein Familienmitglied, so ist dies für die Angehörigen eine emotionale Ausnahmesituation. Trauer, Verzweiflung, Stress. Es ist einiges zu organisieren: Wie soll die Beerdigung ablaufen, wie die Trauerfeier? Hier hilft der Bestatter. Ein Beruf, der spannender ist, als viele glauben.",
+     "distractor": "Habla del oficio de enterrador. No encaja con ninguna persona: nadie busca formación, libros, celebrar algo ni estudiar sin dinero."
+    },
+    {
+     "key": "b",
+     "title": "Mehr Ausbildungsplätze als Bewerber",
+     "text": "Die duale Ausbildung in Deutschland ist Vorbild für viele Länder. Die Kombination von Theorie in der Berufsschule und Praxis im Betrieb hat sich bewährt. Doch in diesem Jahr bleiben viele Ausbildungsplätze frei. Warum?",
+     "distractor": ""
+    },
+    {
+     "key": "c",
+     "title": "Termine rund ums Studium",
+     "text": "Ob Psychologie, Rechtswissenschaften oder Informatik — für alle Studiengänge gelten bei der FWH dieselben Fristen und Termine. Wann können Sie sich bewerben, wann müssen Sie sich rückmelden, wann beginnen die Vorlesungen? Das erfahren Sie hier.",
+     "distractor": "Son plazos de matrícula, no ayudas económicas para estudiar. Se confunde con Nico, pero no resuelve su problema de dinero."
+    },
+    {
+     "key": "d",
+     "title": "Wohlfühlen im Büro",
+     "text": "Ein Büro ist kein Wohnzimmer. Trotzdem: Man verbringt dort täglich acht Stunden oder mehr. Wer arbeitet gern in einem anonymen, kalten und rein funktionalen Büro? Wer möchte nicht ein paar persönliche Dinge um sich herum haben? Kann der Chef das verbieten?",
+     "distractor": ""
+    },
+    {
+     "key": "e",
+     "title": "Erfolg bedeutet glücklich sein",
+     "text": "Erfolg im Beruf — das ist ein Wunsch, den man häufig hört: zum Geburtstag, nach der Ausbildung, bei einem neuen Arbeitsplatz. Aber was macht beruflichen Erfolg aus? Der Psychologe Karl Ritter setzt sich mit dieser Frage auseinander und gibt in seinem neuen Buch „Glück“ Tipps, damit beruflicher Erfolg gelingt.",
+     "distractor": ""
+    },
+    {
+     "key": "f",
+     "title": "Duales Studium — für alle, die auch praktisch etwas lernen wollen",
+     "text": "Sie haben Ihr Abitur in der Tasche und überlegen, wie es jetzt weitergeht. Soll es eine praktische Ausbildung sein oder ein Studium? Sie können beides haben — in einem dualen Studium. Studieren und sein eigenes Geld verdienen. Wie das funktioniert, erfahren Sie hier.",
+     "distractor": ""
+    },
+    {
+     "key": "g",
+     "title": "Ein Gläschen Sekt darf es schon sein",
+     "text": "Am Arbeitsplatz gibt es verschiedene Gelegenheiten für ein Glas Sekt mit dem Team: Jubiläen, Weihnachtsfeiern oder ein Vertragsabschluss. Ist Alkohol am Arbeitsplatz erlaubt oder riskiert man damit seinen Job? Hier finden Sie die Antwort auf alle Fragen rund um Alkohol am Arbeitsplatz.",
+     "distractor": ""
+    },
+    {
+     "key": "h",
+     "title": "Notstand im Altersheim",
+     "text": "Pflegekräfte sind knapp: Das spüren täglich Tausende Seniorinnen und Senioren in Altenheimen. Eine angemessene Betreuung ist mit der vorhandenen Personaldecke oft nicht möglich. Eine Studie hat untersucht, wie viele Pflegekräfte fehlen und was man gegen den Pflegenotstand tun kann, zum Beispiel durch mehr Ausbildungsplätze und bessere Bezahlung.",
+     "distractor": "Trata de la falta de personal en residencias. Se confunde con Yasin por lo de los puestos de formación, pero no habla de cómo encontrar uno."
+    }
+   ],
+   "items": [
+    {
+     "n": 1,
+     "type": "choice",
+     "prompt": "Yasin überlegt, welche Chancen er auf einen Ausbildungsplatz hat.",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Doch in diesem Jahr bleiben viele Ausbildungsplätze frei.",
+     "explain": "El artículo b habla justamente de que este año quedan libres muchas plazas de formación dual: es la información que busca Yasin sobre sus posibilidades.",
+     "explain_ru": "Статья b прямо говорит, что в этом году осталось много свободных мест на дуальное обучение: это и есть информация, которую ищет Ясин."
+    },
+    {
+     "n": 2,
+     "type": "choice",
+     "prompt": "Tim interessiert sich für psychologische Literatur.",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Der Psychologe Karl Ritter setzt sich mit dieser Frage auseinander und gibt in seinem neuen Buch „Glück“ Tipps, damit beruflicher Erfolg gelingt.",
+     "explain": "El anuncio e presenta el libro de un psicólogo sobre el éxito profesional; eso es exactamente literatura psicológica.",
+     "explain_ru": "Объявление e представляет книгу психолога об успехе в профессии; это и есть психологическая литература."
+    },
+    {
+     "n": 3,
+     "type": "choice",
+     "prompt": "Maria will ihren Geburtstag in der Firma mit Essen und Getränken feiern.",
+     "answer": "g",
+     "confidence": "mittel",
+     "quote": "Am Arbeitsplatz gibt es verschiedene Gelegenheiten für ein Glas Sekt mit dem Team: Jubiläen, Weihnachtsfeiern oder ein Vertragsabschluss.",
+     "explain": "El anuncio g trata de celebraciones en el trabajo con alcohol y comida. No menciona cumpleaños, pero es el único que encaja con una celebración con bebidas en la empresa; de ahí la confianza media.",
+     "explain_ru": "Объявление g посвящено праздникам на работе с алкоголем и едой. День рождения не упомянут, но это единственный вариант с празднованием и напитками в фирме; поэтому уверенность средняя."
+    },
+    {
+     "n": 4,
+     "type": "choice",
+     "prompt": "Marco möchte sein Büro für Besprechungen mit dem Team etwas gemütlicher einrichten.",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Wer arbeitet gern in einem anonymen, kalten und rein funktionalen Büro? Wer möchte nicht ein paar persönliche Dinge um sich herum haben?",
+     "explain": "El artículo d plantea cómo hacer el despacho más acogedor con objetos personales y si el jefe puede prohibirlo; responde a la idea de Marco.",
+     "explain_ru": "Статья d спрашивает, как сделать кабинет уютнее с личными вещами и может ли начальник это запретить; это отвечает на идею Марко."
+    },
+    {
+     "n": 5,
+     "type": "choice",
+     "prompt": "Nico möchte gern studieren, hat aber kein Geld.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Studieren und sein eigenes Geld verdienen.",
+     "explain": "El anuncio f presenta el estudio dual como forma de estudiar y ganar dinero al mismo tiempo, justo lo que necesita Nico.",
+     "explain_ru": "Объявление f представляет дуальное обучение как способ учиться и одновременно зарабатывать, именно это нужно Нико."
+    }
+   ]
+  },
+  {
+   "id": "mt11-lesen-t2",
+   "label": "Lesen Teil 2",
+   "page": 4,
+   "kind": "text",
+   "intro": "Lesen Sie die Texte und die Aufgaben 6–9. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nInternetnutzung\nDie Fink GmbH stellt allen Mitarbeiterinnen und Mitarbeitern die für die Arbeit in der Firma erforderlichen IT-Arbeitsmittel zur Verfügung. Für die Arbeit im Homeoffice stehen bei Bedarf Laptops in der IT-Abteilung zur Abholung bereit. Mit der IT-Ausstattung im Büro ist die tägliche Arbeit zu erledigen. Das Internet darf — anders als E-Mail und die sonstige Software — auch zu privaten Zwecken genutzt werden, soweit die Arbeit dadurch nicht beeinträchtigt wird. Dies ist insbesondere bei einer Internetnutzung in den Pausen der Fall. Jede Internetnutzung, die dem Unternehmen auf irgendeine Art schaden könnte oder die gegen Gesetze verstößt, ist verboten. Das System ist so eingerichtet, dass Programme nur von der IT-Abteilung installiert werden können. Die Mitarbeiterinnen und Mitarbeiter tragen die Verantwortung für die Einhaltung der Sicherheitsvorschriften. Das Passwort ist geheim zu halten und darf nicht an andere weitergegeben werden. Ein Verstoß gegen diese Regelungen kann zu einem Verbot der privaten Internetnutzung am Arbeitsplatz führen oder rechtliche Konsequenzen nach sich ziehen.\n\nHomeoffice\nBei der Fink GmbH wird die Vereinbarung von Beruf und Familie großgeschrieben. Daher haben wir mit dem Betriebsrat eine Betriebsvereinbarung geschlossen, die die Modalitäten rund um die Arbeit von zu Hause aus regelt.\n\nSportangebote\nDie Gesundheit unserer Mitarbeiterinnen und Mitarbeiter liegt uns sehr am Herzen. Bei uns gibt es eine Laufgruppe, die in der Mittagspause gemeinsam ein paar Kilometer joggt. Wir haben auch eine Volleyballmannschaft, die sich besonders in den warmen Monaten zum Beachvolleyball trifft. Und im Obergeschoss stehen drei Tischtennisplatten für den kleinen Sport zwischendurch. Außerdem können Sie bei uns im Sportraum spezielle Kurse besuchen: Entspannungskurse, Rückenschule, Yoga. Die Kurse sind für die Beschäftigten sehr günstig — die Hälfte der Kosten wird vom Betrieb übernommen. Die Termine für alle sportlichen Aktivitäten liegen außerhalb der Arbeitszeit, sodass jeder daran teilnehmen kann. Auch Teilzeitkräfte, die nur am Vormittag arbeiten, haben die Möglichkeit, das Sportangebot zu nutzen: vor der Arbeit oder in der Mittagspause. Jeden Juni findet ein Sommerfest statt, bei dem nicht nur ausgelassen gefeiert, gut gegessen und getrunken wird, sondern hier geht es auch sportlich zu. Es gibt ein Volleyball-, ein Tischtennis- und ein Fußballturnier, zu dem sich alle anmelden können. Auf die Sieger:innen wartet ein Preis. Außerdem werden verschiedene Sportkurse zum Ausprobieren angeboten. Die drei beliebtesten Kurse werden dann im nächsten Jahr in unser Sportangebot aufgenommen. Genaue Informationen zu den Sportangeboten und den Sportgruppen finden sich im Intranet.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Die private Internetnutzung ist nur in der Pause erlaubt.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "hoch",
+     "quote": "Das Internet darf — anders als E-Mail und die sonstige Software — auch zu privaten Zwecken genutzt werden, soweit die Arbeit dadurch nicht beeinträchtigt wird.",
+     "explain": "«Falsch»: no se limita a la pausa. Se permite el uso privado siempre que no perjudique el trabajo, y la pausa es solo el caso más habitual.",
+     "explain_ru": "«Falsch»: использование интернета в личных целях не ограничено перерывом. Оно разрешено, если не мешает работе, а перерыв — лишь самый частый случай."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Die Beschäftigten",
+     "options": [
+      {
+       "key": "a",
+       "text": "dürfen alle Programme auch privat nutzen."
+      },
+      {
+       "key": "b",
+       "text": "können auf firmeneigene Laptops zurückgreifen, wenn sie welche brauchen."
+      },
+      {
+       "key": "c",
+       "text": "müssen ihr Passwort an einem geheimen Ort abspeichern."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Für die Arbeit im Homeoffice stehen bei Bedarf Laptops in der IT-Abteilung zur Abholung bereit.",
+     "explain": "La opción b se apoya en esa frase: hay portátiles de la empresa disponibles cuando se necesitan. La a es falsa porque solo la IT instala programas; la c confunde «geheim halten» (no compartir) con guardar la contraseña en un lugar secreto.",
+     "explain_ru": "Вариант b опирается на фразу: ноутбуки компании доступны при необходимости. a неверно, потому что программы устанавливает только IT; c путает «держать пароль в секрете» с хранением в тайном месте."
+    },
+    {
+     "n": 8,
+     "type": "truefalse",
+     "prompt": "Bei der Firma handelt es sich um ein Sportunternehmen.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "hoch",
+     "quote": "Die Gesundheit unserer Mitarbeiterinnen und Mitarbeiter liegt uns sehr am Herzen.",
+     "explain": "«Falsch»: la empresa ofrece deporte a su plantilla, pero no es una empresa deportiva. El texto lo presenta como una prestación para el personal.",
+     "explain_ru": "«Falsch»: фирма предлагает спорт сотрудникам, но не является спортивной компанией. В тексте это льгота для персонала."
+    },
+    {
+     "n": 9,
+     "type": "choice",
+     "prompt": "Die firmeninternen Sportangebote",
+     "options": [
+      {
+       "key": "a",
+       "text": "bereiten die Teilnehmenden auf Turniere vor."
+      },
+      {
+       "key": "b",
+       "text": "werden nach den Interessen der Beschäftigten ausgewählt."
+      },
+      {
+       "key": "c",
+       "text": "werden von der Firma bezahlt."
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "die Hälfte der Kosten wird vom Betrieb übernommen.",
+     "explain": "La empresa paga la mitad de los cursos, así que la opción c es la que recoge el dato del texto. La b es tentadora porque los tres cursos más populares se añaden al programa, pero eso vale solo para los cursos nuevos, no para toda la oferta; de ahí la confianza media.",
+     "explain_ru": "Фирма оплачивает половину стоимости курсов, поэтому вариант c передаёт данные текста. b заманчив: три самых популярных курса добавляют в программу, но это касается только новых курсов, а не всего предложения; поэтому уверенность средняя."
+    }
+   ]
+  },
+  {
+   "id": "mt11-lesen-t3",
+   "label": "Lesen Teil 3",
+   "page": 6,
+   "kind": "zuordnung",
+   "allowNone": true,
+   "intro": "Lesen Sie die Fragen 10–13 und die Texte a–f. Welche Frage passt zu welchem Tipp? Für eine Frage gibt es keinen passenden Tipp; markieren Sie dafür ein x.",
+   "optionsLabel": "Tipps",
+   "options": [
+    {
+     "key": "a",
+     "title": "Jonas",
+     "text": "Natürlich hast du Anspruch auf bezahlten Urlaub — das wäre sonst ja total ungerecht. Dein Mindesturlaubsanspruch sind 24 Tage pro Jahr, wenn man 6 Tage arbeitet, egal ob Minijob oder eine „normale Beschäftigung“. Das ist gesetzlich so geregelt. Arbeitest du 3 Tage, wären es 12 Tage. Also: Ab in den Urlaub!"
+    },
+    {
+     "key": "b",
+     "title": "Hugo",
+     "text": "Das kann ja wohl nicht wahr sein! Dein Chef sollte mal in das Gesetz schauen. Bei einem Minijob gelten dieselben Regelungen für eine Kündigung wie sonst auch. Ich kenne ja nicht die ganze Geschichte, aber langsames Arbeiten ist kein Kündigungsgrund und schon gar nicht für eine fristlose Kündigung. Nimm dir einen Anwalt!"
+    },
+    {
+     "key": "c",
+     "title": "Jolanta",
+     "text": "Viele Chefs meinen, dass man bei Minijobs Geld sparen kann. Das ist aber ein Irrtum. Ob Minijob oder Vollzeitjob: Wenn du krank bist, bist du krank und hast Anspruch auf Lohnfortzahlung — und das bis zu 6 Wochen."
+    },
+    {
+     "key": "d",
+     "title": "Ali",
+     "text": "Dein Mann liegt falsch: Auch wenn du auf Minijob-Basis arbeitest, hast du einen Anspruch auf dein Gehalt für Feiertage. Wenn du z. B. immer montags arbeitest und ein Feiertag fällt auf einen Montag, dann bekommst du dein Gehalt, als hättest du gearbeitet. Das gilt übrigens für jede Arbeit, auch im Privathaushalt. Nacharbeiten musst du den Tag nicht!"
+    },
+    {
+     "key": "e",
+     "title": "Nura",
+     "text": "Warum traust du dich nicht, mal nachzufragen? Bei dir liegt der Fall einfach: Dir stehen fünf Urlaubstage mehr zu als deinen nicht schwerbehinderten Kolleginnen und Kollegen. Die können ruhig neidisch sein und das ungerecht finden. Schwerbehinderte genießen halt einen besonderen Schutz. Das ist gesetzlich geregelt."
+    },
+    {
+     "key": "f",
+     "title": "Jérôme",
+     "text": "Diese Frage hatte ich auch vor Kurzem. Da habe ich mal gegoogelt und herausgefunden, dass es tatsächlich eine gesetzlich geregelte Untergrenze für Löhne in Deutschland gibt. Und du wirst dich freuen: Diese Untergrenze gilt auch für Minijobber und sogar für Minijobs in Privathaushalten."
+    }
+   ],
+   "items": [
+    {
+     "n": 10,
+     "type": "choice",
+     "prompt": "Philipp: Seit zwei Jahren habe ich einen Minijob in einem Supermarkt. Gestern hatte ich mit meinem Chef Streit, weil er meinte, dass ich nicht schnell genug arbeite. Jedenfalls hat er mir einfach gekündigt — fristlos! Er sagt, das geht bei Minijobs. Stimmt das?",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Bei einem Minijob gelten dieselben Regelungen für eine Kündigung wie sonst auch.",
+     "explain": "Hugo desmonta la idea de que en un minijob se pueda despedir sin más: rigen las mismas normas y el trabajo lento no justifica un despido improcedente.",
+     "explain_ru": "Хуго опровергает мысль, что при мини-джобе можно уволить без оснований: действуют те же правила, и медленная работа не оправдывает увольнение."
+    },
+    {
+     "n": 11,
+     "type": "choice",
+     "prompt": "Julia: Ich habe Zwillinge, die sind zwei Jahre alt. Jetzt war erst meine Tochter krank, dann mein Sohn. Auf meiner letzten Gehaltsabrechnung wurden mir die Krankheitstage der Kinder abgezogen. Hat man auch als Minijobber einen Anspruch darauf, dass das Gehalt bei Krankheit der Kinder weitergezahlt wird?",
+     "answer": "x",
+     "confidence": "mittel",
+     "quote": "",
+     "explain": "Ningún consejo trata la baja por enfermedad de los hijos. Jolanta habla de la propia enfermedad del trabajador, Ali de los días festivos y Nura de la discapacidad; por eso la pregunta se queda sin tip.",
+     "explain_ru": "Ни один совет не говорит о больничном по болезни детей. Йоланта — о болезни самого работника, Али — о праздниках, Нура — об инвалидности; поэтому вопрос остаётся без совета."
+    },
+    {
+     "n": 12,
+     "type": "choice",
+     "prompt": "Lucca: Ich würde gern Urlaub nehmen, kann mir das aber nur leisten, wenn ich weiterhin mein Geld aus meinem Minijob bekomme. Mein Mann meint, dass ich darauf keinen Anspruch habe. Ich traue mich nicht, meinen Chef zu fragen.",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Natürlich hast du Anspruch auf bezahlten Urlaub — das wäre sonst ja total ungerecht.",
+     "explain": "Jonas confirma que también en un minijob hay derecho a vacaciones pagadas y explica cómo se calculan los días.",
+     "explain_ru": "Йонас подтверждает, что и при мини-джобе есть право на оплачиваемый отпуск, и объясняет расчёт дней."
+    },
+    {
+     "n": 13,
+     "type": "choice",
+     "prompt": "Emily: Ich arbeite bei einer Familie auf Minijob-Basis. Ich kümmere mich um die Kinder und mache den Haushalt. Mein Freund meint, dass ich dort länger arbeite, als ich muss, und mein Verdienst deshalb weit unter dem Mindestlohn liegt. Er meint, dass auch für Minijobber, die in Privathaushalten arbeiten, der Mindestlohn gilt. Ich war bisher der Meinung, dass das nur für Beschäftigte in Unternehmen gilt.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Diese Untergrenze gilt auch für Minijobber und sogar für Minijobs in Privathaushalten.",
+     "explain": "Jérôme aclara que el salario mínimo también se aplica a los minijobs en hogares privados, que es exactamente la duda de Emily.",
+     "explain_ru": "Жером уточняет, что минимальная зарплата действует и для мини-джобов в частных домохозяйствах — именно это сомнение у Эмили."
+    }
+   ]
+  },
+  {
+   "id": "mt11-lesen-t4",
+   "label": "Lesen Teil 4",
+   "page": 8,
+   "kind": "text",
+   "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Protokoll 25. Juli 20XX, 17.00–18.30 Uhr, Pausenraum\nAnwesende: Justus Albers (JA), Sara Grimm (SG), Leo Plews (LP), Linda Reinhardt (LR, Leitung), Viktoria Sokolow (VS), Henri Zudak (HZ)\nAbwesende: Tamara Larson, Linda Szott (stellvertretende Leitung)\nGast: Horst Smolka (HS, Bildungsreferent)\nProtokollant: Justus Albers\n\nTagesordnungspunkte\n1 Begrüßung\n2 Abgänge, Nachrücker\n3 Neue Mitarbeiterinnen\n4 Programm „Kita-Qualität“\n5 Teambuilding\n6 Sonstiges\n\nTOP 1 Begrüßung\nLR begrüßt alle Erzieherinnen und Erzieher und fragt nach Ergänzungen zur Tagesordnung. VS bittet, den Punkt „Anschaffung von neuem Spielzeug“ aufzunehmen. LR weist darauf hin, dass gegen 16.45 Uhr Herr Smolka, Bildungsreferent von der Stadtverwaltung, kommen und das Projekt „Kita-Qualität“ vorstellen wird.\n\nTOP 2 Abgänge, Nachrücker\nLR berichtet, dass acht Kinder wegen Umzug der Familien aus der Betreuung ausgeschieden sind. Sie kündigt an, die Kita-Plätze umgehend wieder besetzen zu wollen und in der nächsten Woche Eltern, die ihre Kinder in der Kita vorgemerkt haben, die freien Plätze anzubieten. LP weist darauf hin, dass man bei der Auswahl der Kinder darauf achten sollte, dass vorrangig solche Kinder aufgenommen werden, die entweder ein Geschwisterkind in der Kita haben oder deren Eltern dringend einen Kita-Platz brauchen, z. B. weil sie berufstätig sind. LR wird diese Punkte bei der Auswahl der Kinder berücksichtigen.\n\nTOP 3 Neue Mitarbeiterinnen\nLR erinnert, dass am Montag zwei neue Kolleginnen die Arbeit in der Kita beginnen werden. Sie bittet JA und LS, die Einarbeitung zu übernehmen, da sie zum einen lange in ihrem Beruf arbeiten und die Abläufe in der Kita sehr gut kennen und zum anderen in ihren beiden Gruppen krankheits- und urlaubsbedingt Verstärkung am dringendsten gebraucht wird. LR wird die beiden neuen Kolleginnen am Montag begrüßen und mit ihnen die Formalitäten erledigen, sodass sie erst gegen 10 Uhr die Arbeit in den beiden Gruppen aufnehmen werden. SG schlägt vor, für die beiden Neuen ein kleines Willkommensfest zu veranstalten. Man verständigt sich darauf, dass dies am Freitag in Form eines gemeinsamen Kaffeetrinkens stattfinden soll. SG und LP bringen Kuchen mit, VS besorgt Kaffee, HZ Milch und Sahne. Das Kaffeetrinken beginnt um 16 Uhr und gilt als bezahlte Arbeitszeit.\n\nTOP 4 Programm „Kita-Qualität“\nLR begrüßt Herrn Smolka und bedankt sich für seine Bereitschaft, das Programm „Kita-Qualität“ vorzustellen. Herr Smolka erklärt, dass es das Ziel des Programms ist, das Kita-Leben so zu gestalten, dass die Kinder gesund aufwachsen und gut zusammen lernen und leben. Im Programm „Kita-Qualität“ stehen derzeit zwei Aspekte im Mittelpunkt: kindgerechte Umgebung und Gesundheitsförderung. Bei kindgerechter Umgebung geht es darum, dass sowohl die Gruppenräume als auch die Außenflächen (z. B. Garten, Spielplatz) der Kita so gestaltet sind, dass sie zur Kreativität und zur Bewegung anregen, gleichzeitig Rückzugsorte bieten, wenn ein Kind einmal allein sein möchte. Der zweite Aspekt „Gesundheitsförderung“ zielt auf eine ausgewogene Ernährung, ein kindgerechtes Sportangebot und auf einen spielerischen Gesundheitsunterricht. Im Rahmen des Programms werden in zahlreichen Veranstaltungen das notwendige Fachwissen vermittelt, Lehrmaterialien zur Verfügung gestellt und Ansprechpartner benannt. Herr Smolka weist darauf hin, dass es noch freie Plätze gibt und eine Anmeldung bis zum 1. September möglich ist.\n\nTOP 5 Teambuilding\nLS hat sich — wie in der letzten Sitzung besprochen — über verschiedene Angebote für Teambuildingmaßnahmen informiert: Nachtwanderung, Weinspaziergang, Radtour, Kanutour. Alle Angebote fanden Zuspruch. Die Entscheidung wurde von LR getroffen. Sie fiel auf die Kanutour, weil jedes Team auf engem Raum in einem Boot zusammen ist und beim Paddeln aufeinander angewiesen ist. Die Teams sollen nach jedem Stopp, also insgesamt dreimal, neu zusammengesetzt werden. Die Kanutour soll am 14. August stattfinden, wenn die neuen Kolleginnen sich mit den Abläufen in der Kita und mit ihren Gruppenkindern vertraut gemacht haben. LS wird für diesen Tag Kanus reservieren.\n\nTOP 6 Sonstiges\nVS berichtet, dass einiges Spielzeug aussortiert werden musste, weil Teile fehlten oder es kaputtgegangen war. LR bittet alle, Spielzeug, das ersetzt werden soll, in die Liste im Büro einzutragen. Geld für die Anschaffung ist vorhanden. LR gibt die Schließtage für die Weihnachtszeit bekannt: Vom 21.12.–01.01. ist die Kita geschlossen. JA entwirft ein Infoblatt für die Eltern.",
+   "items": [
+    {
+     "n": 14,
+     "type": "choice",
+     "prompt": "Die Sitzung",
+     "options": [
+      {
+       "key": "a",
+       "text": "beginnt mit der Begrüßung eines Bildungsreferenten."
+      },
+      {
+       "key": "b",
+       "text": "findet im Besprechungszimmer statt."
+      },
+      {
+       "key": "c",
+       "text": "wird um einen neuen Tagesordnungspunkt ergänzt."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "VS bittet, den Punkt „Anschaffung von neuem Spielzeug“ aufzunehmen.",
+     "explain": "La reunión se amplía con un punto nuevo a petición de VS. El conferenciante llega a las 16.45, no al inicio, y la reunión es en el Pausenraum.",
+     "explain_ru": "Собрание расширяют новым пунктом по просьбе VS. Докладчик приходит в 16:45, а не в начале, и встреча проходит в Pausenraum."
+    },
+    {
+     "n": 15,
+     "type": "choice",
+     "prompt": "Einige Kita-Plätze",
+     "options": [
+      {
+       "key": "a",
+       "text": "sind frei, weil die Kinder in einer anderen Kita vorgemerkt waren."
+      },
+      {
+       "key": "b",
+       "text": "sollen möglichst schnell wieder vergeben werden."
+      },
+      {
+       "key": "c",
+       "text": "sollen mit Kindern besetzt werden, die Geschwister haben."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Sie kündigt an, die Kita-Plätze umgehend wieder besetzen zu wollen",
+     "explain": "La directora anuncia que quiere volver a ocupar las plazas de inmediato. La a confunde la causa (traslado de las familias, no otra guardería); la c es solo un criterio de selección, no la medida principal.",
+     "explain_ru": "Директор объявляет, что хочет сразу снова занять места. a путает причину (переезд семей, а не другой садик); c — лишь критерий отбора, а не главная мера."
+    },
+    {
+     "n": 16,
+     "type": "choice",
+     "prompt": "Die neuen Erzieherinnen",
+     "options": [
+      {
+       "key": "a",
+       "text": "organisieren ein gemeinsames Begrüßungstreffen."
+      },
+      {
+       "key": "b",
+       "text": "sollen von erfahrenen Kita-Mitarbeiterinnen eingearbeitet werden."
+      },
+      {
+       "key": "c",
+       "text": "werden dann eingesetzt, wenn jemand Urlaub hat oder krank ist."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Sie bittet JA und LS, die Einarbeitung zu übernehmen, da sie zum einen lange in ihrem Beruf arbeiten und die Abläufe in der Kita sehr gut kennen",
+     "explain": "JA y LS, con experiencia, se encargan de la incorporación de las nuevas. El encuentro lo organiza el equipo, no ellas, y se las necesita por bajas y vacaciones, pero no solo entonces.",
+     "explain_ru": "JA и LS, опытные сотрудники, занимаются введением новичков. Встречу организует коллектив, а не они; они нужны из-за больничных и отпусков, но не только тогда."
+    },
+    {
+     "n": 17,
+     "type": "choice",
+     "prompt": "Das Programm „Kita-Qualität“",
+     "options": [
+      {
+       "key": "a",
+       "text": "bietet Schulungen für Mitarbeiterinnen und Mitarbeiter von Kitas an."
+      },
+      {
+       "key": "b",
+       "text": "führt in Kitas Veranstaltungen für eine gesunde Ernährung durch."
+      },
+      {
+       "key": "c",
+       "text": "macht Vorgaben, wie Gebäude für Kitas gebaut werden müssen."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Im Rahmen des Programms werden in zahlreichen Veranstaltungen das notwendige Fachwissen vermittelt, Lehrmaterialien zur Verfügung gestellt und Ansprechpartner benannt.",
+     "explain": "El programa forma al personal con numerosas actividades y materiales. La b reduce el programa a la alimentación; la c no aparece: no dicta cómo construir edificios.",
+     "explain_ru": "Программа обучает персонал на многочисленных мероприятиях и с материалами. b сводит программу к питанию; c не упоминается: программа не предписывает, как строить здания."
+    },
+    {
+     "n": 18,
+     "type": "choice",
+     "prompt": "Die Kolleginnen und Kollegen",
+     "options": [
+      {
+       "key": "a",
+       "text": "bleiben beim Teambuilding in festen Teams zusammen."
+      },
+      {
+       "key": "b",
+       "text": "konnten zwischen verschiedenen Teambuildingmaßnahmen wählen."
+      },
+      {
+       "key": "c",
+       "text": "machen das Teambuilding zusammen mit den Neuen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Die Kanutour soll am 14. August stattfinden, wenn die neuen Kolleginnen sich mit den Abläufen in der Kita und mit ihren Gruppenkindern vertraut gemacht haben.",
+     "explain": "La fecha se elige para que las nuevas ya conozcan la casa, de modo que participan en la actividad. La a es falsa porque los equipos se recomponen tres veces; la b también, porque la decisión la toma LR.",
+     "explain_ru": "Дату выбирают, чтобы новые уже знали садик, значит, они участвуют. a неверно: команды трижды перемешивают; b тоже: решение принимает LR."
+    }
+   ]
+  },
+  {
+   "id": "mt11-lesen-us",
+   "label": "Lesen und Schreiben",
+   "page": 10,
+   "kind": "text",
+   "intro": "Ihre Teamleitung leitet Ihnen die E-Mail eines Kunden weiter und bittet Sie zu antworten. Welche Lösung (a, b oder c) passt am besten?",
+   "passage": "Ihre Teamleitung leitet Ihnen die E-Mail von einem Kunden weiter und bittet Sie zu antworten.\n\nErhalten: heute, 10:34 Uhr\nVon: Helmut Kemper\nAn: Team\nBetreff: Mängel beim Neujahrsempfang am 14. Januar\n\nHallo,\n\nheute habe ich leider noch eine Beschwerde (s. u.)! Bitte antworten Sie Herrn Boldt höflich. Die Müller GmbH ist langjähriger Kunde bei uns (Neujahrsempfang, Jubiläum, Catering bei Firmenfeiern). Sie können ihm gern erklären, warum es diesmal nicht so funktioniert hat wie sonst, und schreiben Sie ihm, was wir tun, damit sich so etwas nicht wiederholt.\n\nVielen Dank und viele Grüße\nHelmut Kemper\nTeamleiter\n\nGesendet: gestern, 13:22 Uhr\nVon: Karl Boldt\nAn: Helmut Kemper\nBetreff: Mängel beim Neujahrsempfang am 14. Januar\n\nSehr geehrter Herr Kemper,\n\nwie in den letzten fünf Jahren haben wir auch diesmal unseren Neujahrsempfang mit ausgewählten Geschäftskunden bei Ihnen ausgerichtet. Bisher und besonders im letzten Jahr waren wir äußerst zufrieden. Doch in diesem Jahr war unser Aufenthalt bei Ihnen sehr enttäuschend. Die Probleme begannen gleich am Anfang: 52 Personen waren angemeldet, es waren aber nur Tische für 42 Personen gedeckt. Das war eine sehr peinliche Situation, die auch zu Unruhe führte. Es schloss sich gleich die nächste Katastrophe an: Unser Vorstandsvorsitzender musste seine Rede beginnen, ohne dass — wie verabredet — Sekt ausgeschenkt war. Das geschah dann in unpassender Weise während seiner Rede. Auch das Buffet konnte nicht rechtzeitig eröffnet werden. Als schließlich alle etwas zu essen hatten, musste man auf die Getränke warten, da nicht genug geschultes Servicepersonal anwesend war. Bitte sorgen Sie dafür, dass sich solche Pannen nicht wiederholen. Ansonsten werden wir uns zukünftig für unsere Veranstaltungen ein anderes Restaurant suchen müssen.\n\nMit freundlichen Grüßen\nKarl Boldt — Müller GmbH",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Herr Boldt",
+     "options": [
+      {
+       "key": "a",
+       "text": "beschwert sich über Probleme während eines Neujahrsempfangs."
+      },
+      {
+       "key": "b",
+       "text": "ist mit der Auswahl des Sekts und der Getränke unzufrieden."
+      },
+      {
+       "key": "c",
+       "text": "möchte, dass zukünftig geschultes Personal bedient."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Doch in diesem Jahr war unser Aufenthalt bei Ihnen sehr enttäuschend.",
+     "explain": "Toda la carta enumera fallos del evento de Año Nuevo: mesas, timing del cava, buffet y bebidas. No critica la marca del cava ni pide expresamente personal cualificado, sino un servicio sin fallos.",
+     "explain_ru": "Всё письмо перечисляет сбои на новогоднем приёме: столы, время подачи шампанского, буфет и напитки. Марку шампанского не критикуют и не требуют именно обученный персонал, а просят обслуживание без сбоев."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Probleme",
+     "options": [
+      {
+       "key": "a",
+       "text": "bestanden in schlechtem Service."
+      },
+      {
+       "key": "b",
+       "text": "bezogen sich auf die Qualität des Essens."
+      },
+      {
+       "key": "c",
+       "text": "gab es schon vor fünf Jahren."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "da nicht genug geschultes Servicepersonal anwesend war",
+     "explain": "Los fallos son de organización y servicio: mesas mal calculadas, cava tardío, buffet y bebidas. La calidad de la comida no se critica y los años anteriores fueron satisfactorios.",
+     "explain_ru": "Сбои организационные и сервисные: неверно рассчитанные столы, позднее шампанское, буфет и напитки. Качество еды не критикуют, а прошлые годы были успешными."
+    }
+   ]
+  },
+  {
+   "id": "mt11-hoeren-t1",
+   "label": "Hören Teil 1",
+   "page": 12,
+   "kind": "ohne-key",
+   "intro": "Sie hören drei Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 22,
+     "type": "truefalse",
+     "prompt": "Luisa hat noch keine Erfahrungen mit der Arbeit im Imbiss-Bereich.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "type": "choice",
+     "prompt": "Luisa",
+     "options": [
+      {
+       "key": "a",
+       "text": "arbeitet am frühen Morgen alleine, bekommt aber später Unterstützung."
+      },
+      {
+       "key": "b",
+       "text": "ist verantwortlich für die Bestellung der Waren."
+      },
+      {
+       "key": "c",
+       "text": "sorgt zum Schichtbeginn dafür, dass die Getränke gekühlt werden."
+      }
+     ]
+    },
+    {
+     "n": 24,
+     "type": "truefalse",
+     "prompt": "Das Lagerteam schlägt Möglichkeiten vor, Falschlieferungen zu vermeiden.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "type": "choice",
+     "prompt": "Zur Vermeidung von Fehlern",
+     "options": [
+      {
+       "key": "a",
+       "text": "soll bald mehr Personal eingestellt werden."
+      },
+      {
+       "key": "b",
+       "text": "sollen ähnliche Waren im Lager nicht nebeneinanderstehen."
+      },
+      {
+       "key": "c",
+       "text": "werden die langen Artikelnummern gekürzt."
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "type": "truefalse",
+     "prompt": "Frau Denkler ist bei einer Schneiderei angestellt.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "type": "choice",
+     "prompt": "Frau Denkler",
+     "options": [
+      {
+       "key": "a",
+       "text": "arbeitet mit den verschiedensten Arten von Stoffen."
+      },
+      {
+       "key": "b",
+       "text": "braucht für ihre Arbeit viele unterschiedliche Nähprogramme."
+      },
+      {
+       "key": "c",
+       "text": "sucht nach einer mechanischen Nähmaschine für Änderungsschneidereien."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt11-hoeren-t2",
+   "label": "Hören Teil 2",
+   "page": 13,
+   "kind": "ohne-key",
+   "optionsLabel": "Aussagen",
+   "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch?",
+   "options": [
+    {
+     "key": "a",
+     "text": "Beschäftigte in Teilzeit sind zeitlich weniger flexibel als Vollzeitkräfte."
+    },
+    {
+     "key": "b",
+     "text": "Meistens arbeiten immer noch die Frauen wegen der Kinder Teilzeit."
+    },
+    {
+     "key": "c",
+     "text": "Teilzeitarbeit kann sich negativ auf die Karriere auswirken."
+    },
+    {
+     "key": "d",
+     "text": "Beschäftigte in Teilzeit arbeiten oft konzentrierter und effizienter."
+    },
+    {
+     "key": "e",
+     "text": "Das Leben lässt sich bei Teilzeitarbeit besser genießen."
+    },
+    {
+     "key": "f",
+     "text": "Die Rente wird durch Teilzeitarbeit geringer."
+    }
+   ],
+   "items": [
+    {
+     "n": 28,
+     "type": "choice",
+     "prompt": "Gespräch 1"
+    },
+    {
+     "n": 29,
+     "type": "choice",
+     "prompt": "Gespräch 2"
+    },
+    {
+     "n": 30,
+     "type": "choice",
+     "prompt": "Gespräch 3"
+    },
+    {
+     "n": 31,
+     "type": "choice",
+     "prompt": "Gespräch 4"
+    }
+   ]
+  },
+  {
+   "id": "mt11-hoeren-t3",
+   "label": "Hören Teil 3",
+   "page": 14,
+   "kind": "ohne-key",
+   "intro": "Sie hören gleich eine Präsentation. Dazu gibt es vier Aufgaben. Welche Lösung (a, b oder c) passt jeweils am besten?",
+   "items": [
+    {
+     "n": 32,
+     "type": "choice",
+     "prompt": "Die Versandabteilung",
+     "options": [
+      {
+       "key": "a",
+       "text": "arbeitet mit ihren drei Leuten momentan wenig professionell."
+      },
+      {
+       "key": "b",
+       "text": "hat es mit vielen Reklamationen und Retouren zu tun."
+      },
+      {
+       "key": "c",
+       "text": "ist für das wachsende Onlinegeschäft zu klein geworden."
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "type": "choice",
+     "prompt": "Das Logistikunternehmen CAREF",
+     "options": [
+      {
+       "key": "a",
+       "text": "ist insgesamt teurer als die eigene Versandabteilung."
+      },
+      {
+       "key": "b",
+       "text": "ist eine Gefahr für die Unabhängigkeit des Onlineshops."
+      },
+      {
+       "key": "c",
+       "text": "liefert die Waren erfahrungsgemäß nicht pünktlich."
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "type": "choice",
+     "prompt": "Durch die Auslagerung des Versands",
+     "options": [
+      {
+       "key": "a",
+       "text": "kann das Artikelangebot so bleiben, wie es ist."
+      },
+      {
+       "key": "b",
+       "text": "kann der Onlineshop im jetzigen Firmengebäude bleiben."
+      },
+      {
+       "key": "c",
+       "text": "können neue Leute für das Marketing eingestellt werden."
+      }
+     ]
+    },
+    {
+     "n": 35,
+     "type": "choice",
+     "prompt": "Die Mitarbeiterinnen und Mitarbeiter aus der Versandabteilung",
+     "options": [
+      {
+       "key": "a",
+       "text": "können nicht alle in der Firma weiterbeschäftigt werden."
+      },
+      {
+       "key": "b",
+       "text": "können zum Logistikunternehmen CAREF wechseln."
+      },
+      {
+       "key": "c",
+       "text": "sollen sich wegen ihrer Stellen an den Betriebsrat wenden."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt11-hoeren-t4",
+   "label": "Hören Teil 4",
+   "page": 15,
+   "kind": "ohne-key",
+   "intro": "Sie hören fünf telefonische Mitteilungen. Zu jeder Mitteilung gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 36,
+     "type": "choice",
+     "prompt": "Vivien",
+     "options": [
+      {
+       "key": "a",
+       "text": "braucht die Nummer von Herrn Sommer."
+      },
+      {
+       "key": "b",
+       "text": "hat das Flugzeug nach Köln verpasst."
+      },
+      {
+       "key": "c",
+       "text": "möchte, dass Luisa Herrn Sommer anruft."
+      }
+     ]
+    },
+    {
+     "n": 37,
+     "type": "choice",
+     "prompt": "Herr Safar",
+     "options": [
+      {
+       "key": "a",
+       "text": "bittet um Lieferung der Materialien für den Dachausbau."
+      },
+      {
+       "key": "b",
+       "text": "macht gerade die Jahresabrechnung der Firma."
+      },
+      {
+       "key": "c",
+       "text": "weist auf eine fehlerhafte Überweisung hin."
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "type": "choice",
+     "prompt": "Jan",
+     "options": [
+      {
+       "key": "a",
+       "text": "braucht schnell seinen Gesundheitsausweis."
+      },
+      {
+       "key": "b",
+       "text": "hatte die Kühlschranktemperatur falsch eingestellt."
+      },
+      {
+       "key": "c",
+       "text": "wurde gerade gesundheitlich untersucht."
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "type": "choice",
+     "prompt": "Frau Schmitz",
+     "options": [
+      {
+       "key": "a",
+       "text": "bittet um gründliche Kontrolle des Lieferscheins."
+      },
+      {
+       "key": "b",
+       "text": "möchte die Bestellung schon Donnerstag schicken."
+      },
+      {
+       "key": "c",
+       "text": "teilt Frau Kowalski einen genauen Liefertermin mit."
+      }
+     ]
+    },
+    {
+     "n": 40,
+     "type": "choice",
+     "prompt": "Jonathan",
+     "options": [
+      {
+       "key": "a",
+       "text": "darf das Restaurant nach draußen erweitern."
+      },
+      {
+       "key": "b",
+       "text": "ist es egal, wie viel die Möbel kosten."
+      },
+      {
+       "key": "c",
+       "text": "möchte, dass Anna einen Möbelprospekt besorgt."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt11-hoeren-und-schreiben",
+   "label": "Hören und Schreiben",
+   "page": 16,
+   "kind": "ohne-key",
+   "intro": "Sie hören eine telefonische Mitteilung. Wählen Sie die richtige Lösung (a, b oder c) für Aufgabe 41. Die Notizen 42–45 gehören zum Schreibteil und sind hier nicht enthalten.",
+   "items": [
+    {
+     "n": 41,
+     "type": "choice",
+     "prompt": "Grund für den Anruf",
+     "options": [
+      {
+       "key": "a",
+       "text": "Angebot"
+      },
+      {
+       "key": "b",
+       "text": "Bestellung/Buchung"
+      },
+      {
+       "key": "c",
+       "text": "Beschwerde"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt11-sprachbausteine-t1",
+   "label": "Sprachbausteine Teil 1",
+   "page": 17,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Text. Welches Wort (a–j) passt in jede Lücke (46–51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Betreff: Mein Vorstellungsgespräch vom 15.09.\n\nSehr geehrte Frau Held,\n\n46 ( ) vielen Dank für die ausgesprochen angenehme Atmosphäre bei meinem Vorstellungsgespräch. Ich habe mich sehr wohlgefühlt. Beeindruckt hat mich, 47 ( ) Sie das Gespräch auf Augenhöhe geführt haben und ein professioneller Vergleich Ihrer und meiner beruflichen Vorstellungen im Vordergrund stand.\n\nDas Gespräch hat meinen Wunsch bestärkt, bei Ihnen tätig zu werden. Besonders Ihre Ausführungen zum Unternehmen, 48 ( ) zur Unternehmenskultur, haben mich sehr überzeugt. Ich bin davon überzeugt, dass ich Ihren Vorstellungen entspreche und mir die Arbeit in Ihrem Hotelrestaurant große Freude bereiten wird. Sehr gern würde ich Teil Ihres Teams werden.\n\n49 ( ) möchte ich mich über den aktuellen Stand des Verfahrens informieren. Ich würde gern wissen, ob Sie schon abschätzen können, 50 ( ) eine Entscheidung fallen wird.\n\n51 ( ) Sie noch weitere Informationen oder Unterlagen zu meiner Bewerbung benötigen, können Sie sich jederzeit entweder per E-Mail oder telefonisch an mich wenden. Ich freue mich darauf, bald von Ihnen zu hören.\n\nMit freundlichen Grüßen\nMert Erol",
+   "options": [
+    {
+     "key": "a",
+     "text": "DARÜBER"
+    },
+    {
+     "key": "b",
+     "text": "DASS"
+    },
+    {
+     "key": "c",
+     "text": "DENN"
+    },
+    {
+     "key": "d",
+     "text": "DESHALB"
+    },
+    {
+     "key": "e",
+     "text": "NOCHMALS"
+    },
+    {
+     "key": "f",
+     "text": "SEHR"
+    },
+    {
+     "key": "g",
+     "text": "VOR ALLEM"
+    },
+    {
+     "key": "h",
+     "text": "WANN"
+    },
+    {
+     "key": "i",
+     "text": "WEIL"
+    },
+    {
+     "key": "j",
+     "text": "WENN"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "46 ( ) vielen Dank für die ausgesprochen angenehme Atmosphäre bei meinem Vorstellungsgespräch.",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "46 ( ) vielen Dank für die ausgesprochen angenehme Atmosphäre bei meinem Vorstellungsgespräch.",
+     "explain": "«Nochmals vielen Dank» es la fórmula fija para agradecer otra vez; encaja al inicio de la carta y con el sustantivo «Dank».",
+     "explain_ru": "«Nochmals vielen Dank» — устойчивая формула повторной благодарности; подходит к началу письма и существительному «Dank»."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "Beeindruckt hat mich, 47 ( ) Sie das Gespräch auf Augenhöhe geführt haben",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Beeindruckt hat mich, 47 ( ) Sie das Gespräch auf Augenhöhe geführt haben",
+     "explain": "Tras «Beeindruckt hat mich» se abre una subordinada con «dass»: me impresionó que usted dirigiera la conversación de igual a igual.",
+     "explain_ru": "После «Beeindruckt hat mich» идёт придаточное с «dass»: меня впечатлило, что вы вели разговор на равных."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "Besonders Ihre Ausführungen zum Unternehmen, 48 ( ) zur Unternehmenskultur, haben mich sehr überzeugt.",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "Besonders Ihre Ausführungen zum Unternehmen, 48 ( ) zur Unternehmenskultur, haben mich sehr überzeugt.",
+     "explain": "«vor allem» refuerza el segundo elemento de la enumeración: sus explicaciones sobre la empresa y, sobre todo, sobre la cultura corporativa.",
+     "explain_ru": "«vor allem» усиливает второй элемент перечисления: объяснения о фирме и прежде всего о корпоративной культуре."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "49 ( ) möchte ich mich über den aktuellen Stand des Verfahrens informieren.",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "49 ( ) möchte ich mich über den aktuellen Stand des Verfahrens informieren.",
+     "explain": "«Deshalb» enlaza con lo dicho antes: por eso quiere informarse ahora del estado del proceso. «Denn» y «weil» no pueden abrir esta oración con inversión.",
+     "explain_ru": "«Deshalb» связывает со сказанным раньше: поэтому теперь хочет узнать о состоянии процесса. «Denn» и «weil» не могут открывать это предложение с инверсией."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "Ich würde gern wissen, ob Sie schon abschätzen können, 50 ( ) eine Entscheidung fallen wird.",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "ob Sie schon abschätzen können, 50 ( ) eine Entscheidung fallen wird.",
+     "explain": "Se pregunta por el momento: «wann eine Entscheidung fallen wird» (cuándo se tomará una decisión).",
+     "explain_ru": "Спрашивают о времени: «wann eine Entscheidung fallen wird» (когда будет принято решение)."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "51 ( ) Sie noch weitere Informationen oder Unterlagen zu meiner Bewerbung benötigen, können Sie sich jederzeit an mich wenden.",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "51 ( ) Sie noch weitere Informationen oder Unterlagen zu meiner Bewerbung benötigen",
+     "explain": "Condicional con «wenn»: si necesita más información o documentos, puede contactarme. «Weil» sería causal y no encaja.",
+     "explain_ru": "Условное с «wenn»: если нужна дополнительная информация или документы, можно связаться. «Weil» было бы причинным и не подходит."
+    }
+   ]
+  },
+  {
+   "id": "mt11-sprachbausteine-t2",
+   "label": "Sprachbausteine Teil 2",
+   "page": 18,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welcher Ausdruck (a, b oder c) passt in jede Lücke (52–57)?",
+   "passageOpen": true,
+   "passage": "Ihr Schreiben Nr. 9274885 vom 12.04.20XX — Unser Angebot „Telefonanlage AllTel 3000“, Angebotsnr. 943726\n\nSehr geehrter Herr Schwan,\n\nvielen Dank für 52 ( ) vom 12.04.20XX. 53 ( ) erhalten Sie das gewünschte Angebot für eine virtuelle Telefonanlage, um die Kommunikation in Ihrem Unternehmen zu optimieren. Die AllTel 3000 ist eine softwarebasierte Telefonanlage und ermöglicht Telefonieren über Cloud. 54 ( ) alle Funktionen herkömmlicher Telefonanlagen.\n\n55 ( ) können Sie den genauen Funktionsumfang der für Sie zusammengestellten Telefonanlage entnehmen. Zu diesem gehören neben Standardfunktionen wie Rufnummernumleitungen und Konferenzschaltungen auch die Möglichkeit, Voicemails zu versenden, ein Fax per E-Mail zu empfangen oder Videokonferenzen durchzuführen.\n\nFalls sich unsere Preiskalkulation außerhalb Ihrer Preisvorstellungen bewegt, können wir das Angebot 56 ( ). Wir könnten die Telefonanlage spätestens vier Wochen 57 ( ).\n\nDarf ich Sie Montagvormittag anrufen, um noch offene Fragen zu klären? Über die Erteilung des Auftrags würden wir uns sehr freuen und wir versichern Ihnen eine professionelle und termingerechte Ausführung.\n\nMit freundlichen Grüßen\nPeter Miller",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "vielen Dank für 52 ( ) vom 12.04.20XX.",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihre Anfrage"
+      },
+      {
+       "key": "b",
+       "text": "Ihren Antrag"
+      },
+      {
+       "key": "c",
+       "text": "Ihren Auftrag"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "vielen Dank für 52 ( ) vom 12.04.20XX.",
+     "explain": "La carta responde a una consulta previa del cliente: «Ihre Anfrage» (su consulta). El pedido aún no se ha hecho; por eso no es «Auftrag».",
+     "explain_ru": "Письмо отвечает на предыдущий запрос клиента: «Ihre Anfrage» (ваш запрос). Заказ ещё не сделан, поэтому не «Auftrag»."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "53 ( ) erhalten Sie das gewünschte Angebot für eine virtuelle Telefonanlage",
+     "options": [
+      {
+       "key": "a",
+       "text": "Aufgrund Ihrer Bestätigung"
+      },
+      {
+       "key": "b",
+       "text": "In der Anlage"
+      },
+      {
+       "key": "c",
+       "text": "Mit der Zusage"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "53 ( ) erhalten Sie das gewünschte Angebot für eine virtuelle Telefonanlage",
+     "explain": "«In der Anlage erhalten Sie …» es la fórmula para anunciar un documento adjunto: el presupuesto va adjunto.",
+     "explain_ru": "«In der Anlage erhalten Sie …» — формула для объявления вложения: предложение приложено."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Die AllTel 3000 ist eine softwarebasierte Telefonanlage und ermöglicht Telefonieren über Cloud. 54 ( ) alle Funktionen herkömmlicher Telefonanlagen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "Sie bietet"
+      },
+      {
+       "key": "b",
+       "text": "Sie bekommt"
+      },
+      {
+       "key": "c",
+       "text": "Sie erhält"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "54 ( ) alle Funktionen herkömmlicher Telefonanlagen.",
+     "explain": "El sujeto es la centralita AllTel 3000: «Sie bietet alle Funktionen» (ofrece todas las funciones). «Bekommt/erhält» significaría que las recibe, no que las tiene.",
+     "explain_ru": "Подлежащее — телефонная станция AllTel 3000: «Sie bietet alle Funktionen» (предлагает все функции). «Bekommt/erhält» означало бы, что она их получает."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "55 ( ) können Sie den genauen Funktionsumfang der für Sie zusammengestellten Telefonanlage entnehmen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "Dem angefügten Prospekt"
+      },
+      {
+       "key": "b",
+       "text": "Dem versandten Schreiben"
+      },
+      {
+       "key": "c",
+       "text": "Den beiliegenden Unterlagen"
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "55 ( ) können Sie den genauen Funktionsumfang der für Sie zusammengestellten Telefonanlage entnehmen.",
+     "explain": "«Den beiliegenden Unterlagen … entnehmen» (sacar la información de los documentos adjuntos) es la fórmula habitual. El prospekto también sería posible en dativo, pero el texto habla de varios documentos adjuntos; de ahí la confianza media.",
+     "explain_ru": "«Den beiliegenden Unterlagen … entnehmen» (взять информацию из приложенных документов) — обычная формула. Проспект в дательном тоже был бы возможен, но в тексте речь о нескольких документах; поэтому уверенность средняя."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "Falls sich unsere Preiskalkulation außerhalb Ihrer Preisvorstellungen bewegt, können wir das Angebot 56 ( ).",
+     "options": [
+      {
+       "key": "a",
+       "text": "gern anpassen"
+      },
+      {
+       "key": "b",
+       "text": "Ihnen unterbreiten"
+      },
+      {
+       "key": "c",
+       "text": "nicht zurücknehmen"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "können wir das Angebot 56 ( ).",
+     "explain": "Si el precio no encaja, la empresa puede «anpassen» (ajustar) el presupuesto. «Unterbreiten» sería presentarlo, pero ya va adjunto; «nicht zurücknehmen» contradice la cortesía.",
+     "explain_ru": "Если цена не подходит, фирма может «anpassen» (скорректировать) предложение. «Unterbreiten» — представить, но оно уже приложено; «nicht zurücknehmen» противоречит вежливости."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Wir könnten die Telefonanlage spätestens vier Wochen 57 ( ).",
+     "options": [
+      {
+       "key": "a",
+       "text": "nach Auftragserteilung liefern"
+      },
+      {
+       "key": "b",
+       "text": "nach Ihrer Zusage herstellen"
+      },
+      {
+       "key": "c",
+       "text": "vor der Lieferung bestellen"
+      }
+     ],
+     "answer": "a",
+     "confidence": "mittel",
+     "quote": "Wir könnten die Telefonanlage spätestens vier Wochen 57 ( ).",
+     "explain": "Lo natural es fijar el plazo de entrega: «spätestens vier Wochen nach Auftragserteilung liefern» (entregar como máximo cuatro semanas después del pedido). «Herstellen» también sería gramatical, pero encaja peor con una centralita de software ya ofertada.",
+     "explain_ru": "Естественно указать срок поставки: «spätestens vier Wochen nach Auftragserteilung liefern» (поставить не позднее чем через четыре недели после заказа). «Herstellen» грамматически возможно, но хуже подходит для уже предложенной программной станции."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.2–18: texto reconstruido desde OCR de un PDF escaneado; se corrigen tildes diacríticas y erratas evidentes del OCR.",
+  "Las respuestas de Lesen y Sprachbausteine son deducidas: el PDF no incluye Lösungsschlüssel.",
+  "Hören (22–41) va sin clave: el PDF no trae audio ni transcripción."
+ ]
+}

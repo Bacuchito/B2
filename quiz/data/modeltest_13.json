@@ -1,0 +1,1255 @@
+{
+ "block": "modeltest_13",
+ "section": "modeltest-13",
+ "variants": [
+  {
+   "id": "mt13-lesen-t1",
+   "label": "Lesen Teil 1",
+   "page": 3,
+   "kind": "zuordnung",
+   "intro": "Sie lesen online in einer Wirtschaftszeitung und möchten Ihren Freunden einige Artikel schicken. Entscheiden Sie, welcher Artikel a–h zu welcher Person 1–5 passt.",
+   "optionsLabel": "Artikel",
+   "options": [
+    {
+     "key": "a",
+     "title": "Unter der Lupe: Berufe für Menschen mit Fantasie",
+     "text": "Designerin, Spieleentwickler, Goldschmied, Mediengestalterin: Es gibt für fantasievolle Menschen viele Möglichkeiten, einen passenden Beruf zu finden. Für nicht alle diese Tätigkeiten braucht man eine formale Ausbildung. Wir stellen Ihnen die Top-Jobs vor.",
+     "distractor": ""
+    },
+    {
+     "key": "b",
+     "title": "Kundenwünsche im Online-Handel",
+     "text": "Wussten Sie, dass 62 % aller Verbraucher einen Bestellvorgang im Online-Handel abbrechen, weil ihnen die Versandkosten zu hoch sind? Unser Beitrag befasst sich mit Kundenwünschen an Online-Plattformen und wie Sie als Händler diese Wünsche besser erfüllen können.",
+     "distractor": "Trata de lo que quieren los clientes al comprar por internet. Se confunde con Franz por el comercio online, pero no explica cómo ampliar un negocio a la venta por internet."
+    },
+    {
+     "key": "c",
+     "title": "Die 10 besten Homepage-Baukästen",
+     "text": "Ob Online-Handel oder Geschäft in der City: Man braucht immer eine technisch einwandfrei funktionierende Webseite. Die kostet und selbst machen lohnt sich! Lesen Sie unser Ranking der besten Do-it-yourself Anleitungen für Webseiten.",
+     "distractor": ""
+    },
+    {
+     "key": "d",
+     "title": "Studium, Ausbildung oder Quereinstieg?",
+     "text": "Viele, die heute erfolgreich als Programmierer arbeiten, haben ihren Beruf dadurch gelernt, dass sie ihn einfach machen. Allerdings ist eine Ausbildung in diesem Beruf der sicherere Weg zu einer Karriere als Programmierer. Welcher Weg für Sie der richtige sein kann, erfahren Sie in diesem Insider-Bericht von Franz Ball.",
+     "distractor": ""
+    },
+    {
+     "key": "e",
+     "title": "Kreativer Gründer: Zusätzliches Standbein für Start-ups",
+     "text": "Benni Wagner, der Gründer des erfolgreichen Online-Start-ups hot-soup.com erzählt, wie er seinem Geschäft im Internet eine zweite Verdienstquelle durch den Verkauf über die traditionelle Ladentheke erschlossen hat - und wie er damit mehr Umsatz als beim Online-Handel macht.",
+     "distractor": "Cuenta el caso de un fundador que añadió una tienda física a su negocio online. Se confunde con Franz por el comercio online, pero va en la dirección contraria: de internet a la tienda."
+    },
+    {
+     "key": "f",
+     "title": "Schnellstart Vertrieb übers Internet",
+     "text": "Immer mehr Menschen kaufen nicht mehr an der Ladentheke, sondern bestellen vom heimischen Computer aus. Professor Wendel von Struntz stellt außergewöhnliche Verkaufs-Plattformen im Internet vor und gibt Einsteigern in den Online-Handel eine praktische Anleitung - lesenswert!",
+     "distractor": ""
+    },
+    {
+     "key": "g",
+     "title": "„Du schaffst das!“ Umgang mit dem Karriereknick",
+     "text": "Wer hatte nicht schon einmal das Gefühl, sich beruflich im Kreis zu drehen oder im Job keine Zukunft zu haben? Allen, die sich die Frage stellen, warum eine Beförderung auf sich warten lässt, sei das Buch von Sanna Nickel empfohlen. Sie zeigt Wege aus der Sackgasse.",
+     "distractor": ""
+    },
+    {
+     "key": "h",
+     "title": "Lena fragt! Beruf oder Berufung?",
+     "text": "Lena Kudruff stellt jungen Menschen Fragen: Was genau machst du in deinem Beruf? Was begeistert dich an deinem Beruf? Erfahren Sie alles über Berufe, für die man sich in Deutschland ausbilden lassen kann, und machen Sie am Ende einen Berufseignungstest.",
+     "distractor": "Ofrece un test de orientación profesional y presenta oficios. Se confunde con Almin porque también ayuda a elegir profesión, pero no compara formación, estudio y acceso lateral."
+    }
+   ],
+   "items": [
+    {
+     "n": 1,
+     "type": "choice",
+     "prompt": "Almin überlegt, welche Ausbildung zu ihm passt.",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Welcher Weg für Sie der richtige sein kann, erfahren Sie in diesem Insider-Bericht von Franz Ball.",
+     "explain": "El artículo d compara estudio, formación profesional y acceso lateral para ser programador y dice qué camino es el adecuado en cada caso: justo la duda de Almin.",
+     "explain_ru": "Статья d сравнивает учёбу, профессиональное обучение и смену профессии для программиста и говорит, какой путь подходит: именно этот вопрос у Альмина."
+    },
+    {
+     "n": 2,
+     "type": "choice",
+     "prompt": "Franz möchte sein Geschäft um Online-Handel erweitern.",
+     "answer": "f",
+     "confidence": "mittel",
+     "quote": "gibt Einsteigern in den Online-Handel eine praktische Anleitung",
+     "explain": "El artículo f es una guía práctica para quien empieza a vender por internet, que es lo que busca Franz. El artículo b también habla de comercio online, pero solo de los deseos de los clientes; de ahí la confianza media.",
+     "explain_ru": "Статья f — практическое руководство для тех, кто начинает торговать в интернете, это и нужно Францу. Статья b тоже о онлайн-торговле, но лишь о пожеланиях клиентов; поэтому уверенность средняя."
+    },
+    {
+     "n": 3,
+     "type": "choice",
+     "prompt": "Monique interessiert sich für kreative Berufe.",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Es gibt für fantasievolle Menschen viele Möglichkeiten, einen passenden Beruf zu finden.",
+     "explain": "El artículo a presenta oficios para gente con imaginación (diseño, videojuegos, joyería, diseño de medios), que es el campo creativo que interesa a Monique.",
+     "explain_ru": "Статья a представляет профессии для людей с фантазией (дизайн, игры, ювелирное дело, медиадизайн) — именно творческая сфера, которая интересна Моник."
+    },
+    {
+     "n": 4,
+     "type": "choice",
+     "prompt": "Asra fragt sich, warum sie beruflich nicht weiterkommt.",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "Allen, die sich die Frage stellen, warum eine Beförderung auf sich warten lässt, sei das Buch von Sanna Nickel empfohlen.",
+     "explain": "El artículo g trata del estancamiento profesional y del libro que explica por qué no llega el ascenso; responde a la pregunta de Asra.",
+     "explain_ru": "Статья g посвящена застою в профессии и книге о том, почему не приходит повышение; это отвечает на вопрос Асры."
+    },
+    {
+     "n": 5,
+     "type": "choice",
+     "prompt": "Xaver braucht eine Webseite für seine Firma.",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Man braucht immer eine technisch einwandfrei funktionierende Webseite.",
+     "explain": "El artículo c clasifica las mejores herramientas para hacer una página web uno mismo, que es lo que necesita Xaver para su empresa.",
+     "explain_ru": "Статья c ранжирует лучшие конструкторы сайтов для самостоятельной работы — это и нужно Ксаверу для его фирмы."
+    }
+   ]
+  },
+  {
+   "id": "mt13-lesen-t2",
+   "label": "Lesen Teil 2",
+   "page": 5,
+   "kind": "text",
+   "intro": "Lesen Sie die Texte und die Aufgaben 6–9. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Willkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nText 1 — Essensgutscheine\n\nUm in der Mittagspause vergünstigt zu essen, können Sie Gutscheine im Wert von 6,50 € erwerben. Diese sind uneingeschränkt in unserer Cafeteria sowie im Restaurant Krönchen in der Sigmundstraße 12 einlösbar, dort allerdings nur für das Tagesmenü.\n\nSie können die Essensgutscheine über unser Internetportal anfordern. Geben Sie bis zum 25. jeden Monats die Anzahl der Gutscheine an, die Sie für den Folgemonat einlösen möchten. Die Abrechnung erfolgt über die Gehaltsabrechnung. Gutscheine, die Sie nicht einlösen, sind auch in den nächsten Monaten noch gültig. Bis jeweils zum Donnerstag der Vorwoche müssen Sie außerdem angeben, welche Mittagsmenüs Sie in der folgenden Woche in der Cafeteria essen möchten. Eine kurzfristige Abmeldung ist bis 10:30 Uhr am Vortag möglich, dies sollte aber nicht zur Regel werden, da die Küche planen muss.\n\nBitte beachten Sie, dass die Gutscheine nur durch Mitarbeiter eingelöst werden dürfen. Für Geschäftsbesuch sind Gästekarten über die jeweilige Assistenz oder direkt in der Personalabteilung erhältlich.\n\nText 2 — Arbeitszeit und Arbeitszeitgestaltung\n\nDie wöchentliche Arbeitszeit in der Produktion beträgt 36,5 Stunden. Für den Verwaltungsbereich gelten 39 Stunden. Sollte mit Ihnen arbeitsvertraglich eine andere Wochenarbeitszeit vereinbart worden sein oder Sie in Teilzeit arbeiten, gelten dennoch die in Ihrem Arbeitsbereich üblichen Arbeitszeitregelungen wie Arbeitsantritt und Pausenzeiten.\n\nVon Ihnen geleistete Mehrarbeit wird auf Ihrem Arbeitszeitkonto gutgeschrieben. Nach Absprache mit Ihrer Teamleitung können Sie einen Freizeitausgleich vornehmen. Urlaubsanträge reichen Sie bitte ebenfalls für das gesamte Jahr dort ein.\n\nAls einer der ersten Arbeitgeber in der Region haben wir als Instrument der flexiblen Arbeitszeitgestaltung das Sabbatical eingeführt. Das Sabbatical ist eine befristete Unterbrechung des Arbeitslebens, die von drei Monaten bis zu einem Jahr reichen kann. Das Arbeitsentgelt in dieser Zeit kann durch unterschiedliche Möglichkeiten finanziert werden, z. B. durch freiwilligen Lohnverzicht, die Umwandlung in eine Teilzeitbeschäftigung oder das Ansparen von Arbeitszeitguthaben. Stimmt die Geschäftsleitung zu, kann das Sabbatical beliebig oft wiederholt werden. Nach Ihrer Rückkehr tritt Ihr ursprünglicher Arbeitsvertrag wieder in Kraft und Sie werden in der gleichen Position weiterbeschäftigt. Weitere Informationen zu diesem Angebot erhalten Sie im Personalbüro. Falls Sie sich zu diesem Schritt entscheiden, sprechen Sie bitte unsere Juniorchefin Renate Schrader an.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Das Mittagessen muss in der Woche vorher gewählt werden.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "Bis jeweils zum Donnerstag der Vorwoche müssen Sie außerdem angeben, welche Mittagsmenüs Sie in der folgenden Woche in der Cafeteria essen möchten.",
+     "explain": "«Richtig»: el menú se elige hasta el jueves de la semana anterior para toda la semana siguiente, así que la elección es previa.",
+     "explain_ru": "«Richtig»: меню выбирают до четверга предыдущей недели на следующую неделю, то есть заранее."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Die Gutscheine für das vergünstigte Essen",
+     "options": [
+      {
+       "key": "a",
+       "text": "kann man am Monatsende abholen."
+      },
+      {
+       "key": "b",
+       "text": "sind nur für Angestellte der Firma erhältlich."
+      },
+      {
+       "key": "c",
+       "text": "verfallen nach einem Monat."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Bitte beachten Sie, dass die Gutscheine nur durch Mitarbeiter eingelöst werden dürfen.",
+     "explain": "La frase limita los vales al personal: para visitas de negocios hay tarjetas de invitado aparte. La a confunde el plazo de pedido (hasta el día 25) con una recogida a fin de mes; la c es falsa porque los vales siguen valiendo meses después.",
+     "explain_ru": "Фраза ограничивает талоны сотрудниками: для деловых гостей есть отдельные гостевые карты. a путает срок заказа (до 25-го) с выдачей в конце месяца; c неверно: талоны действуют и в следующие месяцы."
+    },
+    {
+     "n": 8,
+     "type": "truefalse",
+     "prompt": "In diesem Betrieb gibt es unterschiedliche Arbeitszeitmodelle.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "Die wöchentliche Arbeitszeit in der Produktion beträgt 36,5 Stunden. Für den Verwaltungsbereich gelten 39 Stunden.",
+     "explain": "«Richtig»: producción trabaja 36,5 horas y administración 39, y además existen el trabajo a tiempo parcial, la compensación de horas y el sabbatical.",
+     "explain_ru": "«Richtig»: в производстве 36,5 часа, в администрации 39, плюс неполный день, компенсация часов и саббатикал."
+    },
+    {
+     "n": 9,
+     "type": "choice",
+     "prompt": "Wer ein Sabbatical macht,",
+     "options": [
+      {
+       "key": "a",
+       "text": "arbeitet zwei Monate weniger im Jahr."
+      },
+      {
+       "key": "b",
+       "text": "kehrt danach an den alten Arbeitsplatz zurück."
+      },
+      {
+       "key": "c",
+       "text": "verdient in dieser Zeit kein Geld."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Nach Ihrer Rückkehr tritt Ihr ursprünglicher Arbeitsvertrag wieder in Kraft und Sie werden in der gleichen Position weiterbeschäftigt.",
+     "explain": "Al volver, el contrato original recupera su vigencia y la persona sigue en el mismo puesto. La a confunde la duración (de tres meses a un año) y la c es falsa: el sueldo se financia de varias formas.",
+     "explain_ru": "После возвращения прежний договор снова действует, и человек остаётся на той же должности. a путает длительность (от трёх месяцев до года), c неверно: зарплата финансируется разными способами."
+    }
+   ]
+  },
+  {
+   "id": "mt13-lesen-t3",
+   "label": "Lesen Teil 3",
+   "page": 7,
+   "kind": "zuordnung",
+   "allowNone": true,
+   "intro": "Lesen Sie die Fragen 10–13 und die Texte a–f. Welche Frage passt zu welchem Tipp? Für eine Frage gibt es keinen passenden Tipp; markieren Sie dafür ein x.",
+   "optionsLabel": "Tipps",
+   "options": [
+    {
+     "key": "a",
+     "title": "Verena",
+     "text": "Ich habe auch gekündigt und war davor wie du in einem absoluten Gefühlschaos. Tue ich das Richtige? Was, wenn ich nach so langer Betriebszugehörigkeit keinen neuen Job finde? Ich war danach dann auch ziemlich lange arbeitslos, aber bereut habe ich es keine Sekunde."
+    },
+    {
+     "key": "b",
+     "title": "Alexej",
+     "text": "Wer redet Ihnen denn so etwas ein? Wer ein Kind erwartet und zur Welt bringt, hat auch im Arbeitsleben Rechte! Selbstverständlich gilt für Sie das Mutterschutzgesetz und Sie können Ihren Job nicht verlieren. Hier können Sie nachfragen: info@bmfsfjservice.bund.de"
+    },
+    {
+     "key": "c",
+     "title": "Lale",
+     "text": "Vorgesetzte sind auch nur Menschen und niemand kündigt gerne. Meine Empfehlung: Sie sind nicht verpflichtet, ein Trennungsgespräch zu führen, aber machen Sie es und erklären Sie die Gründe, bevor die schriftliche Kündigung rausgeht."
+    },
+    {
+     "key": "d",
+     "title": "Fritz",
+     "text": "Wenn Sie Ihr Arbeitsverhältnis lösen möchten, dann müssen Sie das fristgerecht und schriftlich tun. Selbstverständlich brauchen Sie keine Gründe zu nennen. In Ihrem Fall können Sie ja zuerst mit Ihrer Vorgesetzten sprechen und erklären, dass Sie private Motive haben, dann ist niemand gekränkt."
+    },
+    {
+     "key": "e",
+     "title": "Bettina",
+     "text": "Nicht immer ist eine Kündigung rechtens! Besonders langjährige Arbeitnehmer genießen einen allgemeinen Kündigungsschutz. Und bestimmte Personengruppen, zum Beispiel Schwangere, haben erweiterten Schutz nach dem Sonderkündigungsgesetz."
+    },
+    {
+     "key": "f",
+     "title": "Tino",
+     "text": "Ich habe in meiner Firma schon früh Bescheid gesagt, dass wir Nachwuchs erwarten. Aber da ich Zwillinge bekomme, war es auch ziemlich schnell zu sehen. Der Gesetzgeber schreibt keine Fristen vor. Machen Sie es aber bald, damit man für Sie eine Vertretung suchen kann."
+    }
+   ],
+   "items": [
+    {
+     "n": 10,
+     "type": "choice",
+     "prompt": "Ansgar: Ich arbeite seit Kurzem in leitender Position und muss jetzt das erste Mal einen Mitarbeiter entlassen. Der Angestellte ist älter als ich und arbeitet schon sehr lange in der Firma. Ich kenne natürlich die gesetzlichen Vorgaben und Fristen, weiß aber nicht, wie ich in dem Fall am besten vorgehen soll. Kann mir jemand einen Rat geben?",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Meine Empfehlung: Sie sind nicht verpflichtet, ein Trennungsgespräch zu führen, aber machen Sie es und erklären Sie die Gründe, bevor die schriftliche Kündigung rausgeht.",
+     "explain": "Ansgar sabe la ley pero no cómo actuar; Lale le aconseja justamente la parte práctica: hablar primero con la persona y explicar los motivos antes de entregar la carta.",
+     "explain_ru": "Ансгар знает закон, но не знает, как действовать; Лале советует именно практическую часть: сначала поговорить и объяснить причины до вручения письма."
+    },
+    {
+     "n": 11,
+     "type": "choice",
+     "prompt": "Will: Hallo liebe Forumsmitglieder! Ich stehe noch unter Schock. Soeben ist mir in der Probezeit gekündigt worden. Ich bin schon fünf Monate im Betrieb und noch letzte Woche hat man mich gelobt. Was mache ich jetzt?",
+     "answer": "x",
+     "confidence": "mittel",
+     "quote": "",
+     "explain": "Ningún tipp responde a un despido durante el periodo de prueba. Bettina habla de protección de trabajadores con muchos años en la empresa y de embarazadas, Verena de una baja voluntaria y Fritz de cómo redactar tu propia carta de dimisión.",
+     "explain_ru": "Ни один совет не отвечает на увольнение в испытательный срок. Беттина говорит о защите давних сотрудников и беременных, Верена — о добровольном уходе, Фриц — о том, как написать собственное заявление."
+    },
+    {
+     "n": 12,
+     "type": "choice",
+     "prompt": "Bahar: Weiß jemand Bescheid? Ich bin in der achten Woche schwanger und frage mich, wann ich das meinem Arbeitgeber mitteilen muss. Eigentlich wollte ich warten, bis ich im vierten Monat bin, aber jetzt habe ich gehört, dass das zu spät ist. Stimmt das? Ich möchte durch meine Schwangerschaft keine Nachteile in meinem Job!",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Der Gesetzgeber schreibt keine Fristen vor. Machen Sie es aber bald, damit man für Sie eine Vertretung suchen kann.",
+     "explain": "Bahar pregunta por el plazo para comunicar el embarazo y Tino responde exactamente eso: no hay plazo legal, pero conviene avisar pronto. Alexej (b) habla de derechos, no del momento de avisar.",
+     "explain_ru": "Бахар спрашивает о сроке сообщения о беременности, и Тино отвечает именно на это: законного срока нет, но лучше сообщить рано. Алексею (b) говорит о правах, а не о моменте."
+    },
+    {
+     "n": 13,
+     "type": "choice",
+     "prompt": "Serena: Ich bin mit meiner Arbeit unzufrieden und langweile mich. Jetzt habe ich etwas Besseres in Aussicht und möchte kündigen. Meine Chefin war immer sehr bemüht, mich zu halten, und hat mir gerade den Lohn erhöht. Nun weiß ich nicht so richtig, wie ich das Kündigungsschreiben angemessen formulieren soll. Hat jemand einen Tipp für mich?",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Wenn Sie Ihr Arbeitsverhältnis lösen möchten, dann müssen Sie das fristgerecht und schriftlich tun.",
+     "explain": "Fritz explica cómo dimitir (por escrito y en plazo, sin dar motivos) y recomienda hablar antes con la jefa, que es la situación de Serena.",
+     "explain_ru": "Фриц объясняет, как уволиться (письменно и в срок, без причин), и советует сначала поговорить с начальницей — это ситуация Серены."
+    }
+   ]
+  },
+  {
+   "id": "mt13-lesen-t4",
+   "label": "Lesen Teil 4",
+   "page": 9,
+   "kind": "text",
+   "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Protokoll 30. Januar 20XX, 14.00–15.30 Uhr\nOrt: Besprechungsraum, Baseler Landstraße 158–162, 79342 Herbolzen\n\nAnwesende: Franz Schwacker (FS, Geschäftsführung), Metin Basel (MB, Assistenz Geschäftsführung), Samson Abdulkarim (SA, Leitung Vertrieb), Lothar Charrier (LC, Leitung Personal), Christian Celin (CC, Leitung Online-Vertrieb); Bertha Willmann (BW, Leitung Einkauf)\nSitzungsleitung: Franz Schwacker\nProtokollant: Metin Basel\n\nTagesordnungspunkte\n1 Begrüßung und Genehmigung des letzten Protokolls\n2 Verkaufszahlen\n3 Webshop\n4 Einführung Mitarbeiterkleidung\n5 Personelles\n6 Sonstiges\n\nTOP 1 Begrüßung und Genehmigung des letzten Protokolls\nFS begrüßt die Anwesenden und bittet um Genehmigung des Protokolls der letzten Sitzung. BW erhebt Einwände gegen TOP 3: Es wurden nicht wie angegeben zwei, sondern drei Vergleichsangebote zum Bau des neuen Gewächshauses eingeholt. Nach dieser Korrektur wird das Protokoll einstimmig genehmigt.\n\nTOP 2 Verkaufszahlen\nSA gibt einen Überblick über die Verkäufe im vergangenen Geschäftsjahr: Wie bisher standen mehrjährig blühende Pflanzen oben in der Rangliste der Verkäufe. Weiterhin ungeschlagen ganz vorne liegen die Schnittblumen, während sich die Zimmerpflanzen etwas geringer verkauft haben. Stärker eingebrochen dagegen sind die Verkaufszahlen bei den Orchideen. Die Überraschung des Jahres ist die Flamingoblume, die erst im Februar ins Sortiment aufgenommen wurde, und bereits auf Platz fünf der Verkäufe geklettert ist. SA berichtet insgesamt von einem positiven Ergebnis, obwohl die Absätze im vierten Quartal gegenüber dem ersten bis dritten Quartal gesunken sind.\n\nTOP 3 Webshop\nCC schlägt vor, auch für weitere Pflanzen zu prüfen, ob der Onlinehandel möglich ist. Nach seiner Einschätzung kämen dafür luftreinigende Pflanzen fürs Büro sowie Kakteen in Frage. SA wendet ein, dass sich der Verkauf von Pflanzen über das Internet durch den Aufwand für Verpackung und Versand bisher nicht gelohnt hat. Er empfiehlt, höchstens künstliche Blumen oder Trockenblumen ins Sortiment aufzunehmen. Nach kurzer Diskussion wird die Entscheidung über den Ausbau des Webshops auf das Frühjahr vertagt.\n\nTOP 4 Einführung Mitarbeiterkleidung\nLC berichtet vom Stimmungsbild unter den Mitarbeitenden zum Thema Einheitliche Mitarbeiterkleidung. Nahezu alle Befragten haben sich ablehnend geäußert. Es wird beschlossen, dass es außer im Verkauf bei der alten Regelung bleibt.\n\nTOP 5 Personelles\nLC informiert darüber, dass Zaccarias Özil am 1. August diesen Jahres bei uns seine Ausbildung zum Einzelhandelskaufmann beginnen wird. Herr Özil kennt unsere Firma schon von einem Schüler- und einem zweimonatigen betrieblichen Praktikum nach seinem Schulabschluss. LC betont, dass man im Betrieb einen sehr guten Eindruck von Herrn Özil gewonnen habe und besonders seine Fremdsprachenkenntnisse hilfreich eingebunden werden können.\n\nTOP 6 Sonstiges\nFS informiert über Probleme bei der Planung der Tage der Offenen Gärtnerei. Diese könnten in diesem Jahr nicht wie immer am ersten Mai-Wochenende stattfinden, da durch den Bau des neuen Gewächshauses noch nicht genug Schaufläche für die Fachbesucher zur Verfügung steht. Er schlägt für die Tage der Offenen Gärtnerei das zweite Wochenende im Juli vor. Nach Abstimmung wird das so beschlossen. Keine sonstigen Punkte durch die Teilnehmenden. Die nächste Sitzung findet am 28.02. statt.",
+   "items": [
+    {
+     "n": 14,
+     "type": "choice",
+     "prompt": "Das Protokoll der letzten Sitzung",
+     "options": [
+      {
+       "key": "a",
+       "text": "hat Frau Willmann geschrieben."
+      },
+      {
+       "key": "b",
+       "text": "musste korrigiert werden."
+      },
+      {
+       "key": "c",
+       "text": "wird in mehreren Punkten ergänzt."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Es wurden nicht wie angegeben zwei, sondern drei Vergleichsangebote zum Bau des neuen Gewächshauses eingeholt. Nach dieser Korrektur wird das Protokoll einstimmig genehmigt.",
+     "explain": "El acta anterior tenía un dato equivocado y hubo que corregirlo antes de aprobarlo. No lo escribió Frau Willmann: ella solo presentó la objeción; el protocolo lo redacta Metin Basel.",
+     "explain_ru": "В прежнем протоколе была ошибка, и его пришлось исправить до утверждения. Писал его не госпожа Вилльман: она лишь внесла возражение; протокол ведёт Метин Базель."
+    },
+    {
+     "n": 15,
+     "type": "choice",
+     "prompt": "Die Verkäufe",
+     "options": [
+      {
+       "key": "a",
+       "text": "einer neuen Pflanze waren unerwartet gut."
+      },
+      {
+       "key": "b",
+       "text": "für Schnittblumen haben sich positiv verändert."
+      },
+      {
+       "key": "c",
+       "text": "sind im vergangenen Jahr stark gefallen."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Die Überraschung des Jahres ist die Flamingoblume, die erst im Februar ins Sortiment aufgenommen wurde, und bereits auf Platz fünf der Verkäufe geklettert ist.",
+     "explain": "La Flamingoblume, incorporada en febrero, ya está en el quinto puesto: una sorpresa. Las flores cortadas siguen líderes sin cambio y el resultado global es positivo, no un desplome.",
+     "explain_ru": "Фламингоблум, появившийся в феврале, уже на пятом месте: это сюрприз. Срезанные цветы по-прежнему лидируют без изменений, а общий результат положительный."
+    },
+    {
+     "n": 16,
+     "type": "choice",
+     "prompt": "Der Handel über das Internet",
+     "options": [
+      {
+       "key": "a",
+       "text": "fängt jetzt erst an."
+      },
+      {
+       "key": "b",
+       "text": "macht noch keinen Gewinn."
+      },
+      {
+       "key": "c",
+       "text": "wird bald ausgebaut."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "dass sich der Verkauf von Pflanzen über das Internet durch den Aufwand für Verpackung und Versand bisher nicht gelohnt hat",
+     "explain": "La venta por internet no ha compensado hasta ahora por el embalaje y el transporte, es decir, no deja beneficio. La c es falsa porque la decisión sobre ampliar la tienda online se aplaza a la primavera.",
+     "explain_ru": "Продажа через интернет до сих пор не окупалась из-за упаковки и доставки, то есть прибыли нет. c неверно: решение о расширении интернет-магазина отложено до весны."
+    },
+    {
+     "n": 17,
+     "type": "choice",
+     "prompt": "Der neue Auszubildende",
+     "options": [
+      {
+       "key": "a",
+       "text": "beendet demnächst die Schule."
+      },
+      {
+       "key": "b",
+       "text": "ist das erste Mal im Betrieb."
+      },
+      {
+       "key": "c",
+       "text": "wird in sechs Monaten anfangen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Zaccarias Özil am 1. August diesen Jahres bei uns seine Ausbildung zum Einzelhandelskaufmann beginnen wird",
+     "explain": "La reunión es el 30 de enero y la formación empieza el 1 de agosto: seis meses. La b es falsa porque ya hizo dos prácticas en la empresa.",
+     "explain_ru": "Собрание 30 января, обучение начинается 1 августа: шесть месяцев. b неверно: он уже проходил две практики в фирме."
+    },
+    {
+     "n": 18,
+     "type": "choice",
+     "prompt": "Der Geschäftsführer",
+     "options": [
+      {
+       "key": "a",
+       "text": "berichtet von Problemen im Gewächshaus."
+      },
+      {
+       "key": "b",
+       "text": "plant im Sommer einen Geschäftsbesuch."
+      },
+      {
+       "key": "c",
+       "text": "verschiebt den Termin einer Veranstaltung."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Er schlägt für die Tage der Offenen Gärtnerei das zweite Wochenende im Juli vor. Nach Abstimmung wird das so beschlossen.",
+     "explain": "La jornada de puertas abiertas pasa del primer fin de semana de mayo al segundo de julio. La a confunde la causa: el problema es la falta de superficie de exposición por la obra, no un fallo del invernadero.",
+     "explain_ru": "День открытых дверей переносят с первых выходных мая на вторые выходные июля. a путает причину: проблема в нехватке площади из-за стройки, а не в самой теплице."
+    }
+   ]
+  },
+  {
+   "id": "mt13-lesen-us",
+   "label": "Lesen und Schreiben",
+   "page": 11,
+   "kind": "text",
+   "intro": "Ihre Teamleitung leitet Ihnen die E-Mail eines Kunden weiter und bittet Sie zu antworten. Welche Lösung (a, b oder c) passt am besten?",
+   "passage": "Ihre Teamleitung leitet Ihnen die E-Mail von einem Kunden weiter und bittet Sie zu antworten.\n\nErhalten: heute, 08:27 Uhr\nVon: Helena Nadal\nBetreff: Beschwerde: Schmutzige Duschen in Ihrem Fitnesscenter seit dem 1.04.\n\nHallo,\n\ndie unten stehende Mail habe ich gerade bekommen. Bitte kümmern Sie sich darum und antworten Sie der Kundin höflich. Ich möchte nicht, dass sie schlecht über uns und das Studio spricht. Und natürlich möchten wir sie auch nicht als Kundin verlieren.\nSchreiben Sie der Kundin ruhig, warum es bei uns diese Probleme gab. Sie können ihr auch etwas anbieten, damit sie nicht mehr so verärgert ist.\nVielen Dank und mit Grüßen.\n\nHelena Nadal\nTeamleiterin\n\nGesendet: heute, 08:14 Uhr\nVon: Zara Hafiz\nAn: Helena Nadal\nBetreff: Beschwerde: Schmutzige Duschen in Ihrem Fitnesscenter seit dem 1.04.\n\nSehr geehrte Frau Nadal,\n\nmeine Kolleginnen und ich besuchen seit mehreren Monaten Ihr Fitnesscenter. Wir nehmen zwei Mal in der Woche um 7:30 Uhr am Kurs Rückenfit teil. Unsere Trainerin Kasia ist qualifiziert und es lohnt sich, bei ihr zu trainieren.\nBisher waren wir mit allem sehr zufrieden, aber bei unseren letzten drei Besuchen lagen viele Haare in der Dusche und die Toiletten waren nicht geputzt. Das ist eklig! An den Waschbecken waren außerdem wiederholt die Seifenspender leer und es gab keine Papierhandtücher.\nWir haben mit anderen Mitgliedern gesprochen, die uns versicherten, dass nach 15 Uhr wieder alles in Ordnung ist - das ist für uns aber zu spät!\n\nIn einem hochpreisigen Studio wie Ihrem erwarten wir, dass alles stimmt. Wir werden nicht sofort kündigen, unsere Beiträge für diesen Monat aber zurückbuchen, wenn Sie diese Probleme nicht schnell beheben!\n\nMit freundlichen Grüßen\n\nZara Hafiz",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Frau Hafiz und ihre Kolleginnen",
+     "options": [
+      {
+       "key": "a",
+       "text": "beschweren sich über mangelnde Hygiene."
+      },
+      {
+       "key": "b",
+       "text": "bezahlen zu hohe Beträge."
+      },
+      {
+       "key": "c",
+       "text": "sind mit dem Kurs unzufrieden."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "bei unseren letzten drei Besuchen lagen viele Haare in der Dusche und die Toiletten waren nicht geputzt",
+     "explain": "La queja es por pelos, aseos sin limpiar, jabón y toallas de papel: falta de higiene. Del precio solo dicen que el estudio es caro, no que cobren de más, y el curso lo elogian.",
+     "explain_ru": "Жалоба на волосы, грязные туалеты, пустые дозаторы и отсутствие бумажных полотенец: это гигиена. О цене говорят лишь, что студия дорогая, а курс хвалят."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Das Problem",
+     "options": [
+      {
+       "key": "a",
+       "text": "besteht seit mehreren Monaten."
+      },
+      {
+       "key": "b",
+       "text": "ist auch anderen Mitgliedern bekannt."
+      },
+      {
+       "key": "c",
+       "text": "tritt vor allem nachmittags auf."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Wir haben mit anderen Mitgliedern gesprochen, die uns versicherten, dass nach 15 Uhr wieder alles in Ordnung ist",
+     "explain": "Otras socias confirmaron el problema, así que es conocido por más gente. La a confunde la antigüedad como clienta con la duración del fallo (tres visitas) y la c es lo contrario: por la tarde ya está arreglado.",
+     "explain_ru": "Другие посетительницы подтвердили проблему, значит, о ней знают и другие. a путает давность клиентства с длительностью сбоя (три посещения), c говорит обратное: после обеда всё в порядке."
+    }
+   ]
+  },
+  {
+   "id": "mt13-hoeren-t1",
+   "label": "Hören Teil 1",
+   "page": 14,
+   "kind": "text",
+   "intro": "Sie hören drei Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 22,
+     "type": "truefalse",
+     "prompt": "Die Leiterin erklärt Herrn Demir seine Aufgaben.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "Ich möchte Sie gern noch über die Arbeitsabläufe in unserer Wohneinheit informieren.",
+     "explain": "La responsable explica al nuevo empleado cómo funcionan los turnos y las tareas de la unidad; por eso la afirmación es correcta.",
+     "explain_ru": "Руководительница объясняет новому сотруднику, как работают смены и задачи в отделении; поэтому утверждение верно."
+    },
+    {
+     "n": 23,
+     "type": "choice",
+     "prompt": "Herr Demir",
+     "options": [
+      {
+       "key": "a",
+       "text": "hat diese Woche Bereitschaftsdienst."
+      },
+      {
+       "key": "b",
+       "text": "kann seine Dienstzeiten mitbestimmen."
+      },
+      {
+       "key": "c",
+       "text": "macht keine Nachtschichten."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Soweit es geht, versuche ich, Wünsche zu berücksichtigen.",
+     "explain": "Puede influir en los turnos: envía los planes con antelación y tiene en cuenta los deseos, por ejemplo para cambiar una noche.",
+     "explain_ru": "Он может влиять на смены: планы приходят заранее, а пожелания учитываются, например можно поменяться ночной сменой."
+    },
+    {
+     "n": 24,
+     "type": "truefalse",
+     "prompt": "Die Kundin hat eine Reklamation.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "hoch",
+     "quote": "Wir haben 30-jähriges Jubiläum und wollen unseren Kunden zu diesem Anlass gern ein kleines Geschenk mit unserem Namen drauf mitgeben.",
+     "explain": "No es una reclamación: la clienta llama para encargar regalos promocionales por el 30 aniversario.",
+     "explain_ru": "Это не жалоба: клиентка звонит, чтобы заказать рекламные подарки к 30-летию."
+    },
+    {
+     "n": 25,
+     "type": "choice",
+     "prompt": "Das Küchenhaus in der City möchte",
+     "options": [
+      {
+       "key": "a",
+       "text": "das Sortiment passend erweitern."
+      },
+      {
+       "key": "b",
+       "text": "möglichst preiswerte Artikel kaufen."
+      },
+      {
+       "key": "c",
+       "text": "vorerst noch nichts bestellen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Dann schaue ich mir das jetzt in Ruhe auf Ihrer Webseite an und melde mich dann.",
+     "explain": "De momento no hace pedido: primero quiere mirar la web y después llamar; además necesita hacer sitio en el almacén.",
+     "explain_ru": "Пока она не делает заказ: сначала хочет посмотреть сайт и потом позвонить; кроме того, нужно освободить место на складе."
+    },
+    {
+     "n": 26,
+     "type": "truefalse",
+     "prompt": "Herr Leopold ist die neue Assistenz in der Firma.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "So, Herr Leopold, dann machen wir gleich mal einen Rundgang.",
+     "explain": "Cornelius le enseña la empresa y le explica sus tareas: es su incorporación como nuevo asistente.",
+     "explain_ru": "Корнелиус показывает ему фирму и объясняет задачи: это его первый день как нового ассистента."
+    },
+    {
+     "n": 27,
+     "type": "choice",
+     "prompt": "Herr Leopold",
+     "options": [
+      {
+       "key": "a",
+       "text": "muss schnellstmöglich Unterlagen digitalisieren,"
+      },
+      {
+       "key": "b",
+       "text": "übernimmt die Organisation der Dienstreisen."
+      },
+      {
+       "key": "c",
+       "text": "wird ab sofort in Bonn und Berlin tätig sein."
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Das müssen Sie dann im Einzelnen mit den entsprechenden Kolleginnen und Kollegen klären, das gehört auch zu Ihren Aufgaben.",
+     "explain": "Leopold debe aclarar con los colegas las alternativas de viaje, así que entra en la organización de los desplazamientos. La a es falsa porque los expedientes ya están digitalizados; la c, porque no se traslada a Bonn ni Berlín.",
+     "explain_ru": "Леопольд должен согласовать с коллегами альтернативы поездкам, то есть участвует в организации командировок. a неверно: документы уже оцифрованы; c — он не переезжает в Бонн или Берлин."
+    }
+   ],
+   "passage": "Hören Teil 1, Gespräch 1 (Aufgaben 22 und 23)\n\nPflegeleiterin: So, jetzt habe ich Ihnen schon sehr viel über die Seniorinnen und Senioren erzählt. Ich möchte Sie gern noch über die Arbeitsabläufe in unserer Wohneinheit informieren.\nPflegekraft: Ja, gerne.\nPflegeleiterin: Der Austausch im Team ist uns sehr wichtig, und dementsprechend gestalten wir die Übergaben zwischen den drei Dienstschichten. Die Übergabe von der Früh- an die Spätschicht ist die wichtigste. Sie ist um 15 Uhr, und wir planen eine Stunde ein, damit wir Zeit haben, uns über jeden einzelnen Bewohner und jede einzelne Bewohnerin unserer Wohneinheit auszutauschen. Wir versuchen, die Übergabe durch eine Person in Bereitschaft möglichst störungsfrei zu halten; das heißt, eine von uns ist auf Abruf. Wenn es etwas zu tun gibt, dann findet die Besprechung weiter statt, und nur diese eine Person in Bereitschaft verlässt das Zimmer.\nPflegekraft: Verstehe. Das ist gut, dann verpasst man nichts.\nPflegeleiterin: Richtig. Ihnen als ausgebildete Pflegekraft brauche ich nicht zu sagen, wie wichtig eine gute Kommunikation unter uns Mitarbeitenden ist. Wenn Informationen fehlen oder unvollständig sind, kann das unseren Bewohnerinnen und Bewohnern schaden.\nPflegekraft: Ja, das stimmt. Wie lange vorher weiß ich, in welcher Schicht ich eingesetzt bin?\nPflegeleiterin: Ich schicke die vorläufigen Dienstpläne immer sechs Wochen im Voraus an die Beschäftigten. Soweit es geht, versuche ich, Wünsche zu berücksichtigen. Wenn Sie also für eine Nachtschicht eingeteilt sind und Sie am nächsten Tag Geburtstag haben oder so etwas, dann können Sie gerne tauschen.\nPflegekraft: Das hört sich gut an.\nPflegeleiterin: Natürlich immer in Rücksprache mit mir. Eine Woche vorher steht der Dienstplan fest und darf nicht mehr geändert werden.\nPflegekraft: Okay, gut. Soweit ist alles klar.\nPflegeleiterin: Die Übergabe von der Nachtschicht ...\n\nGespräch 2 (Aufgaben 24 und 25)\n\nFrau Richter: Guten Tag, Beate Richter hier vom Küchenhaus in der City. Ich rufe wegen Ihrer kleinen Werbegeschenke für Kunden an.\nHerr Waldner: Sie meinen unsere Werbeartikel?\nFrau Richter: Ja, die Werbeartikel. Wir haben 30-jähriges Jubiläum und wollen unseren Kunden zu diesem Anlass gern ein kleines Geschenk mit unserem Namen drauf mitgeben.\nHerr Waldner: Das ist eine gute Idee. Woran haben Sie gedacht?\nFrau Richter: Wir suchen etwas, das nicht so schnell kaputtgeht.\nHerr Waldner: Also etwas, das länger in Erinnerung bleibt. Wie viel würden Sie denn ausgeben?\nFrau Richter: Es darf nicht viel kosten, wir haben ein kleines Budget.\nHerr Waldner: Hm, ja, da haben wir eine Auswahl. Haben Sie denn schon auf unsere Webseite geschaut?\nFrau Richter: Nein, noch nicht persönlich, aber ich rufe Sie gerade deshalb an.\nHerr Waldner: Was gut zu einem Küchenstudio passen würde, sind zum Beispiel die Kaffee-Thermobecher Piccolo in bunten Farben. Die kosten 98 Cent ab 100 Stück. Sie sind bunt, und Ihr Name wäre in der Farbe des Deckels aufgedruckt.\nFrau Richter: Das hört sich gut an. Dann schaue ich mir das jetzt in Ruhe auf Ihrer Webseite an und melde mich dann. Bevor wir eine Bestellung aufgeben, müssen wir im Lager Platz schaffen.\nHerr Waldner: Alles klar. Wenn es Ihnen besser passt, können Sie auch gleich auf unserer Webseite bestellen. Und wenn Sie Fragen haben, melden Sie sich.\n\nGespräch 3 (Aufgaben 26 und 27)\n\nHerr Cornelius: So, Herr Leopold, dann machen wir gleich mal einen Rundgang. Ich möchte Ihnen auch kurz den Videokonferenzraum und die Materialausgabe zeigen.\nHerr Leopold: Sehr gerne. Was man da so generell macht, damit bin ich ja vertraut. Aber in einer Firma ist das ja auch ein bisschen anders.\nHerr Cornelius: Sie sind ja kein Berufsanfänger, das hat schon Vorteile. Bei uns ist allerdings anders, dass wir ein nachhaltiger Betrieb sein wollen und auch so handeln.\nHerr Leopold: Das finde ich sehr spannend. Wie genau macht sich das denn bemerkbar?\nHerr Cornelius: Hier ist der Videokonferenzraum. Wir schalten mehrmals in der Woche eine Konferenz, um uns mit unseren Standorten in Bonn, Berlin, Brüssel und Basel abzusprechen. Wir sparen damit viele Flugreisen; ganz vermeiden können wir Dienstreisen aber leider noch nicht.\nHerr Leopold: Aber man könnte ja nach klimaneutralen Alternativen suchen; mit der Bahn kommt man ja auch mittlerweile gut hin.\nHerr Cornelius: Ich sehe schon, Sie denken mit. Das müssen Sie dann im Einzelnen mit den entsprechenden Kolleginnen und Kollegen klären, das gehört auch zu Ihren Aufgaben.\nHerr Leopold: Und was gehört bei den Videokonferenzen zu meinen Aufgaben?\nHerr Cornelius: Sie helfen bei der Vorbereitung von Präsentationen und unterstützen bei den Recherchen. Die Akten werden digitalisiert und stehen größtenteils schon als E-Akten zur Verfügung.\nHerr Leopold: Und muss ich mich bei den Konferenzen um die Bewirtung kümmern?\nHerr Cornelius: Nur in Ausnahmefällen; da bringt sich jeder eigentlich seinen oder ihren Kaffee mit. Zu Ihrem Aufgabengebiet gehört, dass Sie vor den Meetings die Technik vorbereiten, damit dann auch alles läuft.\nHerr Leopold: Na, das bekomme ich hin.\nHerr Cornelius: Bestimmt! Dann zeige ich Ihnen jetzt noch die Materialausgabe.\nHerr Leopold: Ich nehme an, auch hier spielt Nachhaltigkeit eine Rolle?\nHerr Cornelius: Ja, definitiv. Sie sammeln die Wünsche der Kolleginnen und Kollegen ..."
+  },
+  {
+   "id": "mt13-hoeren-t2",
+   "label": "Hören Teil 2",
+   "page": 15,
+   "kind": "zuordnung",
+   "optionsLabel": "Aussagen",
+   "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch?",
+   "options": [
+    {
+     "key": "a",
+     "text": "Sich weiterzubilden garantiert keine schnelle Karriere."
+    },
+    {
+     "key": "b",
+     "text": "Eine Weiterbildung ist immer den Aufwand wert."
+    },
+    {
+     "key": "c",
+     "text": "Entwicklungsmöglichkeiten gibt es nur für Hochqualifizierte."
+    },
+    {
+     "key": "d",
+     "text": "Für die passende Weiterbildung muss man die eigenen beruflichen Ziele kennen."
+    },
+    {
+     "key": "e",
+     "text": "Eine Weiterbildung ist für manche schwer zu organisieren."
+    },
+    {
+     "key": "f",
+     "text": "Wer eine berufsbegleitende Weiterbildung macht, hat wenig Zeit."
+    }
+   ],
+   "items": [
+    {
+     "n": 28,
+     "type": "choice",
+     "prompt": "Gespräch 1",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Dann solltest du erstmal nachdenken, wozu du eine Weiterbildung machen willst, was du hier im Betrieb damit erreichen willst.",
+     "explain": "Lennart le recomienda a Grit que primero defina su objetivo profesional y qué quiere conseguir en la empresa.",
+     "explain_ru": "Леннарт советует Грит сначала определить профессиональную цель и то, чего она хочет добиться в фирме."
+    },
+    {
+     "n": 29,
+     "type": "choice",
+     "prompt": "Gespräch 2",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Sport machen und Freunde treffen kann ich da tatsächlich nicht mehr; ich brauche jede Minute zum Lernen.",
+     "explain": "Mina no tiene tiempo para nada más: estudia cada minuto y ha dejado el deporte y los amigos.",
+     "explain_ru": "У Мины нет времени ни на что другое: она учится каждую минуту и отказалась от спорта и друзей."
+    },
+    {
+     "n": 30,
+     "type": "choice",
+     "prompt": "Gespräch 3",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "ich habe zwei Jahre neben meiner Arbeit in der Firma in meiner Freizeit ein Fernstudium gemacht und mich zur Leitungskraft qualifiziert; hier wird das nicht anerkannt.",
+     "explain": "Billie se ha cualificado y aun así no la han ascendido: la formación no garantiza una carrera rápida.",
+     "explain_ru": "Билли получила квалификацию, но повышения нет: обучение не гарантирует быстрой карьеры."
+    },
+    {
+     "n": 31,
+     "type": "choice",
+     "prompt": "Gespräch 4",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "Aber mit dem Job und der Familie alles nebeneinander hinzubekommen, ist anstrengender, als ich gedacht habe.",
+     "explain": "Julia cuenta que compaginar el curso con el trabajo y los hijos es duro; organizarlo le cuesta.",
+     "explain_ru": "Джулия говорит, что совмещать курс с работой и детьми тяжело; организовать это непросто."
+    }
+   ],
+   "passage": "Hören Teil 2, Gespräch 1 (Aufgabe 28)\n\nGrit: Lennart, schön, dass ich dich treffe. Ich wollte dich heute anrufen.\nLennart: Hi Grit, was gibt's?\nGrit: Du hast doch gerade eine berufsbegleitende Weiterbildung angefangen.\nLennart: Hmhm.\nGrit: Und da wollte ich dich fragen, wie es läuft. Ich überlege mir nämlich, neben dem Job auch was zu machen.\nLennart: Woran denkst du da?\nGrit: Ehrlich gesagt weiß ich gar nicht, was es gibt. Ich würde mich gerne irgendwie weiterqualifizieren, um in der Firma schneller voranzukommen.\nLennart: Dann solltest du erstmal nachdenken, wozu du eine Weiterbildung machen willst, was du hier im Betrieb damit erreichen willst. Da gibt es ja viele Angebote, aber was dich dann hier voranbringt ...\nGrit: Wahrscheinlich hast du recht.\n\nGespräch 2 (Aufgabe 29)\n\nAli: So, Feierabend, Kollegen! Kommt noch jemand mit was trinken?\nMarvin: Ja, klar, sehr gerne!\nMina: Tut mir leid, ich kann nicht, ich muss was erledigen.\nMarvin: Was jetzt? Mina! Es ist 18 Uhr!\nMina: Ja, ich weiß. Aber ich mache doch diese Zusatzqualifizierung und muss mich noch vorbereiten.\nMarvin: Trotzdem ganz schön viel, oder? Lohnt sich das?\nMina: Naja, irgendwas muss ich dafür immer machen. Sport machen und Freunde treffen kann ich da tatsächlich nicht mehr; ich brauche jede Minute zum Lernen.\nMarvin: Na, wenn es dich dann weiterbringt. Schade. Bis Montag dann.\n\nGespräch 3 (Aufgabe 30)\n\nAnsgar: Billie, da bist du ja endlich. Warum kommst du so spät?\nBillie: Ich hatte noch ein Vorstellungsgespräch.\nAnsgar: Was? Du willst bei uns in der Firma aufhören?\nBillie: Es ist noch nicht offiziell, aber ja. Ich sehe hier keine Entwicklungsmöglichkeit mehr.\nGerda: Wie meinst du das? Dass du hier nicht befördert wirst?\nBillie: Naja, ich habe zwei Jahre neben meiner Arbeit in der Firma in meiner Freizeit ein Fernstudium gemacht und mich zur Leitungskraft qualifiziert; hier wird das nicht anerkannt. Ich bin ja nicht mal Teamleiterin.\nAnsgar: Du hast gedacht, dass du nach deinem Studium gleich eine Stufe auf deiner Karriereleiter hochkletterst?\nBillie: Ja, ich habe gedacht, das geht schneller.\n\nGespräch 4 (Aufgabe 31)\n\nChristian: Sag mal, liebe Kollegin, ich habe gehört, du machst eine Online-Weiterbildung?\nJulia: Ja. Aber mit dem Job und der Familie alles nebeneinander hinzubekommen, ist anstrengender, als ich gedacht habe.\nChristian: Tatsächlich? Aber du kannst dir doch die Zeit einteilen und lernen, wann du Zeit hast. Du sitzt mit einer Tasse Kaffee in der Hand bequem im Sessel vor dem Monitor ...\nJulia: Genauso ist es! Naja, es stimmt schon, dass man zeitlich etwas flexibler ist. Aber trotzdem brauche ich dann Ruhe und muss absprechen, wer so lange auf die Kinder aufpasst. Und die Aufgaben muss ich natürlich auch machen, und irgendwas kommt immer dazwischen.\nChristian: Das hört sich ja richtig nach Stress an.\nJulia: Ist es auch."
+  },
+  {
+   "id": "mt13-hoeren-t3",
+   "label": "Hören Teil 3",
+   "page": 16,
+   "kind": "text",
+   "intro": "Sie hören gleich eine Präsentation. Dazu gibt es vier Aufgaben. Welche Lösung (a, b oder c) passt jeweils am besten?",
+   "items": [
+    {
+     "n": 32,
+     "type": "choice",
+     "prompt": "Das elektronische Schließsystem",
+     "options": [
+      {
+       "key": "a",
+       "text": "ermöglicht neue Funktionen."
+      },
+      {
+       "key": "b",
+       "text": "ist einfach einzubauen."
+      },
+      {
+       "key": "c",
+       "text": "kostet weniger als erwartet."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Durch die Schließkarte wird festgehalten, wer gerade wo in den Geschäftsräumen ist. Das konnte ein Schlüssel nicht leisten.",
+     "explain": "El sistema aporta funciones nuevas, como registrar quién está en cada zona; una llave no podía hacerlo.",
+     "explain_ru": "Система даёт новые функции, например фиксирует, кто где находится; обычный ключ этого не умел."
+    },
+    {
+     "n": 33,
+     "type": "choice",
+     "prompt": "Die Zutrittsberechtigung",
+     "options": [
+      {
+       "key": "a",
+       "text": "beantragt man in der IT-Abteilung."
+      },
+      {
+       "key": "b",
+       "text": "braucht man nicht für die Küche."
+      },
+      {
+       "key": "c",
+       "text": "vergibt die Personalabteilung."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Sie geben Ihre Schlüssel in der Personalabteilung gegen eine Quittung ab, und man prüft, wo Sie arbeiten und für welche Bereiche man Sie freischalten muss.",
+     "explain": "El permiso se gestiona en Recursos Humanos; la IT solo entrega la tarjeta ya activada.",
+     "explain_ru": "Разрешение оформляют в отделе кадров; IT только выдаёт уже активированную карту."
+    },
+    {
+     "n": 34,
+     "type": "choice",
+     "prompt": "Die Chipkarte",
+     "options": [
+      {
+       "key": "a",
+       "text": "kostet für die Mitarbeiter eine Gebühr."
+      },
+      {
+       "key": "b",
+       "text": "muss man vorsichtig benutzen."
+      },
+      {
+       "key": "c",
+       "text": "wird bei Verlust am Empfang gesperrt."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Der Empfang ist rund um die Uhr besetzt, und die Karte wird dort sofort deaktiviert.",
+     "explain": "Si se pierde, se avisa en recepción y allí la bloquean de inmediato.",
+     "explain_ru": "При потере нужно сообщить на ресепшн, там карту сразу блокируют."
+    },
+    {
+     "n": 35,
+     "type": "choice",
+     "prompt": "Die Umstellung wird",
+     "options": [
+      {
+       "key": "a",
+       "text": "erst im kommenden Jahr vorgenommen."
+      },
+      {
+       "key": "b",
+       "text": "von einer Sicherheitsfirma ausgeführt."
+      },
+      {
+       "key": "c",
+       "text": "voraussichtlich mehrere Wochen dauern."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Das kann sich alles bis in den Januar ziehen, auch wenn es schon Mitte Dezember losgeht.",
+     "explain": "Empieza a mediados de diciembre y puede alargarse hasta enero: varias semanas.",
+     "explain_ru": "Начинается в середине декабря и может тянуться до января: несколько недель."
+    }
+   ],
+   "passage": "Hören Teil 3, Präsentation (Aufgaben 32 bis 35)\n\nChefin: Guten Tag und hallo alle zusammen. Wie Sie wissen, haben wir uns entschlossen, unsere alte mechanische Schließanlage, die bei Gründung der Firma vor 38 Jahren eingebaut wurde, gegen eine elektronische Schließanlage auszutauschen. Wir sind in den letzten Jahren gewachsen, größer geworden, und unsere Ansprüche an eine Schließanlage sind gestiegen.\nMitarbeiter: Das heißt, dass wir bald keine Schlüssel mehr haben?\nChefin: Stimmt. Schlüssel und Schlösser, so wie wir sie bisher verwendet haben, wird es nicht mehr geben. Alle Mitarbeiter erhalten eine Schließkarte im Scheckkartenformat, also eine Plastikkarte mit Chip, die wie ein Schlüssel funktioniert und mit der Sie so einfach wie bisher alle Türen öffnen, bis Sie an Ihren Arbeitsplatz gelangt sind.\nMitarbeiterin: Ist das denn nötig? Das ist doch bestimmt alles aufwändig.\nChefin: Ja, das ist richtig. Der Umbau wird einige Zeit dauern und ist natürlich auch mit einigem Aufwand verbunden; das ist uns bewusst. Aber das ist es uns auch wert, denn so eine Schließanlage erhöht die Sicherheit auf dem ganzen Gelände. Durch die Schließkarte wird festgehalten, wer gerade wo in den Geschäftsräumen ist. Das konnte ein Schlüssel nicht leisten. Außerdem können Sie Geld auf die Karte laden und damit mittags in der Kantine Ihr Mittagessen bezahlen.\nMitarbeiter: Ach, das ist ja praktisch. Und wenn man die Chipkarte verliert?\nChefin: Auch das ist dann viel unkomplizierter zu lösen als vorher, denn es müssen nicht mehr alle Schlösser ausgetauscht werden. Wenn man das alles einrechnet, wird klar, warum wir uns trotz der nicht geringen Kosten für den Einbau der neuen Schließanlage entschieden haben.\nMitarbeiterin: Aber müssen diese Chipkarten dann nicht irgendwie personalisiert werden?\nChefin: Es ist so: Alle Mitarbeiterinnen und Mitarbeiter erhalten mit ihrer Chipkarte natürlich die Zutrittsberechtigung zur Firma, das heißt, sie dürfen mit ihrer Chipkarte die Haupteingangstür und alle Türen zu den Bereichen, in denen sie arbeiten, öffnen. Zum Beispiel Sie, Frau Zündmann, sind Assistentin der Geschäftsführung. Wie bisher mit Ihrem Schlüssel — nur jetzt mit der Schließkarte — kommen Sie in Ihr Büro und ins Büro der Geschäftsleitung. Ebenso haben Sie Zutritt zu allen Konferenzräumen. Aber Sie kommen mit Ihrer Karte zum Beispiel nicht in die IT-Abteilung, weil Sie nicht dort arbeiten. Auch nicht in die Küche oder ins Lager — diese Türen können wie bisher nur von den entsprechenden Mitarbeitenden geöffnet werden. Wenn es bis hier keine Fragen gibt, möchte ich Ihnen jetzt sagen, was Sie tun müssen, um Ihre Berechtigung zu bekommen. Sie geben Ihre Schlüssel in der Personalabteilung gegen eine Quittung ab, und man prüft, wo Sie arbeiten und für welche Bereiche man Sie freischalten muss. Diese Zugangsberechtigung wird an die IT-Abteilung geschickt, und dort können Sie sich dann Ihre aktivierte, personalisierte Schließkarte gegen eine Unterschrift abholen. Ganz einfach.\nMitarbeiter: Was ist, wenn ich meine Chipkarte verliere oder sie kaputtgeht?\nChefin: Da müssen Sie sich schon anstrengen, um die Karte kaputt zu machen. Die Karte ist ziemlich dick und stabil. Aber wenn Sie Ihre Karte verlieren oder sie doch beschädigen oder auch, wenn Sie eine Karte finden, die jemand anders verloren hat, dann setzen Sie bitte umgehend den diensthabenden Mitarbeiter am Empfang in Kenntnis. Der Empfang ist rund um die Uhr besetzt, und die Karte wird dort sofort deaktiviert. Die Ausstellung einer Ersatzkarte geschieht dann wieder in der IT-Abteilung und ist gebührenpflichtig.\nMitarbeiterin: Sie haben am Anfang gesagt, der Einbau dauert etwas. Wann soll das alles stattfinden?\nChefin: Ja, richtig. Das kann sich alles bis in den Januar ziehen, auch wenn es schon Mitte Dezember losgeht. Eine Firma, die auf Daten- und Kommunikationstechnik spezialisiert ist, wird dafür ins Haus kommen. Für die Übergangsphase verstärken wir nicht nur den Sicherheitsdienst, sondern schulen auch neue Mitarbeiter für den Empfang, damit Sie keine Schwierigkeiten haben, ins Haus zu kommen. Dann komme ich jetzt dazu, wie wir es regeln wollen, wenn ..."
+  },
+  {
+   "id": "mt13-hoeren-t4",
+   "label": "Hören Teil 4",
+   "page": 17,
+   "kind": "text",
+   "intro": "Sie hören fünf telefonische Mitteilungen. Zu jeder Mitteilung gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 36,
+     "type": "choice",
+     "prompt": "Ava Schneider",
+     "options": [
+      {
+       "key": "a",
+       "text": "braucht ein behindertengerechtes Büro."
+      },
+      {
+       "key": "b",
+       "text": "empfängt heute Geschäftspartner."
+      },
+      {
+       "key": "c",
+       "text": "interessiert sich für den Preis des Büroraums."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Ich bin Rollstuhlfahrerin und brauche ein Büro, das für mich gut zugänglich ist.",
+     "explain": "Ava necesita un despacho accesible porque va en silla de ruedas.",
+     "explain_ru": "Аве нужен доступный офис, потому что она передвигается на коляске."
+    },
+    {
+     "n": 37,
+     "type": "choice",
+     "prompt": "Herr Gruber",
+     "options": [
+      {
+       "key": "a",
+       "text": "möchte sich zu einer anderen Zeit treffen."
+      },
+      {
+       "key": "b",
+       "text": "sucht Personal für eine Filiale."
+      },
+      {
+       "key": "c",
+       "text": "will einen Termin bestätigen."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Mir ist jetzt leider etwas Dringendes dazwischengekommen, das dauert so bis ungefähr 16 Uhr, 16 Uhr dreißig. Könnten wir uns vielleicht danach noch besprechen?",
+     "explain": "Wanner no puede a la hora acordada y propone verse más tarde.",
+     "explain_ru": "Ваннер не может в назначенное время и предлагает встретиться позже."
+    },
+    {
+     "n": 38,
+     "type": "choice",
+     "prompt": "Franziska",
+     "options": [
+      {
+       "key": "a",
+       "text": "bittet Anna, ein Geschenk zu kaufen."
+      },
+      {
+       "key": "b",
+       "text": "kauft eine teure Kaffeemaschine."
+      },
+      {
+       "key": "c",
+       "text": "schlägt vor, mehr Geld zu sammeln."
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Das kostet 30 Euro. Das wäre doch bezahlbar, oder?",
+     "explain": "Está comprando una cafetera de 30 euros para el regalo; la opción b es la que recoge esa compra. La a no encaja porque no pide a Anna que la compre, y la c es lo contrario: evita pedir más dinero.",
+     "explain_ru": "Она покупает кофемашину за 30 евро в подарок; вариант b передаёт эту покупку. a не подходит: она не просит Анну купить; c — наоборот, она не хочет просить больше денег."
+    },
+    {
+     "n": 39,
+     "type": "choice",
+     "prompt": "Amir möchte, dass die Angestellten",
+     "options": [
+      {
+       "key": "a",
+       "text": "die Speisekarte neu schreiben."
+      },
+      {
+       "key": "b",
+       "text": "die Umkleideräume putzen."
+      },
+      {
+       "key": "c",
+       "text": "ihn über Mängel informieren."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wenn euch da in Zukunft etwas auffällt, sagt mir bitte gleich Bescheid.",
+     "explain": "El jefe pide que le avisen de inmediato si ven alguna deficiencia.",
+     "explain_ru": "Шеф просит сразу сообщать ему, если заметят недостатки."
+    },
+    {
+     "n": 40,
+     "type": "choice",
+     "prompt": "Haneen",
+     "options": [
+      {
+       "key": "a",
+       "text": "braucht einen USB-Stick."
+      },
+      {
+       "key": "b",
+       "text": "hat die Tischkarten noch nicht gedruckt."
+      },
+      {
+       "key": "c",
+       "text": "hat Probleme mit der Technik."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Den Sitzplan habe ich, aber nicht die Tischkarten. Kannst du die bitte ausdrucken?",
+     "explain": "Haneen tiene el plano de asientos, pero aún no las tarjetas de mesa: pide que las impriman.",
+     "explain_ru": "У Ханин есть план рассадки, но нет карточек на столы: она просит их распечатать."
+    }
+   ],
+   "passage": "Hören Teil 4, Mitteilung 36\n\nGuten Tag, Ava Schneider hier. Ich interessiere mich für den Büroraum in der Thüringer Straße 12. Sie schreiben, dass es Tiefgaragenplätze gibt. Kosten die extra? Bevor ich mich entscheide, muss ich auch wissen, ob das Gebäude barrierefrei ist. Ich bin Rollstuhlfahrerin und brauche ein Büro, das für mich gut zugänglich ist. Und noch etwas: Sehr wichtig ist für mich auch, Besucher zu empfangen. Gibt es einen geeigneten Besprechungsraum und eine Teeküche? Könnte mein Geschäftspartner sich den Raum heute noch ansehen? Das wäre ...\n\nMitteilung 37\n\nGuten Morgen Herr Gruber. Hier ist Wanner von der Personalabteilung. Wir hatten um halb drei einen Termin zu Ihrer Mitarbeiterin in der Filiale in Cotta. Mir ist jetzt leider etwas Dringendes dazwischengekommen, das dauert so bis ungefähr 16 Uhr, 16 Uhr dreißig. Könnten wir uns vielleicht danach noch besprechen? Oder sind Sie dann schon weg? Ich hoffe, das bringt Ihre Pläne jetzt nicht allzu sehr durcheinander. Es wäre nett, wenn Sie mich kurz zurückrufen und mir Bescheid sagen, ob das bei Ihnen geht.\n\nMitteilung 38\n\nAnna, du, ich stehe gerade im Laden und hole die Kaffeemaschine, die wir für Vanessa und Metin als Hochzeitsgeschenk wollten. Die gibt es aber nicht mehr, und wir müssten eine andere nehmen. Das kostet 30 Euro. Das wäre doch bezahlbar, oder? Dann reicht es aber nicht mehr für diesen Milchaufschäumer, der wie eine Kuh aussieht, den du so gern dazu wolltest. So haben wir nicht gesammelt. Ja, komm, ich mach das jetzt so, sonst müssten wir alle noch mal um ein paar Euros bitten.\n\nMitteilung 39\n\nHallo Kollegen, hier ist euer Chef. Wir hatten heute Morgen eine Hygienekontrolle bei uns im Gastronomiebereich des Hotels. Es war alles okay bis auf ein paar Kleinigkeiten: In der Herrenumkleide war Staub auf den Umkleideschränken, und im Damenumkleidebereich war der Fußboden zu schmutzig. Wenn euch da in Zukunft etwas auffällt, sagt mir bitte gleich Bescheid. So was muss ja nicht sein. In der Küche wurden wir gelobt. Was aber negativ auffiel, war die fehlende Kennzeichnung mancher Zusatzstoffe auf der Speisekarte. Das korrigiere ich gleich, und einer von euch bringt die Datei dann bitte in den Copyshop.\n\nMitteilung 40\n\nHi Suzi, Haneen hier. Ich bin schon oben im Konferenzraum. Hat alles wunderbar geklappt, es fehlen aber noch ein paar Sachen, und du kommst ja sowieso gleich rauf. Den Sitzplan habe ich, aber nicht die Tischkarten. Kannst du die bitte ausdrucken? Der Stick mit den Vorlagen ist irgendwo auf meinem Schreibtisch oder steckt im PC; das weiß ich jetzt nicht mehr genau. Ich habe gerade die Anlage und den Projektor überprüft; nur das Mikrofon musste ich austauschen, jetzt ist alles okay. Kaffee und Tee sind da, die Kekse habe ich aus der Cafeteria mitgebracht."
+  },
+  {
+   "id": "mt13-hoeren-und-schreiben",
+   "label": "Hören und Schreiben",
+   "page": 18,
+   "kind": "ohne-key",
+   "intro": "Sie hören eine telefonische Mitteilung. Wählen Sie die richtige Lösung (a, b oder c) für Aufgabe 41. Die Notizen 42–45 gehören zum Schreibteil und sind hier nicht enthalten.",
+   "items": [
+    {
+     "n": 41,
+     "type": "choice",
+     "prompt": "Grund für den Anruf",
+     "options": [
+      {
+       "key": "a",
+       "text": "Angebot"
+      },
+      {
+       "key": "b",
+       "text": "Bestellung/Buchung"
+      },
+      {
+       "key": "c",
+       "text": "Beschwerde"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt13-sprachbausteine-t1",
+   "label": "Sprachbausteine Teil 1",
+   "page": 19,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Text. Welches Wort (a–j) passt in jede Lücke (46–51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Betreff: Meine Bewerbung am 25.06. auf der Job-Messe\n\nSehr geehrter Herr Radebrecht,\n\nim Juni hatte ich mich Ihnen auf der Job-Messe in Dresden persönlich vorgestellt und Ihnen 46 ( ) auch meine Bewerbungsunterlagen gegeben. Nach einem intensiven Gespräch über die Tätigkeiten als Social-Media-Manager, haben Sie mir angeboten, meine Unterlagen an Ihre Marketingleiterin weiterzuleiten, 47 ( ) ich mich sehr gefreut habe.\n\nLeider habe ich 48 ( ) nichts mehr von Ihrem Unternehmen gehört und bin nun unsicher, ob die Unterlagen vielleicht verlorengegangen sind. 49 ( ) melde ich mich schriftlich bei Ihnen und hänge meine Bewerbungsunterlagen zur Sicherheit noch einmal an.\n\nFür Ihr Unternehmen habe ich schon einige Ideen, 50 ( ) Sie Ihr Online-Kundenmagazin noch interessanter machen können und mehr junge Menschen über soziale Medien erreichen. Gerne führe ich diese in einem persönlichen Gespräch aus.\n\n51 ( ) ich zurzeit in keinem Beschäftigungsverhältnis stehe, bin ich zeitlich flexibel.\n\nVielen Dank im Voraus und mit freundlichen Grüßen\nKevin Murr",
+   "options": [
+    {
+     "key": "a",
+     "text": "DA"
+    },
+    {
+     "key": "b",
+     "text": "DABEI"
+    },
+    {
+     "key": "c",
+     "text": "DESHALB"
+    },
+    {
+     "key": "d",
+     "text": "MITTLERWEILE"
+    },
+    {
+     "key": "e",
+     "text": "OB"
+    },
+    {
+     "key": "f",
+     "text": "SEITDEM"
+    },
+    {
+     "key": "g",
+     "text": "WANN"
+    },
+    {
+     "key": "h",
+     "text": "WIE"
+    },
+    {
+     "key": "i",
+     "text": "WORAUF"
+    },
+    {
+     "key": "j",
+     "text": "WORÜBER"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "im Juni hatte ich mich Ihnen auf der Job-Messe in Dresden persönlich vorgestellt und Ihnen 46 ( ) auch meine Bewerbungsunterlagen gegeben.",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "im Juni hatte ich mich Ihnen auf der Job-Messe in Dresden persönlich vorgestellt und Ihnen 46 ( ) auch meine Bewerbungsunterlagen gegeben.",
+     "explain": "«dabei» indica que, al presentarse, entregó además los documentos: la acción acompaña a la anterior. «Da» y «deshalb» no funcionan en esa posición.",
+     "explain_ru": "«dabei» показывает, что при знакомстве он заодно передал документы: действие сопутствует предыдущему. «Da» и «deshalb» здесь не подходят."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "haben Sie mir angeboten, meine Unterlagen an Ihre Marketingleiterin weiterzuleiten, 47 ( ) ich mich sehr gefreut habe.",
+     "answer": "j",
+     "confidence": "mittel",
+     "quote": "haben Sie mir angeboten, meine Unterlagen an Ihre Marketingleiterin weiterzuleiten, 47 ( ) ich mich sehr gefreut habe.",
+     "explain": "La alegría se refiere al ofrecimiento ya recibido: «worüber ich mich sehr gefreut habe». «Worauf» se usa para algo futuro; por eso la confianza es media.",
+     "explain_ru": "Радость относится к уже полученному предложению: «worüber ich mich sehr gefreut habe». «Worauf» — для будущего; поэтому уверенность средняя."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "Leider habe ich 48 ( ) nichts mehr von Ihrem Unternehmen gehört und bin nun unsicher, ob die Unterlagen vielleicht verlorengegangen sind.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Leider habe ich 48 ( ) nichts mehr von Ihrem Unternehmen gehört und bin nun unsicher, ob die Unterlagen vielleicht verlorengegangen sind.",
+     "explain": "«seitdem» marca el tiempo transcurrido desde el contacto: desde entonces no ha vuelto a saber nada de la empresa.",
+     "explain_ru": "«seitdem» обозначает время с момента контакта: с тех пор о фирме ничего не слышно."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "49 ( ) melde ich mich schriftlich bei Ihnen und hänge meine Bewerbungsunterlagen zur Sicherheit noch einmal an.",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "49 ( ) melde ich mich schriftlich bei Ihnen und hänge meine Bewerbungsunterlagen zur Sicherheit noch einmal an.",
+     "explain": "«Deshalb» introduce la consecuencia de lo anterior: por eso escribe y vuelve a adjuntar los documentos. Exige inversión, y aquí el verbo va antes del sujeto.",
+     "explain_ru": "«Deshalb» вводит следствие: поэтому он пишет и снова прикладывает документы. Требует инверсии, и здесь глагол стоит перед подлежащим."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "Für Ihr Unternehmen habe ich schon einige Ideen, 50 ( ) Sie Ihr Online-Kundenmagazin noch interessanter machen können und mehr junge Menschen über soziale Medien erreichen.",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "Für Ihr Unternehmen habe ich schon einige Ideen, 50 ( ) Sie Ihr Online-Kundenmagazin noch interessanter machen können und mehr junge Menschen über soziale Medien erreichen.",
+     "explain": "«Ideen, wie Sie … machen können»: la subordinada con «wie» explica de qué manera se puede mejorar la revista online.",
+     "explain_ru": "«Ideen, wie Sie … machen können»: придаточное с «wie» объясняет, как можно улучшить онлайн-журнал."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "51 ( ) ich zurzeit in keinem Beschäftigungsverhältnis stehe, bin ich zeitlich flexibel.",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "51 ( ) ich zurzeit in keinem Beschäftigungsverhältnis stehe, bin ich zeitlich flexibel.",
+     "explain": "«Da» abre una causal antepuesta: como ahora no tiene empleo, dispone de tiempo. «Weil» no está en el banco de palabras y «deshalb» no admitiría esta estructura.",
+     "explain_ru": "«Da» открывает причинное придаточное: поскольку сейчас он без работы, у него есть время. «Weil» нет в банке слов, а «deshalb» не подошло бы к этой структуре."
+    }
+   ]
+  },
+  {
+   "id": "mt13-sprachbausteine-t2",
+   "label": "Sprachbausteine Teil 2",
+   "page": 20,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welcher Ausdruck (a, b oder c) passt in jede Lücke (52–57)?",
+   "passageOpen": true,
+   "passage": "Anfrage\n\nSehr geehrte Frau Peters,\n\nwir sind der führende Anbieter von Online-Lehrprogrammen für Schulen und Bildungsträger im Schwarzwald. Auf der diesjährigen Target Computer-Messe sind wir auf 52 ( ) im Bereich Multimedia aufmerksam geworden: den PC VXL aus der Serie IIP.\n\nBitte schicken Sie uns 53 ( ) der Kosten über eine Abnahme von 12 PCs inklusive der Lieferung an unsere Niederlassung in Furtwangen. Geben Sie uns bitte außerdem Ihre Lieferzeit, Gewährleistung und Zahlungsbedingungen an.\n\nDa wir weitere Geräte für unseren Firmensitz in Bad Boll benötigen, würden wir Ihnen bei guten Konditionen gerne auch 54 ( ) erteilen. Können Sie uns daher schon heute mitteilen, 55 ( ) Sie Rabatte anbieten?\n\nAlle noch offenen Fragen 56 ( ) kann Ihnen unsere Geschäftsführerin Frau Dr. Weser gerne beantworten.\n\nWir freuen uns auf 57 ( ) bis zum 02. Februar 20...\n\nMit freundlichen Grüßen\n\nWaldemar Traun",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "Auf der diesjährigen Target Computer-Messe sind wir auf 52 ( ) im Bereich Multimedia aufmerksam geworden: den PC VXL aus der Serie IIP.",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihr aktuelles Angebot"
+      },
+      {
+       "key": "b",
+       "text": "Ihr großes Interesse"
+      },
+      {
+       "key": "c",
+       "text": "Ihre neuesten Angaben"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Auf der diesjährigen Target Computer-Messe sind wir auf 52 ( ) im Bereich Multimedia aufmerksam geworden: den PC VXL aus der Serie IIP.",
+     "explain": "Lo que llamó la atención en la feria fue la oferta de la empresa: los dos puntos tras el hueco presentan el PC VXL como parte de «Ihr aktuelles Angebot».",
+     "explain_ru": "Внимание на выставке привлекло предложение фирмы: двоеточие после пропуска представляет PC VXL как часть «Ihr aktuelles Angebot»."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "Bitte schicken Sie uns 53 ( ) der Kosten über eine Abnahme von 12 PCs inklusive der Lieferung an unsere Niederlassung in Furtwangen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "den offenen Betrag"
+      },
+      {
+       "key": "b",
+       "text": "die vereinbarte Summe"
+      },
+      {
+       "key": "c",
+       "text": "eine detaillierte Aufstellung"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Bitte schicken Sie uns 53 ( ) der Kosten über eine Abnahme von 12 PCs inklusive der Lieferung an unsere Niederlassung in Furtwangen.",
+     "explain": "Antes de comprar piden un desglose detallado de los costes («eine detaillierte Aufstellung der Kosten»), no una factura ni una suma ya acordada.",
+     "explain_ru": "Перед покупкой просят подробную калькуляцию затрат («eine detaillierte Aufstellung der Kosten»), а не счёт и не согласованную сумму."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Da wir weitere Geräte für unseren Firmensitz in Bad Boll benötigen, würden wir Ihnen bei guten Konditionen gerne auch 54 ( ) erteilen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "einen Dauerauftrag"
+      },
+      {
+       "key": "b",
+       "text": "einen Erstauftrag"
+      },
+      {
+       "key": "c",
+       "text": "diesen Folgeauftrag"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Da wir weitere Geräte für unseren Firmensitz in Bad Boll benötigen, würden wir Ihnen bei guten Konditionen gerne auch 54 ( ) erteilen.",
+     "explain": "El pedido de 12 PCs es el primero; el de la sede de Bad Boll sería posterior, un «Folgeauftrag». «Erstauftrag» designaría este primer pedido y «Dauerauftrag» es una orden de pago periódica.",
+     "explain_ru": "Заказ 12 ПК — первый; заказ для офиса в Бад-Болле будет следующим, «Folgeauftrag». «Erstauftrag» — это как раз первый заказ, а «Dauerauftrag» — регулярный платёж."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "Können Sie uns daher schon heute mitteilen, 55 ( ) Sie Rabatte anbieten?",
+     "options": [
+      {
+       "key": "a",
+       "text": "mit welcher Absicht"
+      },
+      {
+       "key": "b",
+       "text": "unter welchen Bedingungen"
+      },
+      {
+       "key": "c",
+       "text": "zu welchen Zwecken"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Können Sie uns daher schon heute mitteilen, 55 ( ) Sie Rabatte anbieten?",
+     "explain": "Se pregunta con qué condiciones se conceden los descuentos: «unter welchen Bedingungen». «Absicht» y «Zwecke» preguntarían por intenciones, no por condiciones.",
+     "explain_ru": "Спрашивают, на каких условиях дают скидки: «unter welchen Bedingungen». «Absicht» и «Zwecke» спрашивали бы о намерениях, а не об условиях."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "Alle noch offenen Fragen 56 ( ) kann Ihnen unsere Geschäftsführerin Frau Dr. Weser gerne beantworten.",
+     "options": [
+      {
+       "key": "a",
+       "text": "bezüglich unserer Anfrage"
+      },
+      {
+       "key": "b",
+       "text": "zu dieser Bestellung"
+      },
+      {
+       "key": "c",
+       "text": "über unsere Lieferung"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Alle noch offenen Fragen 56 ( ) kann Ihnen unsere Geschäftsführerin Frau Dr. Weser gerne beantworten.",
+     "explain": "Las preguntas pendientes son las de esta consulta: «Fragen bezüglich unserer Anfrage». Todavía no hay pedido ni entrega, así que b y c no encajan.",
+     "explain_ru": "Открытые вопросы относятся к этому запросу: «Fragen bezüglich unserer Anfrage». Заказа и поставки ещё нет, поэтому b и c не подходят."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Wir freuen uns auf 57 ( ) bis zum 02. Februar 20...",
+     "options": [
+      {
+       "key": "a",
+       "text": "eine gute Zusammenarbeit"
+      },
+      {
+       "key": "b",
+       "text": "eine schnelle Lösung"
+      },
+      {
+       "key": "c",
+       "text": "Ihr unverbindliches Angebot"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wir freuen uns auf 57 ( ) bis zum 02. Februar 20...",
+     "explain": "«Wir freuen uns auf Ihr unverbindliches Angebot»: esperan recibir la oferta sin compromiso antes del 2 de febrero. La colaboración llegaría después del pedido.",
+     "explain_ru": "«Wir freuen uns auf Ihr unverbindliches Angebot»: ждут предложение без обязательств до 2 февраля. Сотрудничество начнётся уже после заказа."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.3–20: texto reconstruido desde el OCR de un PDF escaneado; se corrigen erratas evidentes del OCR y de la imprenta siguiendo la imagen de cada página.",
+  "p.4, artículo b: el OCR leía «62 96»; la imagen muestra el signo de porcentaje, se escribe «62 %».",
+  "p.4, artículo g: el título impreso abre con „ y cierra con \"; se normaliza a „Du schaffst das!“.",
+  "p.5-6, Text 1 y Text 2: se restituye el punto perdido en «Gehaltsabrechnung. Gutscheine» y en «eingeführt. Das Sabbatical».",
+  "p.6, Text 2: «Oas Arbeitsentgelt» → «Das Arbeitsentgelt» (errata del OCR).",
+  "p.7, pregunta 12: el OCR leía «in meinem lob!»; se corrige a «Job!».",
+  "p.8, tipp b: la dirección aparece sin puntos en el escaneo; se restituye «info@bmfsfjservice.bund.de».",
+  "p.8, tipp d: «mit Ihrer Vorgesetzen» → «mit Ihrer Vorgesetzten».",
+  "p.8, tipp e: «Personengruppenr zum Beispiel Schwangerer» → «Personengruppen, zum Beispiel Schwangere,».",
+  "p.8, tipp f: el OCR leía «da iCh Zwillinge»; se corrige a «da ich Zwillinge».",
+  "p.9-10, protocolo: se restituyen comas y puntos que el escaneo pierde (p. ej. «gutgeschrieben. Nach Absprache») y «hilfreiche eingebunden» → «hilfreich eingebunden».",
+  "p.20, Sprachbausteine Teil 2: «Mit freundlich Grüßen» → «Mit freundlichen Grüßen»; «Züsammenarbeit» → «Zusammenarbeit».",
+  "Las respuestas de Lesen y Sprachbausteine son deducidas: el PDF no incluye Lösungsschlüssel.",
+  "Hören (22–41) va sin clave: el PDF no trae audio ni transcripción.",
+  "Hören del Modeltest 13: transcripción aportada en imágenes (Hörtexte) y convertida en bloque corregido para las tareas 22–40; la tarea 41 sigue sin clave."
+ ]
+}

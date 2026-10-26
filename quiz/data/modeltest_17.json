@@ -1,0 +1,1153 @@
+{
+ "block": "modeltest_17",
+ "section": "modeltest-17",
+ "variants": [
+  {
+   "id": "mt17-lesen-t1",
+   "label": "Lesen Teil 1",
+   "page": 2,
+   "kind": "zuordnung",
+   "intro": "Sie lesen online in einer Wirtschaftszeitung und möchten Ihren Freunden einige Artikel schicken. Entscheiden Sie, welcher Artikel a–h zu welcher Person 1–5 passt.",
+   "optionsLabel": "Artikel",
+   "options": [
+    {
+     "key": "a",
+     "title": "Fertig mit der Schule – was jetzt?",
+     "text": "Wer vor einer Ausbildung oder einem Studium zuerst einmal herausfinden möchte, welcher Beruf gut zur eigenen Persönlichkeit passt, kann bei einem Praktikum in einem größeren Betrieb gleich verschiedene Berufe kennenlernen. Lesen Sie hier den Erfahrungsbericht unserer derzeitigen Praktikantin.",
+     "distractor": ""
+    },
+    {
+     "key": "b",
+     "title": "In wenigen Schritten zum eigenen Internetauftritt",
+     "text": "Ohne Selbstdarstellung im World Wide Web kommt man heutzutage im Arbeitsleben nicht weit, ganz egal in welcher Branche. Aber vor allem junge Unternehmer*innen können sich oft keine teuren externen Profis leisten und gestalten und erstellen ihre Webseiten selbst. Wir haben deshalb für Sie entsprechende Anleitungen bewertet.",
+     "distractor": ""
+    },
+    {
+     "key": "c",
+     "title": "Entspannt durch den Büroalltag",
+     "text": "Wer kennt das nicht? Sie sitzen den ganzen Tag am Computer und schon vormittags schmerzen die Schultern, der Nacken und der Rücken. Das muss nicht sein! Mit unserem zehnminütigen Gymnastikprogramm kommen Sie gut durch den Bürotag!",
+     "distractor": "Habla de gimnasia contra el dolor de espalda en la oficina. No encaja con ninguna persona: nadie busca formación, ni un libro, ni cambiar de trabajo."
+    },
+    {
+     "key": "d",
+     "title": "Vom Traum zur Gründung",
+     "text": "Die Erfolgsautorin Tatjana Vollmer beschreibt in ihrem neuesten Buch, wie Sie sich erfolgreich selbstständig machen können. Von der Geschäftsidee über den Businessplan und die Finanzierung bis zum passenden Internetauftritt: Hier bekommen Sie wertvolle Tipps, worauf Sie wirklich achten müssen!",
+     "distractor": ""
+    },
+    {
+     "key": "e",
+     "title": "Gründer raus aus der Schuldenfalle",
+     "text": "Ihre Firma hat weniger Aufträge als erwartet und Sie können Ihre Verbindlichkeiten wie Kredite oder die Gewerbemiete für Ihre Geschäftsräume nicht mehr bezahlen? Unsere Finanzberaterin Constanze Hansen gibt Tipps, wie Sie die Finanzen Ihres Unternehmens wieder in den Griff bekommen können.",
+     "distractor": "Trata de fundadores que ya tienen deudas. Se confunde con Clara, que todavía está planeando abrir su tienda: aquí se habla de una empresa que ya existe y no paga."
+    },
+    {
+     "key": "f",
+     "title": "Gleicher Lohn für gleiche Arbeit –",
+     "text": "so sollte es eigentlich sein, aber oft sieht die Realität in Deutschland noch anders aus. Häufig verdienen Frauen mit denselben Abschlüssen und Qualifikationen weniger als ihre männlichen Kollegen. Warum das so ist und was man dagegen tun kann, erfahren Sie hier.",
+     "distractor": ""
+    },
+    {
+     "key": "g",
+     "title": "Die Jobs der Zukunft",
+     "text": "Die Digitalisierung verändert unser Arbeitsleben zunehmend. In unserer Hintergrundreportage stellen wir Ihnen in diesem Zusammenhang neu entstehende Berufsfelder vor und fragen uns, wie die Menschen in 20 Jahren arbeiten werden.",
+     "distractor": "Habla de profesiones que aparecerán en el futuro. Se confunde con Mariana (cambio de puesto) y con Nader (primeras experiencias), pero no explica cómo cambiar de trabajo ni cómo empezar."
+    },
+    {
+     "key": "h",
+     "title": "Wie zufrieden sind Sie mit Ihrer Arbeit?",
+     "text": "Für alle, die sich fragen, ob sie nach neuen beruflichen Herausforderungen suchen sollten, hat unsere Arbeitspsychologin Sandra Hauser einen Fragebogen entwickelt. Dieser erleichtert die Entscheidung, ob man besser bleibt oder doch lieber geht.",
+     "distractor": ""
+    }
+   ],
+   "items": [
+    {
+     "n": 1,
+     "type": "choice",
+     "prompt": "Clara plant, einen eigenen Laden zu eröffnen.",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Die Erfolgsautorin Tatjana Vollmer beschreibt in ihrem neuesten Buch, wie Sie sich erfolgreich selbstständig machen können.",
+     "explain": "El libro que presenta el anuncio d lleva del plan de negocio a la financiación: es una guía para montar el propio negocio, justo lo que planea Clara.",
+     "explain_ru": "Книга из объявления d ведёт от бизнес-идеи к финансированию: это руководство для открытия своего дела, именно то, что планирует Клара."
+    },
+    {
+     "n": 2,
+     "type": "choice",
+     "prompt": "Simon will lernen, wie man Webseiten programmiert.",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "gestalten und erstellen ihre Webseiten selbst",
+     "explain": "El anuncio b ofrece instrucciones para crear la propia página web sin profesionales externos; responde a Simon, que quiere aprender a hacerlo.",
+     "explain_ru": "Объявление b предлагает инструкции, как самому создать сайт без внешних специалистов; это ответ для Симона, который хочет этому научиться."
+    },
+    {
+     "n": 3,
+     "type": "choice",
+     "prompt": "Mariana überlegt, die Stelle zu wechseln.",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "Dieser erleichtert die Entscheidung, ob man besser bleibt oder doch lieber geht.",
+     "explain": "El cuestionario de la psicóloga del anuncio h ayuda a decidir si uno se queda o se va, que es exactamente la duda de Mariana.",
+     "explain_ru": "Опросник психолога из объявления h помогает решить, оставаться или уходить — именно это сомнение у Марианы."
+    },
+    {
+     "n": 4,
+     "type": "choice",
+     "prompt": "Nader möchte nach seinem Schulabschluss erste Berufserfahrungen sammeln.",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "kann bei einem Praktikum in einem größeren Betrieb gleich verschiedene Berufe kennenlernen",
+     "explain": "El artículo a empieza con «Fertig mit der Schule» y propone un practicum para conocer varios oficios antes de elegir; encaja con Nader.",
+     "explain_ru": "Статья a начинается с «Fertig mit der Schule» и предлагает практику, чтобы познакомиться с разными профессиями до выбора; подходит Надеру."
+    },
+    {
+     "n": 5,
+     "type": "choice",
+     "prompt": "Leah fragt sich, ob sie zu wenig verdient.",
+     "answer": "f",
+     "confidence": "mittel",
+     "quote": "Häufig verdienen Frauen mit denselben Abschlüssen und Qualifikationen weniger als ihre männlichen Kollegen.",
+     "explain": "Es el único artículo sobre el nivel de salario: habla de la brecha salarial entre mujeres y hombres. No dice si el sueldo concreto de Leah es bajo; de ahí la confianza media.",
+     "explain_ru": "Это единственная статья об уровне зарплаты: в ней речь о разнице в оплате женщин и мужчин. Конкретно о зарплате Леи там не сказано, поэтому уверенность средняя."
+    }
+   ]
+  },
+  {
+   "id": "mt17-lesen-t2",
+   "label": "Lesen Teil 2",
+   "page": 4,
+   "kind": "text",
+   "intro": "Lesen Sie die Texte und die Aufgaben 6–9. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Text 1\n\nWillkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nGesundheitsvorsorge\nIhre Gesundheit liegt uns am Herzen! Deshalb bieten wir verschiedene Kurse an. Vormittags können Sie einmal pro Woche an der Rückengymnastik teilnehmen. Es gibt eine Anfänger- und eine Fortgeschrittenengruppe. Kontaktieren Sie unseren Trainer, Herrn Mattus, und vereinbaren Sie eine Probestunde. Danach wird er Sie in die passende Gruppe einteilen.\nDes Weiteren haben Sie die Möglichkeit, an einem Achtsamkeitstraining teilzunehmen. Da die Kursinhalte hier aufeinander aufbauen, gibt es feste Gruppen, und es ist eine Anmeldung erforderlich. Die aktuelle Ansprechpartnerin ist Frau Gadoni. Beide Angebote können Sie in Ihrer Arbeitszeit wahrnehmen!\nAußerhalb der Arbeitszeit bieten wir mehrere offene Gruppen an.\nEinmal im Monat bekommen Sie in der Kantine Ernährungstipps mit aktuellen Rezepten. Außerdem existieren eine Laufgruppe und eine Radwandergruppe. Details zu Terminen und Treffpunkten finden Sie im Intranet. Aus versicherungstechnischen Gründen sind diese Angebote Angehörigen unserer Firma vorbehalten.\nSie können gerne auch eine neue Gruppe gründen. Kontaktieren Sie dazu Herrn Siebert.\n\nText 2\n\nWillkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nUmgang mit Diversität\nBei uns arbeiten rund 250 Personen aus über 20 verschiedenen Ländern – und darauf sind wir stolz! Unser Motto ist: „Je vielfältiger desto besser!“ Wir sind bemüht, jede einzelne Person mit ihren besonderen Bedürfnissen wahrzunehmen und zu unterstützen.\n\nHierzu ein paar Beispiele: Sie können an religiösen Feiertagen, die in Deutschland keine gesetzlichen Feiertage sind, freibekommen, wenn Sie die Arbeitszeit nachholen. Stellen Sie dafür bitte mindestens 2 Wochen vorher schriftlich einen Antrag bei Ihrem oder Ihrer direkten Vorgesetzten.\nIm zweiten Stock unserer Firma steht Ihnen ein interreligiöser Andachtsraum zur Verfügung, den Sie in Arbeitspausen nutzen können.\n\nFür Personen, die Deutsch nicht als Muttersprache sprechen, finanzieren wir Deutschkurse sowie Kommunikations- und Schreibtrainings.\nMit Personen, die sich um kleine Kinder oder pflegebedürftige Angehörige kümmern, suchen wir gemeinsam nach flexiblen Arbeitszeitmodellen.\n\nFalls Sie besondere körperliche Herausforderungen haben, unterstützen wir Sie individuell.\nBesprechen Sie bitte alles zunächst mit Ihrem oder Ihrer direkten Vorgesetzten.\nUnd wenn Sie der Meinung sind, dass Sie – aus welchen Gründen auch immer – benachteiligt werden. kontaktieren Sie bitte unsere Gleichbehandlungsbeauftragte Sophia Gebert.",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "Die Rückenkurse finden in festen Gruppen statt.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "mittel",
+     "quote": "Da die Kursinhalte hier aufeinander aufbauen, gibt es feste Gruppen, und es ist eine Anmeldung erforderlich.",
+     "explain": "«Falsch»: los grupos fijos con inscripción obligatoria son los del entrenamiento de mindfulness. En la gimnasia de espalda el entrenador reparte en dos grupos (principiantes y avanzados) después de una clase de prueba, sin inscripción. La frase mezcla las dos ofertas; por eso la confianza media.",
+     "explain_ru": "«Falsch»: постоянные группы с обязательной записью — это тренинг осознанности. На гимнастике для спины тренер распределяет в две группы (начинающие и продвинутые) после пробного занятия, без записи. Фраза смешивает два предложения, поэтому уверенность средняя."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Zu den offenen Angeboten",
+     "options": [
+      {
+       "key": "a",
+       "text": "bekommt man aktuelle Informationen bei Frau Gadoni."
+      },
+      {
+       "key": "b",
+       "text": "kann man auch Freunde oder Familienmitglieder mitbringen."
+      },
+      {
+       "key": "c",
+       "text": "kann man auch selbst etwas beitragen."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Sie können gerne auch eine neue Gruppe gründen.",
+     "explain": "Se puede aportar algo propio: fundar un grupo nuevo. Frau Gadoni es la contacto del mindfulness, no de los grupos abiertos, y los familiares están excluidos por el seguro.",
+     "explain_ru": "Можно внести свой вклад: основать новую группу. Госпожа Гадони отвечает за тренинг осознанности, а не за открытые группы; родственники исключены из-за страховки."
+    },
+    {
+     "n": 8,
+     "type": "truefalse",
+     "prompt": "Die Firma berücksichtigt die verschiedenen Bedürfnisse der Mitarbeiter.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "Wir sind bemüht, jede einzelne Person mit ihren besonderen Bedürfnissen wahrzunehmen und zu unterstützen.",
+     "explain": "«Richtig»: el texto lo dice expresamente y a continuación enumera ejemplos (fiestas religiosas, sala de oración, cursos de alemán, horarios flexibles).",
+     "explain_ru": "«Richtig»: текст говорит это прямо и затем приводит примеры (религиозные праздники, молитвенная комната, курсы немецкого, гибкий график)."
+    },
+    {
+     "n": 9,
+     "type": "choice",
+     "prompt": "Wenn man sich diskriminiert fühlt, soll man",
+     "options": [
+      {
+       "key": "a",
+       "text": "an einem Kommunikationstraining teilnehmen."
+      },
+      {
+       "key": "b",
+       "text": "sich an Frau Gebert wenden."
+      },
+      {
+       "key": "c",
+       "text": "sich schriftlich bei der Teamleitung beschweren."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "kontaktieren Sie bitte unsere Gleichbehandlungsbeauftragte Sophia Gebert.",
+     "explain": "Ante la sensación de ser discriminado, el texto remite a la responsable de igualdad, Sophia Gebert. Los cursos y el escrito previo son para otras gestiones.",
+     "explain_ru": "При ощущении дискриминации текст направляет к уполномоченной по равноправию Софии Геберт. Курсы и письменное заявление касаются других вопросов."
+    }
+   ]
+  },
+  {
+   "id": "mt17-lesen-t3",
+   "label": "Lesen Teil 3",
+   "page": 6,
+   "kind": "zuordnung",
+   "allowNone": true,
+   "intro": "Lesen Sie die Fragen 10–13 und die Texte a–f. Welche Frage passt zu welchem Tipp? Für eine Frage gibt es keinen passenden Tipp; markieren Sie dafür ein x.",
+   "optionsLabel": "Tipps",
+   "options": [
+    {
+     "key": "a",
+     "title": "Wael",
+     "text": "Dienstkleidung soll für ein einheitliches Aussehen des Teams sorgen und so das Image des Unternehmens repräsentieren. Die Arbeitsschutzkleidung, z. B. in einem Labor, schützt den Träger und die Umwelt. Was hast du gegen weiße Kittel in einer Praxis? Das gehört doch zum Beruf."
+    },
+    {
+     "key": "b",
+     "title": "Sabrina",
+     "text": "Arbeitgeber dürfen ihren Angestellten die Arbeitskleidung vorschreiben. Man muss zwischen „Dienstkleidung“ und „Arbeitsschutzkleidung“ unterscheiden. Ihre Frage bezieht sich aber auf die „Dienstkleidung“, die Sie theoretisch auch privat tragen könnten, auch wenn viele das nicht machen. Der Arbeitgeber kann hier verlangen, dass Sie dafür selbst aufkommen."
+    },
+    {
+     "key": "c",
+     "title": "Gerhard",
+     "text": "Klare Antwort: Ja! Das Interesse des Arbeitgebers an der angemessenen Kleidung seiner Mitarbeiter wiegt schwerer als Ihr Interesse, sich individuell zu kleiden. Wenn Sie sich weigern, die Dienstkleidung zu tragen, kann es Ihnen passieren, dass Sie nach zwei Abmahnungen Ihren Job verlieren."
+    },
+    {
+     "key": "d",
+     "title": "Matteo",
+     "text": "Arbeitsschutzkleidung ist eine persönliche Schutzkleidung zur Verhütung von Arbeitsunfällen und Berufskrankheiten. Dein Arbeitgeber ist verpflichtet, darauf zu achten, dass die Kleidung immer den neuesten Standards entspricht. Schau mal hier rein: www.arbeitsschutzgesetz.org/arbeitsschutzkleidung"
+    },
+    {
+     "key": "e",
+     "title": "Chiara",
+     "text": "Arbeitsbekleidung muss typisch und als Arbeitsbekleidung erkennbar sein. Auch wenn der Arbeitgeber Kleidung wie Anzüge, Kostüme oder weiße Hemden, die man auch privat tragen könnte, vorschreibt – diese werden steuerlich weder beim Kauf, noch bei der Reparatur oder der Reinigung anerkannt. Das wird also wohl leider nichts mit der Rückzahlung."
+    },
+    {
+     "key": "f",
+     "title": "Tina",
+     "text": "Ich finde das Tragen von Berufskleidung sehr sinnvoll. In einem Baumarkt kann ich so erkennen, wer Angestellter und wer Kunde oder Kundin ist. Auch in einem Krankenhaus kann ich durch die einheitliche Berufskleidung erkennen, wer zum Personal gehört."
+    }
+   ],
+   "items": [
+    {
+     "n": 10,
+     "type": "choice",
+     "prompt": "Franz: Meine Firma hat Dienstkleidung eingeführt: Für die Männer Anzüge, die Frauen können zwischen Hosenanzug oder Kostüm wählen. Das soll zum Unternehmensimage beitragen – nur leider sind Anzüge nicht mein Stil. Kann mir gekündigt werden, wenn ich es ablehne, diese Anzüge zu tragen?",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wenn Sie sich weigern, die Dienstkleidung zu tragen, kann es Ihnen passieren, dass Sie nach zwei Abmahnungen Ihren Job verlieren.",
+     "explain": "Gerhard responde con un «Ja» claro: el interés de la empresa pesa más y la negativa reiterada puede acabar en despido tras dos apercibimientos.",
+     "explain_ru": "Герхард отвечает ясным «Ja»: интерес фирмы важнее, и повторный отказ может привести к увольнению после двух предупреждений."
+    },
+    {
+     "n": 11,
+     "type": "choice",
+     "prompt": "Isabelle: Hallo, ich würde gerne wissen, wer die Arbeitsschutzkleidung bezahlen muss: Ich arbeite in einem Labor und muss laut Arbeitsvertrag welche tragen. Die Schutzbrille und die Einmalhandschuhe werden vor Ort gestellt, die Kittel und Schuhe muss ich aber aus eigener Tasche bezahlen. Auf meine Frage, ob das korrekt ist, wurde mir mit „Ja“ geantwortet, ich solle die Kosten dafür bei der Steuer angeben.",
+     "answer": "x",
+     "confidence": "mittel",
+     "quote": "",
+     "explain": "Ningún tipp responde a quién paga la ropa de protección. Matteo define ese tipo de ropa y la obligación del empresario sobre las normas, y Wael habla de su función, pero ninguno dice quién asume el coste; Sabrina trata la ropa de trabajo normal, Gerhard la negativa a llevarla y Chiara las deducciones fiscales.",
+     "explain_ru": "Ни один совет не отвечает, кто оплачивает защитную одежду. Маттео определяет этот вид одежды и обязанность работодателя следить за стандартами, Ваэль говорит о её функции, но никто не говорит, кто платит; Сабрина — об обычной рабочей одежде, Герхард — об отказе её носить, Кьяра — о налоговом вычете."
+    },
+    {
+     "n": 12,
+     "type": "choice",
+     "prompt": "Andrés: Ich bin Leiter des Serviceteams in einem bayerischen Lokal und muss wie alle Angestellten als Dienstkleidung eine Lederhose und ein kariertes Hemd tragen, die Frauen ein Dirndl. Wir schwitzen bei der Arbeit und ich brauche jeden Tag sogar ein bis zwei frische Hemden. Unser Arbeitgeber will, dass wir die Kleidung selbst bezahlen. Ich finde das nicht ok. Meine Frage: Müssen mein Team und ich das akzeptieren?",
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Der Arbeitgeber kann hier verlangen, dass Sie dafür selbst aufkommen.",
+     "explain": "Sabrina distingue ropa de trabajo y ropa de protección y dice que, en la ropa de trabajo que también podría llevarse en privado, la empresa puede exigir que la pague el empleado. Esa ropa (lederhose, dirndl) encaja; de ahí la confianza media y no alta.",
+     "explain_ru": "Сабрина различает рабочую одежду и защитную и говорит, что за рабочую одежду, которую можно носить и в частной жизни, фирма может требовать оплату от сотрудника. Такая одежда (ледерхозе, дирндль) подходит; поэтому уверенность средняя, а не высокая."
+    },
+    {
+     "n": 13,
+     "type": "choice",
+     "prompt": "Tobias: Wer kann mir helfen? Ich arbeite als Altenpfleger bei einem häuslichen Pflegedienst. Wir können bei der Arbeit unsere private Kleidung tragen. Meine Frage ist, ob ich den Kaufpreis und die Kosten für die Instandhaltung und das Waschen meiner Kleidung bei der Steuer angeben kann? Wäre super, wenn ich dafür Geld zurückbekommen könnte.",
+     "answer": "e",
+     "confidence": "hoch",
+     "quote": "diese werden steuerlich weder beim Kauf, noch bei der Reparatur oder der Reinigung anerkannt.",
+     "explain": "Chiara responde justo a la duda fiscal: compra, reparación y limpieza no se reconocen, así que no habrá devolución. Su última frase lo cierra.",
+     "explain_ru": "Кьяра отвечает именно на налоговый вопрос: покупка, ремонт и чистка не признаются, значит возврата не будет. Последняя фраза это подтверждает."
+    }
+   ]
+  },
+  {
+   "id": "mt17-lesen-t4",
+   "label": "Lesen Teil 4",
+   "page": 8,
+   "kind": "text",
+   "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Protokoll\n7. Mai 20.., 8:30–9:30 Uhr\nOrt: Besprechungszimmer 2, Max-Reiter-Weg 4, 95139 Süßheim\n\nAnwesende:\nMax Quirin (MQ, Geschäftsführung), Sara Nakamura (SN, Leitung Produktion), Günter Lorenz (GL, Leitung Qualitätskontrolle), Paula Raabe (PR, Leitung Einkauf), Tassilo Wüst (TW, Leitung Verkauf), Marie Steinberg (MS, Leitung Finanzen), Dirk Pätsch (DP, Leitung Personal), Klaus Schranz (KS, Leitung Marketing)\nGast: Nieva Escarda (NE, Praktikantin)\nProtokollant: Günter Lorenz\n\nTagesordnungspunkte\n1 Begrüßung, Termine und Genehmigung des letzten Protokolls\n2 Personelles\n3 Aktuelle Lage in der Produktion\n4 Stand Produktionsstätte II\n5 Berichte\n6 Sonstiges\n\nTOP 1 Begrüßung, Termine und Genehmigung des letzten Protokolls\nMQ begrüßt alle Anwesenden, lobt das pünktliche und vollständige Erscheinen und kündigt an, dass die Sitzung wegen eines wichtigen Außentermins heute auf keinen Fall länger als bis 09:30 Uhr dauern kann. Nach Diskussion zweier Termine wird die nächste Sitzung auf den 21. Mai, 8:30 Uhr bis 10:30 Uhr gelegt. Das Protokoll der letzten Sitzung wird nach einer kurzen Diskussion genehmigt.\n\nTOP 2 Personelles\nDP stellt Frau Escarda vor, die neue Halbjahrespraktikantin. NE studiert Betriebswirtschaft und stammt ursprünglich von den Philippinen, wo sie mehrere Jahre in einem Hotel als Rezeptionistin tätig war. In den nächsten Wochen soll sie alle Abteilungen kennenlernen und macht dafür anschließend an die Sitzung mit der jeweiligen Leitung Zeiten aus.\n\nTOP 3 Aktuelle Lage in der Produktion\nSN stellt fest, dass wegen des im Vergleich zum letzten Jahr erfreulich hohen Auftragsvolumens dieses Jahr schon ab KW 25 mit der Produktion der Lebkuchen und sonstigen saisonalen Waren begonnen werden muss. PR ergänzt, dass die Zulieferer alle erforderlichen Zutaten in ausreichender Menge zugesagt haben und die entsprechenden Bestellungen schon getätigt worden sind, sodass die Ware rechtzeitig angeliefert werden kann. DP berichtet, dass er für diese Produktionsphase bei der Zeitarbeitsfirma flexibelhelp, mit der wir seit Jahren gut zusammenarbeiten, fünf Aushilfskräfte angefordert hat.\n\nTOP 4 Stand Produktionsstätte II\nMQ berichtet über die Erweiterungspläne der Firma. Die zweite Produktionsstätte wird nun doch nicht in Süßheim angemietet werden, da hier die Gewerbemieten zu hoch sind. Damit kann auch der ursprünglich geplante Eröffnungstermin in einem halben Jahr nicht gehalten werden. MQ hat einen Immobilienmakler beauftragt, die Lage im benachbarten Thüringen zu prüfen, da dort die Mieten deutlich niedriger liegen. Es wird aber auf jeden Fall ein Standort in weniger als 30 km Entfernung gesucht.\n\nTOP 5 Berichte\nKS zeigt das Werbevideo, das produziert wurde, um wieder vermehrt auch jüngere Zielgruppen für unsere Produkte zu interessieren. Es bekam großen Beifall und wird ab nächste Woche online über verschiedene Kanäle ausgestrahlt werden. Außerdem ist KS auf der Suche nach einem Influencer, der Werbung für unseren Adventskalender macht. Details dazu dann in der nächsten Sitzung.\n\nTOP 6 Sonstiges\nAbschließend gibt MQ bekannt, dass unsere externen freien Mitarbeiter*innen dieses Jahr anstelle eines Lebkuchenpakets aus unserer Produktion elektronische Grußkarten bekommen werden. Diese enthalten die Mitteilung, dass das Geld für Projekte in den Kakaoanbaugebieten unserer Zulieferer gespendet wird. Diese Projekte fördern insbesondere die Ausbildung von Mädchen. Er kündigt im Sinne einer langfristigen Terminplanung außerdem vorab schon einmal an, dass die Weihnachtsfeier wie üblich am letzten Freitag vor Heiligabend stattfindet und die Firma auch dieses Jahr zwischen dem 24.12. und dem 1.1. geschlossen bleiben wird.",
+   "items": [
+    {
+     "n": 14,
+     "type": "choice",
+     "prompt": "Die Sitzung heute",
+     "options": [
+      {
+       "key": "a",
+       "text": "dauert zwei Stunden."
+      },
+      {
+       "key": "b",
+       "text": "muss pünktlich enden."
+      },
+      {
+       "key": "c",
+       "text": "wurde zweimal verschoben."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "dass die Sitzung wegen eines wichtigen Außentermins heute auf keinen Fall länger als bis 09:30 Uhr dauern kann",
+     "explain": "La reunión de hoy tiene que acabar como muy tarde a las 9:30 por una cita externa. Las dos horas son de la próxima reunión y lo de «zweimal» se refiere a dos fechas discutidas, no a dos aplazamientos.",
+     "explain_ru": "Сегодняшнее совещание должно закончиться не позже 9:30 из-за внешней встречи. Два часа — это про следующее совещание, а «zweimal» относится к обсуждённым датам, а не к переносам."
+    },
+    {
+     "n": 15,
+     "type": "choice",
+     "prompt": "Die Praktikantin",
+     "options": [
+      {
+       "key": "a",
+       "text": "hat noch keine Berufserfahrung."
+      },
+      {
+       "key": "b",
+       "text": "spricht im Anschluss Termine ab."
+      },
+      {
+       "key": "c",
+       "text": "wird in der Personalabteilung arbeiten."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "macht dafür anschließend an die Sitzung mit der jeweiligen Leitung Zeiten aus",
+     "explain": "Tras la reunión fija horarios con cada jefatura para conocer las secciones. Ya trabajó varios años de recepcionista y no se queda en personal, sino que pasa por todas las áreas.",
+     "explain_ru": "После совещания она договаривается о времени с каждым руководителем, чтобы познакомиться с отделами. Она уже работала несколько лет на ресепшене и не остаётся в отделе кадров, а проходит все."
+    },
+    {
+     "n": 16,
+     "type": "choice",
+     "prompt": "Die Produktion der Saisonartikel",
+     "options": [
+      {
+       "key": "a",
+       "text": "erfolgt mit zusätzlichem Personal."
+      },
+      {
+       "key": "b",
+       "text": "hat bereits pünktlich begonnen."
+      },
+      {
+       "key": "c",
+       "text": "verzögert sich wegen fehlender Zutaten."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "fünf Aushilfskräfte angefordert hat",
+     "explain": "Para esa fase se piden cinco temporeros a la empresa de trabajo temporal: personal adicional. La producción empieza en la semana 25, así que aún no ha comenzado, y los ingredientes están asegurados.",
+     "explain_ru": "На этот период запрошены пять временных работников: дополнительный персонал. Производство начинается с 25-й недели, значит ещё не началось, а ингредиенты обеспечены."
+    },
+    {
+     "n": 17,
+     "type": "choice",
+     "prompt": "Die neue Produktionsstätte",
+     "options": [
+      {
+       "key": "a",
+       "text": "geht in 6 Monaten in Betrieb."
+      },
+      {
+       "key": "b",
+       "text": "kann bis zu 30 km entfernt liegen."
+      },
+      {
+       "key": "c",
+       "text": "wird voraussichtlich in Thüringen gebaut."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Es wird aber auf jeden Fall ein Standort in weniger als 30 km Entfernung gesucht.",
+     "explain": "Se busca la ubicación a menos de 30 km. El plazo de medio año ya no se cumple, y Turingia solo se está examinando, no está decidida.",
+     "explain_ru": "Ищут место на расстоянии менее 30 км. Срок в полгода уже не соблюдается, а Тюрингия только проверяется, решение не принято."
+    },
+    {
+     "n": 18,
+     "type": "choice",
+     "prompt": "Der Geschäftsführer",
+     "options": [
+      {
+       "key": "a",
+       "text": "erläutert den Dienstplan zwischen Weihnachten und Neujahr."
+      },
+      {
+       "key": "b",
+       "text": "informiert über die Weihnachtsaktion."
+      },
+      {
+       "key": "c",
+       "text": "will anstelle der Feier Geld spenden."
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Diese enthalten die Mitteilung, dass das Geld für Projekte in den Kakaoanbaugebieten unserer Zulieferer gespendet wird.",
+     "explain": "Anuncia la tarjeta de felicitación con donación en lugar del paquete de lebkuchen: es la acción navideña. No detalla turnos de trabajo (solo que la empresa cierra) y la donación sustituye al paquete, no a la fiesta.",
+     "explain_ru": "Он объявляет открытку с пожертвованием вместо пакета пряников: это рождественская акция. График смен он не описывает (только закрытие фирмы), а пожертвование заменяет пакет, а не праздник."
+    }
+   ]
+  },
+  {
+   "id": "mt17-lesen-us",
+   "label": "Lesen und Schreiben",
+   "page": 10,
+   "kind": "text",
+   "intro": "Ihre Teamleitung leitet Ihnen die E-Mail eines Kunden weiter und bittet Sie zu antworten. Welche Lösung (a, b oder c) passt am besten?",
+   "passage": "Ihre Teamleitung leitet Ihnen die E-Mail von einem Kunden weiter und bittet Sie zu antworten.\n\nErhalten: heute 11:40 Uhr\nVon: Petra Speichert\nAn: ...\nBetreff: FW Beschwerde: Hochzeitsbuffet am 20.08.\n\nHallo,\n\ndie unten stehende Mail habe ich gerade bekommen. Bitte kümmern Sie sich darum und antworten Sie der Kundin höflich. Ich möchte nicht, dass Frau McEvoy uns eine schlechte Bewertung im Internet gibt. Sie können der Kundin ruhig schreiben, warum es bei dem Hochzeitsbuffet Probleme gab. Ganz wichtig: Bitte schreiben Sie der Kundin auch, was wir ihr als Ausgleich für die Unannehmlichkeiten vorschlagen.\n\nVielen Dank und mit Grüßen\nPetra Speichert\nTeamleiterin\n\nGesendet: heute 11:22 Uhr\nVon: Donna McEvoy\nAn: Petra Speichert\nBetreff: Beschwerde Hochzeitsbuffet am 20.08.\n\nSehr geehrte Frau Speichert,\n\nwir hatten für unsere Hochzeit am 20.08. bei Ihnen das Hochzeitsbuffet Premium (Mittagessen, 25 Personen) bestellt. Das Buffet sollte bis 12 Uhr geliefert und bis 12:30 Uhr aufgebaut sein. Ebenfalls sollten Sie für verschiedene Getränke zum Abschluss des Essens (Kaffee, Espresso etc.) sorgen.\n\nLeider ist alles schiefgegangen: Das Buffet war um 12:35 Uhr noch nicht da und wir konnten erst um halb zwei mit dem Essen beginnen. Als die Hochzeitstorte um 15 Uhr serviert wurde, waren alle noch satt. Ihr Essen war nicht schlecht, aber Sie haben uns einen Tag, den wir lange im Voraus und mit Liebe geplant hatten, fast verdorben.\n\nWir haben bereits eine hohe Anzahlung geleistet und erwarten jetzt, dass Sie uns mit dem noch offenen Betrag entgegenkommen. Nur eine Entschuldigung reicht nicht aus!\n\nGrüße\nDonna McEvoy",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Frau McEvoy beschwert sich, dass",
+     "options": [
+      {
+       "key": "a",
+       "text": "das falsche Buffet geliefert wurde."
+      },
+      {
+       "key": "b",
+       "text": "das Essen nicht geschmeckt hat."
+      },
+      {
+       "key": "c",
+       "text": "das Essen zu spät kam."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Das Buffet war um 12:35 Uhr noch nicht da und wir konnten erst um halb zwei mit dem Essen beginnen.",
+     "explain": "El buffet del menú correcto llegó tarde: tenía que estar a las 12:00 y a las 12:35 seguía sin aparecer. No critica el sabor («Ihr Essen war nicht schlecht») ni el tipo de menú.",
+     "explain_ru": "Буфет был заказан правильно, но опоздал: должен был быть в 12:00, а в 12:35 его ещё не было. Вкус она не критикует («Ihr Essen war nicht schlecht») и тип меню тоже."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Firma soll",
+     "options": [
+      {
+       "key": "a",
+       "text": "auf die Anzahlung verzichten."
+      },
+      {
+       "key": "b",
+       "text": "die Rechnung mindern."
+      },
+      {
+       "key": "c",
+       "text": "Geld zurückbezahlen."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Wir haben bereits eine hohe Anzahlung geleistet und erwarten jetzt, dass Sie uns mit dem noch offenen Betrag entgegenkommen.",
+     "explain": "Ya pagó un anticipo alto y pide una rebaja en el importe pendiente, es decir, reducir la factura. No pide devolución del dinero ni renunciar al anticipo.",
+     "explain_ru": "Она уже внесла большой аванс и просит уступить по оставшейся сумме, то есть уменьшить счёт. Возврата денег и отказа от аванса она не требует."
+    }
+   ]
+  },
+  {
+   "id": "mt17-hoeren-t1",
+   "label": "Hören Teil 1",
+   "page": 12,
+   "kind": "ohne-key",
+   "intro": "Sie hören drei Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 22,
+     "type": "truefalse",
+     "prompt": "Die Kundin möchte etwas bestellen.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "type": "choice",
+     "prompt": "Herr Schröder von der Firma Schröder",
+     "options": [
+      {
+       "key": "a",
+       "text": "bietet eine Entschädigung an."
+      },
+      {
+       "key": "b",
+       "text": "hat die Ware vorrätig."
+      },
+      {
+       "key": "c",
+       "text": "soll die Mitarbeiter schulen."
+      }
+     ]
+    },
+    {
+     "n": 24,
+     "type": "truefalse",
+     "prompt": "Die Teamleitung spricht über einen neuen Bewohner.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "type": "choice",
+     "prompt": "Für Herrn Schäfer ändert sich",
+     "options": [
+      {
+       "key": "a",
+       "text": "der Speiseplan."
+      },
+      {
+       "key": "b",
+       "text": "die Häufigkeit der Mahlzeiten."
+      },
+      {
+       "key": "c",
+       "text": "die zuständige Pflegeperson."
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "type": "truefalse",
+     "prompt": "Yolanda soll in allen Bereichen des Hotel-Restaurants arbeiten.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "type": "choice",
+     "prompt": "Yolanda muss",
+     "options": [
+      {
+       "key": "a",
+       "text": "das Buffet auffüllen."
+      },
+      {
+       "key": "b",
+       "text": "in Abstimmung mit dem Küchenpersonal arbeiten."
+      },
+      {
+       "key": "c",
+       "text": "mit dem elektronischen Bezahlsystem kassieren."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt17-hoeren-t2",
+   "label": "Hören Teil 2",
+   "page": 13,
+   "kind": "ohne-key",
+   "optionsLabel": "Aussagen",
+   "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch?",
+   "options": [
+    {
+     "key": "a",
+     "text": "Ablenkung gibt es im Home-Office und auch im Büro."
+    },
+    {
+     "key": "b",
+     "text": "Im Home-Office hat man weniger Stress als bei der Arbeit im Büro."
+    },
+    {
+     "key": "c",
+     "text": "Im Home-Office zu arbeiten erspart den Arbeitsweg."
+    },
+    {
+     "key": "d",
+     "text": "Konzentriertes Arbeiten ist im Home-Office oft nicht möglich."
+    },
+    {
+     "key": "e",
+     "text": "Mitarbeitern im Home-Office wird manchmal misstraut."
+    },
+    {
+     "key": "f",
+     "text": "Oft fehlt im Home-Office der Austausch mit Kolleginnen und Kollegen."
+    }
+   ],
+   "items": [
+    {
+     "n": 28,
+     "type": "choice",
+     "prompt": "Gespräch 1"
+    },
+    {
+     "n": 29,
+     "type": "choice",
+     "prompt": "Gespräch 2"
+    },
+    {
+     "n": 30,
+     "type": "choice",
+     "prompt": "Gespräch 3"
+    },
+    {
+     "n": 31,
+     "type": "choice",
+     "prompt": "Gespräch 4"
+    }
+   ]
+  },
+  {
+   "id": "mt17-hoeren-t3",
+   "label": "Hören Teil 3",
+   "page": 14,
+   "kind": "ohne-key",
+   "intro": "Sie hören gleich eine Präsentation. Dazu gibt es vier Aufgaben. Welche Lösung (a, b oder c) passt jeweils am besten?",
+   "items": [
+    {
+     "n": 32,
+     "type": "choice",
+     "prompt": "Änderungen · Für die Mitarbeiter ändern sich",
+     "options": [
+      {
+       "key": "a",
+       "text": "die meisten Auftraggeber."
+      },
+      {
+       "key": "b",
+       "text": "die Zeiten, in denen sie arbeiten."
+      },
+      {
+       "key": "c",
+       "text": "die zu erledigenden Aufgaben."
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "type": "choice",
+     "prompt": "Bodenflächen · Die neuen Geräte",
+     "options": [
+      {
+       "key": "a",
+       "text": "ersparen einen kompletten Arbeitsgang."
+      },
+      {
+       "key": "b",
+       "text": "sind hygienesensibel konstruiert."
+      },
+      {
+       "key": "c",
+       "text": "sind kompliziert in der Anwendung."
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "type": "choice",
+     "prompt": "Büro- und Personalräume · Die Putzkräfte müssen die Hygienetücher",
+     "options": [
+      {
+       "key": "a",
+       "text": "auf den Reinigungswagen legen."
+      },
+      {
+       "key": "b",
+       "text": "in den Büros nachfüllen."
+      },
+      {
+       "key": "c",
+       "text": "zur Reinigung der Schreibtische einsetzen."
+      }
+     ]
+    },
+    {
+     "n": 35,
+     "type": "choice",
+     "prompt": "Sanitärbereich · Das Desinfektionsmittel",
+     "options": [
+      {
+       "key": "a",
+       "text": "bestellt der Auftraggeber."
+      },
+      {
+       "key": "b",
+       "text": "bringt die Reinigungsfirma mit."
+      },
+      {
+       "key": "c",
+       "text": "wurde mehrfach ausgetauscht."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt17-hoeren-t4",
+   "label": "Hören Teil 4",
+   "page": 15,
+   "kind": "ohne-key",
+   "intro": "Sie hören fünf telefonische Mitteilungen. Zu jeder Mitteilung gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 36,
+     "type": "choice",
+     "prompt": "Tina bittet darum, dass",
+     "options": [
+      {
+       "key": "a",
+       "text": "der Kollege ein bestimmtes Kabel mitbringt."
+      },
+      {
+       "key": "b",
+       "text": "der Kollege einen Termin verschiebt."
+      },
+      {
+       "key": "c",
+       "text": "sie früher Feierabend machen kann."
+      }
+     ]
+    },
+    {
+     "n": 37,
+     "type": "choice",
+     "prompt": "Daniel kann morgen nicht arbeiten, weil er",
+     "options": [
+      {
+       "key": "a",
+       "text": "an einer Fortbildung teilnimmt."
+      },
+      {
+       "key": "b",
+       "text": "eine Erkältung hat."
+      },
+      {
+       "key": "c",
+       "text": "sein Kind betreuen muss."
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "type": "choice",
+     "prompt": "Frau Mirke",
+     "options": [
+      {
+       "key": "a",
+       "text": "bietet ihrem Kunden einen Rabatt an."
+      },
+      {
+       "key": "b",
+       "text": "bittet um einen baldigen Rückruf."
+      },
+      {
+       "key": "c",
+       "text": "möchte gerne grünen Spargel bestellen."
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "type": "choice",
+     "prompt": "Max Grün",
+     "options": [
+      {
+       "key": "a",
+       "text": "bittet um einen Besprechungstermin."
+      },
+      {
+       "key": "b",
+       "text": "möchte eine Bestellung aufgeben."
+      },
+      {
+       "key": "c",
+       "text": "reklamiert eine falsche Lieferung."
+      }
+     ]
+    },
+    {
+     "n": 40,
+     "type": "choice",
+     "prompt": "Karim",
+     "options": [
+      {
+       "key": "a",
+       "text": "hat für den Betriebsausflug ein Buffet bestellt."
+      },
+      {
+       "key": "b",
+       "text": "möchte den Termin für den Betriebsausflug verschieben."
+      },
+      {
+       "key": "c",
+       "text": "schlägt ein anderes Restaurant für den Betriebsausflug vor."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt17-hoeren-und-schreiben",
+   "label": "Hören und Schreiben",
+   "page": 16,
+   "kind": "ohne-key",
+   "intro": "Sie hören eine telefonische Mitteilung. Wählen Sie die richtige Lösung (a, b oder c) für Aufgabe 41. Die Notizen 42–45 gehören zum Schreibteil und sind hier nicht enthalten.",
+   "items": [
+    {
+     "n": 41,
+     "type": "choice",
+     "prompt": "Grund für den Anruf",
+     "options": [
+      {
+       "key": "a",
+       "text": "Angebot"
+      },
+      {
+       "key": "b",
+       "text": "Bestellung/Buchung"
+      },
+      {
+       "key": "c",
+       "text": "Beschwerde"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt17-sprachbausteine-t1",
+   "label": "Sprachbausteine Teil 1",
+   "page": 17,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Text. Welches Wort (a–j) passt in jede Lücke (46–51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Betreff: Meine Bewerbung vom 27.3., Stellenzeichen JU-2022\n\nSehr geehrte Damen und Herren,\n\nvor einiger Zeit habe ich mich bei Ihnen auf die Stelle als Erzieher beworben und eine Einladung zu einem Vorstellungsgespräch am fünften Mai erhalten, 46 ( ) ich mich sehr gefreut habe. Dürfte ich Sie 47 ( ) bitten, das Gespräch zu verschieben, 48 ( ) ich genau an diesem Tag meine letzte mündliche Prüfung absolvieren muss? Wenn das Gespräch nicht 49 ( ) der Prüfungszeit stattfinden würde, sondern erst danach, wäre ich sehr dankbar. 50 ( ) dem fünften Mai bin ich flexibel.\nAnbei schicke ich Ihnen außerdem wie telefonisch besprochen die Referenz meiner derzeitigen Praktikumsanleiterin. Das Abschlusszeugnis erhalte ich 51 ( ) nach der mündlichen Prüfung und werde es Ihnen dann so schnell wie möglich nachreichen.\n\nVielen Dank für Ihr Verständnis.\n\nMit freundlichen Grüßen\nJonathan Spielberger",
+   "options": [
+    {
+     "key": "a",
+     "text": "AB"
+    },
+    {
+     "key": "b",
+     "text": "DEMNÄCHST"
+    },
+    {
+     "key": "c",
+     "text": "DESWEGEN"
+    },
+    {
+     "key": "d",
+     "text": "ERST"
+    },
+    {
+     "key": "e",
+     "text": "NUN"
+    },
+    {
+     "key": "f",
+     "text": "SEIT"
+    },
+    {
+     "key": "g",
+     "text": "TROTZDEM"
+    },
+    {
+     "key": "h",
+     "text": "WÄHREND"
+    },
+    {
+     "key": "i",
+     "text": "WEIL"
+    },
+    {
+     "key": "j",
+     "text": "WORÜBER"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "vor einiger Zeit habe ich mich bei Ihnen auf die Stelle als Erzieher beworben und eine Einladung zu einem Vorstellungsgespräch am fünften Mai erhalten, 46 ( ) ich mich sehr gefreut habe.",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "vor einiger Zeit habe ich mich bei Ihnen auf die Stelle als Erzieher beworben und eine Einladung zu einem Vorstellungsgespräch am fünften Mai erhalten, 46 ( ) ich mich sehr gefreut habe.",
+     "explain": "«worüber ich mich sehr gefreut habe» retoma toda la oración anterior: el relativo con preposición recoge la invitación. Ninguna otra palabra del banco enlaza así dos frases.",
+     "explain_ru": "«worüber ich mich sehr gefreut habe» отсылает ко всему предыдущему предложению: относительное местоимение с предлогом подхватывает приглашение. Другие слова из банка так две части не связывают."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "Dürfte ich Sie 47 ( ) bitten, das Gespräch zu verschieben",
+     "answer": "e",
+     "confidence": "mittel",
+     "quote": "Dürfte ich Sie 47 ( ) bitten, das Gespräch zu verschieben",
+     "explain": "«Dürfte ich Sie nun bitten, ...» marca el paso al ruego tras el agradecimiento. «Deswegen» pediría que lo anterior fuera la causa del ruego, y la causa llega después con «weil»; por eso la confianza media.",
+     "explain_ru": "«Dürfte ich Sie nun bitten, ...» отмечает переход к просьбе после благодарности. «Deswegen» требовало бы, чтобы причина была раньше, а причина идёт позже с «weil»; поэтому уверенность средняя."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "das Gespräch zu verschieben, 48 ( ) ich genau an diesem Tag meine letzte mündliche Prüfung absolvieren muss?",
+     "answer": "i",
+     "confidence": "hoch",
+     "quote": "das Gespräch zu verschieben, 48 ( ) ich genau an diesem Tag meine letzte mündliche Prüfung absolvieren muss?",
+     "explain": "La petición se justifica con una subordinada causal: «weil ich ... absolvieren muss», con el verbo conjugado al final.",
+     "explain_ru": "Просьба обоснована причинным придаточным: «weil ich ... absolvieren muss», спрягаемый глагол в конце."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "Wenn das Gespräch nicht 49 ( ) der Prüfungszeit stattfinden würde, sondern erst danach, wäre ich sehr dankbar.",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "Wenn das Gespräch nicht 49 ( ) der Prüfungszeit stattfinden würde, sondern erst danach, wäre ich sehr dankbar.",
+     "explain": "«während der Prüfungszeit»: durante el periodo de exámenes. El contraste con «erst danach» confirma el sentido temporal.",
+     "explain_ru": "«während der Prüfungszeit»: во время экзаменационного периода. Контраст с «erst danach» подтверждает временное значение."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "50 ( ) dem fünften Mai bin ich flexibel.",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "50 ( ) dem fünften Mai bin ich flexibel.",
+     "explain": "«Ab dem fünften Mai bin ich flexibel»: a partir del 5 de mayo. «Seit» no vale porque esa fecha todavía no ha llegado cuando escribe la carta.",
+     "explain_ru": "«Ab dem fünften Mai bin ich flexibel»: начиная с 5 мая. «Seit» не подходит, потому что эта дата ещё не наступила на момент письма."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "Das Abschlusszeugnis erhalte ich 51 ( ) nach der mündlichen Prüfung und werde es Ihnen dann so schnell wie möglich nachreichen.",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Das Abschlusszeugnis erhalte ich 51 ( ) nach der mündlichen Prüfung",
+     "explain": "«erst nach der mündlichen Prüfung»: solo después del examen oral, no antes; por eso todavía no puede enviarlo.",
+     "explain_ru": "«erst nach der mündlichen Prüfung»: только после устного экзамена, не раньше; поэтому он ещё не может его отправить."
+    }
+   ]
+  },
+  {
+   "id": "mt17-sprachbausteine-t2",
+   "label": "Sprachbausteine Teil 2",
+   "page": 18,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welcher Ausdruck (a, b oder c) passt in jede Lücke (52–57)?",
+   "passageOpen": true,
+   "passage": "Angebot\n\nSehr geehrter Herr Hornung,\n\nvielen Dank für 52 ( ) zu unserer Gewerbe-Kühl-Gefrierkombination M53.\n\nWir bieten mit unserer Gewerbe-Kühl-Gefrierkombination ein zu 53 ( ) passendes Produkt, das Sie schnell zum Einsatz bringen können.\n\nIm beiliegenden Angebot finden Sie unsere 54 ( ) mit den Lieferbedingungen. In unserer Preiskalkulation konnten wir innerhalb der von Ihnen 55 ( ) bleiben. Unser neuer Katalog geht Ihnen noch per Post zu.\n\nWir können Ihnen die Gewerbe-Kühl-Gefrierkombination M53 spätestens drei Wochen nach der von Ihnen 56 ( ) liefern.\n\nWir würden uns über Ihre Bestellung sehr freuen und garantieren Ihnen 57 ( ) nach Ihren Wünschen.\n\nMit freundlichen Grüßen\nJennifer Gruber",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "vielen Dank für 52 ( ) zu unserer Gewerbe-Kühl-Gefrierkombination M53.",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihre Anfrage"
+      },
+      {
+       "key": "b",
+       "text": "Ihre Bestellung"
+      },
+      {
+       "key": "c",
+       "text": "Ihren Auftrag"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "vielen Dank für 52 ( ) zu unserer Gewerbe-Kühl-Gefrierkombination M53.",
+     "explain": "La carta agradece una consulta sobre el aparato; el pedido aún no existe, porque al final dice «Wir würden uns über Ihre Bestellung sehr freuen». Por eso «Ihre Anfrage», en acusativo tras «für».",
+     "explain_ru": "Письмо благодарит за запрос об аппарате; заказа ещё нет, ведь в конце сказано «Wir würden uns über Ihre Bestellung sehr freuen». Поэтому «Ihre Anfrage», в винительном падеже после «für»."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "Wir bieten mit unserer Gewerbe-Kühl-Gefrierkombination ein zu 53 ( ) passendes Produkt",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihrem geäußerten Wunsch"
+      },
+      {
+       "key": "b",
+       "text": "Ihren großen Bemühungen"
+      },
+      {
+       "key": "c",
+       "text": "Ihrer letzten Rechnung"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Wir bieten mit unserer Gewerbe-Kühl-Gefrierkombination ein zu 53 ( ) passendes Produkt",
+     "explain": "«ein zu Ihrem geäußerten Wunsch passendes Produkt»: un producto que encaja con el deseo expresado por el cliente. Tras «zu» va dativo, y solo la opción a tiene dativo correcto.",
+     "explain_ru": "«ein zu Ihrem geäußerten Wunsch passendes Produkt»: товар, подходящий к высказанному желанию клиента. После «zu» нужен датив, и только вариант a даёт правильный датив."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Im beiliegenden Angebot finden Sie unsere 54 ( ) mit den Lieferbedingungen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "aktuelle Preisliste"
+      },
+      {
+       "key": "b",
+       "text": "neue Sendungsnummer"
+      },
+      {
+       "key": "c",
+       "text": "überarbeiteten Planungen"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Im beiliegenden Angebot finden Sie unsere 54 ( ) mit den Lieferbedingungen.",
+     "explain": "El anexo es la oferta con la lista de precios vigente y las condiciones de entrega: «unsere aktuelle Preisliste». Ni el número de envío ni los planes encajan con condiciones de entrega.",
+     "explain_ru": "Вложение — это предложение с действующим прайс-листом и условиями поставки: «unsere aktuelle Preisliste». Ни номер отправки, ни планы не сочетаются с условиями поставки."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "In unserer Preiskalkulation konnten wir innerhalb der von Ihnen 55 ( ) bleiben.",
+     "options": [
+      {
+       "key": "a",
+       "text": "ausstehenden Schulden"
+      },
+      {
+       "key": "b",
+       "text": "bezahlten Summe"
+      },
+      {
+       "key": "c",
+       "text": "genannten Preisvorgabe"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "In unserer Preiskalkulation konnten wir innerhalb der von Ihnen 55 ( ) bleiben.",
+     "explain": "«innerhalb der von Ihnen genannten Preisvorgabe bleiben»: mantenerse dentro del margen de precio que indicó el cliente. «Schulden» y «bezahlte Summe» no encajan con «innerhalb ... bleiben».",
+     "explain_ru": "«innerhalb der von Ihnen genannten Preisvorgabe bleiben»: остаться в рамках указанной клиентом цены. «Schulden» и «bezahlte Summe» не сочетаются с «innerhalb ... bleiben»."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "Wir können Ihnen die Gewerbe-Kühl-Gefrierkombination M53 spätestens drei Wochen nach der von Ihnen 56 ( ) liefern.",
+     "options": [
+      {
+       "key": "a",
+       "text": "ausgefüllten Schadensmeldung"
+      },
+      {
+       "key": "b",
+       "text": "erfolgten Auftragserteilung"
+      },
+      {
+       "key": "c",
+       "text": "ungerechtfertigten Reklamation"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "spätestens drei Wochen nach der von Ihnen 56 ( ) liefern.",
+     "explain": "El plazo de entrega cuenta desde que el cliente hace el pedido: «nach der von Ihnen erfolgten Auftragserteilung». Un parte de daños o una reclamación no ponen en marcha una entrega.",
+     "explain_ru": "Срок поставки отсчитывается с момента заказа: «nach der von Ihnen erfolgten Auftragserteilung». Заявление об ущербе или рекламация не запускают поставку."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Wir würden uns über Ihre Bestellung sehr freuen und garantieren Ihnen 57 ( ) nach Ihren Wünschen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "eine sofortige Stornierung"
+      },
+      {
+       "key": "b",
+       "text": "eine termingerechte Lieferung"
+      },
+      {
+       "key": "c",
+       "text": "einen pünktlichen Abtransport"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "garantieren Ihnen 57 ( ) nach Ihren Wünschen.",
+     "explain": "La empresa garantiza una entrega en plazo según los deseos del cliente: «eine termingerechte Lieferung». Una cancelación o un transporte de retirada no tienen sentido en una oferta.",
+     "explain_ru": "Фирма гарантирует поставку в срок по желанию клиента: «eine termingerechte Lieferung». Отмена или вывоз не имеют смысла в предложении."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.2–18: texto reconstruido desde OCR de un PDF escaneado; se corrigen tildes diacríticas y erratas evidentes del OCR.",
+  "Las respuestas de Lesen y Sprachbausteine son deducidas: el PDF no incluye Lösungsschlüssel (p.21 lo remite a un grupo externo).",
+  "Hören (22–41) va sin clave: el PDF no trae audio ni transcripción.",
+  "p.3: el anuncio aparece como «C» mayúscula en el PDF; se normaliza a «c».",
+  "p.3: se quitan los enlaces «mehr …» que cierran cada anuncio.",
+  "p.4: «etwcas» → «etwas» (errata del OCR).",
+  "p.5: se conserva tal cual la minúscula inicial de «kontaktieren» tras el punto, errata del libro y no del OCR.",
+  "p.8–9: «Produktionsstätte 11» → «Produktionsstätte II» y «Auftragsvotumens» → «Auftragsvolumens», leídos en la imagen y no en el OCR.",
+  "p.10: «Intemet» → «Internet» (errata del OCR).",
+  "p.12: «Sie hören die Gespräche einmal .» → «einmal.» (espacio sobrante del OCR).",
+  "p.14: la columna de temas (Änderungen, Bodenflächen, Büro- und Personalräume, Sanitärbereich) se une al enunciado con « · » para no perder la etiqueta del PDF.",
+  "p.18: «einzu 53» era un salto de línea del OCR; el texto es «ein zu 53 ( ) passendes Produkt»."
+ ]
+}

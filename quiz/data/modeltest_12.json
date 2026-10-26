@@ -1,0 +1,1155 @@
+{
+ "block": "modeltest_12",
+ "section": "modeltest-12",
+ "variants": [
+  {
+   "id": "mt12-lesen-t1",
+   "label": "Lesen Teil 1",
+   "page": 2,
+   "kind": "zuordnung",
+   "intro": "Sie lesen online in einer Wirtschaftszeitung und möchten Ihren Freunden einige Artikel schicken. Entscheiden Sie, welcher Artikel a–h zu welcher Person 1–5 passt.",
+   "optionsLabel": "Artikel",
+   "options": [
+    {
+     "key": "a",
+     "title": "Unsere Lehrstellenbörse",
+     "text": "Sie sind auf der Suche nach einer Lehrstelle oder einem Praktikumsplatz? Unter „Ausbildungsberufe A–Z“ können Sie sich über geeignete Berufe informieren. Freie Lehrstellen und Praktikumsplätze finden Sie über ein Suchformular.",
+     "distractor": ""
+    },
+    {
+     "key": "b",
+     "title": "Ungerechtigkeit am Arbeitsplatz",
+     "text": "Laut der Studie einer Krankenkasse fühlen sich Arbeitnehmerinnen und Arbeitnehmer motivierter und gesünder, wenn sie an ihrem Arbeitsplatz fair behandelt werden. Erleben sie Ungerechtigkeit im Unternehmen, führt das häufig zu Beschwerden wie Schlafstörungen und mehr Krankheitstagen.",
+     "distractor": "Habla de trato justo y de salud. No encaja con ninguna persona: nadie busca empleo, formación ni asesoramiento."
+    },
+    {
+     "key": "c",
+     "title": "Wege aus der Krise",
+     "text": "Sie haben Zahlungsprobleme in der Firma? Dann brauchen Sie praktisches Wissen, um Ihren Betrieb sicher aus der Krise zu führen. Die Karriereberaterin Maria Häusler, Rechtsanwältin und Autorin des Bestsellers „Wege aus der Krise“, gibt Tipps darüber, wie man Zahlungsprobleme und andere finanzielle Engpässe in einem Betrieb meistern kann.",
+     "distractor": "Trata de sanear una empresa que ya existe. Se confunde con Fariba y Maryse por lo de la empresa propia, pero ellas quieren fundar una, no salvar una con deudas."
+    },
+    {
+     "key": "d",
+     "title": "Gefährdet die E-Mobilität Arbeitsplätze?",
+     "text": "Vergleicht man den Arbeitsaufwand und den Personalbedarf beim Bau von Elektroautos mit dem Bau von Fahrzeugen mit Benzin- oder Dieselmotor, so gibt es kaum Unterschiede. Das ist das überraschende Ergebnis einer aktuellen Studie. Dabei haben Experten alle Arbeitsschritte in der Produktion detailliert miteinander verglichen.",
+     "distractor": ""
+    },
+    {
+     "key": "e",
+     "title": "Haushaltshilfen für Haushalte mit Pflegebedürftigen",
+     "text": "Viele Familien in Deutschland, die Angehörige zu Hause pflegen, beschäftigen ausländische Hilfskräfte, um Unterstützung im Haushalt und bei der Pflege zu bekommen. Mithilfe der Bundesagentur für Arbeit können geeignete Haushaltshilfen gefunden werden.",
+     "distractor": "Se dirige a las familias que cuidan y buscan ayuda, no a quien busca trabajo. Se confunde con la idea de encontrar empleo, pero el anuncio va al revés."
+    },
+    {
+     "key": "f",
+     "title": "Beratungsstellen für berufskranke Menschen",
+     "text": "Die Zahl der Menschen, die durch ihre Arbeit krank werden, steigt. Die Landesregierungen von Bremen, Hamburg und Berlin haben auf diese Situation reagiert und unabhängige Beratungsstellen eingerichtet. Menschen, die an einer Berufskrankheit leiden, können sich hier entsprechend informieren, was zu tun ist.",
+     "distractor": ""
+    },
+    {
+     "key": "g",
+     "title": "Hilfe auf dem Weg in die Selbstständigkeit",
+     "text": "Sie möchten sich selbstständig machen und wünschen sich Informationen zu diesem Thema? Unsere Berater und Beraterinnen helfen Ihnen auf Ihrem Weg und garantieren eine umfangreiche und kostenlose Beratung. Vereinbaren Sie einfach einen Termin und nutzen Sie unser Angebot. Das ist der erste Schritt zum Ziel!",
+     "distractor": ""
+    },
+    {
+     "key": "h",
+     "title": "Eine Chance für internationale Fachkräfte",
+     "text": "In Deutschland gibt es immer weniger junge Menschen und so wächst auch der Bedarf an Fachkräften. Vor allem die Bereiche Gesundheit, Naturwissenschaft und Technik benötigen qualifizierte Arbeitskräfte aus dem Ausland. Dort bestehen also die besten Chancen für Migrant*innen mit der entsprechenden Qualifikation, einen Arbeitsplatz zu finden.",
+     "distractor": ""
+    }
+   ],
+   "items": [
+    {
+     "n": 1,
+     "type": "choice",
+     "prompt": "Marcelo ist Elektrotechniker und sucht eine Stelle.",
+     "answer": "h",
+     "confidence": "mittel",
+     "quote": "Vor allem die Bereiche Gesundheit, Naturwissenschaft und Technik benötigen qualifizierte Arbeitskräfte aus dem Ausland.",
+     "explain": "El anuncio h es el único que habla de encontrar un puesto en el área técnica. La duda: h se dirige a profesionales del extranjero y el texto no dice que Marcelo lo sea; por eso la confianza es media.",
+     "explain_ru": "Объявление h — единственное о поиске места в технической сфере. Сомнение: h обращено к специалистам из-за рубежа, а в тексте не сказано, что Марсело оттуда; поэтому уверенность средняя."
+    },
+    {
+     "n": 2,
+     "type": "choice",
+     "prompt": "Ousmane möchte gern eine Ausbildung machen.",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Sie sind auf der Suche nach einer Lehrstelle oder einem Praktikumsplatz?",
+     "explain": "El anuncio a es la bolsa de plazas de formación: ofrece un buscador de puestos libres, justo lo que necesita Ousmane.",
+     "explain_ru": "Объявление a — биржа учебных мест: там есть поиск свободных мест, именно это нужно Усмане."
+    },
+    {
+     "n": 3,
+     "type": "choice",
+     "prompt": "Kim interessiert sich für die Automobilindustrie.",
+     "answer": "d",
+     "confidence": "hoch",
+     "quote": "Vergleicht man den Arbeitsaufwand und den Personalbedarf beim Bau von Elektroautos mit dem Bau von Fahrzeugen mit Benzin- oder Dieselmotor, so gibt es kaum Unterschiede.",
+     "explain": "El artículo d compara la producción de coches eléctricos con la de gasolina y diésel, es decir, la industria del automóvil.",
+     "explain_ru": "Статья d сравнивает производство электромобилей с бензиновыми и дизельными — то есть автомобильную промышленность."
+    },
+    {
+     "n": 4,
+     "type": "choice",
+     "prompt": "Fariba und Maryse möchten eine eigene Firma gründen.",
+     "answer": "g",
+     "confidence": "hoch",
+     "quote": "Sie möchten sich selbstständig machen und wünschen sich Informationen zu diesem Thema?",
+     "explain": "El anuncio g ofrece asesoramiento gratuito para quien quiere establecerse por su cuenta, que es el plan de Fariba y Maryse.",
+     "explain_ru": "Объявление g предлагает бесплатную консультацию для тех, кто хочет открыть своё дело, — это план Фарибы и Маризы."
+    },
+    {
+     "n": 5,
+     "type": "choice",
+     "prompt": "Oliver ist Friseur und reagiert allergisch auf Chemikalien.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Menschen, die an einer Berufskrankheit leiden, können sich hier entsprechend informieren, was zu tun ist.",
+     "explain": "Los productos químicos del salón le provocan una enfermedad profesional; el anuncio f remite a centros de asesoramiento para personas enfermas por el trabajo.",
+     "explain_ru": "Химикаты в салоне вызывают у него профессиональное заболевание; объявление f направляет в консультационные центры для заболевших из-за работы."
+    }
+   ]
+  },
+  {
+   "id": "mt12-lesen-t2",
+   "label": "Lesen Teil 2",
+   "page": 4,
+   "kind": "text",
+   "intro": "Lesen Sie die Texte und die Aufgaben 6–9. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Text 1\nWillkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nBetriebliche Ersthelfer/innen\nUm im Notfall Erste Hilfe leisten zu können, ist unser Betrieb verpflichtet, so genannte betriebliche Ersthelfer/innen ausbilden zu lassen. Als Ersthelfer/in dürfen nur Personen eingesetzt werden, die an einem entsprechenden Lehrgang teilgenommen oder eine Ausbildung als Sanitäter/in gemacht haben oder einen Abschluss in einem Gesundheitsberuf haben. Falls Sie Interesse an dieser verantwortungsvollen Aufgabe haben, wenden Sie sich bitte an den Betriebsrat. Der Lehrgang ist für Sie kostenfrei.\nZu Ihrer Information: Ersthelfer/innen sollen in der Lage sein, bei Unfällen und Erkrankungen erste Schritte durchzuführen, bis medizinisches Fachpersonal vor Ort ist. Sie bereiten die ärztliche Versorgung vor und leiten im Notfall lebensrettende Maßnahmen ein. Bei kleineren Verletzungen kümmern sie sich um die Erstversorgung und den Transport zum Arzt. Rechtlich gesehen brauchen Ersthelfer/innen keine Angst davor zu haben, etwas falsch zu machen. Sie gehen kein Risiko ein, wenn bei den Erste-Hilfe-Maßnahmen etwas passieren sollte. Problematisch wird es nur dann, wenn sie überhaupt nichts unternehmen.\n\nText 2\nWillkommensmappe für neue Mitarbeiterinnen und Mitarbeiter\n\nBenutzung der Kaffeeküche\nUnsere kleine Küche im 1. Stock verfügt über verschiedene elektronische Geräte, die allen Mitarbeiterinnen und Mitarbeitern zur Verfügung stehen: ein Kühlschrank, eine Mikrowelle, zwei Kaffeemaschinen, ein Wasserkocher, ein Elektroherd. Wir bitten Sie, diese Geräte pfleglich zu behandeln und in einem sauberen Zustand zu hinterlassen.\nBenutztes Geschirr wird in die Spülmaschine geräumt und diese bei Bedarf in Betrieb genommen und wieder ausgeräumt. Bitte kein benutztes Geschirr in der Spüle stehen lassen. Wichtig: Für solche Tätigkeiten sind nicht unsere Reinigungskräfte zuständig.\nLinks im oberen Schrank befindet sich das Kaffeegeschirr für offizielle Meetings und Besucher. Die rechte Seite können Sie für eigenes Geschirr nutzen.\nDie Versorgung mit Kaffee, Kaffeesahne, Zucker und schwarzem Tee wird vom Sekretariat organisiert. Um alles andere müssten Sie sich bitte selbst kümmern.\nMit Rücksicht auf die Kolleginnen und Kollegen in den angrenzenden Büroräumen möchten wir Sie bitten, in der Mittagspause keine stark riechenden Speisen wie Fisch oder Kohl in der Mikrowelle oder auf dem Herd zu erhitzen.\nVielen Dank!",
+   "items": [
+    {
+     "n": 6,
+     "type": "truefalse",
+     "prompt": "In dem Unternehmen muss es speziell ausgebildete Ersthelfer/innen geben.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Richtig",
+     "confidence": "hoch",
+     "quote": "ist unser Betrieb verpflichtet, so genannte betriebliche Ersthelfer/innen ausbilden zu lassen.",
+     "explain": "«Richtig»: la empresa está obligada a formar primeros auxilios internos, así que debe haber personal con esa formación.",
+     "explain_ru": "«Richtig»: фирма обязана обучать внутренних спасателей, значит, такие сотрудники должны быть."
+    },
+    {
+     "n": 7,
+     "type": "choice",
+     "prompt": "Ersthelfer/innen gehen kein Risiko ein,",
+     "options": [
+      {
+       "key": "a",
+       "text": "da ein Fehler bei der Erstversorgung keine rechtlichen Folgen hat."
+      },
+      {
+       "key": "b",
+       "text": "da sie im Notfall nur einen Arzt informieren müssen."
+      },
+      {
+       "key": "c",
+       "text": "da sie nichts falsch machen können."
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Rechtlich gesehen brauchen Ersthelfer/innen keine Angst davor zu haben, etwas falsch zu machen.",
+     "explain": "La a recoge la frase: jurídicamente no deben temer equivocarse. La c exagera, porque el texto avisa de que sí hay problema si no actúan; la b es falsa, porque actúan antes de que llegue el médico.",
+     "explain_ru": "Вариант a передаёт фразу: юридически им нечего бояться ошибки. c преувеличивает: в тексте сказано, что проблема есть, если они ничего не делают; b неверно, потому что они действуют до прихода врача."
+    },
+    {
+     "n": 8,
+     "type": "truefalse",
+     "prompt": "Das Putzpersonal räumt das schmutzige Geschirr in die Spülmaschine.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ],
+     "answer": "Falsch",
+     "confidence": "hoch",
+     "quote": "Für solche Tätigkeiten sind nicht unsere Reinigungskräfte zuständig.",
+     "explain": "«Falsch»: el texto dice justo lo contrario, que el personal de limpieza no se ocupa de esas tareas.",
+     "explain_ru": "«Falsch»: в тексте сказано обратное — уборщики этими работами не занимаются."
+    },
+    {
+     "n": 9,
+     "type": "choice",
+     "prompt": "Die Kaffeeküche",
+     "options": [
+      {
+       "key": "a",
+       "text": "darf ausschließlich von Kolleginnen/Kollegen im 1. Stock genutzt werden."
+      },
+      {
+       "key": "b",
+       "text": "wird nicht vom Putzpersonal gereinigt."
+      },
+      {
+       "key": "c",
+       "text": "wird zur Zubereitung von Speisen und Getränken genutzt."
+      }
+     ],
+     "answer": "c",
+     "confidence": "mittel",
+     "quote": "Unsere kleine Küche im 1. Stock verfügt über verschiedene elektronische Geräte, die allen Mitarbeiterinnen und Mitarbeitern zur Verfügung stehen: ein Kühlschrank, eine Mikrowelle, zwei Kaffeemaschinen, ein Wasserkocher, ein Elektroherd.",
+     "explain": "La cocina es para toda la plantilla y tiene nevera, microondas, cafeteras, hervidor y cocina eléctrica: se usa para preparar comida y bebida. La b generaliza de más, porque el texto solo dice que la limpieza no se ocupa de esos trabajos con el menaje; por eso la confianza es media.",
+     "explain_ru": "Кухня открыта для всех сотрудников, и в ней есть холодильник, микроволновка, кофемашины, чайник и плита: там готовят еду и напитки. b слишком обобщает: в тексте лишь сказано, что уборщики не занимаются этими работами с посудой; поэтому уверенность средняя."
+    }
+   ]
+  },
+  {
+   "id": "mt12-lesen-t3",
+   "label": "Lesen Teil 3",
+   "page": 6,
+   "kind": "zuordnung",
+   "allowNone": true,
+   "intro": "Lesen Sie die Fragen 10–13 und die Tipps a–f. Welche Frage passt zu welchem Tipp? Für eine Frage gibt es keinen passenden Tipp; markieren Sie dafür ein x.",
+   "optionsLabel": "Tipps",
+   "options": [
+    {
+     "key": "a",
+     "title": "Fantasy",
+     "text": "So etwas geht wirklich gar nicht. Hast du dazu Erklärungen bekommen? Gibt es keinen Bereitschaftsdienst bei euch? Wie groß ist dein Ausbildungsbetrieb? Wir haben auch einen ähnlichen Betrieb und dort hat niemand die Bedingung, dass er tatsächlich Tag und Nacht erreichbar sein soll. Auch nicht für Geld! Dafür haben wir ein sehr professionell ausgebautes Service Management System."
+    },
+    {
+     "key": "b",
+     "title": "Mimi",
+     "text": "Ja, da hast du recht. Aber ich weiß, dass die Gehälter je nach Ausbildungsberuf sehr unterschiedlich sein können. Dinge, die eine Rolle spielen, sind zum Beispiel die Branche, der Wohnort und die Größe des Betriebs. Einen großen Unterschied gibt es auch zwischen den neuen und alten Bundesländern."
+    },
+    {
+     "key": "c",
+     "title": "Lucky Luke",
+     "text": "Frag am besten nach. Es ist ja von Betrieb zu Betrieb verschieden. Einige Auszubildende bekommen solche Sonderzahlungen – oder zumindest eine von beiden – im Juli und im November. Aber für die Firmen sind sie freiwillig. D.h., du hast leider keinen gesetzlichen Anspruch darauf."
+    },
+    {
+     "key": "d",
+     "title": "Sally",
+     "text": "Während der Ausbildung bekommst du natürlich weniger Gehalt als die Fachkräfte, weil du deinen Beruf erst noch erlernen musst. Je nach Beruf brauchst du zwischen 1,5 und 3,5 Jahren, bis du alles gelernt hast, was du für deinen Beruf brauchst. Wahrscheinlich bekommst du aber nächstes Jahr sowieso mehr Geld, weil du dann auch mehr kannst!"
+    },
+    {
+     "key": "e",
+     "title": "Reza",
+     "text": "Das ist ja echt total ungerecht! Ich glaube, ich würde den Chef mal vorsichtig darauf ansprechen, ob es irgendwelche Gründe dafür gibt, dass du weniger bekommst. Aber Vorsicht: Es könnte sein, dass es nicht so gut ankommt, dass du mit deinen Kollegen über dein Gehalt gesprochen hast. Das würde ich ihm nicht direkt sagen …"
+    },
+    {
+     "key": "f",
+     "title": "Rieke",
+     "text": "Ja, auch für Auszubildende gibt es natürlich einen Mindestlohn! Jemand, der zum Beispiel letztes Jahr mit der Ausbildung angefangen hat, bekommt mindestens 515 Euro im Monat. Dieses Jahr beträgt der Mindestlohn für Azubis wenigstens 550 Euro im Monat, nächstes Jahr schon 585 Euro und übernächstes Jahr sogar 620 Euro."
+    }
+   ],
+   "items": [
+    {
+     "n": 10,
+     "type": "choice",
+     "prompt": "Dingo: Ich mache in einer relativ kleinen Firma eine Ausbildung zum Kaufmann für Marketingkommunikation. Letzte Woche musste ich am Abend mit Kollegen und Kunden zum Abendessen, aber wir haben nur über die Arbeit gesprochen. Das ist dann auch Arbeitszeit, oder? Meine Firma sieht das anders …",
+     "answer": "x",
+     "confidence": "mittel",
+     "quote": "",
+     "explain": "Ningún tipp responde a si una cena con clientes cuenta como tiempo de trabajo. Fantasy habla de disponibilidad día y noche, Reza del sueldo injusto y Rieke del salario mínimo; por eso la pregunta se queda sin tipp.",
+     "explain_ru": "Ни один совет не отвечает, считается ли ужин с клиентами рабочим временем. Fantasy — о доступности днём и ночью, Реза — о несправедливой зарплате, Рике — о минимальной зарплате; поэтому вопрос остаётся без совета."
+    },
+    {
+     "n": 11,
+     "type": "choice",
+     "prompt": "Sina: Ich verdiene in meinem Betrieb 520 Euro im Monat. Überstunden zählen nicht und Feiertags- und Sonntagszuschlag bekomme ich nicht. Mein Chef versicherte mir, dass alle Auszubildenden dieses Gehalt bekommen. Deshalb habe ich den Vertrag unterschrieben. Als ich später mit anderen Azubis gesprochen habe, stellte sich heraus, dass sie im ersten Lehrjahr schon so viel verdienen wie ich erst im dritten. Was soll ich jetzt machen?",
+     "answer": "e",
+     "confidence": "mittel",
+     "quote": "Ich glaube, ich würde den Chef mal vorsichtig darauf ansprechen, ob es irgendwelche Gründe dafür gibt, dass du weniger bekommst.",
+     "explain": "Reza responde a «Was soll ich jetzt machen?»: hablar con el jefe con tacto y no contar que ha comentado el sueldo con los compañeros. Rieke (f) también habla de dinero, pero solo informa del salario mínimo y no da un paso concreto; de ahí la confianza media.",
+     "explain_ru": "Реза отвечает на «Что мне теперь делать?»: осторожно поговорить с начальником и не рассказывать, что обсуждала зарплату с коллегами. Рике (f) тоже о деньгах, но лишь сообщает о минимальной зарплате и не даёт конкретного шага; поэтому уверенность средняя."
+    },
+    {
+     "n": 12,
+     "type": "choice",
+     "prompt": "Rocket Man: Hallo zusammen! Ich habe folgendes Problem: Ich mache eine Ausbildung zum Informatikkaufmann, bin 19 Jahre alt und gerade im ersten Lehrjahr. Nun habe ich von meinem Betrieb ein „Notfallhandy“ bekommen, auf dem ich 24/7 erreichbar sein muss und den EDV-Support übernehmen soll. In meinem Vertrag steht nichts darüber. Aber wenn ich außerhalb der normalen Arbeitszeit arbeiten muss, dann sind das Überstunden und die müssen bezahlt werden, oder?",
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "dort hat niemand die Bedingung, dass er tatsächlich Tag und Nacht erreichbar sein soll.",
+     "explain": "Fantasy critica la exigencia de estar localizable día y noche y pregunta por el servicio de guardia: eso es exactamente el «Notfallhandy» de Rocket Man.",
+     "explain_ru": "Fantasy критикует требование быть на связи круглосуточно и спрашивает о дежурной службе: это и есть «Notfallhandy» Рокетмена."
+    },
+    {
+     "n": 13,
+     "type": "choice",
+     "prompt": "Zorro: Ich habe am 1. August meine Lehre als Kaufmann im Groß- und Außenhandel begonnen. Mich würde interessieren, ob ich das Weihnachtsgeld und nächstes Jahr auch das Urlaubsgeld bekomme. Darüber steht nichts im Vertrag. Oder sollte ich einfach meinen Chef direkt fragen? Ist so eine Frage nicht unpassend?",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Einige Auszubildende bekommen solche Sonderzahlungen – oder zumindest eine von beiden – im Juli und im November. Aber für die Firmen sind sie freiwillig.",
+     "explain": "Lucky Luke responde a lo de la paga de Navidad y de vacaciones: son voluntarias y no hay derecho legal, y aconseja preguntar. Encaja con la duda de Zorro sobre si preguntar al jefe resulta inoportuno.",
+     "explain_ru": "Lucky Luke отвечает про рождественские и отпускные выплаты: они добровольные, законного права нет, и советует спросить. Это совпадает с сомнением Зорро, неловко ли спрашивать начальника."
+    }
+   ]
+  },
+  {
+   "id": "mt12-lesen-t4",
+   "label": "Lesen Teil 4",
+   "page": 8,
+   "kind": "text",
+   "intro": "Lesen Sie das Protokoll und die Aufgaben 14–18. Welche Antwort (a, b oder c) passt am besten?",
+   "passage": "Protokoll\nKindergarten „Villa Kunterbunt“\nJour fixe für Pädagogische Fachkräfte\nDatum: 14.09.20…, 18:00–19:30 Uhr\n\nAnwesend:\nZeynep Deinzer (ZD, Leitung); Pädagogische Fachkräfte: Sven Herrer (SH), Viola Tamme (VT), Frida Schultze (FS), Elisabeth Bernfeld (EB), Anja Schultheiss (AS), Mariana Hesse (MH), Lianne Niemann (LN), Angela Giubilato (AG), Kathy Kreissl (KK), Helena Czezior (HC), Piet Schlotfeldt (PS), Birthe Schünemann (BS)\nProtokollantin: Mariana Hesse\n\nTagesordnung\n1. Stand des Projekts „Neues Erscheinungsbild“\n2. Vorstellung div. Materialien\n3. Sommerfest\n4. Tag der offenen Tür\n5. Fotoarchiv\n6. Termine – Sonstiges\n\nTOP 1 Stand des Projekts „Neues Erscheinungsbild“\nDer Arbeitskreis (AK) Gestaltung hat zwei Gestaltungskonzepte für ein neues Erscheinungsbild der Villa Kunterbunt entwickelt. Auf dieser Basis sollen externe Medien wie Plakate, Flyer, Info-Broschüre, Briefpapier, Power-Point-Vorlagen und die Webseite neugestaltet werden. Ziele des Projekts sind ein professionellerer Auftritt, eine stärkere Abgrenzung von anderen Kindergärten und ein größerer Wiedererkennungswert.\nDer Zeitplan für das Projekt ist wie folgt: Die Leitung und der AK Gestaltung haben sich für ein Gesamtkonzept entschieden. Dieses präsentiert ZD in Kürze dem gesamten Kollegium. Der AK beginnt dann zeitnah mit der sukzessiven Umsetzung des Konzepts in den verschiedenen Medien. Zuerst werden verschiedene Flyer zu unterschiedlichen Themen erarbeitet, dann folgen die Neugestaltung und Neukonzeption der Webseite.\n\nTOP 2 Vorstellung div. Materialien\nFS hat den „Sprachförderkoffer“ vorgestellt, den die Uni Hamburg entwickelt hat. Der Koffer wird an Kindergärten und Kitas in Hamburg ausgegeben, in denen mehr als 40% der Kinder einen Migrationshintergrund haben. Außerdem hat sie für die Villa Kunterbunt vier neue Kinderbücher besorgt.\nÜber EB hat die Villa Kunterbunt eine umfangreiche Puppenspende erhalten, die wir auf dem Sommerfest als Preis ausgeben oder als Abschiedsgeschenk verwenden können.\n\nTOP 3 Sommerfest\nDas Sommerfest findet am Montag, den 19. Juli, ab 16:30 Uhr in den Räumen der Villa Kunterbunt statt, bei schönem Wetter auch im Garten. Eingeladen werden alle Kinder, Eltern, Freunde und Förderer der Villa Kunterbunt.\nDer Sommerfest-AK wird von HC koordiniert. Der AK besteht aus PS, AG, BS, KK, AS und VT. Des Weiteren sollen auch noch Praktikanten/Praktikantinnen zwecks Unterstützung angesprochen werden.\nDie erste Arbeit wird die Gestaltung der Einladung sein, die KK übernimmt.\n\nTOP 4 Tag der offenen Tür\nDer Tag der offenen Tür fand in einer sehr angenehmen Atmosphäre statt und wurde durchschnittlich gut besucht. Neben Eltern und Kindern kamen auch einige päd. Fachkräfte, Interessierte aus der Nachbarschaft, Freunde und Förderer der Villa Kunterbunt sowie Frau Dr. Sandtner (Dank für die Unterstützung bei der Vorbereitung!). Die Vorbereitung und Durchführung lag in den Händen von EB, MH, LN und VT.\n\nTOP 5 Fotoarchiv\nBei der Veröffentlichung von Fotos mit Personen müssen immer die entsprechenden schriftlichen Freigaben vorliegen. Ein Fotoarchiv mit sämtlichen Fotos aus der Villa Kunterbunt wurde erstellt. Dieses enthält auch die entsprechenden schon vorhandenen Freigaben.\n\nTOP 6 Termine – Sonstiges\nDa der Raum „Känguru“ in absehbarer Zeit renoviert werden soll, finden unsere jours fixes in den nächsten Monaten im EG im Raum „Elefant“ statt.\nDer nächste Jour Fixe ist für Mittwoch, den 15.10., um 16 Uhr geplant.",
+   "items": [
+    {
+     "n": 14,
+     "type": "choice",
+     "prompt": "Der Arbeitskreis Gestaltung kümmert sich um",
+     "options": [
+      {
+       "key": "a",
+       "text": "die äußere Gestaltung des Hauses."
+      },
+      {
+       "key": "b",
+       "text": "einen professionellen Internetauftritt."
+      },
+      {
+       "key": "c",
+       "text": "verschiedene pädagogische Konzepte."
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Auf dieser Basis sollen externe Medien wie Plakate, Flyer, Info-Broschüre, Briefpapier, Power-Point-Vorlagen und die Webseite neugestaltet werden.",
+     "explain": "El grupo de diseño rehace la imagen de la guardería, web incluida, y busca un «professionellerer Auftritt». La b se queda corta, porque también hay material impreso, y la a confunde «Erscheinungsbild» con la fachada del edificio; de ahí la confianza media.",
+     "explain_ru": "Группа дизайна обновляет образ садика, включая сайт, и хочет «professionellerer Auftritt». b сужает, ведь есть и печатные материалы, а a путает «Erscheinungsbild» с фасадом здания; поэтому уверенность средняя."
+    },
+    {
+     "n": 15,
+     "type": "choice",
+     "prompt": "Den Sprachförderkoffer bekommen",
+     "options": [
+      {
+       "key": "a",
+       "text": "alle Kinder mit Migrationshintergrund."
+      },
+      {
+       "key": "b",
+       "text": "Kindergärten und Kitas mit über 40 % Ausländeranteil."
+      },
+      {
+       "key": "c",
+       "text": "Kindergärten und Kitas mit einem hohen Ausländeranteil."
+      }
+     ],
+     "answer": "b",
+     "confidence": "mittel",
+     "quote": "Der Koffer wird an Kindergärten und Kitas in Hamburg ausgegeben, in denen mehr als 40% der Kinder einen Migrationshintergrund haben.",
+     "explain": "La b repite el umbral del 40 %. Ojo: el texto dice «Migrationshintergrund» y la opción «Ausländeranteil», una imprecisión del propio original. La a es falsa porque el koffer va a las guarderías, no a todos los niños.",
+     "explain_ru": "Вариант b повторяет порог 40 %. Внимание: в тексте «Migrationshintergrund», в варианте «Ausländeranteil» — неточность самого оригинала. a неверно, потому что чемоданчик получают садики, а не все дети."
+    },
+    {
+     "n": 16,
+     "type": "choice",
+     "prompt": "Das Sommerfest",
+     "options": [
+      {
+       "key": "a",
+       "text": "findet nur bei schönem Wetter statt."
+      },
+      {
+       "key": "b",
+       "text": "ist nur für die Kinder und deren Familien gedacht."
+      },
+      {
+       "key": "c",
+       "text": "wird von mehreren Personen organisiert."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Der Sommerfest-AK wird von HC koordiniert. Der AK besteht aus PS, AG, BS, KK, AS und VT.",
+     "explain": "La fiesta la organiza un grupo de seis personas coordinado por HC. La a es falsa, porque con buen tiempo se usa además el jardín, y la b también, porque invitan a amigos y patrocinadores.",
+     "explain_ru": "Праздник организует группа из шести человек под руководством HC. a неверно: при хорошей погоде используют ещё и сад; b тоже: приглашают друзей и спонсоров."
+    },
+    {
+     "n": 17,
+     "type": "choice",
+     "prompt": "Der Tag der offenen Tür",
+     "options": [
+      {
+       "key": "a",
+       "text": "hatte sehr viele Besucher."
+      },
+      {
+       "key": "b",
+       "text": "wurde nicht nur von Eltern und Kindern besucht."
+      },
+      {
+       "key": "c",
+       "text": "wurde von einer Kollegin organisiert."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Neben Eltern und Kindern kamen auch einige päd. Fachkräfte, Interessierte aus der Nachbarschaft, Freunde und Förderer der Villa Kunterbunt sowie Frau Dr. Sandtner",
+     "explain": "Hubo visitantes además de padres y niños. La a falla porque el texto dice «durchschnittlich gut besucht», y la c porque la preparación estuvo en manos de cuatro personas.",
+     "explain_ru": "Пришли не только родители и дети. a неверно: в тексте «durchschnittlich gut besucht»; c — потому что подготовкой занимались четыре человека."
+    },
+    {
+     "n": 18,
+     "type": "choice",
+     "prompt": "Der Jour Fixe findet",
+     "options": [
+      {
+       "key": "a",
+       "text": "Anfang Oktober statt."
+      },
+      {
+       "key": "b",
+       "text": "in einem neuen Raum statt."
+      },
+      {
+       "key": "c",
+       "text": "jeden ersten Mittwoch im Monat statt."
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "finden unsere jours fixes in den nächsten Monaten im EG im Raum „Elefant“ statt.",
+     "explain": "Se trasladan de la sala «Känguru» a la sala «Elefant» en la planta baja. La a falla porque el 15.10. es mediados de octubre, y la c no aparece en el texto.",
+     "explain_ru": "Встречи переносят из зала «Känguru» в зал «Elefant» на первом этаже. a неверно: 15.10. — середина октября; c в тексте нет."
+    }
+   ]
+  },
+  {
+   "id": "mt12-lesen-us",
+   "label": "Lesen und Schreiben",
+   "page": 10,
+   "kind": "text",
+   "intro": "Ihre Teamleitung leitet Ihnen die E-Mail von einem Kunden weiter und bittet Sie zu antworten. Welche Lösung (a, b oder c) passt am besten?",
+   "passage": "Erhalten: heute, 8:45 Uhr\nVon: Peter Birmer\nBetreff: FW: Mängel im Service\n\nHallo,\n\nunten stehende E-Mail erreichte mich heute Morgen. Bitte kümmern Sie sich darum und antworten Sie der Kundin höflich. Herr und Frau Loibl sind seit vielen Jahren Stammgäste in unserem Haus und ich möchte sie auf keinen Fall als Gäste verlieren. Sie können Frau Loibl ruhig den Grund für die aktuellen Probleme nennen. Ganz wichtig: Bitte schreiben Sie ihr auch, wie wir diese Probleme zukünftig lösen werden.\n\nVielen Dank und beste Grüße\nPeter Birmer\nLeitung Serviceteam\n\nErhalten: gestern, 19:35 Uhr\nVon: Annemarie Loibl\nAn: Peter Birmer\nBetreff: Mängel im Service\n\nSehr geehrter Herr Birmer,\n\nseit 15 Jahren machen mein Mann und ich jeden Sommer Urlaub im schönen Südtirol. Wir haben uns über all die Jahre immer wieder für Ihr Hotel entschieden, weil uns die familiäre Atmosphäre und der freundliche Service in Ihrem Haus immer sehr gefallen haben.\n\nAllerdings mussten wir bei unserem letzten Aufenthalt im August feststellen, dass das Personal leider nicht mehr so freundlich und höflich war wie bisher. Auch der Service im Restaurant war wesentlich schlechter. Wir mussten oft lange Wartezeiten in Kauf nehmen und das Servicepersonal, das leider auch häufig gewechselt hat, war unhöflich und gestresst.\n\nWir hoffen sehr, dass die Situation so bald wie möglich wieder besser wird und wir in Zukunft mit einem einwandfreien Service rechnen können. Sie verstehen sicherlich, dass wir als langjährige Stammgäste aufmerksam und höflich behandelt werden möchten.\n\nMit freundlichen Grüßen\nAnnemarie Loibl",
+   "items": [
+    {
+     "n": 19,
+     "type": "choice",
+     "prompt": "Frau Loibl ist unzufrieden und",
+     "options": [
+      {
+       "key": "a",
+       "text": "möchte nach 15 Jahren zum ersten Mal in einem anderen Hotel Urlaub machen."
+      },
+      {
+       "key": "b",
+       "text": "wünscht sich das Personal zurück, das sie und ihr Mann noch von früher kennen."
+      },
+      {
+       "key": "c",
+       "text": "wünscht sich, dass der Service im Hotel schnell wieder besser wird."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wir hoffen sehr, dass die Situation so bald wie möglich wieder besser wird und wir in Zukunft mit einem einwandfreien Service rechnen können.",
+     "explain": "Pide expresamente que la situación mejore pronto. No amenaza con cambiar de hotel (a) ni reclama a empleados concretos (b): critica el servicio actual.",
+     "explain_ru": "Она прямо просит, чтобы ситуация скорее улучшилась. Не грозит сменой отеля (a) и не требует вернуть конкретных сотрудников (b): она критикует нынешний сервис."
+    },
+    {
+     "n": 20,
+     "type": "choice",
+     "prompt": "Die Probleme",
+     "options": [
+      {
+       "key": "a",
+       "text": "bestehen seit vielen Jahren."
+      },
+      {
+       "key": "b",
+       "text": "betreffen nur den Service im Restaurant."
+      },
+      {
+       "key": "c",
+       "text": "sind letzten Sommer zum ersten Mal aufgetreten."
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Allerdings mussten wir bei unserem letzten Aufenthalt im August feststellen, dass das Personal leider nicht mehr so freundlich und höflich war wie bisher.",
+     "explain": "En los años anteriores estaban contentos, así que los fallos aparecen por primera vez el verano pasado. La b falla porque también critica el trato del personal, no solo el restaurante.",
+     "explain_ru": "В прошлые годы они были довольны, значит, проблемы появились впервые прошлым летом. b неверно: она критикует и отношение персонала, не только ресторан."
+    }
+   ]
+  },
+  {
+   "id": "mt12-hoeren-t1",
+   "label": "Hören Teil 1",
+   "page": 12,
+   "kind": "ohne-key",
+   "intro": "Sie hören drei Gespräche. Zu jedem Gespräch gibt es zwei Aufgaben. Ist die Aussage dazu richtig oder falsch und welche Antwort (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 22,
+     "type": "truefalse",
+     "prompt": "Der Mitarbeiter Felipe erklärt der Auszubildenden Gül die genauen Arbeitsabläufe.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 23,
+     "type": "choice",
+     "prompt": "Gül soll",
+     "options": [
+      {
+       "key": "a",
+       "text": "den Boden mit Folie abdecken."
+      },
+      {
+       "key": "b",
+       "text": "die Türen und Fenster mit Klebeband abkleben."
+      },
+      {
+       "key": "c",
+       "text": "die Werkzeuge und Materialien aus dem Lager holen."
+      }
+     ]
+    },
+    {
+     "n": 24,
+     "type": "truefalse",
+     "prompt": "Lisa ist eine neue Mitarbeiterin im Friseurinnen-Team.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 25,
+     "type": "choice",
+     "prompt": "Lisa",
+     "options": [
+      {
+       "key": "a",
+       "text": "hat keinen telefonischen Kontakt zu Kunden."
+      },
+      {
+       "key": "b",
+       "text": "soll die Adress-Karten in die Datenbank übertragen."
+      },
+      {
+       "key": "c",
+       "text": "soll jeden Morgen genug Materialien und Produkte bereitlegen."
+      }
+     ]
+    },
+    {
+     "n": 26,
+     "type": "truefalse",
+     "prompt": "Die Pflegerin erklärt dem Azubi Akim, was man nach einer Operation beachten muss.",
+     "options": [
+      {
+       "key": "Richtig",
+       "text": "Richtig"
+      },
+      {
+       "key": "Falsch",
+       "text": "Falsch"
+      }
+     ]
+    },
+    {
+     "n": 27,
+     "type": "choice",
+     "prompt": "Der Patient Herr Berlebach",
+     "options": [
+      {
+       "key": "a",
+       "text": "darf vor der OP keine Medikamente einnehmen."
+      },
+      {
+       "key": "b",
+       "text": "muss regelmäßig Medikamente einnehmen."
+      },
+      {
+       "key": "c",
+       "text": "soll vor der OP seine Medikamente mit viel Wasser einnehmen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt12-hoeren-t2",
+   "label": "Hören Teil 2",
+   "page": 13,
+   "kind": "ohne-key",
+   "optionsLabel": "Aussagen",
+   "intro": "Sie hören vier Gespräche. Welcher der Sätze a–f passt am besten zu welchem Gespräch?",
+   "options": [
+    {
+     "key": "a",
+     "text": "Viele Menschen können wegen Burnout ihre Arbeit nicht mehr ausüben."
+    },
+    {
+     "key": "b",
+     "text": "In speziellen Seminaren lernen Arbeitnehmer/innen, mit stressigen Situationen umzugehen und besser auf sich zu achten."
+    },
+    {
+     "key": "c",
+     "text": "Mitarbeiter/innen, die selbst viele Überstunden machen, können nicht auch noch andere Kollegen/Kolleginnen vertreten."
+    },
+    {
+     "key": "d",
+     "text": "Persönliche Kontakte in der Freizeit sind sehr wichtig – auch, wenn man abends erschöpft von der Arbeit ist."
+    },
+    {
+     "key": "e",
+     "text": "Mitarbeiter/innen, die wegen Überforderung ihre Arbeitszeit verkürzen, müssen in Kauf nehmen, dass sie deutlich weniger verdienen."
+    },
+    {
+     "key": "f",
+     "text": "Wenn man sich gestresst fühlt, sollte man mal eine längere Zeit am Stück Urlaub nehmen."
+    }
+   ],
+   "items": [
+    {
+     "n": 28,
+     "type": "choice",
+     "prompt": "Gespräch 1"
+    },
+    {
+     "n": 29,
+     "type": "choice",
+     "prompt": "Gespräch 2"
+    },
+    {
+     "n": 30,
+     "type": "choice",
+     "prompt": "Gespräch 3"
+    },
+    {
+     "n": 31,
+     "type": "choice",
+     "prompt": "Gespräch 4"
+    }
+   ]
+  },
+  {
+   "id": "mt12-hoeren-t3",
+   "label": "Hören Teil 3",
+   "page": 14,
+   "kind": "ohne-key",
+   "intro": "Sie hören gleich eine Präsentation. Dazu gibt es vier Aufgaben. Welche Lösung (a, b oder c) passt jeweils am besten?",
+   "items": [
+    {
+     "n": 32,
+     "type": "choice",
+     "prompt": "Die Mitarbeiter/innen der Firma",
+     "options": [
+      {
+       "key": "a",
+       "text": "haben die Kantine immer seltener besucht."
+      },
+      {
+       "key": "b",
+       "text": "hatten bisher keine hausinterne Kantine."
+      },
+      {
+       "key": "c",
+       "text": "waren mit der Kantine nicht zufrieden."
+      }
+     ]
+    },
+    {
+     "n": 33,
+     "type": "choice",
+     "prompt": "Die Mitarbeiter/innen",
+     "options": [
+      {
+       "key": "a",
+       "text": "bekommen ab Januar in der Kantine Mittag- und Abendessen."
+      },
+      {
+       "key": "b",
+       "text": "können ab Januar bis 11:30 Uhr in der Kantine frühstücken."
+      },
+      {
+       "key": "c",
+       "text": "können ab Januar tagsüber die Espressoautomaten der Kantine verwenden."
+      }
+     ]
+    },
+    {
+     "n": 34,
+     "type": "choice",
+     "prompt": "Mit der Zahlkarte bezahlen Mitarbeiter/innen",
+     "options": [
+      {
+       "key": "a",
+       "text": "auch Getränke und Speisen für Gäste."
+      },
+      {
+       "key": "b",
+       "text": "die Speisen, die sie essen möchten."
+      },
+      {
+       "key": "c",
+       "text": "nur an der Kasse, an Automaten zahlen sie bar."
+      }
+     ]
+    },
+    {
+     "n": 35,
+     "type": "choice",
+     "prompt": "In der Kantine wird man ab Januar",
+     "options": [
+      {
+       "key": "a",
+       "text": "auch Speisen für Vegetarier und Veganer bekommen."
+      },
+      {
+       "key": "b",
+       "text": "nur Bio-Zutaten verwenden."
+      },
+      {
+       "key": "c",
+       "text": "nur günstige Gerichte bekommen."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt12-hoeren-t4",
+   "label": "Hören Teil 4",
+   "page": 15,
+   "kind": "ohne-key",
+   "intro": "Sie hören fünf telefonische Mitteilungen. Zu jeder Mitteilung gibt es eine Aufgabe. Welche Lösung (a, b oder c) passt am besten?",
+   "items": [
+    {
+     "n": 36,
+     "type": "choice",
+     "prompt": "Maike",
+     "options": [
+      {
+       "key": "a",
+       "text": "bittet Bea um Hilfe bei der Vorbereitung der Online-Konferenz."
+      },
+      {
+       "key": "b",
+       "text": "möchte Bea bei der Organisation der Online-Konferenz helfen."
+      },
+      {
+       "key": "c",
+       "text": "möchte die Online-Konferenz ohne Beas Hilfe planen."
+      }
+     ]
+    },
+    {
+     "n": 37,
+     "type": "choice",
+     "prompt": "Herr Fortunato informiert Herrn Sievers darüber, dass",
+     "options": [
+      {
+       "key": "a",
+       "text": "die Arbeiten in seiner Küche noch nicht abgeschlossen sind."
+      },
+      {
+       "key": "b",
+       "text": "die neue Küche bereits geliefert wurde."
+      },
+      {
+       "key": "c",
+       "text": "er seine Küche morgen betreten darf."
+      }
+     ]
+    },
+    {
+     "n": 38,
+     "type": "choice",
+     "prompt": "Maja schlägt vor,",
+     "options": [
+      {
+       "key": "a",
+       "text": "einen Ausflug für fünf Personen zu organisieren."
+      },
+      {
+       "key": "b",
+       "text": "mit der Bahn an einen See zu fahren."
+      },
+      {
+       "key": "c",
+       "text": "mit der Bahn zum Schloss zu fahren."
+      }
+     ]
+    },
+    {
+     "n": 39,
+     "type": "choice",
+     "prompt": "Marie",
+     "options": [
+      {
+       "key": "a",
+       "text": "hat viel zu tun und möchte Olaf fragen, ob er für sie arbeiten kann."
+      },
+      {
+       "key": "b",
+       "text": "hatte einen Unfall und darf in der nächsten Zeit nicht arbeiten."
+      },
+      {
+       "key": "c",
+       "text": "kann die Schichten von Olaf übernehmen, weil sie zeitlich flexibel ist."
+      }
+     ]
+    },
+    {
+     "n": 40,
+     "type": "choice",
+     "prompt": "Herr Braun",
+     "options": [
+      {
+       "key": "a",
+       "text": "erklärt, dass er am Dienstag den Wasserschaden reparieren wird."
+      },
+      {
+       "key": "b",
+       "text": "fragt, ob seine Kollegen am Dienstagvormittag vorbeikommen können."
+      },
+      {
+       "key": "c",
+       "text": "weiß noch nicht, ob er am Dienstagvormittag vorbeikommen kann."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt12-hoeren-und-schreiben",
+   "label": "Hören und Schreiben",
+   "page": 16,
+   "kind": "ohne-key",
+   "intro": "Sie hören eine telefonische Mitteilung. Wählen Sie die richtige Lösung (a, b oder c) für Aufgabe 41. Die Notizen 42–45 gehören zum Schreibteil und sind hier nicht enthalten.",
+   "items": [
+    {
+     "n": 41,
+     "type": "choice",
+     "prompt": "Grund für den Anruf",
+     "options": [
+      {
+       "key": "a",
+       "text": "Angebot"
+      },
+      {
+       "key": "b",
+       "text": "Bestellung/Buchung"
+      },
+      {
+       "key": "c",
+       "text": "Beschwerde"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mt12-sprachbausteine-t1",
+   "label": "Sprachbausteine Teil 1",
+   "page": 17,
+   "kind": "zuordnung",
+   "intro": "Lesen Sie den Text. Welches Wort (a–j) passt in jede Lücke (46–51)? Vier Wörter bleiben übrig.",
+   "optionsLabel": "Wörter",
+   "optionsLayout": "bank",
+   "passageOpen": true,
+   "passage": "Betreff: Meine Bewerbung vom 19.11.\n\nSehr geehrte Frau Bosse,\n\nam 19.11. habe ich mich 46 ( ) Ihre Stelle als Industriemechanikerin, Referenznummer WE-22394, beworben. Da ich 47 ( ) weder eine Rückmeldung noch eine Empfangsbestätigung erhalten habe, möchte ich nachfragen und sichergehen, dass alle erforderlichen Unterlagen bei Ihnen eingegangen sind. Bitte lassen Sie mich wissen, 48 ( ) noch Informationen fehlen.\n\nKönnten Sie mir vielleicht kurz mitteilen, 49 ( ) ich frühestens mit einer Antwort von Ihnen rechnen kann? Das wäre sehr hilfreich für mich, 50 ( ) ich gestern bereits ein Angebot von einer anderen Firma erhalten habe. Eine Anstellung in Ihrem Unternehmen würde mir jedoch mehr zusagen.\n\nSollten Sie noch Fragen 51 ( ) meinen Unterlagen haben, stehe ich Ihnen gern telefonisch zur Verfügung.\n\nÜber eine Einladung zu einem Vorstellungsgespräch würde ich mich sehr freuen.\n\nIch danke Ihnen für Ihre Mühe und verbleibe\n\nmit freundlichem Gruß\nElif Akay",
+   "options": [
+    {
+     "key": "a",
+     "text": "BIS"
+    },
+    {
+     "key": "b",
+     "text": "BISHER"
+    },
+    {
+     "key": "c",
+     "text": "DA"
+    },
+    {
+     "key": "d",
+     "text": "DASS"
+    },
+    {
+     "key": "e",
+     "text": "HIERMIT"
+    },
+    {
+     "key": "f",
+     "text": "OB"
+    },
+    {
+     "key": "g",
+     "text": "OBWOHL"
+    },
+    {
+     "key": "h",
+     "text": "UM"
+    },
+    {
+     "key": "i",
+     "text": "WANN"
+    },
+    {
+     "key": "j",
+     "text": "ZU"
+    }
+   ],
+   "items": [
+    {
+     "n": 46,
+     "type": "choice",
+     "prompt": "am 19.11. habe ich mich 46 ( ) Ihre Stelle als Industriemechanikerin, Referenznummer WE-22394, beworben.",
+     "answer": "h",
+     "confidence": "hoch",
+     "quote": "habe ich mich 46 ( ) Ihre Stelle als Industriemechanikerin, Referenznummer WE-22394, beworben.",
+     "explain": "«sich um eine Stelle bewerben»: el verbo rige la preposición «um». Por eso «um».",
+     "explain_ru": "«sich um eine Stelle bewerben»: глагол требует предлог «um». Поэтому «um»."
+    },
+    {
+     "n": 47,
+     "type": "choice",
+     "prompt": "Da ich 47 ( ) weder eine Rückmeldung noch eine Empfangsbestätigung erhalten habe, möchte ich nachfragen und sichergehen, dass alle erforderlichen Unterlagen bei Ihnen eingegangen sind.",
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Da ich 47 ( ) weder eine Rückmeldung noch eine Empfangsbestätigung erhalten habe",
+     "explain": "«bisher» (hasta ahora) encaja con «noch»: hasta ahora no ha recibido ni respuesta ni confirmación.",
+     "explain_ru": "«bisher» (до сих пор) согласуется с «noch»: до сих пор не получила ни ответа, ни подтверждения."
+    },
+    {
+     "n": 48,
+     "type": "choice",
+     "prompt": "Bitte lassen Sie mich wissen, 48 ( ) noch Informationen fehlen.",
+     "answer": "f",
+     "confidence": "hoch",
+     "quote": "Bitte lassen Sie mich wissen, 48 ( ) noch Informationen fehlen.",
+     "explain": "«ob» introduce la interrogativa indirecta: si aún faltan informaciones.",
+     "explain_ru": "«ob» вводит косвенный вопрос: не нужны ли ещё документы."
+    },
+    {
+     "n": 49,
+     "type": "choice",
+     "prompt": "Könnten Sie mir vielleicht kurz mitteilen, 49 ( ) ich frühestens mit einer Antwort von Ihnen rechnen kann?",
+     "answer": "i",
+     "confidence": "hoch",
+     "quote": "Könnten Sie mir vielleicht kurz mitteilen, 49 ( ) ich frühestens mit einer Antwort von Ihnen rechnen kann?",
+     "explain": "Se pregunta por el momento de la respuesta: «wann ich frühestens … rechnen kann» (cuándo como muy pronto).",
+     "explain_ru": "Спрашивают о времени ответа: «wann ich frühestens … rechnen kann» (когда самое раннее)."
+    },
+    {
+     "n": 50,
+     "type": "choice",
+     "prompt": "Das wäre sehr hilfreich für mich, 50 ( ) ich gestern bereits ein Angebot von einer anderen Firma erhalten habe.",
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Das wäre sehr hilfreich für mich, 50 ( ) ich gestern bereits ein Angebot von einer anderen Firma erhalten habe.",
+     "explain": "«da» introduce la causa: porque ayer ya recibió una oferta. «Weil» no está en el banco de palabras.",
+     "explain_ru": "«da» вводит причину: потому что вчера уже получила предложение. «Weil» в списке слов нет."
+    },
+    {
+     "n": 51,
+     "type": "choice",
+     "prompt": "Sollten Sie noch Fragen 51 ( ) meinen Unterlagen haben, stehe ich Ihnen gern telefonisch zur Verfügung.",
+     "answer": "j",
+     "confidence": "hoch",
+     "quote": "Sollten Sie noch Fragen 51 ( ) meinen Unterlagen haben",
+     "explain": "«Fragen zu etwas haben»: la preposición es «zu». Preguntas sobre los documentos del expediente.",
+     "explain_ru": "«Fragen zu etwas haben»: предлог «zu». Вопросы по документам."
+    }
+   ]
+  },
+  {
+   "id": "mt12-sprachbausteine-t2",
+   "label": "Sprachbausteine Teil 2",
+   "page": 18,
+   "kind": "text",
+   "intro": "Lesen Sie den Text. Welcher Ausdruck (a, b oder c) passt in jede Lücke (52–57)?",
+   "passageOpen": true,
+   "passage": "Angebot\n\nSehr geehrter Herr Rittberger,\n\nherzlichen Dank für Ihr Interesse und 52 ( ) vom 6.09.\n\nNach Besichtigung der Örtlichkeiten erlauben wir uns, Ihnen 53 ( ) zu unterbreiten.\n\nPos. 010 | Menge 1,00 | Abdeck- und Abklebearbeiten: Entfernen und Entsorgen der Abdeckungen; Lichtschalter und Steckdosen demontieren und nach Abschluss der Arbeiten wieder anbringen | Einzel 30,00 € | Gesamt 30,00 €\nPos. 010 | Menge 1,00 | Decken und Wandflächen säubern und mit waschfester Dispersionsfarbe DIN EN 13 300 in soft-weiß streichen. | Einzel 360,00 € | Gesamt 360,00 €\nNetto 390,00 € | 19% MwSt. 74,10 € | Gesamtbetrag 464,10 €\n\nWie bereits besprochen, könnten wir die von Ihnen 54 ( ) am 30. Oktober zwischen 8 und 16 Uhr ausführen.\n\nWir würden uns sehr freuen, wenn unser Angebot 55 ( ). Sobald wir 56 ( ), bekommen Sie von uns eine Auftragsbestätigung.\n\nBei Fragen stehen wir Ihnen selbstverständlich 57 ( ).\n\nMit freundlichen Grüßen\nHerbert Geisenhofer",
+   "items": [
+    {
+     "n": 52,
+     "type": "choice",
+     "prompt": "herzlichen Dank für Ihr Interesse und 52 ( ) vom 6.09.",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihr Angebot"
+      },
+      {
+       "key": "b",
+       "text": "Ihre Anfrage"
+      },
+      {
+       "key": "c",
+       "text": "Ihre Anlage"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "herzlichen Dank für Ihr Interesse und 52 ( ) vom 6.09.",
+     "explain": "El cliente pidió información, no un presupuesto: se agradece «Ihre Anfrage» (su consulta). El «Angebot» es lo que se envía ahora y «Anlage» sería el adjunto.",
+     "explain_ru": "Клиент запросил информацию, а не предложение: благодарят за «Ihre Anfrage» (ваш запрос). «Angebot» — то, что отправляют сейчас, «Anlage» — вложение."
+    },
+    {
+     "n": 53,
+     "type": "choice",
+     "prompt": "Nach Besichtigung der Örtlichkeiten erlauben wir uns, Ihnen 53 ( ) zu unterbreiten.",
+     "options": [
+      {
+       "key": "a",
+       "text": "das folgende Angebot"
+      },
+      {
+       "key": "b",
+       "text": "die einwandfreie Lieferung"
+      },
+      {
+       "key": "c",
+       "text": "den zu überweisenden Betrag"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "Nach Besichtigung der Örtlichkeiten erlauben wir uns, Ihnen 53 ( ) zu unterbreiten.",
+     "explain": "«ein Angebot unterbreiten» significa presentar una oferta, y lo que sigue es el presupuesto. La b y la c no se pueden «unterbreiten».",
+     "explain_ru": "«ein Angebot unterbreiten» значит представить предложение, а дальше идёт смета. b и c нельзя «unterbreiten»."
+    },
+    {
+     "n": 54,
+     "type": "choice",
+     "prompt": "Wie bereits besprochen, könnten wir die von Ihnen 54 ( ) am 30. Oktober zwischen 8 und 16 Uhr ausführen.",
+     "options": [
+      {
+       "key": "a",
+       "text": "angefragten Arbeiten"
+      },
+      {
+       "key": "b",
+       "text": "genannten Maße"
+      },
+      {
+       "key": "c",
+       "text": "nachstehenden Positionen"
+      }
+     ],
+     "answer": "a",
+     "confidence": "hoch",
+     "quote": "könnten wir die von Ihnen 54 ( ) am 30. Oktober zwischen 8 und 16 Uhr ausführen.",
+     "explain": "Se ejecutan trabajos, y las posiciones del presupuesto son esos trabajos solicitados: «die von Ihnen angefragten Arbeiten». La b y la c no encajan con «ausführen».",
+     "explain_ru": "Выполняют работы, и позиции сметы — это и есть запрошенные работы: «die von Ihnen angefragten Arbeiten». b и c не сочетаются с «ausführen»."
+    },
+    {
+     "n": 55,
+     "type": "choice",
+     "prompt": "Wir würden uns sehr freuen, wenn unser Angebot 55 ( ).",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihre Antwort erhält"
+      },
+      {
+       "key": "b",
+       "text": "Ihre Abwicklung übernimmt"
+      },
+      {
+       "key": "c",
+       "text": "Ihre Zustimmung fände"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Wir würden uns sehr freuen, wenn unser Angebot 55 ( ).",
+     "explain": "«wenn unser Angebot Ihre Zustimmung fände» (si nuestra oferta obtuviera su aprobación); después llega la confirmación del pedido.",
+     "explain_ru": "«wenn unser Angebot Ihre Zustimmung fände» (если наше предложение получит одобрение); затем приходит подтверждение заказа."
+    },
+    {
+     "n": 56,
+     "type": "choice",
+     "prompt": "Sobald wir 56 ( ), bekommen Sie von uns eine Auftragsbestätigung.",
+     "options": [
+      {
+       "key": "a",
+       "text": "Ihre Preise aktualisieren"
+      },
+      {
+       "key": "b",
+       "text": "Ihre Ware liefern"
+      },
+      {
+       "key": "c",
+       "text": "Ihren Auftrag erhalten"
+      }
+     ],
+     "answer": "c",
+     "confidence": "hoch",
+     "quote": "Sobald wir 56 ( ), bekommen Sie von uns eine Auftragsbestätigung.",
+     "explain": "La confirmación del pedido se envía cuando se recibe el pedido: «Sobald wir Ihren Auftrag erhalten». La b llegaría tarde y la a no tiene relación.",
+     "explain_ru": "Подтверждение заказа отправляют, когда заказ получен: «Sobald wir Ihren Auftrag erhalten». b было бы поздно, a не связано по смыслу."
+    },
+    {
+     "n": 57,
+     "type": "choice",
+     "prompt": "Bei Fragen stehen wir Ihnen selbstverständlich 57 ( ).",
+     "options": [
+      {
+       "key": "a",
+       "text": "dankend zur Stelle"
+      },
+      {
+       "key": "b",
+       "text": "jederzeit zur Verfügung"
+      },
+      {
+       "key": "c",
+       "text": "unter der Telefonnummer"
+      }
+     ],
+     "answer": "b",
+     "confidence": "hoch",
+     "quote": "Bei Fragen stehen wir Ihnen selbstverständlich 57 ( ).",
+     "explain": "Fórmula fija: «jederzeit zur Verfügung stehen» (estar a su disposición en cualquier momento).",
+     "explain_ru": "Устойчивая формула: «jederzeit zur Verfügung stehen» (быть в вашем распоряжении в любое время)."
+    }
+   ]
+  }
+ ],
+ "fixes": [
+  "pp.2–18: texto reconstruido desde OCR de un PDF escaneado; se corrigen tildes diacríticas y erratas evidentes del OCR.",
+  "Las respuestas de Lesen y Sprachbausteine son deducidas: el PDF no incluye Lösungsschlüssel (pp. 22–23 solo remiten a un grupo externo).",
+  "Hören (22–41) va sin clave: el PDF no trae audio ni transcripción.",
+  "p. 4: el OCR corta la sección «Jour fixe» en «welche Projekte zum»; se omite porque ningún ítem 6–9 depende de ella.",
+  "p. 3: «MigrantInnen» → «Migrant*innen» (así consta en el PDF).",
+  "p. 6: «Sonntagszusch(ag» → «Sonntagszuschlag»; «jm Vertrag» → «im Vertrag».",
+  "p. 8: «VIIIa Kunterbunt» → «Villa Kunterbunt»; «Sprachförderkoffeff» → «Sprachförderkoffer».",
+  "p. 9: «und W.» → «und VT.»; «Ettern» → «Eltern».",
+  "p. 10: «gestem» → «gestern»; «Servicepersona(» → «Servicepersonal»; «(eider» → «leider»; «ge- stresst» → «gestresst».",
+  "p. 12: «Arbeitsabldufe» → «Arbeitsabläufe».",
+  "p. 14: «ab januar» → «ab Januar».",
+  "p. 17: «dass alte erforderlichen Unterlagen» → «dass alle erforderlichen Unterlagen».",
+  "p. 18: la tabla del «Angebot» se reproduce como líneas de texto separadas por «|»; el JSON no admite tablas.",
+  "p. 18: se conservan tal cual las imprecisiones del original («Ausländeranteil» en el ítem 15) y se explican en el campo explain."
+ ]
+}
