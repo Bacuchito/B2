@@ -112,12 +112,29 @@ const seccionesConDatos = () => (window.DATA.sections || []).filter(s => (s.vari
 check("hay una cabecera plegable por sección",
       cabeceras().length > 0 && cabeceras().length === seccionesConDatos(),
       `cabeceras: ${cabeceras().length} · secciones con datos: ${seccionesConDatos()}`);
-check("al abrir la app solo está desplegado el grupo donde estás",
-      abiertas().length === 1, `desplegadas: ${abiertas().length}`);
-check("el grupo desplegado deja ver sus entradas",
+/* La barra agrupa por examen (LESEN, SPRACHBAUSTEINE, SCHREIBEN, HÖREN,
+   SPRECHEN, MODELTEST) y arranca con las seis familias recogidas. */
+const grupos = () => ids.nav.children.filter(c => clases(c).includes("nav-group"));
+
+check("cada familia del examen tiene su cabecera", grupos().length === 6,
+      `familias: ${grupos().map(g => g.children[0].textContent).join(", ")}`);
+check("al abrir la app las seis familias salen recogidas",
+      grupos().every(g => !clases(g).includes("open")),
+      `abiertas: ${grupos().filter(g => clases(g).includes("open")).length}`);
+check("una familia recogida esconde todas sus secciones",
+      cabeceras().every(c => c.hidden),
+      `secciones visibles: ${cabeceras().filter(c => !c.hidden).length}`);
+
+/* Abrir LESEN para probar el acordeón de secciones de siempre. */
+grupos()[0].onclick();
+check("desplegar la familia muestra sus secciones",
+      cabeceras().slice(0, 5).every(c => !c.hidden),
+      `secciones visibles: ${cabeceras().filter(c => !c.hidden).length}`);
+check("la sección activa sigue desplegada dentro de su familia",
+      abiertas().length === 1 && abiertas()[0] === cabeceras()[0] &&
       entradasDe(0).length > 0 && entradasDe(0).every(e => !e.hidden),
-      `visibles: ${entradasDe(0).filter(e => !e.hidden).length}/${entradasDe(0).length}`);
-check("los grupos plegados esconden sus entradas sin borrarlas del DOM",
+      `desplegadas: ${abiertas().length}`);
+check("las secciones cerradas esconden sus entradas sin borrarlas del DOM",
       entradasDe(1).length > 0 && entradasDe(1).every(e => e.hidden),
       `escondidas: ${entradasDe(1).filter(e => e.hidden).length}/${entradasDe(1).length}`);
 check("la cabecera cuenta las entradas que esconde",
@@ -135,14 +152,6 @@ check("volver a pulsar la cabecera abierta pliega el menú entero",
       abiertas().length === 0 && cabeceras().every((_, i) => entradasDe(i).every(e => e.hidden)),
       `desplegadas: ${abiertas().length}`);
 
-/* ---------- familias plegables ---------- */
-/* La barra agrupa por examen (LESEN, SPRACHBAUSTEINE, SCHREIBEN, HÖREN,
-   SPRECHEN, MODELTEST) y cada cabecera pliega la familia entera. */
-const grupos = () => ids.nav.children.filter(c => clases(c).includes("nav-group"));
-
-check("cada familia del examen tiene su cabecera", grupos().length === 6,
-      `familias: ${grupos().map(g => g.children[0].textContent).join(", ")}`);
-
 const totalLesen = window.DATA.sections.slice(0, 5)
   .reduce((a, s) => a + (s.variants || []).length, 0);
 check("la cabecera de familia cuenta todas sus entradas",
@@ -153,12 +162,10 @@ const numeroDe = i => cabeceras()[i].children[cabeceras()[i].children.length - 1
 const numeroAntes = numeroDe(5);
 
 grupos()[0].onclick();
-check("plegar una familia esconde sus cabeceras",
-      cabeceras().slice(0, 5).every(c => c.hidden) && cabeceras().slice(5).every(c => !c.hidden),
-      `visibles tras plegar: ${cabeceras().filter(c => !c.hidden).length}`);
-check("las entradas de la familia plegada también se esconden",
+check("plegar la familia esconde sus secciones y sus entradas",
+      cabeceras().slice(0, 5).every(c => c.hidden) &&
       [0, 1, 2, 3, 4].every(i => entradasDe(i).every(e => e.hidden)),
-      `visibles: ${[0, 1, 2, 3, 4].reduce((a, i) => a + entradasDe(i).filter(e => !e.hidden).length, 0)}`);
+      `secciones visibles: ${cabeceras().filter(c => !c.hidden).length}`);
 check("la numeración no cambia al plegar una familia",
       numeroDe(5) === numeroAntes && numeroAntes === "06",
       `antes ${numeroAntes} · ahora ${numeroDe(5)}`);
@@ -166,7 +173,7 @@ check("la numeración no cambia al plegar una familia",
 grupos()[0].onclick();
 check("volver a pulsar la familia la despliega",
       cabeceras().slice(0, 5).every(c => !c.hidden),
-      `visibles: ${cabeceras().filter(c => !c.hidden).length}`);
+      `secciones visibles: ${cabeceras().filter(c => !c.hidden).length}`);
 
 const stats = ids.stats.innerHTML;
 check("las estadísticas se calcularon", /respondidas/.test(stats), stats.slice(0, 90));

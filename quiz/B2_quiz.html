@@ -2634,9 +2634,9 @@ if (typeof window !== "undefined" && typeof window.addEventListener === "functio
    vuelve a abrir solo el grupo activo, sin memoria que arrastre estados raros. */
 let openSec;
 let lastNavCurrent;
-/* Familias plegadas a mano. También de sesión: al recargar vuelven a estar
-   abiertas y el menú se lee de un vistazo. */
-let plegadas = {};
+/* Familias recogidas. `null` = sin decidir: al cargar se recogen todas, para que
+   el menú no vuelva a soltar 17 cabeceras seguidas. Después mandan los clics. */
+let plegadas = null;
 
 /* Familia de examen de una sección, por el prefijo de su id. Los títulos llevan
    umlaut y cambian; el id no. */
@@ -2671,14 +2671,21 @@ function renderNav(){
   nav.appendChild(cabeza);
   /* Saltar a otra entrada (clic, filtro de dudosas) reabre su grupo: el menú
      nunca esconde el ejercicio que estás viendo. */
+  /* Al cargar, todas las familias recogidas: el menú se lee de un vistazo y no
+     suelta las 17 cabeceras seguidas. */
+  if(!plegadas){
+    plegadas = {};
+    DATA.sections.forEach(s=>{ const f = familiaDe(s.id); if(f) plegadas[f] = true; });
+  }
   const aqui = allVariants.find(v => v.id === current);
   const secActual = aqui ? aqui._section : null;
+  const primeraVez = lastNavCurrent === undefined;
   if(openSec === undefined || current !== lastNavCurrent){
     openSec = secActual; lastNavCurrent = current;
-    /* Si la sección activa vive en una familia plegada, se despliega: el menú
-       nunca esconde el ejercicio que estás viendo. */
+    /* Al cambiar de ejercicio, su familia se despliega: el menú nunca esconde el
+       ejercicio que estás viendo. En la primera carga no: manda el recogido. */
     const famActual = familiaDe(secActual);
-    if(famActual) plegadas[famActual] = false;
+    if(famActual && !primeraVez) plegadas[famActual] = false;
   }
   /* Cabecera por familia de examen. El nombre sale del id de la sección, así que
      una sección nueva cae sola en su familia; el recuento suma sus entradas. */
