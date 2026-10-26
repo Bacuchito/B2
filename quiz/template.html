@@ -521,11 +521,18 @@
      Y es una FILA con filete, no una caja: la lista se lee como una tabla. */
   .opt{display:flex;gap:var(--sp-3);align-items:flex-start;width:100%;min-height:44px;
        border:0;border-top:1px solid var(--line);
-       border-radius:0;padding:var(--sp-3) 0;cursor:pointer;
+       border-radius:0;padding:var(--sp-3) var(--sp-2) var(--sp-3) var(--sp-3);cursor:pointer;
        text-align:left;font-family:inherit;font-size:var(--fs-base);color:var(--txt);
        background:none;position:relative;
        transition:background var(--dur-2) var(--ease),border-color var(--dur-2) var(--ease),
                   transform var(--dur-1) var(--spring)}
+  /* Foco dentro de la fila: por fuera se dibujaba encima del relleno de estado y
+     parecía un segundo borde.
+     */
+  .opt:focus-visible{outline:2px solid var(--acc);outline-offset:-4px}
+  .opt.correct:focus-visible{outline-color:var(--ok)}
+  .opt.wrong:focus-visible{outline-color:var(--bad)}
+  .letters button:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
   .opt:hover{border-top-color:var(--line-2);background:var(--tint-neutral)}
   .opt:active{transform:scale(.995)}
   /* Sin clave no hay ✓ ni ✗: la elección se marca con el acento, para que el
@@ -538,10 +545,10 @@
   .opt.correct .key{color:var(--ok)}
   .opt.wrong .key{color:var(--bad)}
   /* El estado no depende solo del color: marca textual a la derecha. */
-  .opt.correct::after,.opt.wrong::after{position:absolute;right:0;top:50%;
+  /* La marca se separa del borde: a 0 quedaba pegada al filo del relleno. */.opt.correct::after,.opt.wrong::after{position:absolute;right:var(--sp-2);top:50%;
        transform:translateY(-50%);font-weight:700;font-size:var(--fs-base)}
-  .opt.correct::after{content:"✓";color:var(--ok-ink)}
-  .opt.wrong::after{content:"✗";color:var(--bad-ink)}
+  .opt.correct::after{content:"✓";color:var(--ok)}
+  .opt.wrong::after{content:"✗";color:var(--bad)}
 
   /* Las letras son la interacción firma: cada una es una pieza que se pulsa, con
      filo claro arriba, sombra fuera y halo al pasar. Área de toque 44×44. */
