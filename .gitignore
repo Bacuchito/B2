@@ -8,7 +8,9 @@ env/
 venv/
 .venv/
 
-# Graphify cache
+# Graphify cache (la libreta de lo ya extraido; se regenera en cada commit)
+graphify-out/manifest.json
+
 graphify-out/cache/
 
 # Intermedios de una extracción de graphify (no son el grafo; el grafo es
