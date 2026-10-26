@@ -1,0 +1,79 @@
+{
+  "block": "h3_c",
+  "section": "hoeren-t3",
+  "variants": [
+    {
+      "id": "h3-v5",
+      "label": "Variante 5",
+      "page": 158,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial. El original trae otra grabación con las mismas preguntas.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио. В оригинале есть другая запись с теми же вопросами.",
+      "kind": "text",
+      "intro": "Sie hören ein Gespräch. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Leiterin: Zum Schluss unserer wöchentlichen Teamleitersitzung noch ein kurzes Update zur Eröffnung der neuen Filiale in Frankfurt. Wie Sie ja bereits wissen, sind wir aktuell nur in Norddeutschland zu finden und wollen nun auch andere Regionen erobern. Wir, die Geschäftsführung, sind davon überzeugt, dass unsere junge Mode in ganz Deutschland positiv aufgenommen werden wird. Wir haben nun das Glück, dass gerade in einer Ladenzeile im Zentrum Frankfurts ein Geschäft frei wird, das in der Größe genau passt. Es ist ca. 1000 Quadratmeter groß und hat zwei Stockwerke. Das hat den Vorteil, dass wir die exklusivere und die preisgünstigere Mode räumlich voneinander trennen können.\nHerr 1: Ich bin sehr gespannt, wie das Frankfurter Publikum unsere Kleidung annimmt.\nLeiterin: Hoffentlich gut. Damit dies gelingt, müssen wir jetzt als erstes das Geschäft einrichten, Verkaufspersonal finden und schließlich die Kunden durch gezielte Werbung auf unsere Neueröffnung aufmerksam und neugierig machen. Wir haben wieder die Agentur Neuer beauftragt, einen Vorschlag zu entwickeln. Wie Sie ja wissen, hat sie schon die Werbung für die anderen Geschäfte gemacht. In circa zwei Wochen wird dieser vorliegen. Wir planen klassische Werbung im Radio und mit Flyern. Außerdem soll eine E-Mail-Kampagne gestartet werden. Und in den sozialen Medien sind wir ja sowieso aktiv vertreten. Auf Zeitungsanzeigen werden wir diesmal jedoch verzichten, weil sich das letzte Mal schon gezeigt hat, dass wir damit unsere Zielgruppe nicht erreichen.\nFrau 1: Für wann ist denn die Eröffnung geplant?\nLeiterin: Wir wollen das Geschäft am 1. Juli eröffnen. Der Vormieter wird die Räumlichkeiten zum nächsten Ersten verlassen. Dann bleibt genug Zeit für den Umbau und die Einrichtung des Ladens. Parallel dazu suchen wir auch schon nach Personal. Das scheint aber nicht so schwer zu sein. Wir waren positiv überrascht, wie viele vielversprechende Bewerber sich schon bei uns gemeldet haben. Die Schwierigkeit ist nun eher, daraus eine Auswahl zu treffen. Deshalb werden wir erst mal Ihre Profile in den sozialen Medien angucken und dann entscheiden, wer in die engere Wahl kommt.\nHerr 2: Ich hätte noch eine Frage zum ersten Punkt. Wie soll denn die Filiale eingerichtet werden? Übernehmen wir das Konzept, das wir auch an den anderen Standorten haben, oder soll hier etwas Neues ausprobiert werden?\nLeiterin: Nun, wir werden relativ große Verkaufsräume haben. Daher müssen wir uns überlegen, wie wir die Fläche geschickt unterteilen. Denn wenn dies gelingt, wirkt der Raum abwechslungsreicher und lädt zum Verweilen ein. Wir haben uns auch noch was ganz Neues überlegt. Auf der oberen Etage wollen wir eine Espresso-Bar integrieren, die zu einer entspannten Atmosphäre beitragen soll.\nAußerdem setzen wir auf eine andere Lichtplanung. Da Umfragen immer wieder gezeigt haben, dass sich die Kundinnen und Kunden mit dem Licht nicht wohlfühlen. Besonders in den Umkleidekabinen ist Licht von oben unvorteilhaft und sorgt dafür, dass Farben nicht richtig zur Geltung kommen. Deshalb wollen wir in der neuen Filiale ein neues System ausprobieren. So werden wir warmes gedämpftes Licht einsetzen, das Gesicht und Körper schattenfrei ausleuchtet. Außerdem wird der authentische Look der Kleidung gewahrt, so lassen sich Blau und Schwarz gut unterscheiden. Wenn sich dies bewährt, wollen wir auch die alten Filialen umrüsten.\nFrau 2: Ich hätte da auch noch eine Frage.\nLeiterin: Ja, bitte, Frau Dörfer.\nFrau 2: Gibt es auch Änderungen beim Warensortiment?\nLeiterin: Ja, das wird sich tatsächlich auch von dem in den anderen Läden unterscheiden. Eine Marktanalyse hat ergeben, dass die zu erwartende Kundschaft vorwiegend trendorientiert ist und auch bereit ist, für qualitativ hochwertige Mode etwas mehr zu bezahlen. Wir wollen einerseits diese Käufergruppe bedienen, aber andererseits auch andere finanziell besser Gestellte nicht ausschließen. Denn gerade in Frankfurt ist die Kaufkraft besonders hoch, sodass wir auch hier unsere exklusive Designer Linie an die Frau bzw. an den Mann bringen können und sollten.\nWeiterhin haben wir uns dazu entschieden, auf nur vier Kollektionen im Jahr zu setzen. Dieses Konzept lässt sich gut mit unserem Anspruch an nachhaltige Mode vereinbaren und geht auf die Agentur Neuer zurück. Ja, das war alles von meiner Seite. Haben Sie denn noch weitere Fragen? Im Moment nicht? Gut, dann können wir unsere Sitzung schließen. Bis nächste Woche.",
+      "items": [
+        {
+          "n": 32,
+          "type": "choice",
+          "prompt": "Die neue Werbekampagne",
+          "options": [
+            {"key": "a", "text": "ist schon fertig."},
+            {"key": "b", "text": "wird intern konzipiert."},
+            {"key": "c", "text": "gestaltet eine Agentur."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Wir haben wieder die Agentur Neuer beauftragt, einen Vorschlag zu entwickeln.",
+          "explain": "La campaña la diseña una agencia externa. El borrador llegará en unas dos semanas, así que aún no está lista.",
+          "explain_ru": "Кампанию разрабатывает внешнее агентство. Черновик будет примерно через две недели, значит, она ещё не готова."
+        },
+        {
+          "n": 33,
+          "type": "choice",
+          "prompt": "Die sozialen Medien werden dazu genutzt, um",
+          "options": [
+            {"key": "a", "text": "aktiv neue Bewerber zu finden."},
+            {"key": "b", "text": "Bewerbungsgespräche zu führen."},
+            {"key": "c", "text": "die Bewerber besser kennenzulernen."}
+          ],
+          "answer": "c",
+          "confidence": "mittel",
+          "quote": "Deshalb werden wir erst mal Ihre Profile in den sozialen Medien angucken und dann entscheiden, wer in die engere Wahl kommt.",
+          "explain": "Revisan los perfiles de los candidatos para conocerlos antes de elegir. Buscar candidatos es el paso previo; el uso concreto que describe el texto es conocerlos mejor.",
+          "explain_ru": "Они просматривают профили кандидатов, чтобы познакомиться с ними до отбора. Поиск кандидатов — это предыдущий шаг; в тексте речь именно о лучшем знакомстве."
+        },
+        {
+          "n": 34,
+          "type": "choice",
+          "prompt": "Das Beleuchtungskonzept der anderen Filialen",
+          "options": [
+            {"key": "a", "text": "führte zu Unzufriedenheit bei der Kundschaft."},
+            {"key": "b", "text": "soll als Modell für die neue Filiale dienen."},
+            {"key": "c", "text": "wird zurzeit neu ausgearbeitet."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Da Umfragen immer wieder gezeigt haben, dass sich die Kundinnen und Kunden mit dem Licht nicht wohlfühlen.",
+          "explain": "Las encuestas muestran que los clientes no están cómodos con la luz actual. El nuevo sistema se prueba en la tienda nueva, no al revés.",
+          "explain_ru": "Опросы показывают, что клиентам неуютно при нынешнем свете. Новую систему испытывают в новом магазине, а не наоборот."
+        },
+        {
+          "n": 35,
+          "type": "choice",
+          "prompt": "Im Kaufhaus wird",
+          "options": [
+            {"key": "a", "text": "in allen Läden das gleiche Sortiment angeboten."},
+            {"key": "b", "text": "nur teure Kleidung."},
+            {"key": "c", "text": "Kleidung mit guter Qualität verkauft."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "für qualitativ hochwertige Mode etwas mehr zu bezahlen",
+          "explain": "El público valora la calidad. El surtido cambia respecto a otras tiendas y no es solo ropa cara.",
+          "explain_ru": "Покупатели ценят качество. Ассортимент отличается от других магазинов и не сводится к дорогой одежде."
+        }
+      ]
+    }
+  ],
+  "fixes": []
+}

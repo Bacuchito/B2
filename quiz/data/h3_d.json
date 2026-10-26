@@ -1,0 +1,151 @@
+{
+  "block": "h3_d",
+  "section": "hoeren-t3",
+  "variants": [
+    {
+      "id": "h3-v6",
+      "label": "Variante 6",
+      "page": 162,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "text",
+      "intro": "Sie hören ein Gespräch. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Chefin: Nun zu einem weiteren Punkt unserer Tagesordnung. Der Vorstand hat beschlossen, im Unternehmen ein sogenanntes Bonussystem für die Mitarbeiter*innen einzuführen. Was meinen wir damit? Wir stellen uns vor, dass sowohl jede und jeder Einzelne, als auch Abteilungen und Teams von den Erfolgen der Firma profitieren, indem besondere Leistungen extra belohnt werden. Wir erwarten uns davon, dass die Motivation aller Mitarbeitenden, sich für das Unternehmen einzusetzen, gesteigert wird.\nTN 1: Das klingt ja prinzipiell sehr interessant, aber geht es dabei nicht eher um einen Wettbewerb unter den Mitarbeiter*innen? Das würde die Stimmung im Unternehmen sicherlich verschlechtern.\nChefin: Das ist eine berechtigte Frage, Frau Schmidt. Genau darüber haben wir auch viel diskutiert. Wir werden ein System einführen, das die Einschätzung der einzelnen Personen wie auch der Abteilungen gleichermaßen in Betracht zieht. Dafür haben wir zwei Fragebögen erstellt. Einen für die Mitarbeitenden und einen anderen für die einzelnen Abteilungen. Zunächst soll mit den Fragebögen grundsätzlich das Kompetenzprofil von jedem Einzelnen und auch von jeder Abteilung erfasst werden. Dazu gehören solche Informationen wie die Qualifikationen, Ausbildungen und Berufserfahrungen. Gleichzeitig sollen auf der Basis dieser Informationen auch die Entwicklungsmöglichkeiten innerhalb des Betriebs ermittelt werden. Im Gegensatz dazu geht es bei den Zielen der Abteilungen beispielsweise um Kostenersparnis und Umsatzsteigerung.\nTN 2: Werden dann auch die Interessen von uns Mitarbeitenden dabei berücksichtigt? Also ich meine, kann man auch Wünsche äußern?\nChefin: Ja, natürlich. Wenn Sie das auf Ihre persönliche Karriereentwicklung beziehen, ist dieses Feedback sogar sehr wichtig. Wir möchten unter anderem von Ihnen gerne erfahren, ob Sie bei Ihrer Arbeit persönliche Entwicklungsmöglichkeiten sehen. Dazu kommt aber auch noch eine Analyse Ihrer Stärken und Schwächen, die uns und Ihnen ein klares Bild Ihrer Kompetenzen geben.\nJetzt mal ein Beispiel. Für uns als Arbeitgeber ist die Pünktlichkeit von großem Interesse. Damit meinen wir nicht, dass Sie jeden Morgen pünktlich am Arbeitsplatz erscheinen, sondern eher, ob Sie Ihre Arbeit fristgerecht und sorgfältig ausführen. Das ist das, was man allgemein unter gutem Zeitmanagement versteht. Ein weiteres Kriterium ist auch die Bereitschaft an Weiterbildungsseminaren teilzunehmen. Wie Sie ja selber wissen, muss man immer auf dem neuesten Stand sein.\nNach Ablauf von zwölf Monaten wird dann ein erstes obligatorisches Feedback-Gespräch zwischen den Mitarbeitenden und den Vorgesetzten geführt und geschaut, wie die Entwicklung war. Diese Gespräche sollten von beiden Seiten, also vom Arbeitgeber und vom Arbeitnehmer, gleichermaßen gut vorbereitet sein. Hierzu sollten beide Seiten im Laufe des Jahres Notizen zur gelungenen Umsetzung der Ziele machen, um dann gemeinsam zu schauen, was und wie etwas erreicht wurde und warum etwas vielleicht nicht erreicht wurde. Das ermöglicht uns auch zukünftig, die Mitarbeiter*innen ihren Ressourcen und Wünschen entsprechend optimal im Unternehmen beziehungsweise in der Abteilung einzusetzen, wovon sowohl Sie als Arbeitnehmer*innen als auch wir als Arbeitgeber profitieren. Je nachdem, inwieweit die gemeinsam vereinbarten Ziele erreicht wurden, werden Punkte vergeben. Und ab einer bestimmten Punktzahl gibt es Prämien.\nTN 3: Und was für Prämien sind das?\nChefin: Bei den Prämien denken wir an Leistungen wie zum Beispiel an einen Zuschuss für eine Mitgliedschaft im Fitnessstudio oder auch an einen Tankgutschein. Diese Gutscheine sind jeweils zwölf Monate gültig und können nicht ausgezahlt werden.\nTN 2: Könnte man nicht auch andere Sachen, wie zum Beispiel Eintrittskarten für die ganze Familie in den Zoo, in einen Freizeitpark oder in ein Erlebnisbad bekommen?\nChefin: Ja, wir sind da ganz offen. Gerne können Sie Ihre Ideen an uns weiterleiten. Das gleiche gilt auch, wenn wir die Boni für die Abteilungen betrachten. Wir denken in die Richtung gemeinsame Städtereisen oder andere Wochenendausflüge. Aber auch ein Bowling-Abend mit Kolleg*innen und anschließendem Restaurantbesuch wäre möglich.\nTN 1: Das klingt nach einem gut durchdachten und fairen System.\nChefin: Ja, das denken wir auch. So erwarten wir uns davon natürlich nicht nur eine Produktivitätssteigerung und zufriedenere Kunden, sondern auch engagiertere Mitarbeitende. Gemeinsam erreichte Ziele stärken das Zusammengehörigkeitsgefühl genauso wie gemeinsame Aktivitäten, die aufgrund des Bonussystems unternommen werden können. Das geht auch um Spaß, denn schließlich ist Arbeit nur das halbe Leben.",
+      "items": [
+        {
+          "n": 32,
+          "type": "choice",
+          "prompt": "Das Bonussystem",
+          "options": [
+            {"key": "a", "text": "dient der Einsatzbereitschaft der Mitarbeitenden."},
+            {"key": "b", "text": "verstärkt die Konkurrenz unter den Kollegen."},
+            {"key": "c", "text": "wird von den Mitarbeitenden gefordert."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Wir erwarten uns davon, dass die Motivation aller Mitarbeitenden, sich für das Unternehmen einzusetzen, gesteigert wird.",
+          "explain": "El objetivo es aumentar la motivación y la implicación. La dirección lo decide; no lo piden los empleados, y quieren evitar la competencia.",
+          "explain_ru": "Цель — повысить мотивацию и вовлечённость. Решение принимает руководство, сотрудники его не требуют, а конкуренции хотят избежать."
+        },
+        {
+          "n": 33,
+          "type": "choice",
+          "prompt": "Mit den Fragebögen wird",
+          "options": [
+            {"key": "a", "text": "die Stimmung im Unternehmen ermittelt."},
+            {"key": "b", "text": "die Entwicklung der Firma dokumentierte."},
+            {"key": "c", "text": "ein Mitarbeiterprofil erstellt."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Zunächst soll mit den Fragebögen grundsätzlich das Kompetenzprofil von jedem Einzelnen und auch von jeder Abteilung erfasst werden.",
+          "explain": "Los cuestionarios recogen el perfil de competencias de cada persona y departamento. No miden el ambiente ni la evolución de la empresa.",
+          "explain_ru": "Анкеты фиксируют профиль компетенций каждого сотрудника и отдела. Они не измеряют климат и не документируют развитие фирмы."
+        },
+        {
+          "n": 34,
+          "type": "choice",
+          "prompt": "Das erste Gespräch",
+          "options": [
+            {"key": "a", "text": "findet nach einem Jahr statt."},
+            {"key": "b", "text": "ist freiwillig."},
+            {"key": "c", "text": "muss nicht vorbereitet werden."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Nach Ablauf von zwölf Monaten wird dann ein erstes obligatorisches Feedback-Gespräch zwischen den Mitarbeitenden und den Vorgesetzten geführt",
+          "explain": "Es obligatorio y tiene lugar a los doce meses. Ambas partes deben prepararlo con notas.",
+          "explain_ru": "Он обязательный и проходит через двенадцать месяцев. Обе стороны должны готовиться к нему с заметками."
+        },
+        {
+          "n": 35,
+          "type": "choice",
+          "prompt": "Als Bonus für gute Leistungen",
+          "options": [
+            {"key": "a", "text": "bekommen alle Mitarbeitenden Geld."},
+            {"key": "b", "text": "erhalten die Angestellten eine Sachleistung."},
+            {"key": "c", "text": "gehen die Mitarbeitenden mit den Familien essen."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Diese Gutscheine sind jeweils zwölf Monate gültig und können nicht ausgezahlt werden.",
+          "explain": "Los bonos son vales para servicios, no dinero: no se pueden cobrar. Las cenas o viajes son ideas para premios de equipo.",
+          "explain_ru": "Бонусы — это сертификаты на услуги, а не деньги: их нельзя обналичить. Ужины и поездки — идеи для командных призов."
+        }
+      ]
+    },
+    {
+      "id": "h3-v7",
+      "label": "Variante 7",
+      "page": 164,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial. El original maqueta las preguntas en dos columnas; aquí van separadas.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио. В оригинале вопросы в две колонки; здесь они разделены.",
+      "kind": "text",
+      "intro": "Sie hören ein Gespräch. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Chefin: Guten Morgen zusammen. Vielen Dank, dass Sie sich heute Zeit genommen haben. Wie angekündigt, möchte ich Ihnen die nächsten Schritte erläutern, die wir im Laufe der kommenden Monate in unserer Kita umsetzen möchten. Mir ist wichtig zu betonen, dass es sich dabei um einen Entwicklungsprozess handelt und nicht um kurzfristige Maßnahmen. In den letzten Jahren haben sich sowohl die Rahmenbedingungen als auch die Erwartungen an unsere pädagogische Arbeit deutlich verändert. Die Gruppengrößen sind gestiegen, der Dokumentationsaufwand hat zugenommen und auch die Anforderungen der Eltern sind komplexer geworden. Vor diesem Hintergrund haben wir uns intensiv mit der Frage beschäftigt, wie wir die Qualität unserer Arbeit dauerhaft sichern können. Ein zentraler Punkt dabei ist die personelle Ausstattung. Wir haben festgestellt, dass die aktuelle Besetzung langfristig an ihre Grenzen stößt. Deshalb ist geplant, zusätzliche Fachkräfte einzustellen. Dabei geht es ausdrücklich nicht darum, Kosten zu reduzieren oder kurzfristige Engpässe zu überbrücken, sondern um eine nachhaltige Entlastung des gesamten Teams.\nTN: Bedeutet das, dass wir demnächst sofort neue Kolleginnen oder Kollegen bekommen?\nChefin: Die Gespräche laufen bereits, aber wir möchten hier sorgfältig vorgehen. Qualität geht vor Geschwindigkeit. Ein weiterer Aspekt betrifft den Umgang mit Ausfällen. In der Vergangenheit mussten Teams häufig spontan umorganisieren, was zu Unruhe im Alltag geführt hat. Um das zu vermeiden, sollen künftig Springer eingesetzt werden. Diese Mitarbeitenden gehören fest zur Kita, sind aber nicht dauerhaft einer bestimmten Gruppe zugeordnet. Sie springen dort ein, wo kurzfristig Bedarf entsteht.\nTN: Müssen wir dann ständig mit wechselnden Personen arbeiten?\nChefin: Nein. Die festen Teams bleiben bestehen. Die Springer sind als Ergänzung gedacht, nicht als Ersatz. Was die konkrete Teamzusammensetzung betrifft, möchte ich offen sein. Hier ist noch nichts endgültig entschieden. Wir sammeln derzeit Rückmeldungen aus den Teams, berücksichtigen individuelle Arbeitszeiten und führen parallel Bewerbungsgespräche. Erst wenn all diese Informationen vorliegen, werden wir eine verbindliche Struktur festlegen.\nTN: Gibt es dafür schon einen Termin?\nChefin: Bewusst noch nicht. Uns ist wichtig, dass die Lösung für möglichst viele tragfähig ist. Ein Thema, das in den letzten Mitarbeitergesprächen mehrfach angesprochen wurde, ist die Zusammenarbeit im Alltag. Dabei ging es weniger um fachliche Inhalte, sondern um Kommunikation, Absprachen und den Umgang mit Belastungssituationen. Aus diesem Grund planen wir mehrere interne Workshops.\nTN: Geht es dabei um persönliche Entwicklung oder eher um Teamarbeit?\nChefin: Der Fokus liegt klar auf der Zusammenarbeit im Team. Persönliche Aspekte spielen eine Rolle, stehen aber nicht im Mittelpunkt. Abschließend möchte ich betonen, dass alle Maßnahmen schrittweise eingeführt werden. Niemand soll überfordert werden und es wird ausreichend Raum für Rückfragen und Anpassungen geben. Weitere Informationen folgen, sobald konkrete Termine feststehen.",
+      "items": [
+        {
+          "n": 32,
+          "type": "choice",
+          "prompt": "Die Kita plant,",
+          "options": [
+            {"key": "a", "text": "ausschließlich Auszubildende einzusetzen."},
+            {"key": "b", "text": "die Mitarbeitenden zu motivieren."},
+            {"key": "c", "text": "neues Personal zu rekrutieren."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Deshalb ist geplant, zusätzliche Fachkräfte einzustellen.",
+          "explain": "Quieren contratar personal especializado para aliviar al equipo. No hablan de aprendices ni de motivar.",
+          "explain_ru": "Они хотят нанять специалистов, чтобы разгрузить команду. О стажёрах и мотивации речи нет."
+        },
+        {
+          "n": 33,
+          "type": "choice",
+          "prompt": "In jedem Team",
+          "options": [
+            {"key": "a", "text": "arbeiten Erzieher*innen gleichen Alters."},
+            {"key": "b", "text": "können Springer*innen eingesetzt werden."},
+            {"key": "c", "text": "sind vier Betreuer*innen tätig."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Diese Mitarbeitenden gehören fest zur Kita, sind aber nicht dauerhaft einer bestimmten Gruppe zugeordnet.",
+          "explain": "Los refuerzos cubren bajas donde hace falta. Los equipos fijos siguen igual; el texto no fija edades ni número de cuidadores.",
+          "explain_ru": "«Прыгуны» подменяют там, где нужно. Постоянные команды остаются; о возрасте и числе воспитателей в тексте нет."
+        },
+        {
+          "n": 34,
+          "type": "choice",
+          "prompt": "Die Kitaleitung",
+          "options": [
+            {"key": "a", "text": "führt bereits Vorstellungsgespräche."},
+            {"key": "b", "text": "hat die Teams zusammengestellt."},
+            {"key": "c", "text": "organisiert Workshops für die Mitarbeitenden."}
+          ],
+          "answer": "a",
+          "confidence": "mittel",
+          "quote": "Wir sammeln derzeit Rückmeldungen aus den Teams, berücksichtigen individuelle Arbeitszeiten und führen parallel Bewerbungsgespräche.",
+          "explain": "Ya entrevistan candidatos, pero la estructura definitiva no está cerrada. Los talleres están planificados, todavía no se organizan.",
+          "explain_ru": "Собеседования уже идут, но окончательная структура не определена. Семинары только планируются, их ещё не проводят."
+        },
+        {
+          "n": 35,
+          "type": "choice",
+          "prompt": "Die Mitarbeitenden sollen",
+          "options": [
+            {"key": "a", "text": "an einem Kochkurs teilnehmen."},
+            {"key": "b", "text": "besser zusammenarbeiten."},
+            {"key": "c", "text": "ihre Persönlichkeit stärken."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Der Fokus liegt klar auf der Zusammenarbeit im Team.",
+          "explain": "Los talleres buscan mejorar la colaboración diaria, no el desarrollo personal ni un curso de cocina.",
+          "explain_ru": "Семинары нацелены на улучшение повседневного сотрудничества, а не на личное развитие или кулинарный курс."
+        }
+      ]
+    }
+  ],
+  "fixes": []
+}

@@ -1,0 +1,154 @@
+{
+  "block": "h3_b",
+  "section": "hoeren-t3",
+  "variants": [
+    {
+      "id": "h3-v3",
+      "label": "Variante 3",
+      "page": 154,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "text",
+      "intro": "Sie hören ein Gespräch. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Chefin: Guten Morgen, liebe Mitarbeiterinnen und Mitarbeiter. Als ich diese Firma vor acht Jahren von meinem Vater übernommen habe, war sie noch ein ganz kleiner Betrieb mit großen finanziellen Schwierigkeiten. Doch in den letzten Jahren hat sich einiges bewegt. Wir haben, dank Ihres großen Engagements, viele innovative Ideen umgesetzt und konnten dadurch ein stetiges Wachstum erreichen. Dies ist eine fantastische Entwicklung, die ich natürlich fortsetzen möchte. Deshalb stehen auch in diesem Jahr einige Veränderungen an. Ich habe unter anderem eine Grafikagentur beauftragt unser Firmenlogo neu zu gestalten. Und darüber möchte ich Sie heute informieren. Ja, Herr Gertenbach, Sie haben eine Frage?\nHerr Gertenbach: Macht die Grafikagentur Compton das neue Logo? War nicht letztens Frau Seidel von Compton hier im Haus? Die Agentur hat doch vor zwei Jahren so tolle Plakate für uns gestaltet.\nChefin: Ja, Frau Seidel hat mich auch diesmal sofort mit ihren guten Ideen überzeugt. Aber dazu gleich mehr. Lassen Sie mich zuerst kurz erklären, warum ich mich überhaupt für ein neues Logo entschieden habe. Das alte Logo ist ja nicht schlecht. Obwohl es vor über zehn Jahren entworfen wurde, ist es immer noch zeitgemäß. Das schlichte, unkomplizierte Design ist unabhängig von Trends und hat außerdem den Vorteil, dass es vielseitig verwendbar ist. Es funktioniert ganz klein auf einer Visitenkarte, aber auch großflächig als Print auf einem LKW. Trotzdem, durch die Erweiterung unseres Sortiments und die neuen Produkte, die wir auf den Markt gebracht haben, hat sich das Gesicht unserer Firma verändert. Das neue Logo soll dazu beitragen, dass dies auch von unseren Kunden so wahrgenommen wird. Sie möchten etwas fragen, Frau Bräuer?\nFrau Bräuer: Ja, ich wollte fragen, ob die Einführung eines neuen Logos nicht auch ein Risiko sein kann. Die Kunden sind schließlich mit dem alten Logo vertraut und erkennen es sofort.\nChefin: Ja, absolut. Die Einführung eines neuen Logos wird gut überlegt sein. Ich habe mich deshalb auch ausführlich beraten lassen, bevor ich eine Entscheidung getroffen habe. Frau Seidel hat vorgeschlagen, kein ganz neues Logo zu entwerfen, sondern das alte weiterzuentwickeln. Das heißt, wir übernehmen einige Elemente aus dem bisherigen Design und diese werden die Kunden dann auch wiedererkennen. Das neue Logo wird, wie gehabt, ein Rechteck sein, auf dem die Buchstaben F, A, N stehen, also die Initiale des Firmengründers Florian-Alexander Niehaus. Das Rechteck bleibt dunkelblau, die gelbe Schrift wird allerdings durch eine leuchtende Orangefarbe ersetzt. Außerdem verwenden wir eine andere Schriftart, die etwas dynamischer aussieht. Und der kleine Fußball, der früher unser gesamtes Sortiment repräsentiert hat und bisher Teil des Logos war, fällt weg. Dadurch wirkt das Design noch klarer.\nTom: Anschauen können wir uns das neue Logo aber noch nicht.\nChefin: Nein, die Agentur arbeitet noch daran. Frau Seidel hat die Entwürfe für den 15. März angekündigt. Sie bespricht diese dann zunächst mit Herrn Aydin, dem neuen Leiter unserer Marketingabteilung. Eventuelle Änderungswünsche werden dann realisiert und spätestens Ende März können wir Ihnen dann hoffentlich das endgültige Ergebnis präsentieren. Ich weiß, dass es noch ein paar Wochen hin, aber es ist mir wichtig, Sie frühzeitig zu informieren, denn die Einführung des neuen Logos bedeutet natürlich eine Menge Arbeit. Bedenken Sie bitte, dass wir das Logo auf all unseren Plattformen und Firmenmaterialien aktualisieren müssen. Das betrifft Visitenkarten, Briefköpfe, Formulare, Werbematerialien, unsere Webseite und, und, und. Sogar ein neues Türschild muss her. Herr Aydin wird sich um alles kümmern. Er wird aber hin und wieder Ihre Unterstützung benötigen.\nFrau Müller: Und wann wird das neue Logo dann offiziell verwendet?\nChefin: Ich habe lange überlegt, wie wir den Übergang vom alten zum neuen Logo am besten hinbekommen. Und habe mich dagegen entschieden, ein Datum festzulegen, an dem von heute auf morgen alles umgestellt wird. Ein Zeitraum von 6 bis 8 Wochen, in dem wir die Umstellung nach und nach vornehmen, erscheint mir sinnvoll. Spätestens Ende Juni sollte der ganze Prozess aber abgeschlossen sein. Und wenn alles geschafft ist, stoßen wir mit einem Gläschen auf den schönen Erfolg an, okay?\nGut, mit diesen Aussichten lasse ich Sie nun an Ihre Arbeitsplätze zurückkehren und bedanke mich für Ihre Aufmerksamkeit.",
+      "items": [
+        {
+          "n": 32,
+          "type": "choice",
+          "prompt": "Das alte Logo",
+          "options": [
+            {"key": "a", "text": "ist nicht überall einsetzbar."},
+            {"key": "b", "text": "passt nicht mehr zum Angebot."},
+            {"key": "c", "text": "wirkt unmodern."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "durch die Erweiterung unseres Sortiments und die neuen Produkte, die wir auf den Markt gebracht haben, hat sich das Gesicht unserer Firma verändert.",
+          "explain": "El logo antiguo no es feo ni anticuado: es versátil y actual. El problema es que el catálogo creció y ya no lo representa.",
+          "explain_ru": "Старый логотип не плохой и не устаревший: он универсален и современен. Проблема в том, что ассортимент вырос и он больше не отражает фирму."
+        },
+        {
+          "n": 33,
+          "type": "choice",
+          "prompt": "Das neue Logo enthält",
+          "options": [
+            {"key": "a", "text": "den vollständigen Namen der Firma."},
+            {"key": "b", "text": "ein Symbol für Sport."},
+            {"key": "c", "text": "zwei farbige Elemente."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Das Rechteck bleibt dunkelblau, die gelbe Schrift wird allerdings durch eine leuchtende Orangefarbe ersetzt.",
+          "explain": "Quedan dos colores: el rectángulo azul oscuro y la letra naranja. El balón desaparece y solo van las iniciales FAN.",
+          "explain_ru": "Остаются два цвета: тёмно-синий прямоугольник и оранжевые буквы. Мяч убирают, остаются только инициалы FAN."
+        },
+        {
+          "n": 34,
+          "type": "choice",
+          "prompt": "Herr Aydin",
+          "options": [
+            {"key": "a", "text": "wird sich bei den Mitarbeitern Hilfe holen."},
+            {"key": "b", "text": "soll den Mitarbeitern das neue Logo vorstellen."},
+            {"key": "c", "text": "wird die Logo-Entwürfe erst Ende März sehen."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Er wird aber hin und wieder Ihre Unterstützung benötigen.",
+          "explain": "Herr Aydin coordina el cambio y pedirá ayuda al equipo. Los borradores llegan el 15 de marzo, no a finales.",
+          "explain_ru": "Господин Айдын координирует замену и будет обращаться за помощью к команде. Черновики приходят 15 марта, а не в конце месяца."
+        },
+        {
+          "n": 35,
+          "type": "choice",
+          "prompt": "Die Einführung des neuen Logos soll",
+          "options": [
+            {"key": "a", "text": "an einem bestimmten Tag stattfinden."},
+            {"key": "b", "text": "gefeiert werden."},
+            {"key": "c", "text": "nicht länger als einen Monat dauern."}
+          ],
+          "answer": "b",
+          "confidence": "mittel",
+          "quote": "Und wenn alles geschafft ist, stoßen wir mit einem Gläschen auf den schönen Erfolg an, okay?",
+          "explain": "Al terminar, brindarán por el éxito. Descartan una fecha única y el cambio dura de 6 a 8 semanas.",
+          "explain_ru": "По завершении они поднимут бокал за успех. Единую дату отвергли, а переход занимает 6–8 недель."
+        }
+      ]
+    },
+    {
+      "id": "h3-v4",
+      "label": "Variante 4",
+      "page": 156,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "text",
+      "intro": "Sie hören ein Gespräch. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Chef: Guten Morgen an alle. Heute geht es um ein äußerst wichtiges Thema, nämlich den Umweltschutz. Regelmäßig suchen wir nach Möglichkeiten, den ökologischen Fußabdruck unseres Unternehmens zu verringern. Wie erfolgreich die Lage waren, beweist, dass wir letztes Jahr den Nachhaltigkeitspreis des Landes bekommen haben. Heute ist Frau Seibert vom Landesamt für Umwelt bei uns. Sie kennen sie ja schon von ihrem letzten Vortrag bei uns im Haus. Sie wird uns Tipps zum umweltgerechten Verhalten geben. Herzlich willkommen, Frau Seibert. Sie sind bereits zum zweiten Mal in unserem Unternehmen.\nFrau Seibert: Vielen Dank. Ich freue mich, dass Sie mich eingeladen haben. Damit ein Büro zum nachhaltigen Büro wird, kommt das besonders auf die Menschen an, die dort arbeiten, also auf Sie. Jeder Einzelne ist gefragt. Einige konkrete Maßnahmen zum täglichen Umweltschutz möchte ich gleich vorstellen. Bitte unterbrechen Sie mich gerne jederzeit, wenn Sie eine Frage haben.\nAls Arbeitsmittel Nummer 1 steht der Computer bei dem Umweltschutz für das Büro ganz vorne. Wichtig ist, dass Sie keinen Bildschirmschoner verwenden. Stellen Sie Ihren PC besser so ein, dass er nach einigen Minuten der Nichtbenutzung automatisch in den Schlaf- bzw. Ruhemodus umschaltet. Die Energieersparnis zum Normalbetrieb liegt so bei ca. 70%. Auch das Ausschalten des Bildschirms während der Pausen oder Besprechungen kann viel Energie sparen. Wenn Sie mit der Arbeit fertig sind, sollten Sie den Computer ganz ausschalten.\nTN 1: Ich habe vor Kurzem etwas über papierlose Büros gelesen. Wir sind davon ja noch sehr weit entfernt, denn wir drucken hier noch fast alles aus. Ist der Energieverbrauch beim Drucken wirklich so groß?\nFrau Seibert: Das kommt drauf an. Man sollte sich vorher überlegen, ob es notwendig ist, Dokumente auszudrucken und was überhaupt gedruckt werden muss. Für den internen Gebrauch empfiehlt es sich immer, auch die Rückseite zu bedrucken. Außerdem druckt man viel sparsamer, wenn man den Entwurfmodus verwendet. Die Dokumente sind auch in dieser Einstellung von sehr guter Qualität. Und man spart wirklich richtig viel Tinte bzw. Toner. Probieren Sie es so mal aus. Wenn man diese Maßnahmen umsetzt, kann man eventuell auf graues Recyclingpapier verzichten, denn darauf kann man oft nicht so gut lesen.\nTN 2: Ich hätte da mal eine ganz andere Frage. Was sagen Sie zur Mülltrennung?\nFrau Seibert: Ebenso wichtig wie selbstverständlich ist natürlich der Hinweis aufs Müllsortieren. Aber ich sehe hier schon überall die unterschiedlichen Tonnen mit verschiedenen Farben für jede Müllsorte stehen. Noch wichtiger wäre es, Müll zu vermeiden, sofern es möglich ist. Wenn alle sich daranhalten, würde die Frage des Recyclings in den Hintergrund treten. Übrigens würden dann die Kosten für die Abfallbeseitigung sinken.\nTN 3: Wenn wir schon beim Thema Geld sind. Geschäftsreisen verursachen ja auch hohe Kosten und sind außerdem nicht gut für die Umwelt. Was würden Sie empfehlen?\nFrau Seibert: Guter Punkt. Das ist das letzte Thema meiner Präsentation. Dank moderner Kommunikationsmittel sind Dienstreisen in bestimmten Fällen nicht mehr erforderlich. Einiges kann schon in einer Telefon- oder Videokonferenz besprochen werden. Allerdings möchte ich auch darauf hinweisen, dass Videokonferenzen für Teilnehmer meist anstrengender sind, weil sie mehr Konzentration erfordern. Manchmal sind Reisen unvermeidbar. Aber man kann sie auch durchaus umweltfreundlich durchführen.\nViele Unternehmen befürchten aber, dass dies hohe Kosten verursacht. Das ist aber nicht unbedingt der Fall. Die richtige Wahl des Verkehrsmittels kann hier die Kosten senken. Bahnfahrten sind nämlich nicht nur günstiger als Businessflüge und besser für die Umwelt als Autofahren, sondern haben auch weitere positive Seiten. Denn man muss sich nicht auf den Verkehr konzentrieren und kann sogar im Zug arbeiten.\nChef: Danke für diese Anlegungen, Frau Seibert. Wir haben noch viel zu tun in diesem Bereich. Das sehen wir jetzt deutlich. Und jetzt kommt noch der praktische Teil. Wir schauen uns die konkrete Situation in unseren Büros genauer an. Dabei hoffe ich dann auf Ihre Fragen und Vorschläge zum Thema \"Wie wird unser Büro ein nachhaltiges Büro?\"",
+      "items": [
+        {
+          "n": 32,
+          "type": "choice",
+          "prompt": "Ein Computer sollte",
+          "options": [
+            {"key": "a", "text": "nicht mehrmals ein- und ausgeschaltet werden."},
+            {"key": "b", "text": "nur selten ganz heruntergefahren werden."},
+            {"key": "c", "text": "von allein in den Ruhemodus schalten."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Stellen Sie Ihren PC besser so ein, dass er nach einigen Minuten der Nichtbenutzung automatisch in den Schlaf- bzw. Ruhemodus umschaltet.",
+          "explain": "Recomienda el modo de reposo automático. Además, al terminar la jornada hay que apagar el ordenador del todo.",
+          "explain_ru": "Она советует автоматический спящий режим. Кроме того, по окончании работы компьютер нужно полностью выключать."
+        },
+        {
+          "n": 33,
+          "type": "choice",
+          "prompt": "Frau Seibert empfiehlt,",
+          "options": [
+            {"key": "a", "text": "den Entwurfmodus zu verwenden."},
+            {"key": "b", "text": "immer Recyclingpapier zu benutzen."},
+            {"key": "c", "text": "Unterlagen für Kunden beidseitig zu bedrucken."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Außerdem druckt man viel sparsamer, wenn man den Entwurfmodus verwendet.",
+          "explain": "El modo borrador ahorra tinta. El papel reciclado se puede evitar, y la doble cara es para uso interno, no para clientes.",
+          "explain_ru": "Черновой режим экономит краску. От переработанной бумаги можно отказаться, а двусторонняя печать — для внутреннего пользования, не для клиентов."
+        },
+        {
+          "n": 34,
+          "type": "choice",
+          "prompt": "Frau Seibert findet es wichtig, dass",
+          "options": [
+            {"key": "a", "text": "die Firma den Müll sorgfältiger trennt."},
+            {"key": "b", "text": "mehr recycelt wird."},
+            {"key": "c", "text": "weniger Abfall produziert wird."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Noch wichtiger wäre es, Müll zu vermeiden, sofern es möglich ist.",
+          "explain": "Ya hay contenedores separados. Lo importante es evitar residuos, no separar o reciclar más.",
+          "explain_ru": "Контейнеры для раздельного сбора уже есть. Главное — избегать отходов, а не сортировать или перерабатывать больше."
+        },
+        {
+          "n": 35,
+          "type": "choice",
+          "prompt": "Geschäftsreisen",
+          "options": [
+            {"key": "a", "text": "lassen sich problemlos durch Videokonferenzen ersetzen."},
+            {"key": "b", "text": "mit der Bahn haben verschiedene Vorteile."},
+            {"key": "c", "text": "sind teurer, wenn sie umweltfreundlich sind."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Bahnfahrten sind nämlich nicht nur günstiger als Businessflüge und besser für die Umwelt als Autofahren, sondern haben auch weitere positive Seiten.",
+          "explain": "Ir en tren es más barato, más ecológico y permite trabajar durante el viaje. Las videoconferencias no sustituyen todos los viajes.",
+          "explain_ru": "Поезд дешевле, экологичнее и позволяет работать в пути. Видеоконференции заменяют не все поездки."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.156: «Wie erfolgreich die Lage waren» se mantiene verbatim (erratas del original).",
+    "p.156: «Anlegungen» se mantiene verbatim (probable errata por «Anregungen»)."
+  ]
+}

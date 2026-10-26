@@ -122,6 +122,9 @@ escribir el registro. Repasar la barra en escritorio y móvil.
 - **H3** — 7 variantes, 28 ítems (24 con clave, 4 sin clave). `build.py` 798
   ítems (713 con clave), sin errores ni citas rotas. Smoke 137/137, seguridad
   52/52, diseño 77/77.
+- **H4** — 7 variantes, 28 ítems. `build.py` 826 ítems (741 con clave), sin
+  errores ni citas rotas. Smoke 137/137, seguridad 52/52, diseño 77/77.
+  Cuatro respuestas en `mittel` por doble lectura defendible.
 
 ## Fuera de alcance
 
