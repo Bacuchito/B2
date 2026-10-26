@@ -316,23 +316,35 @@
       background:var(--bg);
       height:calc(100vh - var(--header-h));
       overflow-y:auto;position:sticky;top:var(--header-h);
-      padding:0 0 var(--sp-5);counter-reset:sec}
-  /* Cada grupo lleva su número de línea: 01, 02… Sale del orden del documento,
-     no del JS: añadir una sección no obliga a numerar nada a mano. */
-  /* Rótulo de familia: versalitas sueltas, sin número y con aire arriba. */
-  nav .nav-group{font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-micro);
+      padding:0 0 var(--sp-5)}
+  /* Cabecera de familia: plegable. Lleva el recuento de entradas y una punta que
+     gira. Al plegarla desaparecen sus secciones enteras, no solo los ejercicios. */
+  nav .nav-group{display:flex;align-items:center;gap:var(--sp-2);width:100%;
+           min-height:28px;padding:var(--sp-5) var(--sp-3) var(--sp-2);
+           font-family:var(--font-d);font-stretch:87.5%;font-size:var(--fs-micro);
            font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-           color:var(--acc-ink);padding:var(--sp-5) var(--sp-3) var(--sp-2);
-           background:var(--bg)}
+           color:var(--acc-ink);background:var(--bg);cursor:pointer;
+           user-select:none;border-top:1px solid var(--line-2);
+           transition:color var(--dur-1) var(--ease)}
+  nav .nav-head + .nav-group{border-top:0}
+  nav .nav-group::before{content:"";width:6px;height:6px;flex:0 0 6px;
+           border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;
+           transform:rotate(-45deg);transition:transform var(--dur-2) var(--ease)}
+  nav .nav-group.open::before{transform:rotate(45deg)}
+  nav .nav-group:hover{color:var(--txt)}
+  nav .nav-group:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+  nav .nav-group .fam-count{margin-left:auto;color:var(--dim-2);font-weight:700;
+           letter-spacing:.04em;font-variant-numeric:tabular-nums}
   nav .sec{font-family:var(--font-d);font-stretch:87.5%;
            font-size:var(--fs-micro);letter-spacing:.12em;text-transform:uppercase;
            color:var(--dim);margin:0;padding:var(--sp-3) var(--sp-3) var(--sp-2) 36px;
            border-bottom:1px solid var(--line);
            font-weight:600;display:flex;align-items:center;
            justify-content:space-between;gap:var(--sp-2);
-           counter-increment:sec;position:relative}
-  nav .sec::before{content:counter(sec,decimal-leading-zero);position:absolute;
-           left:var(--sp-3);top:50%;transform:translateY(-50%);
+           position:relative}
+  /* El número lo pone el JS desde el orden de datos, no un contador CSS: así no
+     se renumera la lista al plegar una familia. */
+  nav .sec-n{position:absolute;left:var(--sp-3);top:50%;transform:translateY(-50%);
            color:var(--acc-ink);font-weight:700;font-variant-numeric:tabular-nums}
   /* Cabecera plegable: al menú le sobraban 140 entradas. Un clic abre el grupo
      y cierra el anterior; el contador dice cuántas entradas esconde. */
@@ -351,6 +363,7 @@
   nav .sec.open .sec-count{color:var(--dim)}
   /* El display:flex de los botones gana al [hidden] del navegador: se apaga a mano. */
   nav button[hidden]{display:none}
+  nav .sec[hidden]{display:none}
   nav button.sec-reset{display:inline-flex;align-items:center;width:auto;min-height:28px;
            padding:0;border:0;border-bottom:1px solid var(--line-2);
            border-radius:0;font-size:var(--fs-micro);font-weight:700;letter-spacing:.02em;
@@ -2621,6 +2634,22 @@ if (typeof window !== "undefined" && typeof window.addEventListener === "functio
    vuelve a abrir solo el grupo activo, sin memoria que arrastre estados raros. */
 let openSec;
 let lastNavCurrent;
+/* Familias plegadas a mano. También de sesión: al recargar vuelven a estar
+   abiertas y el menú se lee de un vistazo. */
+let plegadas = {};
+
+/* Familia de examen de una sección, por el prefijo de su id. Los títulos llevan
+   umlaut y cambian; el id no. */
+function familiaDe(id){
+  const s = String(id || "");
+  if (s.indexOf("lesen") === 0) return "LESEN";
+  if (s.indexOf("sprachbausteine") === 0) return "SPRACHBAUSTEINE";
+  if (s.indexOf("schreiben") === 0) return "SCHREIBEN";
+  if (s.indexOf("hoeren") === 0) return "HÖREN";
+  if (s.indexOf("sprechen") === 0) return "SPRECHEN";
+  if (s.indexOf("modeltest") === 0) return "MODELTEST";
+  return "";
+}
 
 function renderNav(){
   const nav = document.getElementById("nav");
@@ -2646,20 +2675,45 @@ function renderNav(){
   const secActual = aqui ? aqui._section : null;
   if(openSec === undefined || current !== lastNavCurrent){
     openSec = secActual; lastNavCurrent = current;
+    /* Si la sección activa vive en una familia plegada, se despliega: el menú
+       nunca esconde el ejercicio que estás viendo. */
+    const famActual = familiaDe(secActual);
+    if(famActual) plegadas[famActual] = false;
   }
-  /* Un rótulo separa cada familia de examen. El nombre sale del título de la
-     sección («Schreiben: …» → SCHREIBEN), así que no hay una lista aparte que
-     mantener: añadir una sección nueva la coloca sola en su familia. */
+  /* Cabecera por familia de examen. El nombre sale del id de la sección, así que
+     una sección nueva cae sola en su familia; el recuento suma sus entradas. */
+  const famTotales = {};
+  DATA.sections.forEach(s=>{
+    const f = familiaDe(s.id);
+    if(!f) return;
+    /* Mismo filtro que el contador de cada sección: con «Solo dudosas» puesto,
+       la familia cuenta lo que de verdad queda a la vista. */
+    const n = (s.variants || []).filter(v => !(onlyDoubtful && doubtfulCount(v) === 0 && v.id !== current)).length;
+    famTotales[f] = (famTotales[f] || 0) + n;
+  });
   let familiaAnterior = null;
   DATA.sections.forEach(sec=>{
-    const familia = (function(){
-      const m = String(sec.title || "").match(/^\s*(schreiben|sprechen|modeltest)/i);
-      return m ? m[1].toUpperCase() : "";
-    })();
+    const familia = familiaDe(sec.id);
+    const famPlegada = !!plegadas[familia];
     if (familia && familia !== familiaAnterior){
       const grupo = document.createElement("div");
-      grupo.className = "nav-group";
-      grupo.textContent = familia;
+      grupo.className = "nav-group" + (famPlegada ? "" : " open");
+      const gnom = document.createElement("span");
+      gnom.textContent = familia;
+      const gcnt = document.createElement("span");
+      gcnt.className = "fam-count";
+      gcnt.textContent = famTotales[familia];
+      grupo.appendChild(gnom); grupo.appendChild(gcnt);
+      grupo.tabIndex = 0;
+      if(grupo.setAttribute){
+        grupo.setAttribute("role", "button");
+        grupo.setAttribute("aria-expanded", famPlegada ? "false" : "true");
+      }
+      const cambiarFamilia = ()=>{ plegadas[familia] = !famPlegada; renderNav(); };
+      grupo.onclick = cambiarFamilia;
+      grupo.onkeydown = e => {
+        if(e.key === "Enter" || e.key === " " || e.key === "Spacebar"){ e.preventDefault(); cambiarFamilia(); }
+      };
       nav.appendChild(grupo);
     }
     familiaAnterior = familia;
@@ -2670,6 +2724,7 @@ function renderNav(){
 
     const h = document.createElement("div");
     h.className = "sec" + (abierto ? " open" : "");
+    h.hidden = famPlegada;
 
     const tog = document.createElement("div");
     tog.className = "sec-toggle";
@@ -2712,6 +2767,11 @@ function renderNav(){
       };
       h.appendChild(bResetSec);
     }
+    /* Número fijo por orden de datos: plegar una familia no renumera el resto. */
+    const numSec = document.createElement("span");
+    numSec.className = "sec-n";
+    numSec.textContent = String(DATA.sections.indexOf(sec) + 1).padStart(2, "0");
+    h.appendChild(numSec);
     nav.appendChild(h);
     visibles.forEach(v=>{
       const nd = doubtfulCount(v);
@@ -2745,7 +2805,7 @@ function renderNav(){
       b.className = (v.id === current ? "active " : "") + "sec-item";
       /* Los grupos plegados se ocultan, no se borran: el teclado y las pruebas
          siguen encontrando sus entradas. */
-      b.hidden = !abierto;
+      b.hidden = famPlegada || !abierto;
       b.onclick = ()=>{ current = v.id; render(); window.scrollTo(0,0); guardarVista(); };
       nav.appendChild(b);
     });

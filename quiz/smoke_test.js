@@ -135,6 +135,39 @@ check("volver a pulsar la cabecera abierta pliega el menú entero",
       abiertas().length === 0 && cabeceras().every((_, i) => entradasDe(i).every(e => e.hidden)),
       `desplegadas: ${abiertas().length}`);
 
+/* ---------- familias plegables ---------- */
+/* La barra agrupa por examen (LESEN, SPRACHBAUSTEINE, SCHREIBEN, HÖREN,
+   SPRECHEN, MODELTEST) y cada cabecera pliega la familia entera. */
+const grupos = () => ids.nav.children.filter(c => clases(c).includes("nav-group"));
+
+check("cada familia del examen tiene su cabecera", grupos().length === 6,
+      `familias: ${grupos().map(g => g.children[0].textContent).join(", ")}`);
+
+const totalLesen = window.DATA.sections.slice(0, 5)
+  .reduce((a, s) => a + (s.variants || []).length, 0);
+check("la cabecera de familia cuenta todas sus entradas",
+      grupos().length > 0 && Number(grupos()[0].children[1].textContent) === totalLesen,
+      `contador: ${grupos()[0] && grupos()[0].children[1].textContent} · entradas: ${totalLesen}`);
+
+const numeroDe = i => cabeceras()[i].children[cabeceras()[i].children.length - 1].textContent;
+const numeroAntes = numeroDe(5);
+
+grupos()[0].onclick();
+check("plegar una familia esconde sus cabeceras",
+      cabeceras().slice(0, 5).every(c => c.hidden) && cabeceras().slice(5).every(c => !c.hidden),
+      `visibles tras plegar: ${cabeceras().filter(c => !c.hidden).length}`);
+check("las entradas de la familia plegada también se esconden",
+      [0, 1, 2, 3, 4].every(i => entradasDe(i).every(e => e.hidden)),
+      `visibles: ${[0, 1, 2, 3, 4].reduce((a, i) => a + entradasDe(i).filter(e => !e.hidden).length, 0)}`);
+check("la numeración no cambia al plegar una familia",
+      numeroDe(5) === numeroAntes && numeroAntes === "06",
+      `antes ${numeroAntes} · ahora ${numeroDe(5)}`);
+
+grupos()[0].onclick();
+check("volver a pulsar la familia la despliega",
+      cabeceras().slice(0, 5).every(c => !c.hidden),
+      `visibles: ${cabeceras().filter(c => !c.hidden).length}`);
+
 const stats = ids.stats.innerHTML;
 check("las estadísticas se calcularon", /respondidas/.test(stats), stats.slice(0, 90));
 
