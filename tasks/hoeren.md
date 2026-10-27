@@ -125,6 +125,9 @@ escribir el registro. Repasar la barra en escritorio y móvil.
 - **H4** — 7 variantes, 28 ítems. `build.py` 826 ítems (741 con clave), sin
   errores ni citas rotas. Smoke 137/137, seguridad 52/52, diseño 77/77.
   Cuatro respuestas en `mittel` por doble lectura defendible.
+- **H5** — variantes alternativas de T1: 6 entradas pequeñas con 8 ítems, mismo
+  Hörtext y solo las preguntas reformuladas. `build.py` 834 ítems, smoke 137/137,
+  seguridad 52/52, diseño 77/77.
 
 ## Fuera de alcance
 
