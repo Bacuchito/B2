@@ -128,6 +128,9 @@ escribir el registro. Repasar la barra en escritorio y móvil.
 - **H5** — variantes alternativas de T1: 6 entradas pequeñas con 8 ítems, mismo
   Hörtext y solo las preguntas reformuladas. `build.py` 834 ítems, smoke 137/137,
   seguridad 52/52, diseño 77/77.
+- **H6** — 8 variantes, 40 ítems (35 con clave, 5 sin clave). `build.py` 874 ítems
+  (784 con clave), sin errores ni citas rotas. Smoke 137/137, seguridad 52/52,
+  diseño 77/77. Hören completo: T1–T4, 36 variantes.
 
 ## Fuera de alcance
 

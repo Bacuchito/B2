@@ -1,0 +1,157 @@
+{
+  "block": "h4_d",
+  "section": "hoeren-t4",
+  "variants": [
+    {
+      "id": "h4-v7",
+      "label": "Variante 7",
+      "page": 176,
+      "note": "El original no trae transcripción de estos audios: solo las preguntas. No se corrige.",
+      "note_ru": "В оригинале нет текста этих аудио: только вопросы. Проверка недоступна.",
+      "kind": "ohne-key",
+      "intro": "Sie hören fünf Nachrichten. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "items": [
+        {
+          "n": 36,
+          "type": "choice",
+          "prompt": "Jan",
+          "options": [
+            {"key": "a", "text": "kennt bereits die Kosten für die Farben."},
+            {"key": "b", "text": "kontaktiert den Techniker."},
+            {"key": "c", "text": "kümmert sich um die Farbauswahl."}
+          ]
+        },
+        {
+          "n": 37,
+          "type": "choice",
+          "prompt": "Die Firma Software Solution",
+          "options": [
+            {"key": "a", "text": "liefert in fünf bis sechs Stunden ihre Kassen."},
+            {"key": "b", "text": "möchte mit dem Supermarkt einen Termin vereinbaren."},
+            {"key": "c", "text": "überwacht die Sicherheit in Kassenbereich."}
+          ]
+        },
+        {
+          "n": 38,
+          "type": "choice",
+          "prompt": "Gabi soll",
+          "options": [
+            {"key": "a", "text": "den Operationsplan ändern."},
+            {"key": "b", "text": "Herrn Sommer anrufen."},
+            {"key": "c", "text": "mit dem Hausarzt über die Blutwerte sprechen."}
+          ]
+        },
+        {
+          "n": 39,
+          "type": "choice",
+          "prompt": "Anna",
+          "options": [
+            {"key": "a", "text": "bestellt italienisches Essen für alle."},
+            {"key": "b", "text": "organisiert eine Aktivität für das Team."},
+            {"key": "c", "text": "will nur mit Claudia ins Kino gehen."}
+          ]
+        },
+        {
+          "n": 40,
+          "type": "choice",
+          "prompt": "Stefan berichtet, dass",
+          "options": [
+            {"key": "a", "text": "der Lieferant erkrankt ist."},
+            {"key": "b", "text": "die Kolleg*innen streiken wollen."},
+            {"key": "c", "text": "nicht pünktlich geliefert werden kann."}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "h4-v8",
+      "label": "Variante 8",
+      "page": 177,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "text",
+      "intro": "Sie hören fünf Nachrichten. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Nummer 36 Jörg\nHallo Jörg, hier ist Anna. Ich rufe an wegen des Meetings mit der Agro Import AG nächste Woche. Ich habe doch schon alles für die Versammlung vorbereitet – den Raum, die Getränke und die Präsentation. Aber ich bin mir nicht mehr sicher, ob ich die Reservierung für den Konferenzraum auch richtig eingetragen habe. Könntest du bitte nochmal in den Kalender schauen und prüfen, ob der Raum für Donnerstag um 10 Uhr wirklich gebucht ist? Und ob alles stimmt mit der Technik? Das wäre super. Ruf mich kurz zurück, wenn du nachgeschaut hast. Danke.\nNummer 37 Viktor\nHallo Anna, Viktor hier. Ich habe eine tolle Idee für unseren Betriebsausflug! Ich war letzte Woche mit ein paar Freunden bowlen und das hat richtig viel Spaß gemacht. Ich dachte, das wäre auch etwas für unser Team. Wir könnten eine Bowlingbahn für einen ganzen Abend mieten, Getränke und Snacks bestellen – das wäre doch viel besser als letztes Jahr, oder? Ich habe auch schon die Preise verglichen. Bitte sag mir, was du davon hältst. Ich würde mich dann um die Reservierung kümmern. Melde dich bei mir.\nNummer 38 Die Firma „Kochen von Zauberhand“\nGuten Tag, hier spricht Herr Lehmann von der Firma „Kochen von Zauberhand“. Ich rufe an wegen der Rechnung für die Firmenfeier letzte Woche. Wir haben alles perfekt vorbereitet – das Essen, die Getränke, die Dekoration. Aber ich habe gerade gesehen, dass der vereinbarte Betrag noch nicht überwiesen wurde. Könnten Sie bitte prüfen, ob bei Ihnen alles in Ordnung ist? Wir haben unsere Leistung vollständig erbracht und würden uns über eine zeitnahe Zahlung freuen. Bitte rufen Sie mich zurück.\nNummer 39 Jakob\nHallo Kollegen, hier ist Jakob aus der IT-Abteilung. Ich habe gerade einen Anruf von Frau Schmidt bekommen. Ihr Computer lässt sich nicht mehr hochfahren. Ich war eben bei ihr und habe mir das Problem angesehen. Es sieht so aus, als wäre die Festplatte defekt. Ich kann das nicht sofort reparieren, aber ich habe schon den Techniker informiert. Der kommt morgen vorbei. Frau Schmidt kann heute leider nicht arbeiten – ich habe ihr geraten, sich bei der Personalabteilung krank zu melden. Ich wollte euch nur informieren.\nNummer 40 Gabi\nHallo Sandra, hier ist Gabi aus dem Friseursalon. Ich habe gerade einen Anruf vom Lieferdienst bekommen. Die neuen Waschtische, die wir bestellt haben, werden heute Nachmittag geliefert. Ich muss aber leider zum Arzt und kann nicht da sein. Könntest du bitte die Lieferung annehmen und die Pakete in den Lagerraum stellen? Das wäre wirklich nett. Die Lieferung kommt zwischen 14 und 15 Uhr. Ich danke dir schon mal. Bis morgen.",
+      "items": [
+        {
+          "n": 36,
+          "type": "choice",
+          "prompt": "Jörg soll",
+          "options": [
+            {"key": "a", "text": "die Reservierungen überprüfen."},
+            {"key": "b", "text": "eine Versammlung für die Agro Import AG organisieren."},
+            {"key": "c", "text": "in den Kalender eine Reservierung eintragen."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Könntest du bitte nochmal in den Kalender schauen und prüfen, ob der Raum für Donnerstag um 10 Uhr wirklich gebucht ist?",
+          "explain": "Anna ya preparó todo y pide a Jörg que compruebe la reserva. No le pide organizar la reunión.",
+          "explain_ru": "Анна уже всё подготовила и просит Йорга проверить бронь. Она не просит его организовывать встречу."
+        },
+        {
+          "n": 37,
+          "type": "choice",
+          "prompt": "Viktor",
+          "options": [
+            {"key": "a", "text": "hat eine gute Idee für den Betriebsausflug."},
+            {"key": "b", "text": "informiert Anna über das Programm beim Ausflug."},
+            {"key": "c", "text": "muss noch einen Bowlingtermin reservieren."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Ich habe eine tolle Idee für unseren Betriebsausflug!",
+          "explain": "Propone ir a los bolos para la excursión. El programa no está cerrado y la reserva la haría él después.",
+          "explain_ru": "Он предлагает боулинг для корпоративной поездки. Программа ещё не утверждена, а бронь он сделает позже."
+        },
+        {
+          "n": 38,
+          "type": "choice",
+          "prompt": "Die Firma „Kochen von Zauberhand“",
+          "options": [
+            {"key": "a", "text": "bereitete das Essen für die Firmenfeier zu."},
+            {"key": "b", "text": "möchte eine Rechnung nicht bezahlen."},
+            {"key": "c", "text": "war mit ihrem Service zufrieden."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Wir haben alles perfekt vorbereitet – das Essen, die Getränke, die Dekoration.",
+          "explain": "Preparó la comida y la decoración de la fiesta. Reclama el pago, no se niega a pagar.",
+          "explain_ru": "Она готовила еду и декор для праздника. Она требует оплаты, а не отказывается платить."
+        },
+        {
+          "n": 39,
+          "type": "choice",
+          "prompt": "Jakob",
+          "options": [
+            {"key": "a", "text": "ist ein neuer Azubi in der Firma."},
+            {"key": "b", "text": "stößt auf ein technisches Problem."},
+            {"key": "c", "text": "will seinem Kollegen helfen."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Es sieht so aus, als wäre die Festplatte defekt.",
+          "explain": "Informa de una avería: el disco duro del ordenador de Frau Schmidt. Ya avisó al técnico.",
+          "explain_ru": "Он сообщает о поломке: жёсткий диск компьютера госпожи Шмидт. Техника он уже вызвал."
+        },
+        {
+          "n": 40,
+          "type": "choice",
+          "prompt": "Gabi",
+          "options": [
+            {"key": "a", "text": "bestellte den Klempner für den Friseursalon."},
+            {"key": "b", "text": "bittet Sandra um die Annahme einer Lieferung."},
+            {"key": "c", "text": "möchte sich den neuen Waschtisch anschauen."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Könntest du bitte die Lieferung annehmen und die Pakete in den Lagerraum stellen?",
+          "explain": "Pide a Sandra que reciba la entrega porque tiene que ir al médico. No es un fontanero ni quiere ver el lavabo.",
+          "explain_ru": "Она просит Сандру принять доставку, потому что ей нужно к врачу. Это не сантехник, и увидеть раковину она не стремится."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.178: «Gabi» en el ítem 40 y «Klara/Clara» en el texto se copian tal cual."
+  ]
+}

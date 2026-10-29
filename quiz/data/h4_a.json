@@ -1,0 +1,184 @@
+{
+  "block": "h4_a",
+  "section": "hoeren-t4",
+  "variants": [
+    {
+      "id": "h4-v1",
+      "label": "Variante 1",
+      "page": 165,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "text",
+      "intro": "Sie hören fünf Nachrichten. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Nummer 36 Andrea\nHallo, hier ist Andrea Faber. Wir sind doch am Freitag zum Arbeitsfrühstück verabredet. Leider kann ich unseren Termin nicht einhalten. Wir haben ein spontanes Treffen mit unserem Vertreter aus Wien. Kannst du auch nächste Woche Montag? Das ist der 25. Ich halte dir mal den Vormittag frei. Sei doch so nett und gib mir bitte heute noch Bescheid, ob dir der Termin passt. Es ist wichtig, dass wir uns zeitnah zusammensetzen. Danke.\nNummer 37 Frau Plassberg\nHallo, hier ist Zeuner, der neuen Assistent der Geschäftsleitung. Sie wollten am Dienstag die neue Werbekampagne mit Frau Plassberg besprechen, aber sie ist leider wegen einer Steuerprüfung hier im Haus verhindert. Die restliche Woche ist sie auf Dienstreise. Ginge bei Ihnen auch der Dienstag nächster Woche zur selben Zeit. Bevor unser Kunde am Freitag kommender Woche zur Präsentation kommt, müssen noch wichtige Dinge geklärt werden. Bitte bestätigen Sie den Termin. Vielen Dank.\nNummer 38 Daniela Schöller\nHallo, Daniela Schöller von der Firma Neuhaus. Die für heute angekündigte Ware ist jetzt versandfertig. Ich habe Ihnen ja schon gesagt, dass das Transporthub sehr zerbrechlich ist und nicht gestattet werden darf. Wie Sie wissen, ist die Lieferung sehr eilig und der Kunde hat den Eilzuschlag gezahlt. Es ist also unumgänglich, dass die Kisten heute noch abgeholt werden. Bitte bestätigen Sie mir kurz, dass das heute noch klappt. Bis später.\nNummer 39 Lattermann\nHallo, Guido Lattermann von der Firma Top Elektronik. Ich muss Ihnen leider mitteilen, dass die von Ihnen bestellte Maschine heute wegen des Sturms in Hamburg nicht verladen werden konnte. Die Lieferung verzögert sich wahrscheinlich um eine Woche. So wie es aussieht, kommt das Schiff am 16. Mai bei Ihnen in Dresden an. Es wäre nett, wenn Sie uns dann den Empfang der Ware bestätigen können. Ein kurzer Anruf reicht. Ich wünsche Ihnen einen schönen Tag und bitte entschuldigen Sie die Unannehmlichkeiten.\nNummer 40 Bernhardt\nBernhardt, Geschäftsleitung. Ich habe mir Ihren Entwurf für unsere neue Homepage angesehen. Im Großen und Ganzen gefällt er mir recht gut, aber ich habe noch ein paar Änderungen. Wir sollten mehr hervorheben, was uns von anderen Firmen unterscheidet. Z.B. die zehnjährige Garantie, die wir auf unsere Produkte geben. Das ist aber noch nicht alles. Bitte melden Sie sich bei meiner Sekretärin Frau Zimmer für einen Termin, bei dem ich Ihnen die Punkte kurz erläutern kann.",
+      "items": [
+        {
+          "n": 36,
+          "type": "choice",
+          "prompt": "Andrea",
+          "options": [
+            {"key": "a", "text": "kann den geplanten Termin nicht einhalten."},
+            {"key": "b", "text": "möchte sich Montag wieder melden."},
+            {"key": "c", "text": "trifft einen Vertreter zum Arbeitsfrühstück."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Leider kann ich unseren Termin nicht einhalten.",
+          "explain": "Andrea cancela el desayuno de trabajo por una reunión espontánea con el representante de Viena. Propone el lunes, pero no dice que llamará.",
+          "explain_ru": "Андреа отменяет рабочий завтрак из-за внезапной встречи с представителем из Вены. Она предлагает понедельник, но не говорит, что перезвонит."
+        },
+        {
+          "n": 37,
+          "type": "choice",
+          "prompt": "Frau Plassberg",
+          "options": [
+            {"key": "a", "text": "möchte eine Steuerprüfung auswerten."},
+            {"key": "b", "text": "möchte die neue Werbekampagne diskutieren."},
+            {"key": "c", "text": "möchte über die Dienstreise sprechen."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Sie wollten am Dienstag die neue Werbekampagne mit Frau Plassberg besprechen",
+          "explain": "La cita era para hablar de la campaña; la auditoría fiscal es el motivo por el que no puede. El aplazamiento mantiene el tema.",
+          "explain_ru": "Встреча была для обсуждения кампании; налоговая проверка — причина, по которой она не может. Перенос сохраняет тему."
+        },
+        {
+          "n": 38,
+          "type": "choice",
+          "prompt": "Daniela Schöller",
+          "options": [
+            {"key": "a", "text": "bittet um heutige Abholung der Ware."},
+            {"key": "b", "text": "braucht die Lieferung dringend."},
+            {"key": "c", "text": "hat den Eilzuschlag bezahlt."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Es ist also unumgänglich, dass die Kisten heute noch abgeholt werden.",
+          "explain": "Pide que recojan las cajas hoy. La urgencia es del cliente, que pagó el suplemento, no de ella.",
+          "explain_ru": "Она просит забрать коробки сегодня. Срочность нужна клиенту, который оплатил надбавку, а не ей."
+        },
+        {
+          "n": 39,
+          "type": "choice",
+          "prompt": "Herr Lattermann",
+          "options": [
+            {"key": "a", "text": "bekommt eine Maschine aus Hamburg."},
+            {"key": "b", "text": "bestätigt den Empfang der Maschine."},
+            {"key": "c", "text": "liefert Maschine nach Dresden."}
+          ],
+          "answer": "c",
+          "confidence": "mittel",
+          "quote": "kommt das Schiff am 16. Mai bei Ihnen in Dresden an.",
+          "explain": "Avisa de que el barco llegará a Dresde. Él no recibe la máquina: se la envían a su cliente, y aún no puede confirmar la recepción.",
+          "explain_ru": "Он сообщает, что корабль прибудет в Дрезден. Он не получает машину: её отправляют его клиенту, и подтвердить получение он ещё не может."
+        },
+        {
+          "n": 40,
+          "type": "choice",
+          "prompt": "Frau Bernhardt",
+          "options": [
+            {"key": "a", "text": "hat Änderungswünsche für die Homepage."},
+            {"key": "b", "text": "meldet sich bei ihrer Sekretärin."},
+            {"key": "c", "text": "möchte die Garantie verlängern."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "ich habe noch ein paar Änderungen.",
+          "explain": "Quiere cambios en el borrador de la web y cita la garantía como argumento, no para ampliarla.",
+          "explain_ru": "Она хочет изменений в черновике сайта и приводит гарантию как аргумент, а не для её продления."
+        }
+      ]
+    },
+    {
+      "id": "h4-v2",
+      "label": "Variante 2",
+      "page": 167,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "text",
+      "intro": "Sie hören fünf Nachrichten. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Nummer 36 Robert Krüger\nHi, Robert Krüger hier. Ich habe die Organisation der diesjährigen Weihnachtsfeier ja von dir übernommen. Ich weiß aber noch nicht, welches Restaurant ich reservieren soll. Ich bin ja noch ziemlich neu in der Stadt. Ihr wart letztes Jahr doch beim Griechen, oder? Dieses Jahr sollte es etwas anderes sein. Vielleicht eins, wo es eine größere Auswahl an Fleischlosen Gerichten gibt. Deine Meinung hier wäre mir wichtig.\nNummer 37 Katrin\nHallo Bettina. Katrin hier. Hast du schon gehört, dass Heli Joni nächste Woche einen runden Geburtstag feiert? Wir, ihr Team, brauchen noch ein Geschenk für sie, haben aber keine Idee. Du kennst sie ja privat. Hast du vielleicht einen Vorschlag? Normalerweise gibt jeder 5 €. Es darf also etwa 70 € kosten. Wenn es etwas mehr kostet, ist es aber auch nicht schlimm. Kannst du mich später zurückrufen? Das wäre super.\nNummer 38 Stefan Körner\nHallo, Stefan Körner hier. Ich wollte Sie nur daran erinnern, dass die Brandmelder in den Büros demnächst ausgetauscht werden müssen. Bei der letzten Wartung hat uns der Fachmann von der Müller Brandschutz GmbH darauf aufmerksam gemacht, dass wir sie nur noch bis Ende des Jahres in Betrieb haben dürfen. Können Sie bitte bei der Firma anrufen und fragen, wann jemand bei uns vorbeikommen kann? Bei Fragen rufen Sie mich einfach zurück.\nNummer 39 Barbara\nHallo, Barbara hier. Ich rufe noch mal an wegen des Besuchs der Kollegen aus unserer französischen Niederlassung. Soviel ich weiß, ist am Montagmorgen eine Betriebsbesichtigung geplant und am Nachmittag gibt es dann noch ein großes Begegnungsfest. Ich brauche bitte noch die genaue Zahl der Anmeldungen, damit ich das Essen und die Getränke bestellen kann. Du hast den Raum ja schon gebucht, richtig? Melde dich doch einfach, wenn du wieder am Platz bist.\nNummer 40 Michaell Brüger\nHallo, Michaell Brüger von der Brüger Hausverwaltung. Wie ich Ihnen gestern schon auf den Anrufbeantworter gesprochen habe, ist bei uns im Haus in der Ludwigsstraße 8 seit vorgestern die Heizung defekt. Das Problem muss umgehend behoben werden, da in den nächsten Tagen -5 Grad erwartet werden. Ich hätte eigentlich gestern mit einem zeitnahen Rückruf gerechnet. Das hat in den letzten Jahren ja immer geklappt. Rufen Sie mich bitte in den nächsten Stunden zurück.",
+      "items": [
+        {
+          "n": 36,
+          "type": "choice",
+          "prompt": "Robert Krüger",
+          "options": [
+            {"key": "a", "text": "hat letztes Jahr die Weihnachtsfeier organisiert."},
+            {"key": "b", "text": "möchte bei einem Griechen feiern."},
+            {"key": "c", "text": "denkt an die Interessen der Vegetarier."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Vielleicht eins, wo es eine größere Auswahl an Fleischlosen Gerichten gibt.",
+          "explain": "Busca un restaurante con más platos sin carne. Este año organiza él, no el año pasado, y quiere algo distinto al griego.",
+          "explain_ru": "Он ищет ресторан с большим выбором блюд без мяса. В этом году организует он, а не в прошлом, и хочет не греческий."
+        },
+        {
+          "n": 37,
+          "type": "choice",
+          "prompt": "Katrin",
+          "options": [
+            {"key": "a", "text": "will Bettina mit einem Geschenk überraschen."},
+            {"key": "b", "text": "sucht eine Anregung für ein Geschenk."},
+            {"key": "c", "text": "möchte ein kleines Geschenk für fünf Euro kaufen."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Hast du vielleicht einen Vorschlag?",
+          "explain": "Necesita una idea para el regalo del equipo. Los cinco euros son la aportación de cada uno, no el precio del regalo.",
+          "explain_ru": "Ей нужна идея для подарка от команды. Пять евро — взнос каждого, а не цена подарка."
+        },
+        {
+          "n": 38,
+          "type": "choice",
+          "prompt": "Stefan Körner bittet seinen Kollegen,",
+          "options": [
+            {"key": "a", "text": "die Wartung zu beauftragen."},
+            {"key": "b", "text": "einen Termin zu vereinbaren."},
+            {"key": "c", "text": "die Brandmelder zu warten."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Können Sie bitte bei der Firma anrufen und fragen, wann jemand bei uns vorbeikommen kann?",
+          "explain": "Pide llamar a la empresa para acordar cuándo vienen a cambiar los detectores. No pide contratar el mantenimiento.",
+          "explain_ru": "Он просит позвонить в фирму и договориться, когда придут менять датчики. Он не просит заказать обслуживание."
+        },
+        {
+          "n": 39,
+          "type": "choice",
+          "prompt": "Barbara",
+          "options": [
+            {"key": "a", "text": "organisiert allein das Begegnungsfest."},
+            {"key": "b", "text": "wird den französischen Kollegen die Firma zeigen."},
+            {"key": "c", "text": "kümmert sich um die Verpflegung der Gäste."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "damit ich das Essen und die Getränke bestellen kann.",
+          "explain": "Necesita el número de inscritos para pedir comida y bebida. La visita la organiza el equipo, no ella sola.",
+          "explain_ru": "Ей нужно число записавшихся, чтобы заказать еду и напитки. Визит организует команда, а не она одна."
+        },
+        {
+          "n": 40,
+          "type": "choice",
+          "prompt": "Michaell Brüger möchte, dass",
+          "options": [
+            {"key": "a", "text": "die Heizung repariert wird."},
+            {"key": "b", "text": "er in den nächsten Tagen zurückgerufen wird."},
+            {"key": "c", "text": "die Heizkörper ausgetauscht werden."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Das Problem muss umgehend behoben werden",
+          "explain": "La calefacción está averiada y hay que repararla ya. Pide que le llamen en horas, no en días.",
+          "explain_ru": "Отопление сломано, и его нужно срочно починить. Он просит перезвонить в течение часов, а не дней."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.165: «Transporthub» se mantiene verbatim (errata del original).",
+    "p.166: «Michaell» se mantiene verbatim."
+  ]
+}

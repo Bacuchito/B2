@@ -1,0 +1,183 @@
+{
+  "block": "h4_b",
+  "section": "hoeren-t4",
+  "variants": [
+    {
+      "id": "h4-v3",
+      "label": "Variante 3",
+      "page": 168,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "text",
+      "intro": "Sie hören fünf Nachrichten. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Nummer 36 Waldemar\nHallo, Waldemar Hahrmann, Öffentlichkeitsarbeit. Die Lehrerin von meiner Tochter hat angerufen. Die Kleine hat Fieber und muss abgeholt werden. Heute sollte ich doch gegen 10:30 Uhr die potenziellen Partner unserer Firma durch den Betrieb führen. Könntest du das übernehmen? Wäre super. Ist auch ganz unproblematisch. Treffpunkt ist der Eingangsbereich des Verwaltungsgebäudes. Dann geht es sofort über zu der neuen Produktionshalle und danach noch in die Lagerhalle. Nach einem kurzen Rundgang durch die Büros auf der ersten Etage schließen wir mit Kaffee und Kuchen in der Kantine ab.\nNummer 37 Jana\nHallo, hier ist Jana Wartner von Hessen-Grönland. Danke für den Kostenvoranschlag, den Sie mir gestern noch gemailt haben. Wir möchten einen Probeauftrag für zehn Laserdrucker Modell X3 aufheben. Bei unserem letzten Gespräch haben wir 5% Einführungsrabatt vereinbart. Die Zahlung erfolgt bar bei der Lieferung. Den Auftrag bekommen Sie natürlich noch ganz offiziell da näher. Aber wir brauchen die Drucker wirklich dringend für unser neues Großraumbüro. Können Sie mir garantieren, dass die Lieferung rechtzeitig eintreffen wird? Bitte um gute Antwort.\nNummer 38 Erisia\nHallo, Erisia hier. Frau Schmidt musste dringend kurz weg und wird erst gegen Mittag wieder hier sein. Deshalb ist Jana alleine am Empfang. Jetzt ist der Zug aus Russland auch noch früher gekommen als geplant. Jana kann doch keine Russen speisen. Wir bräuchten deine Hilfe zum Dolmetschen. Ich habe die Gatten in den Konferenzraum gebracht und ihnen den Kaffee und Snacks angeboten. Könntest du dich um sie kümmern, bis Frau Schmidt zurück ist? Das wäre super. Danke.\nNummer 39 Trixi\nHi, Trixi nochmal. Es geht schon wieder um den Messeauftritt in Köln nächste Woche. Ich habe nun endlich eine preisgünstige Spedition gefunden, die unsere Ausstellungsstücke von Leipzig nach Köln und zurück transportiert. Kontenmappe, Broschüren und Werbeposter haben wir alles schon verpackt. Ich kann sie mitnehmen, weil ich selbst vor Ort sein werde. Nur eins noch. Für den Auf- und Abbau des Standes brauche ich zwei handkräftige Kollegen zur Unterstützung. Bitte heute noch melden, wer mithelfen könnte, sodass ich die Hotelzimmer für die Woche verwirklich buchen kann. Danke.\nNummer 40 Julius\nHallo, Julius Lehmann, Personalabteilung. Wegen der Fortbildung bei Händelbau nächste Woche. Kannst du bitte den Teilnehmern noch einmal deutlich sagen, dass dort im ganzen Haus Rauchverbot besteht? Der Raucherbereich befindet sich frei. Die Kollegen sollen außerdem zu ihrer eigenen Sicherheit stets auf den grün markierten Bereichen bleiben, wegen der Gefahr von Gabelstaplern angefangen zu werden. Das sind Sicherheitsvorschriften, die wir unbedingt einhalten müssen. Sonst würden wir in diesem Unternehmen keine Fortbildung mehr machen. Das wäre sehr schade, denn bisher gab es nur gute Rückmeldungen zu den Veranstaltungen. Danke.",
+      "items": [
+        {
+          "n": 36,
+          "type": "choice",
+          "prompt": "Waldemar",
+          "options": [
+            {"key": "a", "text": "trifft die Partner an der Produktionshalle."},
+            {"key": "b", "text": "geht es nicht so gut."},
+            {"key": "c", "text": "muss seine Tochter abholen."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Die Kleine hat Fieber und muss abgeholt werden.",
+          "explain": "Su hija tiene fiebre y debe recogerla. Por eso pide a un compañero que haga la visita con los socios.",
+          "explain_ru": "У его дочери температура, и её нужно забрать. Поэтому он просит коллегу провести визит партнёров."
+        },
+        {
+          "n": 37,
+          "type": "choice",
+          "prompt": "Jana",
+          "options": [
+            {"key": "a", "text": "hat den Auftrag bereits gemailt."},
+            {"key": "b", "text": "mochte einen höheren Rabatt vereinbaren."},
+            {"key": "c", "text": "benötigt die Drucker für das Großraumbüro."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "wir brauchen die Drucker wirklich dringend für unser neues Großraumbüro.",
+          "explain": "Necesita las impresoras para la nueva oficina abierta. El pedido formal aún no lo ha enviado y el descuento ya está pactado.",
+          "explain_ru": "Принтеры нужны для нового открытого офиса. Официальный заказ ещё не отправлен, а скидка уже согласована."
+        },
+        {
+          "n": 38,
+          "type": "choice",
+          "prompt": "Erisia",
+          "options": [
+            {"key": "a", "text": "ist allein am Empfang."},
+            {"key": "b", "text": "schickt Frau Schmidt in den Konferenzraum."},
+            {"key": "c", "text": "braucht einen Dolmetscher."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Wir bräuchten deine Hilfe zum Dolmetschen.",
+          "explain": "Llegó un tren de Rusia y Jana no puede atenderlos; Erisia pide ayuda para interpretar. La que está sola en recepción es Jana.",
+          "explain_ru": "Прибыл поезд из России, и Яна не может их обслужить; Эризия просит помочь с переводом. Одна на ресепшене — Яна."
+        },
+        {
+          "n": 39,
+          "type": "choice",
+          "prompt": "Trixi",
+          "options": [
+            {"key": "a", "text": "fährt mit zur Messe nach Köln."},
+            {"key": "b", "text": "hat die Hotelzimmer schon gebucht."},
+            {"key": "c", "text": "findet keine kostengünstige Spedition."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "weil ich selbst vor Ort sein werde.",
+          "explain": "Irá a la feria en persona. Los hoteles aún no están reservados y ya encontró una agencia barata.",
+          "explain_ru": "Она поедет на выставку лично. Отели ещё не забронированы, а недорогую транспортную фирму она уже нашла."
+        },
+        {
+          "n": 40,
+          "type": "choice",
+          "prompt": "Julius",
+          "options": [
+            {"key": "a", "text": "darf keine Fortbildung mehr buchen."},
+            {"key": "b", "text": "erinnert an die Sicherheitsregeln zur Fortbildung."},
+            {"key": "c", "text": "hat negative Reaktionen zu Fortbildungen bekommen."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Das sind Sicherheitsvorschriften, die wir unbedingt einhalten müssen.",
+          "explain": "Recuerda las normas de seguridad en la formación: prohibido fumar y quedarse en las zonas verdes. Las reacciones eran buenas.",
+          "explain_ru": "Он напоминает правила безопасности на обучении: не курить и держаться зелёных зон. Отзывы были хорошие."
+        }
+      ]
+    },
+    {
+      "id": "h4-v4",
+      "label": "Variante 4",
+      "page": 170,
+      "note": "Hörtext: transcripción de candidatos, no el audio oficial.",
+      "note_ru": "Текст аудирования: запись кандидатов, а не официальное аудио.",
+      "kind": "text",
+      "intro": "Sie hören fünf Nachrichten. Wählen Sie bei jeder Aufgabe die richtige Lösung a, b oder c.",
+      "passage": "Nummer 36 Rita\nHallo, Rita hier. Du hast mir doch erzählt, dass dein Sohn einen Laptop sucht. Nächste Woche bekommt unsere Abteilung neue Computer und neue Drucker. Deshalb werden die alten Geräte günstig an interessierte Mitarbeiter abgegeben. Das heißt, wer noch für zu Hause Computer, Laptops oder Drucker braucht, kann sich bis Freitag in eine Liste am schwarzen Brett eintragen. Der Verkauf findet dann ab Montag ab 14:30 Uhr im Großraumbüro 2 statt. Man kann die Geräte dann direkt mitnehmen. Der Erlös wird übrigens für die Finanzierung unseres Sommerfests verwendet.\nNummer 37 Konstantinos Pagonas\nGuten Tag, Konstantinos Pagonas von der Firma Pizzos. Ich wollte mich nochmal wegen Ihres Besuchs in der nächsten Woche melden. Sie brauchen sich nicht um den Transfer vom Flughafen zur Firma kümmern. Meine Kollegin wird Sie in der Ausgangshalle A am Infopoint empfangen und mit Ihnen zusammen zu unserem Werk in Thessaloniki fahren. Dort warte ich auf Sie und wir machen gemeinsam eine Werksbesichtigung. Ich freue mich schon, Sie persönlich kennenzulernen.\nNummer 38 Lara Hartmann\nLara Hartmann aus der Personalabteilung. Ich habe Sie bisher leider nicht persönlich erreicht, deshalb spreche ich jetzt auf die Mailbox. Unser Steuerbüro hat gestern angerufen. Dort benötigt man dringend die Belege für Ihre Dienstreise nach Berlin im Mai des vergangenen Jahres. Können Sie mir diese bitte im Original am Montag im Büro vorbeibringen? Vielen Dank und entschuldigen Sie die kurze Frist. Für Rückfragen erreichen Sie mich heute noch bis 17 Uhr.\nNummer 39 Thomas Barthel\nThomas Barthel, IT-Abteilung. Sie hatten angerufen, weil Sie Ihren PC nicht mehr runterfahren können. Entschuldigen Sie, dass ich mich jetzt erst melde, aber seit der Systemumstellung haben wir im ganzen Haus viel zu tun, weil viele Kollegen Fragen dazu haben. Aber Ihr Problem, denke ich, kann ich per Fernwartung lösen. Dazu bräuchte ich Sie aber am Telefon. Bitte rufen Sie mich zurück. Ich bin heute bis 18 Uhr im Büro.\nNummer 40 Klara Günther\nClara Günther, Personalabteilung hier. Die Geschäftsführung hatte doch beschlossen, dass die Urlaubsplanung für das kommende Jahr zentral gemacht werden soll. Daher wurden alle Mitarbeiterinnen und Mitarbeiter aufgefordert, ihre Urlaubswünsche bis zum 30. November im Intranet einzutragen. Heute ist schon der 29. und ich habe gesehen, dass Sie noch nichts angegeben haben. Deshalb dachte ich, ich sage noch mal kurz Bescheid. Für den Fall, dass Sie es vergessen haben. Schönen Tag noch.",
+      "items": [
+        {
+          "n": 36,
+          "type": "choice",
+          "prompt": "Rita",
+          "options": [
+            {"key": "a", "text": "informiert über den Verkauf der Firmencomputer."},
+            {"key": "b", "text": "möchte ihren privaten Computer günstig verkaufen."},
+            {"key": "c", "text": "sorgt sich um die Finanzierung des Sommerfests."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Deshalb werden die alten Geräte günstig an interessierte Mitarbeiter abgegeben.",
+          "explain": "Avisa de la venta de los equipos viejos de la empresa. El dinero va al festival de verano, pero ella no se preocupa por eso.",
+          "explain_ru": "Она сообщает о распродаже старых компьютеров фирмы. Деньги идут на летний праздник, но она об этом не беспокоится."
+        },
+        {
+          "n": 37,
+          "type": "choice",
+          "prompt": "Konstantinos Pagonas ruft an, um",
+          "options": [
+            {"key": "a", "text": "einen Firmenbesuch anzukündigen."},
+            {"key": "b", "text": "nach dem Weg zur Firma zu fragen."},
+            {"key": "c", "text": "organisatorische Informationen mitzuteilen."}
+          ],
+          "answer": "c",
+          "confidence": "hoch",
+          "quote": "Sie brauchen sich nicht um den Transfer vom Flughafen zur Firma kümmern.",
+          "explain": "Informa de cómo será el traslado y quién recogerá al visitante. No pregunta el camino ni solo anuncia la visita.",
+          "explain_ru": "Он сообщает, как будет организован трансфер и кто встретит гостя. Он не спрашивает дорогу и не только анонсирует визит."
+        },
+        {
+          "n": 38,
+          "type": "choice",
+          "prompt": "Lara Hartmann",
+          "options": [
+            {"key": "a", "text": "benötigt Dokumente für das Steuerbüro."},
+            {"key": "b", "text": "bringt der Kollegin die Belege vorbei."},
+            {"key": "c", "text": "hat gestern das Steuerbüro angerufen."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Dort benötigt man dringend die Belege für Ihre Dienstreise nach Berlin",
+          "explain": "La gestoría necesita los justificantes del viaje. La que llama es la gestoría, no Lara.",
+          "explain_ru": "Бухгалтерии нужны документы о командировке. Звонила бухгалтерия, а не Лара."
+        },
+        {
+          "n": 39,
+          "type": "choice",
+          "prompt": "Thomas Barthel",
+          "options": [
+            {"key": "a", "text": "hat Schwierigkeiten mit seinem Computer."},
+            {"key": "b", "text": "kann das aufgetretene Problem wohl schnell lösen."},
+            {"key": "c", "text": "soll eine Systemumstellung im Haus vornehmen."}
+          ],
+          "answer": "b",
+          "confidence": "hoch",
+          "quote": "Aber Ihr Problem, denke ich, kann ich per Fernwartung lösen.",
+          "explain": "Cree que puede resolver la avería por control remoto. El problema es del cliente, y la migración ya se hizo.",
+          "explain_ru": "Он считает, что может устранить неисправность удалённо. Проблема у клиента, а миграция уже прошла."
+        },
+        {
+          "n": 40,
+          "type": "choice",
+          "prompt": "Klara Günther",
+          "options": [
+            {"key": "a", "text": "erinnert an die neue Urlaubsplanung."},
+            {"key": "b", "text": "legt die Urlaubsplanung zentral fest."},
+            {"key": "c", "text": "möchte am 29. November Urlaub nehmen."}
+          ],
+          "answer": "a",
+          "confidence": "hoch",
+          "quote": "Deshalb dachte ich, ich sage noch mal kurz Bescheid.",
+          "explain": "Recuerda que hay que inscribir las vacaciones en la intranet antes del 30. No las fija ella ni pide vacaciones.",
+          "explain_ru": "Она напоминает, что пожелания по отпуску нужно внести в интранет до 30-го. Она их не устанавливает и не просит отпуск."
+        }
+      ]
+    }
+  ],
+  "fixes": [
+    "p.169: «verwirklicht buchen» se mantiene verbatim (errata del original)."
+  ]
+}
